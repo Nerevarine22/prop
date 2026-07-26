@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Plus_Jakarta_Sans, Space_Grotesk, Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
@@ -28,6 +28,11 @@ const geistMono = Geist_Mono({
   display: 'swap',
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: 'PropHub — Real-Time Transparency & Crypto Prop Directory',
   description: 'The CoinMarketCap for crypto prop firms. Track verified payouts, 95% profit splits, 1:100 leverage, and real-time pass rates.',
@@ -41,6 +46,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`dark ${plusJakartaSans.variable} ${spaceGrotesk.variable} ${geist.variable} ${geistMono.variable}`}>
+      <head>
+        <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@900,800,700,500,400&display=swap" />
+      </head>
       <body className="min-h-[100dvh] bg-[#121212] text-zinc-100 antialiased font-sans flex flex-col justify-between selection:bg-sky-500/30 selection:text-sky-200">
         
         {/* Subtle Background Grid Overlay */}

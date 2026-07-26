@@ -1,4 +1,3 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,800,700,500,400&display=swap');
 @import "tailwindcss";
 
 @layer base {
@@ -7,7 +6,6 @@
     --font-display: var(--font-space-grotesk), system-ui, sans-serif;
     --font-geist: var(--font-geist), system-ui, sans-serif;
     --font-geist-mono: var(--font-geist-mono), monospace;
-    --font-satoshi: 'Satoshi', sans-serif;
 
     /* Transitions.dev Motion Tokens */
     --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -37,15 +35,15 @@ body {
 
 /* Font Classes */
 .font-satoshi {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Satoshi', var(--font-plus-jakarta), system-ui, sans-serif;
 }
 
 .font-geist {
-  font-family: var(--font-geist);
+  font-family: var(--font-geist), var(--font-plus-jakarta), system-ui, sans-serif;
 }
 
 .font-geist-mono {
-  font-family: var(--font-geist-mono);
+  font-family: var(--font-geist-mono), monospace;
 }
 
 /* Display Headings */
