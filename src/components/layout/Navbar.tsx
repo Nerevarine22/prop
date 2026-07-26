@@ -30,7 +30,7 @@ export function Navbar() {
                 pathname === '/compare' || pathname === '/firms' ? 'text-white font-semibold' : ''
               }`}
             >
-              <Scale className="h-3.5 w-3.5 text-emerald-400" />
+              <Scale className="h-3.5 w-3.5 text-zinc-400" />
               <span>Compare & Directory</span>
             </Link>
 
@@ -40,7 +40,7 @@ export function Navbar() {
                 pathname === '/coupons' ? 'text-white font-semibold' : ''
               }`}
             >
-              <Percent className="h-3.5 w-3.5 text-amber-400" />
+              <Percent className="h-3.5 w-3.5 text-zinc-400" />
               <span>Verified Deals</span>
             </Link>
 
@@ -50,7 +50,7 @@ export function Navbar() {
                 pathname === '/transparency' ? 'text-white font-semibold' : ''
               }`}
             >
-              <Activity className="h-3.5 w-3.5 text-sky-400" />
+              <Activity className="h-3.5 w-3.5 text-zinc-400" />
               <span>Transparency Engine</span>
             </Link>
           </nav>
