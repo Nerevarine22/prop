@@ -1,0 +1,102 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,800,700,500,400&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: var(--font-plus-jakarta), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+    --font-geist: var(--font-geist), system-ui, sans-serif;
+    --font-geist-mono: var(--font-geist-mono), monospace;
+    --font-satoshi: 'Satoshi', sans-serif;
+
+    /* Transitions.dev Motion Tokens */
+    --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.36, 0.64, 1);
+
+    --duration-quick: 150ms;
+    --duration-fast: 250ms;
+    --duration-slow: 400ms;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #121212;
+  color: #fafafa;
+  overflow-x: hidden;
+}
+
+/* Ultra-subtle Vercel/Linear-style Background Grid Pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+/* Font Classes */
+.font-satoshi {
+  font-family: 'Satoshi', system-ui, sans-serif;
+}
+
+.font-geist {
+  font-family: var(--font-geist);
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono);
+}
+
+/* Display Headings */
+.display-heading, .serif-heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+/* Propr Card & Border System */
+.propr-card {
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid rgba(39, 39, 42, 0.8);
+  border-radius: 0.875rem;
+  transition: all 0.3s var(--ease-smooth-out);
+}
+
+.propr-card:hover {
+  background: rgba(39, 39, 42, 0.7);
+  border-color: rgba(63, 63, 70, 1);
+}
+
+/* Micro-Eyebrow Badges */
+.eyebrow-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fafafa;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}

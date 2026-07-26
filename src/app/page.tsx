@@ -1,0 +1,161 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { MOCK_PROP_FIRMS, MOCK_COUPONS } from '@/lib/data/firms';
+import { FirmCard } from '@/components/firms/FirmCard';
+import { AiMatchmaker } from '@/components/home/AiMatchmaker';
+import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
+import { Search, Activity, ArrowRight, Percent } from 'lucide-react';
+
+export default function HomePage() {
+  const [activeTab, setActiveTab] = useState<'featured' | 'high-split' | 'instant'>('featured');
+
+  const filteredFirms = MOCK_PROP_FIRMS.filter(firm => {
+    if (activeTab === 'high-split') return firm.profitSplit.includes('90%') || firm.profitSplit.includes('95%');
+    if (activeTab === 'instant') return firm.evaluationSteps.includes('Instant Funding');
+    return true;
+  });
+
+  return (
+    <div className="space-y-16 py-12 md:py-16">
+      
+      {/* 1. HERO SECTION */}
+      <section className="relative text-center max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
+        
+        {/* Modern Clean Grotesk Display Title */}
+        <h1 className="display-heading text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.08] text-white">
+          The CoinMarketCap for <br />
+          Crypto Prop Trading Firms
+        </h1>
+
+        <p className="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed font-normal">
+          Institutional 1:100 crypto leverage, verified 95% profit splits, real-time drawdown tracking, and live on-chain transparency in one place.
+        </p>
+
+        {/* Hero CTAs */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <Link
+            href="/firms"
+            className="flex items-center gap-2 px-6 py-3 rounded-lg bg-zinc-100 text-zinc-950 text-xs font-bold hover:bg-white transition-colors"
+          >
+            <Search className="h-4 w-4" />
+            <span>Explore Directory</span>
+          </Link>
+
+          <Link
+            href="/transparency"
+            className="flex items-center gap-2 px-6 py-3 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-200 text-xs font-bold hover:bg-zinc-800 transition-colors"
+          >
+            <Activity className="h-4 w-4 text-emerald-400" />
+            <span>Transparency Dashboard</span>
+          </Link>
+        </div>
+
+        {/* Minimalist Text-Only Stats Line */}
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 pt-6 text-xs text-zinc-400 border-t border-zinc-800/60 max-w-3xl mx-auto">
+          <div className="flex items-center gap-1.5">
+            <span className="text-white font-mono font-bold">
+              <AnimatedCounter value={MOCK_PROP_FIRMS.length} suffix="+" />
+            </span>
+            <span className="text-zinc-400">Verified Firms</span>
+          </div>
+
+          <span className="text-zinc-700 hidden sm:inline">•</span>
+
+          <div className="flex items-center gap-1.5">
+            <span className="text-zinc-200 font-mono font-bold">
+              <AnimatedCounter value={95} suffix="%" />
+            </span>
+            <span className="text-zinc-400">Max Profit Split</span>
+          </div>
+
+          <span className="text-zinc-700 hidden sm:inline">•</span>
+
+          <div className="flex items-center gap-1.5">
+            <span className="text-zinc-200 font-mono font-bold">1:100</span>
+            <span className="text-zinc-400">Crypto Leverage</span>
+          </div>
+
+          <span className="text-zinc-700 hidden sm:inline">•</span>
+
+          <div className="flex items-center gap-1.5">
+            <span className="text-zinc-200 font-mono font-bold">
+              <AnimatedCounter value={20} suffix="% OFF" />
+            </span>
+            <span className="text-zinc-400">Active Deals</span>
+          </div>
+        </div>
+
+      </section>
+
+      {/* 2. FEATURED SECTION - Equal 3-Column Grid of 6 Cards */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
+        {/* Tab Controls Bar */}
+        <div className="flex justify-end">
+          <div className="flex items-center gap-1.5 p-1 rounded-lg bg-zinc-900 border border-zinc-800 text-xs">
+            <button
+              onClick={() => setActiveTab('featured')}
+              className={`px-4 py-1.5 rounded-md font-bold transition-all duration-200 ${
+                activeTab === 'featured' ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-300'
+              }`}
+            >
+              Featured
+            </button>
+            <button
+              onClick={() => setActiveTab('high-split')}
+              className={`px-4 py-1.5 rounded-md font-bold transition-all duration-200 ${
+                activeTab === 'high-split' ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-300'
+              }`}
+            >
+              90%+ Split
+            </button>
+            <button
+              onClick={() => setActiveTab('instant')}
+              className={`px-4 py-1.5 rounded-md font-bold transition-all duration-200 ${
+                activeTab === 'instant' ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-300'
+              }`}
+            >
+              Instant Funding
+            </button>
+          </div>
+        </div>
+
+        {/* 6 Cards Grid (2 rows x 3 columns) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {filteredFirms.slice(0, 6).map(firm => (
+            <FirmCard key={firm.id} firm={firm} />
+          ))}
+        </div>
+      </section>
+
+      {/* 3. AI MATCHMAKER CONSOLE */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6">
+        <AiMatchmaker />
+      </section>
+
+      {/* 4. VERIFIED DEALS BANNER */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="propr-card p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-1.5 text-center md:text-left">
+            <div className="eyebrow-tag border-emerald-500/30 text-emerald-400 bg-emerald-500/10">
+              <Percent className="h-3.5 w-3.5" />
+              VERIFIED PROMO ENGINE
+            </div>
+            <h3 className="text-2xl font-extrabold text-white">Save Up to 20% on Challenge Fees</h3>
+            <p className="text-xs text-zinc-400">Automated verification checks promo codes daily for valid status and maximum discount rates.</p>
+          </div>
+
+          <Link
+            href="/coupons"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 text-zinc-950 text-xs font-bold hover:bg-white transition-colors shrink-0"
+          >
+            <span>View Active Deals ({MOCK_COUPONS.length})</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+
+    </div>
+  );
+}
