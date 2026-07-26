@@ -1,17 +1,24 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { MOCK_PROP_FIRMS, MOCK_COUPONS } from '@/lib/data/firms';
+import { MOCK_COUPONS } from '@/lib/data/firms';
+import { PropFirm } from '@/types/firm';
+import { getFirms } from '@/lib/services/firmService';
 import { FirmCard } from '@/components/firms/FirmCard';
 import { AiMatchmaker } from '@/components/home/AiMatchmaker';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { Search, Activity, ArrowRight, Percent } from 'lucide-react';
 
 export default function HomePage() {
+  const [firms, setFirms] = useState<PropFirm[]>([]);
   const [activeTab, setActiveTab] = useState<'featured' | 'high-split' | 'instant'>('featured');
 
-  const filteredFirms = MOCK_PROP_FIRMS.filter(firm => {
+  useEffect(() => {
+    getFirms().then(setFirms);
+  }, []);
+
+  const filteredFirms = firms.filter(firm => {
     if (activeTab === 'high-split') return firm.profitSplit.includes('90%') || firm.profitSplit.includes('95%');
     if (activeTab === 'instant') return firm.evaluationSteps.includes('Instant Funding');
     return true;
@@ -56,7 +63,7 @@ export default function HomePage() {
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 pt-6 text-xs text-zinc-400 border-t border-zinc-800/60 max-w-3xl mx-auto">
           <div className="flex items-center gap-1.5">
             <span className="text-white font-mono font-bold">
-              <AnimatedCounter value={MOCK_PROP_FIRMS.length} suffix="+" />
+              <AnimatedCounter value={firms.length || 9} suffix="+" />
             </span>
             <span className="text-zinc-400">Verified Firms</span>
           </div>
@@ -89,7 +96,7 @@ export default function HomePage() {
 
       </section>
 
-      {/* 2. FEATURED SECTION - Equal 3-Column Grid of 6 Cards */}
+      {/* 2. FEATURED SECTION - Equal 3-Column Grid */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
         {/* Tab Controls Bar */}
         <div className="flex justify-end">
@@ -121,7 +128,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* 6 Cards Grid (2 rows x 3 columns) */}
+        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {filteredFirms.slice(0, 6).map(firm => (
             <FirmCard key={firm.id} firm={firm} />
