@@ -27,7 +27,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
   return (
     <Link
       href={`/firms/${firm.slug}`}
-      className="relative rounded-2xl bg-[#141416] border border-zinc-800/60 p-6 flex flex-col justify-between space-y-6 hover:border-zinc-700/80 transition-all duration-200 shadow-sm h-full group font-sans overflow-hidden cursor-pointer block"
+      className="relative rounded-2xl bg-[#141416] border border-zinc-800/60 p-6 flex flex-col justify-between space-y-6 hover:border-zinc-700/80 transition-all duration-200 shadow-sm h-full group font-satoshi overflow-hidden cursor-pointer block"
     >
       
       {/* Subtle Top-Left Ambient Corner Glow */}
@@ -51,22 +51,22 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
                 />
               </div>
 
-              {/* Name & Rating (Space Grotesk title) */}
+              {/* Name & Rating (Satoshi font) */}
               <div className="min-w-0 space-y-1">
                 <div className="flex items-center gap-1.5 min-w-0">
-                  <span className="text-base font-extrabold text-white tracking-tight group-hover:text-zinc-200 transition-colors truncate block font-display">
+                  <span className="text-base font-bold text-white tracking-tight group-hover:text-zinc-200 transition-colors truncate block font-satoshi">
                     {firm.name}
                   </span>
                   <CheckCircle2 className="h-4 w-4 text-[#52b788] shrink-0" />
                 </div>
 
                 <div className="flex items-center gap-1.5 text-xs text-zinc-400 font-medium">
-                  <div className="flex items-center font-geist-mono text-zinc-400">
+                  <div className="flex items-center font-satoshi text-zinc-400">
                     <Star className="h-3.5 w-3.5 text-zinc-400 stroke-[1.5]" />
                     <span className="font-medium ml-1 text-zinc-400">{firm.rating.toFixed(1)}</span>
                   </div>
                   <span className="text-zinc-600">·</span>
-                  <span className="text-zinc-400 font-sans">{firm.reviewCount} reviews</span>
+                  <span className="text-zinc-400 font-satoshi">{firm.reviewCount} reviews</span>
                 </div>
               </div>
             </div>
@@ -92,16 +92,16 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
             )}
           </div>
 
-          {/* DOMINANT METRICS WITH GEIST MONO NUMBERS (Sharp $ sign & geometric numbers) */}
-          <div className="grid grid-cols-3 gap-2 py-2 text-left items-start">
+          {/* DOMINANT METRICS WITH SATOSHI NUMBERS */}
+          <div className="grid grid-cols-3 gap-2 py-2 text-left items-start font-satoshi">
             
             {/* Col 1: Price */}
             <div className="flex flex-col items-start text-left">
               <Wallet className="h-4 w-4 text-zinc-400 mb-0.5 stroke-[1.5]" />
-              <span className="text-white font-bold text-2xl sm:text-3xl block tracking-tight whitespace-nowrap font-geist-mono">
+              <span className="text-white font-bold text-2xl sm:text-3xl block tracking-tight whitespace-nowrap font-satoshi">
                 {minPrice}
               </span>
-              <span className="text-zinc-500 block text-[10px] uppercase font-semibold tracking-wider mt-1 text-left font-geist-mono">
+              <span className="text-zinc-500 block text-[10px] uppercase font-medium tracking-wider mt-1 text-left font-satoshi">
                 From
               </span>
             </div>
@@ -109,10 +109,10 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
             {/* Col 2: Profit Split (IN THE MIDDLE) */}
             <div className="flex flex-col items-start text-left">
               <PieChart className="h-4 w-4 text-[#52b788] mb-0.5 stroke-[1.5]" />
-              <span className="text-[#52b788] font-bold text-2xl sm:text-3xl block tracking-tight whitespace-nowrap font-geist-mono">
+              <span className="text-[#52b788] font-bold text-2xl sm:text-3xl block tracking-tight whitespace-nowrap font-satoshi">
                 {cleanProfitSplit}
               </span>
-              <span className="text-zinc-500 block text-[10px] uppercase font-semibold tracking-wider mt-1 text-left font-geist-mono">
+              <span className="text-zinc-500 block text-[10px] uppercase font-medium tracking-wider mt-1 text-left font-satoshi">
                 Profit Split
               </span>
             </div>
@@ -120,10 +120,10 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
             {/* Col 3: Max Funding */}
             <div className="flex flex-col items-start text-left">
               <TrendingUp className="h-4 w-4 text-zinc-400 mb-0.5 stroke-[1.5]" />
-              <span className="text-white font-bold text-2xl sm:text-3xl block tracking-tight whitespace-nowrap font-geist-mono">
+              <span className="text-white font-bold text-2xl sm:text-3xl block tracking-tight whitespace-nowrap font-satoshi">
                 {formattedMaxCapital}
               </span>
-              <span className="text-zinc-500 block text-[10px] uppercase font-semibold tracking-wider mt-1 text-left font-geist-mono">
+              <span className="text-zinc-500 block text-[10px] uppercase font-medium tracking-wider mt-1 text-left font-satoshi">
                 Max Funding
               </span>
             </div>
@@ -131,7 +131,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
           </div>
 
           {/* SECONDARY INFORMATION */}
-          <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-medium font-sans">
+          <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-medium font-satoshi">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#1c1c20] border border-zinc-800/80 text-zinc-300">
               <Shield className="h-3 w-3 text-zinc-400 shrink-0 stroke-[1.5]" />
               <span>{firm.maxDrawdown} Drawdown</span>
@@ -151,7 +151,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
         {/* BOTTOM PINNED PROMO SUBTLE TAG */}
         <div className="pt-2 min-h-[22px] flex items-end">
           {firm.verifiedCoupon && (
-            <div className="text-[11px] text-zinc-400 flex items-center gap-1.5 font-geist-mono">
+            <div className="text-[11px] text-zinc-400 flex items-center gap-1.5 font-satoshi">
               <span className="text-[#52b788] font-semibold">{firm.verifiedCoupon.discount}</span>
               <span className="text-zinc-600">·</span>
               <span className="text-zinc-400">Code: <strong className="text-zinc-200 font-semibold">{firm.verifiedCoupon.code}</strong></span>
@@ -162,7 +162,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
       </div>
 
       {/* 2. FOOTER & CTAS */}
-      <div className="relative z-10 pt-4 border-t border-zinc-800/40 flex items-center justify-between gap-3 font-sans">
+      <div className="relative z-10 pt-4 border-t border-zinc-800/40 flex items-center justify-between gap-3 font-satoshi">
         <span className="text-xs font-semibold text-zinc-400 group-hover:text-white transition-colors px-2 py-1">
           Details
         </span>
