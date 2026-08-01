@@ -1,18 +1,38 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { notFound, useParams } from 'next/navigation';
 import Link from 'next/link';
 import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
+import { getFirms } from '@/lib/services/firmService';
+import { PropFirm } from '@/types/firm';
 import { Star, ShieldCheck, CheckCircle2, XCircle, Percent, ArrowUpRight, Scale, ExternalLink, Calendar, MapPin, Building2, Copy, Check } from 'lucide-react';
 
 export default function FirmProfilePage() {
   const params = useParams();
   const slug = params?.slug as string;
-  const firm = MOCK_PROP_FIRMS.find(f => f.slug === slug);
 
+  const [firm, setFirm] = useState<PropFirm | null>(null);
+  const [loading, setLoading] = useState(true);
   const [copiedCoupon, setCopiedCoupon] = useState(false);
   const [activeTab, setActiveTab] = useState<'rules' | 'tiers' | 'reviews'>('rules');
+
+  useEffect(() => {
+    getFirms().then(allFirms => {
+      const found = allFirms.find(f => f.slug === slug) || MOCK_PROP_FIRMS.find(f => f.slug === slug) || null;
+      setFirm(found);
+      setLoading(false);
+    });
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-20 text-center space-y-4 font-satoshi">
+        <div className="h-8 w-48 bg-zinc-800/60 rounded-lg animate-pulse mx-auto" />
+        <p className="text-zinc-500 text-xs">Loading prop firm profile...</p>
+      </div>
+    );
+  }
 
   if (!firm) {
     return (
