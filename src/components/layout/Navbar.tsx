@@ -56,14 +56,14 @@ export function Navbar() {
           </nav>
         </div>
 
-        {/* AI Matchmaker Button */}
+        {/* Compare Firms Button */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            href="/#ai-finder"
+            href="/compare"
             className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-zinc-100 text-zinc-950 hover:bg-white transition-colors"
           >
-            <Sparkles className="h-3.5 w-3.5 text-zinc-950" />
-            <span>AI Matchmaker</span>
+            <Scale className="h-3.5 w-3.5 text-zinc-950" />
+            <span>Compare Firms</span>
           </Link>
         </div>
 
@@ -71,7 +71,8 @@ export function Navbar() {
         <div className="flex md:hidden items-center">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors"
+            aria-label="Toggle Navigation Menu"
+            className="p-2.5 rounded-xl text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center border border-zinc-800/60"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -81,34 +82,53 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-zinc-800 bg-[#121212] p-4 space-y-3 text-xs font-medium text-zinc-300">
+        <div className="md:hidden border-b border-zinc-800 bg-[#121212]/95 backdrop-blur-xl px-4 py-5 space-y-2.5 text-sm font-medium text-zinc-300 animate-in fade-in slide-in-from-top-2 duration-200">
           <Link
             href="/compare"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 border-b border-zinc-900 hover:text-white font-bold"
+            className={`flex items-center gap-3 px-3.5 py-3 rounded-xl border transition-colors min-h-[44px] ${
+              pathname === '/compare' || pathname === '/firms'
+                ? 'bg-zinc-800/90 border-zinc-700 text-white font-bold'
+                : 'border-zinc-900 hover:bg-zinc-900 text-zinc-300'
+            }`}
           >
-            Compare & Directory
+            <Scale className="h-4 w-4 text-[#52b788]" />
+            <span>Compare & Directory</span>
           </Link>
+
           <Link
             href="/coupons"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 border-b border-zinc-900 hover:text-white"
+            className={`flex items-center gap-3 px-3.5 py-3 rounded-xl border transition-colors min-h-[44px] ${
+              pathname === '/coupons'
+                ? 'bg-zinc-800/90 border-zinc-700 text-white font-bold'
+                : 'border-zinc-900 hover:bg-zinc-900 text-zinc-300'
+            }`}
           >
-            Verified Deals
+            <Percent className="h-4 w-4 text-emerald-400" />
+            <span>Verified Deals</span>
           </Link>
+
           <Link
             href="/transparency"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 border-b border-zinc-900 hover:text-white"
+            className={`flex items-center gap-3 px-3.5 py-3 rounded-xl border transition-colors min-h-[44px] ${
+              pathname === '/transparency'
+                ? 'bg-zinc-800/90 border-zinc-700 text-white font-bold'
+                : 'border-zinc-900 hover:bg-zinc-900 text-zinc-300'
+            }`}
           >
-            Transparency Engine
+            <Activity className="h-4 w-4 text-sky-400" />
+            <span>Transparency Engine</span>
           </Link>
+
           <Link
-            href="/#ai-finder"
+            href="/coupons"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-center rounded-lg bg-zinc-100 text-zinc-950 font-bold"
+            className="flex items-center justify-center gap-2 mt-2 px-4 py-3 rounded-xl bg-zinc-100 text-zinc-950 font-bold min-h-[44px] hover:bg-white transition-colors"
           >
-            AI Matchmaker
+            <Percent className="h-4 w-4 text-zinc-950" />
+            <span>Get Verified Deals</span>
           </Link>
         </div>
       )}

@@ -22,6 +22,7 @@ function CompareContent() {
   const [weekendAllowedOnly, setWeekendAllowedOnly] = useState(false);
   const [sortBy, setSortBy] = useState<'rating' | 'split' | 'trust'>('rating');
   const [viewMode, setViewMode] = useState<'grid' | 'table'>('grid');
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   // Comparison Matrix state
   const [selectedFirms, setSelectedFirms] = useState<PropFirm[]>([]);
@@ -317,11 +318,26 @@ function CompareContent() {
         {/* Main Flex Layout: Left Sidebar Filters + Right 3-Column Cards Grid */}
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           
-          {/* Left Filter Sidebar */}
-          <aside className="w-full lg:w-72 xl:w-80 shrink-0 space-y-6 propr-card p-6 lg:sticky lg:top-24">
-            <div className="space-y-6">
+          {/* Left Filter Sidebar (Collapsible on mobile) */}
+          <aside className="w-full lg:w-72 xl:w-80 shrink-0 propr-card p-5 lg:p-6 lg:sticky lg:top-24">
+            
+            {/* Mobile Filter Header Toggle */}
+            <div className="flex items-center justify-between lg:hidden cursor-pointer" onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}>
+              <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-300 flex items-center gap-2">
+                <Filter className="h-4 w-4 text-[#52b788]" />
+                <span>Filters & Options</span>
+              </h3>
+              <button
+                type="button"
+                className="text-xs font-bold text-[#52b788] px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800"
+              >
+                {mobileFiltersOpen ? 'Hide Filters' : 'Show Filters'}
+              </button>
+            </div>
+
+            <div className={`space-y-6 mt-4 lg:mt-0 ${mobileFiltersOpen ? 'block' : 'hidden lg:block'}`}>
               
-              <div className="flex items-center justify-between">
+              <div className="hidden lg:flex items-center justify-between">
                 <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-300 flex items-center gap-2">
                   <Filter className="h-4 w-4 text-[#52b788]" />
                   <span>Filters</span>
@@ -420,6 +436,13 @@ function CompareContent() {
                   <span className="font-medium">Weekend Holding Allowed</span>
                 </label>
               </div>
+
+              <button
+                onClick={resetFilters}
+                className="w-full py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white text-xs font-bold lg:hidden"
+              >
+                Reset All Filters
+              </button>
 
             </div>
           </aside>

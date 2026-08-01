@@ -31,20 +31,20 @@ export default function HomePage() {
       <section className="relative text-center max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
         
         {/* Scaled Grotesk Display Title */}
-        <h1 className="display-heading text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-tight leading-[1.08] text-white">
-          The CoinMarketCap for <br />
+        <h1 className="display-heading text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-tight leading-[1.08] text-white">
+          The CoinMarketCap for <br className="hidden xs:inline" />
           Crypto Prop Trading Firms
         </h1>
 
-        <p className="text-base sm:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-normal">
+        <p className="text-sm sm:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-normal">
           Institutional 1:100 crypto leverage, verified 95% profit splits, real-time drawdown tracking, and live on-chain transparency in one place.
         </p>
 
         {/* Hero CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-3 max-w-md sm:max-w-none mx-auto">
           <Link
-            href="/firms"
-            className="flex items-center gap-2 px-7 py-3.5 rounded-xl bg-zinc-100 text-zinc-950 text-xs sm:text-sm font-bold hover:bg-white transition-colors shadow-sm"
+            href="/compare"
+            className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-zinc-100 text-zinc-950 text-xs sm:text-sm font-bold hover:bg-white transition-colors shadow-sm min-h-[44px]"
           >
             <Search className="h-4 w-4" />
             <span>Explore Directory</span>
@@ -52,7 +52,7 @@ export default function HomePage() {
 
           <Link
             href="/transparency"
-            className="flex items-center gap-2 px-7 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-200 text-xs sm:text-sm font-bold hover:bg-zinc-800 transition-colors"
+            className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-200 text-xs sm:text-sm font-bold hover:bg-zinc-800 transition-colors min-h-[44px]"
           >
             <Activity className="h-4 w-4 text-emerald-400" />
             <span>Transparency Dashboard</span>
@@ -60,7 +60,7 @@ export default function HomePage() {
         </div>
 
         {/* Minimalist Text-Only Stats Line */}
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 pt-8 text-xs sm:text-sm text-zinc-400 border-t border-zinc-800/60 max-w-4xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 pt-6 sm:pt-8 text-xs sm:text-sm text-zinc-400 border-t border-zinc-800/60 max-w-4xl mx-auto">
           <div className="flex items-center gap-1.5">
             <span className="text-white font-mono font-bold">
               <AnimatedCounter value={firms.length || 9} suffix="+" />
@@ -96,14 +96,14 @@ export default function HomePage() {
 
       </section>
 
-      {/* 2. FEATURED SECTION - Scaled 110% Container (max-w-7xl) */}
+      {/* 2. FEATURED SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
-        {/* Tab Controls Bar */}
-        <div className="flex justify-end">
-          <div className="flex items-center gap-1.5 p-1 rounded-lg bg-zinc-900 border border-zinc-800 text-xs">
+        {/* Tab Controls Bar (Horizontally scrollable on mobile) */}
+        <div className="flex justify-start sm:justify-end overflow-x-auto no-scrollbar pb-1">
+          <div className="flex items-center gap-1.5 p-1 rounded-xl bg-zinc-900 border border-zinc-800 text-xs shrink-0">
             <button
               onClick={() => setActiveTab('featured')}
-              className={`px-4 py-1.5 rounded-md font-bold transition-all duration-200 ${
+              className={`px-4 py-2 sm:py-1.5 rounded-lg font-bold transition-all duration-200 min-h-[38px] ${
                 activeTab === 'featured' ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-300'
               }`}
             >
@@ -111,7 +111,7 @@ export default function HomePage() {
             </button>
             <button
               onClick={() => setActiveTab('high-split')}
-              className={`px-4 py-1.5 rounded-md font-bold transition-all duration-200 ${
+              className={`px-4 py-2 sm:py-1.5 rounded-lg font-bold transition-all duration-200 min-h-[38px] ${
                 activeTab === 'high-split' ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-300'
               }`}
             >
@@ -119,7 +119,7 @@ export default function HomePage() {
             </button>
             <button
               onClick={() => setActiveTab('instant')}
-              className={`px-4 py-1.5 rounded-md font-bold transition-all duration-200 ${
+              className={`px-4 py-2 sm:py-1.5 rounded-lg font-bold transition-all duration-200 min-h-[38px] ${
                 activeTab === 'instant' ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-300'
               }`}
             >
@@ -130,18 +130,13 @@ export default function HomePage() {
 
         {/* Scaled Cards Grid (max-w-7xl) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-          {filteredFirms.slice(0, 6).map(firm => (
+          {filteredFirms.map(firm => (
             <FirmCard key={firm.id} firm={firm} />
           ))}
         </div>
       </section>
 
-      {/* 3. AI MATCHMAKER CONSOLE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <AiMatchmaker />
-      </section>
-
-      {/* 4. VERIFIED DEALS BANNER */}
+      {/* 3. VERIFIED DEALS BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="propr-card p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1.5 text-center md:text-left">

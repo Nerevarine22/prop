@@ -72,6 +72,8 @@ export interface PropFirm {
   
   // Verification & Company info
   verifiedCoupon?: Coupon;
+  website?: string;
+  brandColor?: string;
   yearEstablished: number;
   headquarters: string;
   trustScore: number; // 0 to 100

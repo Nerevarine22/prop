@@ -32,13 +32,13 @@ export default function TransparencyPage() {
       </div>
 
       {/* Main Dashboard Layout */}
-      <div className="flex flex-col md:flex-row gap-8 items-start">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
         
         {/* Left Sticky Navigation Sidebar */}
         <aside className="w-full md:w-56 shrink-0 md:sticky md:top-24">
           <div className="propr-card p-3">
-            <div className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 px-3 py-2">Categories</div>
-            <nav className="flex md:flex-col gap-1 overflow-x-auto md:overflow-visible pb-1 md:pb-0">
+            <div className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 px-3 py-1.5 hidden md:block">Categories</div>
+            <nav className="flex md:flex-col gap-1.5 overflow-x-auto no-scrollbar touch-scroll pb-1 md:pb-0">
               {[
                 { name: 'Overview', icon: ShieldCheck },
                 { name: 'Activity', icon: Activity },
@@ -52,14 +52,14 @@ export default function TransparencyPage() {
                   <button
                     key={cat.name}
                     onClick={() => setActiveCategory(cat.name)}
-                    className={`w-full flex items-center gap-2.5 px-3 py-2 text-xs font-semibold rounded-lg transition-all duration-200 text-left ${
+                    className={`flex items-center gap-2.5 px-3.5 py-2.5 text-xs font-semibold rounded-lg transition-all duration-200 text-left shrink-0 md:shrink md:w-full min-h-[38px] ${
                       activeCategory === cat.name
-                        ? 'bg-zinc-800 text-white shadow-sm'
+                        ? 'bg-zinc-800 text-white shadow-sm font-bold'
                         : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
                     }`}
                   >
-                    <Icon className="h-3.5 w-3.5 text-zinc-400" />
-                    <span>{cat.name}</span>
+                    <Icon className="h-3.5 w-3.5 text-zinc-400 shrink-0" />
+                    <span className="whitespace-nowrap">{cat.name}</span>
                   </button>
                 );
               })}
@@ -71,18 +71,18 @@ export default function TransparencyPage() {
         <main className="flex-1 space-y-8 min-w-0 w-full">
           
           {/* Time Range Bar & Control Header */}
-          <div className="flex items-center justify-between border-b border-zinc-800 pb-4">
+          <div className="flex flex-col xs:flex-row xs:items-center justify-between border-b border-zinc-800 pb-4 gap-3">
             <h2 className="text-lg font-bold text-white flex items-center gap-2">
               <span>{activeCategory} Dashboard</span>
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             </h2>
 
-            <div className="flex items-center gap-1 bg-zinc-900 p-1 rounded-lg border border-zinc-800 text-xs">
+            <div className="flex items-center gap-1 bg-zinc-900 p-1 rounded-lg border border-zinc-800 text-xs self-start xs:self-auto">
               {['7d', '30d', '90d', 'All'].map(range => (
                 <button
                   key={range}
                   onClick={() => setTimeRange(range)}
-                  className={`px-3 py-1 rounded-md font-bold transition-all duration-200 ${
+                  className={`px-3 py-1 rounded-md font-bold transition-all duration-200 min-h-[32px] ${
                     timeRange === range ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-300'
                   }`}
                 >
@@ -92,67 +92,67 @@ export default function TransparencyPage() {
             </div>
           </div>
 
-          {/* 10 KPI Metric Cards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="propr-card p-5 space-y-1">
+          {/* 10 KPI Metric Cards Grid (1 col small mobile, 2 cols mobile, 4 cols desktop) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            <div className="propr-card p-4 sm:p-5 space-y-1">
               <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">Total Revenue</p>
-              <p className="text-2xl font-bold font-mono text-white">
+              <p className="text-xl sm:text-2xl font-bold font-mono text-white">
                 <AnimatedCounter value={4850240} prefix="$" />
               </p>
               <p className="text-[10px] text-zinc-500">lifetime across network</p>
             </div>
 
-            <div className="propr-card p-5 space-y-1">
+            <div className="propr-card p-4 sm:p-5 space-y-1">
               <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">Annualized Run Rate</p>
-              <p className="text-2xl font-bold font-mono text-emerald-400">
+              <p className="text-xl sm:text-2xl font-bold font-mono text-emerald-400">
                 <AnimatedCounter value={12400000} prefix="$" />
               </p>
               <p className="text-[10px] text-zinc-500">based on trailing 30d</p>
             </div>
 
-            <div className="propr-card p-5 space-y-1">
+            <div className="propr-card p-4 sm:p-5 space-y-1">
               <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">Total Payouts</p>
-              <p className="text-2xl font-bold font-mono text-sky-400">
+              <p className="text-xl sm:text-2xl font-bold font-mono text-sky-400">
                 <AnimatedCounter value={3120500} prefix="$" />
               </p>
               <p className="text-[10px] text-zinc-500">verified on-chain</p>
             </div>
 
-            <div className="propr-card p-5 space-y-1">
+            <div className="propr-card p-4 sm:p-5 space-y-1">
               <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">Largest Single Payout</p>
-              <p className="text-2xl font-bold font-mono text-amber-400">
+              <p className="text-xl sm:text-2xl font-bold font-mono text-amber-400">
                 <AnimatedCounter value={84500} prefix="$" />
               </p>
               <p className="text-[10px] text-zinc-500">all-time high payout</p>
             </div>
 
-            <div className="propr-card p-5 space-y-1">
+            <div className="propr-card p-4 sm:p-5 space-y-1">
               <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">Avg Time to Pay</p>
-              <p className="text-2xl font-bold font-mono text-emerald-400">
+              <p className="text-xl sm:text-2xl font-bold font-mono text-emerald-400">
                 <AnimatedCounter value={42} suffix=" mins" />
               </p>
               <p className="text-[10px] text-zinc-500">USDT / USDC speed</p>
             </div>
 
-            <div className="propr-card p-5 space-y-1">
+            <div className="propr-card p-4 sm:p-5 space-y-1">
               <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">Active Traders</p>
-              <p className="text-2xl font-bold font-mono text-indigo-400">
+              <p className="text-xl sm:text-2xl font-bold font-mono text-indigo-400">
                 <AnimatedCounter value={18420} />
               </p>
               <p className="text-[10px] text-zinc-500">trailing 30 days</p>
             </div>
 
-            <div className="propr-card p-5 space-y-1">
+            <div className="propr-card p-4 sm:p-5 space-y-1">
               <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">Funded Traders</p>
-              <p className="text-2xl font-bold font-mono text-white">
+              <p className="text-xl sm:text-2xl font-bold font-mono text-white">
                 <AnimatedCounter value={1840} />
               </p>
               <p className="text-[10px] text-zinc-500">passed paid evaluation</p>
             </div>
 
-            <div className="propr-card p-5 space-y-1">
+            <div className="propr-card p-4 sm:p-5 space-y-1">
               <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">Funded AUM</p>
-              <p className="text-2xl font-bold font-mono text-emerald-400">
+              <p className="text-xl sm:text-2xl font-bold font-mono text-emerald-400">
                 <AnimatedCounter value={42500000} prefix="$" />
               </p>
               <p className="text-[10px] text-zinc-500">capital under mgmt</p>
