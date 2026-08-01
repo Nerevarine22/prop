@@ -30,14 +30,8 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
     `https://${firm.slug}.com`
   );
 
-  // Format profit split to clean percentage e.g. "90%" or "95%"
-  const cleanProfitSplit = firm.profitSplit.includes('95%') 
-    ? '95%' 
-    : firm.profitSplit.includes('90%') 
-    ? '90%' 
-    : firm.profitSplit.includes('85%') 
-    ? '85%' 
-    : firm.profitSplit;
+  // Format profit split to clean percentage e.g. "80%", "90%", "95%"
+  const cleanProfitSplit = firm.profitSplit.replace(/^Up to\s*/i, '');
 
   const brandColor = firm.brandColor || (
     firm.slug === 'propr' ? '#52b788' :
@@ -54,10 +48,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
   );
 
   return (
-    <Link
-      href={`/firms/${firm.slug}`}
-      className="relative rounded-2xl bg-[#141416] border border-zinc-800/60 p-5 sm:p-7 flex flex-col justify-between space-y-6 hover:border-zinc-700/80 transition-all duration-200 shadow-sm h-full group font-satoshi overflow-hidden cursor-pointer block"
-    >
+    <div className="relative rounded-2xl bg-[#141416] border border-zinc-800/60 p-5 sm:p-7 flex flex-col justify-between space-y-5 hover:border-zinc-700/80 transition-all duration-200 shadow-sm h-full group font-satoshi overflow-hidden">
       
       {/* Subtle Top-Left Ambient Brand Color Glow (Ultra-soft 5% -> 10%) */}
       <div
@@ -66,74 +57,91 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
       />
 
       {/* 1. HEADER & BODY CONTENT CONTAINER */}
-      <div className="relative z-10 flex-1 flex flex-col justify-between space-y-6">
+      <div className="relative z-10 flex-1 flex flex-col justify-between space-y-5">
         
         {/* TOP SECTION: Header, Metrics & Secondary Tags */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           
           {/* Company Header */}
-          <div className="flex items-start justify-between gap-3 sm:gap-4">
-            <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-              {/* Logo 56px-68px */}
-              <div className="relative shrink-0">
+          <div className="space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              
+              {/* Logo + Name & Rating */}
+              <Link href={`/firms/${firm.slug}`} className="flex items-center gap-3 min-w-0 group/title flex-1">
                 <img
                   src={firm.logo}
                   alt={firm.name}
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = `https://unavatar.io/twitter/${firm.slug}`;
                   }}
-                  className="h-14 w-14 sm:h-[68px] sm:w-[68px] rounded-2xl object-cover border border-zinc-800/80 shadow-sm bg-zinc-900"
+                  className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl object-cover border border-zinc-800/80 shadow-sm bg-zinc-900 shrink-0"
                 />
-              </div>
 
-              {/* Name & Rating */}
-              <div className="min-w-0 space-y-1">
-                <div className="flex items-center gap-1.5 min-w-0">
-                  <span className="text-base sm:text-lg font-bold text-white tracking-tight group-hover:text-zinc-200 transition-colors truncate block font-satoshi">
-                    {firm.name}
-                  </span>
-                  <CheckCircle2 className="h-4 w-4 text-[#52b788] shrink-0" />
-                </div>
-
-                <div className="flex flex-wrap items-center gap-1.5 text-xs text-zinc-400 font-medium">
-                  <div className="flex items-center font-satoshi text-zinc-400">
-                    <Star className="h-3.5 w-3.5 text-zinc-400 stroke-[1.5]" />
-                    <span className="font-medium ml-1 text-zinc-400">{firm.rating.toFixed(1)}</span>
+                <div className="min-w-0 space-y-0.5">
+                  <div className="flex items-center gap-1.5 min-w-0">
+                    <span className="text-base sm:text-lg font-bold text-white tracking-tight group-hover/title:text-emerald-400 transition-colors truncate block font-satoshi">
+                      {firm.name}
+                    </span>
+                    <CheckCircle2 className="h-4 w-4 text-[#52b788] shrink-0" />
                   </div>
-                  <span className="text-zinc-600">·</span>
-                  <span className="text-zinc-400 font-satoshi">{firm.reviewCount} reviews</span>
+
+                  <div className="flex items-center gap-1.5 text-xs text-zinc-400 font-medium whitespace-nowrap">
+                    <div className="flex items-center font-satoshi text-zinc-400">
+                      <Star className="h-3.5 w-3.5 text-zinc-400 stroke-[1.5]" />
+                      <span className="font-medium ml-1 text-zinc-400">{firm.rating.toFixed(1)}</span>
+                    </div>
+                    <span className="text-zinc-600">·</span>
+                    <span className="text-zinc-400 font-satoshi">{firm.reviewCount} reviews</span>
+                  </div>
                 </div>
-              </div>
+              </Link>
+
+              {/* Compare Toggle */}
+              {onCompareToggle && (
+                <button
+                  type="button"
+                  onClick={() => onCompareToggle(firm)}
+                  className={`p-2 rounded-xl border text-xs transition-colors shrink-0 min-h-[36px] min-w-[36px] flex items-center justify-center ${
+                    isCompared
+                      ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400 font-bold'
+                      : 'bg-zinc-900/80 border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700'
+                  }`}
+                  title={isCompared ? 'Comparing' : 'Add to comparison'}
+                >
+                  <Scale className="h-4 w-4" />
+                </button>
+              )}
             </div>
 
-            {/* Compare Toggle Button */}
-            {onCompareToggle && (
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  onCompareToggle(firm);
-                }}
-                className={`p-2 sm:p-2.5 rounded-xl border text-xs transition-colors shrink-0 z-20 min-h-[38px] min-w-[38px] flex items-center justify-center ${
-                  isCompared
-                    ? 'bg-zinc-800 border-zinc-700 text-white'
-                    : 'bg-zinc-900/60 border-zinc-800/80 text-zinc-500 hover:text-zinc-300 hover:border-zinc-700'
-                }`}
-                title="Add to comparison"
-              >
-                <Scale className="h-4 w-4" />
-              </button>
+            {/* Reward Tags Row */}
+            {firm.rewardTags && firm.rewardTags.length > 0 && (
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {firm.rewardTags.map(tag => {
+                  let tagStyle = 'bg-zinc-800/80 text-zinc-400 border-zinc-700/80';
+                  if (tag === 'Points') tagStyle = 'bg-amber-500/10 text-amber-300 border-amber-500/20';
+                  if (tag === 'Token') tagStyle = 'bg-[#52b788]/10 text-[#52b788] border-[#52b788]/20';
+                  if (tag === 'Airdrop') tagStyle = 'bg-sky-500/10 text-sky-300 border-sky-500/20';
+                  
+                  return (
+                    <span
+                      key={tag}
+                      className={`text-[10px] sm:text-[11px] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg border font-satoshi shrink-0 ${tagStyle}`}
+                    >
+                      {tag}
+                    </span>
+                  );
+                })}
+              </div>
             )}
           </div>
 
           {/* DOMINANT METRICS */}
-          <div className="grid grid-cols-3 gap-1.5 sm:gap-2 py-2 text-left items-start font-satoshi">
+          <Link href={`/firms/${firm.slug}`} className="grid grid-cols-3 gap-1.5 sm:gap-2 py-2 text-left items-start font-satoshi block">
             
             {/* Col 1: Price */}
             <div className="flex flex-col items-start text-left min-w-0">
               <Wallet className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-zinc-400 mb-1 stroke-[1.5]" />
-              <span className="text-white font-bold text-xl xs:text-2xl sm:text-3xl lg:text-[32px] block tracking-tight truncate w-full font-satoshi">
+              <span className="text-white font-bold text-lg sm:text-2xl lg:text-3xl block tracking-tight whitespace-nowrap font-satoshi">
                 {minPrice}
               </span>
               <span className="text-zinc-500 block text-[10px] sm:text-xs uppercase font-medium tracking-wider mt-0.5 sm:mt-1 text-left font-satoshi">
@@ -144,7 +152,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
             {/* Col 2: Profit Split */}
             <div className="flex flex-col items-start text-left min-w-0">
               <PieChart className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#52b788] mb-1 stroke-[1.5]" />
-              <span className="text-[#52b788] font-bold text-xl xs:text-2xl sm:text-3xl lg:text-[32px] block tracking-tight truncate w-full font-satoshi">
+              <span className="text-[#52b788] font-bold text-lg sm:text-2xl lg:text-3xl block tracking-tight whitespace-nowrap font-satoshi">
                 {cleanProfitSplit}
               </span>
               <span className="text-zinc-500 block text-[10px] sm:text-xs uppercase font-medium tracking-wider mt-0.5 sm:mt-1 text-left font-satoshi">
@@ -155,7 +163,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
             {/* Col 3: Max Funding */}
             <div className="flex flex-col items-start text-left min-w-0">
               <TrendingUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-zinc-400 mb-1 stroke-[1.5]" />
-              <span className="text-white font-bold text-xl xs:text-2xl sm:text-3xl lg:text-[32px] block tracking-tight truncate w-full font-satoshi">
+              <span className="text-white font-bold text-lg sm:text-2xl lg:text-3xl block tracking-tight whitespace-nowrap font-satoshi">
                 {formattedMaxCapital}
               </span>
               <span className="text-zinc-500 block text-[10px] sm:text-xs uppercase font-medium tracking-wider mt-0.5 sm:mt-1 text-left font-satoshi">
@@ -163,7 +171,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
               </span>
             </div>
 
-          </div>
+          </Link>
 
           {/* SECONDARY INFORMATION */}
           <div className="flex flex-wrap items-center gap-1.5 text-xs font-medium font-satoshi">
@@ -184,7 +192,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
         </div>
 
         {/* BOTTOM PINNED PROMO SUBTLE TAG */}
-        <div className="pt-2 min-h-[24px] flex items-end">
+        <div className="pt-1 min-h-[24px] flex items-end">
           {firm.verifiedCoupon && (
             <div className="text-xs text-zinc-400 flex items-center gap-1.5 font-satoshi">
               <span className="text-[#52b788] font-semibold">{firm.verifiedCoupon.discount}</span>
@@ -197,13 +205,12 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
       </div>
 
       {/* 2. FOOTER & CTAS */}
-      <div className="relative z-10 pt-4 border-t border-zinc-800/40 flex items-center justify-between gap-3 font-satoshi">
+      <div className="relative z-10 pt-3 border-t border-zinc-800/40 flex items-center justify-between gap-3 font-satoshi">
         {/* Left: Small Link pointing to external site */}
         <a
           href={externalUrl}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
           className="text-xs font-semibold text-zinc-400 hover:text-white transition-colors flex items-center gap-1 px-2 py-1 shrink-0"
           title={`Visit ${firm.name} official website`}
         >
@@ -212,12 +219,15 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
         </a>
 
         {/* Right: Primary White Button pointing to internal page */}
-        <span className="flex-1 flex items-center justify-center gap-1.5 py-3 px-5 rounded-xl bg-zinc-200/80 group-hover:bg-white text-zinc-950 font-bold text-xs transition-colors shadow-sm">
+        <Link
+          href={`/firms/${firm.slug}`}
+          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl bg-zinc-200/80 hover:bg-white text-zinc-950 font-bold text-xs transition-colors shadow-sm"
+        >
           <span>Details</span>
           <ArrowRight className="h-3.5 w-3.5" />
-        </span>
+        </Link>
       </div>
 
-    </Link>
+    </div>
   );
 }

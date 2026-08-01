@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
 import { getFirms } from '@/lib/services/firmService';
 import { PropFirm } from '@/types/firm';
-import { Star, CheckCircle2, XCircle, Scale, ExternalLink, Calendar, MapPin, Copy, Check, Shield, GitCommit, Monitor, Wallet, PieChart, TrendingUp } from 'lucide-react';
+import { Star, CheckCircle2, XCircle, Scale, ExternalLink, Calendar, MapPin, Copy, Check, Shield, GitCommit, Monitor, Wallet, PieChart, TrendingUp, Sparkles, Coins, Gift } from 'lucide-react';
 
 export default function FirmProfilePage() {
   const params = useParams();
@@ -15,7 +15,7 @@ export default function FirmProfilePage() {
   const [firm, setFirm] = useState<PropFirm | null>(null);
   const [loading, setLoading] = useState(true);
   const [copiedCoupon, setCopiedCoupon] = useState(false);
-  const [activeTab, setActiveTab] = useState<'overview' | 'rules' | 'tiers' | 'reviews'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'rewards' | 'rules' | 'tiers' | 'reviews'>('overview');
 
   useEffect(() => {
     getFirms().then(allFirms => {
@@ -120,6 +120,23 @@ export default function FirmProfilePage() {
               <div className="flex items-center gap-2 flex-wrap min-w-0">
                 <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-white tracking-tight truncate">{firm.name}</h1>
                 <CheckCircle2 className="h-5 w-5 text-[#52b788] shrink-0" />
+                
+                {/* Reward Badges */}
+                {firm.rewardTags && firm.rewardTags.length > 0 && firm.rewardTags.map(tag => {
+                  let tagStyle = 'bg-zinc-800/80 text-zinc-400 border-zinc-700/80';
+                  if (tag === 'Points') tagStyle = 'bg-amber-500/10 text-amber-300 border-amber-500/20';
+                  if (tag === 'Token') tagStyle = 'bg-[#52b788]/10 text-[#52b788] border-[#52b788]/20';
+                  if (tag === 'Airdrop') tagStyle = 'bg-sky-500/10 text-sky-300 border-sky-500/20';
+                  return (
+                    <span
+                      key={tag}
+                      className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border shrink-0 ${tagStyle}`}
+                    >
+                      {tag}
+                    </span>
+                  );
+                })}
+
                 {firm.badge && (
                   <span
                     className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border shrink-0"
@@ -243,6 +260,18 @@ export default function FirmProfilePage() {
 
           <button
             type="button"
+            onClick={() => setActiveTab('rewards')}
+            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all shrink-0 min-h-[40px] ${
+              activeTab === 'rewards'
+                ? 'bg-white text-zinc-950 shadow-sm'
+                : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+            }`}
+          >
+            Tokenomics & Rewards
+          </button>
+
+          <button
+            type="button"
             onClick={() => setActiveTab('rules')}
             className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all shrink-0 min-h-[40px] ${
               activeTab === 'rules'
@@ -288,6 +317,41 @@ export default function FirmProfilePage() {
               </p>
             </div>
 
+            {/* Tokenomics & Airdrop Ecosystem Card */}
+            {firm.tokenomicsInfo && (
+              <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-6 space-y-4 shadow-sm">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="h-5 w-5 text-amber-400" />
+                    <h3 className="text-sm font-bold text-white uppercase tracking-wider">Tokenomics & Rewards Ecosystem</h3>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    {firm.tokenomicsInfo.hasToken && (
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-[#52b788]/10 text-[#52b788] border border-[#52b788]/20">
+                        {firm.tokenomicsInfo.tokenTicker || 'Token Active'}
+                      </span>
+                    )}
+                    {firm.tokenomicsInfo.hasAirdrop && (
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-sky-500/10 text-sky-300 border border-sky-500/20">
+                        {firm.tokenomicsInfo.airdropStatus || 'Airdrop Confirmed'}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                  {firm.tokenomicsInfo.rewardDescription}
+                </p>
+
+                {firm.tokenomicsInfo.pointsProgramName && (
+                  <div className="p-3 rounded-xl bg-[#121214] border border-zinc-800/60 flex items-center justify-between text-xs">
+                    <span className="text-zinc-400 font-medium">Points Program:</span>
+                    <span className="text-amber-300 font-bold">{firm.tokenomicsInfo.pointsProgramName}</span>
+                  </div>
+                )}
+              </div>
+            )}
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-5 space-y-2">
                 <Shield className="h-5 w-5 text-[#52b788]" />
@@ -316,7 +380,68 @@ export default function FirmProfilePage() {
           </div>
         )}
 
-        {/* TAB 2: RULES */}
+        {/* TAB 2: REWARDS & TOKENOMICS */}
+        {activeTab === 'rewards' && (
+          <div className="space-y-6">
+            <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-6 space-y-5 shadow-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-800/60 pb-4">
+                <div className="space-y-1">
+                  <h2 className="text-base font-bold text-white flex items-center gap-2">
+                    <Coins className="h-5 w-5 text-amber-400" />
+                    <span>Tokenomics, Points & Airdrop Rewards</span>
+                  </h2>
+                  <p className="text-xs text-zinc-400">Detailed breakdown of reward incentives for active traders on {firm.name}.</p>
+                </div>
+
+                <div className="flex items-center gap-2 flex-wrap">
+                  {firm.rewardTags?.map(tag => (
+                    <span key={tag} className="text-xs font-bold px-3 py-1 rounded-xl bg-zinc-800 text-zinc-200 border border-zinc-700">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {firm.tokenomicsInfo ? (
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div className="p-4 rounded-xl bg-[#121214] border border-zinc-800/60 space-y-1">
+                      <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider block">Native Token</span>
+                      <span className="text-white font-bold text-sm">
+                        {firm.tokenomicsInfo.hasToken ? (firm.tokenomicsInfo.tokenTicker || 'Active Token') : 'No Token Launched'}
+                      </span>
+                    </div>
+
+                    <div className="p-4 rounded-xl bg-[#121214] border border-zinc-800/60 space-y-1">
+                      <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider block">Points Program</span>
+                      <span className="text-amber-300 font-bold text-sm">
+                        {firm.tokenomicsInfo.hasPoints ? (firm.tokenomicsInfo.pointsProgramName || 'Points System') : 'No Points'}
+                      </span>
+                    </div>
+
+                    <div className="p-4 rounded-xl bg-[#121214] border border-zinc-800/60 space-y-1">
+                      <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider block">Airdrop Status</span>
+                      <span className="text-sky-300 font-bold text-sm">
+                        {firm.tokenomicsInfo.hasAirdrop ? (firm.tokenomicsInfo.airdropStatus || 'Active Airdrop') : 'Potential / None'}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-5 rounded-xl bg-[#121214] border border-zinc-800/60 space-y-2">
+                    <h3 className="text-xs font-bold text-white uppercase tracking-wider">How to earn rewards:</h3>
+                    <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                      {firm.tokenomicsInfo.rewardDescription}
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-xs text-zinc-400 italic">No specific tokenomics details announced yet for {firm.name}.</p>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: RULES */}
         {activeTab === 'rules' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
@@ -381,7 +506,7 @@ export default function FirmProfilePage() {
           </div>
         )}
 
-        {/* TAB 3: PRICING TIERS */}
+        {/* TAB 4: PRICING TIERS */}
         {activeTab === 'tiers' && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {firm.accountTiers.map((tier, idx) => (
@@ -428,7 +553,7 @@ export default function FirmProfilePage() {
           </div>
         )}
 
-        {/* TAB 4: REVIEWS */}
+        {/* TAB 5: REVIEWS */}
         {activeTab === 'reviews' && (
           <div className="space-y-4">
             {firm.reviews && firm.reviews.length > 0 ? (

@@ -35,6 +35,18 @@ export interface PlanTier {
   dailyDrawdown: string; // e.g. "5%"
 }
 
+export type RewardTag = 'Points' | 'Token' | 'Airdrop' | 'Potential';
+
+export interface TokenomicsInfo {
+  hasToken: boolean;
+  tokenTicker?: string;
+  hasPoints: boolean;
+  pointsProgramName?: string;
+  hasAirdrop: boolean;
+  airdropStatus?: 'Confirmed' | 'Unconfirmed' | 'Active' | 'Potential';
+  rewardDescription?: string;
+}
+
 export interface PropFirm {
   id: string;
   slug: string;
@@ -78,5 +90,9 @@ export interface PropFirm {
   headquarters: string;
   trustScore: number; // 0 to 100
   
+  // Tokenomics, Points & Airdrop Ecosystem
+  rewardTags?: RewardTag[];
+  tokenomicsInfo?: TokenomicsInfo;
+
   reviews?: Review[];
 }

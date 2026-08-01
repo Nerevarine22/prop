@@ -20,6 +20,12 @@ export default function HomePage() {
   const [newsAllowedOnly, setNewsAllowedOnly] = useState(false);
   const [weekendAllowedOnly, setWeekendAllowedOnly] = useState(false);
   const [eaAllowedOnly, setEaAllowedOnly] = useState(false);
+  
+  // Reward & Ecosystem Filters
+  const [hasPointsOnly, setHasPointsOnly] = useState(false);
+  const [hasTokenOnly, setHasTokenOnly] = useState(false);
+  const [confirmedAirdropOnly, setConfirmedAirdropOnly] = useState(false);
+
   const [sortBy, setSortBy] = useState<'trust' | 'split' | 'price' | 'capital'>('trust');
 
   useEffect(() => {
@@ -35,7 +41,8 @@ export default function HomePage() {
         const matchesName = firm.name.toLowerCase().includes(query);
         const matchesTagline = firm.tagline.toLowerCase().includes(query);
         const matchesPlatform = firm.platforms.some(p => p.toLowerCase().includes(query));
-        if (!matchesName && !matchesTagline && !matchesPlatform) return false;
+        const matchesTags = firm.rewardTags?.some(t => t.toLowerCase().includes(query));
+        if (!matchesName && !matchesTagline && !matchesPlatform && !matchesTags) return false;
       }
 
       // 2. Evaluation Step
@@ -59,6 +66,11 @@ export default function HomePage() {
       if (weekendAllowedOnly && !firm.weekendHoldingAllowed) return false;
       if (eaAllowedOnly && !firm.eaAllowed) return false;
 
+      // 6. Reward & Ecosystem Toggles
+      if (hasPointsOnly && !firm.rewardTags?.includes('Points')) return false;
+      if (hasTokenOnly && !firm.rewardTags?.includes('Token')) return false;
+      if (confirmedAirdropOnly && !firm.rewardTags?.includes('Airdrop')) return false;
+
       return true;
     }).sort((a, b) => {
       if (sortBy === 'trust') return b.trustScore - a.trustScore;
@@ -75,9 +87,9 @@ export default function HomePage() {
       if (sortBy === 'capital') return b.maxCapital - a.maxCapital;
       return 0;
     });
-  }, [firms, searchQuery, selectedStep, selectedPlatform, minProfitSplit, newsAllowedOnly, weekendAllowedOnly, eaAllowedOnly, sortBy]);
+  }, [firms, searchQuery, selectedStep, selectedPlatform, minProfitSplit, newsAllowedOnly, weekendAllowedOnly, eaAllowedOnly, hasPointsOnly, hasTokenOnly, confirmedAirdropOnly, sortBy]);
 
-  const hasActiveFilters = searchQuery || selectedStep !== 'all' || selectedPlatform !== 'all' || minProfitSplit !== 'all' || newsAllowedOnly || weekendAllowedOnly || eaAllowedOnly;
+  const hasActiveFilters = searchQuery || selectedStep !== 'all' || selectedPlatform !== 'all' || minProfitSplit !== 'all' || newsAllowedOnly || weekendAllowedOnly || eaAllowedOnly || hasPointsOnly || hasTokenOnly || confirmedAirdropOnly;
 
   const resetFilters = () => {
     setSearchQuery('');
@@ -87,6 +99,9 @@ export default function HomePage() {
     setNewsAllowedOnly(false);
     setWeekendAllowedOnly(false);
     setEaAllowedOnly(false);
+    setHasPointsOnly(false);
+    setHasTokenOnly(false);
+    setConfirmedAirdropOnly(false);
     setSortBy('trust');
   };
 
@@ -98,12 +113,11 @@ export default function HomePage() {
         
         {/* Scaled Display Title */}
         <h1 className="display-heading text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-tight leading-[1.08] text-white">
-          The CoinMarketCap for <br className="hidden xs:inline" />
-          Crypto Prop Trading Firms
+          Start <span className="silver-shimmer-text">Prop</span> Trading from the Right Place
         </h1>
 
         <p className="text-sm sm:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-normal">
-          Institutional 1:100 crypto leverage, verified 95% profit splits, real-time drawdown tracking, and live on-chain transparency in one place.
+          Compare profit splits, drawdowns, points farming and on-chain verified conditions.
         </p>
 
         {/* Hero CTAs */}
@@ -138,7 +152,7 @@ export default function HomePage() {
 
           <div className="flex items-center gap-1.5">
             <span className="text-zinc-200 font-mono font-bold">
-              <AnimatedCounter value={95} suffix="%" />
+              <AnimatedCounter value={90} suffix="%" />
             </span>
             <span className="text-zinc-400">Max Profit Split</span>
           </div>
@@ -227,7 +241,7 @@ export default function HomePage() {
                     onClick={() => setSelectedStep(item.id)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 min-h-[36px] ${
                       selectedStep === item.id
-                        ? 'bg-white text-zinc-950 font-bold shadow-sm'
+                        ? 'bg-white text-zinc-950 shadow-sm'
                         : 'bg-[#121214] border border-zinc-800/80 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
                     }`}
                   >
@@ -253,7 +267,7 @@ export default function HomePage() {
                     onClick={() => setSelectedPlatform(item.id)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 min-h-[36px] ${
                       selectedPlatform === item.id
-                        ? 'bg-white text-zinc-950 font-bold shadow-sm'
+                        ? 'bg-white text-zinc-950 shadow-sm'
                         : 'bg-[#121214] border border-zinc-800/80 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
                     }`}
                   >
@@ -277,7 +291,7 @@ export default function HomePage() {
                     onClick={() => setMinProfitSplit(item.id)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 min-h-[36px] ${
                       minProfitSplit === item.id
-                        ? 'bg-white text-zinc-950 font-bold shadow-sm'
+                        ? 'bg-white text-zinc-950 shadow-sm'
                         : 'bg-[#121214] border border-zinc-800/80 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
                     }`}
                   >
@@ -289,18 +303,54 @@ export default function HomePage() {
 
           </div>
 
-          {/* BOTTOM ROW: Special Rules Toggle Pills & Results Count */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-zinc-800/40">
+          {/* BOTTOM ROW: Special Rules Toggle Pills & Centered Results Bar */}
+          <div className="space-y-3 pt-3 border-t border-zinc-800/40">
             
-            {/* Special Rules Pills */}
+            {/* Special Rules & Ecosystem Reward Pills */}
             <div className="flex items-center gap-2 flex-wrap text-xs">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mr-1">Rules:</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mr-1 shrink-0">Ecosystem & Rewards:</span>
+
+              <button
+                onClick={() => setHasPointsOnly(!hasPointsOnly)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
+                  hasPointsOnly
+                    ? 'bg-amber-500/15 border-amber-500/40 text-amber-300'
+                    : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                <span>✨ Has Points</span>
+              </button>
+
+              <button
+                onClick={() => setHasTokenOnly(!hasTokenOnly)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
+                  hasTokenOnly
+                    ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788]'
+                    : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                <span>🪙 Has Token</span>
+              </button>
+
+              <button
+                onClick={() => setConfirmedAirdropOnly(!confirmedAirdropOnly)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
+                  confirmedAirdropOnly
+                    ? 'bg-sky-500/15 border-sky-500/40 text-sky-300'
+                    : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                <span>🪂 Confirmed Airdrop</span>
+              </button>
+
+              <span className="text-zinc-700 mx-1 hidden sm:inline shrink-0">|</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mr-1 shrink-0">Rules:</span>
 
               <button
                 onClick={() => setNewsAllowedOnly(!newsAllowedOnly)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-colors min-h-[34px] ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
                   newsAllowedOnly
-                    ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788] font-bold'
+                    ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788]'
                     : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -310,9 +360,9 @@ export default function HomePage() {
 
               <button
                 onClick={() => setWeekendAllowedOnly(!weekendAllowedOnly)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-colors min-h-[34px] ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
                   weekendAllowedOnly
-                    ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788] font-bold'
+                    ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788]'
                     : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -322,9 +372,9 @@ export default function HomePage() {
 
               <button
                 onClick={() => setEaAllowedOnly(!eaAllowedOnly)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-colors min-h-[34px] ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
                   eaAllowedOnly
-                    ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788] font-bold'
+                    ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788]'
                     : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -333,17 +383,20 @@ export default function HomePage() {
               </button>
             </div>
 
-            {/* Results Count & Clear Button */}
-            <div className="flex items-center justify-between sm:justify-end gap-3 text-xs text-zinc-400 font-medium">
-              <span>Showing <strong className="text-white font-bold">{filteredFirms.length}</strong> prop firms</span>
-              {hasActiveFilters && (
-                <button
-                  onClick={resetFilters}
-                  className="text-emerald-400 hover:text-emerald-300 font-semibold underline underline-offset-4 cursor-pointer"
-                >
-                  Reset Filters
-                </button>
-              )}
+            {/* Centered Results Count & Reset Button */}
+            <div className="flex items-center justify-center gap-3 pt-2 text-xs text-zinc-400 font-medium border-t border-zinc-800/30">
+              <span className="whitespace-nowrap">Showing <strong className="text-white font-bold">{filteredFirms.length}</strong> prop firms</span>
+              <button
+                onClick={resetFilters}
+                disabled={!hasActiveFilters}
+                className={`text-emerald-400 hover:text-emerald-300 font-semibold underline underline-offset-4 cursor-pointer transition-all duration-200 whitespace-nowrap ${
+                  hasActiveFilters
+                    ? 'opacity-100 pointer-events-auto translate-x-0'
+                    : 'opacity-0 pointer-events-none translate-x-1'
+                }`}
+              >
+                Reset Filters
+              </button>
             </div>
 
           </div>

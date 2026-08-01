@@ -114,3 +114,30 @@ body {
   background: #52b788;
 }
 
+/* Silver Shimmer Text Effect for Brand Highlights */
+@keyframes silverShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.silver-shimmer-text {
+  background: linear-gradient(
+    110deg,
+    #ffffff 15%,
+    #a1a1aa 35%,
+    #ffffff 50%,
+    #e4e4e7 65%,
+    #ffffff 85%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: silverShimmer 4.5s linear infinite;
+  display: inline-block;
+}
+
