@@ -43,7 +43,7 @@ const MOCK_PROP_FIRMS = [
     website: 'https://propr.xyz',
     brandColor: '#52b788',
     tagline: 'Propr.xyz (@ProprXYZ) - Flagship Crypto Prop Trading & Real-Time Transparency.',
-    description: 'Propr (propr.xyz) is the premier flagship crypto prop firm built on Hyperliquid, offering 1-Step & 2-Step evaluations with 90% profit splits and instant USDC payouts.',
+    description: 'Propr (propr.xyz) is the flagship crypto prop firm built natively on Hyperliquid. Backed by SwissBorg & XBorg, Propr provides 1-Step and 2-Step trading evaluations with up to 90% profit splits, 1:100 leverage, 6% static drawdown, and instant on-chain USDC payouts.',
     rating: 4.9,
     reviewCount: 1540,
     featured: true,
@@ -82,8 +82,30 @@ const MOCK_PROP_FIRMS = [
       discount: '20% OFF + 90% Split',
       description: 'Exclusive 20% discount on all challenge tiers at propr.xyz.',
       verified: true,
-      highlight: true
-    }
+      highlight: true,
+    },
+    reviews: [
+      {
+        id: 'r-propr-1',
+        author: 'Alex K. (Verfied Trader)',
+        rating: 5,
+        date: '2026-07-28',
+        title: 'Instant USDC payout on Hyperliquid order book!',
+        content: 'Passed the $50K 1-step challenge trading BTCUSDT and ETHUSDT. Received my first payout of $4,200 via USDC in under 90 minutes. Zero slippage issues.',
+        verifiedTrader: true,
+        likes: 42,
+      },
+      {
+        id: 'r-propr-2',
+        author: 'Dmitry V.',
+        rating: 5,
+        date: '2026-07-15',
+        title: 'Static drawdown rules are a game changer',
+        content: 'Unlike trailing drawdown firms that eat into your profits, Propr uses a clean 6% static drawdown. Highly recommended for crypto swing traders.',
+        verifiedTrader: true,
+        likes: 28,
+      }
+    ]
   },
   {
     id: 'firm-hyrotrader',
@@ -93,7 +115,7 @@ const MOCK_PROP_FIRMS = [
     website: 'https://hyrotrader.com',
     brandColor: '#f59e0b',
     tagline: 'Hyrotrader.com (@hyrotrader_com) - Real Exchange Liquidity & 90% Profit Split.',
-    description: 'HyroTrader (hyrotrader.com) connects funded crypto traders directly to tier-1 exchange order books like Bybit and Binance with up to 90% profit splits.',
+    description: 'HyroTrader (hyrotrader.com) connects funded crypto traders directly to tier-1 exchange order books including Bybit and Binance with up to 90% profit splits.',
     rating: 4.8,
     reviewCount: 1120,
     featured: true,
@@ -102,7 +124,7 @@ const MOCK_PROP_FIRMS = [
     profitSplit: 'Up to 90%',
     maxDrawdown: '10% Max',
     dailyDrawdown: '5% Daily',
-    profitTarget: '10% Phase 1',
+    profitTarget: '10% Phase 1 / 5% Phase 2',
     minCapital: 5000,
     maxCapital: 200000,
     cryptoLeverage: '1:100',
@@ -133,8 +155,20 @@ const MOCK_PROP_FIRMS = [
       discount: '10% OFF + 90% Split',
       description: '10% off all challenges at hyrotrader.com.',
       verified: true,
-      highlight: true
-    }
+      highlight: true,
+    },
+    reviews: [
+      {
+        id: 'r-hyro-1',
+        author: 'Markus Weber',
+        rating: 5,
+        date: '2026-07-22',
+        title: 'Direct Bybit order book execution',
+        content: 'Trading directly on Bybit API is unmatched. Spreads match live market prices perfectly with zero artificial spreads.',
+        verifiedTrader: true,
+        likes: 31,
+      }
+    ]
   },
   {
     id: 'firm-solanafunded',
@@ -144,7 +178,7 @@ const MOCK_PROP_FIRMS = [
     website: 'https://solanafunded.com',
     brandColor: '#a855f7',
     tagline: 'Solanafunded.com (@solanafunded) - High-Leverage Solana Perpetual Prop Firm.',
-    description: 'Solana Funded (solanafunded.com) focuses on high-speed Solana ecosystem tokens and crypto perpetuals.',
+    description: 'Solana Funded (solanafunded.com) is built for high-speed Solana token and altcoin perpetual trading with instant SOL payouts to Phantom wallets.',
     rating: 4.8,
     reviewCount: 810,
     featured: true,
@@ -183,8 +217,20 @@ const MOCK_PROP_FIRMS = [
       discount: '20% OFF + SOL Bonus',
       description: '20% discount on all challenge sizes at solanafunded.com.',
       verified: true,
-      highlight: true
-    }
+      highlight: true,
+    },
+    reviews: [
+      {
+        id: 'r-sol-1',
+        author: 'SatoshiSol',
+        rating: 5,
+        date: '2026-07-25',
+        title: 'Instant SOL payouts to Phantom wallet',
+        content: 'Received 18.5 SOL profit split within 10 minutes of requesting withdrawal. Best prop firm for Solana ecosystem perps.',
+        verifiedTrader: true,
+        likes: 39,
+      }
+    ]
   },
   {
     id: 'firm-foxify',
@@ -194,7 +240,7 @@ const MOCK_PROP_FIRMS = [
     website: 'https://foxify.trade',
     brandColor: '#f97316',
     tagline: 'Foxify.trade (@foxifytrade) - Decentralized P2P & On-Chain Crypto Prop Trading.',
-    description: 'Foxify (foxify.trade) brings decentralized P2P trading and on-chain funding challenges.',
+    description: 'Foxify (foxify.trade) delivers decentralized peer-to-peer prop trading on Arbitrum with instant funded account options starting from $100 deposits.',
     rating: 4.8,
     reviewCount: 890,
     featured: true,
@@ -231,8 +277,20 @@ const MOCK_PROP_FIRMS = [
       code: 'FOXIFY15',
       discount: '15% OFF + Free Retry',
       description: 'Get 15% discount on 1-Step Evaluation at foxify.trade.',
-      verified: true
-    }
+      verified: true,
+    },
+    reviews: [
+      {
+        id: 'r-fox-1',
+        author: 'ArbiTrader',
+        rating: 5,
+        date: '2026-07-19',
+        title: 'Non-custodial smart contract payouts',
+        content: 'No need to wait for manual compliance review. Smart contracts process payouts as soon as target criteria are fulfilled.',
+        verifiedTrader: true,
+        likes: 24,
+      }
+    ]
   },
   {
     id: 'firm-polyquid',
@@ -242,7 +300,7 @@ const MOCK_PROP_FIRMS = [
     website: 'https://polyquid.xyz',
     brandColor: '#8b5cf6',
     tagline: 'Polyquid.xyz (@Polyquid) - Decentralized Crypto Perpetual & Liquidity Engine.',
-    description: 'Polyquid (polyquid.xyz) provides decentralized liquidity challenges.',
+    description: 'Polyquid (polyquid.xyz) powers decentralized liquidity evaluation challenges with up to 90% profit splits and 1:100 leverage.',
     rating: 4.8,
     reviewCount: 710,
     featured: true,
@@ -279,8 +337,20 @@ const MOCK_PROP_FIRMS = [
       code: 'POLY15',
       discount: '15% OFF + Instant Payout',
       description: '15% off all challenges at polyquid.xyz.',
-      verified: true
-    }
+      verified: true,
+    },
+    reviews: [
+      {
+        id: 'r-poly-1',
+        author: 'Elena R.',
+        rating: 5,
+        date: '2026-07-14',
+        title: 'Smooth TradeLocker execution',
+        content: 'TradeLocker integration works flawlessly on mobile. Highly reliable execution during volatile news drops.',
+        verifiedTrader: true,
+        likes: 19,
+      }
+    ]
   },
   {
     id: 'firm-alphagrid',
@@ -290,7 +360,7 @@ const MOCK_PROP_FIRMS = [
     website: 'https://alphagrid.fun',
     brandColor: '#06b6d4',
     tagline: 'Alphagrid.fun (@AlphaGridProp) - High-Velocity Solana & Multi-Chain Protocol.',
-    description: 'AlphaGrid (alphagrid.fun) is a Solana-native and multi-chain prop trading protocol.',
+    description: 'AlphaGrid (alphagrid.fun / docs.alphagrid.capital) is a Solana-native and multi-chain trading protocol.',
     rating: 4.8,
     reviewCount: 620,
     featured: true,
@@ -327,8 +397,20 @@ const MOCK_PROP_FIRMS = [
       code: 'ALPHA20',
       discount: '20% OFF Challenges',
       description: '20% discount on all challenge accounts at alphagrid.fun.',
-      verified: true
-    }
+      verified: true,
+    },
+    reviews: [
+      {
+        id: 'r-alpha-1',
+        author: 'CryptoVortex',
+        rating: 5,
+        date: '2026-07-11',
+        title: 'Daily SOL rewards distribution',
+        content: 'AlphaGrid processes payout claims daily without holding capital back. The docs at docs.alphagrid.capital are crystal clear.',
+        verifiedTrader: true,
+        likes: 22,
+      }
+    ]
   },
   {
     id: 'firm-hyperpnl',
@@ -338,7 +420,7 @@ const MOCK_PROP_FIRMS = [
     website: 'https://hyperpnl.com',
     brandColor: '#10b981',
     tagline: 'Hyperpnl.com (@HyperPNL) - Gamified On-Chain Crypto Prop Challenges.',
-    description: 'HyperPNL (hyperpnl.com) combines gamified perpetual trading challenges on Hyperliquid with institutional funding.',
+    description: 'HyperPNL (hyperpnl.com) combines gamified perpetual trading challenges on Hyperliquid with institutional liquidity funding, featuring an industry-highest 95% profit split.',
     rating: 4.9,
     reviewCount: 920,
     featured: true,
@@ -376,8 +458,20 @@ const MOCK_PROP_FIRMS = [
       discount: '15% OFF + 95% Split',
       description: 'Exclusive 15% discount + 95% profit split at hyperpnl.com.',
       verified: true,
-      highlight: true
-    }
+      highlight: true,
+    },
+    reviews: [
+      {
+        id: 'r-pnl-1',
+        author: 'Kevin T.',
+        rating: 5,
+        date: '2026-07-29',
+        title: 'Unbelievable 95% profit split',
+        content: 'Pushed my $25K account to $28.5K profit. Received $3,325 directly into my crypto wallet. HyperPNL is elite.',
+        verifiedTrader: true,
+        likes: 51,
+      }
+    ]
   },
   {
     id: 'firm-hypernova',
@@ -387,7 +481,7 @@ const MOCK_PROP_FIRMS = [
     website: 'https://hypernova.xyz',
     brandColor: '#3b82f6',
     tagline: 'Hypernova.xyz (@HypernovaX) - High-Frequency Crypto Perpetual Engine.',
-    description: 'Hypernova (hypernova.xyz) delivers ultra-low latency execution on 80+ perpetual pairs.',
+    description: 'Hypernova (hypernova.xyz) is engineered for high-frequency algorithmic crypto trading with sub-10ms execution latency across 80+ perpetual pairs.',
     rating: 4.8,
     reviewCount: 750,
     featured: true,
@@ -395,7 +489,7 @@ const MOCK_PROP_FIRMS = [
     profitSplit: 'Up to 90%',
     maxDrawdown: '10% Trailing',
     dailyDrawdown: '5% Daily',
-    profitTarget: '8% Phase 1',
+    profitTarget: '8% Phase 1 / 4% Phase 2',
     minCapital: 5000,
     maxCapital: 100000,
     cryptoLeverage: '1:100',
@@ -424,8 +518,20 @@ const MOCK_PROP_FIRMS = [
       code: 'NOVA20',
       discount: '20% OFF Challenge',
       description: '20% discount on all challenges at hypernova.xyz.',
-      verified: true
-    }
+      verified: true,
+    },
+    reviews: [
+      {
+        id: 'r-nova-1',
+        author: 'AlgoTraderX',
+        rating: 5,
+        date: '2026-07-16',
+        title: 'Perfect API endpoint latency',
+        content: 'Python trading bot runs without any disconnects or websocket dropouts. Very fast execution.',
+        verifiedTrader: true,
+        likes: 27,
+      }
+    ]
   },
   {
     id: 'firm-dizso',
@@ -435,7 +541,7 @@ const MOCK_PROP_FIRMS = [
     website: 'https://dizso.com',
     brandColor: '#ec4899',
     tagline: 'Dizso.com (@dizsofunded) - Next-Gen Crypto & DEX Prop Funding.',
-    description: 'Dizso Funded (dizso.com) provides flexible crypto evaluations with instant funding up to $150k.',
+    description: 'Dizso Funded (dizso.com) offers ultra-flexible crypto evaluation programs and instant funding options up to $150,000.',
     rating: 4.7,
     reviewCount: 480,
     featured: true,
@@ -472,8 +578,20 @@ const MOCK_PROP_FIRMS = [
       code: 'DIZSO15',
       discount: '15% OFF Instant Funding',
       description: 'Get 15% discount at dizso.com.',
-      verified: true
-    }
+      verified: true,
+    },
+    reviews: [
+      {
+        id: 'r-dizso-1',
+        author: 'Tariq M.',
+        rating: 5,
+        date: '2026-07-08',
+        title: 'Instant funding option works great',
+        content: 'Bypassed evaluation step with instant funding track. Received profit split on week 2 seamlessly.',
+        verifiedTrader: true,
+        likes: 18,
+      }
+    ]
   },
   {
     id: 'firm-chainfunded',
@@ -483,7 +601,7 @@ const MOCK_PROP_FIRMS = [
     website: 'https://chainfunded.io',
     brandColor: '#22c55e',
     tagline: 'Chainfunded.io (@Chainfunded_io) - Multi-Chain Crypto Prop Funding Protocol.',
-    description: 'ChainFunded (chainfunded.io) allows crypto traders to scale up to $500,000 with multi-chain payout support in USDT, USDC, and SOL.',
+    description: 'ChainFunded (chainfunded.io) allows crypto traders to scale up to $500,000 using smart contract automated evaluations on Ethereum and EVM chains.',
     rating: 4.7,
     reviewCount: 530,
     featured: true,
@@ -521,8 +639,20 @@ const MOCK_PROP_FIRMS = [
       code: 'CHAIN10',
       discount: '10% OFF All Plans',
       description: '10% discount on all challenge tiers at chainfunded.io.',
-      verified: true
-    }
+      verified: true,
+    },
+    reviews: [
+      {
+        id: 'r-chain-1',
+        author: 'OnChainTrader',
+        rating: 5,
+        date: '2026-07-21',
+        title: 'Multi-chain payout flexibility',
+        content: 'Chosen payout in SOL on Solana network. Received full payout in minutes with minimal gas fees.',
+        verifiedTrader: true,
+        likes: 33,
+      }
+    ]
   }
 ];
 
@@ -534,11 +664,11 @@ async function seed() {
     console.log(`🗑️ Removed document: ${docSnap.id}`);
   }
 
-  console.log('🚀 Seeding Firestore database with brand colors...');
+  console.log('🚀 Seeding Firestore database with full firm profiles & reviews...');
   for (const firm of MOCK_PROP_FIRMS) {
     const docRef = doc(db, 'firms', firm.id);
     await setDoc(docRef, firm, { merge: true });
-    console.log(`✅ Uploaded firm: ${firm.name} (${firm.slug}) - Brand: ${firm.brandColor}`);
+    console.log(`✅ Uploaded firm: ${firm.name} (${firm.slug}) - Reviews: ${firm.reviews?.length || 0}`);
   }
   console.log('🎉 Firestore database seeding complete!');
   process.exit(0);
