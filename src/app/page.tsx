@@ -7,6 +7,8 @@ import { PropFirm } from '@/types/firm';
 import { getFirms } from '@/lib/services/firmService';
 import { FirmCard } from '@/components/firms/FirmCard';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
+import { CustomSelect } from '@/components/ui/CustomSelect';
+import { HeroBackground } from '@/components/home/HeroBackground';
 import { Search, Activity, ArrowRight, Percent, SlidersHorizontal, X, Shield, Zap, Moon, Bot, ArrowUpDown } from 'lucide-react';
 
 export default function HomePage() {
@@ -106,80 +108,70 @@ export default function HomePage() {
   };
 
   return (
-    <div className="space-y-12 sm:space-y-16 py-8 sm:py-16 font-satoshi">
+    <div className="space-y-6 sm:space-y-8 py-4 sm:py-8 font-satoshi">
       
-      {/* 1. HERO SECTION */}
-      <section className="relative text-center max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
-        
-        {/* Scaled Display Title */}
-        <h1 className="display-heading text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-tight leading-[1.08] text-white">
-          Start <span className="silver-shimmer-text">Prop</span> Trading from the Right Place
-        </h1>
+      {/* 1. HERO SECTION (Aligned 1-to-1 with Filter Box Margins) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative text-center pt-8 pb-4 px-4 sm:px-8 space-y-6">
+          {/* Pure Grey SVG Trading Chart Background */}
+          <HeroBackground />
 
-        <p className="text-sm sm:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-normal">
-          Compare profit splits, drawdowns, points farming and on-chain verified conditions.
-        </p>
+          {/* Layer 3: Main Hero Typography, Buttons & Stats */}
+          <div className="relative z-10 space-y-6">
+            
+            {/* Scaled Display Title */}
+            <h1 className="display-heading text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-tight leading-[1.08] text-white">
+              Start <span className="silver-shimmer-text">Prop</span> Trading from the
+              <br />
+              Right Place
+            </h1>
 
-        {/* Hero CTAs */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-3 max-w-md sm:max-w-none mx-auto">
-          <Link
-            href="/compare"
-            className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-zinc-100 text-zinc-950 text-xs sm:text-sm font-bold hover:bg-white transition-colors shadow-sm min-h-[44px]"
-          >
-            <Search className="h-4 w-4" />
-            <span>Explore Directory</span>
-          </Link>
+            <p className="text-sm sm:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-normal">
+              Compare profit splits, drawdowns, points farming and on-chain verified conditions.
+            </p>
 
-          <Link
-            href="/transparency"
-            className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-200 text-xs sm:text-sm font-bold hover:bg-zinc-800 transition-colors min-h-[44px]"
-          >
-            <Activity className="h-4 w-4 text-emerald-400" />
-            <span>Transparency Dashboard</span>
-          </Link>
-        </div>
+            {/* Minimalist Text-Only Stats Line (No Top Border Line) */}
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 pt-5 sm:pt-6 text-xs sm:text-sm text-zinc-400 max-w-4xl mx-auto font-medium">
+              <div className="flex items-center gap-1.5">
+                <span className="text-white font-mono font-bold">
+                  <AnimatedCounter value={firms.length || 10} suffix="+" />
+                </span>
+                <span className="text-zinc-400">Verified Firms</span>
+              </div>
 
-        {/* Minimalist Text-Only Stats Line */}
-        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 pt-6 sm:pt-8 text-xs sm:text-sm text-zinc-400 border-t border-zinc-800/60 max-w-4xl mx-auto font-medium">
-          <div className="flex items-center gap-1.5">
-            <span className="text-white font-mono font-bold">
-              <AnimatedCounter value={firms.length || 10} suffix="+" />
-            </span>
-            <span className="text-zinc-400">Verified Firms</span>
-          </div>
+              <span className="text-zinc-700 hidden sm:inline">•</span>
 
-          <span className="text-zinc-700 hidden sm:inline">•</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-zinc-200 font-mono font-bold">
+                  <AnimatedCounter value={90} suffix="%" />
+                </span>
+                <span className="text-zinc-400">Max Profit Split</span>
+              </div>
 
-          <div className="flex items-center gap-1.5">
-            <span className="text-zinc-200 font-mono font-bold">
-              <AnimatedCounter value={90} suffix="%" />
-            </span>
-            <span className="text-zinc-400">Max Profit Split</span>
-          </div>
+              <span className="text-zinc-700 hidden sm:inline">•</span>
 
-          <span className="text-zinc-700 hidden sm:inline">•</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-zinc-200 font-mono font-bold">1:100</span>
+                <span className="text-zinc-400">Crypto Leverage</span>
+              </div>
 
-          <div className="flex items-center gap-1.5">
-            <span className="text-zinc-200 font-mono font-bold">1:100</span>
-            <span className="text-zinc-400">Crypto Leverage</span>
-          </div>
+              <span className="text-zinc-700 hidden sm:inline">•</span>
 
-          <span className="text-zinc-700 hidden sm:inline">•</span>
-
-          <div className="flex items-center gap-1.5">
-            <span className="text-zinc-200 font-mono font-bold">
-              <AnimatedCounter value={20} suffix="% OFF" />
-            </span>
-            <span className="text-zinc-400">Active Deals</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-zinc-200 font-mono font-bold">
+                  <AnimatedCounter value={20} suffix="% OFF" />
+                </span>
+                <span className="text-zinc-400">Active Deals</span>
+              </div>
+            </div>
           </div>
         </div>
-
       </section>
 
       {/* 2. EXPANDED MULTI-FILTER & PROP FIRM GRID SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
         
-        {/* EXPANDED FILTER CONSOLE */}
+        {/* CLEAN FILTER CONSOLE */}
         <div className="rounded-2xl border border-zinc-800/80 bg-[#141416] p-4 sm:p-6 space-y-4 shadow-sm">
           
           {/* TOP ROW: Search & Sorting */}
@@ -207,18 +199,19 @@ export default function HomePage() {
 
             {/* Sort Selector */}
             <div className="flex items-center gap-2 shrink-0">
-              <ArrowUpDown className="h-4 w-4 text-zinc-500 hidden sm:inline" />
               <span className="text-xs text-zinc-400 font-medium hidden sm:inline">Sort:</span>
-              <select
+              <CustomSelect
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as any)}
-                className="bg-[#121214] border border-zinc-800/80 rounded-xl px-3 py-2.5 text-xs font-semibold text-zinc-200 focus:outline-none focus:border-zinc-700 min-h-[42px] cursor-pointer"
-              >
-                <option value="trust">Highest Trust Score</option>
-                <option value="split">Highest Profit Split</option>
-                <option value="price">Lowest Entry Price</option>
-                <option value="capital">Max Funding ($)</option>
-              </select>
+                onChange={(val) => setSortBy(val as any)}
+                icon={<ArrowUpDown className="h-4 w-4 text-zinc-500" />}
+                align="left"
+                options={[
+                  { value: 'trust', label: 'Highest Trust Score' },
+                  { value: 'split', label: 'Highest Profit Split' },
+                  { value: 'price', label: 'Lowest Entry Price' },
+                  { value: 'capital', label: 'Max Funding ($)' },
+                ]}
+              />
             </div>
 
           </div>

@@ -296,6 +296,39 @@ export function FirmModal({ isOpen, onClose, onSaved, firmToEdit }: FirmModalPro
                 />
               </div>
             </div>
+
+            {/* Special Rule Checkboxes */}
+            <div className="flex items-center gap-6 pt-2">
+              <label className="flex items-center gap-2 text-xs text-zinc-300 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={formData.newsTradingAllowed ?? true}
+                  onChange={(e) => setFormData({ ...formData, newsTradingAllowed: e.target.checked })}
+                  className="h-4 w-4 rounded accent-emerald-500"
+                />
+                <span>News Trading</span>
+              </label>
+
+              <label className="flex items-center gap-2 text-xs text-zinc-300 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={formData.weekendHoldingAllowed ?? true}
+                  onChange={(e) => setFormData({ ...formData, weekendHoldingAllowed: e.target.checked })}
+                  className="h-4 w-4 rounded accent-emerald-500"
+                />
+                <span>Weekend Holding</span>
+              </label>
+
+              <label className="flex items-center gap-2 text-xs text-zinc-300 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={formData.eaAllowed ?? false}
+                  onChange={(e) => setFormData({ ...formData, eaAllowed: e.target.checked })}
+                  className="h-4 w-4 rounded accent-emerald-500"
+                />
+                <span>EAs & Bots</span>
+              </label>
+            </div>
           </div>
 
           {/* SECTION 4: PROMO CODE */}

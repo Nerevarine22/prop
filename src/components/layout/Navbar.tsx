@@ -11,7 +11,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-800/80 bg-[#121212]/90 backdrop-blur-md font-satoshi">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
         {/* Brand Logo */}
         <div className="flex items-center gap-8">
@@ -122,14 +122,7 @@ export function Navbar() {
             <span>Transparency Engine</span>
           </Link>
 
-          <Link
-            href="/coupons"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-center gap-2 mt-2 px-4 py-3 rounded-xl bg-zinc-100 text-zinc-950 font-bold min-h-[44px] hover:bg-white transition-colors"
-          >
-            <Percent className="h-4 w-4 text-zinc-950" />
-            <span>Get Verified Deals</span>
-          </Link>
+
         </div>
       )}
     </header>

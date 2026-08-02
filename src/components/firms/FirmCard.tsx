@@ -64,20 +64,20 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
           
           {/* Company Header */}
           <div className="space-y-3">
-            <div className="flex items-start justify-between gap-2">
+            <div className="flex items-start justify-between gap-3">
               
               {/* Logo + Name & Rating */}
-              <Link href={`/firms/${firm.slug}`} className="flex items-center gap-3 min-w-0 group/title flex-1">
+              <Link href={`/firms/${firm.slug}`} className="flex items-center gap-4 sm:gap-5 min-w-0 group/title flex-1">
                 <img
                   src={firm.logo}
                   alt={firm.name}
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = `https://unavatar.io/twitter/${firm.slug}`;
                   }}
-                  className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl object-cover border border-zinc-800/80 shadow-sm bg-zinc-900 shrink-0"
+                  className="h-16 w-16 sm:h-20 sm:w-20 rounded-xl object-cover border border-zinc-800/80 shadow-sm bg-zinc-900 shrink-0"
                 />
 
-                <div className="min-w-0 space-y-0.5">
+                <div className="min-w-0 space-y-1">
                   <div className="flex items-center gap-1.5 min-w-0">
                     <span className="text-base sm:text-lg font-bold text-white tracking-tight group-hover/title:text-emerald-400 transition-colors truncate block font-satoshi">
                       {firm.name}
@@ -113,7 +113,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
               )}
             </div>
 
-            {/* Reward Tags Row */}
+            {/* Reward Tags Row (Under Logo as before) */}
             {firm.rewardTags && firm.rewardTags.length > 0 && (
               <div className="flex items-center gap-1.5 flex-wrap">
                 {firm.rewardTags.map(tag => {

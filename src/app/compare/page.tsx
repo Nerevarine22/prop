@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { PropFirm } from '@/types/firm';
 import { getFirms } from '@/lib/services/firmService';
 import { FirmCard } from '@/components/firms/FirmCard';
+import { CustomSelect } from '@/components/ui/CustomSelect';
 import { Scale, CheckCircle2, XCircle, Trash2, ArrowRight, Search, Filter, ArrowUpDown, LayoutGrid, Table, RotateCcw, Plus, X } from 'lucide-react';
 
 function CompareContent() {
@@ -369,33 +370,33 @@ function CompareContent() {
               {/* Evaluation Step */}
               <div className="space-y-2">
                 <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider">Evaluation Model</label>
-                <select
+                <CustomSelect
                   value={selectedStep}
-                  onChange={e => setSelectedStep(e.target.value)}
-                  className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-2.5 px-3.5 text-xs text-white focus:border-zinc-700 focus:outline-none font-medium"
-                >
-                  <option value="All">All Evaluation Types</option>
-                  <option value="1-Step">1-Step Evaluation</option>
-                  <option value="2-Step">2-Step Evaluation</option>
-                  <option value="Instant Funding">Instant Funding</option>
-                </select>
+                  onChange={val => setSelectedStep(val)}
+                  options={[
+                    { value: 'All', label: 'All Evaluation Types' },
+                    { value: '1-Step', label: '1-Step Evaluation' },
+                    { value: '2-Step', label: '2-Step Evaluation' },
+                    { value: 'Instant Funding', label: 'Instant Funding' },
+                  ]}
+                />
               </div>
 
               {/* Platform */}
               <div className="space-y-2">
                 <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider">Trading Platform</label>
-                <select
+                <CustomSelect
                   value={selectedPlatform}
-                  onChange={e => setSelectedPlatform(e.target.value)}
-                  className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-2.5 px-3.5 text-xs text-white focus:border-zinc-700 focus:outline-none font-medium"
-                >
-                  <option value="All">All Platforms</option>
-                  <option value="cTrader">cTrader</option>
-                  <option value="MT5">MT5</option>
-                  <option value="Bybit">Bybit</option>
-                  <option value="TradeLocker">TradeLocker</option>
-                  <option value="Match-Trader">Match-Trader</option>
-                </select>
+                  onChange={val => setSelectedPlatform(val)}
+                  options={[
+                    { value: 'All', label: 'All Platforms' },
+                    { value: 'cTrader', label: 'cTrader' },
+                    { value: 'MT5', label: 'MT5' },
+                    { value: 'Bybit', label: 'Bybit' },
+                    { value: 'TradeLocker', label: 'TradeLocker' },
+                    { value: 'Match-Trader', label: 'Match-Trader' },
+                  ]}
+                />
               </div>
 
               {/* Min Profit Split */}
@@ -453,17 +454,17 @@ function CompareContent() {
             {/* Sorting & Layout Toolbar */}
             <div className="flex items-center justify-between bg-[#141416] p-3.5 rounded-2xl border border-zinc-800/80 text-xs">
               <div className="flex items-center gap-2">
-                <ArrowUpDown className="h-4 w-4 text-zinc-500" />
                 <span className="text-zinc-400 font-semibold">Sort by:</span>
-                <select
+                <CustomSelect
                   value={sortBy}
-                  onChange={e => setSortBy(e.target.value as any)}
-                  className="bg-zinc-900 border border-zinc-800 rounded-xl py-1.5 px-3 text-xs text-white focus:outline-none font-medium"
-                >
-                  <option value="rating">Rating (Highest)</option>
-                  <option value="split">Profit Split (Highest)</option>
-                  <option value="trust">Trust Score</option>
-                </select>
+                  onChange={val => setSortBy(val as any)}
+                  icon={<ArrowUpDown className="h-4 w-4 text-zinc-500" />}
+                  options={[
+                    { value: 'rating', label: 'Rating (Highest)' },
+                    { value: 'split', label: 'Profit Split (Highest)' },
+                    { value: 'trust', label: 'Trust Score' },
+                  ]}
+                />
               </div>
 
               <div className="flex items-center gap-1 bg-zinc-900 p-1 rounded-xl border border-zinc-800">
