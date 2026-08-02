@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { Star, ArrowRight, ExternalLink, Scale, CheckCircle2, Wallet, PieChart, TrendingUp, Shield, GitCommit, Monitor } from 'lucide-react';
 import { PropFirm } from '@/types/firm';
@@ -14,7 +14,7 @@ interface FirmCardProps {
 export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
   const minPrice = firm.accountTiers?.[0]?.price ? `$${firm.accountTiers[0].price}` : '$29';
   const formattedMaxCapital = `$${Math.round(firm.maxCapital / 1000)}K`;
-  
+
   // External official website URL mapping fallback
   const externalUrl = firm.website || (
     firm.slug === 'propr' ? 'https://propr.xyz' :
@@ -33,7 +33,8 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
   // Format profit split to clean percentage e.g. "80%", "90%", "95%"
   const cleanProfitSplit = firm.profitSplit.replace(/^Up to\s*/i, '');
 
-  const brandColor = firm.brandColor || (
+  // Hardcoded fallback brand colors (used before logo loads or if CORS blocks canvas)
+  const fallbackBrandColor = firm.brandColor || (
     firm.slug === 'propr' ? '#52b788' :
     firm.slug === 'foxify' ? '#f97316' :
     firm.slug === 'polyquid' ? '#8b5cf6' :
@@ -47,33 +48,69 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
     '#52b788'
   );
 
+  // Dynamic logo color extraction via Canvas API
+  const [glowColor, setGlowColor] = useState<string>(fallbackBrandColor);
+
+  const handleLogoLoad = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    try {
+      const canvas = document.createElement('canvas');
+      const size = 32; // sample at small size for performance
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      ctx.drawImage(img, 0, 0, size, size);
+      const data = ctx.getImageData(0, 0, size, size).data;
+      let r = 0, g = 0, b = 0, count = 0;
+      for (let i = 0; i < data.length; i += 4) {
+        const alpha = data[i + 3];
+        const brightness = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        // Skip transparent, near-black, and near-white pixels
+        if (alpha > 100 && brightness > 30 && brightness < 220) {
+          r += data[i];
+          g += data[i + 1];
+          b += data[i + 2];
+          count++;
+        }
+      }
+      if (count > 0) {
+        setGlowColor(`rgb(${Math.round(r / count)}, ${Math.round(g / count)}, ${Math.round(b / count)})`);
+      }
+    } catch {
+      // CORS blocked — keep fallback color
+    }
+  }, []);
+
   return (
     <div className="relative rounded-2xl bg-[#141416] border border-zinc-800/60 p-5 sm:p-7 flex flex-col justify-between space-y-5 hover:border-zinc-700/80 transition-all duration-200 shadow-sm h-full group font-satoshi overflow-hidden">
-      
+
       {/* Subtle Top-Left Ambient Brand Color Glow (Ultra-soft 5% -> 10%) */}
       <div
         className="absolute -top-16 -left-16 w-48 h-48 rounded-full blur-3xl pointer-events-none transition-all duration-300 opacity-[0.06] group-hover:opacity-[0.12]"
-        style={{ backgroundColor: brandColor }}
+        style={{ backgroundColor: glowColor }}
       />
 
       {/* 1. HEADER & BODY CONTENT CONTAINER */}
       <div className="relative z-10 flex-1 flex flex-col justify-between space-y-5">
-        
+
         {/* TOP SECTION: Header, Metrics & Secondary Tags */}
         <div className="space-y-4">
-          
+
           {/* Company Header */}
           <div className="space-y-3">
             <div className="flex items-start justify-between gap-3">
-              
+
               {/* Logo + Name & Rating */}
               <Link href={`/firms/${firm.slug}`} className="flex items-center gap-4 sm:gap-5 min-w-0 group/title flex-1">
                 <img
                   src={firm.logo}
                   alt={firm.name}
+                  onLoad={handleLogoLoad}
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = `https://unavatar.io/twitter/${firm.slug}`;
                   }}
+                  crossOrigin="anonymous"
                   className="h-16 w-16 sm:h-20 sm:w-20 rounded-xl object-cover border border-zinc-800/80 shadow-sm bg-zinc-900 shrink-0"
                 />
 
@@ -113,7 +150,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
               )}
             </div>
 
-            {/* Reward Tags Row (Under Logo as before) */}
+            {/* Reward Tags Row (Under Logo) */}
             {firm.rewardTags && firm.rewardTags.length > 0 && (
               <div className="flex items-center gap-1.5 flex-wrap">
                 {firm.rewardTags.map(tag => {
@@ -121,7 +158,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
                   if (tag === 'Points') tagStyle = 'bg-amber-500/10 text-amber-300 border-amber-500/20';
                   if (tag === 'Token') tagStyle = 'bg-[#52b788]/10 text-[#52b788] border-[#52b788]/20';
                   if (tag === 'Airdrop') tagStyle = 'bg-sky-500/10 text-sky-300 border-sky-500/20';
-                  
+
                   return (
                     <span
                       key={tag}
@@ -137,7 +174,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
 
           {/* DOMINANT METRICS */}
           <Link href={`/firms/${firm.slug}`} className="grid grid-cols-3 gap-1.5 sm:gap-2 py-2 text-left items-start font-satoshi block">
-            
+
             {/* Col 1: Price */}
             <div className="flex flex-col items-start text-left min-w-0">
               <Wallet className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-zinc-400 mb-1 stroke-[1.5]" />
