@@ -19,11 +19,13 @@
   }
 }
 
+html,
 body {
   font-family: var(--font-sans);
   background-color: #090909;
   color: #fafafa;
   overflow-x: hidden;
+  touch-action: manipulation;
 }
 
 /* Ultra-subtle Vercel/Linear-style Background Grid Pattern */
