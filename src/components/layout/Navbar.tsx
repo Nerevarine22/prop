@@ -10,7 +10,7 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-zinc-800/80 bg-[#121212]/90 backdrop-blur-md font-satoshi">
+    <header className="sticky top-0 z-50 w-full border-b border-zinc-800/80 bg-black/90 backdrop-blur-md font-satoshi">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
         {/* Brand Logo */}
@@ -82,7 +82,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-zinc-800 bg-[#121212]/95 backdrop-blur-xl px-4 py-5 space-y-2.5 text-sm font-medium text-zinc-300 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden border-b border-zinc-800 bg-black/95 backdrop-blur-xl px-4 py-5 space-y-2.5 text-sm font-medium text-zinc-300 animate-in fade-in slide-in-from-top-2 duration-200">
           <Link
             href="/compare"
             onClick={() => setMobileMenuOpen(false)}

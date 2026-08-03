@@ -9,7 +9,7 @@ import { FirmCard } from '@/components/firms/FirmCard';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { CustomSelect } from '@/components/ui/CustomSelect';
 import { HeroBackground } from '@/components/home/HeroBackground';
-import { Search, Activity, ArrowRight, Percent, SlidersHorizontal, X, Shield, Zap, Moon, Bot, ArrowUpDown } from 'lucide-react';
+import { Search, ArrowRight, Percent, X, Zap, Moon, Bot, ArrowUpDown } from 'lucide-react';
 
 export default function HomePage() {
   const [firms, setFirms] = useState<PropFirm[]>([]);
@@ -17,7 +17,6 @@ export default function HomePage() {
   // Filter states
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedStep, setSelectedStep] = useState<string>('all');
-  const [selectedPlatform, setSelectedPlatform] = useState<string>('all');
   const [minProfitSplit, setMinProfitSplit] = useState<string>('all');
   const [newsAllowedOnly, setNewsAllowedOnly] = useState(false);
   const [weekendAllowedOnly, setWeekendAllowedOnly] = useState(false);
@@ -54,21 +53,18 @@ export default function HomePage() {
         if (selectedStep === 'Instant Funding' && !firm.evaluationSteps.includes('Instant Funding')) return false;
       }
 
-      // 3. Platform
-      if (selectedPlatform !== 'all') {
-        if (!firm.platforms.includes(selectedPlatform as any)) return false;
-      }
 
-      // 4. Profit Split
+
+      // 3. Profit Split
       if (minProfitSplit === '90' && !firm.profitSplit.includes('90%') && !firm.profitSplit.includes('95%')) return false;
       if (minProfitSplit === '95' && !firm.profitSplit.includes('95%')) return false;
 
-      // 5. Special Rules
+      // 4. Special Rules
       if (newsAllowedOnly && !firm.newsTradingAllowed) return false;
       if (weekendAllowedOnly && !firm.weekendHoldingAllowed) return false;
       if (eaAllowedOnly && !firm.eaAllowed) return false;
 
-      // 6. Reward & Ecosystem Toggles
+      // 5. Reward & Ecosystem Toggles
       if (hasPointsOnly && !firm.rewardTags?.includes('Points')) return false;
       if (hasTokenOnly && !firm.rewardTags?.includes('Token')) return false;
       if (confirmedAirdropOnly && !firm.rewardTags?.includes('Airdrop')) return false;
@@ -89,14 +85,13 @@ export default function HomePage() {
       if (sortBy === 'capital') return b.maxCapital - a.maxCapital;
       return 0;
     });
-  }, [firms, searchQuery, selectedStep, selectedPlatform, minProfitSplit, newsAllowedOnly, weekendAllowedOnly, eaAllowedOnly, hasPointsOnly, hasTokenOnly, confirmedAirdropOnly, sortBy]);
+  }, [firms, searchQuery, selectedStep, minProfitSplit, newsAllowedOnly, weekendAllowedOnly, eaAllowedOnly, hasPointsOnly, hasTokenOnly, confirmedAirdropOnly, sortBy]);
 
-  const hasActiveFilters = searchQuery || selectedStep !== 'all' || selectedPlatform !== 'all' || minProfitSplit !== 'all' || newsAllowedOnly || weekendAllowedOnly || eaAllowedOnly || hasPointsOnly || hasTokenOnly || confirmedAirdropOnly;
+  const hasActiveFilters = searchQuery || selectedStep !== 'all' || minProfitSplit !== 'all' || newsAllowedOnly || weekendAllowedOnly || eaAllowedOnly || hasPointsOnly || hasTokenOnly || confirmedAirdropOnly;
 
   const resetFilters = () => {
     setSearchQuery('');
     setSelectedStep('all');
-    setSelectedPlatform('all');
     setMinProfitSplit('all');
     setNewsAllowedOnly(false);
     setWeekendAllowedOnly(false);
@@ -108,30 +103,26 @@ export default function HomePage() {
   };
 
   return (
-    <div className="space-y-6 sm:space-y-8 py-4 sm:py-8 font-satoshi">
+    <div className="space-y-10 sm:space-y-12 py-4 sm:py-6 font-satoshi">
       
       {/* 1. HERO SECTION (Aligned 1-to-1 with Filter Box Margins) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="relative text-center pt-8 pb-4 px-4 sm:px-8 space-y-6">
+        <div className="relative text-center pt-16 pb-12 px-4 sm:pt-24 sm:pb-18 sm:px-8">
           {/* Pure Grey SVG Trading Chart Background */}
           <HeroBackground />
 
-          {/* Layer 3: Main Hero Typography, Buttons & Stats */}
-          <div className="relative z-10 space-y-6">
+          {/* Research-focused hero copy and market signals */}
+          <div className="relative z-10">
             
-            {/* Scaled Display Title */}
-            <h1 className="display-heading text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-tight leading-[1.08] text-white">
-              Start <span className="silver-shimmer-text">Prop</span> Trading from the
-              <br />
-              Right Place
+            <h1 className="display-heading mx-auto max-w-[820px] text-3xl xs:text-4xl sm:text-5xl md:text-[60px] lg:text-[64px] font-extrabold tracking-tight leading-[1.16] text-white">
+              Start Prop Trading from the Right Place
             </h1>
 
-            <p className="text-sm sm:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-normal">
-              Compare profit splits, drawdowns, points farming and on-chain verified conditions.
+            <p className="mt-5 sm:mt-6 text-sm sm:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed font-normal">
+              Compare funding rules, profit splits, payouts, drawdowns and verified reviews.
             </p>
 
-            {/* Minimalist Text-Only Stats Line (No Top Border Line) */}
-            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 pt-5 sm:pt-6 text-xs sm:text-sm text-zinc-400 max-w-4xl mx-auto font-medium">
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-7 sm:mt-8 text-xs sm:text-sm text-zinc-400 max-w-3xl mx-auto font-medium">
               <div className="flex items-center gap-1.5">
                 <span className="text-white font-mono font-bold">
                   <AnimatedCounter value={firms.length || 10} suffix="+" />
@@ -139,29 +130,29 @@ export default function HomePage() {
                 <span className="text-zinc-400">Verified Firms</span>
               </div>
 
-              <span className="text-zinc-700 hidden sm:inline">•</span>
+              <span className="text-zinc-700 hidden sm:inline" aria-hidden="true">&middot;</span>
 
               <div className="flex items-center gap-1.5">
                 <span className="text-zinc-200 font-mono font-bold">
-                  <AnimatedCounter value={90} suffix="%" />
+                  <AnimatedCounter value={firms.reduce((total, firm) => total + firm.reviewCount, 0) || 180} suffix="+" />
                 </span>
-                <span className="text-zinc-400">Max Profit Split</span>
+                <span className="text-zinc-400">Reviews</span>
               </div>
 
-              <span className="text-zinc-700 hidden sm:inline">•</span>
-
-              <div className="flex items-center gap-1.5">
-                <span className="text-zinc-200 font-mono font-bold">1:100</span>
-                <span className="text-zinc-400">Crypto Leverage</span>
-              </div>
-
-              <span className="text-zinc-700 hidden sm:inline">•</span>
+              <span className="text-zinc-700 hidden sm:inline" aria-hidden="true">&middot;</span>
 
               <div className="flex items-center gap-1.5">
                 <span className="text-zinc-200 font-mono font-bold">
-                  <AnimatedCounter value={20} suffix="% OFF" />
+                  <AnimatedCounter value={MOCK_COUPONS.length} />
                 </span>
                 <span className="text-zinc-400">Active Deals</span>
+              </div>
+
+              <span className="text-zinc-700 hidden sm:inline" aria-hidden="true">&middot;</span>
+
+              <div className="flex items-center gap-1.5">
+                <span className="text-zinc-200 font-mono font-bold">Daily</span>
+                <span className="text-zinc-400">Updates</span>
               </div>
             </div>
           </div>
@@ -169,22 +160,20 @@ export default function HomePage() {
       </section>
 
       {/* 2. EXPANDED MULTI-FILTER & PROP FIRM GRID SECTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-10">
         
         {/* CLEAN FILTER CONSOLE */}
-        <div className="rounded-2xl border border-zinc-800/80 bg-[#141416] p-4 sm:p-6 space-y-4 shadow-sm">
+        <div className="py-4 sm:py-5 space-y-3">
           
           {/* TOP ROW: Search & Sorting */}
-          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
-            
-            {/* Search Input */}
+          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-2.5">
             <div className="relative flex-1">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search firm name, platform (Bybit, cTrader, MT5), or features..."
+                placeholder="Search firms, platforms (MT5, cTrader, Bybit), or features..."
                 className="w-full bg-[#121214] border border-zinc-800/80 rounded-xl pl-10 pr-9 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-700 transition-colors font-medium min-h-[42px]"
               />
               {searchQuery && (
@@ -202,7 +191,7 @@ export default function HomePage() {
               <span className="text-xs text-zinc-400 font-medium hidden sm:inline">Sort:</span>
               <CustomSelect
                 value={sortBy}
-                onChange={(val) => setSortBy(val as any)}
+                onChange={(val) => setSortBy(val as typeof sortBy)}
                 icon={<ArrowUpDown className="h-4 w-4 text-zinc-500" />}
                 align="left"
                 options={[
@@ -216,15 +205,15 @@ export default function HomePage() {
 
           </div>
 
-          {/* MIDDLE ROW: Evaluation Steps & Platform Filters */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2 border-t border-zinc-800/40">
+          {/* Evaluation and profit split */}
+          <div className="flex flex-col md:flex-row md:items-start gap-3 pt-2.5 border-t border-zinc-800/40">
             
             {/* 1. Evaluation Model */}
             <div className="space-y-1.5">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 block">Evaluation Model</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 block">Evaluation</span>
               <div className="flex items-center gap-1.5 overflow-x-auto touch-scroll no-scrollbar pb-0.5">
                 {[
-                  { id: 'all', label: 'All Models' },
+                  { id: 'all', label: 'All' },
                   { id: '1-Step', label: '1-Step' },
                   { id: '2-Step', label: '2-Step' },
                   { id: 'Instant Funding', label: 'Instant' },
@@ -232,7 +221,7 @@ export default function HomePage() {
                   <button
                     key={item.id}
                     onClick={() => setSelectedStep(item.id)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 min-h-[36px] ${
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 min-h-[36px] cursor-pointer ${
                       selectedStep === item.id
                         ? 'bg-white text-zinc-950 shadow-sm'
                         : 'bg-[#121214] border border-zinc-800/80 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
@@ -244,45 +233,19 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 2. Platform */}
-            <div className="space-y-1.5">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 block">Trading Platform</span>
-              <div className="flex items-center gap-1.5 overflow-x-auto touch-scroll no-scrollbar pb-0.5">
-                {[
-                  { id: 'all', label: 'All Platforms' },
-                  { id: 'cTrader', label: 'cTrader' },
-                  { id: 'Bybit', label: 'Bybit' },
-                  { id: 'MT5', label: 'MT5' },
-                  { id: 'TradeLocker', label: 'TradeLocker' },
-                ].map(item => (
-                  <button
-                    key={item.id}
-                    onClick={() => setSelectedPlatform(item.id)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 min-h-[36px] ${
-                      selectedPlatform === item.id
-                        ? 'bg-white text-zinc-950 shadow-sm'
-                        : 'bg-[#121214] border border-zinc-800/80 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* 3. Profit Split */}
+            {/* Profit Split */}
             <div className="space-y-1.5">
               <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 block">Profit Split</span>
               <div className="flex items-center gap-1.5 overflow-x-auto touch-scroll no-scrollbar pb-0.5">
                 {[
-                  { id: 'all', label: 'All Splits' },
-                  { id: '90', label: '90%+ Split' },
-                  { id: '95', label: '95% Split' },
+                  { id: 'all', label: 'All' },
+                  { id: '90', label: '90%+' },
+                  { id: '95', label: '95%+' },
                 ].map(item => (
                   <button
                     key={item.id}
                     onClick={() => setMinProfitSplit(item.id)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 min-h-[36px] ${
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 min-h-[36px] cursor-pointer ${
                       minProfitSplit === item.id
                         ? 'bg-white text-zinc-950 shadow-sm'
                         : 'bg-[#121214] border border-zinc-800/80 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700'
@@ -296,52 +259,49 @@ export default function HomePage() {
 
           </div>
 
-          {/* BOTTOM ROW: Special Rules Toggle Pills & Centered Results Bar */}
-          <div className="space-y-3 pt-3 border-t border-zinc-800/40">
+          {/* Features and results */}
+          <div className="space-y-2.5 pt-2.5 border-t border-zinc-800/40">
             
-            {/* Special Rules & Ecosystem Reward Pills */}
+            {/* Feature pills */}
             <div className="flex items-center gap-2 flex-wrap text-xs">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mr-1 shrink-0">Ecosystem & Rewards:</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mr-1 shrink-0">Features</span>
 
               <button
                 onClick={() => setHasPointsOnly(!hasPointsOnly)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap cursor-pointer ${
                   hasPointsOnly
                     ? 'bg-amber-500/15 border-amber-500/40 text-amber-300'
                     : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
                 }`}
               >
-                <span>✨ Has Points</span>
+                <span>Points</span>
               </button>
 
               <button
                 onClick={() => setHasTokenOnly(!hasTokenOnly)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap cursor-pointer ${
                   hasTokenOnly
                     ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788]'
                     : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
                 }`}
               >
-                <span>🪙 Has Token</span>
+                <span>Token</span>
               </button>
 
               <button
                 onClick={() => setConfirmedAirdropOnly(!confirmedAirdropOnly)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap cursor-pointer ${
                   confirmedAirdropOnly
                     ? 'bg-sky-500/15 border-sky-500/40 text-sky-300'
                     : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
                 }`}
               >
-                <span>🪂 Confirmed Airdrop</span>
+                <span>Confirmed Airdrop</span>
               </button>
-
-              <span className="text-zinc-700 mx-1 hidden sm:inline shrink-0">|</span>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mr-1 shrink-0">Rules:</span>
 
               <button
                 onClick={() => setNewsAllowedOnly(!newsAllowedOnly)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap cursor-pointer ${
                   newsAllowedOnly
                     ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788]'
                     : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
@@ -353,7 +313,7 @@ export default function HomePage() {
 
               <button
                 onClick={() => setWeekendAllowedOnly(!weekendAllowedOnly)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap cursor-pointer ${
                   weekendAllowedOnly
                     ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788]'
                     : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
@@ -365,14 +325,14 @@ export default function HomePage() {
 
               <button
                 onClick={() => setEaAllowedOnly(!eaAllowedOnly)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-150 min-h-[34px] font-semibold whitespace-nowrap cursor-pointer ${
                   eaAllowedOnly
                     ? 'bg-[#52b788]/15 border-[#52b788]/40 text-[#52b788]'
                     : 'bg-[#121214] border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
                 }`}
               >
                 <Bot className="h-3.5 w-3.5" />
-                <span>EAs & Bots</span>
+                <span>EA &amp; Bots</span>
               </button>
             </div>
 
@@ -395,7 +355,6 @@ export default function HomePage() {
           </div>
 
         </div>
-
         {/* Scaled Cards Grid (max-w-7xl) */}
         {filteredFirms.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">

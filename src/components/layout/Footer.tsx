@@ -4,7 +4,7 @@ import { ShieldCheck, ArrowUpRight } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="border-t border-zinc-800/80 bg-[#121212] pt-12 pb-8 text-zinc-400">
+    <footer className="border-t border-zinc-800/80 bg-black pt-12 pb-8 text-zinc-400">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           

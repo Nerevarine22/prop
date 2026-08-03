@@ -60,7 +60,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   if (authenticated === null) {
     return (
-      <div className="min-h-screen bg-[#121212] flex items-center justify-center text-xs text-zinc-500 font-satoshi">
+      <div className="min-h-screen bg-[#090909] flex items-center justify-center text-xs text-zinc-500 font-satoshi">
         Checking Admin Permissions...
       </div>
     );
@@ -71,7 +71,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="min-h-screen bg-[#121212] font-satoshi flex flex-col md:flex-row">
+    <div className="min-h-screen bg-[#090909] font-satoshi flex flex-col md:flex-row">
       
       {/* Sidebar Navigation */}
       <aside className="w-full md:w-64 bg-[#141416] border-r border-zinc-800/80 p-5 flex flex-col justify-between shrink-0 space-y-6">

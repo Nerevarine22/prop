@@ -108,9 +108,9 @@ export function HeroBackground() {
   });
 
   return (
-    <div className="pointer-events-none absolute inset-0 w-full h-full overflow-hidden select-none z-0">
-      {/* Abstract Pure Grey Trading Chart - Lowered Opacity by ~5% to 0.19 */}
-      <div className="absolute inset-0 w-full h-full opacity-[0.19] transform-gpu">
+    <div className="pointer-events-none absolute inset-y-0 left-1/2 h-full w-[calc(100%+8rem)] -translate-x-1/2 overflow-hidden select-none z-0">
+      {/* Subtle BTC market texture */}
+      <div className="absolute inset-0 h-full w-full opacity-[0.10] transform-gpu">
         <svg
           viewBox="0 0 1200 450"
           fill="none"

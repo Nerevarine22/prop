@@ -83,7 +83,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
   }, []);
 
   return (
-    <div className="relative rounded-2xl bg-[#141416] border border-zinc-800/60 p-5 sm:p-7 flex flex-col justify-between space-y-5 hover:border-zinc-700/80 transition-all duration-200 shadow-sm h-full group font-satoshi overflow-hidden">
+    <div className="relative rounded-2xl border border-zinc-800/60 bg-[#111113] bg-clip-padding p-5 sm:p-7 flex flex-col justify-between space-y-5 hover:border-zinc-700/80 transition-all duration-200 shadow-sm h-full group font-satoshi overflow-hidden">
 
       {/* Subtle Top-Left Ambient Brand Color Glow (Ultra-soft 5% -> 10%) */}
       <div
@@ -258,7 +258,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
         {/* Right: Primary White Button pointing to internal page */}
         <Link
           href={`/firms/${firm.slug}`}
-          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl bg-zinc-200/80 hover:bg-white text-zinc-950 font-bold text-xs transition-colors shadow-sm"
+          className="details-btn flex-1 flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl font-bold text-xs shadow-sm"
         >
           <span>Details</span>
           <ArrowRight className="h-3.5 w-3.5" />
