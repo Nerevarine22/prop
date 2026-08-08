@@ -37,6 +37,45 @@ export interface PlanTier {
 
 export type RewardTag = 'Points' | 'Token' | 'Airdrop' | 'Potential';
 
+export type DataStatus = 'mock' | 'reported' | 'verified';
+
+export type SourceType =
+  | 'official-website'
+  | 'rulebook'
+  | 'blockchain'
+  | 'social'
+  | 'community'
+  | 'manual-research';
+
+export interface DataSource {
+  id: string;
+  label: string;
+  type: SourceType;
+  url?: string;
+  accessedAt: string;
+  publishedAt?: string;
+  notes?: string;
+}
+
+export interface VerificationRecord {
+  status: DataStatus;
+  method: 'demo-seed' | 'manual-review' | 'automated-check' | 'onchain-proof';
+  checkedAt: string;
+  sourceIds: string[];
+  reviewer?: string;
+  confidence?: 'low' | 'medium' | 'high';
+}
+
+export interface FirmChangeRecord {
+  id: string;
+  changedAt: string;
+  field: string;
+  previousValue?: string;
+  nextValue: string;
+  sourceIds: string[];
+  note?: string;
+}
+
 export interface TokenomicsInfo {
   hasToken: boolean;
   tokenTicker?: string;
@@ -89,6 +128,13 @@ export interface PropFirm {
   yearEstablished: number;
   headquarters: string;
   trustScore: number; // 0 to 100
+
+  // Data provenance. Mock records must never be presented as independently verified.
+  dataStatus: DataStatus;
+  lastReviewedAt: string;
+  sources: DataSource[];
+  verification: VerificationRecord;
+  changeHistory: FirmChangeRecord[];
   
   // Tokenomics, Points & Airdrop Ecosystem
   rewardTags?: RewardTag[];

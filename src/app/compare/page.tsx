@@ -3,11 +3,11 @@
 import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { PropFirm } from '@/types/firm';
+import { EvaluationStep, PropFirm, TradingPlatform } from '@/types/firm';
 import { getFirms } from '@/lib/services/firmService';
 import { FirmCard } from '@/components/firms/FirmCard';
 import { CustomSelect } from '@/components/ui/CustomSelect';
-import { Scale, CheckCircle2, XCircle, Trash2, ArrowRight, Search, Filter, ArrowUpDown, LayoutGrid, Table, RotateCcw, Plus, X } from 'lucide-react';
+import { Scale, CheckCircle2, XCircle, ArrowRight, Search, Filter, ArrowUpDown, LayoutGrid, Table, RotateCcw, X, Database } from 'lucide-react';
 
 function CompareContent() {
   const searchParams = useSearchParams();
@@ -16,8 +16,8 @@ function CompareContent() {
 
   // Directory filter states
   const [search, setSearch] = useState('');
-  const [selectedStep, setSelectedStep] = useState<string>('All');
-  const [selectedPlatform, setSelectedPlatform] = useState<string>('All');
+  const [selectedStep, setSelectedStep] = useState<'All' | EvaluationStep>('All');
+  const [selectedPlatform, setSelectedPlatform] = useState<'All' | TradingPlatform>('All');
   const [minProfitSplit, setMinProfitSplit] = useState<number>(0);
   const [newsAllowedOnly, setNewsAllowedOnly] = useState(false);
   const [weekendAllowedOnly, setWeekendAllowedOnly] = useState(false);
@@ -27,6 +27,7 @@ function CompareContent() {
 
   // Comparison Matrix state
   const [selectedFirms, setSelectedFirms] = useState<PropFirm[]>([]);
+  const [compareLimitMessage, setCompareLimitMessage] = useState('');
 
   useEffect(() => {
     getFirms().then(data => {
@@ -58,9 +59,10 @@ function CompareContent() {
         return prev.filter(f => f.id !== firm.id);
       } else {
         if (prev.length >= 4) {
-          alert('You can compare up to 4 firms side-by-side.');
+          setCompareLimitMessage('You can compare up to 4 firms side by side.');
           return prev;
         }
+        setCompareLimitMessage('');
         return [...prev, firm];
       }
     });
@@ -75,10 +77,10 @@ function CompareContent() {
       if (search.trim() && !firm.name.toLowerCase().includes(search.toLowerCase()) && !firm.tagline.toLowerCase().includes(search.toLowerCase())) {
         return false;
       }
-      if (selectedStep !== 'All' && !firm.evaluationSteps.includes(selectedStep as any)) {
+      if (selectedStep !== 'All' && !firm.evaluationSteps.includes(selectedStep)) {
         return false;
       }
-      if (selectedPlatform !== 'All' && !firm.platforms.includes(selectedPlatform as any)) {
+      if (selectedPlatform !== 'All' && !firm.platforms.includes(selectedPlatform)) {
         return false;
       }
       if (minProfitSplit > 0) {
@@ -118,13 +120,13 @@ function CompareContent() {
         <div>
           <div className="eyebrow-tag mb-2 border-emerald-500/30 text-emerald-400 bg-emerald-500/10">
             <Scale className="h-3.5 w-3.5" />
-            COMPARE & DIRECTORY REGISTRY
+            COMPARISON WORKSPACE
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Crypto Prop Firm Comparison Engine
+            Compare crypto prop firms
           </h1>
           <p className="text-xs sm:text-sm text-zinc-400 mt-1">
-            Compare rules, leverage, drawdown limits, and pricing side-by-side or explore the full directory below.
+            Review evaluation rules, leverage, drawdown limits, platforms and sample pricing side by side.
           </p>
         </div>
 
@@ -146,6 +148,15 @@ function CompareContent() {
         </div>
       </div>
 
+      <div className="flex items-start gap-3 rounded-xl border border-amber-500/25 bg-amber-500/[0.08] px-4 py-3 text-xs leading-relaxed text-amber-100">
+        <Database className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" />
+        <p>This comparison currently uses demo records. Values are provided for interface development and are not purchase guidance.</p>
+      </div>
+
+      {compareLimitMessage && (
+        <p role="status" className="rounded-lg border border-amber-500/20 bg-amber-500/10 px-4 py-3 text-xs text-amber-200">{compareLimitMessage}</p>
+      )}
+
       {/* 2. SIDE-BY-SIDE COMPARISON MATRIX (When firms are selected) */}
       {selectedFirms.length > 0 && (
         <section className="space-y-4">
@@ -166,9 +177,11 @@ function CompareContent() {
                     <th key={firm.id} className="p-4 border-l border-zinc-800/80 min-w-[220px] relative">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3 min-w-0">
+                          {/* Firm logos can be remote research assets from changing sources. */}
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img src={firm.logo} alt={firm.name} className="h-10 w-10 rounded-xl object-cover border border-zinc-800 shrink-0" />
                           <div className="min-w-0">
-                            <Link href={`/firms/${firm.slug}`} className="font-bold text-white hover:text-[#52b788] block text-sm truncate font-satoshi">
+                            <Link href={`/prop-firms/${firm.slug}`} className="font-bold text-white hover:text-[#52b788] block text-sm truncate font-satoshi">
                               {firm.name}
                             </Link>
                             <span className="text-[11px] text-zinc-500 font-mono">★ {firm.rating.toFixed(1)}</span>
@@ -269,7 +282,7 @@ function CompareContent() {
 
                 {/* Promo Deal */}
                 <tr className="hover:bg-zinc-900/40 transition-colors">
-                  <td className="p-4 font-semibold text-zinc-400">Active Verified Code</td>
+                  <td className="p-4 font-semibold text-zinc-400">Promo record</td>
                   {selectedFirms.map(firm => (
                     <td key={firm.id} className="p-4 border-l border-zinc-800/80">
                       {firm.verifiedCoupon ? (
@@ -290,7 +303,7 @@ function CompareContent() {
                   {selectedFirms.map(firm => (
                     <td key={firm.id} className="p-4 border-l border-zinc-800/80">
                       <Link
-                        href={`/firms/${firm.slug}`}
+                        href={`/prop-firms/${firm.slug}`}
                         className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs shadow-sm transition-colors"
                       >
                         <span>Explore Profile</span>
@@ -306,13 +319,13 @@ function CompareContent() {
         </section>
       )}
 
-      {/* 3. FULL DIRECTORY GRID WITH LEFT SIDEBAR FILTERS */}
+      {/* Firm picker with filters */}
       <section className="space-y-6 pt-4">
         
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl font-extrabold text-white tracking-tight">Prop Firm Directory & Filter Registry</h2>
-            <p className="text-xs text-zinc-400">Select any firm below to instantly add or remove it from the comparison matrix above.</p>
+            <h2 className="text-xl font-extrabold text-white tracking-tight">Add firms to comparison</h2>
+            <p className="text-xs text-zinc-400">Filter the demo dataset, then add or remove firms from the matrix above.</p>
           </div>
         </div>
 
@@ -372,7 +385,9 @@ function CompareContent() {
                 <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider">Evaluation Model</label>
                 <CustomSelect
                   value={selectedStep}
-                  onChange={val => setSelectedStep(val)}
+                  onChange={(value) => {
+                    if (value === 'All' || value === '1-Step' || value === '2-Step' || value === 'Instant Funding') setSelectedStep(value);
+                  }}
                   options={[
                     { value: 'All', label: 'All Evaluation Types' },
                     { value: '1-Step', label: '1-Step Evaluation' },
@@ -387,7 +402,9 @@ function CompareContent() {
                 <label className="block text-xs font-bold text-zinc-300 uppercase tracking-wider">Trading Platform</label>
                 <CustomSelect
                   value={selectedPlatform}
-                  onChange={val => setSelectedPlatform(val)}
+                  onChange={(value) => {
+                    if (value === 'All' || value === 'MT4' || value === 'MT5' || value === 'cTrader' || value === 'Bybit' || value === 'TradeLocker' || value === 'Match-Trader') setSelectedPlatform(value);
+                  }}
                   options={[
                     { value: 'All', label: 'All Platforms' },
                     { value: 'cTrader', label: 'cTrader' },
@@ -457,7 +474,9 @@ function CompareContent() {
                 <span className="text-zinc-400 font-semibold">Sort by:</span>
                 <CustomSelect
                   value={sortBy}
-                  onChange={val => setSortBy(val as any)}
+                  onChange={(value) => {
+                    if (value === 'rating' || value === 'split' || value === 'trust') setSortBy(value);
+                  }}
                   icon={<ArrowUpDown className="h-4 w-4 text-zinc-500" />}
                   options={[
                     { value: 'rating', label: 'Rating (Highest)' },
@@ -521,9 +540,11 @@ function CompareContent() {
                     {filteredFirms.map(firm => (
                       <tr key={firm.id} className="hover:bg-zinc-900/40 transition-colors">
                         <td className="p-4 flex items-center gap-3">
+                          {/* Firm logos can be remote research assets from changing sources. */}
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img src={firm.logo} alt={firm.name} className="h-10 w-10 rounded-xl object-cover border border-zinc-800 shrink-0" />
                           <div>
-                            <Link href={`/firms/${firm.slug}`} className="font-bold text-white hover:text-zinc-200">
+                            <Link href={`/prop-firms/${firm.slug}`} className="font-bold text-white hover:text-zinc-200">
                               {firm.name}
                             </Link>
                             <span className="block text-[11px] text-zinc-500">★ {firm.rating.toFixed(1)} ({firm.reviewCount})</span>
@@ -545,7 +566,7 @@ function CompareContent() {
                             {selectedFirms.some(s => s.id === firm.id) ? 'Comparing' : '+ Compare'}
                           </button>
                           <Link
-                            href={`/firms/${firm.slug}`}
+                            href={`/prop-firms/${firm.slug}`}
                             className="px-3.5 py-1.5 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs transition-colors inline-block"
                           >
                             Explore

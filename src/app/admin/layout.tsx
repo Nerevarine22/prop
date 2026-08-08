@@ -10,48 +10,34 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const [authenticated, setAuthenticated] = useState<boolean | null>(null);
+  const [authenticated, setAuthenticated] = useState<boolean | null>(() => {
+    if (pathname === '/admin/login') return true;
+    return isFirebaseConfigured ? null : false;
+  });
 
   useEffect(() => {
-    // Skip guard for login page
-    if (pathname === '/admin/login') {
-      setAuthenticated(true);
-      return;
-    }
+    if (pathname === '/admin/login') return;
 
     if (isFirebaseConfigured) {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
           setAuthenticated(true);
         } else {
-          // Check session fallback
-          const isSessionAuth = sessionStorage.getItem('prophub_admin_auth') === 'true';
-          if (isSessionAuth) {
-            setAuthenticated(true);
-          } else {
-            setAuthenticated(false);
-            router.push('/admin/login');
-          }
+          setAuthenticated(false);
+          router.replace('/admin/login');
         }
       });
       return () => unsubscribe();
-    } else {
-      const isSessionAuth = sessionStorage.getItem('prophub_admin_auth') === 'true';
-      if (isSessionAuth) {
-        setAuthenticated(true);
-      } else {
-        setAuthenticated(false);
-        router.push('/admin/login');
-      }
     }
+
+    router.replace('/admin/login?reason=not-configured');
   }, [pathname, router]);
 
   const handleLogout = async () => {
-    sessionStorage.removeItem('prophub_admin_auth');
     if (isFirebaseConfigured) {
       await signOut(auth);
     }
-    router.push('/admin/login');
+    router.replace('/admin/login');
   };
 
   if (pathname === '/admin/login') {

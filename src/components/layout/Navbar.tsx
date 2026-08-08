@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShieldCheck, Menu, X, Sparkles, Scale, Percent, Activity } from 'lucide-react';
+import { ShieldCheck, Menu, X, Scale, Coins, BookOpen, Building2 } from 'lucide-react';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -25,33 +25,43 @@ export function Navbar() {
           {/* Desktop Links */}
           <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-zinc-400">
             <Link
+              href="/prop-firms"
+              className={`flex items-center gap-1.5 transition-colors hover:text-white ${
+                pathname.startsWith('/prop-firms') ? 'text-white font-semibold' : ''
+              }`}
+            >
+              <Building2 className="h-3.5 w-3.5 text-zinc-400" />
+              <span>Prop Firms</span>
+            </Link>
+
+            <Link
               href="/compare"
               className={`flex items-center gap-1.5 transition-colors hover:text-white ${
-                pathname === '/compare' || pathname === '/firms' ? 'text-white font-semibold' : ''
+                pathname === '/compare' ? 'text-white font-semibold' : ''
               }`}
             >
               <Scale className="h-3.5 w-3.5 text-zinc-400" />
-              <span>Compare & Directory</span>
+              <span>Compare</span>
             </Link>
 
             <Link
-              href="/coupons"
+              href="/rewards"
               className={`flex items-center gap-1.5 transition-colors hover:text-white ${
-                pathname === '/coupons' ? 'text-white font-semibold' : ''
+                pathname === '/rewards' ? 'text-white font-semibold' : ''
               }`}
             >
-              <Percent className="h-3.5 w-3.5 text-zinc-400" />
-              <span>Verified Deals</span>
+              <Coins className="h-3.5 w-3.5 text-zinc-400" />
+              <span>Rewards</span>
             </Link>
 
             <Link
-              href="/transparency"
+              href="/methodology"
               className={`flex items-center gap-1.5 transition-colors hover:text-white ${
-                pathname === '/transparency' ? 'text-white font-semibold' : ''
+                pathname === '/methodology' ? 'text-white font-semibold' : ''
               }`}
             >
-              <Activity className="h-3.5 w-3.5 text-zinc-400" />
-              <span>Transparency Engine</span>
+              <BookOpen className="h-3.5 w-3.5 text-zinc-400" />
+              <span>Methodology</span>
             </Link>
           </nav>
         </div>
@@ -59,11 +69,11 @@ export function Navbar() {
         {/* Compare Firms Button */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            href="/compare"
+            href="/prop-firms"
             className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-zinc-100 text-zinc-950 hover:bg-white transition-colors"
           >
-            <Scale className="h-3.5 w-3.5 text-zinc-950" />
-            <span>Compare Firms</span>
+            <Building2 className="h-3.5 w-3.5 text-zinc-950" />
+            <span>Browse Firms</span>
           </Link>
         </div>
 
@@ -84,42 +94,55 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-zinc-800 bg-black/95 backdrop-blur-xl px-4 py-5 space-y-2.5 text-sm font-medium text-zinc-300 animate-in fade-in slide-in-from-top-2 duration-200">
           <Link
+            href="/prop-firms"
+            onClick={() => setMobileMenuOpen(false)}
+            className={`flex items-center gap-3 px-3.5 py-3 rounded-xl border transition-colors min-h-[44px] ${
+              pathname.startsWith('/prop-firms')
+                ? 'bg-zinc-800/90 border-zinc-700 text-white font-bold'
+                : 'border-zinc-900 hover:bg-zinc-900 text-zinc-300'
+            }`}
+          >
+            <Building2 className="h-4 w-4 text-[#52b788]" />
+            <span>Prop Firms</span>
+          </Link>
+
+          <Link
             href="/compare"
             onClick={() => setMobileMenuOpen(false)}
             className={`flex items-center gap-3 px-3.5 py-3 rounded-xl border transition-colors min-h-[44px] ${
-              pathname === '/compare' || pathname === '/firms'
+              pathname === '/compare'
                 ? 'bg-zinc-800/90 border-zinc-700 text-white font-bold'
                 : 'border-zinc-900 hover:bg-zinc-900 text-zinc-300'
             }`}
           >
-            <Scale className="h-4 w-4 text-[#52b788]" />
-            <span>Compare & Directory</span>
+            <Scale className="h-4 w-4 text-emerald-400" />
+            <span>Compare</span>
           </Link>
 
           <Link
-            href="/coupons"
+            href="/rewards"
             onClick={() => setMobileMenuOpen(false)}
             className={`flex items-center gap-3 px-3.5 py-3 rounded-xl border transition-colors min-h-[44px] ${
-              pathname === '/coupons'
+              pathname === '/rewards'
                 ? 'bg-zinc-800/90 border-zinc-700 text-white font-bold'
                 : 'border-zinc-900 hover:bg-zinc-900 text-zinc-300'
             }`}
           >
-            <Percent className="h-4 w-4 text-emerald-400" />
-            <span>Verified Deals</span>
+            <Coins className="h-4 w-4 text-emerald-400" />
+            <span>Rewards</span>
           </Link>
 
           <Link
-            href="/transparency"
+            href="/methodology"
             onClick={() => setMobileMenuOpen(false)}
             className={`flex items-center gap-3 px-3.5 py-3 rounded-xl border transition-colors min-h-[44px] ${
-              pathname === '/transparency'
+              pathname === '/methodology'
                 ? 'bg-zinc-800/90 border-zinc-700 text-white font-bold'
                 : 'border-zinc-900 hover:bg-zinc-900 text-zinc-300'
             }`}
           >
-            <Activity className="h-4 w-4 text-sky-400" />
-            <span>Transparency Engine</span>
+            <BookOpen className="h-4 w-4 text-emerald-400" />
+            <span>Methodology</span>
           </Link>
 
 

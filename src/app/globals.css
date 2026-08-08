@@ -1,9 +1,8 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
 @import "tailwindcss";
 
 @layer base {
   :root {
-    --font-sans: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: var(--font-space-grotesk), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-display: var(--font-space-grotesk), 'Segoe UI', system-ui, sans-serif;
     --font-geist: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-geist-mono: 'Cascadia Code', 'SFMono-Regular', Consolas, monospace;
@@ -16,16 +15,71 @@
     --duration-quick: 150ms;
     --duration-fast: 250ms;
     --duration-slow: 400ms;
+
+    /* PropHub design tokens */
+    --color-canvas: #0b0c0d;
+    --color-surface: #121416;
+    --color-surface-raised: #181b1d;
+    --color-border: #2a2d30;
+    --color-text: #f2f4f3;
+    --color-text-muted: #9ca3a1;
+    --color-accent: #67b892;
+    --color-warning: #d9a95b;
+    --radius-control: 0.5rem;
+    --radius-panel: 0.875rem;
+    --content-wide: 80rem;
+    --z-sticky: 40;
+    --z-overlay: 60;
   }
 }
 
 html,
 body {
   font-family: var(--font-sans);
-  background-color: #090909;
+  background-color: var(--color-canvas);
   color: #fafafa;
   overflow-x: hidden;
   touch-action: manipulation;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: var(--z-overlay);
+  transform: translateY(-200%);
+  border-radius: var(--radius-control);
+  background: var(--color-text);
+  color: var(--color-canvas);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: transform var(--duration-fast) var(--ease-smooth-out);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.data-number {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
 }
 
 /* Ultra-subtle Vercel/Linear-style Background Grid Pattern */
@@ -157,4 +211,18 @@ body {
 .details-btn:hover {
   background-color: #ffffff !important;
   color: #09090b !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

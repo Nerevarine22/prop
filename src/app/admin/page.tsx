@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Plus, Search, Edit2, Trash2, ExternalLink, ShieldCheck, Star, Percent, RefreshCw, AlertCircle } from 'lucide-react';
+import { Plus, Search, Edit2, Trash2, ExternalLink, Star, RefreshCw } from 'lucide-react';
 import { PropFirm } from '@/types/firm';
 import { getFirms, deleteFirm } from '@/lib/services/firmService';
 import { FirmModal } from '@/components/admin/FirmModal';
@@ -14,6 +14,7 @@ export default function AdminDashboardPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFirm, setSelectedFirm] = useState<PropFirm | null>(null);
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
+  const [actionError, setActionError] = useState('');
 
   const fetchFirms = async () => {
     setLoading(true);
@@ -28,7 +29,22 @@ export default function AdminDashboardPage() {
   };
 
   useEffect(() => {
-    fetchFirms();
+    let cancelled = false;
+    getFirms()
+      .then((data) => {
+        if (!cancelled) setFirms(data);
+      })
+      .catch((error: unknown) => {
+        console.error('Failed to load firms:', error);
+        if (!cancelled) setActionError('Could not load firm records.');
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const handleDelete = async (id: string) => {
@@ -36,8 +52,9 @@ export default function AdminDashboardPage() {
       await deleteFirm(id);
       setDeleteConfirmId(null);
       fetchFirms();
-    } catch (err) {
-      alert('Failed to delete firm');
+    } catch (error: unknown) {
+      console.error('Failed to delete firm:', error);
+      setActionError('Could not delete this firm.');
     }
   };
 
@@ -80,6 +97,10 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* KPI Overview Grid */}
+      {actionError && (
+        <div className="rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-xs text-red-300">{actionError}</div>
+      )}
+
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="p-4 rounded-xl bg-[#141416] border border-zinc-800/80 space-y-1">
           <span className="text-[11px] text-zinc-500 font-semibold uppercase tracking-wider">Total Active Firms</span>
@@ -161,6 +182,8 @@ export default function AdminDashboardPage() {
                       {/* Firm Name & Logo */}
                       <td className="py-3.5 px-4">
                         <div className="flex items-center gap-3">
+                          {/* Dynamic admin previews intentionally bypass the production image pipeline. */}
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img src={firm.logo} alt={firm.name} className="h-10 w-10 rounded-xl object-cover border border-zinc-800 shrink-0" />
                           <div className="min-w-0">
                             <div className="flex items-center gap-1.5">
@@ -213,7 +236,7 @@ export default function AdminDashboardPage() {
                       <td className="py-3.5 px-4 text-right">
                         <div className="flex items-center justify-end gap-2">
                           <Link
-                            href={`/firms/${firm.slug}`}
+                            href={`/prop-firms/${firm.slug}`}
                             target="_blank"
                             className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white"
                             title="Preview Firm Page"
@@ -262,12 +285,15 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Firm Create/Edit Modal */}
-      <FirmModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSaved={fetchFirms}
-        firmToEdit={selectedFirm}
-      />
+      {isModalOpen && (
+        <FirmModal
+          key={selectedFirm?.id || 'new-firm'}
+          isOpen
+          onClose={() => setIsModalOpen(false)}
+          onSaved={fetchFirms}
+          firmToEdit={selectedFirm}
+        />
+      )}
 
     </div>
   );

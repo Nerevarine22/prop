@@ -1,21 +1,20 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
-import { Activity, ShieldCheck, DollarSign, Award, Clock, Wallet, ArrowUpRight, CheckCircle2, RefreshCw } from 'lucide-react';
+import { Activity, ShieldCheck, DollarSign, Award, Clock, Wallet, ArrowUpRight, Database } from 'lucide-react';
 
 export default function TransparencyPage() {
   const [activeCategory, setActiveCategory] = useState<string>('Overview');
   const [timeRange, setTimeRange] = useState<string>('30d');
 
-  // Mock Onchain Activity Stream
+  // Static sample records for UI development only.
   const activityLogs = [
-    { id: 'tx-1', firm: 'FundingPips', trader: '0x8f...3a1c', amount: '$14,250 USDT', time: '12 mins ago', status: 'Completed', txHash: '0xa72d...91e4' },
-    { id: 'tx-2', firm: 'Breakout Prop', trader: '0x3b...90e2', amount: '$8,400 USDC', time: '34 mins ago', status: 'Completed', txHash: '0x49f1...28b0' },
-    { id: 'tx-3', firm: 'Bybit Prop Hub', trader: '0x1c...4f88', amount: '$22,100 USDT', time: '1 hour ago', status: 'Completed', txHash: '0x99c2...77a1' },
-    { id: 'tx-4', firm: 'FundingPips', trader: '0x7e...2d01', amount: '$5,900 USDT', time: '2 hours ago', status: 'Completed', txHash: '0x31a4...00c8' },
-    { id: 'tx-5', firm: 'Hydra Funded', trader: '0x9d...11b4', amount: '$11,600 USDT', time: '3 hours ago', status: 'Completed', txHash: '0x82f9...64d5' },
+    { id: 'tx-1', firm: 'FundingPips', trader: '0x8f...3a1c', amount: '$14,250 USDT', time: 'Example', status: 'Sample', txHash: '0xa72d...91e4' },
+    { id: 'tx-2', firm: 'Breakout Prop', trader: '0x3b...90e2', amount: '$8,400 USDC', time: 'Example', status: 'Sample', txHash: '0x49f1...28b0' },
+    { id: 'tx-3', firm: 'Bybit Prop Hub', trader: '0x1c...4f88', amount: '$22,100 USDT', time: 'Example', status: 'Sample', txHash: '0x99c2...77a1' },
+    { id: 'tx-4', firm: 'FundingPips', trader: '0x7e...2d01', amount: '$5,900 USDT', time: 'Example', status: 'Sample', txHash: '0x31a4...00c8' },
+    { id: 'tx-5', firm: 'Hydra Funded', trader: '0x9d...11b4', amount: '$11,600 USDT', time: 'Example', status: 'Sample', txHash: '0x82f9...64d5' },
   ];
 
   return (
@@ -24,11 +23,15 @@ export default function TransparencyPage() {
       {/* Title Banner */}
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-3">
         <h1 className="display-heading text-4xl sm:text-6xl font-extrabold tracking-tight text-white">
-          Real-Time Transparency Dashboard
+          Transparency data prototype
         </h1>
         <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-          Track every metric that matters. From trader performance to payouts, hedging positions to platform uptime—see exactly how PropHub and partner firms operate in real time.
+          A development preview of how payout evidence, provenance and operating metrics can be presented once verified data sources are connected.
         </p>
+        <div className="mt-2 flex items-start gap-2 rounded-lg border border-amber-500/25 bg-amber-500/[0.08] px-4 py-3 text-left text-xs leading-relaxed text-amber-100">
+          <Database className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" />
+          <span>All values and transaction records on this page are static sample data. No live blockchain connection is active.</span>
+        </div>
       </div>
 
       {/* Main Dashboard Layout */}
@@ -74,7 +77,7 @@ export default function TransparencyPage() {
           <div className="flex flex-col xs:flex-row xs:items-center justify-between border-b border-zinc-800 pb-4 gap-3">
             <h2 className="text-lg font-bold text-white flex items-center gap-2">
               <span>{activeCategory} Dashboard</span>
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="rounded-md border border-amber-500/25 bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold text-amber-300">Demo</span>
             </h2>
 
             <div className="flex items-center gap-1 bg-zinc-900 p-1 rounded-lg border border-zinc-800 text-xs self-start xs:self-auto">
@@ -115,7 +118,7 @@ export default function TransparencyPage() {
               <p className="text-xl sm:text-2xl font-bold font-mono text-sky-400">
                 <AnimatedCounter value={3120500} prefix="$" />
               </p>
-              <p className="text-[10px] text-zinc-500">verified on-chain</p>
+              <p className="text-[10px] text-zinc-500">sample on-chain metric</p>
             </div>
 
             <div className="propr-card p-4 sm:p-5 space-y-1">
@@ -164,13 +167,13 @@ export default function TransparencyPage() {
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-base font-bold text-white flex items-center gap-2">
-                  <RefreshCw className="h-4 w-4 text-sky-400 animate-spin" />
-                  Live Verified Payout Stream
+                  <Database className="h-4 w-4 text-amber-300" />
+                  Sample payout records
                 </h3>
-                <p className="text-xs text-zinc-500">Real-time crypto payout transactions broadcasted from partner smart contracts</p>
+                <p className="text-xs text-zinc-500">Static records used to design the future evidence interface</p>
               </div>
               <span className="eyebrow-tag border-emerald-500/30 text-emerald-400 bg-emerald-500/10">
-                Auto Sync Active
+                Static demo
               </span>
             </div>
 
@@ -193,13 +196,13 @@ export default function TransparencyPage() {
                       <td className="py-3 px-2 text-zinc-400">{log.trader}</td>
                       <td className="py-3 px-2 text-emerald-400 font-bold">{log.amount}</td>
                       <td className="py-3 px-2 text-zinc-500 font-sans text-[11px]">{log.time}</td>
-                      <td className="py-3 px-2 text-sky-400 underline flex items-center gap-1 cursor-pointer">
+                      <td className="py-3 px-2 text-zinc-400 flex items-center gap-1">
                         <span>{log.txHash}</span>
                         <ArrowUpRight className="h-3 w-3" />
                       </td>
                       <td className="py-3 px-2 text-right">
                         <span className="inline-flex items-center gap-1 text-emerald-400 font-sans font-semibold text-[10px] bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                          <CheckCircle2 className="h-3 w-3" />
+                          <Database className="h-3 w-3" />
                           {log.status}
                         </span>
                       </td>
