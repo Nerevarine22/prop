@@ -5,6 +5,7 @@ PropHub is an early-stage research and comparison hub for blockchain-native and 
 Primary product documentation:
 
 - [Site blueprint](docs/SITE_BLUEPRINT.md)
+- [Design system](docs/DESIGN_SYSTEM.md)
 - [Next steps](docs/NEXT_STEPS.md)
 
 All current firm, review, coupon and payout records are development sample data unless explicitly labeled otherwise.

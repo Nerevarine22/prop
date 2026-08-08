@@ -153,61 +153,29 @@ Verification should happen at field level in the future. A firm can have verifie
 
 ## 7. Design system direction
 
-Design read: trust-first crypto research hub for traders, using an editorial data language instead of a promotional crypto aesthetic.
+The design direction is **Accessible Crypto Research**: clear and engaging at first glance, then rigorous when a trader asks for more detail.
 
-Design controls:
+PropHub must not look like a promotional crypto landing page, but it must also avoid becoming an intimidating institutional terminal. Discovery surfaces should feel approachable. Comparison, rules and evidence surfaces can become denser as the user's intent becomes more analytical.
 
-- Design variance: 5
-- Motion intensity: 3
-- Visual density: 6
-- Theme: consistent dark theme for the current product phase
-- Framework: Tailwind CSS 4 with semantic CSS variables
-- Font: Space Grotesk through `next/font`
+The core UX principle is progressive disclosure:
 
-### Design principles
+1. Present a quick decision layer with price, rules, reward potential, material risk and data status.
+2. Provide a deeper research layer with exceptions, sources, dates, change history and on-chain evidence.
 
-- Evidence before decoration
-- One main accent color
-- Semantic warning and information colors only when they communicate status
-- Tabular figures for financial and trading metrics
-- Cards only when they communicate grouping or hierarchy
-- Research summaries should be readable without opening an interaction
-- Dense tables belong in comparison and evidence tools, not the homepage hero
-- Motion is limited to state feedback, loading and hierarchy
+The complete visual, component, responsive, motion and accessibility specification lives in [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md). That file is the single source of truth for interface decisions.
 
-### Current semantic tokens
-
-- Canvas: `--color-canvas`
-- Surface: `--color-surface`
-- Raised surface: `--color-surface-raised`
-- Border: `--color-border`
-- Primary text: `--color-text`
-- Muted text: `--color-text-muted`
-- Accent: `--color-accent`
-- Warning: `--color-warning`
-- Control radius: `--radius-control`
-- Panel radius: `--radius-panel`
-
-### Component rules
-
-- A data status badge must appear near research records.
-- `mock`, `reported` and `verified` must have distinct labels and tooltips.
-- Buttons require hover, active and visible keyboard focus states.
-- Loading states should match the shape of final content.
-- Errors must be inline and actionable. Do not use `window.alert`.
-- Do not use disabled-looking text as a link.
-- Mobile layouts must be explicitly checked at 390 px width.
-- Page zoom must never be disabled.
+The logo remains intentionally out of scope. Use a simple `PropHub` wordmark until a dedicated identity phase begins.
 
 ## 8. Content and voice
 
-Voice should be direct, analytical and specific.
+Voice should be direct, accessible, analytical and specific. It should help a newer trader understand the decision without reducing the depth available to an experienced trader.
 
 Use:
 
 - plain English
 - short sentences
 - concrete trading terminology
+- short explanations for uncommon terms
 - exact source and review dates
 - explicit uncertainty
 
@@ -309,4 +277,3 @@ A firm profile is ready for indexing only when:
 - canonical URL is correct;
 - mobile and keyboard flows pass;
 - no unsupported live or verified claim remains.
-
