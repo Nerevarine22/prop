@@ -1,5 +1,5 @@
 import { db, isFirebaseConfigured } from '@/lib/firebase/config';
-import { collection, getDocs, doc, setDoc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, setDoc, deleteDoc } from 'firebase/firestore';
 import { PropFirm } from '@/types/firm';
 import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
 
@@ -7,6 +7,23 @@ const COLLECTION_NAME = 'firms';
 
 // In-memory store fallback for development
 let localFirmsStore: PropFirm[] = [...MOCK_PROP_FIRMS];
+
+function normalizeFirm(firm: PropFirm): PropFirm {
+  return {
+    ...firm,
+    dataStatus: firm.dataStatus || 'mock',
+    lastReviewedAt: firm.lastReviewedAt || '1970-01-01T00:00:00.000Z',
+    sources: firm.sources || [],
+    verification: firm.verification || {
+      status: 'mock',
+      method: 'demo-seed',
+      checkedAt: '1970-01-01T00:00:00.000Z',
+      sourceIds: [],
+      confidence: 'low',
+    },
+    changeHistory: firm.changeHistory || [],
+  };
+}
 
 export async function getFirms(): Promise<PropFirm[]> {
   if (!isFirebaseConfigured) {
@@ -18,7 +35,7 @@ export async function getFirms(): Promise<PropFirm[]> {
     if (querySnapshot.empty) {
       return localFirmsStore;
     }
-    return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as PropFirm));
+    return querySnapshot.docs.map((snapshot) => normalizeFirm({ id: snapshot.id, ...snapshot.data() } as PropFirm));
   } catch (error) {
     console.warn('Firestore fetch failed, using local mock data fallback:', error);
     return localFirmsStore;

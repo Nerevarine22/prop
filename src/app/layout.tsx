@@ -3,6 +3,7 @@ import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { siteConfig } from '@/lib/site';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -12,14 +13,29 @@ const spaceGrotesk = Space_Grotesk({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export const metadata: Metadata = {
-  title: 'PropHub — Real-Time Transparency & Crypto Prop Directory',
-  description: 'The CoinMarketCap for crypto prop firms. Track verified payouts, 95% profit splits, 1:100 leverage, and real-time pass rates.',
-  keywords: ['crypto prop firm', 'prop trading crypto', 'crypto funded account', 'fundingpips', 'bybit prop', 'bitcoin prop firm'],
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: ['crypto prop firm', 'on-chain prop firm', 'prop firm comparison', 'crypto funded account', 'prop firm rewards'],
+  openGraph: {
+    type: 'website',
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
 };
 
 export default function RootLayout({
@@ -29,14 +45,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`dark ${spaceGrotesk.variable}`}>
-      <body className="min-h-[100dvh] bg-[#090909] text-zinc-100 antialiased font-sans flex flex-col justify-between selection:bg-sky-500/30 selection:text-sky-200">
+      <body className="min-h-[100dvh] bg-[var(--color-canvas)] text-zinc-100 antialiased font-sans flex flex-col justify-between selection:bg-emerald-500/30 selection:text-emerald-100">
+        <a href="#main-content" className="skip-link">Skip to content</a>
         
         {/* Subtle Background Grid Overlay */}
         <div className="fixed inset-0 pointer-events-none z-0 bg-grid-pattern opacity-80" />
 
         <div className="relative z-10 flex-1 flex flex-col justify-between">
           <Navbar />
-          <main className="flex-1">
+          <main id="main-content" className="flex-1">
             {children}
           </main>
           <Footer />

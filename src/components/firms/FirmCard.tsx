@@ -2,8 +2,9 @@
 
 import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
-import { Star, ArrowRight, ExternalLink, Scale, CheckCircle2, Wallet, PieChart, TrendingUp, Shield, GitCommit, Monitor } from 'lucide-react';
+import { Star, ArrowRight, ExternalLink, Scale, Wallet, PieChart, TrendingUp, Shield, GitCommit, Monitor } from 'lucide-react';
 import { PropFirm } from '@/types/firm';
+import { DataStatusBadge } from '@/components/data/DataStatusBadge';
 
 interface FirmCardProps {
   firm: PropFirm;
@@ -102,7 +103,9 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
             <div className="flex items-start justify-between gap-3">
 
               {/* Logo + Name & Rating */}
-              <Link href={`/firms/${firm.slug}`} className="flex items-center gap-4 sm:gap-5 min-w-0 group/title flex-1">
+              <Link href={`/prop-firms/${firm.slug}`} className="flex items-center gap-4 sm:gap-5 min-w-0 group/title flex-1">
+                {/* Canvas color sampling and dynamic fallbacks require a native image element. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={firm.logo}
                   alt={firm.name}
@@ -119,7 +122,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
                     <span className="text-base sm:text-lg font-bold text-white tracking-tight group-hover/title:text-emerald-400 transition-colors truncate block font-satoshi">
                       {firm.name}
                     </span>
-                    <CheckCircle2 className="h-4 w-4 text-[#52b788] shrink-0" />
+                    <DataStatusBadge status={firm.dataStatus} compact />
                   </div>
 
                   <div className="flex items-center gap-1.5 text-xs text-zinc-400 font-medium whitespace-nowrap">
@@ -153,6 +156,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
             {/* Reward Tags Row (Under Logo) */}
             {firm.rewardTags && firm.rewardTags.length > 0 && (
               <div className="flex items-center gap-1.5 flex-wrap">
+                <DataStatusBadge status={firm.dataStatus} />
                 {firm.rewardTags.map(tag => {
                   let tagStyle = 'bg-zinc-800/80 text-zinc-400 border-zinc-700/80';
                   if (tag === 'Points') tagStyle = 'bg-amber-500/10 text-amber-300 border-amber-500/20';
@@ -173,7 +177,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
           </div>
 
           {/* DOMINANT METRICS */}
-          <Link href={`/firms/${firm.slug}`} className="grid grid-cols-3 gap-1.5 sm:gap-2 py-2 text-left items-start font-satoshi block">
+          <Link href={`/prop-firms/${firm.slug}`} className="grid grid-cols-3 gap-1.5 sm:gap-2 py-2 text-left items-start font-satoshi block">
 
             {/* Col 1: Price */}
             <div className="flex flex-col items-start text-left min-w-0">
@@ -232,7 +236,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
         <div className="pt-1 min-h-[24px] flex items-end">
           {firm.verifiedCoupon && (
             <div className="text-xs text-zinc-400 flex items-center gap-1.5 font-satoshi">
-              <span className="text-[#52b788] font-semibold">{firm.verifiedCoupon.discount}</span>
+              <span className="text-[#52b788] font-semibold">{firm.dataStatus === 'mock' ? 'Sample promo' : firm.verifiedCoupon.discount}</span>
               <span className="text-zinc-600">·</span>
               <span className="text-zinc-400">Code: <strong className="text-zinc-200 font-semibold">{firm.verifiedCoupon.code}</strong></span>
             </div>
@@ -257,7 +261,7 @@ export function FirmCard({ firm, onCompareToggle, isCompared }: FirmCardProps) {
 
         {/* Right: Primary White Button pointing to internal page */}
         <Link
-          href={`/firms/${firm.slug}`}
+          href={`/prop-firms/${firm.slug}`}
           className="details-btn flex-1 flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl font-bold text-xs shadow-sm"
         >
           <span>Details</span>

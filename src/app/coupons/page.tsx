@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { MOCK_COUPONS } from '@/lib/data/firms';
-import { Percent, Copy, Check, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Percent, Copy, Check, Database, ArrowRight } from 'lucide-react';
 
 export default function CouponsPage() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -21,13 +21,13 @@ export default function CouponsPage() {
       <div className="propr-card p-8 text-center space-y-3 relative overflow-hidden">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold uppercase tracking-wider">
           <Percent className="h-3.5 w-3.5 text-emerald-400" />
-          Verified Daily Promo Engine
+          Coupon research prototype
         </div>
         <h1 className="text-3xl sm:text-5xl font-normal tracking-tight font-serif text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">
-          Active Crypto Prop Firm Coupons & Deals
+          Crypto prop firm coupon records
         </h1>
         <p className="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto">
-          Save on your evaluation challenge accounts. All promo codes are tested daily for valid status and maximum discount rate.
+          Sample promo records for designing the future verification and affiliate workflow. Current codes are not guaranteed to be active.
         </p>
       </div>
 
@@ -42,8 +42,8 @@ export default function CouponsPage() {
               <div className="flex items-center justify-between">
                 <span className="text-base font-extrabold text-white">{coupon.firmName}</span>
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full flex items-center gap-1">
-                  <ShieldCheck className="h-3 w-3" />
-                  Verified
+                  <Database className="h-3 w-3" />
+                  Demo
                 </span>
               </div>
 
@@ -69,10 +69,10 @@ export default function CouponsPage() {
               </div>
 
               <Link
-                href={`/firms`}
+                href="/prop-firms"
                 className="w-full flex items-center justify-center gap-1 text-[11px] font-semibold text-zinc-400 hover:text-white transition-colors pt-1"
               >
-                <span>Use on Challenge Page</span>
+                <span>View firm directory</span>
                 <ArrowRight className="h-3 w-3" />
               </Link>
             </div>

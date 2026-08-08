@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PropHub
+
+PropHub is an early-stage research and comparison hub for blockchain-native and crypto-focused proprietary trading firms.
+
+Primary product documentation:
+
+- [Site blueprint](docs/SITE_BLUEPRINT.md)
+- [Next steps](docs/NEXT_STEPS.md)
+
+All current firm, review, coupon and payout records are development sample data unless explicitly labeled otherwise.
 
 ## Getting Started
 
@@ -16,9 +25,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project uses Next.js App Router, React, Tailwind CSS and Firebase.
 
 ## Learn More
 

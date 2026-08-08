@@ -2,14 +2,14 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, CheckCircle2, ArrowRight, Cpu } from 'lucide-react';
+import { Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
-import { PropFirm } from '@/types/firm';
+import { EvaluationStep, PropFirm, TradingPlatform } from '@/types/firm';
 
 export function AiMatchmaker() {
-  const [stepStyle, setStepStyle] = useState<string>('2-Step');
+  const [stepStyle, setStepStyle] = useState<EvaluationStep>('2-Step');
   const [leverage, setLeverage] = useState<string>('1:100');
-  const [platform, setPlatform] = useState<string>('cTrader');
+  const [platform, setPlatform] = useState<TradingPlatform>('cTrader');
   const [result, setResult] = useState<PropFirm | null>(MOCK_PROP_FIRMS[0]);
   const [analyzing, setAnalyzing] = useState(false);
 
@@ -17,8 +17,8 @@ export function AiMatchmaker() {
     setAnalyzing(true);
     setTimeout(() => {
       const matched = MOCK_PROP_FIRMS.find(f =>
-        f.evaluationSteps.includes(stepStyle as any) ||
-        f.platforms.includes(platform as any)
+        f.evaluationSteps.includes(stepStyle) ||
+        f.platforms.includes(platform)
       ) || MOCK_PROP_FIRMS[0];
       
       setResult(matched);
@@ -57,7 +57,7 @@ export function AiMatchmaker() {
                     <button
                       key={style}
                       type="button"
-                      onClick={() => setStepStyle(style)}
+                      onClick={() => setStepStyle(style as EvaluationStep)}
                       className={`py-2 px-3 rounded-lg text-xs font-bold text-center transition-colors ${
                         stepStyle === style
                           ? 'bg-zinc-800 border border-zinc-700 text-white'
@@ -103,7 +103,7 @@ export function AiMatchmaker() {
                     <button
                       key={plat}
                       type="button"
-                      onClick={() => setPlatform(plat)}
+                      onClick={() => setPlatform(plat as TradingPlatform)}
                       className={`py-2 px-2 rounded-lg text-[11px] font-bold text-center transition-colors ${
                         platform === plat
                           ? 'bg-zinc-800 border border-zinc-700 text-white'
@@ -135,12 +135,14 @@ export function AiMatchmaker() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="eyebrow-tag border-emerald-500/30 text-emerald-400 bg-emerald-500/10">
-                      99.4% Match Accuracy
+                      Demo match
                     </span>
-                    <span className="text-[11px] text-zinc-500 font-mono">Algorithmic Pick</span>
+                    <span className="text-[11px] text-zinc-500 font-mono">Rule-based prototype</span>
                   </div>
 
                   <div className="flex items-center gap-3.5">
+                    {/* Match results can reference dynamic external firm logos. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={result.logo} alt={result.name} className="h-12 w-12 rounded-lg object-cover border border-zinc-800" />
                     <div>
                       <h3 className="text-xl font-extrabold text-white flex items-center gap-1.5">
@@ -172,7 +174,7 @@ export function AiMatchmaker() {
 
                   {result.verifiedCoupon && (
                     <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-between text-xs">
-                      <span className="text-emerald-300 font-bold">{result.verifiedCoupon.discount}</span>
+                      <span className="text-emerald-300 font-bold">Sample promo</span>
                       <span className="font-mono bg-zinc-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30 text-[10px] font-bold">
                         {result.verifiedCoupon.code}
                       </span>
@@ -181,7 +183,7 @@ export function AiMatchmaker() {
                 </div>
 
                 <Link
-                  href={`/firms/${result.slug}`}
+                  href={`/prop-firms/${result.slug}`}
                   className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs transition-colors border border-zinc-700 mt-2"
                 >
                   <span>View Rules & Pricing</span>

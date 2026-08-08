@@ -1,6 +1,13 @@
 import { PropFirm, Coupon } from '@/types/firm';
 
-export const MOCK_PROP_FIRMS: PropFirm[] = [
+type DemoFirmRecord = Omit<
+  PropFirm,
+  'dataStatus' | 'lastReviewedAt' | 'sources' | 'verification' | 'changeHistory'
+>;
+
+const DEMO_REVIEW_DATE = '2026-08-08';
+
+const DEMO_PROP_FIRMS: DemoFirmRecord[] = [
   {
     id: 'firm-propr',
     slug: 'propr',
@@ -713,6 +720,22 @@ export const MOCK_PROP_FIRMS: PropFirm[] = [
     ]
   }
 ];
+
+export const MOCK_PROP_FIRMS: PropFirm[] = DEMO_PROP_FIRMS.map((firm) => ({
+  ...firm,
+  verifiedCoupon: firm.verifiedCoupon ? { ...firm.verifiedCoupon, verified: false } : undefined,
+  dataStatus: 'mock',
+  lastReviewedAt: DEMO_REVIEW_DATE,
+  sources: [],
+  verification: {
+    status: 'mock',
+    method: 'demo-seed',
+    checkedAt: DEMO_REVIEW_DATE,
+    sourceIds: [],
+    confidence: 'low',
+  },
+  changeHistory: [],
+}));
 
 export const MOCK_COUPONS: Coupon[] = MOCK_PROP_FIRMS
   .filter(f => f.verifiedCoupon)
