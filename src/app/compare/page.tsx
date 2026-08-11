@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { EvaluationStep, PropFirm, TradingPlatform } from '@/types/firm';
 import { getFirms } from '@/lib/services/firmService';
 import { FirmCard } from '@/components/firms/FirmCard';
+import { FirmLogo } from '@/components/firms/FirmLogo';
 import { CustomSelect } from '@/components/ui/CustomSelect';
 import { Scale, CheckCircle2, XCircle, ArrowRight, Search, Filter, ArrowUpDown, LayoutGrid, Table, RotateCcw, X, Database } from 'lucide-react';
 
@@ -113,16 +114,16 @@ function CompareContent() {
   };
 
   return (
-    <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-10 space-y-12 font-satoshi">
+    <div className="mx-auto min-h-full max-w-[1440px] space-y-12 bg-[#0a0c10] px-4 py-12 font-satoshi sm:px-8">
       
       {/* 1. HEADER & MATRIX TOGGLE BAR */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800/80 pb-6">
         <div>
-          <div className="eyebrow-tag mb-2 border-emerald-500/30 text-emerald-400 bg-emerald-500/10">
+          <div className="eyebrow-tag mb-3 border-[#4f8cff]/30 bg-[#4f8cff]/10 text-[#a9c7ff]">
             <Scale className="h-3.5 w-3.5" />
             COMPARISON WORKSPACE
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h1 className="text-4xl font-semibold tracking-[-0.045em] text-white sm:text-6xl">
             Compare crypto prop firms
           </h1>
           <p className="text-xs sm:text-sm text-zinc-400 mt-1">
@@ -132,9 +133,9 @@ function CompareContent() {
 
         {/* Selected Counter & Toolbar */}
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 bg-[#141416] border border-zinc-800/80 px-4 py-2 rounded-xl text-xs font-bold">
+          <div className="flex items-center gap-2 rounded-xl border border-[#29313d] bg-[#12161d] px-4 py-2 text-xs font-bold">
             <span className="text-zinc-400">Comparing:</span>
-            <span className="text-[#52b788] font-mono font-extrabold">{selectedFirms.length} / 4</span>
+            <span className="font-mono font-extrabold text-[#7aa8ff]">{selectedFirms.length} / 4</span>
           </div>
 
           {selectedFirms.length > 0 && (
@@ -162,13 +163,13 @@ function CompareContent() {
         <section className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-extrabold text-white tracking-tight flex items-center gap-2">
-              <Scale className="h-4 w-4 text-[#52b788]" />
+              <Scale className="h-4 w-4 text-[#7aa8ff]" />
               <span>Side-by-Side Comparison Matrix</span>
             </h2>
             <span className="text-xs text-zinc-400">Showing {selectedFirms.length} selected prop firms</span>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl bg-[#141416] border border-zinc-800/80 shadow-xl">
+          <div className="overflow-x-auto rounded-xl border border-[#29313d] bg-[#12161d]">
             <table className="w-full text-left text-xs min-w-[750px]">
               <thead>
                 <tr className="bg-zinc-900/80 border-b border-zinc-800 text-zinc-400 uppercase font-semibold text-[10px]">
@@ -177,11 +178,14 @@ function CompareContent() {
                     <th key={firm.id} className="p-4 border-l border-zinc-800/80 min-w-[220px] relative">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3 min-w-0">
-                          {/* Firm logos can be remote research assets from changing sources. */}
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={firm.logo} alt={firm.name} className="h-10 w-10 rounded-xl object-cover border border-zinc-800 shrink-0" />
+                          <FirmLogo
+                            src={firm.logo}
+                            name={firm.name}
+                            imageClassName="h-10 w-10 rounded-xl object-cover border border-zinc-800 shrink-0"
+                            fallbackClassName="h-10 w-10 rounded-xl border border-zinc-800 bg-zinc-900 text-[#c0c8ff] text-[11px] font-extrabold flex items-center justify-center shrink-0"
+                          />
                           <div className="min-w-0">
-                            <Link href={`/prop-firms/${firm.slug}`} className="font-bold text-white hover:text-[#52b788] block text-sm truncate font-satoshi">
+                            <Link href={`/prop-firms/${firm.slug}`} className="block truncate font-satoshi text-sm font-bold text-white hover:text-[#a9c7ff]">
                               {firm.name}
                             </Link>
                             <span className="text-[11px] text-zinc-500 font-mono">★ {firm.rating.toFixed(1)}</span>
@@ -206,7 +210,7 @@ function CompareContent() {
                 <tr className="hover:bg-zinc-900/40 transition-colors">
                   <td className="p-4 font-semibold text-zinc-400">Max Profit Split</td>
                   {selectedFirms.map(firm => (
-                    <td key={firm.id} className="p-4 border-l border-zinc-800/80 font-mono text-[#52b788] font-bold text-sm">
+                    <td key={firm.id} className="p-4 border-l border-zinc-800/80 font-mono text-[#32d583] font-bold text-sm">
                       {firm.profitSplit}
                     </td>
                   ))}
@@ -258,7 +262,7 @@ function CompareContent() {
                   {selectedFirms.map(firm => (
                     <td key={firm.id} className="p-4 border-l border-zinc-800/80">
                       {firm.newsTradingAllowed ? (
-                        <span className="inline-flex items-center gap-1.5 text-[#52b788] font-bold"><CheckCircle2 className="h-4 w-4" /> Allowed</span>
+                        <span className="inline-flex items-center gap-1.5 text-[#32d583] font-bold"><CheckCircle2 className="h-4 w-4" /> Allowed</span>
                       ) : (
                         <span className="inline-flex items-center gap-1.5 text-red-400 font-bold"><XCircle className="h-4 w-4" /> Restricted</span>
                       )}
@@ -272,7 +276,7 @@ function CompareContent() {
                   {selectedFirms.map(firm => (
                     <td key={firm.id} className="p-4 border-l border-zinc-800/80">
                       {firm.weekendHoldingAllowed ? (
-                        <span className="inline-flex items-center gap-1.5 text-[#52b788] font-bold"><CheckCircle2 className="h-4 w-4" /> Allowed</span>
+                        <span className="inline-flex items-center gap-1.5 text-[#32d583] font-bold"><CheckCircle2 className="h-4 w-4" /> Allowed</span>
                       ) : (
                         <span className="inline-flex items-center gap-1.5 text-red-400 font-bold"><XCircle className="h-4 w-4" /> No</span>
                       )}
@@ -286,8 +290,8 @@ function CompareContent() {
                   {selectedFirms.map(firm => (
                     <td key={firm.id} className="p-4 border-l border-zinc-800/80">
                       {firm.verifiedCoupon ? (
-                        <div className="bg-[#52b788]/10 border border-[#52b788]/20 p-2.5 rounded-xl text-center">
-                          <span className="text-[#52b788] font-bold block text-xs">{firm.verifiedCoupon.discount}</span>
+                        <div className="rounded-xl border border-[#32d583]/20 bg-[#32d583]/10 p-2.5 text-center">
+                          <span className="block text-xs font-bold text-[#32d583]">{firm.verifiedCoupon.discount}</span>
                           <span className="font-mono text-zinc-300 text-[11px] block mt-0.5">Code: <strong>{firm.verifiedCoupon.code}</strong></span>
                         </div>
                       ) : (
@@ -304,7 +308,7 @@ function CompareContent() {
                     <td key={firm.id} className="p-4 border-l border-zinc-800/80">
                       <Link
                         href={`/prop-firms/${firm.slug}`}
-                        className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs shadow-sm transition-colors"
+                        className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#4f8cff] bg-[#4f8cff] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:border-[#70a5ff] hover:bg-[#70a5ff]"
                       >
                         <span>Explore Profile</span>
                         <ArrowRight className="h-4 w-4" />
@@ -338,12 +342,12 @@ function CompareContent() {
             {/* Mobile Filter Header Toggle */}
             <div className="flex items-center justify-between lg:hidden cursor-pointer" onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}>
               <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-300 flex items-center gap-2">
-                <Filter className="h-4 w-4 text-[#52b788]" />
+                <Filter className="h-4 w-4 text-[#7aa8ff]" />
                 <span>Filters & Options</span>
               </h3>
               <button
                 type="button"
-                className="text-xs font-bold text-[#52b788] px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800"
+                className="rounded-lg border border-[#29313d] bg-[#181d26] px-3 py-1.5 text-xs font-bold text-[#a9c7ff]"
               >
                 {mobileFiltersOpen ? 'Hide Filters' : 'Show Filters'}
               </button>
@@ -353,7 +357,7 @@ function CompareContent() {
               
               <div className="hidden lg:flex items-center justify-between">
                 <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-300 flex items-center gap-2">
-                  <Filter className="h-4 w-4 text-[#52b788]" />
+                  <Filter className="h-4 w-4 text-[#7aa8ff]" />
                   <span>Filters</span>
                 </h3>
                 <button
@@ -420,7 +424,7 @@ function CompareContent() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-xs font-bold text-zinc-300">
                   <span>Min Profit Split</span>
-                  <span className="text-[#52b788] font-extrabold">{minProfitSplit > 0 ? `${minProfitSplit}%+` : 'Any'}</span>
+                  <span className="font-extrabold text-[#7aa8ff]">{minProfitSplit > 0 ? `${minProfitSplit}%+` : 'Any'}</span>
                 </div>
                 <input
                   type="range"
@@ -429,7 +433,7 @@ function CompareContent() {
                   step="5"
                   value={minProfitSplit}
                   onChange={e => setMinProfitSplit(Number(e.target.value))}
-                  className="w-full accent-[#52b788] bg-zinc-900 rounded-lg cursor-pointer"
+                  className="w-full cursor-pointer rounded-lg bg-zinc-900 accent-[#4f8cff]"
                 />
               </div>
 
@@ -440,7 +444,7 @@ function CompareContent() {
                     type="checkbox"
                     checked={newsAllowedOnly}
                     onChange={e => setNewsAllowedOnly(e.target.checked)}
-                    className="rounded border-zinc-800 bg-zinc-900 text-emerald-400 focus:ring-emerald-500"
+                    className="rounded border-zinc-800 bg-zinc-900 text-[#4f8cff] focus:ring-[#4f8cff]"
                   />
                   <span className="font-medium">News Trading Allowed</span>
                 </label>
@@ -449,7 +453,7 @@ function CompareContent() {
                     type="checkbox"
                     checked={weekendAllowedOnly}
                     onChange={e => setWeekendAllowedOnly(e.target.checked)}
-                    className="rounded border-zinc-800 bg-zinc-900 text-emerald-400 focus:ring-emerald-500"
+                    className="rounded border-zinc-800 bg-zinc-900 text-[#4f8cff] focus:ring-[#4f8cff]"
                   />
                   <span className="font-medium">Weekend Holding Allowed</span>
                 </label>
@@ -469,7 +473,7 @@ function CompareContent() {
           <main className="flex-1 min-w-0 space-y-6 w-full">
             
             {/* Sorting & Layout Toolbar */}
-            <div className="flex items-center justify-between bg-[#141416] p-3.5 rounded-2xl border border-zinc-800/80 text-xs">
+            <div className="flex items-center justify-between rounded-xl border border-[#29313d] bg-[#12161d] p-3.5 text-xs">
               <div className="flex items-center gap-2">
                 <span className="text-zinc-400 font-semibold">Sort by:</span>
                 <CustomSelect
@@ -489,14 +493,14 @@ function CompareContent() {
               <div className="flex items-center gap-1 bg-zinc-900 p-1 rounded-xl border border-zinc-800">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-zinc-800 text-white' : 'text-zinc-500'}`}
+                  className={`p-2 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-[#4f8cff]/15 text-[#a9c7ff]' : 'text-zinc-500'}`}
                   title="Grid View"
                 >
                   <LayoutGrid className="h-4 w-4" />
                 </button>
                 <button
                   onClick={() => setViewMode('table')}
-                  className={`p-2 rounded-lg transition-colors ${viewMode === 'table' ? 'bg-zinc-800 text-white' : 'text-zinc-500'}`}
+                  className={`p-2 rounded-lg transition-colors ${viewMode === 'table' ? 'bg-[#4f8cff]/15 text-[#a9c7ff]' : 'text-zinc-500'}`}
                   title="Table View"
                 >
                   <Table className="h-4 w-4" />
@@ -508,12 +512,12 @@ function CompareContent() {
             {loading ? (
               <div className="p-12 text-center text-zinc-500 text-xs">Loading directory...</div>
             ) : filteredFirms.length === 0 ? (
-              <div className="p-12 text-center bg-[#141416] rounded-2xl border border-zinc-800/80 text-zinc-400 space-y-3">
+              <div className="space-y-3 rounded-xl border border-[#29313d] bg-[#12161d] p-12 text-center text-zinc-400">
                 <p className="text-sm font-semibold">No prop firms match your filter criteria.</p>
-                <button onClick={resetFilters} className="text-xs text-[#52b788] font-bold underline">Reset all filters</button>
+                <button onClick={resetFilters} className="text-xs font-bold text-[#a9c7ff] underline">Reset all filters</button>
               </div>
             ) : viewMode === 'grid' ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                 {filteredFirms.map(firm => (
                   <FirmCard
                     key={firm.id}
@@ -524,7 +528,7 @@ function CompareContent() {
                 ))}
               </div>
             ) : (
-              <div className="overflow-x-auto rounded-2xl bg-[#141416] border border-zinc-800/80 overflow-hidden shadow-xl">
+              <div className="overflow-hidden overflow-x-auto rounded-xl border border-[#29313d] bg-[#12161d]">
                 <table className="w-full text-left text-xs">
                   <thead className="bg-zinc-900/80 border-b border-zinc-800 text-zinc-400 font-bold uppercase text-[10px] tracking-wider">
                     <tr>
@@ -540,9 +544,12 @@ function CompareContent() {
                     {filteredFirms.map(firm => (
                       <tr key={firm.id} className="hover:bg-zinc-900/40 transition-colors">
                         <td className="p-4 flex items-center gap-3">
-                          {/* Firm logos can be remote research assets from changing sources. */}
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={firm.logo} alt={firm.name} className="h-10 w-10 rounded-xl object-cover border border-zinc-800 shrink-0" />
+                          <FirmLogo
+                            src={firm.logo}
+                            name={firm.name}
+                            imageClassName="h-10 w-10 rounded-xl object-cover border border-zinc-800 shrink-0"
+                            fallbackClassName="h-10 w-10 rounded-xl border border-zinc-800 bg-zinc-900 text-[#c0c8ff] text-[11px] font-extrabold flex items-center justify-center shrink-0"
+                          />
                           <div>
                             <Link href={`/prop-firms/${firm.slug}`} className="font-bold text-white hover:text-zinc-200">
                               {firm.name}
@@ -550,7 +557,7 @@ function CompareContent() {
                             <span className="block text-[11px] text-zinc-500">★ {firm.rating.toFixed(1)} ({firm.reviewCount})</span>
                           </div>
                         </td>
-                        <td className="p-4 font-mono text-[#52b788] font-bold">{firm.profitSplit}</td>
+                        <td className="p-4 font-mono font-bold text-[#32d583]">{firm.profitSplit}</td>
                         <td className="p-4 font-mono text-sky-400">{firm.cryptoLeverage}</td>
                         <td className="p-4 text-zinc-300">{firm.maxDrawdown}</td>
                         <td className="p-4 text-zinc-400">{firm.platforms.join(', ')}</td>
@@ -567,7 +574,7 @@ function CompareContent() {
                           </button>
                           <Link
                             href={`/prop-firms/${firm.slug}`}
-                            className="px-3.5 py-1.5 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs transition-colors inline-block"
+                            className="inline-block rounded-xl border border-[#4f8cff] bg-[#4f8cff] px-3.5 py-1.5 text-xs font-bold text-white transition-colors hover:border-[#70a5ff] hover:bg-[#70a5ff]"
                           >
                             Explore
                           </Link>

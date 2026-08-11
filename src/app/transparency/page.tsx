@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { Activity, ShieldCheck, DollarSign, Award, Clock, Wallet, ArrowUpRight, Database } from 'lucide-react';
+import pageStyles from '@/components/layout/PublicPage.module.css';
 
 export default function TransparencyPage() {
   const [activeCategory, setActiveCategory] = useState<string>('Overview');
@@ -18,24 +19,23 @@ export default function TransparencyPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    <div className={pageStyles.page}>
+      <div className={pageStyles.container}>
       
       {/* Title Banner */}
-      <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-3">
-        <h1 className="display-heading text-4xl sm:text-6xl font-extrabold tracking-tight text-white">
-          Transparency data prototype
-        </h1>
-        <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-          A development preview of how payout evidence, provenance and operating metrics can be presented once verified data sources are connected.
-        </p>
-        <div className="mt-2 flex items-start gap-2 rounded-lg border border-amber-500/25 bg-amber-500/[0.08] px-4 py-3 text-left text-xs leading-relaxed text-amber-100">
-          <Database className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" />
-          <span>All values and transaction records on this page are static sample data. No live blockchain connection is active.</span>
+      <header className={pageStyles.hero}>
+        <div>
+          <span className={pageStyles.eyebrow}><ShieldCheck /> Evidence layer</span>
+          <h1 className={pageStyles.title}>Transparency data prototype</h1>
         </div>
-      </div>
+        <div>
+          <p className={pageStyles.lead}>A development preview of how payout evidence, provenance and operating metrics can be presented once verified data sources are connected.</p>
+          <div className={pageStyles.notice}><Database /><span>All values and transaction records are static sample data. No live blockchain connection is active.</span></div>
+        </div>
+      </header>
 
       {/* Main Dashboard Layout */}
-      <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+      <div className="mt-12 flex flex-col items-start gap-6 md:flex-row md:gap-8">
         
         {/* Left Sticky Navigation Sidebar */}
         <aside className="w-full md:w-56 shrink-0 md:sticky md:top-24">
@@ -57,8 +57,8 @@ export default function TransparencyPage() {
                     onClick={() => setActiveCategory(cat.name)}
                     className={`flex items-center gap-2.5 px-3.5 py-2.5 text-xs font-semibold rounded-lg transition-all duration-200 text-left shrink-0 md:shrink md:w-full min-h-[38px] ${
                       activeCategory === cat.name
-                        ? 'bg-zinc-800 text-white shadow-sm font-bold'
-                        : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
+                        ? 'bg-[#4f8cff]/15 text-[#a9c7ff] font-bold'
+                        : 'text-zinc-400 hover:text-white hover:bg-[#181d26]'
                     }`}
                   >
                     <Icon className="h-3.5 w-3.5 text-zinc-400 shrink-0" />
@@ -86,7 +86,7 @@ export default function TransparencyPage() {
                   key={range}
                   onClick={() => setTimeRange(range)}
                   className={`px-3 py-1 rounded-md font-bold transition-all duration-200 min-h-[32px] ${
-                    timeRange === range ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-500 hover:text-zinc-300'
+                    timeRange === range ? 'bg-[#4f8cff]/15 text-[#a9c7ff]' : 'text-zinc-500 hover:text-zinc-300'
                   }`}
                 >
                   {range}
@@ -115,7 +115,7 @@ export default function TransparencyPage() {
 
             <div className="propr-card p-4 sm:p-5 space-y-1">
               <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">Total Payouts</p>
-              <p className="text-xl sm:text-2xl font-bold font-mono text-sky-400">
+              <p className="text-xl sm:text-2xl font-bold font-mono text-[#7aa8ff]">
                 <AnimatedCounter value={3120500} prefix="$" />
               </p>
               <p className="text-[10px] text-zinc-500">sample on-chain metric</p>
@@ -139,7 +139,7 @@ export default function TransparencyPage() {
 
             <div className="propr-card p-4 sm:p-5 space-y-1">
               <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">Active Traders</p>
-              <p className="text-xl sm:text-2xl font-bold font-mono text-indigo-400">
+              <p className="text-xl sm:text-2xl font-bold font-mono text-[#aaa8ff]">
                 <AnimatedCounter value={18420} />
               </p>
               <p className="text-[10px] text-zinc-500">trailing 30 days</p>
@@ -215,6 +215,7 @@ export default function TransparencyPage() {
 
         </main>
 
+      </div>
       </div>
     </div>
   );

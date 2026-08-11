@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
+import { ArrowRight, Check, Copy, Database, Percent } from 'lucide-react';
 import { MOCK_COUPONS } from '@/lib/data/firms';
-import { Percent, Copy, Check, Database, ArrowRight } from 'lucide-react';
+import pageStyles from '@/components/layout/PublicPage.module.css';
 
 export default function CouponsPage() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -15,72 +16,46 @@ export default function CouponsPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      
-      {/* Hero Header */}
-      <div className="propr-card p-8 text-center space-y-3 relative overflow-hidden">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold uppercase tracking-wider">
-          <Percent className="h-3.5 w-3.5 text-emerald-400" />
-          Coupon research prototype
-        </div>
-        <h1 className="text-3xl sm:text-5xl font-normal tracking-tight font-serif text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">
-          Crypto prop firm coupon records
-        </h1>
-        <p className="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto">
-          Sample promo records for designing the future verification and affiliate workflow. Current codes are not guaranteed to be active.
-        </p>
-      </div>
-
-      {/* Coupons Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {MOCK_COUPONS.map(coupon => (
-          <div
-            key={coupon.id}
-            className="propr-card p-6 space-y-5 flex flex-col justify-between"
-          >
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-base font-extrabold text-white">{coupon.firmName}</span>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full flex items-center gap-1">
-                  <Database className="h-3 w-3" />
-                  Demo
-                </span>
-              </div>
-
-              <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 text-center space-y-1">
-                <span className="text-xl font-black text-emerald-400 block font-mono">{coupon.discount}</span>
-                <p className="text-xs text-zinc-300">{coupon.description}</p>
-              </div>
-            </div>
-
-            {/* Code & Copy button */}
-            <div className="space-y-2 pt-2 border-t border-zinc-800">
-              <div className="flex items-center gap-2">
-                <div className="flex-1 font-mono text-center text-xs font-extrabold text-emerald-300 bg-zinc-950 p-2.5 rounded-lg border border-zinc-800 tracking-wider">
-                  {coupon.code}
-                </div>
-                <button
-                  onClick={() => handleCopy(coupon.id, coupon.code)}
-                  className="px-4 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
-                >
-                  {copiedId === coupon.id ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                  <span>{copiedId === coupon.id ? 'Copied' : 'Copy'}</span>
-                </button>
-              </div>
-
-              <Link
-                href="/prop-firms"
-                className="w-full flex items-center justify-center gap-1 text-[11px] font-semibold text-zinc-400 hover:text-white transition-colors pt-1"
-              >
-                <span>View firm directory</span>
-                <ArrowRight className="h-3 w-3" />
-              </Link>
-            </div>
-
+    <div className={pageStyles.page}>
+      <div className={pageStyles.container}>
+        <header className={pageStyles.hero}>
+          <div>
+            <span className={pageStyles.eyebrow}><Percent /> Coupon research</span>
+            <h1 className={pageStyles.title}>Crypto prop firm coupon records</h1>
           </div>
-        ))}
-      </div>
+          <div>
+            <p className={pageStyles.lead}>A verification-ready structure for future promotions and affiliate records. Discounts never replace the underlying challenge comparison.</p>
+            <div className={pageStyles.notice}><Database /><span>Current codes are sample records and are not guaranteed to be active.</span></div>
+          </div>
+        </header>
 
+        <section className={pageStyles.section} aria-labelledby="coupon-records-heading">
+          <div className={pageStyles.sectionHeader}><h2 id="coupon-records-heading">Promotion records</h2><p>Each record will eventually include its source, review date and validity status.</p></div>
+          <div className={pageStyles.grid3}>
+            {MOCK_COUPONS.map((coupon) => (
+              <article key={coupon.id} className={pageStyles.card}>
+                <div className={pageStyles.sectionHeader}>
+                  <h2>{coupon.firmName}</h2>
+                  <span className={`${pageStyles.tag} ${pageStyles.tagPositive}`}><Database className="h-3 w-3" /> Demo</span>
+                </div>
+                <div className={pageStyles.metric}>
+                  <small>Reported discount</small>
+                  <strong>{coupon.discount}</strong>
+                  <p>{coupon.description}</p>
+                </div>
+                <div className="mt-4 flex gap-2">
+                  <div className="flex min-h-10 flex-1 items-center justify-center rounded-lg border border-[#29313d] bg-[#0e1117] px-3 font-mono text-xs font-extrabold tracking-wider text-[#a9c7ff]">{coupon.code}</div>
+                  <button onClick={() => handleCopy(coupon.id, coupon.code)} className={pageStyles.buttonPrimary}>
+                    {copiedId === coupon.id ? <Check /> : <Copy />}
+                    <span>{copiedId === coupon.id ? 'Copied' : 'Copy'}</span>
+                  </button>
+                </div>
+                <Link href="/prop-firms" className={`${pageStyles.link} mt-4`}>View firm directory <ArrowRight /></Link>
+              </article>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

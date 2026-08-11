@@ -45,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`dark ${spaceGrotesk.variable}`}>
-      <body className="min-h-[100dvh] bg-[var(--color-canvas)] text-zinc-100 antialiased font-sans flex flex-col justify-between selection:bg-emerald-500/30 selection:text-emerald-100">
+      <body className="min-h-[100dvh] bg-[var(--color-canvas)] text-zinc-100 antialiased font-sans flex flex-col justify-between selection:bg-[#4f8cff]/35 selection:text-white">
         <a href="#main-content" className="skip-link">Skip to content</a>
         
         {/* Subtle Background Grid Overlay */}

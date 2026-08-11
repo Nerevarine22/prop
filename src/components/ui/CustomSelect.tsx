@@ -63,7 +63,9 @@ export function CustomSelect({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full flex items-center justify-between gap-2.5 bg-[#121214] hover:bg-[#18181c] border border-zinc-800/80 hover:border-zinc-700/80 rounded-xl px-3.5 py-2.5 text-xs font-semibold text-zinc-200 transition-all duration-150 min-h-[42px] cursor-pointer outline-none focus:border-zinc-600 focus:ring-1 focus:ring-zinc-600 ${buttonClassName}`}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        className={`w-full flex items-center justify-between gap-2.5 bg-[#181d26] border border-[#29313d] hover:border-[#394453] rounded-lg px-3.5 py-2.5 text-xs font-semibold text-zinc-200 transition-colors duration-150 min-h-[42px] cursor-pointer outline-none focus:border-[#4f8cff] focus:ring-1 focus:ring-[#4f8cff] ${buttonClassName}`}
       >
         <div className="flex items-center gap-2 min-w-0 truncate">
           {icon && <span className="text-zinc-400 shrink-0">{icon}</span>}
@@ -72,7 +74,7 @@ export function CustomSelect({
         </div>
         <ChevronDown
           className={`h-4 w-4 text-zinc-400 shrink-0 transition-transform duration-200 ${
-            isOpen ? 'rotate-180 text-emerald-400' : ''
+            isOpen ? 'rotate-180 text-[#a9c7ff]' : ''
           }`}
         />
       </button>
@@ -80,7 +82,9 @@ export function CustomSelect({
       {/* Popover Dropdown Menu */}
       {isOpen && (
         <div
-          className={`absolute ${align === 'right' ? 'right-0' : 'left-0'} mt-1.5 min-w-full w-max max-w-[280px] max-h-60 overflow-y-auto rounded-xl bg-[#141416]/95 border border-zinc-800/90 shadow-2xl shadow-black/90 backdrop-blur-md p-1.5 z-50 animate-in fade-in-50 zoom-in-95 duration-100 no-scrollbar`}
+          role="listbox"
+          aria-label={placeholder}
+          className={`absolute ${align === 'right' ? 'right-0' : 'left-0'} mt-1.5 min-w-full w-max max-w-[280px] max-h-60 overflow-y-auto rounded-xl bg-[#12161d]/98 border border-[#29313d] shadow-2xl shadow-black/70 backdrop-blur-md p-1.5 z-50 no-scrollbar`}
         >
           {options.map((option) => {
             const isSelected = option.value === value;
@@ -88,21 +92,23 @@ export function CustomSelect({
               <button
                 key={option.value}
                 type="button"
+                role="option"
+                aria-selected={isSelected}
                 onClick={() => {
                   onChange(option.value);
                   setIsOpen(false);
                 }}
                 className={`w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-150 cursor-pointer ${
                   isSelected
-                    ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold'
-                    : 'text-zinc-300 hover:text-white hover:bg-zinc-800/70 border border-transparent'
+                    ? 'bg-[#4f8cff]/14 text-[#a9c7ff] border border-[#4f8cff]/30 font-bold'
+                    : 'text-zinc-300 hover:text-white hover:bg-[#181d26] border border-transparent'
                 }`}
               >
                 <div className="flex items-center gap-2 min-w-0 truncate">
                   {option.icon && <span className="shrink-0">{option.icon}</span>}
                   <span className="truncate">{option.label}</span>
                 </div>
-                {isSelected && <Check className="h-3.5 w-3.5 text-emerald-400 shrink-0" />}
+                {isSelected && <Check className="h-3.5 w-3.5 text-[#a9c7ff] shrink-0" />}
               </button>
             );
           })}

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
 import { EvaluationStep, PropFirm, TradingPlatform } from '@/types/firm';
+import { FirmLogo } from '@/components/firms/FirmLogo';
 
 export function AiMatchmaker() {
   const [stepStyle, setStepStyle] = useState<EvaluationStep>('2-Step');
@@ -141,9 +142,12 @@ export function AiMatchmaker() {
                   </div>
 
                   <div className="flex items-center gap-3.5">
-                    {/* Match results can reference dynamic external firm logos. */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={result.logo} alt={result.name} className="h-12 w-12 rounded-lg object-cover border border-zinc-800" />
+                    <FirmLogo
+                      src={result.logo}
+                      name={result.name}
+                      imageClassName="h-12 w-12 rounded-lg object-cover border border-zinc-800"
+                      fallbackClassName="h-12 w-12 rounded-lg border border-zinc-800 bg-zinc-950 text-[#c0c8ff] text-xs font-extrabold flex items-center justify-center shrink-0"
+                    />
                     <div>
                       <h3 className="text-xl font-extrabold text-white flex items-center gap-1.5">
                         {result.name}

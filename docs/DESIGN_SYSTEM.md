@@ -13,7 +13,7 @@ This is the implementation target, not a claim that every current component alre
 
 ## 2. Design direction
 
-The design direction is **Accessible Crypto Research**.
+The production direction is **Deep Indigo Research**: an expressive crypto-native introduction followed by calm, neutral research surfaces.
 
 PropHub should feel clear and engaging on first contact, then rigorous when a trader asks for more detail. It is neither a promotional crypto landing page nor a dense institutional terminal.
 
@@ -29,7 +29,7 @@ PropHub should feel clear and engaging on first contact, then rigorous when a tr
 
 - Approachability: 7/10
 - Analytical depth: 8/10
-- Visual crypto intensity: 4/10
+- Visual crypto intensity: 6/10 in narrative hero sections, 3/10 in research tools
 - Financial seriousness: 6/10
 - Density: 5/10 on discovery pages, up to 8/10 in comparison and evidence views
 - Motion intensity: 3/10
@@ -89,38 +89,40 @@ All interface colors must come from semantic tokens. Components must not introdu
 
 | Token | Initial value | Use |
 | --- | --- | --- |
-| `--color-canvas` | `#0B0C0D` | Page background |
-| `--color-surface` | `#121416` | Standard grouped surface |
-| `--color-surface-raised` | `#181B1D` | Menus, prominent panels, elevated controls |
-| `--color-surface-soft` | `#202427` | Hover and selected neutral states |
-| `--color-border` | `#2A2D30` | Standard borders and dividers |
-| `--color-border-strong` | `#3A3F42` | Focused grouping and high-emphasis dividers |
-| `--color-text` | `#F2F4F3` | Primary text |
-| `--color-text-secondary` | `#C5CBC8` | Secondary copy and labels |
-| `--color-text-muted` | `#9CA3A1` | Metadata and supporting text |
-| `--color-text-disabled` | `#666D6A` | Disabled text only |
+| `--color-canvas` | `#0A0C10` | Page background |
+| `--color-section` | `#0E1117` | Alternate page section |
+| `--color-surface` | `#12161D` | Standard grouped surface |
+| `--color-surface-raised` | `#181D26` | Menus, prominent panels and controls |
+| `--color-border` | `#29313D` | Standard borders and dividers |
+| `--color-border-strong` | `#394453` | Focused grouping and high-emphasis dividers |
+| `--color-text` | `#F4F4F5` | Primary text |
+| `--color-text-muted` | `#9CA3AF` | Metadata and supporting text |
+| `--color-text-dim` | `#667085` | Disabled and tertiary text only |
 
-The foundation should feel graphite rather than pure black. Large areas of `#000000` and `#FFFFFF` should be avoided.
+The foundation is neutral charcoal rather than tinted brand color. Hierarchy comes from spacing, dividers and text contrast; avoid giving every group a separate filled panel.
 
 ### Brand and interaction
 
 | Token | Initial value | Use |
 | --- | --- | --- |
-| `--color-accent` | `#67B892` | Primary action, active state, selected data |
-| `--color-accent-hover` | `#78C8A2` | Primary hover |
-| `--color-accent-soft` | `rgba(103, 184, 146, 0.12)` | Subtle selected background |
-| `--color-accent-contrast` | `#08110D` | Text on solid accent |
+| `--color-accent` | `#4F8CFF` | Primary action and active state |
+| `--color-accent-hover` | `#70A5FF` | Primary hover |
+| `--color-accent-soft` | `#A9C7FF` | Secondary accent text and icons |
+| `--color-accent-subtle` | `rgba(79, 140, 255, 0.14)` | Subtle selected background |
+| `--color-accent-contrast` | `#FFFFFF` | Text on solid accent |
+| `--color-reward` | `#7774FF` | Points, tokens, airdrops and AI |
+| `--color-reward-soft` | `#AAA8FF` | Reward labels and secondary reward states |
 
-The accent is a restrained mint-green, not neon green. Glow is not a default interaction style.
+Blue is the trust and interaction color. Violet is reserved for rewards and AI, never for general navigation. Glow is not a default interaction style; a soft static radial field is allowed only in major narrative areas such as the homepage hero.
 
 ### Semantic colors
 
 | Token | Initial value | Meaning |
 | --- | --- | --- |
-| `--color-info` | `#74A8D4` | Reported information and neutral guidance |
-| `--color-positive` | `#67B892` | Verified state or successful action |
-| `--color-warning` | `#D9A95B` | Demo data, caution and pending review |
-| `--color-danger` | `#D87575` | Material risk, failure and destructive action |
+| `--color-info` | `#4F8CFF` | Reported information and neutral guidance |
+| `--color-positive` | `#32D583` | Verified state or successful action |
+| `--color-warning` | `#F5B942` | Demo data, caution and pending review |
+| `--color-danger` | `#F97066` | Material risk, failure and destructive action |
 
 Color must never be the only status signal. Pair it with a label and, when useful, an icon or explanation.
 
@@ -186,6 +188,18 @@ Use a 4 px base scale:
 - Default section spacing: 72–96 px desktop and 48–64 px mobile.
 - Dense data sections can use smaller vertical rhythm but must retain clear group boundaries.
 
+### Public page shell
+
+- Public information pages use the shared `PublicPage.module.css` shell rather than inventing page-specific background palettes.
+- The default hero is a two-column editorial layout: title and eyebrow on the left, explanation or status notice on the right.
+- Use hairline dividers, spacing and typography before introducing another filled container.
+- Standard panels use neutral surface tokens. They never inherit the page topic color.
+- Blue communicates navigation, selection and primary actions.
+- Green communicates positive or verified data only.
+- Violet communicates reward programs and AI only.
+- Amber communicates demo, caution or incomplete verification states.
+- A quiet grid or radial field may pace a page, but it must remain subordinate to data and copy.
+
 ### Density by surface
 
 - Homepage: low to medium density, strong narrative and a limited research preview.
@@ -235,7 +249,7 @@ Motion exists to explain state change and hierarchy.
 - Quick feedback: 150 ms.
 - Standard transition: 250 ms.
 - Deliberate reveal: 400 ms maximum.
-- Default easing: `cubic-bezier(0.22, 1, 0.36, 1)`.
+- Default easing: `cubic-bezier(0.16, 1, 0.3, 1)`.
 
 ### Allowed uses
 
@@ -342,6 +356,15 @@ Every component must document:
 - Keep common filters visible and advanced filters collapsible.
 - Show active filters and provide a clear reset.
 - Firm cards should prioritize decision-relevant differences, not equal-weight metadata.
+
+### Firm cards and logos
+
+- Place firm logos inside a consistent neutral container with an internal safe area.
+- Do not sample logo colors to tint, glow or recolor the full card.
+- Show no more than three reward tags on the directory card.
+- Keep the card background stable on hover; use a subtle border overlay and clearer action state instead of lift or scale.
+- A selected comparison state may use the blue accent border and a low-opacity accent wash.
+- Provide an initials fallback when a logo cannot load.
 
 ### Firm profile
 

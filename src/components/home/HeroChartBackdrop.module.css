@@ -1,0 +1,58 @@
+.backdrop {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black 8%, rgb(0 0 0 / 78%) 66%, transparent 96%);
+}
+
+.backdrop svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.primaryLine,
+.secondaryLine {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.primaryLine {
+  stroke: url('#hero-chart-stroke');
+  stroke-width: 1.35;
+}
+
+.secondaryLine {
+  opacity: 0.42;
+  stroke: #7279ba;
+  stroke-dasharray: 2 9;
+  stroke-width: 0.8;
+}
+
+.chartArea {
+  fill: url('#hero-chart-fill');
+  stroke: none;
+}
+
+.nodes circle {
+  fill: #161a29;
+  stroke: #8f98ff;
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+@media (max-width: 680px) {
+  .backdrop {
+    inset-inline: -38%;
+    opacity: 0.72;
+  }
+
+  .secondaryLine,
+  .nodes {
+    display: none;
+  }
+}

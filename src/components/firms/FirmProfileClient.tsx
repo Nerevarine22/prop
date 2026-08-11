@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { PropFirm } from '@/types/firm';
+import { FirmLogo } from '@/components/firms/FirmLogo';
 import { Star, CheckCircle2, XCircle, Scale, ExternalLink, Calendar, MapPin, Copy, Check, Shield, GitCommit, Monitor, Wallet, PieChart, TrendingUp, Sparkles, Coins, Database } from 'lucide-react';
 
 interface FirmProfileClientProps {
@@ -48,7 +49,8 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6 sm:space-y-8 font-satoshi">
+    <div className="min-h-full bg-[#0a0c10] px-4 py-8 font-satoshi sm:px-6 sm:py-12">
+      <div className="mx-auto max-w-6xl space-y-6 sm:space-y-8">
       
       {/* Top Breadcrumb */}
       <nav className="text-xs text-zinc-400 flex items-center gap-2 font-medium overflow-x-auto no-scrollbar">
@@ -67,7 +69,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
         </div>
       )}
 
-      <div className="relative rounded-2xl sm:rounded-3xl border border-zinc-800/60 bg-[#141416] p-5 sm:p-8 shadow-sm space-y-6 overflow-hidden">
+      <div className="relative space-y-6 overflow-hidden rounded-2xl border border-[#29313d] bg-[#12161d] p-5 sm:p-8">
         
         {/* Subtle Ambient Brand Glow */}
         <div
@@ -80,15 +82,11 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
           <div className="flex items-start gap-4 sm:gap-6 min-w-0">
             {/* Logo 64px - 80px */}
             <div className="relative shrink-0">
-              {/* Firm logos can be remote research assets from changing sources. */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <FirmLogo
                 src={firm.logo}
-                alt={firm.name}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = `https://unavatar.io/twitter/${firm.slug}`;
-                }}
-                className="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl object-cover border border-zinc-800/80 shadow-sm bg-zinc-900"
+                name={firm.name}
+                imageClassName="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl object-cover border border-zinc-800/80 shadow-sm bg-zinc-900"
+                fallbackClassName="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl border border-zinc-800/80 bg-zinc-900 text-[#c0c8ff] text-lg font-extrabold flex items-center justify-center"
               />
             </div>
 
@@ -99,9 +97,9 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
                 {/* Reward Badges */}
                 {firm.rewardTags && firm.rewardTags.length > 0 && firm.rewardTags.map(tag => {
                   let tagStyle = 'bg-zinc-800/80 text-zinc-400 border-zinc-700/80';
-                  if (tag === 'Points') tagStyle = 'bg-amber-500/10 text-amber-300 border-amber-500/20';
-                  if (tag === 'Token') tagStyle = 'bg-[#52b788]/10 text-[#52b788] border-[#52b788]/20';
-                  if (tag === 'Airdrop') tagStyle = 'bg-sky-500/10 text-sky-300 border-sky-500/20';
+                  if (tag === 'Points') tagStyle = 'bg-[#7774ff]/10 text-[#aaa8ff] border-[#7774ff]/25';
+                  if (tag === 'Token') tagStyle = 'bg-[#7774ff]/10 text-[#aaa8ff] border-[#7774ff]/25';
+                  if (tag === 'Airdrop') tagStyle = 'bg-[#7774ff]/10 text-[#aaa8ff] border-[#7774ff]/25';
                   return (
                     <span
                       key={tag}
@@ -120,7 +118,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
                     {firm.badge}
                   </span>
                 )}
-                <span className="text-[11px] font-bold uppercase tracking-wider bg-[#52b788]/10 text-[#52b788] border border-[#52b788]/20 px-2.5 py-0.5 rounded-full shrink-0">
+                <span className="shrink-0 rounded-full border border-[#32d583]/20 bg-[#32d583]/10 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-[#32d583]">
                   {firm.dataStatus === 'mock' ? 'Demo score' : 'Trust'} {firm.trustScore}/100
                 </span>
               </div>
@@ -153,7 +151,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
               href={externalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs shadow-sm transition-colors min-h-[44px]"
+              className="flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-[#4f8cff] bg-[#4f8cff] px-5 py-3 text-xs font-bold text-white transition-colors hover:border-[#70a5ff] hover:bg-[#70a5ff]"
             >
               <span>Visit Website</span>
               <ExternalLink className="h-4 w-4" />
@@ -163,7 +161,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
               <button
                 type="button"
                 onClick={() => handleCopyCode(firm.verifiedCoupon!.code)}
-                className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#52b788] hover:bg-[#44a075] text-zinc-950 font-bold text-xs shadow-sm transition-colors cursor-pointer min-h-[44px]"
+                className="flex min-h-[44px] cursor-pointer items-center justify-center gap-2 rounded-xl border border-[#29313d] bg-[#181d26] px-5 py-3 text-xs font-bold text-zinc-200 transition-colors hover:border-[#394453] hover:text-white"
               >
                 {copiedCoupon ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                 <span>{copiedCoupon ? 'Code copied' : firm.dataStatus === 'mock' ? 'Copy sample code' : `Claim ${firm.verifiedCoupon.discount}`}</span>
@@ -172,7 +170,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
 
             <Link
               href="/compare"
-              className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#1c1c20] hover:bg-zinc-800 text-zinc-300 font-semibold text-xs border border-zinc-800/80 transition-colors min-h-[44px]"
+              className="flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-[#29313d] bg-transparent px-5 py-2.5 text-xs font-semibold text-zinc-300 transition-colors hover:border-[#394453] hover:bg-[#181d26]"
             >
               <Scale className="h-4 w-4 text-zinc-400" />
               <span>Compare Firm</span>
@@ -182,13 +180,13 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
         </div>
 
         {/* DOMINANT SPEC METRICS BAR */}
-        <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 sm:p-5 rounded-xl bg-[#121214] border border-zinc-800/60 text-xs font-satoshi">
+        <div className="relative z-10 grid grid-cols-2 gap-3 rounded-xl border border-[#29313d] bg-[#0e1117] p-4 text-xs font-satoshi sm:grid-cols-4 sm:p-5">
           <div className="space-y-1">
             <div className="flex items-center gap-1.5 text-zinc-500 text-[10px] sm:text-xs font-medium uppercase tracking-wider">
-              <PieChart className="h-3.5 w-3.5 text-[#52b788]" />
+              <PieChart className="h-3.5 w-3.5 text-[#32d583]" />
               <span>Profit Split</span>
             </div>
-            <span className="text-[#52b788] font-bold text-xl sm:text-2xl block tracking-tight">{firm.profitSplit}</span>
+            <span className="block text-xl font-bold tracking-tight text-[#32d583] sm:text-2xl">{firm.profitSplit}</span>
           </div>
 
           <div className="space-y-1">
@@ -226,8 +224,8 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
             onClick={() => setActiveTab('overview')}
             className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all shrink-0 min-h-[40px] ${
               activeTab === 'overview'
-                ? 'bg-white text-zinc-950 shadow-sm'
-                : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+                ? 'bg-[#4f8cff]/15 text-[#a9c7ff] ring-1 ring-inset ring-[#4f8cff]/30'
+                : 'text-zinc-400 hover:text-white hover:bg-[#181d26]'
             }`}
           >
             Overview & Specs
@@ -238,8 +236,8 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
             onClick={() => setActiveTab('rewards')}
             className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all shrink-0 min-h-[40px] ${
               activeTab === 'rewards'
-                ? 'bg-white text-zinc-950 shadow-sm'
-                : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+                ? 'bg-[#4f8cff]/15 text-[#a9c7ff] ring-1 ring-inset ring-[#4f8cff]/30'
+                : 'text-zinc-400 hover:text-white hover:bg-[#181d26]'
             }`}
           >
             Tokenomics & Rewards
@@ -250,8 +248,8 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
             onClick={() => setActiveTab('rules')}
             className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all shrink-0 min-h-[40px] ${
               activeTab === 'rules'
-                ? 'bg-white text-zinc-950 shadow-sm'
-                : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+                ? 'bg-[#4f8cff]/15 text-[#a9c7ff] ring-1 ring-inset ring-[#4f8cff]/30'
+                : 'text-zinc-400 hover:text-white hover:bg-[#181d26]'
             }`}
           >
             Trading Rules
@@ -262,8 +260,8 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
             onClick={() => setActiveTab('tiers')}
             className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all shrink-0 min-h-[40px] ${
               activeTab === 'tiers'
-                ? 'bg-white text-zinc-950 shadow-sm'
-                : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+                ? 'bg-[#4f8cff]/15 text-[#a9c7ff] ring-1 ring-inset ring-[#4f8cff]/30'
+                : 'text-zinc-400 hover:text-white hover:bg-[#181d26]'
             }`}
           >
             Account Sizes & Pricing ({firm.accountTiers.length})
@@ -274,8 +272,8 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
             onClick={() => setActiveTab('reviews')}
             className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all shrink-0 min-h-[40px] ${
               activeTab === 'reviews'
-                ? 'bg-white text-zinc-950 shadow-sm'
-                : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+                ? 'bg-[#4f8cff]/15 text-[#a9c7ff] ring-1 ring-inset ring-[#4f8cff]/30'
+                : 'text-zinc-400 hover:text-white hover:bg-[#181d26]'
             }`}
           >
             Trader Reviews ({firm.reviews?.length || 0})
@@ -285,7 +283,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
         {/* TAB 1: OVERVIEW */}
         {activeTab === 'overview' && (
           <div className="space-y-6">
-            <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-6 space-y-3 shadow-sm">
+            <div className="space-y-3 rounded-xl border border-[#29313d] bg-[#12161d] p-6">
               <h2 className="text-sm font-bold text-white uppercase tracking-wider">About {firm.name}</h2>
               <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
                 {firm.description}
@@ -294,7 +292,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
 
             {/* Tokenomics & Airdrop Ecosystem Card */}
             {firm.tokenomicsInfo && (
-              <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-6 space-y-4 shadow-sm">
+              <div className="space-y-4 rounded-xl border border-[#29313d] bg-[#12161d] p-6">
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2">
                     <Sparkles className="h-5 w-5 text-amber-400" />
@@ -302,7 +300,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
                   </div>
                   <div className="flex items-center gap-1.5">
                     {firm.tokenomicsInfo.hasToken && (
-                      <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-[#52b788]/10 text-[#52b788] border border-[#52b788]/20">
+                      <span className="rounded-lg border border-[#32d583]/20 bg-[#32d583]/10 px-2.5 py-1 text-xs font-bold text-[#32d583]">
                         {firm.tokenomicsInfo.tokenTicker || 'Token Active'}
                       </span>
                     )}
@@ -319,7 +317,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
                 </p>
 
                 {firm.tokenomicsInfo.pointsProgramName && (
-                  <div className="p-3 rounded-xl bg-[#121214] border border-zinc-800/60 flex items-center justify-between text-xs">
+                  <div className="flex items-center justify-between rounded-xl border border-[#29313d] bg-[#0e1117] p-3 text-xs">
                     <span className="text-zinc-400 font-medium">Points Program:</span>
                     <span className="text-amber-300 font-bold">{firm.tokenomicsInfo.pointsProgramName}</span>
                   </div>
@@ -328,15 +326,15 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-5 space-y-2">
-                <Shield className="h-5 w-5 text-[#52b788]" />
+              <div className="space-y-2 rounded-xl border border-[#29313d] bg-[#12161d] p-5">
+                <Shield className="h-5 w-5 text-[#7aa8ff]" />
                 <h3 className="text-xs font-bold text-white">Risk & Drawdown Limits</h3>
                 <p className="text-xs text-zinc-400 leading-relaxed">
                   Maximum drawdown: <strong className="text-zinc-200">{firm.maxDrawdown}</strong>. Daily loss limit: <strong className="text-zinc-200">{firm.dailyDrawdown}</strong>.
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-5 space-y-2">
+              <div className="space-y-2 rounded-xl border border-[#29313d] bg-[#12161d] p-5">
                 <GitCommit className="h-5 w-5 text-sky-400" />
                 <h3 className="text-xs font-bold text-white">Evaluation Pathways</h3>
                 <p className="text-xs text-zinc-400 leading-relaxed">
@@ -344,7 +342,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-5 space-y-2">
+              <div className="space-y-2 rounded-xl border border-[#29313d] bg-[#12161d] p-5">
                 <Monitor className="h-5 w-5 text-amber-400" />
                 <h3 className="text-xs font-bold text-white">Platforms & Pairs</h3>
                 <p className="text-xs text-zinc-400 leading-relaxed">
@@ -358,7 +356,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
         {/* TAB 2: REWARDS & TOKENOMICS */}
         {activeTab === 'rewards' && (
           <div className="space-y-6">
-            <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-6 space-y-5 shadow-sm">
+            <div className="space-y-5 rounded-xl border border-[#29313d] bg-[#12161d] p-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-800/60 pb-4">
                 <div className="space-y-1">
                   <h2 className="text-base font-bold text-white flex items-center gap-2">
@@ -380,21 +378,21 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
               {firm.tokenomicsInfo ? (
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div className="p-4 rounded-xl bg-[#121214] border border-zinc-800/60 space-y-1">
+                    <div className="space-y-1 rounded-xl border border-[#29313d] bg-[#0e1117] p-4">
                       <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider block">Native Token</span>
                       <span className="text-white font-bold text-sm">
                         {firm.tokenomicsInfo.hasToken ? (firm.tokenomicsInfo.tokenTicker || 'Active Token') : 'No Token Launched'}
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-xl bg-[#121214] border border-zinc-800/60 space-y-1">
+                    <div className="space-y-1 rounded-xl border border-[#29313d] bg-[#0e1117] p-4">
                       <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider block">Points Program</span>
                       <span className="text-amber-300 font-bold text-sm">
                         {firm.tokenomicsInfo.hasPoints ? (firm.tokenomicsInfo.pointsProgramName || 'Points System') : 'No Points'}
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-xl bg-[#121214] border border-zinc-800/60 space-y-1">
+                    <div className="space-y-1 rounded-xl border border-[#29313d] bg-[#0e1117] p-4">
                       <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider block">Airdrop Status</span>
                       <span className="text-sky-300 font-bold text-sm">
                         {firm.tokenomicsInfo.hasAirdrop ? (firm.tokenomicsInfo.airdropStatus || 'Active Airdrop') : 'Potential / None'}
@@ -402,7 +400,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
                     </div>
                   </div>
 
-                  <div className="p-5 rounded-xl bg-[#121214] border border-zinc-800/60 space-y-2">
+                  <div className="space-y-2 rounded-xl border border-[#29313d] bg-[#0e1117] p-5">
                     <h3 className="text-xs font-bold text-white uppercase tracking-wider">How to earn rewards:</h3>
                     <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
                       {firm.tokenomicsInfo.rewardDescription}
@@ -420,51 +418,51 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
         {activeTab === 'rules' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-6 space-y-4">
+            <div className="space-y-4 rounded-xl border border-[#29313d] bg-[#12161d] p-6">
               <h2 className="text-sm font-bold text-white">Trading Permissions & Risk Constraints</h2>
               <ul className="space-y-3 text-xs">
-                <li className="flex items-center justify-between p-3 rounded-xl bg-[#121214] border border-zinc-800/60">
+                <li className="flex items-center justify-between rounded-xl border border-[#29313d] bg-[#0e1117] p-3">
                   <span className="text-zinc-300 font-medium">News Trading Allowed</span>
                   {firm.newsTradingAllowed ? (
-                    <span className="flex items-center gap-1 text-[#52b788] font-semibold"><CheckCircle2 className="h-4 w-4" /> Yes</span>
+                    <span className="flex items-center gap-1 font-semibold text-[#32d583]"><CheckCircle2 className="h-4 w-4" /> Yes</span>
                   ) : (
                     <span className="flex items-center gap-1 text-red-400 font-semibold"><XCircle className="h-4 w-4" /> Restricted</span>
                   )}
                 </li>
 
-                <li className="flex items-center justify-between p-3 rounded-xl bg-[#121214] border border-zinc-800/60">
+                <li className="flex items-center justify-between rounded-xl border border-[#29313d] bg-[#0e1117] p-3">
                   <span className="text-zinc-300 font-medium">Weekend Position Holding</span>
                   {firm.weekendHoldingAllowed ? (
-                    <span className="flex items-center gap-1 text-[#52b788] font-semibold"><CheckCircle2 className="h-4 w-4" /> Yes</span>
+                    <span className="flex items-center gap-1 font-semibold text-[#32d583]"><CheckCircle2 className="h-4 w-4" /> Yes</span>
                   ) : (
                     <span className="flex items-center gap-1 text-red-400 font-semibold"><XCircle className="h-4 w-4" /> No</span>
                   )}
                 </li>
 
-                <li className="flex items-center justify-between p-3 rounded-xl bg-[#121214] border border-zinc-800/60">
+                <li className="flex items-center justify-between rounded-xl border border-[#29313d] bg-[#0e1117] p-3">
                   <span className="text-zinc-300 font-medium">Expert Advisors (EAs) / Bots</span>
                   {firm.eaAllowed ? (
-                    <span className="flex items-center gap-1 text-[#52b788] font-semibold"><CheckCircle2 className="h-4 w-4" /> Allowed</span>
+                    <span className="flex items-center gap-1 font-semibold text-[#32d583]"><CheckCircle2 className="h-4 w-4" /> Allowed</span>
                   ) : (
                     <span className="flex items-center gap-1 text-red-400 font-semibold"><XCircle className="h-4 w-4" /> Prohibited</span>
                   )}
                 </li>
 
-                <li className="flex items-center justify-between p-3 rounded-xl bg-[#121214] border border-zinc-800/60">
+                <li className="flex items-center justify-between rounded-xl border border-[#29313d] bg-[#0e1117] p-3">
                   <span className="text-zinc-300 font-medium">No Time Limit on Evaluation</span>
-                  <span className="flex items-center gap-1 text-[#52b788] font-semibold"><CheckCircle2 className="h-4 w-4" /> Unlimited</span>
+                  <span className="flex items-center gap-1 font-semibold text-[#32d583]"><CheckCircle2 className="h-4 w-4" /> Unlimited</span>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-6 space-y-4">
+            <div className="space-y-4 rounded-xl border border-[#29313d] bg-[#12161d] p-6">
               <h2 className="text-sm font-bold text-white">Platforms & Asset Selection</h2>
               <div className="space-y-4 text-xs">
                 <div>
                   <span className="text-zinc-400 block text-[11px] font-semibold uppercase tracking-wider mb-2">Supported Platforms</span>
                   <div className="flex gap-2 flex-wrap">
                     {firm.platforms.map(plat => (
-                      <span key={plat} className="px-3 py-1.5 rounded-lg bg-[#1c1c20] border border-zinc-800/80 text-zinc-200 font-semibold">
+                      <span key={plat} className="rounded-lg border border-[#29313d] bg-[#181d26] px-3 py-1.5 font-semibold text-zinc-200">
                         {plat}
                       </span>
                     ))}
@@ -485,16 +483,16 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
         {activeTab === 'tiers' && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {firm.accountTiers.map((tier, idx) => (
-              <div key={idx} className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-5 sm:p-6 space-y-4 hover:border-zinc-700/80 transition-colors">
+              <div key={idx} className="space-y-4 rounded-xl border border-[#29313d] bg-[#12161d] p-5 transition-colors hover:border-[#394453] sm:p-6">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-semibold text-zinc-400">Account Capital</span>
                   <span className="text-xl font-bold text-white font-satoshi">${tier.accountSize.toLocaleString()}</span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#121214] border border-zinc-800/60 space-y-2 text-xs">
+                <div className="space-y-2 rounded-xl border border-[#29313d] bg-[#0e1117] p-3.5 text-xs">
                   <div className="flex justify-between">
                     <span className="text-zinc-500">Profit Target</span>
-                    <span className="text-[#52b788] font-bold">{tier.profitTarget}</span>
+                    <span className="font-bold text-[#32d583]">{tier.profitTarget}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-zinc-500">Max Drawdown</span>
@@ -517,7 +515,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
                     href={externalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs transition-colors flex items-center gap-1"
+                    className="flex items-center gap-1 rounded-xl border border-[#4f8cff] bg-[#4f8cff] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:border-[#70a5ff] hover:bg-[#70a5ff]"
                   >
                     <span>Select Tier</span>
                     <ExternalLink className="h-3 w-3" />
@@ -533,7 +531,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
           <div className="space-y-4">
             {firm.reviews && firm.reviews.length > 0 ? (
               firm.reviews.map(rev => (
-                <div key={rev.id} className="rounded-2xl border border-zinc-800/60 bg-[#141416] p-5 sm:p-6 space-y-3">
+                <div key={rev.id} className="space-y-3 rounded-xl border border-[#29313d] bg-[#12161d] p-5 sm:p-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="font-bold text-white text-sm">{rev.author}</span>
@@ -542,7 +540,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
                           Sample review
                         </span>
                       ) : rev.verifiedTrader && (
-                        <span className="text-[10px] bg-[#52b788]/10 text-[#52b788] px-2 py-0.5 rounded-md border border-[#52b788]/20 font-semibold">
+                        <span className="rounded-md border border-[#32d583]/20 bg-[#32d583]/10 px-2 py-0.5 text-[10px] font-semibold text-[#32d583]">
                           Verified Trader
                         </span>
                       )}
@@ -564,6 +562,7 @@ export function FirmProfileClient({ firm }: FirmProfileClientProps) {
 
       </div>
 
+      </div>
     </div>
   );
 }
