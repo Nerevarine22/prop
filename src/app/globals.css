@@ -46,7 +46,7 @@ body {
   font-family: var(--font-sans);
   background-color: var(--color-canvas);
   color: #fafafa;
-  overflow-x: hidden;
+  overflow-x: clip;
   touch-action: manipulation;
 }
 
@@ -234,4 +234,12 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+body:has(#product-lab) {
+  background: #f3f1eb;
+}
+
+body:has(#product-lab[data-theme='dark']) {
+  background: #0b100d;
 }

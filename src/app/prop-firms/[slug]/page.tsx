@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { FirmProfileClient } from '@/components/firms/FirmProfileClient';
+import { FirmProfileExperience } from '@/components/product/FirmProfileExperience';
 import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { siteConfig } from '@/lib/site';
 
 type FirmPageProps = {
   params: Promise<{ slug: string }>;
@@ -42,5 +44,33 @@ export default async function FirmPage({ params }: FirmPageProps) {
 
   if (!firm) notFound();
 
-  return <FirmProfileClient firm={firm} />;
+  return (
+    <>
+      <JsonLd
+        id="prop-firm-profile-schema"
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'ProfilePage',
+          name: `${firm.name} prop firm research profile`,
+          description: firm.description,
+          url: `${siteConfig.url}/prop-firms/${firm.slug}`,
+          dateModified: firm.lastReviewedAt,
+          mainEntity: {
+            '@type': 'Organization',
+            name: firm.name,
+            url: firm.website,
+            description: firm.tagline,
+          },
+          breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Prop firms', item: `${siteConfig.url}/prop-firms` },
+              { '@type': 'ListItem', position: 2, name: firm.name, item: `${siteConfig.url}/prop-firms/${firm.slug}` },
+            ],
+          },
+        }}
+      />
+      <FirmProfileExperience firm={firm} />
+    </>
+  );
 }

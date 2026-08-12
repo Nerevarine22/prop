@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
-import { HomePageClient } from '@/components/home/HomePageClient';
+import { FirmDirectory } from '@/components/product/FirmDirectory';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
+import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Crypto prop firm directory',
@@ -13,13 +16,25 @@ type PropFirmsPageProps = {
 
 export default async function PropFirmsPage({ searchParams }: PropFirmsPageProps) {
   const { step, platform } = await searchParams;
-  const initialStep = ['1-Step', '2-Step', 'Instant Funding'].includes(step ?? '') ? step : 'all';
+  const initialStep = ['1-Step', '2-Step', 'Instant Funding'].includes(step ?? '') ? step : 'All';
 
   return (
-    <HomePageClient
-      mode="directory"
-      initialStep={initialStep}
-      initialSearch={platform ?? ''}
-    />
+    <>
+      <JsonLd
+        id="prop-firm-directory-schema"
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'On-chain prop firm directory',
+          itemListElement: MOCK_PROP_FIRMS.map((firm, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: firm.name,
+            url: `${siteConfig.url}/prop-firms/${firm.slug}`,
+          })),
+        }}
+      />
+      <FirmDirectory initialStep={initialStep} initialSearch={platform ?? ''} />
+    </>
   );
 }

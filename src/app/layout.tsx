@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
+import { PublicShell } from '@/components/product/PublicShell';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { siteConfig } from '@/lib/site';
 
 const spaceGrotesk = Space_Grotesk({
@@ -44,20 +44,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`dark ${spaceGrotesk.variable}`}>
-      <body className="min-h-[100dvh] bg-[var(--color-canvas)] text-zinc-100 antialiased font-sans flex flex-col justify-between selection:bg-[#4f8cff]/35 selection:text-white">
+    <html lang="en" className={spaceGrotesk.variable} suppressHydrationWarning>
+      <body className="min-h-[100dvh] antialiased font-sans selection:bg-[#4f8cff]/35 selection:text-white">
+        <JsonLd
+          id="prophub-website-schema"
+          data={{
+            '@context': 'https://schema.org',
+            '@graph': [
+              { '@type': 'Organization', '@id': `${siteConfig.url}/#organization`, name: siteConfig.name, url: siteConfig.url },
+              { '@type': 'WebSite', '@id': `${siteConfig.url}/#website`, name: siteConfig.name, url: siteConfig.url, description: siteConfig.description, publisher: { '@id': `${siteConfig.url}/#organization` } },
+            ],
+          }}
+        />
         <a href="#main-content" className="skip-link">Skip to content</a>
-        
-        {/* Subtle Background Grid Overlay */}
-        <div className="fixed inset-0 pointer-events-none z-0 bg-grid-pattern opacity-80" />
-
-        <div className="relative z-10 flex-1 flex flex-col justify-between">
-          <Navbar />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <PublicShell>{children}</PublicShell>
       </body>
     </html>
   );

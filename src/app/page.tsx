@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { HomePageClient } from '@/components/home/HomePageClient';
+import { PublicHome } from '@/components/product/PublicHome';
 
 export const metadata: Metadata = {
   title: 'On-chain prop firm research and comparison',
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <HomePageClient />;
+  return <PublicHome />;
 }
