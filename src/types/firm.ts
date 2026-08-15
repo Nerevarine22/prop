@@ -1,6 +1,6 @@
 export type EvaluationStep = '1-Step' | '2-Step' | 'Instant Funding';
 
-export type TradingPlatform = 'MT4' | 'MT5' | 'cTrader' | 'Bybit' | 'TradeLocker' | 'Match-Trader';
+export type TradingPlatform = 'MT4' | 'MT5' | 'cTrader' | 'Bybit' | 'TradeLocker' | 'Match-Trader' | 'Propr Terminal' | 'Hyperliquid';
 
 export interface Coupon {
   id: string;
@@ -12,6 +12,7 @@ export interface Coupon {
   verified: boolean;
   expiryDate?: string;
   highlight?: boolean;
+  referralUrl?: string;
 }
 
 export interface Review {
@@ -33,6 +34,116 @@ export interface PlanTier {
   profitTarget: string; // e.g. "8%"
   maxDrawdown: string; // e.g. "10%"
   dailyDrawdown: string; // e.g. "5%"
+}
+
+export type ChallengeProgramKind = 'evaluation' | 'instant-funding' | 'collateralized' | 'competition';
+
+export type DrawdownType = 'static' | 'trailing-high-water-mark' | 'trailing-daily' | 'dynamic' | 'none';
+
+export interface ChallengeStage {
+  id: string;
+  name: string;
+  profitTargetPercent?: number;
+  timeLimitDays?: number;
+  minimumTradingDays?: number;
+  funded?: boolean;
+}
+
+export interface ChallengeTier {
+  accountSize: number;
+  fee: number;
+  originalFee?: number;
+  currency: 'USD' | 'USDC' | 'USDT';
+  available: boolean;
+  sourceIds: string[];
+}
+
+export interface DailyLossRule {
+  percent: number;
+  reference: 'starting-balance' | 'start-of-day-balance' | 'start-of-day-equity' | 'daily-high-water-mark';
+  resetTimeUtc?: string;
+  equityBased: boolean;
+  floatingPnlIncluded: boolean;
+  breachOnTouch: boolean;
+}
+
+export interface DrawdownRule {
+  percent: number;
+  type: DrawdownType;
+  reference: 'starting-balance' | 'equity-high-water-mark' | 'balance-high-water-mark';
+  equityBased: boolean;
+  floatingPnlIncluded: boolean;
+  breachOnTouch: boolean;
+  trailingCap?: 'starting-balance';
+  resetsAfterPayout?: boolean;
+}
+
+export interface ChallengeProgram {
+  id: string;
+  name: string;
+  shortName: string;
+  kind: ChallengeProgramKind;
+  description: string;
+  stages: ChallengeStage[];
+  tiers: ChallengeTier[];
+  dailyLoss: DailyLossRule;
+  maxDrawdown: DrawdownRule;
+  fundedProfitSplitPercent: number;
+  feeRefundable: boolean;
+  noTimeLimit: boolean;
+  sourceIds: string[];
+}
+
+export interface PayoutPolicy {
+  schedule: 'on-demand' | 'daily' | 'weekly' | 'bi-weekly' | 'monthly' | 'conditional';
+  profitSplitPercent: number;
+  minimumAmount?: number;
+  currencies: Array<'USD' | 'USDC' | 'USDT' | 'BTC' | 'ETH' | 'SOL'>;
+  processingTimeHours?: number;
+  positionsMustBeClosed?: boolean;
+  partialWithdrawalsAllowed?: boolean;
+  payoutResetsBalance?: boolean;
+  sourceIds: string[];
+}
+
+export interface LeverageRule {
+  market: string;
+  maxLeverage: string;
+}
+
+export interface TradingPolicy {
+  executionVenue?: string;
+  markets: string[];
+  leverage: LeverageRule[];
+  consistencyRule: 'none' | 'applies' | 'unknown';
+  newsTrading: 'allowed' | 'restricted' | 'conditional' | 'unknown';
+  weekendHolding: 'allowed' | 'restricted' | 'conditional' | 'unknown';
+  automatedTrading: 'allowed' | 'restricted' | 'conditional' | 'unknown';
+  copyTrading: 'allowed' | 'restricted' | 'conditional' | 'unknown';
+  mandatoryStopLoss: boolean;
+  tradingFees: string;
+  fundingRatesAffectEquity: boolean;
+  sourceIds: string[];
+}
+
+export interface ExecutionPolicy {
+  model: 'a-book' | 'b-book' | 'hybrid' | 'simulated' | 'unknown';
+  onchainVenue?: string;
+  traderCanChooseRouting: boolean;
+  tradeLevelRoutingVisible: boolean;
+  notes: string;
+  sourceIds: string[];
+}
+
+export interface CompliancePolicy {
+  legalEntity?: string;
+  registrationJurisdiction?: string;
+  regulatoryStatus?: string;
+  kycRequiredAt: 'registration' | 'purchase' | 'funded-activation' | 'payout' | 'not-required' | 'unknown';
+  restrictedJurisdictions: string[];
+  maximumAggregateFundedBalance?: number;
+  simulatedAccounts: boolean;
+  sourceIds: string[];
 }
 
 export type RewardTag = 'Points' | 'Token' | 'Airdrop' | 'Potential';
@@ -74,6 +185,16 @@ export interface FirmChangeRecord {
   nextValue: string;
   sourceIds: string[];
   note?: string;
+}
+
+export interface EvidenceClaim {
+  id: string;
+  field: string;
+  value: string;
+  status: 'reported' | 'verified' | 'conflict';
+  sourceIds: string[];
+  checkedAt: string;
+  notes?: string;
 }
 
 export interface TokenomicsInfo {
@@ -120,6 +241,13 @@ export interface PropFirm {
   
   // Pricing & Tier Options
   accountTiers: PlanTier[];
+
+  // Rich research model. Legacy summary fields above remain during migration.
+  challengePrograms?: ChallengeProgram[];
+  payoutPolicy?: PayoutPolicy;
+  tradingPolicy?: TradingPolicy;
+  executionPolicy?: ExecutionPolicy;
+  compliancePolicy?: CompliancePolicy;
   
   // Verification & Company info
   verifiedCoupon?: Coupon;
@@ -135,6 +263,7 @@ export interface PropFirm {
   sources: DataSource[];
   verification: VerificationRecord;
   changeHistory: FirmChangeRecord[];
+  claims?: EvidenceClaim[];
   
   // Tokenomics, Points & Airdrop Ecosystem
   rewardTags?: RewardTag[];

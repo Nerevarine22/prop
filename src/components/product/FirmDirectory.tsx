@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Check, ChevronDown, LayoutList, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
+import { ArrowRight, Check, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
 import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
 import type { EvaluationStep, PropFirm } from '@/types/firm';
@@ -18,6 +18,9 @@ type FirmDirectoryProps = {
 const stepOptions = ['All', '1-Step', '2-Step', 'Instant Funding'] as const;
 
 function FirmRow({ firm, selected, onToggle }: { firm: PropFirm; selected: boolean; onToggle: () => void }) {
+  const [drawdownValue, ...drawdownNoteParts] = firm.maxDrawdown.trim().split(/\s+/);
+  const drawdownNote = drawdownNoteParts.join(' ') || 'Maximum';
+
   return (
     <article className={styles.firmRow}>
       <div className={styles.firmIdentity}>
@@ -32,7 +35,7 @@ function FirmRow({ firm, selected, onToggle }: { firm: PropFirm; selected: boole
 
       <div className={styles.rowMetrics}>
         <div><span>From</span><strong>${firm.accountTiers[0]?.price}</strong><small>{firm.evaluationSteps[0]}</small></div>
-        <div><span>Drawdown</span><strong>{firm.maxDrawdown.replace(/\s(?:Static|Max|Trailing).*/, '')}</strong><small>{firm.maxDrawdown.replace(/^\S+\s*/, '') || 'Maximum'}</small></div>
+        <div><span>Drawdown</span><strong>{drawdownValue}</strong><small>{drawdownNote}</small></div>
         <div><span>Split</span><strong>{firm.profitSplit.replace('Up to ', '')}</strong><small>Up to</small></div>
         <div><span>Capital</span><strong>{formatCapital(firm.maxCapital)}</strong><small>Maximum</small></div>
       </div>
@@ -122,8 +125,6 @@ export function FirmDirectory({ mode = 'full', initialSearch = '', initialStep =
           <div className={styles.resultToolbar}>
             <span><strong>{visible.length}</strong> {mode === 'preview' ? 'starting profiles' : 'firms found'}</span>
             {mode === 'full' && <button className={styles.mobileFilterToggle} type="button" onClick={() => setFiltersOpen((open) => !open)}><SlidersHorizontal /> Filters</button>}
-            <div><button className={styles.viewSelected} type="button"><LayoutList /> List</button></div>
-            {mode === 'full' && <button className={styles.sortButton} type="button">Decision fit <ChevronDown /></button>}
             {mode === 'preview' && <Link className={styles.toolbarLink} href="/prop-firms">View directory <ArrowRight /></Link>}
           </div>
 
