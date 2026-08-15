@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { FirmProfileExperience } from '@/components/product/FirmProfileExperience';
-import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
+import { PartialFirmProfileExperience } from '@/components/product/PartialFirmProfileExperience';
+import { getPublicFirmRecordBySlug } from '@/lib/data/publicFirmRegistry';
+import { hasPrimaryResearch, hasResearchProfile } from '@/types/database';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { siteConfig } from '@/lib/site';
 
@@ -9,40 +11,38 @@ type FirmPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-function getFirm(slug: string) {
-  return MOCK_PROP_FIRMS.find((firm) => firm.slug === slug);
-}
-
-export function generateStaticParams() {
-  return MOCK_PROP_FIRMS.map((firm) => ({ slug: firm.slug }));
-}
-
 export async function generateMetadata({ params }: FirmPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const firm = getFirm(slug);
+  const record = await getPublicFirmRecordBySlug(slug);
 
-  if (!firm) {
+  if (!record) {
     return { title: 'Prop firm not found', robots: { index: false, follow: false } };
   }
 
+  const firm = hasResearchProfile(record) ? { ...record.profile, logo: record.brandAssets?.logoPath || record.profile.logo } : undefined;
+
   return {
-    title: `${firm.name} review, rules and rewards`,
-    description: `Research profile for ${firm.name}: evaluation rules, profit split, drawdown, platforms and reward program status.`,
-    alternates: { canonical: `/prop-firms/${firm.slug}` },
+    title: firm ? `${record.name} review, rules and rewards` : `${record.name} primary research notes`,
+    description: firm ? `Research profile for ${record.name}: evaluation rules, profit split, drawdown, platforms and reward program status.` : `Primary-source research notes for ${record.name}, including rules, pricing, payouts and unresolved data gaps.`,
+    alternates: { canonical: `/prop-firms/${record.slug}` },
     openGraph: {
       type: 'article',
-      title: `${firm.name} prop firm research profile`,
-      description: `Compare ${firm.name} rules, trading conditions and rewards.`,
-      url: `/prop-firms/${firm.slug}`,
+      title: `${record.name} prop firm research profile`,
+      description: firm ? `Compare ${record.name} rules, trading conditions and rewards.` : `Inspect the available primary-source research for ${record.name}.`,
+      url: `/prop-firms/${record.slug}`,
     },
   };
 }
 
 export default async function FirmPage({ params }: FirmPageProps) {
   const { slug } = await params;
-  const firm = getFirm(slug);
+  const record = await getPublicFirmRecordBySlug(slug);
 
-  if (!firm) notFound();
+  if (!record) notFound();
+
+  const firm = hasResearchProfile(record) ? { ...record.profile, logo: record.brandAssets?.logoPath || record.profile.logo } : undefined;
+  const description = firm?.description || `Primary-source research notes for ${record.name}.`;
+  const officialWebsite = firm?.website || record.primaryResearch?.observations.find((observation) => observation.field === 'officialWebsite' && observation.status !== 'ND')?.value || record.links.officialWebsite;
 
   return (
     <>
@@ -51,26 +51,26 @@ export default async function FirmPage({ params }: FirmPageProps) {
         data={{
           '@context': 'https://schema.org',
           '@type': 'ProfilePage',
-          name: `${firm.name} prop firm research profile`,
-          description: firm.description,
-          url: `${siteConfig.url}/prop-firms/${firm.slug}`,
-          dateModified: firm.lastReviewedAt,
+          name: `${record.name} prop firm research profile`,
+          description,
+          url: `${siteConfig.url}/prop-firms/${record.slug}`,
+          dateModified: record.updatedAt,
           mainEntity: {
             '@type': 'Organization',
-            name: firm.name,
-            url: firm.website,
-            description: firm.tagline,
+            name: record.name,
+            url: officialWebsite,
+            description,
           },
           breadcrumb: {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Prop firms', item: `${siteConfig.url}/prop-firms` },
-              { '@type': 'ListItem', position: 2, name: firm.name, item: `${siteConfig.url}/prop-firms/${firm.slug}` },
+              { '@type': 'ListItem', position: 2, name: record.name, item: `${siteConfig.url}/prop-firms/${record.slug}` },
             ],
           },
         }}
       />
-      <FirmProfileExperience firm={firm} />
+      {firm ? <FirmProfileExperience firm={firm} /> : hasPrimaryResearch(record) ? <PartialFirmProfileExperience record={record} /> : notFound()}
     </>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { FirmDirectory } from '@/components/product/FirmDirectory';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
+import { getPublicFirmDirectoryItems } from '@/lib/data/publicFirmRegistry';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ type PropFirmsPageProps = {
 export default async function PropFirmsPage({ searchParams }: PropFirmsPageProps) {
   const { step, platform } = await searchParams;
   const initialStep = ['1-Step', '2-Step', 'Instant Funding'].includes(step ?? '') ? step : 'All';
+  const firms = await getPublicFirmDirectoryItems();
 
   return (
     <>
@@ -26,7 +27,7 @@ export default async function PropFirmsPage({ searchParams }: PropFirmsPageProps
           '@context': 'https://schema.org',
           '@type': 'ItemList',
           name: 'On-chain prop firm directory',
-          itemListElement: MOCK_PROP_FIRMS.map((firm, index) => ({
+          itemListElement: firms.map((firm, index) => ({
             '@type': 'ListItem',
             position: index + 1,
             name: firm.name,
@@ -34,7 +35,7 @@ export default async function PropFirmsPage({ searchParams }: PropFirmsPageProps
           })),
         }}
       />
-      <FirmDirectory initialStep={initialStep} initialSearch={platform ?? ''} />
+      <FirmDirectory firms={firms} initialStep={initialStep} initialSearch={platform ?? ''} />
     </>
   );
 }

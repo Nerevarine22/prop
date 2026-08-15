@@ -5,21 +5,21 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { ArrowRight, Check, Columns3, Database, X } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
-import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
+import type { PropFirm } from '@/types/firm';
 import { compareRows, decisionCopy } from './experience';
 import styles from '@/app/product-lab/page.module.css';
 
-export function CompareExperience() {
+export function CompareExperience({ firms }: { firms: PropFirm[] }) {
   const searchParams = useSearchParams();
   const [selected, setSelected] = useState<string[]>(() => {
-    const requested = searchParams.get('ids')?.split(',').filter((id) => MOCK_PROP_FIRMS.some((firm) => firm.id === id)) ?? [];
+    const requested = searchParams.get('ids')?.split(',').filter((id) => firms.some((firm) => firm.id === id)) ?? [];
     const unique = [...new Set(requested)].slice(0, 3);
     if (unique.length >= 2) return unique;
-    const fill = MOCK_PROP_FIRMS.map((firm) => firm.id).filter((id) => !unique.includes(id));
+    const fill = firms.map((firm) => firm.id).filter((id) => !unique.includes(id));
     return [...unique, ...fill].slice(0, 2);
   });
 
-  const selectedFirms = selected.map((id) => MOCK_PROP_FIRMS.find((firm) => firm.id === id)).filter(Boolean);
+  const selectedFirms = selected.map((id) => firms.find((firm) => firm.id === id)).filter(Boolean);
 
   function toggle(id: string) {
     setSelected((current) => {
@@ -72,7 +72,7 @@ export function CompareExperience() {
       <section className={styles.comparePicker} id="compare-picker" aria-labelledby="compare-picker-heading">
         <div className={styles.profileSectionTitle}><div><span>+</span><h2 id="compare-picker-heading">Choose firms</h2></div><p>Select up to three profiles. Adding a fourth replaces the oldest selection.</p></div>
         <div className={styles.pickerGrid}>
-          {MOCK_PROP_FIRMS.map((firm) => {
+          {firms.map((firm) => {
             const active = selected.includes(firm.id);
             return (
               <button className={active ? styles.pickerActive : ''} type="button" key={firm.id} onClick={() => toggle(firm.id)}>

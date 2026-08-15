@@ -1,12 +1,11 @@
 import { db, isFirebaseConfigured } from '@/lib/firebase/config';
-import { collection, getDocs, doc, setDoc, deleteDoc } from 'firebase/firestore';
-import { PropFirm } from '@/types/firm';
-import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
+import { deleteDoc, doc, getDoc, setDoc } from 'firebase/firestore';
+import type { PropFirm } from '@/types/firm';
+import { FIRM_DATABASE_SCHEMA_VERSION, hasResearchProfile, type FirmDatabaseRecord } from '@/types/database';
+import { FIRM_DATABASE_SEED } from '@/lib/data/firmDatabaseSeed';
+import { FIRM_REGISTRY_COLLECTION, getFirmRegistry } from './firmRegistryService';
 
-const COLLECTION_NAME = 'firms';
-
-// In-memory store fallback for development
-let localFirmsStore: PropFirm[] = [...MOCK_PROP_FIRMS];
+let localFirmsStore: PropFirm[] = FIRM_DATABASE_SEED.filter(hasResearchProfile).map((record) => record.profile);
 
 function normalizeFirm(firm: PropFirm): PropFirm {
   return {
@@ -26,18 +25,11 @@ function normalizeFirm(firm: PropFirm): PropFirm {
 }
 
 export async function getFirms(): Promise<PropFirm[]> {
-  if (!isFirebaseConfigured) {
-    return localFirmsStore;
-  }
-
   try {
-    const querySnapshot = await getDocs(collection(db, COLLECTION_NAME));
-    if (querySnapshot.empty) {
-      return localFirmsStore;
-    }
-    return querySnapshot.docs.map((snapshot) => normalizeFirm({ id: snapshot.id, ...snapshot.data() } as PropFirm));
+    const records = await getFirmRegistry();
+    return records.filter(hasResearchProfile).map((record) => normalizeFirm(record.profile));
   } catch (error) {
-    console.warn('Firestore fetch failed, using local mock data fallback:', error);
+    console.warn('Firm registry fetch failed, using the local research fallback:', error);
     return localFirmsStore;
   }
 }
@@ -57,8 +49,26 @@ export async function saveFirm(firmData: Omit<PropFirm, 'id'> & { id?: string })
   }
 
   try {
-    const docRef = doc(db, COLLECTION_NAME, firmId);
-    await setDoc(docRef, fullFirm, { merge: true });
+    const docRef = doc(db, FIRM_REGISTRY_COLLECTION, firmId);
+    const current = await getDoc(docRef);
+    const currentRecord = current.data() as Partial<FirmDatabaseRecord> | undefined;
+    const now = new Date().toISOString();
+    const record: FirmDatabaseRecord = {
+      schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
+      id: firmId,
+      slug: fullFirm.slug,
+      name: fullFirm.name,
+      links: {
+        ...(currentRecord?.links || {}),
+        ...(fullFirm.website ? { officialWebsite: fullFirm.website } : {}),
+      },
+      researchStatus: currentRecord?.researchStatus === 'verified' ? 'verified' : 'researched',
+      publicationStatus: currentRecord?.publicationStatus || 'draft',
+      profile: fullFirm,
+      createdAt: currentRecord?.createdAt || now,
+      updatedAt: now,
+    };
+    await setDoc(docRef, record, { merge: true });
     
     // Update local store as well
     const index = localFirmsStore.findIndex(f => f.id === firmId);
@@ -82,7 +92,7 @@ export async function deleteFirm(firmId: string): Promise<void> {
   }
 
   try {
-    const docRef = doc(db, COLLECTION_NAME, firmId);
+    const docRef = doc(db, FIRM_REGISTRY_COLLECTION, firmId);
     await deleteDoc(docRef);
   } catch (error) {
     console.error('Error deleting firm from Firestore:', error);

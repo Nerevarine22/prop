@@ -164,7 +164,7 @@
 .firmRow:last-child { border-bottom: 0; }
 .firmRow:hover { background: rgb(251 250 246 / 62%); }
 .firmIdentity { display: grid; grid-template-columns: 54px minmax(0, 1fr); align-items: start; gap: 15px; }
-.firmLogo, .firmFallback { display: flex; width: 54px; height: 54px; padding: 4px; align-items: center; justify-content: center; border: 1px solid #d4d7ce; border-radius: 14px; background: #fff; object-fit: contain; color: var(--blue); font-size: 13px; font-weight: 800; }
+.firmLogo, .firmFallback { display: flex; width: 54px; height: 54px; padding: 2px; align-items: center; justify-content: center; border: 1px solid #dfe1db; border-radius: 12px; background: #fff; object-fit: contain; color: var(--blue); font-size: 13px; font-weight: 800; }
 .statusLine { display: inline-flex; align-items: center; gap: 6px; color: #768078; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
 .statusLine i { width: 5px; height: 5px; border-radius: 50%; background: #d2a62e; }
 .firmIdentity h3 { margin: 6px 0 0; font-size: 19px; letter-spacing: -.04em; }
@@ -180,6 +180,7 @@
 .rowActions button { display: inline-flex; min-height: 39px; align-items: center; justify-content: center; gap: 6px; border-radius: 8px; font-size: 11px; font-weight: 750; }
 .rowActions button:first-child { border: 1px solid var(--line); background: var(--paper); }
 .rowActions button:first-child:hover, .rowActions .compareAdded { border-color: #adc05e; background: #edf6c8; }
+.rowActions button:first-child:disabled { border-color: var(--soft-line); background: var(--wash); color: var(--muted); cursor: not-allowed; opacity: .72; }
 .rowActions button svg { width: 12px; }
 .rowActions .profileLink { border: 0; background: transparent; color: var(--blue); }
 
@@ -217,8 +218,8 @@
 .breadcrumbs { display: flex; align-items: center; gap: 8px; color: #808880; font-size: 11px; }
 .breadcrumbs button, .breadcrumbs a { border: 0; background: transparent; color: var(--blue); text-decoration: none; }
 .profileHero { display: flex; padding: 44px 0 38px; align-items: flex-end; justify-content: space-between; gap: 40px; border-bottom: 1px solid var(--line); }
-.profileIdentity { display: grid; grid-template-columns: 78px minmax(0, 1fr); align-items: center; gap: 20px; }
-.profileLogo, .profileFallback { display: flex; width: 78px; height: 78px; padding: 6px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 18px; background: #fff; object-fit: contain; color: var(--blue); font-size: 16px; font-weight: 800; }
+.profileIdentity { display: grid; grid-template-columns: 94px minmax(0, 1fr); align-items: center; gap: 22px; }
+.profileLogo, .profileFallback { display: flex; width: 94px; height: 94px; padding: 3px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 20px; background: #fff; object-fit: contain; color: var(--blue); font-size: 18px; font-weight: 800; }
 .profileIdentity h1 { margin: 10px 0 0; font-size: clamp(3rem, 6vw, 5.8rem); font-weight: 590; line-height: .9; letter-spacing: -.07em; }
 .profileIdentity p { max-width: 680px; margin: 12px 0 0; color: #687169; font-size: 14px; line-height: 1.55; }
 .profileActions { display: flex; gap: 8px; }
@@ -658,8 +659,8 @@
   .trayFirms { overflow-x: auto; }
   .compareTray p { display: none; }
   .compareTray > button, .compareTray > a { margin-left: auto; }
-  .profileIdentity { grid-template-columns: 60px minmax(0, 1fr); }
-  .profileLogo, .profileFallback { width: 60px; height: 60px; }
+  .profileIdentity { grid-template-columns: 72px minmax(0, 1fr); gap: 15px; }
+  .profileLogo, .profileFallback { width: 72px; height: 72px; padding: 2px; border-radius: 16px; }
   .profileIdentity h1 { font-size: 3.2rem; }
   .profileActions { width: 100%; }
   .profileActions { flex-wrap: wrap; }

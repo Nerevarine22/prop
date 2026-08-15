@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { LayoutDashboard, Percent, Activity, LogOut, ShieldCheck, ExternalLink } from 'lucide-react';
+import { LayoutDashboard, Percent, Activity, LogOut, ShieldCheck, ExternalLink, Database } from 'lucide-react';
 import { auth, isFirebaseConfigured } from '@/lib/firebase/config';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 
@@ -94,6 +94,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             >
               <Percent className="h-4 w-4 text-amber-400" />
               <span>Verified Deals</span>
+            </Link>
+
+            <Link
+              href="/admin/database"
+              className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-colors ${
+                pathname === '/admin/database' ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:bg-zinc-900 hover:text-zinc-200'
+              }`}
+            >
+              <Database className="h-4 w-4 text-sky-400" />
+              <span>Research Database</span>
             </Link>
 
             <Link

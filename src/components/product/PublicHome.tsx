@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, Check, Clock3, Database, FileCheck2, Gift, ShieldCheck } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
-import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
+import type { PropFirm } from '@/types/firm';
+import type { PublicFirmDirectoryItem } from '@/types/publicFirm';
 import { decisionCopy } from './experience';
 import { FirmDirectory } from './FirmDirectory';
 import styles from '@/app/product-lab/page.module.css';
 
-export function PublicHome() {
-  const featured = MOCK_PROP_FIRMS[0];
+export function PublicHome({ firms, directoryItems }: { firms: PropFirm[]; directoryItems: PublicFirmDirectoryItem[] }) {
+  const featured = firms[0];
 
   return (
     <>
@@ -22,7 +23,7 @@ export function PublicHome() {
           </div>
         </div>
 
-        <aside className={styles.briefPreview} aria-label={`${featured.name} decision brief preview`}>
+        {featured && <aside className={styles.briefPreview} aria-label={`${featured.name} decision brief preview`}>
           <div className={styles.previewTop}><span>Decision brief</span><span>Research profile</span></div>
           <div className={styles.previewFirm}>
             <FirmLogo src={featured.logo} name={featured.name} imageClassName={styles.previewLogo} fallbackClassName={styles.previewFallback} />
@@ -35,7 +36,7 @@ export function PublicHome() {
             <div><Gift /><span><strong>{featured.rewardTags?.[0] || 'No'}</strong> rewards</span></div>
             <div><FileCheck2 /><span><strong>Sources</strong> in review</span></div>
           </div>
-        </aside>
+        </aside>}
       </section>
 
       <section className={styles.trustStrip} aria-label="Research model">
@@ -46,7 +47,7 @@ export function PublicHome() {
         <div><ShieldCheck /><span>Uncertainty visible</span></div>
       </section>
 
-      <FirmDirectory mode="preview" />
+      <FirmDirectory firms={directoryItems} mode="preview" />
     </>
   );
 }

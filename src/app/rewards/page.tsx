@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Coins, Database } from 'lucide-react';
-import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
+import { getPublishedFirmProfiles } from '@/lib/data/publicFirmRegistry';
 import pageStyles from '@/components/layout/PublicPage.module.css';
 
 export const metadata: Metadata = {
@@ -10,8 +10,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/rewards' },
 };
 
-export default function RewardsPage() {
-  const rewardFirms = MOCK_PROP_FIRMS.filter((firm) => firm.rewardTags?.length);
+export default async function RewardsPage() {
+  const firms = await getPublishedFirmProfiles();
+  const rewardFirms = firms.filter((firm) => firm.rewardTags?.length);
 
   return (
     <div className={pageStyles.page}>
@@ -23,7 +24,7 @@ export default function RewardsPage() {
           </div>
           <div>
             <p className={pageStyles.lead}>A dedicated research layer for rewards that can change the effective value of a prop challenge without being confused with verified cash value.</p>
-            <div className={pageStyles.notice}><Database /><span>All current reward entries are sample records used to build the research model.</span></div>
+            <div className={pageStyles.notice}><Database /><span>Only published research profiles from the live firm registry appear here.</span></div>
           </div>
         </header>
 

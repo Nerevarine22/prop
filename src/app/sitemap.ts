@@ -1,8 +1,9 @@
 import type { MetadataRoute } from 'next';
-import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
+import { getPublicFirmRecords } from '@/lib/data/publicFirmRegistry';
 import { siteConfig } from '@/lib/site';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const firms = await getPublicFirmRecords();
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: siteConfig.url, changeFrequency: 'weekly', priority: 1 },
     { url: `${siteConfig.url}/prop-firms`, changeFrequency: 'daily', priority: 0.9 },
@@ -13,9 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteConfig.url}/transparency`, changeFrequency: 'weekly', priority: 0.5 },
   ];
 
-  const firmRoutes: MetadataRoute.Sitemap = MOCK_PROP_FIRMS.map((firm) => ({
+  const firmRoutes: MetadataRoute.Sitemap = firms.map((firm) => ({
     url: `${siteConfig.url}/prop-firms/${firm.slug}`,
-    lastModified: firm.lastReviewedAt,
+    lastModified: firm.updatedAt,
     changeFrequency: 'weekly',
     priority: 0.7,
   }));

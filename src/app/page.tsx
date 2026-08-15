@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { PublicHome } from '@/components/product/PublicHome';
+import { getPublicFirmDirectoryItems, getPublishedFirmProfiles } from '@/lib/data/publicFirmRegistry';
 
 export const metadata: Metadata = {
   title: 'On-chain prop firm research and comparison',
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
-export default function HomePage() {
-  return <PublicHome />;
+export default async function HomePage() {
+  const [firms, directoryItems] = await Promise.all([getPublishedFirmProfiles(), getPublicFirmDirectoryItems()]);
+  return <PublicHome firms={firms} directoryItems={directoryItems} />;
 }

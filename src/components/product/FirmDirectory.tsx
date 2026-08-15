@@ -4,12 +4,12 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Check, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
-import { MOCK_PROP_FIRMS } from '@/lib/data/firms';
-import type { EvaluationStep, PropFirm } from '@/types/firm';
-import { formatCapital } from './experience';
+import type { EvaluationStep } from '@/types/firm';
+import type { PublicFirmDirectoryItem } from '@/types/publicFirm';
 import styles from '@/app/product-lab/page.module.css';
 
 type FirmDirectoryProps = {
+  firms: PublicFirmDirectoryItem[];
   mode?: 'preview' | 'full';
   initialSearch?: string;
   initialStep?: string;
@@ -17,31 +17,25 @@ type FirmDirectoryProps = {
 
 const stepOptions = ['All', '1-Step', '2-Step', 'Instant Funding'] as const;
 
-function FirmRow({ firm, selected, onToggle }: { firm: PropFirm; selected: boolean; onToggle: () => void }) {
-  const [drawdownValue, ...drawdownNoteParts] = firm.maxDrawdown.trim().split(/\s+/);
-  const drawdownNote = drawdownNoteParts.join(' ') || 'Maximum';
-
+function FirmRow({ firm, selected, onToggle }: { firm: PublicFirmDirectoryItem; selected: boolean; onToggle: () => void }) {
   return (
     <article className={styles.firmRow}>
       <div className={styles.firmIdentity}>
         <FirmLogo src={firm.logo} name={firm.name} imageClassName={styles.firmLogo} fallbackClassName={styles.firmFallback} />
         <div>
-          <span className={styles.statusLine}><i /> Research profile</span>
+          <span className={styles.statusLine}><i /> {firm.statusLabel}</span>
           <h3>{firm.name}</h3>
           <p>{firm.tagline}</p>
-          <div className={styles.tags}>{firm.rewardTags?.map((tag) => <span key={tag}>{tag}</span>)}</div>
+          <div className={styles.tags}>{firm.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
         </div>
       </div>
 
       <div className={styles.rowMetrics}>
-        <div><span>From</span><strong>${firm.accountTiers[0]?.price}</strong><small>{firm.evaluationSteps[0]}</small></div>
-        <div><span>Drawdown</span><strong>{drawdownValue}</strong><small>{drawdownNote}</small></div>
-        <div><span>Split</span><strong>{firm.profitSplit.replace('Up to ', '')}</strong><small>Up to</small></div>
-        <div><span>Capital</span><strong>{formatCapital(firm.maxCapital)}</strong><small>Maximum</small></div>
+        {firm.metrics.map((metric) => <div key={metric.label}><span>{metric.label}</span><strong>{metric.value}</strong><small>{metric.note}</small></div>)}
       </div>
 
       <div className={styles.rowActions}>
-        <button className={selected ? styles.compareAdded : ''} type="button" onClick={onToggle}>
+        <button className={selected ? styles.compareAdded : ''} type="button" onClick={onToggle} disabled={!firm.comparable} title={firm.comparable ? 'Add to comparison' : 'Structured comparison is not available yet'}>
           {selected ? <Check /> : <span>+</span>} {selected ? 'Added' : 'Compare'}
         </button>
         <Link className={styles.profileLink} href={`/prop-firms/${firm.slug}`}>View brief <ArrowRight /></Link>
@@ -50,7 +44,7 @@ function FirmRow({ firm, selected, onToggle }: { firm: PropFirm; selected: boole
   );
 }
 
-export function FirmDirectory({ mode = 'full', initialSearch = '', initialStep = 'All' }: FirmDirectoryProps) {
+export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initialStep = 'All' }: FirmDirectoryProps) {
   const normalizedStep = stepOptions.includes(initialStep as typeof stepOptions[number]) ? initialStep : 'All';
   const [query, setQuery] = useState(initialSearch);
   const [step, setStep] = useState(normalizedStep);
@@ -60,21 +54,27 @@ export function FirmDirectory({ mode = 'full', initialSearch = '', initialStep =
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const filtered = useMemo(() => {
-    return MOCK_PROP_FIRMS.filter((firm) => {
-      const haystack = `${firm.name} ${firm.tagline} ${firm.platforms.join(' ')} ${firm.rewardTags?.join(' ')}`.toLowerCase();
+    return firms.filter((firm) => {
+      const haystack = firm.searchText;
       if (query && !haystack.includes(query.toLowerCase())) return false;
       if (step !== 'All' && !firm.evaluationSteps.includes(step as EvaluationStep)) return false;
       if (weekendOnly && !firm.weekendHoldingAllowed) return false;
-      if (rewardsOnly && !firm.rewardTags?.length) return false;
+      if (rewardsOnly && !firm.hasRewards) return false;
       return true;
-    }).sort((a, b) => b.trustScore - a.trustScore);
-  }, [query, rewardsOnly, step, weekendOnly]);
+    });
+  }, [firms, query, rewardsOnly, step, weekendOnly]);
 
   const visible = mode === 'preview' ? filtered.slice(0, 3) : filtered;
-  const selectedFirms = selected.map((id) => MOCK_PROP_FIRMS.find((firm) => firm.id === id)).filter(Boolean) as PropFirm[];
+  const previewHeading = firms.length >= 3
+    ? 'Three profiles worth opening first.'
+    : firms.length === 1
+      ? 'One published profile to start with.'
+      : 'Published research profiles will appear here.';
+  const selectedFirms = selected.map((id) => firms.find((firm) => firm.id === id)).filter(Boolean) as PublicFirmDirectoryItem[];
   const compareHref = selected.length > 1 ? `/compare?ids=${selected.join(',')}` : '/compare';
 
   function toggleCompare(id: string) {
+    if (!firms.find((firm) => firm.id === id)?.comparable) return;
     setSelected((current) => {
       if (current.includes(id)) return current.filter((item) => item !== id);
       if (current.length >= 3) return [...current.slice(1), id];
@@ -95,7 +95,7 @@ export function FirmDirectory({ mode = 'full', initialSearch = '', initialStep =
         <div>
           <span>{mode === 'preview' ? 'Research starting points' : 'Firm directory'}</span>
           <h2 id={mode === 'preview' ? 'starting-points-heading' : 'directory-heading'}>
-            {mode === 'preview' ? 'Three profiles worth opening first.' : 'Start with fit, then inspect the proof.'}
+            {mode === 'preview' ? previewHeading : 'Start with fit, then inspect the proof.'}
           </h2>
         </div>
         <p>{mode === 'preview' ? 'See the price, core constraints and reward layer before opening the full research profile.' : 'Filter normalized profiles by evaluation model and the constraints that matter to your trading style.'}</p>
@@ -123,7 +123,7 @@ export function FirmDirectory({ mode = 'full', initialSearch = '', initialStep =
 
         <div className={styles.results}>
           <div className={styles.resultToolbar}>
-            <span><strong>{visible.length}</strong> {mode === 'preview' ? 'starting profiles' : 'firms found'}</span>
+            <span><strong>{visible.length}</strong> {mode === 'preview' ? (visible.length === 1 ? 'starting profile' : 'starting profiles') : (visible.length === 1 ? 'firm found' : 'firms found')}</span>
             {mode === 'full' && <button className={styles.mobileFilterToggle} type="button" onClick={() => setFiltersOpen((open) => !open)}><SlidersHorizontal /> Filters</button>}
             {mode === 'preview' && <Link className={styles.toolbarLink} href="/prop-firms">View directory <ArrowRight /></Link>}
           </div>
