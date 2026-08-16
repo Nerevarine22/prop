@@ -396,6 +396,7 @@
 .rewardResearch dt { color: var(--muted); }
 .rewardResearch dd { margin: 0; font-weight: 750; text-align: right; }
 .sourceList { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.sourceList + .sourceList { margin-top: 12px; }
 .policyNote + .sourceList { margin-top: 12px; }
 .sourceList article { display: grid; grid-template-columns: minmax(0, 1fr) 120px; min-height: 112px; padding: 19px; gap: 24px; border-bottom: 1px solid var(--line); }
 .sourceList article:last-child { border-bottom: 0; }

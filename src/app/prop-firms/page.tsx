@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { FirmDirectory } from '@/components/product/FirmDirectory';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { getPublicFirmDirectoryItems } from '@/lib/data/publicFirmRegistry';
+import { getPublicFirmProfiles } from '@/lib/services/publicFirmProfileService';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ type PropFirmsPageProps = {
 export default async function PropFirmsPage({ searchParams }: PropFirmsPageProps) {
   const { step, platform } = await searchParams;
   const initialStep = ['1-Step', '2-Step', 'Instant Funding'].includes(step ?? '') ? step : 'All';
-  const firms = await getPublicFirmDirectoryItems();
+  const firms = await getPublicFirmProfiles();
 
   return (
     <>

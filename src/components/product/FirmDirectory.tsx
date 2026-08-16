@@ -4,38 +4,57 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Check, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
-import type { EvaluationStep } from '@/types/firm';
-import type { PublicFirmDirectoryItem } from '@/types/publicFirm';
+import {
+  factArrayText,
+  factText,
+  factValue,
+  firstKnownFee,
+  formatCapital,
+  profileHasRewards,
+  profileLogo,
+  profilePrograms,
+  profileRewardLabels,
+} from '@/lib/data/publicFirmProfiles';
+import type { FirmNormalizedProfile } from '@/types/database';
 import styles from '@/app/product-lab/page.module.css';
 
 type FirmDirectoryProps = {
-  firms: PublicFirmDirectoryItem[];
   mode?: 'preview' | 'full';
   initialSearch?: string;
   initialStep?: string;
+  firms: FirmNormalizedProfile[];
 };
 
 const stepOptions = ['All', '1-Step', '2-Step', 'Instant Funding'] as const;
 
-function FirmRow({ firm, selected, onToggle }: { firm: PublicFirmDirectoryItem; selected: boolean; onToggle: () => void }) {
+function FirmRow({ firm, selected, onToggle }: { firm: FirmNormalizedProfile; selected: boolean; onToggle: () => void }) {
+  const [drawdownValue, ...drawdownNoteParts] = factText(firm.summary.maxDrawdown).trim().split(/\s+/);
+  const drawdownNote = drawdownNoteParts.join(' ') || 'Maximum';
+  const programs = profilePrograms(firm);
+  const fee = firstKnownFee(firm);
+  const rewards = profileRewardLabels(firm);
+
   return (
     <article className={styles.firmRow}>
       <div className={styles.firmIdentity}>
-        <FirmLogo src={firm.logo} name={firm.name} imageClassName={styles.firmLogo} fallbackClassName={styles.firmFallback} />
+        <FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.firmLogo} fallbackClassName={styles.firmFallback} />
         <div>
-          <span className={styles.statusLine}><i /> {firm.statusLabel}</span>
+          <span className={styles.statusLine}><i /> Research profile</span>
           <h3>{firm.name}</h3>
-          <p>{firm.tagline}</p>
-          <div className={styles.tags}>{firm.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+          <p>{factText(firm.identity.tagline)}</p>
+          <div className={styles.tags}>{rewards.map((tag) => <span key={tag}>{tag}</span>)}</div>
         </div>
       </div>
 
       <div className={styles.rowMetrics}>
-        {firm.metrics.map((metric) => <div key={metric.label}><span>{metric.label}</span><strong>{metric.value}</strong><small>{metric.note}</small></div>)}
+        <div><span>From</span><strong>{fee === undefined ? 'ND' : `$${fee}`}</strong><small>{programs[0]?.name ?? 'ND'}</small></div>
+        <div><span>Drawdown</span><strong>{drawdownValue}</strong><small>{drawdownNote}</small></div>
+        <div><span>Split</span><strong>{factText(firm.summary.profitSplit)}</strong><small>Reported</small></div>
+        <div><span>Capital</span><strong>{formatCapital(factValue(firm.summary.maxCapital))}</strong><small>Maximum</small></div>
       </div>
 
       <div className={styles.rowActions}>
-        <button className={selected ? styles.compareAdded : ''} type="button" onClick={onToggle} disabled={!firm.comparable} title={firm.comparable ? 'Add to comparison' : 'Structured comparison is not available yet'}>
+        <button className={selected ? styles.compareAdded : ''} type="button" onClick={onToggle}>
           {selected ? <Check /> : <span>+</span>} {selected ? 'Added' : 'Compare'}
         </button>
         <Link className={styles.profileLink} href={`/prop-firms/${firm.slug}`}>View brief <ArrowRight /></Link>
@@ -55,26 +74,21 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
 
   const filtered = useMemo(() => {
     return firms.filter((firm) => {
-      const haystack = firm.searchText;
+      const programs = profilePrograms(firm);
+      const haystack = `${firm.name} ${factText(firm.identity.tagline)} ${factArrayText(firm.tradingPolicy.platforms)} ${profileRewardLabels(firm).join(' ')}`.toLowerCase();
       if (query && !haystack.includes(query.toLowerCase())) return false;
-      if (step !== 'All' && !firm.evaluationSteps.includes(step as EvaluationStep)) return false;
-      if (weekendOnly && !firm.weekendHoldingAllowed) return false;
-      if (rewardsOnly && !firm.hasRewards) return false;
+      if (step !== 'All' && !programs.some((program) => program.name.toLowerCase().includes(step.toLowerCase().replace(' funding', '')))) return false;
+      if (weekendOnly && factValue(firm.tradingPolicy.weekendHolding) !== 'allowed') return false;
+      if (rewardsOnly && !profileHasRewards(firm)) return false;
       return true;
     });
   }, [firms, query, rewardsOnly, step, weekendOnly]);
 
   const visible = mode === 'preview' ? filtered.slice(0, 3) : filtered;
-  const previewHeading = firms.length >= 3
-    ? 'Three profiles worth opening first.'
-    : firms.length === 1
-      ? 'One published profile to start with.'
-      : 'Published research profiles will appear here.';
-  const selectedFirms = selected.map((id) => firms.find((firm) => firm.id === id)).filter(Boolean) as PublicFirmDirectoryItem[];
+  const selectedFirms = selected.map((id) => firms.find((firm) => firm.id === id)).filter(Boolean) as FirmNormalizedProfile[];
   const compareHref = selected.length > 1 ? `/compare?ids=${selected.join(',')}` : '/compare';
 
   function toggleCompare(id: string) {
-    if (!firms.find((firm) => firm.id === id)?.comparable) return;
     setSelected((current) => {
       if (current.includes(id)) return current.filter((item) => item !== id);
       if (current.length >= 3) return [...current.slice(1), id];
@@ -95,7 +109,7 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
         <div>
           <span>{mode === 'preview' ? 'Research starting points' : 'Firm directory'}</span>
           <h2 id={mode === 'preview' ? 'starting-points-heading' : 'directory-heading'}>
-            {mode === 'preview' ? previewHeading : 'Start with fit, then inspect the proof.'}
+            {mode === 'preview' ? 'Three profiles worth opening first.' : 'Start with fit, then inspect the proof.'}
           </h2>
         </div>
         <p>{mode === 'preview' ? 'See the price, core constraints and reward layer before opening the full research profile.' : 'Filter normalized profiles by evaluation model and the constraints that matter to your trading style.'}</p>
@@ -123,7 +137,7 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
 
         <div className={styles.results}>
           <div className={styles.resultToolbar}>
-            <span><strong>{visible.length}</strong> {mode === 'preview' ? (visible.length === 1 ? 'starting profile' : 'starting profiles') : (visible.length === 1 ? 'firm found' : 'firms found')}</span>
+            <span><strong>{visible.length}</strong> {mode === 'preview' ? 'starting profiles' : 'firms found'}</span>
             {mode === 'full' && <button className={styles.mobileFilterToggle} type="button" onClick={() => setFiltersOpen((open) => !open)}><SlidersHorizontal /> Filters</button>}
             {mode === 'preview' && <Link className={styles.toolbarLink} href="/prop-firms">View directory <ArrowRight /></Link>}
           </div>
@@ -136,7 +150,7 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
           {selected.length > 0 && (
             <div className={styles.compareTray}>
               <div className={styles.trayFirms}>
-                {selectedFirms.map((firm) => <span key={firm.id}><FirmLogo src={firm.logo} name={firm.name} imageClassName={styles.trayLogo} fallbackClassName={styles.trayFallback} /> {firm.name}</span>)}
+                {selectedFirms.map((firm) => <span key={firm.id}><FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.trayLogo} fallbackClassName={styles.trayFallback} /> {firm.name}</span>)}
               </div>
               <p>{selected.length}/3 selected</p>
               <Link href={compareHref}>Compare firms <ArrowRight /></Link>

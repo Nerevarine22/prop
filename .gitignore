@@ -22,8 +22,9 @@
 
 # misc
 .DS_Store
+.vs/
+next-dev*.log
 *.pem
-/.vs/
 
 # debug
 npm-debug.log*

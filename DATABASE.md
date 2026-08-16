@@ -9,22 +9,45 @@ Every document follows `FirmDatabaseRecord` from `src/types/database.ts`:
 - `schemaVersion`: migration boundary, currently `1`;
 - `id`, `slug`, `name`: stable identity;
 - `links`: official website and X account;
-- `brandAssets`: local logo path plus its source and verification status;
+- `brandAssets`: local logo path plus its first-party source and verification date;
+- `primaryResearch`: field-level primary-source ledger for website identity,
+  rulebook, FAQ, pricing/checkout, terms, payout policy and token/rewards;
+- `normalizedProfile`: primary-source-only normalized evidence profile. Every
+  canonical leaf is a fact with `reported`, `verified`, or `ND` status plus
+  its URL and check date;
+- `sourceDiscrepancies`: resolved differences between official sources,
+  retaining the canonical and alternate values, both URLs, date and resolution basis;
 - `researchStatus`: `stub`, `researched`, or `verified`;
 - `publicationStatus`: `draft`, `published`, or `archived`;
-- `profile`: optional complete `PropFirm` research payload;
+- `profile`: optional legacy/UI `PropFirm` payload. It is deliberately separate
+  because its numeric and boolean fields cannot safely represent `ND`;
 - `createdAt`, `updatedAt`: ISO timestamps.
 
-An unknown research value is represented by an absent `profile`, never by fake numbers or empty rule strings.
+Every primary-research observation stores one value, its exact source URL, the
+review timestamp and one of `reported`, `verified`, `conflict`, or `ND`. `ND`
+means the value was not documented on the inspected first-party source. An
+unknown normalized value is stored as literal `ND` inside a `NormalizedFact`.
+Raw conflicting observations remain as audit evidence, but never become a
+canonical normalized conflict. Rulebooks take precedence for trading rules;
+otherwise the most specific formal policy or Terms is used. No zero, false,
+empty array, or legacy demo value substitutes for an unknown value.
 
 ## Initial dataset
 
 `src/lib/data/firmDatabaseSeed.ts` contains 21 canonical records:
 
-- Propr: `researched`, `published`, complete profile and sources;
-- 20 other firms: `stub`, `draft`, identity and available links only.
+- Propr: `researched`, `published`, normalized evidence profile plus the legacy UI profile;
+- 20 other firms: `researched`, `draft`, identity, completed primary-source
+  ledger, local logo and normalized evidence profile. Missing values remain explicit `ND`.
 
-The seed is idempotent. Running it again creates missing identities and only refreshes stable identity fields on existing documents; publication states and later research fields are preserved.
+The August 15–16, 2026 research pass used only X profiles and first-party firm
+domains. Aggregators and review sites were not used as fact sources. The
+normalization sync updates only `normalizedProfile`, `researchStatus`, and
+`updatedAt`; it does not change publication status, legacy `profile`, or the
+retired `firms` collection.
+
+The seed is idempotent. Existing documents receive only stable identity, links
+and brand assets; later research and publication fields are preserved.
 
 ## Initialize Firestore
 
@@ -43,22 +66,17 @@ The seed is idempotent. Running it again creates missing identities and only ref
 5. Open `/admin/database` and select **Initialize Firestore**.
 
 For a controlled server-side seed using a local service account, place the
-gitignored `serviceAccountKey.json` in the project root and run:
-
-```bash
-npm run db:seed
-```
-
-The command writes with merge semantics and then reads the collection back to
-verify the record count and the complete Propr challenge payload.
+gitignored `serviceAccountKey.json` in the project root and run `npm run db:seed`.
 
 Without Firebase environment variables, `/admin/database` shows an exact local preview and performs no remote writes.
 
 ## Publishing workflow
 
 1. A newly discovered firm starts as `stub` + `draft`.
-2. Primary-source collection is stored in `primaryResearch`. A published partial record appears as transparent research notes with unavailable fields left visible.
-3. Normalization adds a complete `profile` and changes status to `researched`; manual review may later change it to `verified`.
-4. Only complete `profile` records participate in structured comparison. Partial records remain browseable but cannot be added to comparison.
+2. Research adds `primaryResearch` and `normalizedProfile`, then changes status
+   to `researched`; unknown facts remain explicit `ND`.
+3. Manual review may change it to `verified`.
+4. Public comparison pages use complete `normalizedProfile` records; partial
+   source ledgers remain available for research review.
 
-The public site, comparison tools and admin firm editor all use `firmRegistry`. The retired `firms` collection must not be recreated.
+The retired `firms` collection must not be recreated. New research work belongs in `firmRegistry`.

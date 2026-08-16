@@ -1,14 +1,16 @@
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, Check, Clock3, Database, FileCheck2, Gift, ShieldCheck } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
-import type { PropFirm } from '@/types/firm';
-import type { PublicFirmDirectoryItem } from '@/types/publicFirm';
-import { decisionCopy } from './experience';
+import { factText, firstKnownFee, profileLogo, profilePrograms, profileRewardLabels } from '@/lib/data/publicFirmProfiles';
+import type { FirmNormalizedProfile } from '@/types/database';
 import { FirmDirectory } from './FirmDirectory';
 import styles from '@/app/product-lab/page.module.css';
 
-export function PublicHome({ firms, directoryItems }: { firms: PropFirm[]; directoryItems: PublicFirmDirectoryItem[] }) {
-  const featured = firms[0];
+export function PublicHome({ firms }: { firms: FirmNormalizedProfile[] }) {
+  const featured = firms.find((firm) => firm.slug === 'propr') ?? firms[0];
+  const fee = firstKnownFee(featured);
+  const programs = profilePrograms(featured);
+  const reward = profileRewardLabels(featured)[0] ?? 'ND';
 
   return (
     <>
@@ -23,20 +25,20 @@ export function PublicHome({ firms, directoryItems }: { firms: PropFirm[]; direc
           </div>
         </div>
 
-        {featured && <aside className={styles.briefPreview} aria-label={`${featured.name} decision brief preview`}>
+        <aside className={styles.briefPreview} aria-label={`${featured.name} decision brief preview`}>
           <div className={styles.previewTop}><span>Decision brief</span><span>Research profile</span></div>
           <div className={styles.previewFirm}>
-            <FirmLogo src={featured.logo} name={featured.name} imageClassName={styles.previewLogo} fallbackClassName={styles.previewFallback} />
-            <div><strong>{featured.name}</strong><small>{featured.evaluationSteps[0]} · from ${featured.accountTiers[0]?.price}</small></div>
+            <FirmLogo src={profileLogo(featured)} name={featured.name} imageClassName={styles.previewLogo} fallbackClassName={styles.previewFallback} />
+            <div><strong>{featured.name}</strong><small>{programs[0]?.name ?? 'ND'} · from {fee === undefined ? 'ND' : `$${fee}`}</small></div>
             <Link href={`/prop-firms/${featured.slug}`}>View <ArrowUpRight /></Link>
           </div>
-          <div className={styles.previewVerdict}><span>Why it stands out</span><p>{decisionCopy(featured)}</p></div>
+          <div className={styles.previewVerdict}><span>Research status</span><p>Primary-source facts use explicit ND and preserve resolved differences between official pages.</p></div>
           <div className={styles.previewSignals}>
-            <div><Check /><span><strong>{featured.maxDrawdown}</strong> drawdown</span></div>
-            <div><Gift /><span><strong>{featured.rewardTags?.[0] || 'No'}</strong> rewards</span></div>
+            <div><Check /><span><strong>{factText(featured.summary.maxDrawdown)}</strong> drawdown</span></div>
+            <div><Gift /><span><strong>{reward}</strong> rewards</span></div>
             <div><FileCheck2 /><span><strong>Sources</strong> in review</span></div>
           </div>
-        </aside>}
+        </aside>
       </section>
 
       <section className={styles.trustStrip} aria-label="Research model">
@@ -47,7 +49,7 @@ export function PublicHome({ firms, directoryItems }: { firms: PropFirm[]; direc
         <div><ShieldCheck /><span>Uncertainty visible</span></div>
       </section>
 
-      <FirmDirectory firms={directoryItems} mode="preview" />
+      <FirmDirectory firms={firms} mode="preview" />
     </>
   );
 }

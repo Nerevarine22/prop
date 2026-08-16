@@ -1,9 +1,9 @@
 import type { MetadataRoute } from 'next';
-import { getPublicFirmRecords } from '@/lib/data/publicFirmRegistry';
+import { getPublicFirmProfiles } from '@/lib/services/publicFirmProfileService';
 import { siteConfig } from '@/lib/site';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const firms = await getPublicFirmRecords();
+  const firms = await getPublicFirmProfiles();
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: siteConfig.url, changeFrequency: 'weekly', priority: 1 },
     { url: `${siteConfig.url}/prop-firms`, changeFrequency: 'daily', priority: 0.9 },
@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const firmRoutes: MetadataRoute.Sitemap = firms.map((firm) => ({
     url: `${siteConfig.url}/prop-firms/${firm.slug}`,
-    lastModified: firm.updatedAt,
+    lastModified: firm.checkedAt,
     changeFrequency: 'weekly',
     priority: 0.7,
   }));

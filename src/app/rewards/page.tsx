@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Coins, Database } from 'lucide-react';
-import { getPublishedFirmProfiles } from '@/lib/data/publicFirmRegistry';
+import { factText, profileHasRewards, profileRewardLabels } from '@/lib/data/publicFirmProfiles';
+import { getPublicFirmProfiles } from '@/lib/services/publicFirmProfileService';
 import pageStyles from '@/components/layout/PublicPage.module.css';
 
 export const metadata: Metadata = {
@@ -10,9 +11,10 @@ export const metadata: Metadata = {
   alternates: { canonical: '/rewards' },
 };
 
+export const revalidate = 300;
+
 export default async function RewardsPage() {
-  const firms = await getPublishedFirmProfiles();
-  const rewardFirms = firms.filter((firm) => firm.rewardTags?.length);
+  const rewardFirms = (await getPublicFirmProfiles()).filter(profileHasRewards);
 
   return (
     <div className={pageStyles.page}>
@@ -24,7 +26,7 @@ export default async function RewardsPage() {
           </div>
           <div>
             <p className={pageStyles.lead}>A dedicated research layer for rewards that can change the effective value of a prop challenge without being confused with verified cash value.</p>
-            <div className={pageStyles.notice}><Database /><span>Only published research profiles from the live firm registry appear here.</span></div>
+            <div className={pageStyles.notice}><Database /><span>Reward entries come from normalized official-source research; undocumented values remain ND.</span></div>
           </div>
         </header>
 
@@ -38,9 +40,9 @@ export default async function RewardsPage() {
               <article key={firm.id}>
                 <div>
                   <div className={pageStyles.identity}><Coins /><h2>{firm.name}</h2></div>
-                  <p>{firm.tokenomicsInfo?.rewardDescription || 'Reward program details are being documented.'}</p>
+                  <p>{factText(firm.tokenRewards.description)}</p>
                   <div className={pageStyles.tags}>
-                    {firm.rewardTags?.map((tag) => <span key={tag} className={`${pageStyles.tag} ${pageStyles.tagReward}`}>{tag}</span>)}
+                    {profileRewardLabels(firm).map((tag) => <span key={tag} className={`${pageStyles.tag} ${pageStyles.tagReward}`}>{tag}</span>)}
                   </div>
                 </div>
                 <Link href={`/prop-firms/${firm.slug}`} className={pageStyles.link}>View profile <ArrowRight /></Link>

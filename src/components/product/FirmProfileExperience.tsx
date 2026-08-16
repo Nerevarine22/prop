@@ -1,15 +1,14 @@
 import Link from 'next/link';
 import { ArrowRight, ExternalLink, FileCheck2 } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
-import type { PropFirm } from '@/types/firm';
-import { shortDate } from './experience';
+import type { FirmNormalizedProfile } from '@/types/database';
+import { factText, profileLogo, profileSourceCount, profileWebsite, shortDate } from '@/lib/data/publicFirmProfiles';
 import { FirmResearchTabs } from './FirmResearchTabs';
-import { PromoOffer } from './PromoOffer';
 import styles from '@/app/product-lab/page.module.css';
 
-export function FirmProfileExperience({ firm }: { firm: PropFirm }) {
-  const evidenceLabel = firm.dataStatus === 'verified' ? 'Verified record' : firm.dataStatus === 'reported' ? 'Reported record' : 'Research in progress';
-  const offerUrl = firm.verifiedCoupon?.referralUrl || firm.website;
+export function FirmProfileExperience({ firm }: { firm: FirmNormalizedProfile }) {
+  const evidenceLabel = 'Primary-source record';
+  const offerUrl = profileWebsite(firm);
 
   return (
     <div className={styles.productPage}>
@@ -17,12 +16,11 @@ export function FirmProfileExperience({ firm }: { firm: PropFirm }) {
 
       <section className={styles.profileHero}>
         <div className={styles.profileIdentity}>
-          <FirmLogo src={firm.logo} name={firm.name} imageClassName={styles.profileLogo} fallbackClassName={styles.profileFallback} />
-          <div><span className={styles.kicker}><span /> Research profile</span><h1>{firm.name}</h1><p>{firm.tagline}</p></div>
+          <FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.profileLogo} fallbackClassName={styles.profileFallback} />
+          <div><span className={styles.kicker}><span /> Research profile</span><h1>{firm.name}</h1><p>{factText(firm.identity.tagline)}</p></div>
         </div>
         <div className={styles.profileActions}>
-          {firm.website && <a href={firm.website} target="_blank" rel="noreferrer">Official site <ExternalLink /></a>}
-          {firm.verifiedCoupon && <PromoOffer coupon={firm.verifiedCoupon} />}
+          {offerUrl && <a href={offerUrl} target="_blank" rel="noreferrer">Official site <ExternalLink /></a>}
           <Link className={styles.compactCompareAction} href={`/compare?ids=${firm.id}`}>+ Compare</Link>
         </div>
       </section>
@@ -33,11 +31,11 @@ export function FirmProfileExperience({ firm }: { firm: PropFirm }) {
           <section className={styles.evidenceCard}>
             <div><FileCheck2 /><span>Evidence status</span></div>
             <strong>{evidenceLabel}</strong>
-            <p>{firm.dataStatus === 'mock' ? 'Values currently exercise the product structure and require primary-source review.' : 'Claims are manually extracted from the attached primary sources. Reported does not mean independently audited.'}</p>
-            <dl><div><dt>Last reviewed</dt><dd>{shortDate(firm.lastReviewedAt)}</dd></div><div><dt>Sources attached</dt><dd>{firm.sources.length}</dd></div><div><dt>Confidence</dt><dd>{firm.verification.confidence || 'Pending'}</dd></div></dl>
+            <p>Claims are manually extracted from official sources. ND means the value was not documented; resolved source differences remain visible with both URLs.</p>
+            <dl><div><dt>Last reviewed</dt><dd>{shortDate(firm.checkedAt)}</dd></div><div><dt>Sources attached</dt><dd>{profileSourceCount(firm)}</dd></div><div><dt>Method</dt><dd>Primary sources only</dd></div></dl>
             <Link href="/methodology">How verification works <ArrowRight /></Link>
           </section>
-          {!firm.verifiedCoupon && <section className={styles.noPromoCard}><span>Promotion status</span><strong>No verified code</strong><p>A promo code will appear beside the official-site link only after it has a current source.</p></section>}
+          <section className={styles.noPromoCard}><span>Unknown values</span><strong>{firm.ndFields.length} ND fields</strong><p>Unknown values are displayed explicitly and are never replaced with zero, false or demo data.</p></section>
         </aside>
       </section>
     </div>

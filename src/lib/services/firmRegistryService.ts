@@ -60,7 +60,14 @@ export async function seedFirmRegistry(): Promise<number> {
   for (const record of FIRM_DATABASE_SEED) {
     const reference = doc(db, FIRM_REGISTRY_COLLECTION, record.id);
     if (existingIds.has(record.id)) {
-      batch.set(reference, { schemaVersion: record.schemaVersion, id: record.id, slug: record.slug, name: record.name }, { merge: true });
+      batch.set(reference, removeUndefined({
+        schemaVersion: record.schemaVersion,
+        id: record.id,
+        slug: record.slug,
+        name: record.name,
+        links: record.links,
+        brandAssets: record.brandAssets,
+      }), { merge: true });
     } else {
       batch.set(reference, removeUndefined(record));
     }
