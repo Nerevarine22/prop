@@ -5,17 +5,19 @@ import Link from 'next/link';
 import { ArrowRight, Check, Search, SlidersHorizontal, Sparkles } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
 import {
+  comparisonRangeText,
+  firmModelTypeLabel,
+  getFirmModularProfile,
+} from '@/lib/data/firmModularProfiles';
+import {
   factArrayText,
   factText,
   factValue,
-  firstKnownFee,
-  formatCapital,
   profileHasRewards,
   profileLogo,
-  profilePrograms,
   profileRewardLabels,
 } from '@/lib/data/publicFirmProfiles';
-import type { FirmNormalizedProfile } from '@/types/database';
+import type { FirmModelType, FirmNormalizedProfile } from '@/types/database';
 import styles from '@/app/product-lab/page.module.css';
 
 type FirmDirectoryProps = {
@@ -25,14 +27,23 @@ type FirmDirectoryProps = {
   firms: FirmNormalizedProfile[];
 };
 
-const stepOptions = ['All', '1-Step', '2-Step', 'Instant Funding'] as const;
+const modelOptions: Array<{ value: 'All' | FirmModelType; label: string }> = [
+  { value: 'All', label: 'All models' },
+  { value: 'evaluation', label: 'Evaluation' },
+  { value: 'instant-funding', label: 'Instant funding' },
+  { value: 'collateralized', label: 'Collateralized' },
+  { value: 'competition', label: 'Competition' },
+  { value: 'progression', label: 'Progression' },
+  { value: 'other', label: 'Other' },
+];
 
 function FirmRow({ firm, selected, onToggle }: { firm: FirmNormalizedProfile; selected: boolean; onToggle: () => void }) {
-  const [drawdownValue, ...drawdownNoteParts] = factText(firm.summary.maxDrawdown).trim().split(/\s+/);
-  const drawdownNote = drawdownNoteParts.join(' ') || 'Maximum';
-  const programs = profilePrograms(firm);
-  const fee = firstKnownFee(firm);
+  const modular = getFirmModularProfile(firm);
   const rewards = profileRewardLabels(firm);
+  const modelLabel = modular.modelTypes.map(firmModelTypeLabel).join(' · ');
+  const isModelFirst = modular.researchStandard === 'model-first-v1';
+  const isProgressionModel = modular.modelTypes.includes('progression');
+  const description = modular.operatingModel?.classification.value ?? factText(firm.identity.tagline);
 
   return (
     <article className={styles.firmRow}>
@@ -41,16 +52,16 @@ function FirmRow({ firm, selected, onToggle }: { firm: FirmNormalizedProfile; se
         <div>
           <span className={styles.statusLine}><i /> Research profile</span>
           <h3>{firm.name}</h3>
-          <p>{factText(firm.identity.tagline)}</p>
+          <p>{description}</p>
           <div className={styles.tags}>{rewards.map((tag) => <span key={tag}>{tag}</span>)}</div>
         </div>
       </div>
 
       <div className={styles.rowMetrics}>
-        <div><span>From</span><strong>{fee === undefined ? 'ND' : `$${fee}`}</strong><small>{programs[0]?.name ?? 'ND'}</small></div>
-        <div><span>Drawdown</span><strong>{drawdownValue}</strong><small>{drawdownNote}</small></div>
-        <div><span>Split</span><strong>{factText(firm.summary.profitSplit)}</strong><small>Reported</small></div>
-        <div><span>Capital</span><strong>{formatCapital(factValue(firm.summary.maxCapital))}</strong><small>Maximum</small></div>
+        <div><span>{isProgressionModel ? 'Access' : 'Entry'}</span><strong>{comparisonRangeText(modular.comparison.entryCost)}</strong><small>{isProgressionModel ? 'Registration' : modelLabel}</small></div>
+        <div><span>Drawdown</span><strong>{comparisonRangeText(modular.comparison.maxDrawdown)}</strong><small>{isProgressionModel ? 'Across tracks' : isModelFirst ? 'Core challenge rule' : 'Across offers'}</small></div>
+        <div><span>Split</span><strong>{comparisonRangeText(modular.comparison.profitSplit)}</strong><small>{isProgressionModel ? 'By vault policy' : isModelFirst ? 'Funded stage' : 'Across offers'}</small></div>
+        <div><span>Capital</span><strong>{comparisonRangeText(modular.comparison.capital)}</strong><small>{isProgressionModel ? 'Track allocations' : isModelFirst ? 'Recorded account range' : 'Available range'}</small></div>
       </div>
 
       <div className={styles.rowActions}>
@@ -64,7 +75,7 @@ function FirmRow({ firm, selected, onToggle }: { firm: FirmNormalizedProfile; se
 }
 
 export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initialStep = 'All' }: FirmDirectoryProps) {
-  const normalizedStep = stepOptions.includes(initialStep as typeof stepOptions[number]) ? initialStep : 'All';
+  const normalizedStep = modelOptions.some((option) => option.value === initialStep) ? initialStep as 'All' | FirmModelType : 'All';
   const [query, setQuery] = useState(initialSearch);
   const [step, setStep] = useState(normalizedStep);
   const [weekendOnly, setWeekendOnly] = useState(false);
@@ -74,10 +85,10 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
 
   const filtered = useMemo(() => {
     return firms.filter((firm) => {
-      const programs = profilePrograms(firm);
-      const haystack = `${firm.name} ${factText(firm.identity.tagline)} ${factArrayText(firm.tradingPolicy.platforms)} ${profileRewardLabels(firm).join(' ')}`.toLowerCase();
+      const modular = getFirmModularProfile(firm);
+      const haystack = `${firm.name} ${modular.operatingModel?.classification.value ?? factText(firm.identity.tagline)} ${factArrayText(firm.tradingPolicy.platforms)} ${profileRewardLabels(firm).join(' ')} ${modular.modelTypes.map(firmModelTypeLabel).join(' ')} ${modular.offerNames.join(' ')}`.toLowerCase();
       if (query && !haystack.includes(query.toLowerCase())) return false;
-      if (step !== 'All' && !programs.some((program) => program.name.toLowerCase().includes(step.toLowerCase().replace(' funding', '')))) return false;
+      if (step !== 'All' && !modular.modelTypes.includes(step as FirmModelType)) return false;
       if (weekendOnly && factValue(firm.tradingPolicy.weekendHolding) !== 'allowed') return false;
       if (rewardsOnly && !profileHasRewards(firm)) return false;
       return true;
@@ -112,7 +123,7 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
             {mode === 'preview' ? 'Three profiles worth opening first.' : 'Start with fit, then inspect the proof.'}
           </h2>
         </div>
-        <p>{mode === 'preview' ? 'See the price, core constraints and reward layer before opening the full research profile.' : 'Filter normalized profiles by evaluation model and the constraints that matter to your trading style.'}</p>
+        <p>{mode === 'preview' ? 'See the access cost, core constraints and operating model before opening the full research profile.' : 'Filter normalized profiles by operating model and the constraints that matter to your strategy.'}</p>
       </div>
 
       <div className={mode === 'full' ? styles.directoryLayout : styles.previewDirectory}>
@@ -121,9 +132,9 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
             <div className={styles.filterTitle}><strong>Filters</strong><button type="button" onClick={reset}>Reset</button></div>
             <label className={styles.searchField}><Search /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Firm or platform" /></label>
             <fieldset>
-              <legend>Evaluation</legend>
-              {stepOptions.map((item) => (
-                <label key={item}><input type="radio" name="step" checked={step === item} onChange={() => setStep(item)} /><span>{item}</span></label>
+              <legend>Offer model</legend>
+              {modelOptions.map((item) => (
+                <label key={item.value}><input type="radio" name="step" checked={step === item.value} onChange={() => setStep(item.value)} /><span>{item.label}</span></label>
               ))}
             </fieldset>
             <fieldset>

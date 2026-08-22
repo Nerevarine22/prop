@@ -16,7 +16,7 @@ type PropFirmsPageProps = {
 
 export default async function PropFirmsPage({ searchParams }: PropFirmsPageProps) {
   const { step, platform } = await searchParams;
-  const initialStep = ['1-Step', '2-Step', 'Instant Funding'].includes(step ?? '') ? step : 'All';
+  const initialStep = ['evaluation', 'instant-funding', 'collateralized', 'competition', 'progression', 'other'].includes(step ?? '') ? step : 'All';
   const firms = await getPublicFirmProfiles();
 
   return (

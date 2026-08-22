@@ -1,5 +1,6 @@
 import { cache } from 'react';
 import { PUBLIC_FIRM_PROFILES } from '@/lib/data/publicFirmProfiles';
+import { attachFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import { getFirmRegistry } from '@/lib/services/firmRegistryService';
 import type { FirmNormalizedProfile } from '@/types/database';
 
@@ -47,11 +48,14 @@ export const getPublicFirmProfiles = cache(async (): Promise<FirmNormalizedProfi
   try {
     const records = await getFirmRegistry();
     const profiles = records
-      .map((record) => record.normalizedProfile && withRegistryBrand(
-        record.normalizedProfile,
-        record.brandAssets?.logoPath,
-        record.brandAssets?.sourceUrl,
-        record.brandAssets?.checkedAt,
+      .map((record) => record.normalizedProfile && attachFirmModularProfile(
+        withRegistryBrand(
+          record.normalizedProfile,
+          record.brandAssets?.logoPath,
+          record.brandAssets?.sourceUrl,
+          record.brandAssets?.checkedAt,
+        ),
+        record.normalizedProfileV2,
       ))
       .filter(isCurrentNormalizedProfile);
 

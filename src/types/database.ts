@@ -110,7 +110,7 @@ export interface NormalizedChallengeTier {
 export interface NormalizedChallengeProgram {
   id: string;
   name: string;
-  kind: NormalizedFact<'evaluation' | 'instant-funding' | 'collateralized' | 'competition'>;
+  kind: NormalizedFact<'evaluation' | 'instant-funding' | 'collateralized' | 'competition' | 'progression'>;
   stages: NormalizedFact<NormalizedChallengeStage[]>;
   tiers: NormalizedFact<NormalizedChallengeTier[]>;
   dailyLossPercent: NormalizedFact<number>;
@@ -203,6 +203,166 @@ export interface FirmNormalizedProfile {
   sourceDiscrepancies: FirmSourceDiscrepancy[];
   claims: PrimaryResearchObservation[];
   ndFields: string[];
+  modularProfile?: FirmNormalizedProfileV2;
+}
+
+export type FirmModelType =
+  | 'evaluation'
+  | 'instant-funding'
+  | 'collateralized'
+  | 'competition'
+  | 'progression'
+  | 'other';
+
+export type FirmContentStatus = PrimaryResearchValueStatus | 'N/A' | 'pending';
+
+export interface FirmContentLink {
+  label: string;
+  url: string;
+}
+
+export interface FirmContentFact {
+  id: string;
+  label: string;
+  value: string;
+  status?: FirmContentStatus;
+  note?: string;
+  evidence?: NormalizedEvidence[];
+  /** @deprecated Read compatibility for the first generated V2 migration. */
+  sourceUrls?: string[];
+}
+
+export interface FirmOperatingModelDefinition {
+  classification: FirmContentFact;
+  summary: FirmContentFact;
+  lifecycle: FirmContentFact[];
+  accountEnvironment?: FirmContentFact;
+  traderPayment?: FirmContentFact;
+  fundingMechanism?: FirmContentFact;
+  traderCompensation?: FirmContentFact;
+}
+
+export interface FirmResearchSourceInspection {
+  category: 'x-account' | 'website' | 'rulebook' | 'faq' | 'pricing-checkout' | 'terms' | 'payout-policy' | 'token-rewards' | 'app' | 'other';
+  url: string;
+  checkedAt: string;
+  outcome: 'accessed' | 'blocked' | 'not-found';
+  notes?: string;
+}
+
+export interface FirmContentRecord {
+  id: string;
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  facts?: FirmContentFact[];
+  meta?: string[];
+  links?: FirmContentLink[];
+}
+
+export interface FirmContentTableColumn {
+  key: string;
+  label: string;
+}
+
+export interface FirmContentTableRow {
+  id: string;
+  cells: Record<string, string>;
+}
+
+export type FirmContentBlock =
+  | {
+      id: string;
+      type: 'text';
+      eyebrow?: string;
+      title?: string;
+      paragraphs: string[];
+      meta?: string;
+      status?: FirmContentStatus;
+      evidence?: NormalizedEvidence[];
+    }
+  | {
+      id: string;
+      type: 'fact-grid';
+      columns?: 2 | 3 | 4;
+      presentation?: 'metrics' | 'details' | 'steps';
+      items: FirmContentFact[];
+    }
+  | {
+      id: string;
+      type: 'record-list';
+      presentation?: 'records' | 'tracks' | 'sources';
+      items: FirmContentRecord[];
+    }
+  | {
+      id: string;
+      type: 'table';
+      title?: string;
+      description?: string;
+      columns: FirmContentTableColumn[];
+      rows: FirmContentTableRow[];
+    }
+  | {
+      id: string;
+      type: 'notice';
+      tone: 'neutral' | 'positive' | 'warning';
+      text: string;
+      status?: FirmContentStatus;
+      evidence?: NormalizedEvidence[];
+    };
+
+export interface FirmProfileSection {
+  id: string;
+  tabLabel: string;
+  title: string;
+  description?: string;
+  blocks: FirmContentBlock[];
+}
+
+export interface ComparisonRangeProjection {
+  status: 'known' | 'varies' | 'ND' | 'N/A';
+  displayValue?: string;
+  min?: number;
+  max?: number;
+  unit: 'USD' | 'USDC' | 'percent';
+  notes?: string;
+  evidence?: NormalizedEvidence[];
+}
+
+export interface ComparisonListProjection {
+  status: 'known' | 'varies' | 'ND' | 'N/A';
+  displayValue?: string;
+  values: string[];
+  notes?: string;
+  evidence?: NormalizedEvidence[];
+}
+
+export interface FirmComparisonProjection {
+  modelTypes: FirmModelType[];
+  capital: ComparisonRangeProjection;
+  entryCost: ComparisonRangeProjection;
+  profitSplit: ComparisonRangeProjection;
+  maxDrawdown: ComparisonRangeProjection;
+  payoutSchedules: ComparisonListProjection;
+  executionModels: ComparisonListProjection;
+}
+
+export interface FirmNormalizedProfileV2 {
+  version: 2;
+  methodology: 'primary-sources-only';
+  researchStandard?: 'model-first-v1';
+  researchMode?: 'manual' | 'agent-assisted';
+  id: string;
+  slug: string;
+  name: string;
+  checkedAt: string;
+  modelTypes: FirmModelType[];
+  offerNames: string[];
+  operatingModel?: FirmOperatingModelDefinition;
+  sections: FirmProfileSection[];
+  sourcesInspected?: FirmResearchSourceInspection[];
+  comparison: FirmComparisonProjection;
+  sourceDiscrepancies: FirmSourceDiscrepancy[];
 }
 
 /**
@@ -222,6 +382,7 @@ export interface FirmDatabaseRecord {
   publicationStatus: FirmPublicationStatus;
   primaryResearch?: FirmPrimaryResearch;
   normalizedProfile?: FirmNormalizedProfile;
+  normalizedProfileV2?: FirmNormalizedProfileV2;
   profile?: PropFirm;
   createdAt: string;
   updatedAt: string;

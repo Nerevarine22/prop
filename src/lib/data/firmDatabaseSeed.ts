@@ -1,6 +1,7 @@
 import { MOCK_PROP_FIRMS } from './firms';
 import { PRIMARY_RESEARCH_BY_SLUG } from './firmPrimaryResearch';
 import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
+import { getFirmModularProfile } from './firmModularProfiles';
 import { FIRM_DATABASE_SCHEMA_VERSION, type FirmBrandAssets, type FirmDatabaseRecord, type FirmLinks } from '@/types/database';
 
 const SEED_CREATED_AT = '2026-08-15T00:00:00.000Z';
@@ -68,22 +69,28 @@ export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
     publicationStatus: 'published',
     primaryResearch: PRIMARY_RESEARCH_BY_SLUG[proprProfile.slug],
     normalizedProfile: FIRM_NORMALIZED_PROFILES_BY_SLUG[proprProfile.slug],
+    normalizedProfileV2: getFirmModularProfile(FIRM_NORMALIZED_PROFILES_BY_SLUG[proprProfile.slug]),
     profile: proprProfile,
     createdAt: SEED_CREATED_AT,
     updatedAt: proprProfile.lastReviewedAt,
   },
-  ...STUB_FIRMS.map((firm): FirmDatabaseRecord => ({
-    schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
-    id: firm.id,
-    slug: firm.slug,
-    name: firm.name,
-    links: links(firm.website, firm.xHandle),
-    brandAssets: brandAssets(firm.slug, firm.xHandle),
-    researchStatus: 'researched',
-    publicationStatus: 'draft',
-    primaryResearch: PRIMARY_RESEARCH_BY_SLUG[firm.slug],
-    normalizedProfile: FIRM_NORMALIZED_PROFILES_BY_SLUG[firm.slug],
-    createdAt: SEED_CREATED_AT,
-    updatedAt: PRIMARY_RESEARCH_BY_SLUG[firm.slug]?.checkedAt ?? SEED_CREATED_AT,
-  })),
+  ...STUB_FIRMS.map((firm): FirmDatabaseRecord => {
+    const normalizedProfile = FIRM_NORMALIZED_PROFILES_BY_SLUG[firm.slug];
+    const normalizedProfileV2 = getFirmModularProfile(normalizedProfile);
+    return {
+      schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
+      id: firm.id,
+      slug: firm.slug,
+      name: firm.name,
+      links: links(firm.website, firm.xHandle),
+      brandAssets: brandAssets(firm.slug, firm.xHandle),
+      researchStatus: 'researched',
+      publicationStatus: 'draft',
+      primaryResearch: PRIMARY_RESEARCH_BY_SLUG[firm.slug],
+      normalizedProfile,
+      ...(normalizedProfileV2 ? { normalizedProfileV2 } : {}),
+      createdAt: SEED_CREATED_AT,
+      updatedAt: PRIMARY_RESEARCH_BY_SLUG[firm.slug]?.checkedAt ?? SEED_CREATED_AT,
+    };
+  }),
 ];

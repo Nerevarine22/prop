@@ -15,6 +15,14 @@ Every document follows `FirmDatabaseRecord` from `src/types/database.ts`:
 - `normalizedProfile`: primary-source-only normalized evidence profile. Every
   canonical leaf is a fact with `reported`, `verified`, or `ND` status plus
   its URL and check date;
+- `normalizedProfileV2`: canonical data-driven public profile for new research.
+  It stores the project operating model, an ordered `sections[]` collection
+  built from safe typed blocks (`text`,
+  `fact-grid`, `record-list`, `table`, and `notice`) plus a small universal
+  comparison projection. Blocks may carry presentation hints such as `steps`,
+  `details`, or `tracks`, so the same safe renderer can match the project model
+  without inventing fields from another firm. Raw HTML is never stored or
+  rendered;
 - `sourceDiscrepancies`: resolved differences between official sources,
   retaining the canonical and alternate values, both URLs, date and resolution basis;
 - `researchStatus`: `stub`, `researched`, or `verified`;
@@ -31,6 +39,13 @@ Raw conflicting observations remain as audit evidence, but never become a
 canonical normalized conflict. Rulebooks take precedence for trading rules;
 otherwise the most specific formal policy or Terms is used. No zero, false,
 empty array, or legacy demo value substitutes for an unknown value.
+
+The public read path prefers a valid stored `normalizedProfileV2`. New research
+must be authored model-first: inspect the project, define its actual operating
+model, and then create only the sections and facts that belong to it. The old
+`normalizedProfile` conversion remains a temporary compatibility path for firms
+that have not yet been re-researched; it is not a template for new records.
+Only the `comparison` projection is deliberately standardized across firms.
 
 ## Initial dataset
 
@@ -68,15 +83,40 @@ and brand assets; later research and publication fields are preserved.
 For a controlled server-side seed using a local service account, place the
 gitignored `serviceAccountKey.json` in the project root and run `npm run db:seed`.
 
+Validate the generated section-based profiles without touching Firestore:
+
+```bash
+npm run db:sync-modular
+```
+
+After reviewing the dry run, migrate only `normalizedProfileV2` for the existing
+records with `npm run db:sync-modular:write`. The command verifies all 21
+documents after the batch and does not update publication or research fields.
+
+Validate a reviewed model-first profile without writing:
+
+```bash
+npm run db:sync-model-first
+```
+
+After review, write only that firm’s `normalizedProfileV2` with
+`npm run db:sync-model-first:write`. For another reviewed slug, run
+`npx tsx scripts/syncModelFirstFirm.ts --slug=<slug> [--write]`. The migration rejects
+missing evidence and verifies that protected Firestore fields stay unchanged.
+
 Without Firebase environment variables, `/admin/database` shows an exact local preview and performs no remote writes.
 
 ## Publishing workflow
 
 1. A newly discovered firm starts as `stub` + `draft`.
-2. Research adds `primaryResearch` and `normalizedProfile`, then changes status
-   to `researched`; unknown facts remain explicit `ND`.
+2. Research defines the firm’s own operating model and writes a model-first
+   `normalizedProfileV2`; it does not begin from another firm’s rule template.
+   A value is `ND` only when it is relevant to this operating model and remains
+   undocumented after the relevant primary sources were inspected.
 3. Manual review may change it to `verified`.
-4. Public comparison pages use complete `normalizedProfile` records; partial
-   source ledgers remain available for research review.
+4. Public profile pages render the ordered V2 sections. When a stored V2 record
+   is absent, the read path derives it from `normalizedProfile` without changing
+   Firestore. Comparison pages use only the universal V2 projection, not
+   assumptions about evaluation steps or challenge phases.
 
 The retired `firms` collection must not be recreated. New research work belongs in `firmRegistry`.

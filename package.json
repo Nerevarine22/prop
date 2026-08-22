@@ -7,7 +7,11 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "db:seed": "tsx scripts/seedFirmRegistry.ts"
+    "db:seed": "tsx scripts/seedFirmRegistry.ts",
+    "db:sync-modular": "tsx scripts/syncFirmModularProfiles.ts",
+    "db:sync-modular:write": "tsx scripts/syncFirmModularProfiles.ts --write",
+    "db:sync-model-first": "tsx scripts/syncModelFirstFirm.ts",
+    "db:sync-model-first:write": "tsx scripts/syncModelFirstFirm.ts --write"
   },
   "dependencies": {
     "clsx": "^2.1.1",

@@ -13,7 +13,7 @@ import type {
 type Fact<T> = NormalizedFact<T>;
 type Schedule = 'on-demand' | 'daily' | 'weekly' | 'bi-weekly' | 'monthly' | 'conditional';
 type Currency = 'USD' | 'USDC' | 'USDT' | 'BTC' | 'ETH' | 'SOL';
-type ProgramKind = 'evaluation' | 'instant-funding' | 'collateralized' | 'competition';
+type ProgramKind = 'evaluation' | 'instant-funding' | 'collateralized' | 'competition' | 'progression';
 type DrawdownType = 'static' | 'trailing-high-water-mark' | 'trailing-daily' | 'dynamic' | 'none';
 
 interface FirmMeta {
@@ -412,7 +412,7 @@ const configs: Record<string, ProfileValues> = {
 
   alphagrid: {
     summary: { profitSplit: reported('alphagrid', 'payoutPolicy', '70–80%, exact value determined by vault policy'), maxDrawdown: reported('alphagrid', 'rulebook', '15% Challenge / 12% Funded / 10% Prime'), dailyDrawdown: reported('alphagrid', 'rulebook', '5% / 4% / 3% realized loss'), minCapital: reported('alphagrid', 'pricingCheckout', 10_000), maxCapital: reported('alphagrid', 'pricingCheckout', 100_000) },
-    programs: [program('alphagrid', 'lifecycle', 'Challenge → Funded → Prime', { kind: 'evaluation', stages: [stage('alphagrid', 'Challenge', { durationDays: 14 }), stage('alphagrid', 'Funded', { durationDays: 30, funded: true }), stage('alphagrid', 'Prime', { funded: true })], dailyLoss: 5, maxDrawdown: 15, maxDrawdownType: 'dynamic', notes: 'Challenge is simulated $10K; Funded real $50K; Prime real $100K. Progression uses trade counts and scores, not documented profit targets.' })],
+    programs: [program('alphagrid', 'lifecycle', 'Challenge → Funded → Prime', { kind: 'progression', stages: [stage('alphagrid', 'Challenge', { durationDays: 14 }), stage('alphagrid', 'Funded', { durationDays: 30, funded: true }), stage('alphagrid', 'Prime', { funded: true })], dailyLoss: 5, maxDrawdown: 15, maxDrawdownType: 'dynamic', notes: 'Challenge is simulated $10K; Funded real $50K; Prime real $100K. Progression uses trade counts and scores, not documented profit targets.' })],
     execution: { model: reported('alphagrid', 'rulebook', 'hybrid'), notes: reported('alphagrid', 'rulebook', 'Challenge is simulated; Funded and Prime are described as real-capital stages.') },
   },
 

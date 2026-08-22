@@ -36,8 +36,8 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-200 mb-4">Categories</h4>
             <ul className="space-y-2.5 text-xs">
-              <li><Link href="/prop-firms?step=1-Step" className="hover:text-white transition-colors">1-Step Evaluation</Link></li>
-              <li><Link href="/prop-firms?step=Instant+Funding" className="hover:text-white transition-colors">Instant Funded Accounts</Link></li>
+              <li><Link href="/prop-firms?step=evaluation" className="hover:text-white transition-colors">Evaluation programs</Link></li>
+              <li><Link href="/prop-firms?step=instant-funding" className="hover:text-white transition-colors">Instant funding</Link></li>
               <li><Link href="/prop-firms?platform=cTrader" className="hover:text-white transition-colors">cTrader Prop Firms</Link></li>
               <li><Link href="/prop-firms?platform=Bybit" className="hover:text-white transition-colors">Bybit-based Firms</Link></li>
             </ul>

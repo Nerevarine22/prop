@@ -1,4 +1,5 @@
 import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
+import { attachFirmModularProfile } from './firmModularProfiles';
 import type {
   FirmNormalizedProfile,
   NormalizedChallengeProgram,
@@ -6,14 +7,16 @@ import type {
   PrimaryResearchValueStatus,
 } from '@/types/database';
 
-export const PUBLIC_FIRM_PROFILES = Object.values(FIRM_NORMALIZED_PROFILES_BY_SLUG).sort((a, b) => {
+export const PUBLIC_FIRM_PROFILES = Object.values(FIRM_NORMALIZED_PROFILES_BY_SLUG).map((profile) => (
+  attachFirmModularProfile(profile)
+)).sort((a, b) => {
   if (a.slug === 'propr') return -1;
   if (b.slug === 'propr') return 1;
   return a.name.localeCompare(b.name);
 });
 
 export function getPublicFirmProfile(slug: string): FirmNormalizedProfile | undefined {
-  return FIRM_NORMALIZED_PROFILES_BY_SLUG[slug];
+  return PUBLIC_FIRM_PROFILES.find((profile) => profile.slug === slug);
 }
 
 export function factValue<T>(fact: NormalizedFact<T>): T | undefined {
