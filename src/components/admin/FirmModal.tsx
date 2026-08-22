@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { X, Check, Save, Plus, Trash2, Tag, DollarSign, Percent, Shield, Star, Image as ImageIcon } from 'lucide-react';
-import { PropFirm, EvaluationStep, TradingPlatform } from '@/types/firm';
+import React, { useState } from 'react';
+import { X, Save, Tag, DollarSign, Percent, Shield } from 'lucide-react';
+import { Coupon, PropFirm, EvaluationStep, TradingPlatform } from '@/types/firm';
 import { saveFirm } from '@/lib/services/firmService';
 
 interface FirmModalProps {
@@ -12,81 +12,57 @@ interface FirmModalProps {
   firmToEdit?: PropFirm | null;
 }
 
+const createDefaultCoupon = (): Coupon => ({
+  id: 'coupon-draft',
+  firmId: '',
+  firmName: '',
+  code: 'PROPHUB20',
+  discount: '20% OFF + 90% Split',
+  description: 'Sample discount record for product development.',
+  verified: false,
+});
+
+const createDefaultFormData = (): Partial<PropFirm> => ({
+  name: '',
+  slug: '',
+  logo: '/logos/fundingpips-clover.png',
+  tagline: 'High-leveraged crypto funded accounts.',
+  description: 'Crypto prop trading firm offering funded account evaluations.',
+  rating: 4.8,
+  reviewCount: 500,
+  featured: true,
+  trending: false,
+  badge: '',
+  profitSplit: '90%',
+  maxDrawdown: '10% Maximum',
+  dailyDrawdown: '5% Daily',
+  profitTarget: '8% Phase 1',
+  minCapital: 5000,
+  maxCapital: 300000,
+  cryptoLeverage: '1:100',
+  evaluationSteps: ['2-Step', '1-Step'] as EvaluationStep[],
+  platforms: ['cTrader', 'MT5'] as TradingPlatform[],
+  payoutFrequency: 'Bi-Weekly',
+  accountTiers: [{ accountSize: 5000, price: 32, profitTarget: '8%', maxDrawdown: '10%', dailyDrawdown: '5%' }],
+  verifiedCoupon: createDefaultCoupon(),
+  dataStatus: 'mock',
+  lastReviewedAt: '1970-01-01T00:00:00.000Z',
+  sources: [],
+  verification: {
+    status: 'mock',
+    method: 'demo-seed',
+    checkedAt: '1970-01-01T00:00:00.000Z',
+    sourceIds: [],
+    confidence: 'low',
+  },
+  changeHistory: [],
+});
+
 export function FirmModal({ isOpen, onClose, onSaved, firmToEdit }: FirmModalProps) {
-  const [formData, setFormData] = useState<Partial<PropFirm>>({
-    name: '',
-    slug: '',
-    logo: '/logos/fundingpips-clover.png',
-    tagline: 'High-leveraged crypto funded accounts.',
-    description: 'Premier crypto prop trading firm offering institutional liquidity.',
-    rating: 4.8,
-    reviewCount: 500,
-    featured: true,
-    trending: false,
-    badge: '',
-    profitSplit: '90%',
-    maxDrawdown: '10% Maximum',
-    dailyDrawdown: '5% Daily',
-    profitTarget: '8% Phase 1',
-    minCapital: 5000,
-    maxCapital: 300000,
-    cryptoLeverage: '1:100',
-    evaluationSteps: ['2-Step', '1-Step'] as EvaluationStep[],
-    platforms: ['cTrader', 'MT5'] as TradingPlatform[],
-    payoutFrequency: 'Bi-Weekly',
-    accountTiers: [{ accountSize: 5000, price: 32, profitTarget: '8%', maxDrawdown: '10%', dailyDrawdown: '5%' }],
-    verifiedCoupon: {
-      id: `c-${Date.now()}`,
-      firmId: '',
-      firmName: '',
-      code: 'PROPHUB20',
-      discount: '20% OFF + 90% Split',
-      description: 'Exclusive 20% discount on all challenge tiers.',
-      verified: true,
-    }
-  });
+  const [formData, setFormData] = useState<Partial<PropFirm>>(() => firmToEdit ? { ...firmToEdit } : createDefaultFormData());
 
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
-
-  useEffect(() => {
-    if (firmToEdit) {
-      setFormData(firmToEdit);
-    } else {
-      setFormData({
-        name: '',
-        slug: '',
-        logo: '/logos/fundingpips-clover.png',
-        tagline: 'High-leveraged crypto funded accounts.',
-        description: 'Premier crypto prop trading firm offering institutional liquidity.',
-        rating: 4.8,
-        reviewCount: 500,
-        featured: true,
-        trending: false,
-        badge: '',
-        profitSplit: '90%',
-        maxDrawdown: '10% Maximum',
-        dailyDrawdown: '5% Daily',
-        profitTarget: '8% Phase 1',
-        minCapital: 5000,
-        maxCapital: 300000,
-        cryptoLeverage: '1:100',
-        evaluationSteps: ['2-Step', '1-Step'] as EvaluationStep[],
-        platforms: ['cTrader', 'MT5'] as TradingPlatform[],
-        payoutFrequency: 'Bi-Weekly',
-        accountTiers: [{ accountSize: 5000, price: 32, profitTarget: '8%', maxDrawdown: '10%', dailyDrawdown: '5%' }],
-        verifiedCoupon: {
-          id: `c-${Date.now()}`,
-          firmId: '',
-          firmName: '',
-          code: 'PROPHUB20',
-          discount: '20% OFF + 90% Split',
-          description: 'Exclusive 20% discount on all challenge tiers.',
-          verified: true,
-        }
-      });
-    }
-  }, [firmToEdit, isOpen]);
 
   if (!isOpen) return null;
 
@@ -107,6 +83,7 @@ export function FirmModal({ isOpen, onClose, onSaved, firmToEdit }: FirmModalPro
         slug: formattedSlug,
         verifiedCoupon: formData.verifiedCoupon ? {
           ...formData.verifiedCoupon,
+          id: formData.verifiedCoupon.id === 'coupon-draft' ? `c-${crypto.randomUUID()}` : formData.verifiedCoupon.id,
           firmName: formData.name || '',
           code: formData.verifiedCoupon.code || 'PROPHUB20',
         } : undefined,
@@ -115,8 +92,8 @@ export function FirmModal({ isOpen, onClose, onSaved, firmToEdit }: FirmModalPro
       await saveFirm(dataToSave);
       onSaved();
       onClose();
-    } catch (err: any) {
-      setError(err.message || 'Failed to save firm.');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to save firm.');
     } finally {
       setSaving(false);
     }
@@ -192,7 +169,11 @@ export function FirmModal({ isOpen, onClose, onSaved, firmToEdit }: FirmModalPro
                 <label className="text-xs text-zinc-300 font-semibold">Logo Image URL</label>
                 <div className="flex items-center gap-3">
                   {formData.logo && (
-                    <img src={formData.logo} alt="Preview" className="h-10 w-10 rounded-xl object-cover border border-zinc-800 shrink-0" />
+                    <>
+                      {/* Dynamic admin previews intentionally bypass the production image pipeline. */}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={formData.logo} alt="Preview" className="h-10 w-10 rounded-xl object-cover border border-zinc-800 shrink-0" />
+                    </>
                   )}
                   <input
                     type="text"
@@ -347,7 +328,7 @@ export function FirmModal({ isOpen, onClose, onSaved, firmToEdit }: FirmModalPro
                   value={formData.verifiedCoupon?.code || ''}
                   onChange={(e) => setFormData({
                     ...formData,
-                    verifiedCoupon: { ...formData.verifiedCoupon, code: e.target.value } as any
+                    verifiedCoupon: { ...(formData.verifiedCoupon || createDefaultCoupon()), code: e.target.value }
                   })}
                   className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white font-mono font-bold"
                 />
@@ -361,7 +342,7 @@ export function FirmModal({ isOpen, onClose, onSaved, firmToEdit }: FirmModalPro
                   value={formData.verifiedCoupon?.discount || ''}
                   onChange={(e) => setFormData({
                     ...formData,
-                    verifiedCoupon: { ...formData.verifiedCoupon, discount: e.target.value } as any
+                    verifiedCoupon: { ...(formData.verifiedCoupon || createDefaultCoupon()), discount: e.target.value }
                   })}
                   className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-[#52b788] font-bold"
                 />

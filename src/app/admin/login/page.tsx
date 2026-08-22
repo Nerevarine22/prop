@@ -19,24 +19,14 @@ export default function AdminLoginPage() {
     setLoading(true);
 
     try {
-      if (isFirebaseConfigured) {
-        await signInWithEmailAndPassword(auth, email, password);
-      } else {
-        // Fallback demo credentials check when Firebase is unconfigured
-        if (email === 'admin@prophub.xyz' && password === 'admin123') {
-          sessionStorage.setItem('prophub_admin_auth', 'true');
-        } else if (email && password.length >= 6) {
-          // Allow demo login during local development
-          sessionStorage.setItem('prophub_admin_auth', 'true');
-        } else {
-          throw new Error('Invalid email or password (Demo credentials: admin@prophub.xyz / admin123)');
-        }
+      if (!isFirebaseConfigured) {
+        throw new Error('Admin access is disabled until Firebase authentication is configured.');
       }
-      
-      sessionStorage.setItem('prophub_admin_auth', 'true');
-      router.push('/admin');
-    } catch (err: any) {
-      setError(err.message || 'Failed to authenticate. Please check your credentials.');
+
+      await signInWithEmailAndPassword(auth, email, password);
+      router.replace('/admin');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to authenticate. Please check your credentials.');
     } finally {
       setLoading(false);
     }
@@ -52,7 +42,7 @@ export default function AdminLoginPage() {
             <Lock className="h-5 w-5 text-emerald-400" />
           </div>
           <h1 className="text-2xl font-bold text-white tracking-tight">PropHub Admin Console</h1>
-          <p className="text-xs text-zinc-400 font-medium">Secure access to control prop firm cards and promos</p>
+          <p className="text-xs text-zinc-400 font-medium">Firebase-authenticated access to firm records and promo data</p>
         </div>
 
         {/* Login Card */}
@@ -65,6 +55,13 @@ export default function AdminLoginPage() {
             <div className="flex items-start gap-2.5 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-400">
               <ShieldAlert className="h-4 w-4 shrink-0 mt-0.5" />
               <span>{error}</span>
+            </div>
+          )}
+
+          {!isFirebaseConfigured && !error && (
+            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200">
+              <ShieldAlert className="h-4 w-4 shrink-0 mt-0.5" />
+              <span>Admin access is disabled. Configure Firebase environment variables before using this area.</span>
             </div>
           )}
 
@@ -101,7 +98,7 @@ export default function AdminLoginPage() {
 
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || !isFirebaseConfigured}
               className="w-full mt-2 py-3 px-4 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-sm disabled:opacity-50"
             >
               {loading ? (

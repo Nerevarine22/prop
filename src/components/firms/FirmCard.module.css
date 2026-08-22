@@ -1,0 +1,67 @@
+.card { position: relative; display: flex; min-width: 0; height: 100%; min-height: 480px; padding: 24px; flex-direction: column; border: 1px solid #29313d; border-radius: 12px; background: transparent; color: #f4f4f5; box-shadow: none; transition: background-color 180ms cubic-bezier(.16,1,.3,1), border-color 180ms cubic-bezier(.16,1,.3,1), box-shadow 180ms cubic-bezier(.16,1,.3,1); }
+.card:hover { border-color: #394453; background-color: rgb(79 140 255 / 2.5%); box-shadow: none; }
+.card.selected { border-color: rgb(79 140 255 / 58%); box-shadow: inset 0 1px rgb(255 255 255 / 3%); }
+.cardHeader,
+.identity { display: flex; align-items: center; }
+.cardHeader { justify-content: space-between; gap: 12px; }
+.identity { min-width: 0; gap: 13px; color: inherit; text-decoration: none; }
+.logoFrame { display: grid; width: 64px; height: 64px; flex: 0 0 auto; padding: 4px; place-items: center; overflow: hidden; border: 1px solid #29313d; border-radius: 12px; background: #12161d; }
+.logoFrame img,
+.logoFallback { width: 100%; height: 100%; border-radius: 7px; object-fit: cover; }
+.logoFallback { display: grid; place-items: center; background: #181d26; color: #a9c7ff; font-size: 14px; font-weight: 800; }
+.identityCopy { display: block; min-width: 0; }
+.identityCopy > small { display: block; color: #7aa8ff; text-transform: uppercase; letter-spacing: .06em; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 700; }
+.identityCopy > strong { display: block; overflow: hidden; margin-top: 4px; color: #f4f4f5; font-size: 20px; letter-spacing: -.03em; text-overflow: ellipsis; white-space: nowrap; }
+.rating { display: flex; margin-top: 4px; align-items: center; gap: 4px; color: #8b95a5; font-size: 11px; }
+.rating svg { width: 12px; height: 12px; }
+.rating i { color: #535d6b; font-style: normal; }
+.compareButton { display: inline-flex; min-height: 38px; padding: 0 11px; align-items: center; gap: 7px; border: 1px solid #29313d; border-radius: 8px; background: transparent; color: #8f99a8; font: inherit; font-size: 10px; font-weight: 700; cursor: pointer; transition: background-color 150ms cubic-bezier(.16,1,.3,1), border-color 150ms cubic-bezier(.16,1,.3,1), color 150ms cubic-bezier(.16,1,.3,1), transform 100ms cubic-bezier(.16,1,.3,1); }
+.compareButton:hover { border-color: #394453; background: rgb(79 140 255 / 8%); color: #f4f4f5; }
+.compareButton[aria-pressed='true'] { border-color: #4f8cff; background: rgb(79 140 255 / 15%); color: #a9c7ff; }
+.compareButton:active { transform: scale(.98); }
+.compareButton svg { width: 13px; height: 13px; }
+.tags { display: flex; min-height: 31px; margin-top: 16px; flex-wrap: wrap; gap: 7px; }
+.dataStatusTag { min-height: 31px; padding-inline: 10px; font-size: 11px; }
+.dataStatusTag svg { width: 15px; height: 15px; }
+.rewardTag { display: inline-flex; min-height: 31px; padding: 0 10px; align-items: center; border: 1px solid rgb(119 116 255 / 28%); border-radius: 7px; background: rgb(119 116 255 / 8%); color: #aaa8ff; font-size: 11px; font-weight: 720; }
+.pointsTag { color: #aaa8ff; }
+.airdropTag { border-color: rgb(143 157 255 / 28%); color: #b3bcff; }
+.tokenTag { border-color: rgb(177 156 255 / 28%); color: #c0adff; }
+.summary { display: -webkit-box; min-height: 44px; overflow: hidden; margin: 14px 0; color: #a6aeb9; font-size: 13px; line-height: 1.55; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 14px 8px; justify-items: center; border: 1px solid #29313d; border-radius: 10px; background: #12161d; color: inherit; text-align: center; text-decoration: none; }
+.metrics > span { display: flex; width: 100%; min-width: 0; align-items: center; flex-direction: column; gap: 3px; text-align: center; }
+.metrics small { color: #7f91aa; text-transform: uppercase; letter-spacing: .08em; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 700; }
+.metrics strong { overflow: hidden; color: #f4f4f5; font-size: 28px; letter-spacing: -.045em; text-overflow: ellipsis; }
+.metrics > span:nth-child(2) strong { color: #32d583; }
+.metrics i { color: #748092; font-size: 10px; font-style: normal; }
+.rules { display: flex; min-height: 64px; margin: 12px 0; align-content: flex-start; flex-wrap: wrap; gap: 7px; }
+.rules span { display: inline-flex; min-height: 31px; padding: 0 9px; align-items: center; gap: 6px; border: 1px solid #29313d; border-radius: 7px; background: #181d26; color: #9ca3af; font-size: 11px; font-weight: 650; }
+.rules svg { width: 13px; height: 13px; color: #7f91aa; }
+.promo { display: flex; min-height: 36px; padding: 0 11px; align-items: center; margin-top: auto; border: 1px solid #29313d; border-radius: 8px; background: #12161d; color: #8892a1; font-size: 11px; }
+.promo strong { color: #aaa8ff; }
+.promo i { margin: 0 4px; color: #535d6b; font-style: normal; }
+.cardFooter { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+.cardFooter a { display: inline-flex; min-height: 40px; padding: 0 10px; align-items: center; justify-content: center; gap: 6px; border: 1px solid #29313d; border-radius: 8px; background: transparent; color: #a6aeb9; font-size: 10px; font-weight: 700; text-decoration: none; transition: background-color 150ms cubic-bezier(.16,1,.3,1), border-color 150ms cubic-bezier(.16,1,.3,1), color 150ms cubic-bezier(.16,1,.3,1), transform 100ms cubic-bezier(.16,1,.3,1); }
+.cardFooter a:first-child:hover { border-color: #394453; background: rgb(79 140 255 / 8%); color: #f4f4f5; }
+.cardFooter a:last-child { border-color: #4f8cff; background: #4f8cff; color: #fff; }
+.cardFooter a:last-child:hover { background: #70a5ff; }
+.cardFooter a:active { transform: scale(.98); }
+.cardFooter svg { width: 13px; height: 13px; }
+
+@media (max-width: 1000px) { .card { min-height: 0; } }
+@media (max-width: 480px) {
+  .card { padding: 20px; }
+  .cardHeader { align-items: flex-start; }
+  .compareButton { width: 34px; padding: 0; justify-content: center; }
+  .compareButton > span { display: none; }
+  .logoFrame { width: 58px; height: 58px; }
+  .metrics strong { font-size: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .compareButton,
+  .cardFooter a { transition-duration: .01ms; }
+  .compareButton:active,
+  .cardFooter a:active { transform: none; }
+}

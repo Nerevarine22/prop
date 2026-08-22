@@ -1,40 +1,100 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
 @import "tailwindcss";
 
 @layer base {
   :root {
-    --font-sans: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: var(--font-space-grotesk), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-display: var(--font-space-grotesk), 'Segoe UI', system-ui, sans-serif;
     --font-geist: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-geist-mono: 'Cascadia Code', 'SFMono-Regular', Consolas, monospace;
 
     /* Transitions.dev Motion Tokens */
-    --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-smooth-out: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --ease-bounce: cubic-bezier(0.34, 1.36, 0.64, 1);
 
     --duration-quick: 150ms;
     --duration-fast: 250ms;
     --duration-slow: 400ms;
+
+    /* PropHub design tokens */
+    --color-canvas: #0a0c10;
+    --color-section: #0e1117;
+    --color-surface: #12161d;
+    --color-surface-raised: #181d26;
+    --color-border: #29313d;
+    --color-border-strong: #394453;
+    --color-text: #f4f4f5;
+    --color-text-muted: #9ca3af;
+    --color-text-dim: #667085;
+    --color-accent: #4f8cff;
+    --color-accent-soft: #a9c7ff;
+    --color-reward: #7774ff;
+    --color-reward-soft: #aaa8ff;
+    --color-positive: #32d583;
+    --color-warning: #f5b942;
+    --color-negative: #f97066;
+    --radius-control: 0.5rem;
+    --radius-panel: 0.875rem;
+    --content-wide: 80rem;
+    --z-sticky: 40;
+    --z-overlay: 60;
   }
 }
 
 html,
 body {
   font-family: var(--font-sans);
-  background-color: #090909;
+  background-color: var(--color-canvas);
   color: #fafafa;
-  overflow-x: hidden;
+  overflow-x: clip;
   touch-action: manipulation;
 }
 
-/* Ultra-subtle Vercel/Linear-style Background Grid Pattern */
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: var(--z-overlay);
+  transform: translateY(-200%);
+  border-radius: var(--radius-control);
+  background: var(--color-text);
+  color: var(--color-canvas);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: transform var(--duration-fast) var(--ease-smooth-out);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.data-number {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Quiet neutral data field used behind product pages. */
 .bg-grid-pattern {
   background-size: 56px 56px;
   background-position: center top;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgb(169 199 255 / 3%) 1px, transparent 1px), linear-gradient(to bottom, rgb(169 199 255 / 3%) 1px, transparent 1px);
 }
 
 /* Hide Scrollbar for Horizontal Scrollable Container on Mobile */
@@ -75,16 +135,19 @@ body {
 
 /* Propr Card & Border System */
 .propr-card {
-  background: #18181b;
+  background-color: #12161d;
+  background-image: url('/textures/noise.svg');
+  background-size: 160px 160px;
+  background-blend-mode: soft-light;
   background-clip: padding-box;
-  border: 1px solid rgba(39, 39, 42, 0.8);
+  border: 1px solid #29313d;
   border-radius: 0.875rem;
   transition: all 0.3s var(--ease-smooth-out);
 }
 
 .propr-card:hover {
-  background: rgba(39, 39, 42, 0.7);
-  border-color: rgba(63, 63, 70, 1);
+  background-color: #181d26;
+  border-color: #394453;
 }
 
 /* Micro-Eyebrow Badges */
@@ -109,14 +172,14 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #090909;
+  background: #0a0c10;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #29313d;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #52b788;
+  background: #4f8cff;
 }
 
 /* Silver Shimmer Text Effect for Brand Highlights */
@@ -148,13 +211,35 @@ body {
 
 /* Details Action Button */
 .details-btn {
-  background-color: #b8b9be !important;
-  color: #09090b !important;
+  background-color: #4f8cff !important;
+  color: #ffffff !important;
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
   cursor: pointer !important;
 }
 
 .details-btn:hover {
-  background-color: #ffffff !important;
-  color: #09090b !important;
+  background-color: #70a5ff !important;
+  color: #ffffff !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body:has(#product-lab) {
+  background: #f3f1eb;
+}
+
+body:has(#product-lab[data-theme='dark']) {
+  background: #0b100d;
 }

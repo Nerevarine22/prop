@@ -3,16 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:seed": "tsx scripts/seedFirmRegistry.ts",
+    "db:sync-modular": "tsx scripts/syncFirmModularProfiles.ts",
+    "db:sync-modular:write": "tsx scripts/syncFirmModularProfiles.ts --write",
+    "db:sync-model-first": "tsx scripts/syncModelFirstFirm.ts",
+    "db:sync-model-first:write": "tsx scripts/syncModelFirstFirm.ts --write"
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "firebase": "^12.16.0",
+    "firebase-admin": "^14.2.0",
     "lucide-react": "^1.27.0",
-    "next": "16.2.12",
+    "next": "^16.3.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "tailwind-merge": "^3.6.0"
@@ -23,8 +29,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.12",
+    "eslint-config-next": "^16.3.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   }
 }

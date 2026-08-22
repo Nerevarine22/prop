@@ -3,55 +3,41 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { LayoutDashboard, Percent, Activity, LogOut, ShieldCheck, ExternalLink } from 'lucide-react';
+import { LayoutDashboard, Percent, Activity, LogOut, ShieldCheck, ExternalLink, Database } from 'lucide-react';
 import { auth, isFirebaseConfigured } from '@/lib/firebase/config';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const [authenticated, setAuthenticated] = useState<boolean | null>(null);
+  const [authenticated, setAuthenticated] = useState<boolean | null>(() => {
+    if (pathname === '/admin/login') return true;
+    return isFirebaseConfigured ? null : false;
+  });
 
   useEffect(() => {
-    // Skip guard for login page
-    if (pathname === '/admin/login') {
-      setAuthenticated(true);
-      return;
-    }
+    if (pathname === '/admin/login') return;
 
     if (isFirebaseConfigured) {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
           setAuthenticated(true);
         } else {
-          // Check session fallback
-          const isSessionAuth = sessionStorage.getItem('prophub_admin_auth') === 'true';
-          if (isSessionAuth) {
-            setAuthenticated(true);
-          } else {
-            setAuthenticated(false);
-            router.push('/admin/login');
-          }
+          setAuthenticated(false);
+          router.replace('/admin/login');
         }
       });
       return () => unsubscribe();
-    } else {
-      const isSessionAuth = sessionStorage.getItem('prophub_admin_auth') === 'true';
-      if (isSessionAuth) {
-        setAuthenticated(true);
-      } else {
-        setAuthenticated(false);
-        router.push('/admin/login');
-      }
     }
+
+    router.replace('/admin/login?reason=not-configured');
   }, [pathname, router]);
 
   const handleLogout = async () => {
-    sessionStorage.removeItem('prophub_admin_auth');
     if (isFirebaseConfigured) {
       await signOut(auth);
     }
-    router.push('/admin/login');
+    router.replace('/admin/login');
   };
 
   if (pathname === '/admin/login') {
@@ -108,6 +94,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             >
               <Percent className="h-4 w-4 text-amber-400" />
               <span>Verified Deals</span>
+            </Link>
+
+            <Link
+              href="/admin/database"
+              className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-colors ${
+                pathname === '/admin/database' ? 'bg-zinc-800 text-white' : 'text-zinc-400 hover:bg-zinc-900 hover:text-zinc-200'
+              }`}
+            >
+              <Database className="h-4 w-4 text-sky-400" />
+              <span>Research Database</span>
             </Link>
 
             <Link
