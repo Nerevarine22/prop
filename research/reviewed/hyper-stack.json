@@ -1,0 +1,1939 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-hyper-stack",
+  "slug": "hyper-stack",
+  "name": "Hyper Stack",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "evaluation"
+  ],
+  "offerNames": [
+    "Vanta-powered 1-Step"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Legal, Compliance, and Jurisdictional Data",
+          "paragraphs": [
+            "Traders participate as independent contractors. This classification is critical, as it removes the project from the realm of traditional brokerage or investment management. Final eligibility for a Scaled Account is not a right earned by hitting a profit target, but a discretionary invitation issued by Vanta. Consequently, the stated \"Rules\" serve as the minimum technical requirements for consideration, not a guarantee of a contract or payout. KYC and a signed ICA are mandatory prerequisites for any reward eligibility."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trading Permissions and Constraints",
+          "paragraphs": [
+            "The environment provides broad latitude for various trading methodologies, which is indicative of a focus on performance outcomes rather than style restrictions:\n• News Trading: Permitted. Participants are not restricted from trading during high-volatility economic releases.\n• Weekend/Overnight Holding: Permitted. There is no requirement to flatten positions before market closes.\n• Algorithmic/Bot Trading: Permitted. The use of EAs and automated strategies is allowed within the simulated environment.\n• Documented Gaps: There is currently no data regarding maximum position limits (lot size constraints), leverage ratios, or the permissibility of copy-trading services."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Table Key:",
+          "paragraphs": [
+            "• EOD Trailing: The drawdown floor trails the account high-water mark based on the balance recorded at the end of the trading day.\n• USDC-only: All financial interactions—including entry fees paid to Vanta and performance rewards—are settled via USDC."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers",
+          "paragraphs": [
+            "The following table details the account tiers available through the Vanta infrastructure. All entry costs represent one-time fees paid to Vanta."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Detailed Rule Mechanics",
+          "paragraphs": [
+            "The Hyper Stack evaluation phase is governed by specific risk parameters that dictate account longevity and success.\n• Intraday Daily-Loss Limit (5%): This is a hard-breach limit calculated as 5% of the account's starting value for the current trading day. \n• *Technical Note:* The source context does not explicitly define whether this is based on \"Starting Balance\" or \"Starting Equity.\" For the purposes of this analysis, this remains a technical ambiguity that could affect traders holding significant floating PnL across day-breaks. \n• EOD Trailing-Loss Limit (5%): This functions as a trailing maximum drawdown based on the account's \"high-water mark\" at the end of each trading day (EOD). As the account realizes profits and increases its EOD balance, the breach level trails upward. If the account equity falls 5% below this trailing high-water mark, the account is terminated.\n• Profit Target (10%): The net simulated gain required to qualify for the next stage of the lifecycle.\n• Inactivity Rule (30 Days): An account is subject to immediate elimination (hard breach) if no trading activity is recorded for 30 consecutive days. This serves as a \"soft\" time limit, requiring active engagement without a fixed deadline for the profit target."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle",
+          "paragraphs": [
+            "The transition from a prospective participant to a compensated contractor is a non-linear process governed by the following sequence:\n• Entry: The participant purchases a simulated evaluation challenge. All fees are denominated and paid exclusively in USDC directly to Vanta.\n• Evaluation: The participant engages in a Vanta-powered \"one-step\" challenge. This is a simulated environment designed to test risk management and strategy consistency.\n• Validation: Success is defined by reaching a 10% profit target relative to the initial simulated capital while adhering to all drawdown and inactivity constraints.\n• Transition: Unlike retail-focused marketing might suggest, passing the evaluation does not grant automatic access to a funded state. Instead, successful participants enter a discretionary invitation phase. Advancement is contingent upon Vanta’s approval, successful KYC/AML screening, and the execution of a separate Independent Contractor Agreement (ICA).\n• Compensation: Once onboarded as an independent contractor, participants are eligible for monthly rewards based on the simulated performance of their \"Scaled Account,\" settled on-chain."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Operating Model and Project Identity",
+          "paragraphs": [
+            "Hyper Stack utilizes a bifurcated operating model that distinguishes between the brand’s marketing front-end and the technical back-end infrastructure. Under this framework, Hyper Stack acts strictly as an authorized marketing partner, while Vanta serves as the \"Operator\" and primary counterparty.",
+            "From an operational and risk perspective, this creates a clear division of responsibility. Hyper Stack manages the project’s identity and user acquisition, but Vanta maintains absolute control over the simulated trading environment, the validation of results, and all financial flows. Participants should note the significant counterparty risk inherent in this structure: all entry fees are paid directly to Vanta, and Vanta holds the ultimate discretionary authority over eligibility decisions and reward distributions. There is no direct contractual relationship between the trader and Hyper Stack regarding the execution of the evaluation or the settlement of performance rewards."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Evaluation",
+              "note": "1 documented offer",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyper_stack",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$1K–$100K",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyper_stack",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "$0–$999",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyper_stack",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "90%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyper_stack",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "5%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyper_stack",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "conditional",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyper_stack",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "simulated",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/terms"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/terms",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/terms"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/terms",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "simulated",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/hyper_stack",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/terms",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "ND",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/terms"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/terms",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "funded activation",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/terms"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/terms",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "Simulated",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/terms"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/terms",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Evaluations & pricing",
+      "title": "Evaluations & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "one-step",
+              "eyebrow": "Evaluation",
+              "title": "Vanta-powered 1-Step",
+              "description": "Elimination after 30 inactive days.",
+              "facts": [
+                {
+                  "id": "one-step-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 10% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$1K · $0 | $5K · $74 | $10K · $135 | $25K · $309 | $50K · $579 | $100K · $999",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "trailing daily",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-split",
+                  "label": "Funded split",
+                  "value": "90%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/rules",
+                    "https://www.hyperstack.trade/",
+                    "https://www.hyperstack.trade/terms"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/terms",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-refund",
+                  "label": "Fee refundable",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-time-limit",
+                  "label": "No time limit",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyperstack.trade/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.hyperstack.trade"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution, Custody, and Payout Mechanics",
+          "paragraphs": [
+            "It must be emphasized that all trading occurs within a simulated execution environment. No capital is deployed into live markets; instead, payouts are generated based on the performance data recorded in the virtual account.\n• Reward Distribution: Qualified contractors retain 90% of the simulated profit (90/10 split).\n• Payout Cycle: Rewards are calculated and distributed on a 30-day (monthly) cycle.\n• Currency & Settlement: Settlements are conducted on-chain via USDC, categorized as independent-contractor compensation for services rendered (performance data generation).\n• Scaling & Bonuses:\n• Scaling: To increase the account size, a trader must achieve a 5% quarterly return while maintaining a Sharpe ratio greater than 1.\n• Quarterly Bonus: A bonus of 25% of realized PnL is available for traders achieving a 2% quarterly return with a Sharpe ratio greater than 1."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "90%",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "conditional",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/terms"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules",
+                "https://www.hyperstack.trade/",
+                "https://www.hyperstack.trade/terms"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USDC",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules",
+                "https://www.hyperstack.trade/",
+                "https://www.hyperstack.trade/terms"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules",
+                "https://www.hyperstack.trade/",
+                "https://www.hyperstack.trade/terms"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules",
+                "https://www.hyperstack.trade/",
+                "https://www.hyperstack.trade/terms"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules",
+                "https://www.hyperstack.trade/",
+                "https://www.hyperstack.trade/terms"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules",
+                "https://www.hyperstack.trade/",
+                "https://www.hyperstack.trade/terms"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/terms",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Terms are canonical for eligibility: passing does not guarantee a Scaled Trader invitation or compensation; a separate ICA and KYC are required. Rules describe a monthly 90/10 reward when eligible.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyperstack.trade/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyperstack.trade/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Rewards are denominated in USDC; no official proprietary token, points or airdrop was established.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions",
+          "paragraphs": [
+            "The following operational details are missing from the ledger and should be treated as unknown:\n• Asset Coverage: Specific supported markets (e.g., FX pairs, specific cryptos, or indices) are not listed.\n• Leverage: The maximum allowable leverage for simulated positions is undisclosed.\n• Geographic Restrictions: There is no documentation regarding prohibited jurisdictions or sanctioned regions.\n• Position Limits: Maximum allowable open interest or lot size constraints per instrument are not defined."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Documented Conflicts",
+          "paragraphs": [
+            "The most significant conflict identified is the discrepancy between marketing narrative and legal reality:\n• The Marketing Claim: Promotion materials suggest that hitting the 10% profit target \"activates a scaled account immediately\" with \"automatic\" rewards.\n• The Legal Reality: The Terms of Service state that reaching the target \"does not guarantee\" an invitation to a Scaled Account. Vanta retains absolute discretion to deny an invitation or withhold compensation regardless of performance, necessitating a separate, manual onboarding process (ICA/KYC)."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Sources Used",
+          "paragraphs": [
+            "• Hyper Stack Official Website and Rulebook.\n• Vanta-Hyper Stack Pricing and Checkout Portals.\n• Platform FAQ and Legal Terms of Service."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences-notice",
+          "type": "notice",
+          "tone": "warning",
+          "text": "1 official-source difference is resolved and preserved with both URLs.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyper_stack",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/terms",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyperstack.trade/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "hyper-stack-scaled-account-entitlement",
+              "eyebrow": "Resolved · terms preferred",
+              "title": "Scaled-account invitation and rewards",
+              "description": "Terms are canonical because no formal rulebook resolves the entitlement language; marketing remains an alternate.",
+              "facts": [
+                {
+                  "id": "hyper-stack-scaled-account-entitlement-canonical",
+                  "label": "Canonical",
+                  "value": "Terms state passing does not guarantee a Scaled Trader invitation or compensation; invitation is at Vanta’s discretion and requires a separate ICA/KYC.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/hyper_stack",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/terms",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "hyper-stack-scaled-account-entitlement-alternate",
+                  "label": "Alternate",
+                  "value": "Marketing states hitting the target activates a scaled account immediately and qualified participants receive automatic on-chain USDC rewards every 30 days, keeping 90%.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/hyper_stack",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/terms",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyperstack.trade/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://www.hyperstack.trade/terms"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://www.hyperstack.trade/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "hyper-stack-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://www.hyperstack.trade",
+              "description": "The website links @hyper_stack.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/hyper_stack"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyper-stack-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "Vanta-powered simulated one-step challenge: 10% target, 5% intraday daily-loss limit, 5% EOD trailing-loss limit, no fixed time limit, but elimination after 30 inactive days. News, weekend and algorithmic trading are allowed.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyperstack.trade/rules"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyper-stack-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "Official FAQ covers the challenge, scaled accounts and rewards, KYC, platform mechanics and trading fees.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyperstack.trade/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyper-stack-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "$1K/$0, $5K/$74, $10K/$135, $25K/$309, $50K/$579 and $100K/$999; fees are paid to Vanta in USDC.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyperstack.trade/pricing"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyper-stack-terms-5",
+              "eyebrow": "terms · reported",
+              "title": "Terms identify the challenge as a simulated Vanta evaluation. Hyperstack is an authorized marketing partner; Vanta operates the challenge, receives payments and decides eligibility.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyperstack.trade/terms"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyper-stack-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "Rules state a monthly payout cycle and 90/10 split of eligible performance rewards, paid as independent-contractor compensation based on simulated performance.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyperstack.trade/rules"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyper-stack-payoutPolicy-7",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Marketing states hitting the target activates a scaled account immediately and qualified participants receive automatic on-chain USDC rewards every 30 days, keeping 90%.",
+              "description": "Terms make invitation and compensation discretionary.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyperstack.trade/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyper-stack-payoutPolicy-8",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Terms state passing does not guarantee a Scaled Trader invitation or compensation; invitation is at Vanta’s discretion and requires a separate ICA/KYC.",
+              "description": "Marketing advertises immediate activation and automatic rewards.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyperstack.trade/terms"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyper-stack-tokenRewards-9",
+              "eyebrow": "tokenRewards · reported",
+              "title": "Rewards are USDC performance compensation, not a proprietary token. Scaling requires a 5% quarterly return and Sharpe above 1; a 25% realized-PnL quarterly bonus is documented at 2% return and Sharpe above 1.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyperstack.trade/rules"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "evaluation"
+    ],
+    "capital": {
+      "status": "varies",
+      "min": 1000,
+      "max": 100000,
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyper_stack",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/terms",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "varies",
+      "min": 0,
+      "max": 999,
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyper_stack",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/terms",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 90,
+      "max": 90,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyper_stack",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/terms",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "known",
+      "min": 5,
+      "max": 5,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyper_stack",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/terms",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "conditional"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyper_stack",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/terms",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "known",
+      "values": [
+        "simulated"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyper_stack",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/terms",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [
+    {
+      "id": "hyper-stack-scaled-account-entitlement",
+      "field": "payoutPolicy",
+      "label": "Scaled-account invitation and rewards",
+      "kind": "official-source-mismatch",
+      "status": "resolved",
+      "resolutionBasis": "terms-preferred",
+      "canonical": {
+        "value": "Terms state passing does not guarantee a Scaled Trader invitation or compensation; invitation is at Vanta’s discretion and requires a separate ICA/KYC.",
+        "observationId": "hyper-stack-payoutPolicy-8",
+        "sourceUrl": "https://www.hyperstack.trade/terms",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "Marketing advertises immediate activation and automatic rewards."
+      },
+      "alternates": [
+        {
+          "value": "Marketing states hitting the target activates a scaled account immediately and qualified participants receive automatic on-chain USDC rewards every 30 days, keeping 90%.",
+          "observationId": "hyper-stack-payoutPolicy-7",
+          "sourceUrl": "https://www.hyperstack.trade/",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Terms make invitation and compensation discretionary."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "Terms are canonical because no formal rulebook resolves the entitlement language; marketing remains an alternate."
+    }
+  ],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "hyper-stack-operating-model",
+      "label": "Operating model",
+      "value": "evaluation",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyper_stack",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/terms",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "hyper-stack-model-summary",
+      "label": "How the model works",
+      "value": "Hyper Stack utilizes a bifurcated operating model that distinguishes between the brand’s marketing front-end and the technical back-end infrastructure. Under this framework, Hyper Stack acts strictly as an authorized marketing partner, while Vanta serves as the \"Operator\" and primary counterparty.\n\nFrom an operational and risk perspective, this creates a clear division of responsibility. Hyper Stack manages the project’s identity and user acquisition, but Vanta maintains absolute control over the simulated trading environment, the validation of results, and all financial flows. Participants should note the significant counterparty risk inherent in this structure: all entry fees are paid directly to Vanta, and Vanta holds the ultimate discretionary authority over eligibility decisions and reward distributions. There is no direct contractual relationship between the trader and Hyper Stack ",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyper_stack",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/terms",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyperstack.trade/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "hyper-stack-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "The transition from a prospective participant to a compensated contractor is a non-linear process governed by the following sequence:\n• Entry: The participant purchases a simulated evaluation challenge. All fees are denominated and paid exclusively in USDC directly to Vanta.\n• Evaluation: The participant engages in a Vanta-powered \"one-step\" challenge. This is a simulated environment designed to test risk management and strategy consistency.\n• Validation: Success is defined by reaching a 10% profit target relative to the initial simulated capital while adhering to all drawdown and inactivity constraints.\n• Transition: Unlike retail-focused marketing might suggest, passing the evaluation does not grant automatic access to a funded state. Instead, successful participants enter a discretionary invitation phase. Advancement is contingent upon Vanta’s approval, successful KYC/AML screening, and the execution of a separate Independent Contractor Agreement (ICA).\n• Compensation: Once onboarded as an independent contractor, participants are eligible for monthly rewards based on the simulated performance of their \"Scaled Account,\" settled on-chain.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/hyper_stack",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyperstack.trade/rules",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyperstack.trade/faq",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyperstack.trade/pricing",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyperstack.trade/terms",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyperstack.trade/",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/hyper_stack",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The website links @hyper_stack."
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://www.hyperstack.trade/rules",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "faq",
+      "url": "https://www.hyperstack.trade/faq",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "pricing-checkout",
+      "url": "https://www.hyperstack.trade/pricing",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://www.hyperstack.trade/terms",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Marketing advertises immediate activation and automatic rewards."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://www.hyperstack.trade/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Terms make invitation and compensation discretionary."
+    }
+  ]
+}

@@ -35,6 +35,12 @@ yarn-error.log*
 # env & key files
 .env*
 serviceAccountKey.json
+/.venv-notebooklm/
+/.notebooklm/
+/research/notebooklm/runs/
+/research/notebooklm/manifests/*.local.json
+__pycache__/
+*.py[cod]
 
 # vercel
 .vercel

@@ -1,0 +1,2271 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-vanta-trading",
+  "slug": "vanta-trading",
+  "name": "Vanta Trading",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "evaluation"
+  ],
+  "offerNames": [
+    "One-Step"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Legal, Jurisdiction, and Compliance",
+          "paragraphs": [
+            "• Entity: Taoshi VT Services, a Cayman Islands exempted company.\n• KYC/AML: Identity verification is facilitated through Stripe and is mandatory for Scaled Account activation.\n• Geographic Restrictions: Access is denied to residents of \"Prohibited Jurisdictions\" subject to comprehensive sanctions (OFAC, UK, EU, UN).",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution Architecture and Trading Conditions",
+          "paragraphs": [
+            "Trading is executed through the Vanta Trading Desk, utilizing institutional-grade data feeds to simulate realistic market friction.",
+            "*Note: Equity Spot financing is calculated at midnight UTC for both long (interest) and short (borrow) positions.*",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Operational Parameters:",
+          "paragraphs": [
+            "• Permitted: Manual/Algorithmic trading (proprietary only), news trading, overnight holding, and weekend holding (subject to market hours).\n• Prohibited: Third-party copy trading, multi-account strategy correlation, and usage of Material Nonpublic Information (MNPI).",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Leverage Caps (Buying Power Multiples)",
+          "paragraphs": [
+            "Vanta enforces a strictly tiered leverage system across asset classes."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers Table",
+          "paragraphs": [
+            "The following table reflects primary pricing from the \"Official Pricing Checkout\" data.",
+            "¹ *Note: A discrepancy exists regarding the Kickstarter target; see Section 9.*\n• All Markets Coverage: Every tier grants access to 1,000+ instruments across Crypto, Forex, Commodities, Indices, and Equities.\n• Static vs. Trailing: Unlike \"Trailing Drawdown\" models that tighten risk as the trader profits, Vanta's static model ensures the risk floor remains locked at the inception basis.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Detailed Evaluation Rules and Drawdown Mechanics",
+          "paragraphs": [
+            "Vanta employs a Static Drawdown Model, an institutional-grade risk framework where loss limits remain fixed relative to the starting balance and do not trail realized profits. This provides a growing \"equity cushion\" as the account appreciates.\n• Rule 1: Static Balance Loss Limit (5%): The absolute account balance must never drop more than 5% below the initial starting balance.\n• *Example:* On a $100,000 account, the hard floor is $95,000. If the balance grows to $115,000, the floor remains $95,000.\n• Rule 2: Static Equity Loss Limit EOD Check (5%): Account equity, including unrealized floating PnL, is assessed daily at 12:00 AM UTC. Equity must remain above the 5% hard floor.\n• *Example:* A $100,000 account with an open position must show equity > $95,000 during the UTC midnight snapshot.\n• Activity Mandates:\n• Temporal Constraints: No minimum or maximum trading days are enforced.\n• Dormancy Clause: To prevent infrastructure bloat, traders must execute at least one trade within 60 days of account activation.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Identity and Operating Model",
+          "paragraphs": [
+            "Vanta Trading utilizes an infrastructure-centric monetization strategy, pivoting away from the traditional \"Broker\" model that relies on participant attrition. Instead, the platform functions as a sophisticated performance evaluation gateway, leveraging participant-generated alpha as high-fidelity data inputs for proprietary signal replication within live financial markets.\n• Architectural Duality: The ecosystem is bifurcated between the centralized Vanta Trading UI, which manages user onboarding and account administration, and Subnet 8 (the Network). Subnet 8 is a decentralized layer built on the Bittensor protocol, where independent Validators log execution and verify performance metrics to ensure an immutable record of trader proficiency.\n• Monetization via Signal Harvesting: Vanta's value proposition is centered on the extraction of high-quality trading signals. By aggregating performance data through decentralized infrastructure, Vanta informs proprietary models that are copy-traded in institutional environments, allowing for a 100% profit-split model for the traders themselves.",
+            "> [CAUTIONARY NOTE: SIMULATED ASSETS DISCLOSURE]\n> All trading activities on the Vanta Trading Desk utilize \"Simulated Assets\" exclusively. These digital representations possess no real-world monetary value or legal tender status. Participants do not deposit, stake, or risk personal capital at any stage of the evaluation or scaling process.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Evaluation",
+              "note": "1 documented offer",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/VantaTrading",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$1K–$100K",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/VantaTrading",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "$0–$999",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/VantaTrading",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "100%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/VantaTrading",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "5%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/VantaTrading",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "weekly",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/VantaTrading",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "simulated",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/terms-of-service"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/terms-of-service"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "simulated",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/VantaTrading",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "Taoshi VT Services",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "Cayman Islands",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/terms-of-service"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "funded activation",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/terms-of-service"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "Simulated",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/terms-of-service"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Evaluations & pricing",
+      "title": "Evaluations & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Leverage Tier Mapping",
+          "paragraphs": [
+            "Traders are assigned to leverage tiers based on their account status and current simulated capital allocation."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "one-step",
+              "eyebrow": "Evaluation",
+              "title": "One-Step",
+              "description": "Formal rules are canonical for the 10% target and weekly 100% reward policy.",
+              "facts": [
+                {
+                  "id": "one-step-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 10% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/rules",
+                    "https://www.vantatrading.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$1K · $0 | $5K · $74 | $10K · $135 | $25K · $309 | $50K · $579 | $100K · $999",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/rules",
+                    "https://www.vantatrading.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/rules",
+                    "https://www.vantatrading.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "trailing daily",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/rules",
+                    "https://www.vantatrading.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-split",
+                  "label": "Funded split",
+                  "value": "100%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/rules",
+                    "https://www.vantatrading.io/terms-of-service"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-time-limit",
+                  "label": "No time limit",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.vantatrading.io/rules",
+                    "https://www.vantatrading.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.vantatrading.io"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle: From Entry to Compensation",
+          "paragraphs": [
+            "The transition from participant to compensated network trader is governed by a strictly defined, five-stage lifecycle involving coordinated actions between the trader, the platform, and the decentralized network.\n• Entry (Registration): The trader selects a tier and remits a one-time \"Challenge Entry Fee.\" \n• *Party Responsible:* Trader (Payment), Vanta (Infrastructure access), and Stripe/NowPayments (Processing).\n• Evaluation (The One-Step Challenge): The trader must achieve a 10% profit target while adhering to risk caps. \n• *Party Responsible:* Trader (Execution) and Subnet 8 Validators (Performance logging).\n• Activation (Scaled Transition): Upon validation of results, the trader transitions to the \"Network Trader Program.\" This is a discretionary invitation requiring a separate Independent Contractor Agreement (ICA).\n• *Party Responsible:* Vanta (Discretionary invitation and ICA administration) and Stripe (KYC verification).\n• Trading & Risk (Simulated Execution): Continuous trading in a scaled environment with automated enforcement of static drawdown parameters.\n• *Party Responsible:* Trader (Ongoing execution) and Vanta Trading Desk (Automated risk enforcement).\n• Compensation (Reward Cycle): Weekly distribution of rewards based on realized simulated PnL.\n• *Party Responsible:* Subnet 8 Validators (On-chain reward calculation) and Vanta (USD disbursement via Stripe).",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "100%",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.vantatrading.io/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "weekly",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.vantatrading.io/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "$0",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.vantatrading.io/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/rules",
+                "https://www.vantatrading.io/terms-of-service"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/rules",
+                "https://www.vantatrading.io/terms-of-service"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/rules",
+                "https://www.vantatrading.io/terms-of-service"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/rules",
+                "https://www.vantatrading.io/terms-of-service"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/rules",
+                "https://www.vantatrading.io/terms-of-service"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Formal rules are canonical: immediate Scaled Account activation and rewards every seven days at a 100% split with no minimum. Terms qualifications remain a resolved discrepancy.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Reward Mechanics, Scaling, and Bonuses",
+          "paragraphs": [
+            "• Weekly Rewards: 100% profit split based on realized simulated PnL, verified on the public Bittensor ledger and distributed in USD via Stripe every 7 days.\n• 2X Rewards Event: A promotional incentive doubling payouts to 200%, ending Sunday at 23:59 UTC or upon exhaustion of the $200,000 pool.\n• Quarterly Scaling: High performers (5% return + 1.0 Sharpe Ratio) are eligible for quarterly capital allocation increases. The path scales from a $5k base up to a $2.5M cap. (Kickstarter accounts are excluded).\n• Quarterly Bonus: An additional 25% realized PnL bonus is awarded for achieving a 2% return and a 1.0 Sharpe Ratio within the quarter.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/2x-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/2x-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/2x-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/2x-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/2x-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/2x-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.vantatrading.io/2x-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Finite $200,000 2X Rewards pool and quarterly 25% realized-PnL bonus; proprietary token, points and airdrop are ND.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-13",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions:",
+          "paragraphs": [
+            "• Percentile Benchmarks: The specific \"percentile-based metrics\" required for quarterly scaling remain undefined in the public documentation.\n• Processing Timelines: The platform identifies a transition from manual to automatic payout processing but has not disclosed the definitive timeline for this migration."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-12",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Critical Conflicts & Discrepancies:",
+          "paragraphs": [
+            "• Pricing Discrepancy: The \"Official Pricing Checkout\" lists Tier entries from $49 to $599, whereas internal promotional ledgers document a lower $24 to $299 range. The higher pricing tier is currently enforced at checkout.\n• The Activation Conflict: While the Rulebook promises \"immediate activation\" after evaluation, the Terms of Service state that passing is \"necessary but not sufficient,\" with final invitation to the program at the platform’s \"sole discretion.\"\n• The Kickstarter Target Conflict: The live homepage displays an 8% profit target for Kickstarter accounts, but the Rulebook, FAQ, and Pricing pages mandate a 10% target for all tiers.\n• Reward Verification Conflict: Marketing materials cite \"guaranteed rewards\" due to decentralized ledger verification. However, the legal Terms of Service classify all payout descriptions as \"informational only,\" creating no binding obligation."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Sources, Conflicts, and Unresolved Questions",
+          "paragraphs": [
+            "Sources Analyzed: Official Vanta Rulebook (v2026), Terms of Service (Feb 10, 2026), FAQ, Pricing Checkout Portal, and Research Ledger."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences-notice",
+          "type": "notice",
+          "tone": "warning",
+          "text": "2 official-source differences are resolved and preserved with both URLs.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/VantaTrading",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "vanta-trading-profit-target",
+              "eyebrow": "Resolved · rulebook preferred",
+              "title": "One-step profit target",
+              "description": "The rulebook and FAQ 10% target is canonical; the homepage 8% Kickstarter card remains an alternate.",
+              "facts": [
+                {
+                  "id": "vanta-trading-profit-target-canonical",
+                  "label": "Canonical",
+                  "value": "Rules and FAQ state a 10% one-step target across tiers, two static 5% loss limits, no time limit or minimum days and a 60-day initial activity requirement.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/VantaTrading",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "vanta-trading-profit-target-alternate",
+                  "label": "Alternate",
+                  "value": "The live homepage Kickstarter $1K card displays an 8% target and 5% maximum drawdown.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/VantaTrading",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://www.vantatrading.io/rules"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://www.vantatrading.io/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "vanta-trading-scaled-account-payouts",
+              "eyebrow": "Resolved · rulebook preferred",
+              "title": "Scaled-account activation and payouts",
+              "description": "The formal rules are canonical under the selected methodology; the Terms disclaimer remains visible.",
+              "facts": [
+                {
+                  "id": "vanta-trading-scaled-account-payouts-canonical",
+                  "label": "Canonical",
+                  "value": "Rules say a Scaled Account activates immediately after passing; rewards are paid every seven days at a 100% split with no minimum and on-chain verification. FAQ says an entitled payout cannot be denied.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/VantaTrading",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "vanta-trading-scaled-account-payouts-alternate",
+                  "label": "Alternate",
+                  "value": "Terms state passing does not guarantee Network Trader invitation; invitation is discretionary and requires a separate ICA. Website payout, split, scaling, bonus and timeline descriptions are informational only.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/VantaTrading",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://www.vantatrading.io/rules"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://www.vantatrading.io/terms-of-service"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "vanta-trading-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://www.vantatrading.io",
+              "description": "The official footer links @VantaTrading.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/VantaTrading"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "vanta-trading-rulebook-2",
+              "eyebrow": "rulebook · archived observation",
+              "title": "Rules and FAQ state a 10% one-step target across tiers, two static 5% loss limits, no time limit or minimum days and a 60-day initial activity requirement.",
+              "description": "The live homepage Kickstarter card displays an 8% target.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.vantatrading.io/rules"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "vanta-trading-rulebook-3",
+              "eyebrow": "rulebook · archived observation",
+              "title": "The live homepage Kickstarter $1K card displays an 8% target and 5% maximum drawdown.",
+              "description": "Pricing page, FAQ and rulebook display 10%.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.vantatrading.io/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "vanta-trading-faq-4",
+              "eyebrow": "faq · reported",
+              "title": "Official FAQ covers evaluation and scaled-account rules, KYC, leverage, permitted strategies, weekly rewards, pricing/payment methods, scaling and safety.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.vantatrading.io/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "vanta-trading-pricingCheckout-5",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "Current one-time fees: $1K/$9, $5K/$24 promo ($59 list), $10K/$39 ($99), $25K/$84 ($199), $50K/$159 ($349), $100K/$299 ($599). Cards/bank use Stripe and crypto uses NowPayments.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.vantatrading.io/pricing"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "vanta-trading-terms-6",
+              "eyebrow": "terms · reported",
+              "title": "Terms effective February 10, 2026 bind users to Taoshi VT Services in the Cayman Islands. Challenges use simulated assets; fees become non-refundable after opening; passing does not guarantee invitation to the separate Network Trader Program or ICA.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.vantatrading.io/terms-of-service"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "vanta-trading-payoutPolicy-7",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Rules say a Scaled Account activates immediately after passing; rewards are paid every seven days at a 100% split with no minimum and on-chain verification. FAQ says an entitled payout cannot be denied.",
+              "description": "Terms make invitation discretionary and payout economics informational.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.vantatrading.io/rules"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "vanta-trading-payoutPolicy-8",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Terms state passing does not guarantee Network Trader invitation; invitation is discretionary and requires a separate ICA. Website payout, split, scaling, bonus and timeline descriptions are informational only.",
+              "description": "Rulebook and FAQ state immediate activation and guaranteed weekly rewards.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.vantatrading.io/terms-of-service"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "vanta-trading-tokenRewards-9",
+              "eyebrow": "tokenRewards · reported",
+              "title": "2X Rewards pays eligible Scaled-account rewards at 200% while a finite $200,000 pool remains; rules also document a quarterly 25% realized-PnL bonus. No proprietary trader token or airdrop is documented.",
+              "description": "Quarterly bonus source: https://www.vantatrading.io/rules.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.vantatrading.io/2x-rewards"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "evaluation"
+    ],
+    "capital": {
+      "status": "varies",
+      "min": 1000,
+      "max": 100000,
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/VantaTrading",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "varies",
+      "min": 0,
+      "max": 999,
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/VantaTrading",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 100,
+      "max": 100,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/VantaTrading",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "known",
+      "min": 5,
+      "max": 5,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/VantaTrading",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "weekly"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/VantaTrading",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "known",
+      "values": [
+        "simulated"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/VantaTrading",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [
+    {
+      "id": "vanta-trading-profit-target",
+      "field": "rulebook",
+      "label": "One-step profit target",
+      "kind": "page-vs-rulebook",
+      "status": "resolved",
+      "resolutionBasis": "rulebook-preferred",
+      "canonical": {
+        "value": "Rules and FAQ state a 10% one-step target across tiers, two static 5% loss limits, no time limit or minimum days and a 60-day initial activity requirement.",
+        "observationId": "vanta-trading-rulebook-2",
+        "sourceUrl": "https://www.vantatrading.io/rules",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "The live homepage Kickstarter card displays an 8% target."
+      },
+      "alternates": [
+        {
+          "value": "The live homepage Kickstarter $1K card displays an 8% target and 5% maximum drawdown.",
+          "observationId": "vanta-trading-rulebook-3",
+          "sourceUrl": "https://www.vantatrading.io/",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Pricing page, FAQ and rulebook display 10%."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "The rulebook and FAQ 10% target is canonical; the homepage 8% Kickstarter card remains an alternate."
+    },
+    {
+      "id": "vanta-trading-scaled-account-payouts",
+      "field": "payoutPolicy",
+      "label": "Scaled-account activation and payouts",
+      "kind": "page-vs-rulebook",
+      "status": "resolved",
+      "resolutionBasis": "rulebook-preferred",
+      "canonical": {
+        "value": "Rules say a Scaled Account activates immediately after passing; rewards are paid every seven days at a 100% split with no minimum and on-chain verification. FAQ says an entitled payout cannot be denied.",
+        "observationId": "vanta-trading-payoutPolicy-7",
+        "sourceUrl": "https://www.vantatrading.io/rules",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "Terms make invitation discretionary and payout economics informational."
+      },
+      "alternates": [
+        {
+          "value": "Terms state passing does not guarantee Network Trader invitation; invitation is discretionary and requires a separate ICA. Website payout, split, scaling, bonus and timeline descriptions are informational only.",
+          "observationId": "vanta-trading-payoutPolicy-8",
+          "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Rulebook and FAQ state immediate activation and guaranteed weekly rewards."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "The formal rules are canonical under the selected methodology; the Terms disclaimer remains visible."
+    }
+  ],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "vanta-trading-operating-model",
+      "label": "Operating model",
+      "value": "evaluation",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/VantaTrading",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "vanta-trading-model-summary",
+      "label": "How the model works",
+      "value": "Vanta Trading utilizes an infrastructure-centric monetization strategy, pivoting away from the traditional \"Broker\" model that relies on participant attrition. Instead, the platform functions as a sophisticated performance evaluation gateway, leveraging participant-generated alpha as high-fidelity data inputs for proprietary signal replication within live financial markets.\n• Architectural Duality: The ecosystem is bifurcated between the centralized Vanta Trading UI, which manages user onboarding and account administration, and Subnet 8 (the Network). Subnet 8 is a decentralized layer built on the Bittensor protocol, where independent Validators log execution and verify performance metrics to ensure an immutable record of trader proficiency.\n• Monetization via Signal Harvesting: Vanta's value proposition is centered on the extraction of high-quality trading signals. By aggregating perfor",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/VantaTrading",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "vanta-trading-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "The transition from participant to compensated network trader is governed by a strictly defined, five-stage lifecycle involving coordinated actions between the trader, the platform, and the decentralized network.\n• Entry (Registration): The trader selects a tier and remits a one-time \"Challenge Entry Fee.\" \n• *Party Responsible:* Trader (Payment), Vanta (Infrastructure access), and Stripe/NowPayments (Processing).\n• Evaluation (The One-Step Challenge): The trader must achieve a 10% profit target while adhering to risk caps. \n• *Party Responsible:* Trader (Execution) and Subnet 8 Validators (Performance logging).\n• Activation (Scaled Transition): Upon validation of results, the trader transitions to the \"Network Trader Program.\" This is a discretionary invitation requiring a separate Independent Contractor Agreement (ICA).\n• *Party Responsible:* Vanta (Discretionary invitation and ICA administration) and Stripe (KYC verification).\n• Trading & Risk (Simulated Execution): Continuous trading in a scaled environment with automated enforcement of static drawdown parameters.\n• *Party Responsible:* Trader (Ongoing execution) and Vanta Trading Desk (Automated risk enforcement).\n• Compensati",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/VantaTrading",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.vantatrading.io/rules",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.vantatrading.io/",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.vantatrading.io/faq",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.vantatrading.io/pricing",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.vantatrading.io/terms-of-service",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.vantatrading.io/2x-rewards",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/VantaTrading",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The official footer links @VantaTrading."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://www.vantatrading.io/rules",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Terms make invitation discretionary and payout economics informational."
+    },
+    {
+      "category": "rulebook",
+      "url": "https://www.vantatrading.io/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Pricing page, FAQ and rulebook display 10%."
+    },
+    {
+      "category": "faq",
+      "url": "https://www.vantatrading.io/faq",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "pricing-checkout",
+      "url": "https://www.vantatrading.io/pricing",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://www.vantatrading.io/terms-of-service",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Rulebook and FAQ state immediate activation and guaranteed weekly rewards."
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://www.vantatrading.io/2x-rewards",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Quarterly bonus source: https://www.vantatrading.io/rules."
+    }
+  ]
+}

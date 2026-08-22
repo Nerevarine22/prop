@@ -1,0 +1,1754 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-propr",
+  "slug": "propr",
+  "name": "Propr",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "evaluation"
+  ],
+  "offerNames": [
+    "Classic 1-Step",
+    "Turbo 1-Step",
+    "Classic 2-Step"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Governance and Institutional Context",
+          "paragraphs": [
+            "• Legal Compliance: Propr is unavailable in Russia, OFAC-sanctioned countries, and the Crimea/Donetsk/Luhansk regions of Ukraine.\n• Account Caps: Maximum aggregate funded limit of $300,000.\n• Organizational Pedigree: Developed by startup studio XBorg and backed by SwissBorg (AUM $2B+). The team includes former risk quants from Credit Suisse and crypto leads from Rothschild & Co."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle",
+          "paragraphs": [
+            "The journey from applicant to funded trader is structured into four distinct phases:\n• Purchase: The trader selects an evaluation track and account size (ranging from $5,000 to $200,000). Upon payment, the account is activated.\n• Trade: The trader operates on a simulated account to reach a profit target. Propr distinguishes itself by imposing no time limits and no minimum trading day requirements.\n• Pass/Verification: Once the profit target is met, the evaluation is automatically passed. Prior to funded account activation, traders must complete a mandatory one-time Identity Verification (KYC) including government ID and a live selfie.\n• Funded Trading: The trader receives a funded account with the same starting balance as the evaluation. Profits generated here are eligible for on-demand payouts via USDC."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Identity and Operating Model",
+          "paragraphs": [
+            "Mission\nPropr is a next-generation, on-chain proprietary trading firm built exclusively on the Hyperliquid infrastructure. The project’s objective is to decentralize the \"prop firm\" model by providing skilled traders with access to simulated capital for trading cryptocurrency perpetual futures, equities, and commodities, with execution and payouts verified via the blockchain.",
+            "Core Operating Model\nThe firm utilizes a standardized \"Evaluation-to-Funded\" pipeline. Traders pay an upfront, non-refundable evaluation fee to access a challenge account. Upon reaching specific profit targets without breaching stringent equity-based risk parameters, the trader is transitioned to a funded account. In this stage, the trader is eligible for performance-based payouts, retaining 80% of realized profits while the firm provides the underlying liquidity.",
+            "Operational Philosophy\nPropr’s risk management is governed by a streamlined \"Two-Rule\" philosophy, focusing on Daily Loss and Maximum Drawdown limits. Unlike legacy prop firms that obscure execution data, Propr emphasizes \"Radical Transparency,\" utilizing a hybrid A-Book/B-Book model where trades and payouts are verifiable through on-chain data and public wallet addresses."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Evaluation",
+              "note": "3 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/ProprXYZ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$5K–$100K",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/ProprXYZ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "$25–$999",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/ProprXYZ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/ProprXYZ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "3%–8%",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/ProprXYZ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "on-demand",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/ProprXYZ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "hybrid",
+              "description": "Evaluation accounts are simulated; qualifying flow can be routed on-chain.",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "Hyperliquid",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "hybrid · on-chain settlement",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/ProprXYZ",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.propr.xyz/register-interest",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "Propr Limited",
+              "description": "Not a regulated broker or investment service",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "British Virgin Islands",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "funded activation",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "Simulated",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Evaluations & pricing",
+      "title": "Evaluations & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Program Architecture and Evaluation Tracks",
+          "paragraphs": [
+            "Propr offers four primary tracks, each catering to different risk profiles:\n• Classic 1-Step: Requires a 10% profit target with a 6% static drawdown.\n• Turbo 1-Step: A high-velocity track with a lower 9% profit target and a tighter 3% static drawdown. Note: While the Rulebook mentions sizes up to $200k, the v1.0.3 Changelog caps Turbo accounts at $100k.\n• Pro 1-Step: A balanced model requiring a 12% profit target with a 5% static drawdown.\n• Classic 2-Step: A dual-phase model. Step 1 requires a 5% target; Step 2 requires 10%. This track utilizes a 5% daily loss limit and an 8% trailing drawdown.",
+            "Account Scaling\nStandard account sizes include $5k, $10k, $25k, $50k, $100k, and $200k. The aggregate funded balance limit per trader is $300,000."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "classic-1-step",
+              "eyebrow": "Evaluation",
+              "title": "Classic 1-Step",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "classic-1-step-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 10% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-1-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $60 | $10K · $110 | $25K · $275 | $50K · $495 | $100K · $999",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-1-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "3%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-1-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "6%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-1-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-1-step-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-1-step-refund",
+                  "label": "Fee refundable",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-1-step-time-limit",
+                  "label": "No time limit",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.propr.xyz"
+                }
+              ]
+            },
+            {
+              "id": "turbo-1-step",
+              "eyebrow": "Evaluation",
+              "title": "Turbo 1-Step",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "turbo-1-step-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 9% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-1-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $25 | $10K · $50 | $25K · $125 | $50K · $245 | $100K · $450",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-1-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "3%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-1-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "3%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-1-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-1-step-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-1-step-refund",
+                  "label": "Fee refundable",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-1-step-time-limit",
+                  "label": "No time limit",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.propr.xyz"
+                }
+              ]
+            },
+            {
+              "id": "classic-2-step",
+              "eyebrow": "Evaluation",
+              "title": "Classic 2-Step",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "classic-2-step-stages",
+                  "label": "Stages",
+                  "value": "Phase 1 · 5% target → Phase 2 · 10% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-2-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $50 | $10K · $100 | $25K · $250 | $50K · $450 | $100K · $749",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-2-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-2-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "8%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-2-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "trailing high water mark",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-2-step-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-2-step-refund",
+                  "label": "Fee refundable",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-2-step-time-limit",
+                  "label": "No time limit",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.propr.xyz/rules"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.propr.xyz/rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.propr.xyz"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trading",
+      "tabLabel": "Trading rules",
+      "title": "Trading rules",
+      "description": "Unknown values remain ND and are not interpreted as allowed or restricted.",
+      "blocks": [
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution and On-Chain Custody",
+          "paragraphs": [
+            "Propr operates a hybrid execution model to manage firm-wide delta risk and capital efficiency.",
+            "Analytical Insight: The hybrid model allows Propr to optimize its revenue stream. B-booking is typically used to manage \"toxic flow\" or capture the spread on low-edge traders (maximizing revenue from unsuccessful participants), while A-booking is reserved for high-conviction traders or to offset aggregate directional exposure that exceeds the firm's internal risk thresholds. ",
+            "Execution Factors: Discretionary factors for B-booking include current market liquidity, aggregate exposure across all funded traders, and internal capital pool utilization.",
+            "Venue Integration:\n• Hyperliquid: Primary venue for perps.\n• Polymarket: Utilized for prediction markets. Note that Prediction Markets represent a separate account type with distinct mechanics not covered in the standard Hyperliquid rulebook."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trading Permissions and Strategy Restrictions",
+          "paragraphs": [
+            "Propr utilizes a \"Freedom of Strategy\" framework. Unlike competitors, it explicitly permits:\n• News Trading: No restrictions during market-moving events.\n• Holding Rules: Overnight and weekend holding is fully permitted.\n• Automated Trading: EAs, Bots, and API trading are allowed.\n• Structural Freedom: No Consistency Rules, No Profit Caps, and No Risk-per-trade rules.",
+            "Leverage Schedule\nTraders are granted asset-specific leverage caps that cannot be modified:",
+            "Prohibited Conduct\nViolations resulting in immediate termination include:\n• Opposite Hedging: Offsetting positions across accounts to \"game\" the evaluation.\n• Third-party Coordination: Colluding with other traders.\n• Account Cycling: Treating evaluations as lottery tickets via high-risk binary bets.\n• Technical Exploits: Latency arbitrage, tick sniping, or wash trading.\n• Drawdown Manipulation: Exploiting the payout/drawdown interaction on 2-Step accounts."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers Table",
+          "paragraphs": [
+            "*\\*Note: See Section 10 regarding $200k Turbo account availability.*\n• Start-of-day Balance: The snapshot taken at 00:00 UTC to determine the daily equity floor.\n• High Water Mark (HWM): The peak equity reached; used to trail the 2-Step drawdown limit."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Advanced Risk Mechanics: Equity Limits",
+          "paragraphs": [
+            "Risk enforcement is conducted in real-time based on account equity (including floating P&L) rather than realized balance.\n• Calculation Basis:\n• `Balance`: Realized P&L from closed positions.\n• `Equity`: `Balance + Unrealized (Floating) P&L`.\n• Maximum Daily Loss: Recalculated daily at 00:00 UTC. The limit is a percentage of the start-of-day balance (3% for 1-Step, 5% for 2-Step).\n• `Equity Floor = Start-of-day Balance - (Start-of-day Balance * Daily Loss %)`\n• The dollar value of this limit scales as the account grows or shrinks each day.\n• Maximum Drawdown (Static): Employed in 1-Step accounts. The floor is fixed at account inception and remains at that absolute dollar value regardless of account growth.\n• Maximum Drawdown (Trailing): Employed in 2-Step accounts. The floor trails the account’s High Water Mark (HWM), which includes floating P&L.\n• `Max Drawdown Equity Limit = HWM - (8% * Starting Balance)`\n• The trailing limit is capped at the starting balance; once the floor reaches the starting balance, it stops moving upward.\n• Breach Consequences: There is no grace period. If equity touches the calculated floor for even a millisecond, all positions are closed and the account is permanently terminated."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "trading-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "trading-weekend",
+              "label": "Weekend holding",
+              "value": "allowed",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-news",
+              "label": "News trading",
+              "value": "allowed",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-automation",
+              "label": "Automated trading",
+              "value": "allowed",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-copy",
+              "label": "Copy trading",
+              "value": "allowed",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-stop-loss",
+              "label": "Mandatory stop loss",
+              "value": "No",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-platforms",
+              "label": "Platforms",
+              "value": "Hyperliquid · Propr terminal",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-markets",
+              "label": "Markets",
+              "value": "Cryptocurrency perpetual futures",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-leverage",
+              "label": "Leverage",
+              "value": "BTC/ETH 25x · Major alts 10x · Other markets 2x–5x",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-consistency",
+              "label": "Consistency rule",
+              "value": "none",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-profit-day",
+              "label": "Profit-day definition",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-fees",
+              "label": "Trading fees",
+              "value": "Hyperliquid trading and funding fees apply.",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Payout and Compensation Mechanics",
+          "paragraphs": [
+            "• Profit Split: Flat 80% to the trader.\n• Withdrawal Parameters: On-demand requests via USDC, processed within 24 hours.\n• The \"Sweep\" Rule: Payouts require all positions to be closed. A payout triggers a full profit sweep, resetting the account balance to the initial funded amount.\n• 2-Step Reset: In 2-Step accounts, a payout reduces the HWM by the payout amount and resets the HWM to the starting balance, effectively resetting the trailing drawdown limit to its original starting level."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "on-demand",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "$20",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USDC",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "Within 24 hours",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "No",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/rules"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Full-balance USDC payout on demand.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/register-interest"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "$PROPR",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/register-interest"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "1,000,000,000",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/register-interest"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.propr.xyz/register-interest"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.propr.xyz/register-interest"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/register-interest"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "confirmed",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.propr.xyz/register-interest"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.propr.xyz/register-interest",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Fixed supply; 13% allocation reported for XBG stakers. Challenge-trader eligibility is ND.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Sources, Conflicts, and Unresolved Questions",
+          "paragraphs": [
+            "Data Contradictions\n• Minimum Payout: The Rulebook/FAQ specifies a $20 minimum, whereas the v1.0 Launch Changelog cites $50.\n• Turbo Account Size: Rulebook Section 02 lists a $200k Turbo account, but Changelog v1.0.3 explicitly states Turbo accounts are only available up to $100k.\n• Turbo Risk Param: One website graphic shows 4% Daily Loss for Turbo accounts, while the Rulebook and pricing tiers confirm 3%.\n• Market Specifics: The website markets Polymarket access, but the Rulebook lacks the specific technical risk parameters (leverage, drawdown) for prediction markets.",
+            "Unresolved Questions\nThe v1.0.1 Changelog notes a \"Scaling program\" is available, but no documentation exists regarding the requirements for balance increases or the criteria for firm-side capital expansion for top-tier traders."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/ProprXYZ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/rules",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.propr.xyz/register-interest",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "propr-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://www.propr.xyz",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/ProprXYZ"
+                }
+              ],
+              "meta": [
+                "2026-08-15T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "propr-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "Official Rulebook v1.0.5 documents Classic 1-Step, Turbo 1-Step and Classic 2-Step programs.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.propr.xyz/rules"
+                }
+              ],
+              "meta": [
+                "2026-08-15T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "propr-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "Rule explanations are incorporated into the official rulebook; no separate FAQ page was located.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.propr.xyz/rules"
+                }
+              ],
+              "meta": [
+                "2026-08-15T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "propr-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "Rulebook lists $5K-$100K tiers and program-specific fees.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.propr.xyz/rules"
+                }
+              ],
+              "meta": [
+                "2026-08-15T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "propr-terms-5",
+              "eyebrow": "terms · reported",
+              "title": "Legal entity, KYC, restricted jurisdictions and simulated-account disclosures are documented in the rulebook.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.propr.xyz/rules"
+                }
+              ],
+              "meta": [
+                "2026-08-15T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "propr-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "80% split; on-demand full-balance USDC payout; $20 minimum; stated processing within 24 hours.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.propr.xyz/rules"
+                }
+              ],
+              "meta": [
+                "2026-08-15T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "propr-tokenRewards-7",
+              "eyebrow": "tokenRewards · reported",
+              "title": "Project reports 1B fixed $PROPR supply and 13% allocation to XBG stakers; challenge-trader eligibility is not documented.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.propr.xyz/register-interest"
+                }
+              ],
+              "meta": [
+                "2026-08-15T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "evaluation"
+    ],
+    "capital": {
+      "status": "varies",
+      "min": 5000,
+      "max": 100000,
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/ProprXYZ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/register-interest",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "varies",
+      "min": 25,
+      "max": 999,
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/ProprXYZ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/register-interest",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 80,
+      "max": 80,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/ProprXYZ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/register-interest",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "varies",
+      "min": 3,
+      "max": 8,
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/ProprXYZ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/register-interest",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "on-demand"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/ProprXYZ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/register-interest",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "varies",
+      "values": [
+        "hybrid",
+        "on-chain settlement"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/ProprXYZ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/register-interest",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "propr-operating-model",
+      "label": "Operating model",
+      "value": "evaluation",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/ProprXYZ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/register-interest",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "propr-model-summary",
+      "label": "How the model works",
+      "value": "Mission\nPropr is a next-generation, on-chain proprietary trading firm built exclusively on the Hyperliquid infrastructure. The project’s objective is to decentralize the \"prop firm\" model by providing skilled traders with access to simulated capital for trading cryptocurrency perpetual futures, equities, and commodities, with execution and payouts verified via the blockchain.\n\nCore Operating Model\nThe firm utilizes a standardized \"Evaluation-to-Funded\" pipeline. Traders pay an upfront, non-refundable evaluation fee to access a challenge account. Upon reaching specific profit targets without breaching stringent equity-based risk parameters, the trader is transitioned to a funded account. In this stage, the trader is eligible for performance-based payouts, retaining 80% of realized profits while the firm provides the underlying liquidity.\n\nOperational Philosophy\nPropr’s risk management is ",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/ProprXYZ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/rules",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.propr.xyz/register-interest",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "propr-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "The journey from applicant to funded trader is structured into four distinct phases:\n• Purchase: The trader selects an evaluation track and account size (ranging from $5,000 to $200,000). Upon payment, the account is activated.\n• Trade: The trader operates on a simulated account to reach a profit target. Propr distinguishes itself by imposing no time limits and no minimum trading day requirements.\n• Pass/Verification: Once the profit target is met, the evaluation is automatically passed. Prior to funded account activation, traders must complete a mandatory one-time Identity Verification (KYC) including government ID and a live selfie.\n• Funded Trading: The trader receives a funded account with the same starting balance as the evaluation. Profits generated here are eligible for on-demand payouts via USDC.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/ProprXYZ",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.propr.xyz/rules",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.propr.xyz/register-interest",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/ProprXYZ",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://www.propr.xyz/rules",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://www.propr.xyz/register-interest",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    }
+  ]
+}

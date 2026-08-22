@@ -1,0 +1,2619 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-hypernova",
+  "slug": "hypernova",
+  "name": "Hypernova",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "evaluation"
+  ],
+  "offerNames": [
+    "Tight Risk",
+    "Low Risk",
+    "Medium Risk",
+    "High Risk"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Legal, Compliance, and Residency",
+          "paragraphs": [
+            "• Legal Entity: Hypernova Systems, headquartered in Grand Cayman, Cayman Islands.\n• Eligibility: 18+ years of age with full legal capacity.\n• Restricted Jurisdictions: No service for residents/nationals of OFAC-sanctioned regions, specifically Iran, North Korea, Cuba, Syria, and Russia. VPN circumvention is strictly prohibited.\n• Compliance: KYC verification is mandatory for all funded account activations and payout settlements."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Prohibited Conduct:",
+          "paragraphs": [
+            "• Cross-Account Hedging: Opposing positions across different Hypernova or third-party accounts.\n• Third-Party Copy Trading: Mirroring signals from social media or off-the-shelf \"assessment passing\" strategies.\n• Strategy Switching: Materially changing trading approaches between assessment and funding phases.\n• Non-Replicable Strategies: Exploiting the simulator through auto-deleveraging risks or pricing anomalies.\n• Liquidity Provider Harm: Any conduct that jeopardizes relationships with upstream liquidity sources."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Explicitly Permitted Conduct:",
+          "paragraphs": [
+            "• Full access to 140+ markets (79 Crypto, 61 TradFi).\n• News trading and 24/7 weekend holding.\n• Algorithmic trading via Expert Advisors (EAs) or custom bots.\n• No consistency rules or minimum trading day requirements."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trading Permissions and Strategy Restrictions",
+          "paragraphs": [
+            "Hypernova adopts a \"guardrail-only\" philosophy, allowing significant freedom within its two equity limits."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Parameter Legend:",
+          "paragraphs": [
+            "• Drawdown Floor ($): `Starting Balance * (1 - Max Drawdown %)`. An absolute value the account equity must never touch.\n• Daily Loss ($): `00:00 UTC Balance Snapshot * (Daily Loss %)`. Sets the dynamic floor for the current 24-hour window."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers",
+          "paragraphs": [
+            "The following table synthesizes the risk tiers and account configurations available within the protocol.",
+            "*Note: Refer to Section 9 for fee discrepancies.*"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Technical Risk Framework and Rule Mechanics",
+          "paragraphs": [
+            "The protocol's risk engine enforces two primary equity floors to manage unrealized P&L volatility.",
+            "Nuance on Measurement: While breaches are enforced in real-time by the risk engine, the documentation notes that drawdown is measured on closed equity at the end-of-day for certain reporting purposes. A breach results in immediate position liquidation and permanent account termination with no reset or appeal options."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Entry and Evaluation Pathways",
+          "paragraphs": [
+            "Hypernova provides two primary onboarding rails for capital allocation:\n• 1-Step Assessment: A streamlined evaluation requiring traders to meet a balance-based profit target without breaching equity-based risk limits.\n• Fast Track: A bypass mechanism for established traders. By connecting trading history from external venues—including Binance, Bybit, or Hyperliquid—participants receive a trading score. Qualifying scores allow traders to skip the evaluation phase entirely.",
+            "Fee Policy: Assessment fees are one-time charges with no recurring platform or data costs. Fees are strictly non-refundable once the sub-account is activated."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle",
+          "paragraphs": [
+            "The participant journey is structured to identify and scale high-alpha strategies through three distinct phases:\n• Entry and Evaluation: Participants enter via a \"1-step assessment\" or the \"Fast Track\" program.\n• Funded Stage: Upon reaching the profit target, traders receive a funded account. While the profit target is removed, the risk parameters—specifically the Daily Loss and Max Drawdown limits—carry over unchanged from the evaluation to ensure strategy consistency.\n• Scale Up Program: Top-performing traders are reviewed for the \"funding ladder,\" which facilitates progression from initial sizes (e.g., $25k) to $200k and eventually to a Scale Up tier. This program includes monthly cash grants and priority access to new features as a reward for realized performance."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Profile and Operating Model",
+          "paragraphs": [
+            "Hypernova is a permissionless proprietary trading protocol architected on the Hyperliquid L1. Currently operating in a Closed Beta / Invite Only status, the project distinguishes itself by anchoring rule enforcement, trader state data, and payout reserves directly to blockchain smart contracts. This \"on-chain\" approach ensures that risk parameters are governed by a latency-sensitive risk engine rather than manual desk reviews.",
+            "The protocol utilizes a simulated trading environment. Participants interact with accounts that mirror live market conditions with liquidity sourced from Hyperliquid, though they do not trade \"real money.\" Hypernova maintains the right to utilize trader-generated signals for its central book; traders are notified in-app if their signals are being utilized for live execution."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Evaluation",
+              "note": "4 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/HypernovaX",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$25K",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/HypernovaX",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "$120–$365",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/HypernovaX",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/HypernovaX",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "3%–8%",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/HypernovaX",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "on-demand",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/HypernovaX",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/#pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "simulated",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/docs/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook",
+                    "https://hypernova.xyz/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "simulated · on-chain settlement",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/HypernovaX",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "Hypernova Systems",
+              "description": "Not a brokerage, investment or custodial account",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "Cayman Islands",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/docs/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/docs/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "Simulated",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/docs/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Evaluations & pricing",
+      "title": "Evaluations & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "tight",
+              "eyebrow": "Evaluation",
+              "title": "Tight Risk",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "tight-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 9% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "tight-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$25K · $120",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/#pricing",
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "tight-daily-loss",
+                  "label": "Daily loss",
+                  "value": "3%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "tight-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "3%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "tight-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "tight-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook",
+                    "https://hypernova.xyz/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "tight-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/#pricing",
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "tight-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://hypernova.xyz"
+                }
+              ]
+            },
+            {
+              "id": "low",
+              "eyebrow": "Evaluation",
+              "title": "Low Risk",
+              "description": "Rulebook v1.1 is canonical for the $25K fee ($280); the homepage $275 card is retained as a resolved discrepancy.",
+              "facts": [
+                {
+                  "id": "low-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 10% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "low-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$25K · $280",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/#pricing",
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "low-daily-loss",
+                  "label": "Daily loss",
+                  "value": "3%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "low-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "6%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "low-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "low-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook",
+                    "https://hypernova.xyz/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "low-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/#pricing",
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "low-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://hypernova.xyz"
+                }
+              ]
+            },
+            {
+              "id": "medium",
+              "eyebrow": "Evaluation",
+              "title": "Medium Risk",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "medium-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 10% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "medium-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$25K · $365",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/#pricing",
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "medium-daily-loss",
+                  "label": "Daily loss",
+                  "value": "4%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "medium-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "7%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "medium-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "medium-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook",
+                    "https://hypernova.xyz/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "medium-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/#pricing",
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "medium-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://hypernova.xyz"
+                }
+              ]
+            },
+            {
+              "id": "high",
+              "eyebrow": "Evaluation",
+              "title": "High Risk",
+              "description": "Restricted tier.",
+              "facts": [
+                {
+                  "id": "high-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 10% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "high-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/#pricing",
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "high-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "high-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "8%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "high-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "high-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook",
+                    "https://hypernova.xyz/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "high-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/#pricing",
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "high-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://hypernova.xyz/rulebook"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://hypernova.xyz"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution Architecture and Payout Mechanics",
+          "paragraphs": [
+            "The protocol’s stack is designed for trustless settlement latency. \n• Architecture: Hypernova provides a typed REST + WebSocket API and open SDKs (TypeScript/Python) for low-latency market data and programmatic order routing.\n• Settlement Path: Funds are held in a public \"Payout Reserve\" (Cold Reserve + Operational Vault). Smart contracts execute payouts 24/7 in USDC without manual intervention.\n• 80% Profit Split: Traders retain 80% of generated profit. During payout, 100% of the profit is removed from the account (80% to trader, 20% to Hypernova), returning the account balance to its starting point.\n• Conditions: No minimum payout amount and no waiting periods. Average processing time is documented at 6.1 seconds."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "sourceUrls": [
+                "https://hypernova.xyz/rulebook",
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "on-demand",
+              "status": "reported",
+              "sourceUrls": [
+                "https://hypernova.xyz/rulebook",
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/rulebook",
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USDC",
+              "status": "reported",
+              "sourceUrls": [
+                "https://hypernova.xyz/rulebook",
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/rulebook",
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/rulebook",
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/rulebook",
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/rulebook",
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/rulebook",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Rulebook reports average processing under 0.02 seconds; the exact value is kept as text rather than converted into an invented hour value.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://hypernova.xyz/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://hypernova.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Monthly cash grants, additional funding and priority feature access are reported; token, points and airdrop are ND.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-14",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions:",
+          "paragraphs": [
+            "• High Risk Tier: Exact eligibility criteria and fee structures for \"eligible users\" remain TBD.\n• Talent Scaling: Specifics regarding \"improved profit splits\" for top-tier performers are not yet published.\n• Market Selection: The specific \"markets package\" selection process and how it limits the tradable universe per user is currently undefined."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-13",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Documented Conflicts:",
+          "paragraphs": [
+            "• Payout Latency: The Rulebook (Section 10) claims processing under 0.02 seconds, while the Website and FAQ cite an average of 6.1 seconds.\n• Low Risk Pricing: The Pricing Comparison table lists the $25k Low Risk fee at $275, whereas the Rulebook fee schedule lists it at $280.\n• Payout Correction (v1.0.1): Documentation previously implied a $50k account with $6k profit would reset to $51,200; this was corrected to $50,000 to reflect the full distribution of the 20% platform share."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-12",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Official Sources:",
+          "paragraphs": [
+            "• Hypernova FAQ, Rulebook (v1.1), Pricing/Checkout, Terms of Use, and Official Website."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences-notice",
+          "type": "notice",
+          "tone": "warning",
+          "text": "2 official-source differences are resolved and preserved with both URLs.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/HypernovaX",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/rulebook",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/#pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://hypernova.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "hypernova-low-risk-fee",
+              "eyebrow": "Resolved · rulebook preferred",
+              "title": "$25K Low Risk fee",
+              "description": "Rulebook v1.1 price $280 is canonical; the homepage $275 card is retained as an alternate.",
+              "facts": [
+                {
+                  "id": "hypernova-low-risk-fee-canonical",
+                  "label": "Canonical",
+                  "value": "Rulebook v1.1 lists $25K Tight/Low/Medium fees at $120/$280/$365; complete schedules span $25-$800 Tight, $60-$1,850 Low and $80-$1,350 Medium, with some prices TBD.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/HypernovaX",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "hypernova-low-risk-fee-alternate",
+                  "label": "Alternate",
+                  "value": "Homepage lists $25K Tight/Low/Medium assessments at $120/$275/$365.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/HypernovaX",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://hypernova.xyz/rulebook"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://hypernova.xyz/#pricing"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hypernova-payout-speed",
+              "eyebrow": "Resolved · rulebook preferred",
+              "title": "Average payout processing speed",
+              "description": "The rulebook statement is canonical; the homepage live statistic remains dated evidence.",
+              "facts": [
+                {
+                  "id": "hypernova-payout-speed-canonical",
+                  "label": "Canonical",
+                  "value": "Rulebook states average payout processing under 0.02 seconds.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/HypernovaX",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "hypernova-payout-speed-alternate",
+                  "label": "Alternate",
+                  "value": "Homepage live statistics report an average payout time of 6.2 seconds.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/HypernovaX",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/rulebook",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/#pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://hypernova.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://hypernova.xyz/rulebook"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://hypernova.xyz/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "hypernova-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://hypernova.xyz",
+              "description": "The official site links @HypernovaX.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/HypernovaX"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hypernova-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "Rulebook v1.1 defines one-step $5K-$200K assessments. Tight/Low/Medium/High tiers use 9%/10%/10%/10% targets, 3%/3%/4%/5% daily loss and 3%/6%/7%/8% static max drawdown; High Risk is restricted.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://hypernova.xyz/rulebook"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hypernova-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "Official FAQ covers simulated trading, Fast Track, markets, payouts, scaling and verification of the on-chain reserve and stats.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://hypernova.xyz/#faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hypernova-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · archived observation",
+              "title": "Homepage lists $25K Tight/Low/Medium assessments at $120/$275/$365.",
+              "description": "Rulebook v1.1 lists Low Risk at $280.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://hypernova.xyz/#pricing"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hypernova-pricingCheckout-5",
+              "eyebrow": "pricingCheckout · archived observation",
+              "title": "Rulebook v1.1 lists $25K Tight/Low/Medium fees at $120/$280/$365; complete schedules span $25-$800 Tight, $60-$1,850 Low and $80-$1,350 Medium, with some prices TBD.",
+              "description": "Homepage lists $25K Low Risk at $275.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://hypernova.xyz/rulebook"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hypernova-terms-6",
+              "eyebrow": "terms · reported",
+              "title": "Terms identify Hypernova Systems in the Cayman Islands and define the service as a performance-based payout programme, not a brokerage, investment or custodial account.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://hypernova.xyz/docs/terms-of-use"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hypernova-payoutPolicy-7",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "Funded traders receive 80% of net profits. On-demand payouts require the account to be in profit, have no stated minimum or waiting period, and settle in USDC on-chain 24/7.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://hypernova.xyz/rulebook"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hypernova-payoutPolicy-8",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Homepage live statistics report an average payout time of 6.2 seconds.",
+              "description": "Rulebook states an average under 0.02 seconds.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://hypernova.xyz/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hypernova-payoutPolicy-9",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Rulebook states average payout processing under 0.02 seconds.",
+              "description": "Homepage reports 6.2 seconds.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://hypernova.xyz/rulebook"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hypernova-tokenRewards-10",
+              "eyebrow": "tokenRewards · reported",
+              "title": "Top performers are advertised as unlocking monthly cash grants, increased funding and priority feature access; no proprietary token, points or airdrop page was located.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://hypernova.xyz/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "evaluation"
+    ],
+    "capital": {
+      "status": "known",
+      "min": 25000,
+      "max": 25000,
+      "unit": "USD",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/HypernovaX",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/rulebook",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "varies",
+      "min": 120,
+      "max": 365,
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/HypernovaX",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/rulebook",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 80,
+      "max": 80,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/HypernovaX",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/rulebook",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "varies",
+      "min": 3,
+      "max": 8,
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/HypernovaX",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/rulebook",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "on-demand"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/HypernovaX",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/rulebook",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "varies",
+      "values": [
+        "simulated",
+        "on-chain settlement"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/HypernovaX",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/rulebook",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [
+    {
+      "id": "hypernova-low-risk-fee",
+      "field": "pricingCheckout",
+      "label": "$25K Low Risk fee",
+      "kind": "page-vs-rulebook",
+      "status": "resolved",
+      "resolutionBasis": "rulebook-preferred",
+      "canonical": {
+        "value": "Rulebook v1.1 lists $25K Tight/Low/Medium fees at $120/$280/$365; complete schedules span $25-$800 Tight, $60-$1,850 Low and $80-$1,350 Medium, with some prices TBD.",
+        "observationId": "hypernova-pricingCheckout-5",
+        "sourceUrl": "https://hypernova.xyz/rulebook",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "Homepage lists $25K Low Risk at $275."
+      },
+      "alternates": [
+        {
+          "value": "Homepage lists $25K Tight/Low/Medium assessments at $120/$275/$365.",
+          "observationId": "hypernova-pricingCheckout-4",
+          "sourceUrl": "https://hypernova.xyz/#pricing",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Rulebook v1.1 lists Low Risk at $280."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "Rulebook v1.1 price $280 is canonical; the homepage $275 card is retained as an alternate."
+    },
+    {
+      "id": "hypernova-payout-speed",
+      "field": "payoutPolicy",
+      "label": "Average payout processing speed",
+      "kind": "page-vs-rulebook",
+      "status": "resolved",
+      "resolutionBasis": "rulebook-preferred",
+      "canonical": {
+        "value": "Rulebook states average payout processing under 0.02 seconds.",
+        "observationId": "hypernova-payoutPolicy-9",
+        "sourceUrl": "https://hypernova.xyz/rulebook",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "Homepage reports 6.2 seconds."
+      },
+      "alternates": [
+        {
+          "value": "Homepage live statistics report an average payout time of 6.2 seconds.",
+          "observationId": "hypernova-payoutPolicy-8",
+          "sourceUrl": "https://hypernova.xyz/",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Rulebook states an average under 0.02 seconds."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "The rulebook statement is canonical; the homepage live statistic remains dated evidence."
+    }
+  ],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "hypernova-operating-model",
+      "label": "Operating model",
+      "value": "evaluation",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/HypernovaX",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/rulebook",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "hypernova-model-summary",
+      "label": "How the model works",
+      "value": "Hypernova is a permissionless proprietary trading protocol architected on the Hyperliquid L1. Currently operating in a Closed Beta / Invite Only status, the project distinguishes itself by anchoring rule enforcement, trader state data, and payout reserves directly to blockchain smart contracts. This \"on-chain\" approach ensures that risk parameters are governed by a latency-sensitive risk engine rather than manual desk reviews.\n\nThe protocol utilizes a simulated trading environment. Participants interact with accounts that mirror live market conditions with liquidity sourced from Hyperliquid, though they do not trade \"real money.\" Hypernova maintains the right to utilize trader-generated signals for its central book; traders are notified in-app if their signals are being utilized for live execution.",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/HypernovaX",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/rulebook",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/#pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://hypernova.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "hypernova-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "The participant journey is structured to identify and scale high-alpha strategies through three distinct phases:\n• Entry and Evaluation: Participants enter via a \"1-step assessment\" or the \"Fast Track\" program.\n• Funded Stage: Upon reaching the profit target, traders receive a funded account. While the profit target is removed, the risk parameters—specifically the Daily Loss and Max Drawdown limits—carry over unchanged from the evaluation to ensure strategy consistency.\n• Scale Up Program: Top-performing traders are reviewed for the \"funding ladder,\" which facilitates progression from initial sizes (e.g., $25k) to $200k and eventually to a Scale Up tier. This program includes monthly cash grants and priority access to new features as a reward for realized performance.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/HypernovaX",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://hypernova.xyz/rulebook",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://hypernova.xyz/#faq",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://hypernova.xyz/#pricing",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://hypernova.xyz/docs/terms-of-use",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://hypernova.xyz/",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/HypernovaX",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The official site links @HypernovaX."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://hypernova.xyz/rulebook",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Homepage reports 6.2 seconds."
+    },
+    {
+      "category": "faq",
+      "url": "https://hypernova.xyz/#faq",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "pricing-checkout",
+      "url": "https://hypernova.xyz/#pricing",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Rulebook v1.1 lists Low Risk at $280."
+    },
+    {
+      "category": "terms",
+      "url": "https://hypernova.xyz/docs/terms-of-use",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://hypernova.xyz/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    }
+  ]
+}

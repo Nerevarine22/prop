@@ -1,0 +1,671 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-polyquid",
+  "slug": "polyquid",
+  "name": "Polyquid",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "other"
+  ],
+  "offerNames": [],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Legal, KYC, and Ecosystem",
+          "paragraphs": [
+            "• Copyright: \"© 2026 Polyquid\" as listed on the landing page.\n• Entity Data: No registered legal entity name or jurisdiction is disclosed.\n• Compliance: No KYC (Know Your Customer) requirements or geographic restrictions are documented.\n• Ecosystem: No native tokens, points systems, or referral programs are currently identified in the sources."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Payout and Trader Compensation",
+          "paragraphs": [
+            "All mechanics regarding trader compensation are Not Disclosed in the available ledger and rulebook materials. Missing data points include:\n• Payout eligibility criteria and withdrawal cadence.\n• Profit-share percentages and minimum withdrawal thresholds.\n• Payment currency (e.g., USDC, native tokens) and processing timelines.\n• Presence or absence of treasury and reserve mechanics."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution and Custody",
+          "paragraphs": [
+            "• Primary Venues: Built on Hyperliquid & Polymarket.\n• Primary Technical Ambiguity: There is no disclosure regarding the integration architecture. It is unclear if execution occurs via a centralized sub-account architecture managed by the platform or through direct decentralized wallet connections with the trader.\n• Custody/Settlement: Specific wallet permissions, smart-contract components, and settlement paths between the platform and the underlying DEXs are currently undocumented."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trading Permissions and Restrictions",
+          "paragraphs": [
+            "The source context provides no documentation or technical specifications for the following categories:\n• News Trading: No stated restrictions or permissions.\n• Automation/API: No documentation regarding bot integration or API execution limits.\n• Copy Trading: No information on mirrored or social trading allowances.\n• Prohibited Strategies: No list of banned trading behaviors (e.g., latency arbitrage, hedging across accounts)."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers Table",
+          "paragraphs": [
+            "Note: While the \"One challenge\" program is the primary marketing claim, the underlying financial and risk parameters have not been released for technical review."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Rule Mechanics and Risk Parameters",
+          "paragraphs": [
+            "Audit of the official source material confirms that no specific risk parameters or performance requirements have been published. The following categories are strictly Not Disclosed:\n• Profit targets (percentage-based or absolute).\n• Maximum drawdown (trailing, daily, or static).\n• Calculation bases for equity or balance-based risk.\n• Reset conditions, attempt limits, or breach consequences."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trader Lifecycle: From Entry to Payout",
+          "paragraphs": [
+            "• Entry Phase: Public access is limited to \"Join the waitlist,\" \"Discord\" community entry, and following official \"X\" channels.\n• Evaluation Phase: Platform documentation identifies a singular \"One challenge\" system as the gateway to the \"Every market\" claim.\n• Post-Evaluation Phases: There is zero documentation regarding the transition from successful challenge completion to funded status.\n• Operational Void: Mechanics for capital allocation, risk enforcement protocols, and compensation distribution are not documented. The trader lifecycle currently terminates at the waitlist/community acquisition point."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Overview and Operating Model",
+          "paragraphs": [
+            "• Project Identification: Polyquid is categorized as a \"Prop Trading Challenge.\"\n• Current Status: As of the audit date 2026-08-16, the project is in a pre-operational waitlist phase.\n• Market Claims: Documentation explicitly states the platform provides access to \"Every market\" via its \"One challenge\" model.\n• Operational Infrastructure: The project identifies as \"Built on Hyperliquid & Polymarket.\" \n• Operating Model Ambiguity: The specific nature of the trading environment—specifically whether it utilizes simulated paper-trading or live capital—is currently not disclosed in available sources."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Other model",
+              "note": "0 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.polyquid.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "ND",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.polyquid.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "ND",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.polyquid.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "ND",
+              "note": "Profit split varies by offer or tier.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.polyquid.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "ND",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.polyquid.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "ND",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.polyquid.xyz/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "ND",
+              "description": "Official site positioning says one challenge and every market; rules and mechanics are ND.",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "Hyperliquid and Polymarket (marketing statement)",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.polyquid.xyz/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.polyquid.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.polyquid.xyz/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.polyquid.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "ND",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.polyquid.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "ND",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.polyquid.xyz/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.polyquid.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.polyquid.xyz/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.polyquid.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.polyquid.xyz/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.polyquid.xyz/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Offers & pricing",
+      "title": "Offers & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Program Offers and Tracks",
+          "paragraphs": [
+            "• Identified Program: \"Prop Trading Challenge.\"\n• Product Scope: Defined by the slogan \"One challenge Every market.\"\n• Track Differentiation: No tiered account structures, difficulty levels, or alternative funding routes are documented. \n• Baseline Status: The \"One challenge\" is the only documented offering; all specific parameters (e.g., account sizes) are currently absent."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "offers-nd",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "ND — no offer structure was documented in the inspected official sources.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-12",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions",
+          "paragraphs": [
+            "The following material technical and operational questions remain unanswered:\n• Cost/Benefit: What are the specific entry costs and profit targets for the \"One challenge\"?\n• Risk Metrics: What are the drawdown limits and the specific mathematical methods used for their calculation?\n• Architecture: Is the integration with Hyperliquid and Polymarket via API, or is it a direct smart-contract-based evaluation?\n• Legal Standing: Under which jurisdiction does the Polyquid entity operate, and what are the geographic exclusions?\n• Payment Rails: What is the specific payout currency and the expected timeframe for settlement?"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Conflicts",
+          "paragraphs": [
+            "The sources are consistent but non-substantive. There is a total alignment between the website and the \"Rulebook,\" as both serve solely to broadcast marketing slogans (\"One challenge Every market\") without providing the underlying operational framework."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Sources",
+          "paragraphs": [
+            "• Official Website: (polyquid.xyz) – Serves as a placeholder for waitlist acquisition.\n• Official Rulebook: Currently a marketing document; contains no regulatory or operational content and is verbatim identical to the landing page.\n• Research Ledger: Dated 2026-08-16; documents lack of terms, FAQ, and pricing tables."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://www.polyquid.xyz/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "polyquid-officialWebsite-1",
+              "eyebrow": "officialWebsite · reported",
+              "title": "https://www.polyquid.xyz",
+              "description": "The live waitlist site links @polyquid, but reciprocal X-to-site confirmation was unavailable; non-www returned HTTP 403.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.polyquid.xyz/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "polyquid-rulebook-2",
+              "eyebrow": "rulebook · ND",
+              "title": "ND",
+              "description": "The live waitlist only states One challenge / Every market / Built on Hyperliquid & Polymarket; no rules or risk parameters are published.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.polyquid.xyz/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "polyquid-faq-3",
+              "eyebrow": "faq · ND",
+              "title": "ND",
+              "description": "No FAQ link or FAQ content is present.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.polyquid.xyz/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "polyquid-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · ND",
+              "title": "ND",
+              "description": "Only waitlist, Discord and X actions are published; no price table or checkout is available.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.polyquid.xyz/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "polyquid-terms-5",
+              "eyebrow": "terms · ND",
+              "title": "ND",
+              "description": "No Terms, Privacy or legal page is linked, and no sitemap is published.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.polyquid.xyz/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "polyquid-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · ND",
+              "title": "ND",
+              "description": "No split, currency, minimum, cadence, eligibility rule or processing time is published.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.polyquid.xyz/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "polyquid-tokenRewards-7",
+              "eyebrow": "tokenRewards · ND",
+              "title": "ND",
+              "description": "No token, points, airdrop, referral or rewards-program page is published.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.polyquid.xyz/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "other"
+    ],
+    "capital": {
+      "status": "ND",
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.polyquid.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "ND",
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.polyquid.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "ND",
+      "unit": "percent",
+      "notes": "Profit split varies by offer or tier.",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.polyquid.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "ND",
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.polyquid.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "ND",
+      "values": [],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.polyquid.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "ND",
+      "values": [],
+      "evidence": [
+        {
+          "sourceUrl": "https://www.polyquid.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "polyquid-operating-model",
+      "label": "Operating model",
+      "value": "other",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.polyquid.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "polyquid-model-summary",
+      "label": "How the model works",
+      "value": "• Project Identification: Polyquid is categorized as a \"Prop Trading Challenge.\"\n• Current Status: As of the audit date 2026-08-16, the project is in a pre-operational waitlist phase.\n• Market Claims: Documentation explicitly states the platform provides access to \"Every market\" via its \"One challenge\" model.\n• Operational Infrastructure: The project identifies as \"Built on Hyperliquid & Polymarket.\" \n• Operating Model Ambiguity: The specific nature of the trading environment—specifically whether it utilizes simulated paper-trading or live capital—is currently not disclosed in available sources.",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.polyquid.xyz/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "polyquid-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "• Entry Phase: Public access is limited to \"Join the waitlist,\" \"Discord\" community entry, and following official \"X\" channels.\n• Evaluation Phase: Platform documentation identifies a singular \"One challenge\" system as the gateway to the \"Every market\" claim.\n• Post-Evaluation Phases: There is zero documentation regarding the transition from successful challenge completion to funded status.\n• Operational Void: Mechanics for capital allocation, risk enforcement protocols, and compensation distribution are not documented. The trader lifecycle currently terminates at the waitlist/community acquisition point.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://www.polyquid.xyz/",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "token-rewards",
+      "url": "https://www.polyquid.xyz/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "No token, points, airdrop, referral or rewards-program page is published."
+    }
+  ]
+}

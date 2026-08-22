@@ -34,6 +34,53 @@ function FactStatus({ status }: { status: FirmContentFact['status'] }) {
   return <em className={styles.factStatus} data-status={status}>{status}</em>;
 }
 
+function isUnknownFact(fact: FirmContentFact): boolean {
+  return fact.status === 'ND' || fact.value.trim().toUpperCase() === 'ND';
+}
+
+function UnknownFacts({ facts }: { facts: FirmContentFact[] }) {
+  if (!facts.length) return null;
+
+  return (
+    <details className={styles.unknownFacts}>
+      <summary>
+        <span>{facts.length} {facts.length === 1 ? 'value' : 'values'} not documented</span>
+        <small>Show fields</small>
+      </summary>
+      <ul>
+        {facts.map((fact) => <li key={fact.id}>{fact.label}</li>)}
+      </ul>
+    </details>
+  );
+}
+
+function EditorialParagraph({ text }: { text: string }) {
+  const startsWithBullet = /^\s*•/.test(text);
+  const parts = text.split(/\s*•\s*/).map((part) => part.trim()).filter(Boolean);
+
+  if (parts.length < 2) return <p>{text}</p>;
+
+  const intro = startsWithBullet ? '' : parts[0];
+  const items = startsWithBullet ? parts : parts.slice(1);
+  return (
+    <>
+      {intro && <p>{intro}</p>}
+      <ul className={styles.editorialList}>
+        {items.map((item, index) => {
+          const separator = item.indexOf(':');
+          if (separator < 1) return <li key={`${item}-${index}`}>{item}</li>;
+          return (
+            <li key={`${item}-${index}`}>
+              <strong>{item.slice(0, separator)}</strong>
+              <span>{item.slice(separator + 1).trim()}</span>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
+}
+
 function FactGrid({ block, showEvidence }: { block: Extract<FirmContentBlock, { type: 'fact-grid' }>; showEvidence: boolean }) {
   if (block.presentation === 'steps') {
     return (
@@ -52,26 +99,40 @@ function FactGrid({ block, showEvidence }: { block: Extract<FirmContentBlock, { 
     );
   }
 
+  const knownItems = block.items.filter((item) => !isUnknownFact(item));
+  const unknownItems = block.items.filter(isUnknownFact);
   const columnsClass = styles[`dynamicColumns${block.columns ?? 3}`] ?? '';
   const presentationClass = block.presentation === 'details' ? styles.modelDetails : '';
   return (
-    <div className={`${styles.profileFacts} ${columnsClass} ${presentationClass}`}>
-      {block.items.map((item) => (
-        <article key={item.id}>
-          <span>{item.label}</span>
-          <strong>{item.value}</strong>
-          {item.note && <p>{item.note}</p>}
-          <FactStatus status={item.status} />
-          {showEvidence && <EvidenceLinks evidence={item.evidence} id={item.id} />}
-        </article>
-      ))}
+    <div className={styles.factGroup}>
+      {!!knownItems.length && (
+        <div className={`${styles.profileFacts} ${columnsClass} ${presentationClass}`}>
+          {knownItems.map((item) => (
+            <article key={item.id}>
+              <span>{item.label}</span>
+              <strong>{item.value}</strong>
+              {item.note && <p>{item.note}</p>}
+              <FactStatus status={item.status} />
+              {showEvidence && <EvidenceLinks evidence={item.evidence} id={item.id} />}
+            </article>
+          ))}
+        </div>
+      )}
+      <UnknownFacts facts={unknownItems} />
     </div>
   );
 }
 
 function RecordFacts({ facts, showEvidence }: { facts: FirmContentFact[] | undefined; showEvidence: boolean }) {
   if (!facts?.length) return null;
-  return <dl>{facts.map((fact) => <div key={fact.id}><dt>{fact.label}</dt><dd><span>{fact.value}</span>{fact.note && <small>{fact.note}</small>}<FactStatus status={fact.status} />{showEvidence && <EvidenceLinks evidence={fact.evidence} id={fact.id} />}</dd></div>)}</dl>;
+  const knownFacts = facts.filter((fact) => !isUnknownFact(fact));
+  const unknownFacts = facts.filter(isUnknownFact);
+  return (
+    <>
+      {!!knownFacts.length && <dl>{knownFacts.map((fact) => <div key={fact.id}><dt>{fact.label}</dt><dd><span>{fact.value}</span>{fact.note && <small>{fact.note}</small>}<FactStatus status={fact.status} />{showEvidence && <EvidenceLinks evidence={fact.evidence} id={fact.id} />}</dd></div>)}</dl>}
+      <UnknownFacts facts={unknownFacts} />
+    </>
+  );
 }
 
 function RecordList({ block, showEvidence }: { block: Extract<FirmContentBlock, { type: 'record-list' }>; showEvidence: boolean }) {
@@ -86,14 +147,16 @@ function RecordList({ block, showEvidence }: { block: Extract<FirmContentBlock, 
         const safeLinks = showEvidence ? item.links?.filter((link) => isSafeExternalUrl(link.url)) ?? [] : [];
         const visibleMeta = block.presentation === 'tracks' ? [] : item.meta ?? [];
         const hasMeta = Boolean(visibleMeta.length || safeLinks.length);
+        const visibleTitle = item.title.trim().toUpperCase() === 'ND' ? '' : item.title;
+        const visibleDescription = item.description?.trim().toUpperCase() === 'ND' ? '' : item.description;
 
         return (
           <article key={item.id}>
             <div className={styles.recordHeader}>
               <div className={styles.recordIntro}>
                 {item.eyebrow && <span>{item.eyebrow}</span>}
-                <h3>{item.title}</h3>
-                {item.description && <p>{item.description}</p>}
+                {visibleTitle && <h3>{visibleTitle}</h3>}
+                {visibleDescription && <p>{visibleDescription}</p>}
               </div>
               {hasMeta && (
                 <div className={styles.recordMeta}>
@@ -114,8 +177,8 @@ function ContentBlock({ block, showEvidence }: { block: FirmContentBlock; showEv
   if (block.type === 'text') {
     return (
       <article className={styles.aboutFirm}>
-        <div>{block.eyebrow && <span>{block.eyebrow}</span>}{block.title && <h3>{block.title}</h3>}</div>
-        <div>{block.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{block.meta && <small>{block.meta}</small>}{showEvidence && <EvidenceLinks evidence={block.evidence} id={block.id} />}</div>
+        <header>{block.eyebrow && !/notebooklm research brief/i.test(block.eyebrow) && <span>{block.eyebrow}</span>}{block.title && <h3>{block.title}</h3>}</header>
+        <div>{block.paragraphs.map((paragraph) => <EditorialParagraph key={paragraph} text={paragraph} />)}{block.meta && <small>{block.meta}</small>}{showEvidence && <EvidenceLinks evidence={block.evidence} id={block.id} />}</div>
       </article>
     );
   }

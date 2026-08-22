@@ -1,0 +1,2313 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-cf-trader",
+  "slug": "cf-trader",
+  "name": "Crypto Fund Trader",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "evaluation",
+    "instant-funding"
+  ],
+  "offerNames": [
+    "2-Phase",
+    "1-Phase",
+    "Instant"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-23",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Corporate Governance and Compliance",
+          "paragraphs": [
+            "• Jurisdiction: SWISS RLCRATES AG is governed by the laws of the Canton of Zug, Switzerland.\n• KYC Requirements: Mandatory for all rewards. Requires Proof of Identity (Passport, ID, or License) and Proof of Address (Utility bill or bank statement).\n• Competitive Ranking (Season IV): A rewards program based on ELO points earned from passing phases and requesting payouts. Prizes include cash and TradingView subscriptions.\n• Regional Restrictions: MT5 is unavailable to US residents due to platform provider constraints."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-21",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Commission Structure (MT5 & Match-Trader)",
+          "paragraphs": [
+            "• Forex: $2.5 per lot per side.\n• Crypto: 0.0325% per side.\n• Indices: 0.005% per lot per side.\n• Commodities: 0.0005% per side.\n• Stocks: 0.002% per side."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-17",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Prohibited Activities",
+          "paragraphs": [
+            "• Technical Exploits: High-frequency trading (HFT), tick scalping, latency arbitrage, and exploiting data feed errors.\n• Account Sharing: Sharing credentials or operating multiple accounts from the same IP/VPS/Device.\n• Reverse Trading/Hedging: Opening opposite positions across different accounts or within the same account if the first position has been open for less than 24 hours.\n• Gambling Style: Strategies demonstrating a lack of risk management, such as \"all-in\" trades or excessive margin usage."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-16",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Allowed Activities",
+          "paragraphs": [
+            "• News Trading: Generally permitted in 1-Phase, 2-Phase, and 3-Phase evaluations.\n• Position Holding: Overnight and weekend holding is permitted for all instruments.\n• Copy-Trading: Permitted only during the evaluation phase of Break accounts and only between accounts owned by the same trader."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-12",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Key to Mechanics:",
+          "paragraphs": [
+            "• Daily Loss Reset: Calculated based on the account balance at 12:05 AM UTC.\n• Drawdown Breach Logic: All breaches are calculated based on real-time equity.\n• Trailing Drawdown Calculation: The High-Water Mark (HWM) is calculated based on closed balance, following the highest balance reached by the account.\n• Leverage Differentiation: Student accounts ($1k-$25k) are limited to 1:30 Forex (1:5 Crypto); Advanced accounts ($50k+) are provided 1:100 across all asset classes.\n• Add-on Pricing: \n• Weekly Scholarship Request: 20% of fee.\n• 90% Bonus Performance: 20% of fee.\n• Daily Drawdown 6%: 15% of fee.\n• Max Drawdown 12%: 25% of fee."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Instant Scaling Structure:",
+          "paragraphs": [
+            "• Target: 10% profit to double the account size.\n• Levels: $2,500 $\\rightarrow$ $5,000 $\\rightarrow$ $10,000 $\\rightarrow$ $20,000 $\\rightarrow$ $40,000 $\\rightarrow$ $80,000 $\\rightarrow$ $160,000 $\\rightarrow$ $320,000 $\\rightarrow$ $640,000 $\\rightarrow$ $1,280,000.\n• Profit Split: Starts at 50% (Level 1-3), 60% (Level 4), 70% (Level 5), 80% (Level 6), and 90% (Levels 7-10)."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Break Evaluation",
+          "paragraphs": [
+            "A unique track characterized by lower entry fees and higher profit targets ($1,250 for a $25k account). Progression to the Final Stage requires the payment of a specific \"Activation Fee\" after the evaluation is passed."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Ascend Evaluation",
+          "paragraphs": [
+            "A specialized track where passing two phases (8% and 5%) does not lead to a funded simulation, but instead triggers a fixed, one-time scholarship reward based on the initial account size."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Instant (0-Phase) Evaluation",
+          "paragraphs": [
+            "Direct entry into a reward-eligible stage with no preliminary evaluation. This track utilizes a scaling structure where the account balance doubles upon hitting a 10% profit target, up to $1,280,000."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "3-Phase Evaluation",
+          "paragraphs": [
+            "A progression-heavy model requiring the successful completion of three stages, each typically requiring a 5% profit target."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "1-Phase Evaluation",
+          "paragraphs": [
+            "The \"Accelerated\" path. It features a single stage with a 10% profit target. This track utilizes a trailing drawdown mechanic that becomes static once a specific profit threshold is reached."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "2-Phase Evaluation",
+          "paragraphs": [
+            "The standard multi-stage path. Traders must hit an 8% profit target in Phase 1 and a 5% target in Phase 2 to progress."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle",
+          "paragraphs": [
+            "Participants navigate a structured chronological path to reach eligibility for rewards:\n• Entry: The participant selects an evaluation package and pays a registration fee to access the training program.\n• Evaluation Phase: The trader must meet specific profit targets while adhering to risk management rules. Depending on the track, this involves 1, 2, or 3 distinct stages.\n• KYC and Contractual Audit: Upon passing the evaluation, the participant must complete a \"KYC Audit\" (Proof of Identity and Proof of Address) and sign an individual scholarship agreement with SWISS RLCRATES AG.\n• Final Stage: The trader enters a final simulation environment. Success here generates the performance-based scholarship rewards.\n• Payout Phase: Rewards are requested via the dashboard, subject to minimum trading day requirements or specific program cycles."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Key Corporate Entities:",
+          "paragraphs": [
+            "• SWISS RLCRATES AG: Headquartered in Zug, Switzerland. This is the primary service provider responsible for the platform's tools, general administration, and the distribution of scholarship rewards.\n• RLCRATES, S.L.: Based in Spain, this entity serves as the marketing and payment agent. Crucially, it is the specific provider of services related to the MetaTrader 5 (MT5) platform."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Overview and Operating Model",
+          "paragraphs": [
+            "Crypto Fund Trader (CFT) is an Evaluation Firm centered on financial education and simulated trading environments. The platform operates under a Scholarship Model, wherein the firm provides participants with access to demo capital to demonstrate trading proficiency. Rather than traditional investment returns or brokerage services, successful participants become eligible for performance-based rewards (educational scholarships) based on their simulated results."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Evaluation · Instant funding",
+              "note": "3 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/CFTradercom",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$2.5K–$200K",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/CFTradercom",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "$40–$1.3K",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/CFTradercom",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "ND",
+              "note": "Profit split varies by offer or tier.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/CFTradercom",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "6%–10%",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/CFTradercom",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "conditional",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/CFTradercom",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "simulated",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "simulated",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/CFTradercom",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "SWISS RLCRATES AG",
+              "description": "Education and simulated trading using demo funds",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "Zug, Switzerland",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "payout",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "Simulated",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Offers & pricing",
+      "title": "Offers & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "two-phase",
+              "eyebrow": "Evaluation",
+              "title": "2-Phase",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "two-phase-stages",
+                  "label": "Stages",
+                  "value": "Phase 1 · 8% target → Phase 2 · 5% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $58 | $200K · $1,250",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "10%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-time-limit",
+                  "label": "No time limit",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://cryptofundtrader.com"
+                }
+              ]
+            },
+            {
+              "id": "one-phase",
+              "eyebrow": "Evaluation",
+              "title": "1-Phase",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "one-phase-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 10% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-phase-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $40 | $200K · $1,199",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-phase-daily-loss",
+                  "label": "Daily loss",
+                  "value": "4%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-phase-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "6%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-phase-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "trailing high water mark",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-phase-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-phase-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-phase-time-limit",
+                  "label": "No time limit",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://cryptofundtrader.com"
+                }
+              ]
+            },
+            {
+              "id": "instant",
+              "eyebrow": "Instant funding",
+              "title": "Instant",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "instant-stages",
+                  "label": "Stages",
+                  "value": "Funded",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$2.5K · $125 | $10K · $475",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://cryptofundtrader.com/faq/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://cryptofundtrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://cryptofundtrader.com"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trading",
+      "tabLabel": "Trading rules",
+      "title": "Trading rules",
+      "description": "Unknown values remain ND and are not interpreted as allowed or restricted.",
+      "blocks": [
+        {
+          "id": "notebooklm-20",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Bybit Technical Requirements",
+          "paragraphs": [
+            "Traders must link their personal Bybit account via API Key and Subaccount. This link is immutable; deleting or modifying the API key results in automatic account invalidation. \n• Instrument Restriction: Restricted to USDT crypto futures/derivatives.\n• Exclusions: Trades placed on USDC pairs will not be counted toward targets. Spot and options trading are strictly prohibited."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-19",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Platform Execution and Technical Custody",
+          "paragraphs": [
+            "CFT provides three primary execution environments:\n• MetaTrader 5: Restricted for US residents; provided via RLCRATES, S.L.\n• Match-Trader: Available for US residents; web and mobile accessible.\n• Bybit: A crypto-native futures platform."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-18",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Ascend-Specific News Rule",
+          "paragraphs": [
+            "Traders in the Ascend track are subject to a 4-minute window restriction (2 minutes before and 2 minutes after) around high-impact news or market opens. During this window:\n• New trades cannot be opened.\n• Volume cannot be added to existing trades.\n• The maximum theoretical loss cannot exceed 2% of the initial balance.\n*Note: While the firm provides a weekly calendar, any event can be designated \"high-impact\" at the firm's discretion, and news restrictions apply regardless of calendar inclusion.*"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-15",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Gambling / All-In Trading Rule",
+          "paragraphs": [
+            "A hard cap of $10,000 in simulated profit is allowed per day or per individual trade. If this limit is exceeded, excess profit is deducted, and trades may be closed. This rule is calculated based on the balance at 12:10 AM UTC. It applies to the user profile holistically; multiple trades or partial closes within similar timeframes are treated as a single operation."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-14",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Break Consistency Rule",
+          "paragraphs": [
+            "In the Break Final Stage, no more than 40% of total profits may be generated in a single trading day. This rule is only checked at the time of a payout request. If a violation is found, the payout is rejected, and the trader must continue trading to distribute profits more evenly. The consistency check resets after every approved payout."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-13",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "1-Phase Trailing Drawdown Nuance",
+          "paragraphs": [
+            "The trailing drawdown is initially set at 6% of the initial balance. The HWM moves upward with the closed balance. However, once the trailing drawdown reaches the initial opening balance (typically after reaching a 6% profit), it becomes static. It no longer moves upward, providing the trader with more breathing room as profits continue to grow."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers",
+          "paragraphs": [
+            "*\\*Note: Fee extrapolated from Student Account scaling in Section 6 of Terms.*"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "trading-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "trading-weekend",
+              "label": "Weekend holding",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-news",
+              "label": "News trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-automation",
+              "label": "Automated trading",
+              "value": "restricted",
+              "status": "reported",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-copy",
+              "label": "Copy trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-stop-loss",
+              "label": "Mandatory stop loss",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-platforms",
+              "label": "Platforms",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-markets",
+              "label": "Markets",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-leverage",
+              "label": "Leverage",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-consistency",
+              "label": "Consistency rule",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-profit-day",
+              "label": "Profit-day definition",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-fees",
+              "label": "Trading fees",
+              "value": "HFT, tick scalping, latency/arbitrage and gambling-style trading are prohibited.",
+              "status": "reported",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "conditional",
+              "status": "reported",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USD · USDT · BTC · ETH",
+              "status": "reported",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "Within 8 hours",
+              "status": "reported",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/faq/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Standard request after at least 15 traded days or every 30 calendar days; weekly add-on after 7 traded days. Maximum stated processing is 48 business hours.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "notebooklm-22",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Scholarship Reward Mechanics",
+          "paragraphs": [
+            "• Eligibility: Standard cycle is 15 traded days or 30 calendar days. With the Weekly Payout add-on, eligibility is every 7 traded days.\n• Payout Methods: Bank transfer (EUR/USD via SEPA) or Crypto (USDT ERC20/TRC20, BTC, ETH).\n• Processing Time: Averages 8 hours; maximum of 48 business hours.\n• Suspended Account Payouts: Traders may receive 50% of simulated profits from a suspended 1-Phase or 2-Phase Final Stage account if:\n• All trades used a Stop Loss.\n• No trade exceeded 2% risk of the account size.\n• The account was active for at least 15 days."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/competitive-ranking/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/competitive-ranking/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/competitive-ranking/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/competitive-ranking/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "Competitive Ranking / ELO",
+              "status": "reported",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/competitive-ranking/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/competitive-ranking/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://cryptofundtrader.com/competitive-ranking/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Season ranking awards cash, evaluations, TradingView and custom titles; proprietary token and airdrop are ND.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-26",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions",
+          "paragraphs": [
+            "• High-Impact News Source: The specific external calendar provider (e.g., Forex Factory) used for definitive rule enforcement is not named.\n• HFT Numerical Definition: The exact \"trades per second\" or volume threshold that triggers an HFT breach remains qualitatively defined.\n• Scholarship Contract: The full text of the individual agreement signed before the Final Stage is not included in public documentation."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-25",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Conflict Resolution",
+          "paragraphs": [
+            "• Ascend Evaluation Fees: The Ledger lists the entry at $39, while the Pricing Checkout/Website lists it as $45. Users should expect the higher checkout price as the current active rate.\n• Break Evaluation Fees: The $50k Break Evaluation is listed at $139 in the pricing section but cited as $140 in the formal Terms (Section 5.6.6). \n• Instant Scaling: The website source indicates levels up to $1.28M, while the Ledger focuses on the $2.5k-$10k entry points."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-24",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Information Sources",
+          "paragraphs": [
+            "• Existing Research Ledger (Verified 2026-08-16)\n• Official Pricing Checkout (Terms & Conditions)\n• Official Rulebook (FAQ)\n• Official Token Rewards (Competitive Ranking)\n• Official Website Content"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/CFTradercom",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "cf-trader-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://cryptofundtrader.com",
+              "description": "The live official-site footer reciprocally links @CFTradercom; a stale structured-data X reference returns 404.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/CFTradercom"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "cf-trader-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "Official FAQ documents model-specific rules: 2-Phase targets 8% then 5%, 5% daily loss and 10% fixed overall loss; 1-Phase has a 10% target, 4% daily loss and 6% balance-based trailing drawdown. No maximum time limit or minimum trading days; HFT, tick scalping, latency/arbitrage and gambling-style trading are prohibited.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://cryptofundtrader.com/faq/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "cf-trader-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "Official FAQ covers evaluation stages, account rules, platforms, instruments, leverage, prohibited strategies, KYC and scholarship-reward withdrawals.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://cryptofundtrader.com/faq/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "cf-trader-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "Published account sizes depend on model and span $2,500-$200,000. Terms list 2-Phase fees of $58-$1,250 for $5K-$200K, 1-Phase fees of $40-$1,199 for $5K-$200K, and Instant fees of $125-$475 for $2.5K-$10K.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://cryptofundtrader.com/terms-and-conditions/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "cf-trader-terms-5",
+              "eyebrow": "terms · reported",
+              "title": "Official Terms identify SWISS RLCRATES AG in Zug and describe the service as education and simulated trading using demo funds; KYC and a signed contract are required before a performance-based scholarship reward can be processed.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://cryptofundtrader.com/terms-and-conditions/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "cf-trader-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "Standard final-stage scholarship rewards may be requested after at least 15 traded days or every 30 calendar days; the Weekly Payouts add-on permits every 7 traded days. KYC approval and closed trades are required. Methods include EUR/USD bank transfer, USDT ERC20/TRC20, BTC and ETH; stated processing averages about 8 hours with up to 48 business hours.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://cryptofundtrader.com/faq/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "cf-trader-tokenRewards-7",
+              "eyebrow": "tokenRewards · reported",
+              "title": "Competitive Ranking awards ELO for successful trades, passed phases and scholarship requests. Displayed Season IV prizes include cash, Ascend evaluations, TradingView Essential and custom titles. No proprietary token or airdrop is documented on this rewards page.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://cryptofundtrader.com/competitive-ranking/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "evaluation",
+      "instant-funding"
+    ],
+    "capital": {
+      "status": "varies",
+      "min": 2500,
+      "max": 200000,
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/CFTradercom",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "varies",
+      "min": 40,
+      "max": 1250,
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/CFTradercom",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "ND",
+      "unit": "percent",
+      "notes": "Profit split varies by offer or tier.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/CFTradercom",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "varies",
+      "min": 6,
+      "max": 10,
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/CFTradercom",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "conditional"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/CFTradercom",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "known",
+      "values": [
+        "simulated"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/CFTradercom",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "cf-trader-operating-model",
+      "label": "Operating model",
+      "value": "evaluation · instant funding",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/CFTradercom",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "cf-trader-model-summary",
+      "label": "How the model works",
+      "value": "Crypto Fund Trader (CFT) is an Evaluation Firm centered on financial education and simulated trading environments. The platform operates under a Scholarship Model, wherein the firm provides participants with access to demo capital to demonstrate trading proficiency. Rather than traditional investment returns or brokerage services, successful participants become eligible for performance-based rewards (educational scholarships) based on their simulated results.",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/CFTradercom",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "cf-trader-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "Participants navigate a structured chronological path to reach eligibility for rewards:\n• Entry: The participant selects an evaluation package and pays a registration fee to access the training program.\n• Evaluation Phase: The trader must meet specific profit targets while adhering to risk management rules. Depending on the track, this involves 1, 2, or 3 distinct stages.\n• KYC and Contractual Audit: Upon passing the evaluation, the participant must complete a \"KYC Audit\" (Proof of Identity and Proof of Address) and sign an individual scholarship agreement with SWISS RLCRATES AG.\n• Final Stage: The trader enters a final simulation environment. Success here generates the performance-based scholarship rewards.\n• Payout Phase: Rewards are requested via the dashboard, subject to minimum trading day requirements or specific program cycles.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/CFTradercom",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://cryptofundtrader.com/faq/",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://cryptofundtrader.com/terms-and-conditions/",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://cryptofundtrader.com/competitive-ranking/",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/CFTradercom",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The live official-site footer reciprocally links @CFTradercom; a stale structured-data X reference returns 404."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://cryptofundtrader.com/faq/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "terms",
+      "url": "https://cryptofundtrader.com/terms-and-conditions/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://cryptofundtrader.com/competitive-ranking/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    }
+  ]
+}

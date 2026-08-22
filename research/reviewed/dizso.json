@@ -1,0 +1,834 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-dizso",
+  "slug": "dizso",
+  "name": "Dizso Funded",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "other"
+  ],
+  "offerNames": [],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Institutional Context and Support",
+          "paragraphs": [
+            "• Multilingual Scope: The platform provides localized interfaces for English (EN), Español (ES), Français (FR), and Português (PT), signaling an intent to capture significant market share in Europe and Latin America.\n• Contact Information: Official inquiries are directed to [info@dizso.com](mailto:info@dizso.com).\n• Social Channels: Active presence on Discord, X (@dizsofunded), Instagram, and TikTok.\n• Regulatory Risk: There is currently no documented information regarding the project’s legal jurisdiction, corporate entity name, or Know Your Customer (KYC) requirements."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Payout and Compensation Mechanics",
+          "paragraphs": [
+            "• Eligibility and Cadence: Payout timing, minimum thresholds, and processing windows are currently Not Disclosed.\n• Settlement Path: Payouts are linked to the on-chain model. While the specific settlement assets (e.g., USDC, USDT, or native tokens) are not documented, the model implies a non-custodial or smart-contract-based distribution."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution and Infrastructure",
+          "paragraphs": [
+            "• On-Chain Advantage: Unlike traditional prop firms where trades are often simulated or executed in internal liquidity pools, \"onchain\" execution implies settlement on a public ledger, providing the \"transparency\" emphasized in the firm's marketing.\n• Blockchain Integration: The landing page features a \"Built on\" visual anchor intended to signify the host blockchain. However, this is currently a logo-only placeholder with no associated text-string identifier to confirm the specific network (e.g., Ethereum, Solana, or Layer 2).\n• Platform Venue: The project advocates for a \"one dashboard\" system for trading, tracking, and payouts, explicitly contrasting it with \"outdated platforms.\""
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trading Permissions and Restrictions",
+          "paragraphs": [
+            "• Permissions: While the platform markets a \"one dashboard\" approach, it does not explicitly confirm API access or support for automated bot trading.\n• Prohibited Strategies: There is no documented list of restricted behaviors (e.g., news trading, high-frequency trading, or copy trading). The absence of a formal FAQ or Rulebook at this stage leaves the operational boundaries of the firm undefined."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers Table",
+          "paragraphs": [
+            "Table Footnote: Specific account tiers and performance benchmarks are expected to be revealed following the conclusion of the \"Still in development\" status in late August 2026."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Technical Rule Mechanics (Drawdown and Profit Targets)",
+          "paragraphs": [
+            "Critical risk parameters remain speculative as specific percentages and definitions are not yet documented.\n• Daily Loss and Max Drawdown: Not Disclosed in available source documentation.\n• Profit Targets: Not Disclosed in available source documentation.\n• Analyst Synthesis: A primary risk factor for early-access participants is the lack of clarity regarding the drawdown calculation basis. Whether the firm utilizes a Balance-based or Equity-based drawdown (or a trailing drawdown model) will significantly impact the viability of the 80% profit split."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle",
+          "paragraphs": [
+            "• Onboarding Funnel: Current entry is restricted to an \"Early Access\" phase. Lead generation is handled via an email capture form and a primary Discord community, indicating a community-centric growth strategy.\n• Evaluation and Funding: The specific protocols for trader evaluation—including stage counts, specific profit targets, and capital allocation tiers—are currently Not Disclosed (ND). From an analyst's perspective, the absence of these mechanics prevents a full assessment of the firm's risk-to-reward ratio for participants.\n• Trading and Execution: Execution is intended to be entirely \"onchain,\" managed through a unified dashboard. This infrastructure aims to provide \"minimal fees\" by bypassing traditional intermediary brokerage layers.\n• Profit Attribution Model: Documentation confirms that traders are eligible to retain up to 80% of profits."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Current Status:",
+          "paragraphs": [
+            "As of the research ledger date (August 16, 2026), the project is \"Still in development.\" Given the advertised launch window of \"August 2026,\" the platform is effectively in an imminent launch phase or a critical transition period from development to live operations."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Asset Coverage:",
+          "paragraphs": [
+            "The project intends to provide capital for institutional-grade trading across the following sectors:\n• Crypto\n• Forex\n• Commodities\n• Equities\n• Prediction Markets"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Overview and Operating Model",
+          "paragraphs": [
+            "Dizso Funded is an emerging \"onchain prop trading firm\" currently in the final stages of pre-launch development. Positioned as a market disruptor, the project’s primary value proposition is the replacement of \"outdated platforms\" with a \"faster, more transparent trading experience.\" This focus on transparency is a direct challenge to the \"black box\" execution models prevalent in traditional proprietary trading."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Other model",
+              "note": "0 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/dizsofunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://dizso.com/en",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "ND",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/dizsofunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://dizso.com/en",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "ND",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/dizsofunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://dizso.com/en",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/dizsofunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://dizso.com/en",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "ND",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/dizsofunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://dizso.com/en",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "ND",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/dizsofunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://dizso.com/en",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "ND",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://dizso.com/en"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://dizso.com/en",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://dizso.com/en"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://dizso.com/en",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "ND",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/dizsofunded",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://dizso.com/en",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "ND",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://dizso.com/en"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://dizso.com/en",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://dizso.com/en"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://dizso.com/en",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://dizso.com/en"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://dizso.com/en",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Offers & pricing",
+      "title": "Offers & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Documented Offers, Programs, and Accounts",
+          "paragraphs": [
+            "As of the current ledger date, the specific parameters of the trading \"Challenges\" remain unpublished.\n• Affiliate Program: An \"Affiliates\" link is explicitly present in the platform's navigation, confirming a multi-tiered growth model. However, specific commission structures or referral rewards are Not Disclosed.\n• Account Tiers: Sources such as \"PricingCheckout\" and the \"Rulebook\" are currently ND. No specific account sizes (e.g., $50k, $100k) or associated entry costs have been made public."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "offers-nd",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "ND — no offer structure was documented in the inspected official sources.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-14",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions:",
+          "paragraphs": [
+            "The following items are critical for determining the firm's institutional legitimacy and trader profitability:\n• Regulatory Framework: What is the legal entity name and under which jurisdiction does the firm operate, particularly concerning the offering of \"Equities\" on-chain?\n• Cost Structure: What are the specific entry costs for each account tier?\n• Drawdown Definitions: Is the drawdown calculated on a static balance, current equity, or a trailing basis?\n• Technical Stack: Which specific blockchain network is the platform \"Built on\"?\n• Withdrawal Terms: What are the minimum withdrawal requirements and the specific on-chain assets used for settlement?"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-13",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Conflict Log:",
+          "paragraphs": [
+            "No direct contradictions were found; however, the project is currently characterized by a high degree of information asymmetry due to most technical specifications being \"Not Disclosed.\""
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-12",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Source List:",
+          "paragraphs": [
+            "• Official Website: [dizso.com](https://dizso.com)\n• Official X Account: [@dizsofunded](https://x.com/dizsofunded)\n• Research Ledger (Verification Date: 2026-08-16)"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/dizsofunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://dizso.com/en",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "dizso-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://dizso.com",
+              "description": "The official site reciprocally links @dizsofunded.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/dizsofunded"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "dizso-rulebook-2",
+              "eyebrow": "rulebook · ND",
+              "title": "ND",
+              "description": "The public site remains a Launching August 2026 early-access landing page and publishes no challenge rules.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://dizso.com/en"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "dizso-faq-3",
+              "eyebrow": "faq · ND",
+              "title": "ND",
+              "description": "No FAQ was present in the official navigation or public sitemap.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://dizso.com/en"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "dizso-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · ND",
+              "title": "ND",
+              "description": "Only an early-access email form is available; no program prices or checkout were published.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://dizso.com/en"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "dizso-terms-5",
+              "eyebrow": "terms · ND",
+              "title": "ND",
+              "description": "No terms page was present in the official navigation or public sitemap.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://dizso.com/en"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "dizso-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · ND",
+              "title": "ND",
+              "description": "The landing page only markets keeping up to 80% of profits; payout timing, eligibility, minimum, currency, network and processing terms are not published.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://dizso.com/en"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "dizso-tokenRewards-7",
+              "eyebrow": "tokenRewards · ND",
+              "title": "ND",
+              "description": "No token, points, airdrop or rewards-program page was located.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://dizso.com/en"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "other"
+    ],
+    "capital": {
+      "status": "ND",
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/dizsofunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://dizso.com/en",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "ND",
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/dizsofunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://dizso.com/en",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 80,
+      "max": 80,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/dizsofunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://dizso.com/en",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "ND",
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/dizsofunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://dizso.com/en",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "ND",
+      "values": [],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/dizsofunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://dizso.com/en",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "ND",
+      "values": [],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/dizsofunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://dizso.com/en",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "dizso-operating-model",
+      "label": "Operating model",
+      "value": "other",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/dizsofunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://dizso.com/en",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "dizso-model-summary",
+      "label": "How the model works",
+      "value": "Dizso Funded is an emerging \"onchain prop trading firm\" currently in the final stages of pre-launch development. Positioned as a market disruptor, the project’s primary value proposition is the replacement of \"outdated platforms\" with a \"faster, more transparent trading experience.\" This focus on transparency is a direct challenge to the \"black box\" execution models prevalent in traditional proprietary trading.",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/dizsofunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://dizso.com/en",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "dizso-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "• Onboarding Funnel: Current entry is restricted to an \"Early Access\" phase. Lead generation is handled via an email capture form and a primary Discord community, indicating a community-centric growth strategy.\n• Evaluation and Funding: The specific protocols for trader evaluation—including stage counts, specific profit targets, and capital allocation tiers—are currently Not Disclosed (ND). From an analyst's perspective, the absence of these mechanics prevents a full assessment of the firm's risk-to-reward ratio for participants.\n• Trading and Execution: Execution is intended to be entirely \"onchain,\" managed through a unified dashboard. This infrastructure aims to provide \"minimal fees\" by bypassing traditional intermediary brokerage layers.\n• Profit Attribution Model: Documentation confirms that traders are eligible to retain up to 80% of profits.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/dizsofunded",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://dizso.com/en",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/dizsofunded",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The official site reciprocally links @dizsofunded."
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://dizso.com/en",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "No token, points, airdrop or rewards-program page was located."
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "researchStandard": "model-first-v1",
+  "researchMode": "manual",
+  "id": "firm-hyperpnl",
+  "slug": "hyperpnl",
+  "name": "HyperPNL",
+  "checkedAt": "2026-08-22",
+  "modelTypes": ["evaluation"],
+  "offerNames": ["Evaluation → Verification → Funded"],
+  "operatingModel": {
+    "classification": {
+      "id": "hyperpnl-operating-model",
+      "label": "Operating model",
+      "value": "Decentralized on-chain evaluation prop platform",
+      "status": "reported",
+      "note": "The manual report describes public smart-contract settlement, with simulated execution grounded in live market data and a Dynamic Shadowing risk engine.",
+      "evidence": [{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"}]
+    },
+    "summary": {
+      "id": "hyperpnl-model-summary",
+      "label": "How the model works",
+      "value": "Evaluation and payout state are coordinated off-chain and finalized on-chain through treasury, recorder and payment-router contracts.",
+      "status": "pending",
+      "note": "Detail comes from the local manual report; the existing URL evidence is retained as related product metadata and does not independently verify every implementation detail.",
+      "evidence": [{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]
+    },
+    "lifecycle": [
+      {"id":"hyperpnl-phase-1","label":"Phase 1 · Evaluation","value":"10% target; 9% static maximum drawdown; 5% dynamic daily drawdown; 2 profitable days at ≥0.5%.","status":"reported","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},
+      {"id":"hyperpnl-phase-2","label":"Phase 2 · Verification","value":"5% target; 9% static maximum drawdown; 5% dynamic daily drawdown; 3 profitable days at ≥0.5%.","status":"reported","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},
+      {"id":"hyperpnl-funded","label":"Funded","value":"No further profit target; eligible profit share is described as 80% in the payout pipeline and up to 90% in existing product metadata.","status":"conflict","note":"The report's 80% settlement example and the older profile's up-to-90% value are preserved as a discrepancy for later primary-source resolution.","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"},{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]}
+    ],
+    "fundingMechanism": {"id":"hyperpnl-payout-treasury","label":"Payout funding","value":"Payout Treasury funded by challenge fees, protocol revenue and described yield; it also supplies capital for the Shadow Engine.","status":"pending","note":"Manual-report detail; not independently verified from a cited URL.","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"}]},
+    "traderCompensation": {"id":"hyperpnl-trader-compensation","label":"Trader compensation","value":"80% of verified profit in the report's settlement example; older product metadata records up to 90%.","status":"conflict","note":"Exact current split and tiers require primary-source resolution.","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"},{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]}
+  },
+  "comparison": {
+    "modelTypes": ["evaluation"],
+    "capital": {"status":"varies","displayValue":"Up to $200K","max":200000,"unit":"USD","notes":"Existing HyperPNL metadata records the ceiling; the report does not provide a complete tier matrix.","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},
+    "entryCost": {"status":"ND","displayValue":"Not documented in the report","unit":"USD","notes":"SQL examples in the report are schema recommendations, not product pricing.","evidence":[{"sourceUrl":"https://docs.google.com/document/d/1TMWqHFYzRyzh5cgNoBMV9HwPwxLMgj0rC45EfZBd7tI/edit?usp=sharing","checkedAt":"2026-08-22"}]},
+    "profitSplit": {"status":"varies","displayValue":"80% in report settlement example; up to 90% in existing metadata","max":90,"unit":"percent","notes":"The conflicting values are preserved pending primary-source resolution.","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"}]},
+    "maxDrawdown": {"status":"known","displayValue":"9% static","min":9,"max":9,"unit":"percent","notes":"From initial account balance; distinct from the dynamic daily rule.","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},
+    "payoutSchedules": {"status":"ND","displayValue":"On-chain trigger described; cadence not documented","values":[],"notes":"The report describes a verification pipeline, not a recurring request schedule.","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]},
+    "executionModels": {"status":"varies","values":["Hyperliquid DEX order book","Ostium Protocol integration","Dynamic Shadowing risk engine"],"notes":"The report describes live-market-grounded simulated trades and mirrored funded exposure.","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"},{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]}
+  },
+  "sections": [
+    {"id":"overview","tabLabel":"Overview","title":"Decentralized model and Dynamic Shadowing","description":"Protocol mechanics described by the manual report, kept separate from SQL schema recommendations.","blocks":[
+      {"id":"hyperpnl-decentralized","type":"text","eyebrow":"Protocol model","title":"Public-contract prop trading","paragraphs":["The report characterizes HyperPNL as a decentralized on-chain prop platform: challenge fees flow to a public Payout Treasury, payout state is finalized by code, and fee, performance and payout transactions are intended to be publicly auditable on-chain.","Dynamic Shadowing is described as a hybrid risk model. Simulated trades are grounded in live Hyperliquid prices and depth, while a capital-backed Shadow Engine mirrors and aggregates profitable funded-trader exposure on the exchange."],"status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"}]},
+      {"id":"hyperpnl-model-facts","type":"fact-grid","columns":2,"presentation":"details","items":[
+        {"id":"hyperpnl-code-settlement","label":"Settlement model","value":"Programmatic on-chain payout settlement","status":"pending","note":"Report detail; human approval/rejection is described as absent after cryptographic validation.","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]},
+        {"id":"hyperpnl-shadowing","label":"Dynamic Shadowing","value":"Profitable funded positions are dynamically mirrored with treasury-backed capital","status":"pending","note":"Proprietary risk-engine description from the report; not independently verified here.","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"}]},
+        {"id":"hyperpnl-market-grounding","label":"Market grounding","value":"Live prices and depth from Hyperliquid DEX","status":"reported","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]},
+        {"id":"hyperpnl-auditability","label":"Public verifiability","value":"Fees, signatures, checkpoints and payouts intended to be auditable on-chain","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"}]}
+      ]}
+    ]},
+    {"id":"evaluation","tabLabel":"Evaluation metrics","title":"Evaluation, risk and profitable-day rules","blocks":[
+      {"id":"hyperpnl-evaluation-records","type":"record-list","presentation":"tracks","items":[
+        {"id":"hyperpnl-phase1-record","eyebrow":"Phase 1","title":"Evaluation","facts":[{"id":"p1-target","label":"Profit target","value":"10%","status":"reported","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},{"id":"p1-days","label":"Minimum profitable days","value":"2 days at ≥0.5%","status":"reported","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},{"id":"p1-risk","label":"Drawdown","value":"9% static; 5% dynamic daily","status":"reported","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]}]},
+        {"id":"hyperpnl-phase2-record","eyebrow":"Phase 2","title":"Verification","facts":[{"id":"p2-target","label":"Profit target","value":"5%","status":"reported","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},{"id":"p2-days","label":"Minimum profitable days","value":"3 days at ≥0.5%","status":"reported","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},{"id":"p2-risk","label":"Drawdown","value":"9% static; 5% dynamic daily","status":"reported","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]}]}
+      ]},
+      {"id":"hyperpnl-risk-metrics","type":"fact-grid","columns":2,"presentation":"details","items":[
+        {"id":"dynamic-daily-dd","label":"Dynamic daily drawdown","value":"At 00:00 UTC, equity becomes the 24-hour reference; breach level is reference equity × 95% and does not trail intraday","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},
+        {"id":"profitable-day-definition","label":"Profitable day","value":"Realized plus unrealized PnL reaches ≥0.5% of initial balance at any point in the UTC day","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},
+        {"id":"profitable-day-reset","label":"Unrealized reset","value":"Unrealized profit does not carry profitable-day credit across 00:00 UTC","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]},
+        {"id":"profitable-day-scenarios","label":"Three scenarios","value":"Unclosed floating profit: no locked credit; threshold hit with open position: day may qualify and target completion closes it; overnight trade: realized profit credits the closing day","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22"}]}
+      ]}
+    ]},
+    {"id":"payouts","tabLabel":"Payouts","title":"Payout verification pipeline","blocks":[
+      {"id":"hyperpnl-payout-steps","type":"fact-grid","columns":2,"presentation":"steps","items":[
+        {"id":"payout-step-1","label":"1 · State finalization","value":"Backend consolidates trade history, verifies at least 1% profit and checks drawdown compliance","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]},
+        {"id":"payout-step-2","label":"2 · User commitment","value":"Trader reviews the performance summary and signs the state with a Web3 wallet","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]},
+        {"id":"payout-step-3","label":"3 · On-chain settlement","value":"Data Recorder validates the signed state and authorizes Payout Treasury release to the trader wallet","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]}
+      ]},
+      {"id":"hyperpnl-payout-note","type":"notice","tone":"warning","text":"The report's pipeline example states 80% of verified profit to the trader and 20% to protocol revenue/reserves. Existing HyperPNL metadata records up to 90%; current payout split, cadence, minimum and eligibility remain unresolved.","status":"conflict","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"}]}
+    ]},
+    {"id":"fees","tabLabel":"Fees","title":"Trading fee matrix","blocks":[{"id":"hyperpnl-fee-matrix","type":"record-list","presentation":"records","items":[{"id":"crypto-hl","title":"Cryptocurrencies · Hyperliquid DEX","description":"Perps and spot; values transcribed from the manual report and awaiting primary-source confirmation.","facts":[{"id":"crypto-hl-maker","label":"Maker fee","value":"0.015%","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]},{"id":"crypto-hl-taker","label":"Taker fee","value":"0.045%","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]}]},{"id":"noncrypto-hl","title":"FX, indices, commodities · Hyperliquid DEX","description":"Values transcribed from the manual report and awaiting primary-source confirmation.","facts":[{"id":"noncrypto-hl-maker","label":"Maker fee","value":"0.0030%","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]},{"id":"noncrypto-hl-taker","label":"Taker fee","value":"0.0090%","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]}]},{"id":"noncrypto-ostium","title":"FX, indices, commodities · Ostium Protocol","description":"Values transcribed from the manual report and awaiting primary-source confirmation.","facts":[{"id":"noncrypto-ostium-maker","label":"Maker fee","value":"0.015%","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]},{"id":"noncrypto-ostium-taker","label":"Taker fee","value":"0.030%","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]}]}]}]},
+    {"id":"contracts","tabLabel":"Smart contracts","title":"Contract components and PSF","blocks":[{"id":"hyperpnl-contracts","type":"fact-grid","columns":2,"presentation":"details","items":[
+      {"id":"payment-router","label":"Payment Router","value":"Entry point for challenge purchases; report says it dynamically routes fees between treasury and protocol revenue","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]},
+      {"id":"payout-treasury","label":"Payout Treasury","value":"Holds payout liquidity, releases trader payouts, funds Shadow Engine and may deploy idle capital","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"}]},
+      {"id":"data-recorder","label":"Data Recorder","value":"Immutable on-chain ledger for cryptographically signed off-chain outcomes","status":"pending","evidence":[{"sourceUrl":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22"}]},
+      {"id":"psf-concept","label":"Payout Stress Factor (PSF)","value":"On-chain reserve-health metric intended to govern dynamic fee allocation","status":"pending","note":"The report describes the concept but does not provide a usable formula; no formula is inferred here.","evidence":[{"sourceUrl":"https://hyperpnl.com","checkedAt":"2026-08-22"}]}
+    ]}]},
+    {"id":"sources","tabLabel":"Sources & changes","title":"Source context and change record","description":"This import uses the existing HyperPNL URL metadata for evidence. The new local DOCX has no URL sources and is treated as research input, not as primary evidence.","blocks":[
+      {"id":"hyperpnl-source-change","type":"text","eyebrow":"Change record","title":"Manual report import · 2026-08-22","paragraphs":["Added decentralized/on-chain model, Dynamic Shadowing, three profitable-day scenarios, dynamic daily drawdown, payout verification steps, evaluation metrics, fee matrix, smart-contract components and the PSF concept.","SQL entity and routine recommendations from the report were intentionally excluded as product facts. The PSF formula was also omitted because the report does not provide a populated formula.","Several implementation-level details are marked pending or conflict because the local report contains no URL evidence and existing HyperPNL source metadata does not independently verify them."],"status":"pending","evidence":[{"sourceUrl":"https://docs.google.com/document/d/1TMWqHFYzRyzh5cgNoBMV9HwPwxLMgj0rC45EfZBd7tI/edit?usp=sharing","checkedAt":"2026-08-22"}]},
+      {"id":"hyperpnl-source-records","type":"record-list","presentation":"sources","items":[{"id":"source-website","eyebrow":"Primary source · website","title":"https://hyperpnl.com","description":"Existing source metadata retained from the prior manual profile.","meta":["2026-08-22"],"links":[{"label":"Open source","url":"https://hyperpnl.com"}]},{"id":"source-docs","eyebrow":"Primary source · docs","title":"https://hyperpnl.gitbook.io/docs","description":"Existing documentation metadata retained from the prior manual profile.","meta":["2026-08-22"],"links":[{"label":"Open source","url":"https://hyperpnl.gitbook.io/docs"}]},{"id":"source-rules","eyebrow":"Primary source · rulebook","title":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","description":"Existing rulebook metadata for evaluation and risk values.","meta":["2026-08-22"],"links":[{"label":"Open source","url":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules"}]}]}
+    ]}
+  ],
+  "sourcesInspected": [
+    {"category":"website","url":"https://hyperpnl.com","checkedAt":"2026-08-22","outcome":"accessed","notes":"Existing source metadata; used only where logically relevant."},
+    {"category":"other","url":"https://hyperpnl.gitbook.io/docs","checkedAt":"2026-08-22","outcome":"accessed","notes":"Existing source metadata; report-specific implementation details remain pending."},
+    {"category":"rulebook","url":"https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules","checkedAt":"2026-08-22","outcome":"accessed","notes":"Existing metadata for phase and risk rules."}
+  ],
+  "sourceDiscrepancies": []
+}

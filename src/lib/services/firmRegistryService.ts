@@ -1,9 +1,16 @@
-import { collection, doc, getDocs, writeBatch } from 'firebase/firestore';
+import { collection, doc, getDocs, setDoc, writeBatch } from 'firebase/firestore';
 import { db, isFirebaseConfigured } from '@/lib/firebase/config';
 import { FIRM_DATABASE_SEED } from '@/lib/data/firmDatabaseSeed';
 import type { FirmDatabaseRecord } from '@/types/database';
 
 export const FIRM_REGISTRY_COLLECTION = 'firmRegistry';
+
+export type FirmRegistryMetadataInput = Pick<
+  FirmDatabaseRecord,
+  'name' | 'slug' | 'researchStatus' | 'publicationStatus' | 'links'
+> & {
+  brandAssets?: FirmDatabaseRecord['brandAssets'];
+};
 
 function normalizeRecord(id: string, value: Partial<FirmDatabaseRecord>): FirmDatabaseRecord {
   const seedFallback = FIRM_DATABASE_SEED.find((record) => record.id === id);
@@ -43,6 +50,35 @@ export async function getFirmRegistry(): Promise<FirmDatabaseRecord[]> {
   return snapshot.docs
     .map((item) => normalizeRecord(item.id, item.data() as Partial<FirmDatabaseRecord>))
     .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export async function updateFirmRegistryMetadata(
+  id: string,
+  input: FirmRegistryMetadataInput,
+): Promise<void> {
+  if (!isFirebaseConfigured) {
+    throw new Error('Firebase is not configured.');
+  }
+
+  const slug = input.slug.trim().toLowerCase();
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+    throw new Error('Slug may contain lowercase letters, numbers and single hyphens only.');
+  }
+  if (!input.name.trim()) throw new Error('Firm name is required.');
+
+  for (const url of [input.links.officialWebsite, input.links.x?.url, input.brandAssets?.sourceUrl]) {
+    if (url && !/^https?:\/\//i.test(url)) throw new Error(`Invalid external URL: ${url}`);
+  }
+
+  await setDoc(doc(db, FIRM_REGISTRY_COLLECTION, id), removeUndefined({
+    name: input.name.trim(),
+    slug,
+    researchStatus: input.researchStatus,
+    publicationStatus: input.publicationStatus,
+    links: input.links,
+    brandAssets: input.brandAssets,
+    updatedAt: new Date().toISOString(),
+  }), { merge: true });
 }
 
 /**

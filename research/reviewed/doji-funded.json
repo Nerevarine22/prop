@@ -1,0 +1,2558 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-doji-funded",
+  "slug": "doji-funded",
+  "name": "Doji Funded",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "instant-funding",
+    "evaluation"
+  ],
+  "offerNames": [
+    "Instant Funding",
+    "1-Step",
+    "2-Step Classic",
+    "2-Step Elite"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-16",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Legal and Jurisdictional Framework",
+          "paragraphs": [
+            "• Entity: Dojifunded Inc., a Delaware corporation (Wilmington, DE).\n• Age Requirement: 18 years or older.\n• Restricted Jurisdictions: The platform does not service users in the United States, North Korea, Iran, Syria, Cuba, Russia, or the sanctioned Ukrainian regions of Crimea, Donetsk, and Luhansk."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-13",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Prohibited Behaviors",
+          "paragraphs": [
+            "• Cross-Account Hedging: Opening opposing positions across multiple accounts to guarantee a pass.\n• Latency Exploitation: Arbitrage involving pricing errors, oracle manipulation, or execution desync.\n• Manipulation: Multi-account manipulation through multiple identities or account sharing.\n• Strategy Exploitation: \"Unrealistic micro-scalping\" tuned to simulation assumptions or strategies that could not run in live markets.\n• Market Abuse: Wash trading, spoofing, or intentional liquidity disruption."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-12",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Permitted Behaviors",
+          "paragraphs": [
+            "• Scalping, Swing Trading, and Position Trading.\n• Algorithmic/Automated Trading and AI-Assisted Systems.\n• Unrestricted overnight and weekend holding.\n• Autonomous agents (as per the planned funding track)."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Sub-note on Add-ons:",
+          "paragraphs": [
+            "Traders can apply add-ons to modify account parameters. The final price is calculated using the following formula:\n> `Final price = Base price × (1 + 0.20 × number of add-ons)`"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Daily Loss Limit",
+          "paragraphs": [
+            "Evaluation and funded accounts (excluding Instant Funding) are subject to a daily loss limit. This floor is dynamic and moves upward if a new HWM is established during the trading day.\n> Daily Loss Amount: `Daily loss % × Initial account size`\n> Daily Floor: `Day's High Water Mark − Daily loss amount`"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "High Water Mark (HWM)",
+          "paragraphs": [
+            "Drawdown is calculated based on the HWM, defined as the higher of account balance or equity. Because equity is included, open positions impact drawdown in real-time. The Daily HWM resets at 00:00 UTC, which is critical for calculating the dynamic daily floor."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle",
+          "paragraphs": [
+            "The trader journey is divided into four distinct phases, transitioning from wallet-based onboarding to on-chain capital settlement.\n• Phase 1: Entry: Users onboard using EVM-compatible wallets (MetaMask, Rabby, etc.) and purchase account access using USDC on the Arbitrum network. This is a one-time fee model with no recurring subscriptions.\n• Phase 2: Evaluation: Traders select between 1-Step or 2-Step tracks ($1,000 to $100,000 tiers). The objective is to meet defined profit targets while respecting static and daily drawdown floors. There are no time limits or minimum trading day requirements.\n• Phase 3: Funding: Upon reaching the profit target and passing automated compliance checks, accounts achieve \"Funded\" status. The profit target is removed, and the trader operates within a simulated environment where they are entitled to a share of generated profits.\n• Phase 4: Compensation: Traders request payouts via the dashboard. The minimum threshold for the first withdrawal on Instant Funding accounts is 5% profit; all other accounts require a 1% profit minimum. Settlements are paid in USDC on-chain following mandatory KYC verification."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Core Value Propositions:",
+          "paragraphs": [
+            "• Decentralized Transparency: All execution history and ledger entries are logged on-chain, eliminating the \"black box\" nature of traditional prop trading.\n• Automated Risk Protocols: Permanent and daily floors are enforced programmatically, removing human bias or manual review from the breach process.\n• Net Exposure Routing: The platform aggregates internal ledger activity and routes net exposure to primary on-chain execution venues (GMX and Ostium).\n• Realistic Execution Simulation: The environment utilizes live venue pricing and liquidity conditions to simulate a real market, ensuring that evaluation performance translates accurately to live conditions."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Type and Operating Model",
+          "paragraphs": [
+            "Doji Funded is an on-chain proprietary trading infrastructure engineered to support manual traders, systematic strategies, and autonomous agents. Positioned as a \"risk orchestration layer,\" the platform utilizes an on-chain ledger to ensure total transparency; every position and risk event is logged and verifiable via a public explorer.",
+            "The model’s core value proposition rests on the total removal of manual intervention in risk enforcement. Unlike traditional firms where breach decisions may be subjective, Doji’s internal risk engine automatically terminates accounts based on immutable, on-chain parameters."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Instant funding · Evaluation",
+              "note": "4 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/DojiFunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$1K–$100K",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/DojiFunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "$17–$1.5K",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/DojiFunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/DojiFunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "5%–8%",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/DojiFunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "ND",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/DojiFunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "ND",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/legal/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/legal/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "ND",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/DojiFunded",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "ND",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/legal/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "payout",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/legal/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/legal/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Offers & pricing",
+      "title": "Offers & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-14",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution & Account Protocols",
+          "paragraphs": [
+            "• Minimum Duration: Trades must be held for at least 60 seconds. The platform uses a \"two warnings\" protocol; a third violation results in a permanent account breach.\n• Inactivity: Accounts must execute at least one trade every 30 days to remain active.\n• Allocation Cap: Maximum combined starting allocation is $200,000 per trader across all account types."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Worked Examples ($100,000 Account, 5% Daily Limit):",
+          "paragraphs": [
+            "• Scenario A: Starting at $100,000, the daily floor is $95,000. \n• Scenario B: During the day, equity reaches $105,000 (New HWM). The daily floor rises to $100,000 ($105,000 − $5,000). If equity subsequently drops to $99,999, the account is breached.\n• Scenario C: If the HWM reaches $110,000, the floor moves to $105,000. The account is terminated if value drops below this level before the 00:00 UTC reset."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "instant",
+              "eyebrow": "Instant funding",
+              "title": "Instant Funding",
+              "description": "Marked coming soon.",
+              "facts": [
+                {
+                  "id": "instant-stages",
+                  "label": "Stages",
+                  "value": "Funded",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$1K · $33 | $5K · $157 | $10K · $304 | $25K · $770 | $50K · $1,540",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/account-pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/platform/payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/account-pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://app.dojifunded.com"
+                }
+              ]
+            },
+            {
+              "id": "one-step",
+              "eyebrow": "Evaluation",
+              "title": "1-Step",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "one-step-stages",
+                  "label": "Stages",
+                  "value": "Evaluation",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$1K · $17 | $5K · $55 | $10K · $100 | $25K · $248 | $50K · $446 | $100K · $899",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/account-pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "3%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "6%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/platform/payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/account-pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://app.dojifunded.com"
+                }
+              ]
+            },
+            {
+              "id": "two-step-classic",
+              "eyebrow": "Evaluation",
+              "title": "2-Step Classic",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "two-step-classic-stages",
+                  "label": "Stages",
+                  "value": "Phase 1 → Phase 2",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-classic-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $45 | $10K · $90 | $25K · $225 | $50K · $407 | $100K · $805",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/account-pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-classic-daily-loss",
+                  "label": "Daily loss",
+                  "value": "3%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-classic-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "6%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-classic-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-classic-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/platform/payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-classic-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/account-pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-classic-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://app.dojifunded.com"
+                }
+              ]
+            },
+            {
+              "id": "two-step-elite",
+              "eyebrow": "Evaluation",
+              "title": "2-Step Elite",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "two-step-elite-stages",
+                  "label": "Stages",
+                  "value": "Phase 1 → Phase 2",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-elite-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $65 | $10K · $118 | $25K · $268 | $50K · $482 | $100K · $963",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/account-pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-elite-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-elite-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "8%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-elite-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-elite-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/platform/payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-elite-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/account-pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-elite-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://app.dojifunded.com"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trading",
+      "tabLabel": "Trading rules",
+      "title": "Trading rules",
+      "description": "Unknown values remain ND and are not interpreted as allowed or restricted.",
+      "blocks": [
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trading Permissions and Restrictions",
+          "paragraphs": [
+            "Doji Funded operates with a \"guardrail\" philosophy—any style is permitted as long as it does not exploit the simulation or violate risk floors."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers Table",
+          "paragraphs": [
+            "The following data represents the core account tracks and size-tiers. Note that 2-Step targets follow Section 07 of the Rulebook (10% Step 1 / 5% Step 2).",
+            "*\\*5% minimum applies specifically to the first withdrawal from Instant Funding accounts.*"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Static Drawdown",
+          "paragraphs": [
+            "The maximum drawdown floor is a fixed value established at the time of account creation. It does not move upward as the account balance increases.\n> Static Floor Formula: `Starting balance × (1 − max drawdown %)`"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Risk Mechanics and Calculation Logic",
+          "paragraphs": [
+            "The platform employs a Static Drawdown model, ensuring the risk floor is anchored to the initial account size rather than trailing profit growth."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "trading-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "trading-weekend",
+              "label": "Weekend holding",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-news",
+              "label": "News trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-automation",
+              "label": "Automated trading",
+              "value": "conditional",
+              "status": "reported",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-copy",
+              "label": "Copy trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-stop-loss",
+              "label": "Mandatory stop loss",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-platforms",
+              "label": "Platforms",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-markets",
+              "label": "Markets",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-leverage",
+              "label": "Leverage",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-consistency",
+              "label": "Consistency rule",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-profit-day",
+              "label": "Profit-day definition",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-fees",
+              "label": "Trading fees",
+              "value": "Automation is subject to anti-abuse rules; 60-second minimum position duration.",
+              "status": "reported",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/resources/rules-risk-parameters"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-15",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution, Custody, and Payout Mechanics",
+          "paragraphs": [
+            "Doji Funded operates as a sophisticated \"funded trading and risk orchestration layer.\" While trades are initially recorded in an internal ledger, net exposure is aggregated and routed on-chain to liquidity partners.\n• Venues: Execution is handled via GMX (Crypto/Commodities) and Ostium (Forex/Stocks/Indices/Crypto/Commodities).\n• Asset Leverage:\n• Crypto: 5x\n• Forex: 15x\n• Indices, Stocks, and Commodities: 10x\n• Settlement: Payouts are settled in USDC on the Arbitrum network. \n• Profit Share: The default payout is 80% of generated profits. This can be increased to 90% through account add-ons."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/platform/payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/platform/payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/platform/payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USDC",
+              "status": "reported",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/platform/payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/platform/payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/platform/payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/platform/payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.dojifunded.com/platform/payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "90% add-on; minimum eligible profit is percentage-based, so absolute minimum amount is ND.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-19",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions",
+          "paragraphs": [
+            "• Processing Time: Payouts are described as \"instant\" but remain subject to compliance, rule, and \"platform-risk checks.\" The specific duration for these reviews is not defined.\n• Positioning Limits: While leverage is defined by asset class, the exact per-pair limits referenced in the \"Available Markets\" documentation were not provided for this audit."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-18",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Conflicts Identified",
+          "paragraphs": [
+            "• Instant Funding Status: Rulebook v1.0 describes Instant Funding as \"Live,\" while the Pricing Ledger and Payout Policy label it as \"Coming Soon.\"\n• Profit Targets: A typo in the \"At a Glance\" section of the rulebook suggests inconsistent Step-2 targets; however, Section 07 (10% Step 1 / 5% Step 2) is the definitive authority for this brief."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-17",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Source List",
+          "paragraphs": [
+            "• Official rulebook v1.0\n• Official terms (Updated May 9, 2026)\n• Official faq\n• Official pricing checkout\n• Official payout policy"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/DojiFunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "doji-funded-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://app.dojifunded.com",
+              "description": "The X profile identifies app.dojifunded.com; first-party documentation links back to @DojiFunded.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/DojiFunded"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "doji-funded-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "Rulebook v1.0 Live covers Instant Funding, 1-Step, 2-Step Classic and 2-Step Elite accounts from $1,000 to $100,000. All use static drawdown measured on a balance/equity high-water-mark basis. Max/daily drawdown: Instant 5%/none, 1-Step 6%/3%, Classic 6%/3%, Elite 8%/5%.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://docs.dojifunded.com/resources/rules-risk-parameters"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "doji-funded-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "FAQ reports funding up to $100,000, a $200,000 maximum combined starting allocation, purchases in USDC on Arbitrum, automated trading support subject to anti-abuse rules, and a 60-second minimum position duration with warnings before breach.",
+              "description": "The supplied app FAQ route renders only the application shell to non-interactive retrieval; the dedicated first-party documentation FAQ contains the published answers.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://docs.dojifunded.com/getting-started/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "doji-funded-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "One-time base pricing: $1K Instant $33 and 1-Step $17; $5K $157/$55/$45/$65; $10K $304/$100/$90/$118; $25K $770/$248/$225/$268; $50K $1,540/$446/$407/$482; $100K 1-Step $899, Classic $805, Elite $963. Each add-on increases base price by 20%.",
+              "description": "Instant Funding is marked coming soon and is not offered at $100K; Classic and Elite are not offered at $1K.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://docs.dojifunded.com/account-pricing"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "doji-funded-terms-5",
+              "eyebrow": "terms · reported",
+              "title": "Terms of Use, last updated May 9, 2026, require age 18+, permit KYC/compliance checks and make KYC mandatory before funded-account payouts. Evaluation fees are generally non-refundable after trading begins; restricted jurisdictions are published.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://docs.dojifunded.com/legal/terms-of-use"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "doji-funded-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "Payouts are requested through the dashboard and settled on-chain to the selected wallet. Profit share is 80% or 90% depending on add-ons. Minimum withdrawal profit is 1% for 1-Step and both 2-Step plans; Instant Funding, marked coming soon, requires 5%. Terms state eligible payouts are processed in USDC after compliance, rule and platform-risk checks.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://docs.dojifunded.com/platform/payouts"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "doji-funded-tokenRewards-7",
+              "eyebrow": "tokenRewards · ND",
+              "title": "ND",
+              "description": "The complete first-party documentation index contains no token, rewards, loyalty or airdrop page.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://docs.dojifunded.com/llms.txt"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "instant-funding",
+      "evaluation"
+    ],
+    "capital": {
+      "status": "varies",
+      "min": 1000,
+      "max": 100000,
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/DojiFunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "varies",
+      "min": 17,
+      "max": 1540,
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/DojiFunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 80,
+      "max": 80,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/DojiFunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "varies",
+      "min": 5,
+      "max": 8,
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/DojiFunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "ND",
+      "values": [],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/DojiFunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "ND",
+      "values": [],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/DojiFunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "doji-funded-operating-model",
+      "label": "Operating model",
+      "value": "instant funding · evaluation",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/DojiFunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "doji-funded-model-summary",
+      "label": "How the model works",
+      "value": "Doji Funded is an on-chain proprietary trading infrastructure engineered to support manual traders, systematic strategies, and autonomous agents. Positioned as a \"risk orchestration layer,\" the platform utilizes an on-chain ledger to ensure total transparency; every position and risk event is logged and verifiable via a public explorer.\n\nThe model’s core value proposition rests on the total removal of manual intervention in risk enforcement. Unlike traditional firms where breach decisions may be subjective, Doji’s internal risk engine automatically terminates accounts based on immutable, on-chain parameters.",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/DojiFunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "doji-funded-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "The trader journey is divided into four distinct phases, transitioning from wallet-based onboarding to on-chain capital settlement.\n• Phase 1: Entry: Users onboard using EVM-compatible wallets (MetaMask, Rabby, etc.) and purchase account access using USDC on the Arbitrum network. This is a one-time fee model with no recurring subscriptions.\n• Phase 2: Evaluation: Traders select between 1-Step or 2-Step tracks ($1,000 to $100,000 tiers). The objective is to meet defined profit targets while respecting static and daily drawdown floors. There are no time limits or minimum trading day requirements.\n• Phase 3: Funding: Upon reaching the profit target and passing automated compliance checks, accounts achieve \"Funded\" status. The profit target is removed, and the trader operates within a simulated environment where they are entitled to a share of generated profits.\n• Phase 4: Compensation: Traders request payouts via the dashboard. The minimum threshold for the first withdrawal on Instant Funding accounts is 5% profit; all other accounts require a 1% profit minimum. Settlements are paid in USDC on-chain following mandatory KYC verification.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/DojiFunded",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://docs.dojifunded.com/getting-started/faq",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://docs.dojifunded.com/account-pricing",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://docs.dojifunded.com/legal/terms-of-use",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://docs.dojifunded.com/platform/payouts",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://docs.dojifunded.com/llms.txt",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/DojiFunded",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The X profile identifies app.dojifunded.com; first-party documentation links back to @DojiFunded."
+    },
+    {
+      "category": "rulebook",
+      "url": "https://docs.dojifunded.com/resources/rules-risk-parameters",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "faq",
+      "url": "https://docs.dojifunded.com/getting-started/faq",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The supplied app FAQ route renders only the application shell to non-interactive retrieval; the dedicated first-party documentation FAQ contains the published answers."
+    },
+    {
+      "category": "pricing-checkout",
+      "url": "https://docs.dojifunded.com/account-pricing",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Instant Funding is marked coming soon and is not offered at $100K; Classic and Elite are not offered at $1K."
+    },
+    {
+      "category": "terms",
+      "url": "https://docs.dojifunded.com/legal/terms-of-use",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://docs.dojifunded.com/platform/payouts",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://docs.dojifunded.com/llms.txt",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The complete first-party documentation index contains no token, rewards, loyalty or airdrop page."
+    }
+  ]
+}

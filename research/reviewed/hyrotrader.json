@@ -1,0 +1,2809 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-hyrotrader",
+  "slug": "hyrotrader",
+  "name": "HyroTrader",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "evaluation"
+  ],
+  "offerNames": [
+    "One-Step",
+    "Two-Step"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle",
+          "paragraphs": [
+            "The transition from applicant to compensated trader follows a rigorous chronological path:\n• Phase 1: Entry & Setup: Registration involves selecting a notional account size and placing a Refundable Challenge Deposit. This deposit acts as a contractual debt owed to the trader upon meeting specific milestones, rather than a fee for service.\n• Phase 2: Evaluation: Traders navigate the One-Step or Two-Step evaluation tracks (Challenge and Verification) to demonstrate proficiency in risk management and slippage emulation strategies.\n• Phase 3: Activation: Accounts must be manually \"Activated\" within the platform to begin the evaluation. Traders are subject to a six-month validity period; failure to activate within this window results in the automatic expiration of the challenge and a return of the deposit (§8.1A).\n• Phase 4: Transition: Completion of the evaluation is a prerequisite but does not guarantee funding. The Provider retains absolute discretion to decline a Funded Trader Agreement based on KYC/AML/Sanctions results or the firm's current \"capital allocation capacity\" (§6.2). Entry into the reward phase requires a separate agreement with the BVI entity.\n• Phase 5: Performance & Payout: Rewards are calculated based on simulated profits. The Refundable Challenge Deposit is returned alongside the first successful payout milestone."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Definition and Operating Model",
+          "paragraphs": [
+            "HyroTrader is a cryptocurrency-focused proprietary trading firm founded in 2022. The firm utilizes a Simulated Evaluation model where all phases—Challenge, Verification, and the \"Funded\" phase—occur exclusively within a simulated environment. Under Section 3 of the General Terms and Conditions (GTC), all trading involves virtual units with no real capital or live market execution. This structure allows the firm to provide notional exposure to the cryptocurrency markets while mitigating the risks associated with custodial brokerage.",
+            "The corporate framework comprises three distinct entities to facilitate global operations and regulatory arbitrage:\n• HYRO TECHNOLOGIES FZ-LLC (The Provider): Based in the UAE (Ras Al Khaimah), this is the primary contracting party responsible for evaluation services.\n• HYROTRADER TECHNOLOGIES LTD (Platform IP Owner & Funded Trader Entity): Based in the British Virgin Islands (BVI), this entity holds all intellectual property and is the sole party to the \"Funded Trader Agreement.\" Responsibility for performance-based compensation rests exclusively with this BVI entity.\n• Hyro Finance j.s.a. (EEA Commercial Agent): Based in the Slovak Republic, this entity acts as an authorized agent for the European market to facilitate fiat payment collection. As per §P.3, this is a transitional entity expected to be withdrawn once the UAE-based Provider can accept card payments directly."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Evaluation",
+              "note": "2 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyrotrader_com",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$5K–$200K",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyrotrader_com",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "$59–$969",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyrotrader_com",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyrotrader_com",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "6%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyrotrader_com",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "on-demand",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/hyrotrader_com",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "simulated",
+              "description": "Challenge and verification trading are simulated.",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "simulated",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/hyrotrader_com",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "Hyro Finance, j. s. a. and Hyro Trading s. r. o.",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "Simulated",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/terms-and-conditions/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Evaluations & pricing",
+      "title": "Evaluations & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Program Structures and Funding Routes",
+          "paragraphs": [
+            "HyroTrader offers One-Step (Popular) and Two-Step evaluation tracks across tiers ranging from 5,000 to 200,000 USDT.",
+            "Specialized Accounts and Enhancements:\n• Complementary Accounts: These benefit-based accounts are restricted to exactly one payout. There are two distinct categories: Participation benefits (typically a 10% profit split or lower) and Giveaway/Referral accounts (offering an 80% profit split).\n• Swing Daily Drawdown Upgrade: An optional modification for swing traders. Statistical data from the source context indicates that traders using the Swing upgrade experience a 53% lower failure rate compared to the default risk parameters."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "one-step",
+              "eyebrow": "Evaluation",
+              "title": "One-Step",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "one-step-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 10% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/trading-rules/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "4%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/trading-rules/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "6%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/trading-rules/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/trading-rules/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                    "https://www.hyrotrader.com/product-category/hyro_challenge/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-refund",
+                  "label": "Fee refundable",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "one-step-time-limit",
+                  "label": "No time limit",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/trading-rules/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://hyrotrader.com"
+                }
+              ]
+            },
+            {
+              "id": "two-step",
+              "eyebrow": "Evaluation",
+              "title": "Two-Step",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "two-step-stages",
+                  "label": "Stages",
+                  "value": "Phase 1 · 10% target → Phase 2 · 5% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/trading-rules/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $59 | $10K · $119 | $25K · $249 | $50K · $379 | $100K · $579 | $200K · $969",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/trading-rules/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/trading-rules/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/trading-rules/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                    "https://www.hyrotrader.com/product-category/hyro_challenge/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-refund",
+                  "label": "Fee refundable",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-step-time-limit",
+                  "label": "No time limit",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.hyrotrader.com/trading-rules/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://hyrotrader.com"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trading",
+      "tabLabel": "Trading rules",
+      "title": "Trading rules",
+      "description": "Unknown values remain ND and are not interpreted as allowed or restricted.",
+      "blocks": [
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Governance, KYC, and Jurisdictional Restrictions",
+          "paragraphs": [
+            "• Legal Jurisdiction: Governed by the laws of Ras Al Khaimah (UAE). \n• US-User Carve-out: For residents of the United States, the seat of arbitration is New York, NY, administered by JAMS under Consumer Arbitration Minimum Standards (§23.5).\n• KYC/AML: Identity verification is managed via Sumsub. KYC triggers include initial registration, entry into the Funded Phase, and prior to any payout.\n• VPN Policy: Permitted for privacy, but use with \"intent to conceal or misrepresent\" jurisdiction to evade terms is a material breach."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution, Platforms, and Custody",
+          "paragraphs": [
+            "The technical infrastructure is designed to emulate authentic market conditions via API integrations.\n• Platform Specifics:\n• Bybit (Direct API): Traders connect their own Bybit accounts via API to trade USDT perpetuals.\n• Tealstreet Terminal: A professional-grade interface utilizing Bybit order book data.\n• Cleo Platform: Unlike API-based options, accounts on Cleo are created automatically. This platform utilizes Binance market data for price discovery and execution simulation.\n• Custody/Walletry: HyroTrader is not a broker. No real capital deposits are accepted for trading. Payouts are handled via USDT or USDC stablecoins on-chain. Traders bear all risks associated with exchange rate fluctuations and blockchain transfer costs (§7.7)."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trading Permissions and Strategic Restrictions",
+          "paragraphs": [
+            "HyroTrader prohibits strategies that exploit simulation mechanics rather than market skill.\n• Prohibited Strategies: Martingale, cross-account hedging, latency arbitrage, and exploitation of data-feed inconsistencies.\n• Asset Restrictions: Trading of EUR/USD and USDC pairs is strictly prohibited per the Rulebook.\n• Permissions: News trading is permitted but restricted during specific windows (duration undefined in current documentation). Automation and API use are permitted on supported platforms.\n• Prohibited Jurisdictions (Hard Blocks): Services are strictly unavailable to residents of the USA (subject to §23), Russia, Belarus, Afghanistan, Burma (Myanmar), Central African Republic, Cuba, Democratic Republic of the Congo, Eritrea, Ethiopia, Haiti, Iran, Iraq, Lebanon, Libya, Nicaragua, North Korea, Somalia, South Sudan, Sudan, Syria, Venezuela, Yemen, and Zimbabwe. Additionally, the Ukrainian regions of Crimea, Donetsk, Kherson, Luhansk, and Zaporizhzhia are blocked."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers Table",
+          "paragraphs": [
+            "Technical Footnotes:\n• Refundable Deposit: Contractual debt returned with the first successful payout.\n• Trading Period: Unlimited, provided the account remains active (login/trade within 90 days)."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Technical Analysis of Risk and Performance Rules",
+          "paragraphs": [
+            "Traders must adhere to strict Notional Exposure Limits and risk management parameters:\n• Daily Drawdown (4%): A hard limit calculated based on the higher of equity or balance at the start of the trading day. \n• Maximum Loss (6%): The absolute drawdown limit relative to the initial notional balance. \n• Low-Cap Altcoin Rule: To prevent excessive volatility exposure, assets with a market capitalization below $100M cannot exceed 5% of the initial account balance.\n• Risk Management Standards (Section 10.5): Unlike automatic breaches, behaviors such as sudden position size escalation, trade-splitting, or \"all-or-nothing\" patterns are treated as \"Indicators\" of non-compliance. These may trigger proportionate measures such as leverage reduction or account reviews rather than immediate termination."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "trading-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "trading-weekend",
+              "label": "Weekend holding",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-news",
+              "label": "News trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-automation",
+              "label": "Automated trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-copy",
+              "label": "Copy trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-stop-loss",
+              "label": "Mandatory stop loss",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-platforms",
+              "label": "Platforms",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-markets",
+              "label": "Markets",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-leverage",
+              "label": "Leverage",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-consistency",
+              "label": "Consistency rule",
+              "value": "applies",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-profit-day",
+              "label": "Profit-day definition",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-fees",
+              "label": "Trading fees",
+              "value": "40% best-day contribution and 3% maximum realized loss per trade; martingale and cross-account hedging prohibited.",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/trading-rules/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Payout and Compensation Mechanics",
+          "paragraphs": [
+            "• Profit Share: Standard accounts begin at 80% and can scale to 90% based on consistent performance.\n• Withdrawal Process: Payout requests are eligible starting the same day as the first trade in the funded phase. Official processing timelines are 12–24 hours, though marketing materials occasionally suggest \"within a few hours.\"\n• Refund Mechanic: The Refundable Challenge Deposit is a contractual debt returned at the first payout milestone. It is not a bonus or promotional reward.\n• Complementary Accounts: These are strictly limited to one payout, after which the account is permanently deactivated and hidden from the dashboard."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "on-demand",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                "https://www.hyrotrader.com/product-category/hyro_challenge/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "$100",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                "https://www.hyrotrader.com/product-category/hyro_challenge/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USDT · USDC",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                "https://www.hyrotrader.com/product-category/hyro_challenge/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                "https://www.hyrotrader.com/product-category/hyro_challenge/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                "https://www.hyrotrader.com/product-category/hyro_challenge/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                "https://www.hyrotrader.com/product-category/hyro_challenge/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                "https://www.hyrotrader.com/product-category/hyro_challenge/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "The dedicated payout FAQ is canonical: 80% starting split, scaling to 90%; stated processing is 12–24 hours with no withdrawal commission.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/whitepaper.pdf",
+                "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                "https://www.hyrotrader.com/terms-and-conditions/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "$HYRO",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/whitepaper.pdf",
+                "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                "https://www.hyrotrader.com/terms-and-conditions/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "50,000,000",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/whitepaper.pdf",
+                "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                "https://www.hyrotrader.com/terms-and-conditions/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/whitepaper.pdf",
+                "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                "https://www.hyrotrader.com/terms-and-conditions/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/whitepaper.pdf",
+                "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                "https://www.hyrotrader.com/terms-and-conditions/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/whitepaper.pdf",
+                "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                "https://www.hyrotrader.com/terms-and-conditions/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.hyrotrader.com/whitepaper.pdf",
+                "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                "https://www.hyrotrader.com/terms-and-conditions/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "ERC-20 token; 10% community/airdrops and 10% staking/cashbacks. Launch status and trader eligibility are ND.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Sources and Analytical Conflicts",
+          "paragraphs": [
+            "Source List:\n• Official FAQ; General Terms and Conditions (v1.15)\n• Official Rulebook and Pricing Documentation; Official Payout Policy",
+            "Conflict Disclosure:\n• Drawdown Discrepancy: Marketing materials frequently reference a \"5% balance drawdown,\" whereas the formal GTC and Rulebook strictly enforce a 4% daily drawdown and 6% absolute maximum loss.\n• News Trading: The specific \"news-event window\" (e.g., +/- 5 minutes) remains numerically undefined in the core legal documents.\n• Payout Speed: A discrepancy exists between the \"within a few hours\" marketing claim and the \"12–24 hours\" official processing window in the Payout Policy."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences-notice",
+          "type": "notice",
+          "tone": "warning",
+          "text": "2 official-source differences are resolved and preserved with both URLs.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/hyrotrader_com",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "hyrotrader-standard-profit-split",
+              "eyebrow": "Resolved · specific policy preferred",
+              "title": "Standard funded profit split",
+              "description": "The dedicated payout FAQ is canonical for standard withdrawals; the product-category marketing range remains an alternate.",
+              "facts": [
+                {
+                  "id": "hyrotrader-standard-profit-split-canonical",
+                  "label": "Canonical",
+                  "value": "Canonical homepage and FAQ report 80% starting split, increasing by 5 points every four months to 90%; $100 minimum after split; requests from the first funded-account trading day; normally 12-24 hours in USDT/USDC with no withdrawal commission.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/hyrotrader_com",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "hyrotrader-standard-profit-split-alternate",
+                  "label": "Alternate",
+                  "value": "Official challenge product-category page markets profit splits starting at 70% and scaling to 90%.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/hyrotrader_com",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://www.hyrotrader.com/product-category/hyro_challenge/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyrotrader-complimentary-profit-split",
+              "eyebrow": "Resolved · specific policy preferred",
+              "title": "Complimentary-account profit split",
+              "description": "The dedicated complimentary-accounts FAQ is used for this account category; the Terms value remains visible as an alternate.",
+              "facts": [
+                {
+                  "id": "hyrotrader-complimentary-profit-split-canonical",
+                  "label": "Canonical",
+                  "value": "Complementary Accounts FAQ says giveaway, invite-a-friend and team-assigned challenge accounts carry an 80% split and one payout.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/hyrotrader_com",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "hyrotrader-complimentary-profit-split-alternate",
+                  "label": "Alternate",
+                  "value": "Terms say complimentary challenge accounts may feature a 70% split and normally only one payout.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/hyrotrader_com",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://www.hyrotrader.com/terms-and-conditions/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "hyrotrader-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://www.hyrotrader.com",
+              "description": "Official X and website reciprocally identify each other.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/hyrotrader_com"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyrotrader-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "One-Step: unlimited duration, five minimum days, 10% target, 4% daily drawdown and 6% max loss. Two-Step targets 10% then 5% with 5% daily drawdown. Controls include a 40% best-day contribution rule, 3% maximum realized loss per trade, no martingale/cross-account hedging and low-cap exposure limits.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyrotrader.com/trading-rules/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyrotrader-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "Official FAQ covers onboarding, evaluation, rules, restrictions, funded accounts and payouts, swing drawdown, platforms, billing and certificates.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyrotrader.com/faq/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyrotrader-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "Homepage publishes $5K-$200K tiers. Displayed Two-Step fees are $59/$119/$249/$379/$579/$969; a selected $25K Swing upgrade is +$89. The challenge fee is described as refundable with the first payout and there are no monthly fees.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyrotrader.com/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyrotrader-terms-5",
+              "eyebrow": "terms · reported",
+              "title": "Terms last updated March 24, 2026 identify Hyro Finance, j. s. a. and Hyro Trading s. r. o.; challenge and verification trading is simulated with fictitious funds.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyrotrader.com/terms-and-conditions/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyrotrader-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Canonical homepage and FAQ report 80% starting split, increasing by 5 points every four months to 90%; $100 minimum after split; requests from the first funded-account trading day; normally 12-24 hours in USDT/USDC with no withdrawal commission.",
+              "description": "A still-live product-category page separately markets a 70-90% range.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyrotrader-payoutPolicy-7",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Official challenge product-category page markets profit splits starting at 70% and scaling to 90%.",
+              "description": "Canonical homepage and payout FAQ say standard traders start at 80%.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyrotrader.com/product-category/hyro_challenge/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyrotrader-tokenRewards-8",
+              "eyebrow": "tokenRewards · reported",
+              "title": "Whitepaper reports a 50,000,000-supply ERC-20 $HYRO utility token, including 10% for community/airdrops and 10% for staking rewards/cashbacks. Current launch status, contract and trader eligibility are not documented on live product pages.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyrotrader.com/whitepaper.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyrotrader-tokenRewards-9",
+              "eyebrow": "tokenRewards · archived observation",
+              "title": "Complementary Accounts FAQ says giveaway, invite-a-friend and team-assigned challenge accounts carry an 80% split and one payout.",
+              "description": "Terms specify 70% for the same category.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "hyrotrader-tokenRewards-10",
+              "eyebrow": "tokenRewards · archived observation",
+              "title": "Terms say complimentary challenge accounts may feature a 70% split and normally only one payout.",
+              "description": "Dedicated FAQ says 80%.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.hyrotrader.com/terms-and-conditions/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "evaluation"
+    ],
+    "capital": {
+      "status": "varies",
+      "min": 5000,
+      "max": 200000,
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyrotrader_com",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "varies",
+      "min": 59,
+      "max": 969,
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyrotrader_com",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 80,
+      "max": 80,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyrotrader_com",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "known",
+      "min": 6,
+      "max": 6,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyrotrader_com",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "on-demand"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyrotrader_com",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "known",
+      "values": [
+        "simulated"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyrotrader_com",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [
+    {
+      "id": "hyrotrader-standard-profit-split",
+      "field": "payoutPolicy",
+      "label": "Standard funded profit split",
+      "kind": "official-source-mismatch",
+      "status": "resolved",
+      "resolutionBasis": "specific-policy-preferred",
+      "canonical": {
+        "value": "Canonical homepage and FAQ report 80% starting split, increasing by 5 points every four months to 90%; $100 minimum after split; requests from the first funded-account trading day; normally 12-24 hours in USDT/USDC with no withdrawal commission.",
+        "observationId": "hyrotrader-payoutPolicy-6",
+        "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "A still-live product-category page separately markets a 70-90% range."
+      },
+      "alternates": [
+        {
+          "value": "Official challenge product-category page markets profit splits starting at 70% and scaling to 90%.",
+          "observationId": "hyrotrader-payoutPolicy-7",
+          "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Canonical homepage and payout FAQ say standard traders start at 80%."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "The dedicated payout FAQ is canonical for standard withdrawals; the product-category marketing range remains an alternate."
+    },
+    {
+      "id": "hyrotrader-complimentary-profit-split",
+      "field": "tokenRewards",
+      "label": "Complimentary-account profit split",
+      "kind": "official-source-mismatch",
+      "status": "resolved",
+      "resolutionBasis": "specific-policy-preferred",
+      "canonical": {
+        "value": "Complementary Accounts FAQ says giveaway, invite-a-friend and team-assigned challenge accounts carry an 80% split and one payout.",
+        "observationId": "hyrotrader-tokenRewards-9",
+        "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "Terms specify 70% for the same category."
+      },
+      "alternates": [
+        {
+          "value": "Terms say complimentary challenge accounts may feature a 70% split and normally only one payout.",
+          "observationId": "hyrotrader-tokenRewards-10",
+          "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Dedicated FAQ says 80%."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "The dedicated complimentary-accounts FAQ is used for this account category; the Terms value remains visible as an alternate."
+    }
+  ],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "hyrotrader-operating-model",
+      "label": "Operating model",
+      "value": "evaluation",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyrotrader_com",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "hyrotrader-model-summary",
+      "label": "How the model works",
+      "value": "HyroTrader is a cryptocurrency-focused proprietary trading firm founded in 2022. The firm utilizes a Simulated Evaluation model where all phases—Challenge, Verification, and the \"Funded\" phase—occur exclusively within a simulated environment. Under Section 3 of the General Terms and Conditions (GTC), all trading involves virtual units with no real capital or live market execution. This structure allows the firm to provide notional exposure to the cryptocurrency markets while mitigating the risks associated with custodial brokerage.\n\nThe corporate framework comprises three distinct entities to facilitate global operations and regulatory arbitrage:\n• HYRO TECHNOLOGIES FZ-LLC (The Provider): Based in the UAE (Ras Al Khaimah), this is the primary contracting party responsible for evaluation services.\n• HYROTRADER TECHNOLOGIES LTD (Platform IP Owner & Funded Trader Entity): Based in the Briti",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/hyrotrader_com",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "hyrotrader-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "The transition from applicant to compensated trader follows a rigorous chronological path:\n• Phase 1: Entry & Setup: Registration involves selecting a notional account size and placing a Refundable Challenge Deposit. This deposit acts as a contractual debt owed to the trader upon meeting specific milestones, rather than a fee for service.\n• Phase 2: Evaluation: Traders navigate the One-Step or Two-Step evaluation tracks (Challenge and Verification) to demonstrate proficiency in risk management and slippage emulation strategies.\n• Phase 3: Activation: Accounts must be manually \"Activated\" within the platform to begin the evaluation. Traders are subject to a six-month validity period; failure to activate within this window results in the automatic expiration of the challenge and a return of the deposit (§8.1A).\n• Phase 4: Transition: Completion of the evaluation is a prerequisite but does not guarantee funding. The Provider retains absolute discretion to decline a Funded Trader Agreement based on KYC/AML/Sanctions results or the firm's current \"capital allocation capacity\" (§6.2). Entry into the reward phase requires a separate agreement with the BVI entity.\n• Phase 5: Performance & ",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/hyrotrader_com",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyrotrader.com/trading-rules/",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyrotrader.com/faq/",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyrotrader.com/",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyrotrader.com/terms-and-conditions/",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyrotrader.com/whitepaper.pdf",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/hyrotrader_com",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Official X and website reciprocally identify each other."
+    },
+    {
+      "category": "rulebook",
+      "url": "https://www.hyrotrader.com/trading-rules/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "faq",
+      "url": "https://www.hyrotrader.com/faq/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "pricing-checkout",
+      "url": "https://www.hyrotrader.com/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://www.hyrotrader.com/terms-and-conditions/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Dedicated FAQ says 80%."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "A still-live product-category page separately markets a 70-90% range."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://www.hyrotrader.com/product-category/hyro_challenge/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Canonical homepage and payout FAQ say standard traders start at 80%."
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://www.hyrotrader.com/whitepaper.pdf",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://www.hyrotrader.com/faq/hyrotrader-account/complementary-accounts--challenge-rewards/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Terms specify 70% for the same category."
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "id": "firm-foxify",
+  "slug": "foxify",
+  "name": "Foxify Trade",
+  "checkedAt": "2026-08-22",
+  "modelTypes": ["collateralized", "progression", "instant-funding"],
+  "offerNames": ["Entry", "Pro", "Elite (coming soon)", "Automated FUNDED (beta)"],
+  "operatingModel": {
+    "classification": {
+      "id": "foxify-operating-model",
+      "label": "Operating model",
+      "value": "Collateral-backed instant funding with performance-based progression",
+      "status": "reported",
+      "note": "FOXIFY presents FUNDED as an A-book infrastructure layer integrated into live decentralized trading venues rather than a conventional evaluation product.",
+      "evidence": [{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]
+    },
+    "summary": {
+      "id": "foxify-model-summary",
+      "label": "How the model works",
+      "value": "A trader deposits USDC collateral, receives a larger FUNDED balance immediately, trades on supported DEX order books, and advances through capital levels after meeting both the points and profit targets.",
+      "status": "reported",
+      "evidence": [{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]
+    },
+    "lifecycle": [
+      {"id":"foxify-entry","label":"1 · Deposit","value":"Choose a supported venue and deposit 100 USDC for Entry or 500 USDC for Pro; the documented Elite route also uses 500 USDC but is marked coming soon.","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+      {"id":"foxify-activation","label":"2 · Instant activation","value":"Receive live FUNDED capital without an evaluation phase: $500 on Entry, $2,500 on Pro, or $5,000 on the future Elite track.","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+      {"id":"foxify-trading","label":"3 · Trade","value":"Trade on supported decentralized venues while staying inside the level-specific maximum drawdown.","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+      {"id":"foxify-promotion","label":"4 · Hit both targets","value":"Promotion requires 100 points and the level profit target, documented as 15% of the level's initial FUNDED balance.","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+      {"id":"foxify-cashout-scale","label":"5 · Cash out and scale","value":"The standard track pays 80% of eligible profit in USDC through on-chain settlement and advances the trader to the next level.","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+    ],
+    "accountEnvironment": {"id":"foxify-environment","label":"Account environment","value":"Real capital routed to live DEX order books","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+    "traderPayment": {"id":"foxify-collateral","label":"Trader payment","value":"Refundable-risk collateral is deposited in USDC and can be consumed by losses or inactivity-related borrow fees.","status":"reported","note":"The sources describe the deposit as collateral rather than an evaluation fee; complete refund mechanics are not documented in the research set.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+    "fundingMechanism": {"id":"foxify-funding","label":"Funding mechanism","value":"FOXIFY vault capital expands the trader's usable balance and absorbs losses beyond the deposited collateral, subject to each level's maximum drawdown.","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+    "traderCompensation": {"id":"foxify-compensation","label":"Trader compensation","value":"80% of eligible profit on standard FUNDED accounts; 70% on Automated FUNDED beta accounts.","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+  },
+  "comparison": {
+    "modelTypes": ["collateralized", "progression", "instant-funding"],
+    "capital": {"status":"varies","displayValue":"$500–$10K live · up to $20K announced","min":500,"max":20000,"unit":"USD","notes":"Entry and Pro currently scale to $10,000. Elite is documented up to $20,000 but marked coming soon.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+    "entryCost": {"status":"varies","displayValue":"100–500 USDC collateral","min":100,"max":500,"unit":"USDC","notes":"Entry requires 100 USDC; Pro requires 500 USDC; Elite is documented at 500 USDC but is not live.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+    "profitSplit": {"status":"varies","displayValue":"80% standard · 70% automated beta","min":70,"max":80,"unit":"percent","notes":"The separate waitlist page mentions up to 90%; current documentation is used for the displayed current range.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"},{"sourceUrl":"https://waitlist.foxify.trade/","checkedAt":"2026-08-22"}]},
+    "maxDrawdown": {"status":"varies","displayValue":"6%–20% by level","min":6,"max":20,"unit":"percent","notes":"Calculated from the initial FUNDED balance of each level.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+    "payoutSchedules": {"status":"known","displayValue":"On target completion","values":["100 points plus profit target"],"notes":"Standard payouts are described as instant USDC settlement after eligibility conditions are met.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+    "executionModels": {"status":"varies","values":["A-book DEX execution","On-chain USDC settlement"],"notes":"Supported venues and chains vary.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+  },
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Collateral-backed funding infrastructure",
+      "description": "FOXIFY's product model is organized around live execution, collateral and level-by-level scaling rather than evaluation phases.",
+      "blocks": [
+        {"id":"foxify-about","type":"text","eyebrow":"Project model","title":"FUNDED by FOXIFY","paragraphs":["FOXIFY describes FUNDED as an A-book prop-firm infrastructure layer that trading platforms can integrate. A trader supplies USDC collateral and receives a larger live trading balance immediately; every documented FUNDED trade is presented as routed through real DEX order books.","Revenue is described as coming from trading fees and the protocol profit share. Trader losses first reduce the deposited collateral, while the protocol vault covers losses beyond that collateral within the account's permitted drawdown."],"meta":"Agent-assisted research · current official sources","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+        {"id":"foxify-overview-facts","type":"fact-grid","columns":3,"presentation":"details","items":[
+          {"id":"foxify-evaluation","label":"Evaluation phase","value":"None · funding starts immediately","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-collateral-range","label":"Initial collateral","value":"100–500 USDC","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-live-capital","label":"Currently documented live ceiling","value":"$10,000","status":"reported","note":"The $20,000 Elite track is marked coming soon.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-manual-split","label":"Standard profit share","value":"80% to trader","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-settlement","label":"Settlement","value":"Instant on-chain USDC after eligibility","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-kyc","label":"KYC","value":"Not required in current product documentation","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "tracks",
+      "tabLabel": "Tracks & levels",
+      "title": "Funding tracks and progression",
+      "description": "Every row preserves the account balance, profit target and level-specific drawdown published by FOXIFY.",
+      "blocks": [
+        {"id":"foxify-track-records","type":"record-list","presentation":"tracks","items":[
+          {"id":"foxify-entry-track","eyebrow":"Available · 100 USDC collateral","title":"Entry Track","description":"Starts at $500 and scales through six levels to $10,000.","facts":[
+            {"id":"entry-spark","label":"Spark","value":"$500 · $75 target · 20% / $100 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"entry-surge","label":"Surge","value":"$1,250 · $187.50 target · 15% / $187.50 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"entry-bronze","label":"Bronze","value":"$2,500 · $375 target · 15% / $375 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"entry-silver","label":"Silver","value":"$5,000 · $750 target · 12% / $600 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"entry-gold","label":"Gold","value":"$7,500 · $1,125 target · 10% / $750 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"entry-platinum","label":"Platinum","value":"$10,000 · $1,500 target · 10% / $1,000 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+          ],"links":[{"label":"Official documentation","url":"https://docs.foxify.trade/"}]},
+          {"id":"foxify-pro-track","eyebrow":"Available · 500 USDC collateral","title":"Pro Track","description":"Starts at $2,500 and reaches $10,000 in four levels.","facts":[
+            {"id":"pro-bronze","label":"Bronze","value":"$2,500 · $375 target · 20% / $500 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"pro-silver","label":"Silver","value":"$5,000 · $750 target · 15% / $750 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"pro-gold","label":"Gold","value":"$7,500 · $1,125 target · 12% / $900 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"pro-platinum","label":"Platinum","value":"$10,000 · $1,500 target · 12% / $1,200 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+          ],"links":[{"label":"Official documentation","url":"https://docs.foxify.trade/"}]},
+          {"id":"foxify-elite-track","eyebrow":"Coming soon · 500 USDC collateral","title":"Elite Track","description":"Announced 10x starting multiplier and a path from $5,000 to $20,000 with tighter drawdown limits.","facts":[
+            {"id":"elite-silver","label":"Silver","value":"$5,000 · $750 target · 10% / $500 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"elite-platinum","label":"Platinum","value":"$10,000 · $1,500 target · 8% / $800 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"elite-diamond","label":"Diamond","value":"$15,000 · $2,250 target · 7% / $1,050 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+            {"id":"elite-final","label":"Elite","value":"$20,000 · $3,000 target · 6% / $1,200 max drawdown · 100 points","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+          ],"links":[{"label":"Official documentation","url":"https://docs.foxify.trade/"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "rules",
+      "tabLabel": "Rules & risk",
+      "title": "Promotion, drawdown and trading permissions",
+      "blocks": [
+        {"id":"foxify-promotion-rules","type":"fact-grid","columns":2,"presentation":"details","items":[
+          {"id":"foxify-points-target","label":"Points target","value":"100 points at every level","status":"reported","note":"The exact activity and P&L weighting formula is not disclosed.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-profit-target","label":"Profit target","value":"15% of the level's initial FUNDED balance","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-drawdown-basis","label":"Maximum drawdown basis","value":"Fixed from the initial FUNDED balance at the current level","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-breach","label":"Breach consequence","value":"Account liquidation; collateral covers losses first and the FUNDED vault covers the remainder","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-reset","label":"Drawdown reset","value":"A paid reset can restore risk limits while retaining the current level and progress","status":"reported","note":"The reset price is not documented in the research sources.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-inactivity","label":"Inactivity","value":"Dynamic borrow fees can accrue after an extended idle period and consume collateral","status":"reported","note":"The threshold and live rate are shown in the trading UI rather than fixed in the docs.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+        ]},
+        {"id":"foxify-permissions","type":"fact-grid","columns":3,"presentation":"details","items":[
+          {"id":"foxify-news","label":"News trading","value":"Allowed","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-weekend","label":"Weekend / overnight holding","value":"Allowed","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-bots","label":"Bots and EAs","value":"Allowed","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-copy","label":"Copy trading","value":"Allowed","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-consistency","label":"Consistency rule","value":"None documented","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-stop-loss","label":"Mandatory stop-loss","value":"Not required","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+        ]},
+        {"id":"foxify-days-conflict","type":"notice","tone":"warning","text":"The current documentation contains inconsistent minimum-time wording: the Points section says there is no minimum trading time, while the restrictions summary lists a one-day minimum. Keep both statements unresolved until the live product rule is manually confirmed.","status":"conflict","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Target-triggered USDC settlement",
+      "blocks": [
+        {"id":"foxify-payout-flow","type":"fact-grid","columns":2,"presentation":"steps","items":[
+          {"id":"foxify-payout-eligibility","label":"1 · Eligibility","value":"Reach 100 points and the current level's profit target","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-payout-request","label":"2 · Request cashout","value":"Eligible profit can be requested without a documented manual-review stage","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-payout-split","label":"3 · Apply split","value":"80% to the trader and 20% to FOXIFY on standard accounts","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"foxify-payout-delivery","label":"4 · Settlement","value":"USDC is sent on-chain to the connected wallet and the account advances to the next level","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+        ]},
+        {"id":"foxify-automated","type":"text","eyebrow":"Beta product","title":"Automated FUNDED","paragraphs":["Automated FUNDED deploys the account balance into curated strategy vaults and automates execution, cashout and scaling. Entry and Pro are described as available during beta; Elite automation remains in development.","Automated accounts use a 70% trader / 30% protocol split instead of the standard 80% / 20%. Published performance statistics are marketing-reported observations and should be rechecked before production comparison filters use them."],"status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+      ]
+    },
+    {
+      "id": "execution",
+      "tabLabel": "Execution",
+      "title": "Venues, markets and fees",
+      "blocks": [
+        {"id":"foxify-venues","type":"record-list","presentation":"records","items":[
+          {"id":"foxify-kodiak","eyebrow":"Live · Berachain","title":"Kodiak Finance","facts":[{"id":"kodiak-markets","label":"Published markets","value":"125+","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},{"id":"kodiak-leverage","label":"Maximum leverage","value":"Up to 100x, asset-dependent","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},{"id":"kodiak-fee","label":"FUNDED trading fee","value":"7.5 bps","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}]},
+          {"id":"foxify-what","eyebrow":"Live · Arbitrum","title":"what.exchange","facts":[{"id":"what-markets","label":"Published markets","value":"125+","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},{"id":"what-leverage","label":"Maximum leverage","value":"Up to 100x, asset-dependent","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},{"id":"what-fee","label":"FUNDED trading fee","value":"7.5 bps","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}]},
+          {"id":"foxify-perptools","eyebrow":"Live · Arbitrum","title":"PERPTools","facts":[{"id":"perptools-markets","label":"Published markets","value":"125+","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},{"id":"perptools-leverage","label":"Maximum leverage","value":"Up to 100x, asset-dependent","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},{"id":"perptools-fee","label":"FUNDED trading fee","value":"9 bps","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}]},
+          {"id":"foxify-hyperliquid","eyebrow":"Coming soon · target Q3 2026","title":"HyperLiquid","facts":[{"id":"hyperliquid-markets","label":"Planned markets","value":"350+","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},{"id":"hyperliquid-leverage","label":"Published maximum leverage","value":"Up to 50x, asset-dependent","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}]}
+        ]},
+        {"id":"foxify-market-conflict","type":"notice","tone":"warning","text":"Current official pages publish different market counts: documentation lists 125+ for active integrations, while the main website advertises 220+. The site should preserve venue-specific values instead of presenting one universal market count.","status":"conflict","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"},{"sourceUrl":"https://www.foxify.trade/","checkedAt":"2026-08-22"}]}
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Token & rewards",
+      "title": "FOX, staking and NFT utility",
+      "blocks": [
+        {"id":"foxify-reward-facts","type":"fact-grid","columns":2,"presentation":"details","items":[
+          {"id":"fox-token","label":"Token","value":"FOX on Sonic / Berachain","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"fox-fee-allocation","label":"Fee allocation","value":"30% of net trading fees buy FOX and distribute it to stakers","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"fox-silver-nft","label":"Silver NFT","value":"+10% additional FUNDED capital when staked before activation","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"fox-gold-nft","label":"Gold NFT","value":"+25% additional FUNDED capital when staked before activation","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"fox-nft-merge","label":"NFT progression","value":"Five Bronze NFTs can be merged into one Silver NFT","status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]},
+          {"id":"fox-dynamic-yield","label":"Displayed staking yield","value":"Dynamic · intentionally excluded from comparison data","status":"pending","note":"Live APY should be sourced dynamically rather than frozen in the research profile.","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"}]}
+        ]}
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & changes",
+      "title": "Current, waitlist and legacy context",
+      "blocks": [
+        {"id":"foxify-source-note","type":"text","eyebrow":"Research import","title":"NotebookLM-assisted profile · 2026-08-22","paragraphs":["The current documentation is the primary basis for the model, levels and mechanics. The main website is retained for current marketing claims and surfaced discrepancies.","The v2 waitlist and seven-day Trade2Earn page are preserved only as historical product context. Their 90% split, Flash Funding language, seven-day qualification and much larger capital claims are not merged into the current FUNDED offer."],"status":"reported","evidence":[{"sourceUrl":"https://docs.foxify.trade/","checkedAt":"2026-08-22"},{"sourceUrl":"https://www.foxify.trade/","checkedAt":"2026-08-22"},{"sourceUrl":"https://waitlist.foxify.trade/","checkedAt":"2026-08-22"},{"sourceUrl":"https://t2e.foxify.trade/","checkedAt":"2026-08-22"}]},
+        {"id":"foxify-sources","type":"record-list","presentation":"sources","items":[
+          {"id":"foxify-source-docs","eyebrow":"Primary source · current documentation","title":"FUNDED by FOXIFY documentation","description":"Operating model, tracks, level matrices, rules, payouts, integrations, fees and rewards.","meta":["Checked 2026-08-22"],"links":[{"label":"Open source","url":"https://docs.foxify.trade/"}]},
+          {"id":"foxify-source-website","eyebrow":"Primary source · current website","title":"FOXIFY official website","description":"Live product positioning, current headline funding ceiling and venue presentation.","meta":["Checked 2026-08-22"],"links":[{"label":"Open source","url":"https://www.foxify.trade/"}]},
+          {"id":"foxify-source-waitlist","eyebrow":"Historical context · waitlist","title":"FUNDED v2 waitlist","description":"Retained to expose earlier 90% and Flash Funding claims; not used as the current rulebook.","meta":["Checked 2026-08-22"],"links":[{"label":"Open source","url":"https://waitlist.foxify.trade/"}]},
+          {"id":"foxify-source-legacy","eyebrow":"Historical context · legacy","title":"Trade2Earn qualification page","description":"Earlier seven-day qualification model; not merged with current instant funding.","meta":["Checked 2026-08-22"],"links":[{"label":"Open source","url":"https://t2e.foxify.trade/"}]}
+        ]}
+      ]
+    }
+  ],
+  "sourcesInspected": [
+    {"category":"rulebook","url":"https://docs.foxify.trade/","checkedAt":"2026-08-22","outcome":"accessed","notes":"Canonical current source for model, offers and rules in this draft."},
+    {"category":"website","url":"https://www.foxify.trade/","checkedAt":"2026-08-22","outcome":"accessed","notes":"Used for current public positioning and discrepancy detection."},
+    {"category":"other","url":"https://waitlist.foxify.trade/","checkedAt":"2026-08-22","outcome":"accessed","notes":"Historical/waitlist context only."},
+    {"category":"other","url":"https://t2e.foxify.trade/","checkedAt":"2026-08-22","outcome":"accessed","notes":"Legacy qualification model; not treated as current."}
+  ],
+  "sourceDiscrepancies": []
+}

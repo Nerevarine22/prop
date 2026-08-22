@@ -1,0 +1,2559 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-size",
+  "slug": "size",
+  "name": "Size",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "competition"
+  ],
+  "offerNames": [
+    "Alpha Competition",
+    "Bronze Competition",
+    "Silver Competition",
+    "Gold Competition",
+    "Diamond Competition",
+    "Ruby Competition"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution, Custody, and Settlement",
+          "paragraphs": [
+            "• Execution Environment: All trading occurs in a simulated environment derived from live market feeds. There is no direct market impact from participant trades.\n• Wallet and Permissions: Users utilize a proprietary \"Size wallet.\" The non-custodial nature of the platform means payouts are settled via smart contracts directly to the user's controlled environment.\n• Settlement Path: \n• Cadence: Payouts are available on-demand with no review-cycle window, facilitating high-frequency payout requests for successful traders.\n• Minimums: A $5 minimum is required for payout requests.\n• Fees: Size charges no internal payout fees. However, a $1 external network/gas cost is applied to withdrawals from the Size wallet to an external wallet."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers",
+          "paragraphs": [
+            "The following table delineates the specifications for each documented tier as of August 16, 2026.",
+            "*\\*Note: The specific criteria for moving within the 60-85% range (e.g., leveling or performance milestones) are not currently disclosed.*",
+            "Pricing Discrepancies\nA material conflict exists regarding the Bronze Tier entry cost. The Product Documentation (v.2026) lists the Bronze Key at $9, whereas the legal Terms of Service Schedule identifies it as Free."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Detailed Rules and Risk Enforcement",
+          "paragraphs": [
+            "Risk management is enforced through automated drawdown triggers. Any violation of these thresholds constitutes a Hard Breach, resulting in the immediate termination of the \"Life.\"\n• Alpha through Gold Tiers: 5% Daily Loss Limit / 10% Total Drawdown.\n• Diamond and Ruby Tiers: 4% Daily Loss Limit / 8% Total Drawdown.",
+            "Risk Calculation Ambiguity: The \"Calculation Basis\" (whether drawdown is measured against starting balance, trailing equity, or end-of-day balance) is not explicitly defined in current documentation. Consequently, traders must operate under the assumption of the most restrictive interpretation until further clarification is provided (see *Unresolved Questions*)."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Operating Model and Project Essence",
+          "paragraphs": [
+            "Size is a simulated skill-based entertainment service operated by Trench Labs Group Ltd. From a regulatory and operational standpoint, the project is explicitly classified as an entertainment service to distinguish its activities from those of a regulated brokerage, investment firm, or financial intermediary.",
+            "The ecosystem utilizes a \"Key and Trial\" model to gate access to \"Lives\" (Virtual Funded Accounts). \n• The Key and Trial System: Participants pay a fixed entry fee (the Key) to compete in a high-stakes, 15-minute evaluation. This represents the participant's primary capital risk.\n• The Life System: A \"Life\" is a simulated funded account providing \"Virtual Credit\" or \"Simulated Capital.\" This stage carries performance-risk rather than capital-risk; the participant is not trading actual firm capital in live markets but is instead operating within a simulated environment.\n• Infrastructure: Size is non-custodial, operating on the HyperEVM network. Financial settlements are handled via USDC smart contracts, ensuring transparency in the compensation process without the platform taking custody of participant-earned profits."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Competition",
+              "note": "6 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/sizedotclub",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/help/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$100–$200K",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/sizedotclub",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/help/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "$1–$1.5K",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/sizedotclub",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/help/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/sizedotclub",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/help/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "8%–10%",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/sizedotclub",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/help/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "on-demand",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/sizedotclub",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/help/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "simulated",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "HyperEVM for USDC wallet and settlement",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "simulated · on-chain settlement",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/sizedotclub",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/help/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "Trench Labs Group Ltd.",
+              "description": "Simulated skill-based entertainment service; non-custodial",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "Simulated",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Competitions",
+      "title": "Competitions",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "alpha",
+              "eyebrow": "Competition",
+              "title": "Alpha Competition",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "alpha-stages",
+                  "label": "Stages",
+                  "value": "15-minute Trial",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "alpha-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$100 · $1",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "alpha-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "alpha-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "10%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "alpha-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "alpha-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "alpha-refund",
+                  "label": "Fee refundable",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "alpha-time-limit",
+                  "label": "No time limit",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.size.club"
+                }
+              ]
+            },
+            {
+              "id": "bronze",
+              "eyebrow": "Competition",
+              "title": "Bronze Competition",
+              "description": "Dedicated current product-tier documentation is canonical for the $9 fee; the Terms “Free” schedule is retained as a resolved discrepancy.",
+              "facts": [
+                {
+                  "id": "bronze-stages",
+                  "label": "Stages",
+                  "value": "15-minute Trial",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bronze-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$1K · $9",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bronze-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bronze-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "10%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bronze-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bronze-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bronze-refund",
+                  "label": "Fee refundable",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bronze-time-limit",
+                  "label": "No time limit",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.size.club"
+                }
+              ]
+            },
+            {
+              "id": "silver",
+              "eyebrow": "Competition",
+              "title": "Silver Competition",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "silver-stages",
+                  "label": "Stages",
+                  "value": "15-minute Trial",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "silver-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $49",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "silver-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "silver-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "10%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "silver-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "silver-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "silver-refund",
+                  "label": "Fee refundable",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "silver-time-limit",
+                  "label": "No time limit",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.size.club"
+                }
+              ]
+            },
+            {
+              "id": "gold",
+              "eyebrow": "Competition",
+              "title": "Gold Competition",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "gold-stages",
+                  "label": "Stages",
+                  "value": "15-minute Trial",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "gold-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$25K · $199",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "gold-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "gold-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "10%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "gold-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "gold-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "gold-refund",
+                  "label": "Fee refundable",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "gold-time-limit",
+                  "label": "No time limit",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.size.club"
+                }
+              ]
+            },
+            {
+              "id": "diamond",
+              "eyebrow": "Competition",
+              "title": "Diamond Competition",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "diamond-stages",
+                  "label": "Stages",
+                  "value": "15-minute Trial",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "diamond-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$100K · $799",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "diamond-daily-loss",
+                  "label": "Daily loss",
+                  "value": "4%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "diamond-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "8%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "diamond-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "diamond-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "diamond-refund",
+                  "label": "Fee refundable",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "diamond-time-limit",
+                  "label": "No time limit",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.size.club"
+                }
+              ]
+            },
+            {
+              "id": "ruby",
+              "eyebrow": "Competition",
+              "title": "Ruby Competition",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "ruby-stages",
+                  "label": "Stages",
+                  "value": "15-minute Trial",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "ruby-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$200K · $1,499",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "ruby-daily-loss",
+                  "label": "Daily loss",
+                  "value": "4%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "ruby-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "8%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "ruby-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "ruby-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "ruby-refund",
+                  "label": "Fee refundable",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                    "https://www.size.club/legal/terms-of-service.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "ruby-time-limit",
+                  "label": "No time limit",
+                  "value": "No",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.size.club"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Payout Mechanics and Trader Compensation",
+          "paragraphs": [
+            "Trader compensation is determined by the Profit Split, which generally ranges from 60% to 85% (with Alpha fixed at 80%). ",
+            "Critical Analysis of Balance Effects: \nFrom an analyst's perspective, traders must account for the impact of payouts on their risk \"buffer.\" Because the Maximum Drawdown is typically a fixed threshold, a payout reduces the account balance and, by extension, the distance to the liquidation point. \n• *Example:* If a $10,000 account has a $9,200 Max Drawdown ($800 buffer) and the trader takes a $500 payout, the new balance is $9,500, but the Max Drawdown remains at $9,200. The trader's effective buffer is reduced to $300, significantly increasing the risk of a Hard Breach."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle: From Key to Payout",
+          "paragraphs": [
+            "The participant journey is a strictly linear progression designed to filter for high-performance traders:\n• Entry: Participants acquire \"Keys\" for specific tiers. This represents the only point of personal capital outlay.\n• Evaluation (The Trial): The participant enters a 15-minute competitive \"Trial\" conducted on live market data. To advance, the participant must secure first place in their specific session.\n• Funding (The Life): Upon winning a Trial, the participant is awarded a \"Life.\" This transition moves the trader from a \"competitor\" to a \"simulated funded trader.\"\n• Trading & Risk: Participants manage the simulated account. At this stage, the trader has no personal capital at risk—only the \"Life\" itself is at stake. The objective is to generate simulated profit while avoiding a \"Hard Breach\" of risk parameters.\n• Compensation: Performance-based rewards are requested as payouts. This is the conversion of simulated profit into liquid USDC."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "on-demand",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "$5",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USDC",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Smart-contract transfer to Size wallet; no Size fee; external withdrawal fee stated as $1.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Ecosystem: XP, Rewards, and Restrictions",
+          "paragraphs": [
+            "The ecosystem incorporates gamification elements to drive engagement within the \"entertainment\" framework:\n• XP (Experience Points): A permanent loyalty score earned via Trial wins, payouts, referrals, and Key purchases. Notably, XP is also earned through \"Practice\" sessions and specific \"Missions,\" emphasizing the skill-development aspect of the service.\n• Preseason: A competitive phase where XP standings determine the distribution of funded-Life prizes.\n• Token Status: No proprietary liquid tokens or airdrops are documented as of August 2026.\n• Compliance & Identity: Identity verification (KYC) is mandatory. Per the June 30, 2026 Terms of Service, participation is strictly prohibited for individuals in restricted jurisdictions."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "XP",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Permanent XP score; Preseason XP standings award funded-Life prizes. Token and airdrop are ND.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions (Information Not Disclosed):",
+          "paragraphs": [
+            "• Drawdown Type: It is not disclosed if the Max Drawdown is *Static* (fixed) or *Trailing* (increasing with peak equity).\n• Calculation Basis: It is not disclosed if risk limits are calculated based on *Balance* or *Equity*.\n• Prohibited Strategies: No data on restrictions regarding arbitrage, HFT, or exploitation.\n• News Trading Rules: Limitations regarding high-impact economic events are not documented.\n• Consistency Rules: No mention of mandatory trade volume or sizing consistency.\n• Leverage Ratios: Specific leverage available within the simulated Lives is not disclosed.\n• Supported Markets: A comprehensive list of tradable asset classes (FX, Crypto, Indices) is missing."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Documented Conflicts:",
+          "paragraphs": [
+            "• Bronze Key Pricing: Contradiction between Product Docs ($9) and Terms Schedule (Free)."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Sources Used:",
+          "paragraphs": [
+            "• Official Website (size.club)\n• Official Rulebook: Product Tiers, Keys, and Lives\n• Official FAQ (Trials, Lives, and Payouts)\n• Pricing & Checkout Documentation\n• Legal Terms of Service (Trench Labs Group Ltd., Effective June 30, 2026)\n• Payout Policy (Profit Split and Settlement)\n• Token Rewards Documentation (XP and Leveling)"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences-notice",
+          "type": "notice",
+          "tone": "warning",
+          "text": "1 official-source difference is resolved and preserved with both URLs.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/sizedotclub",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/help/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "size-bronze-key-fee",
+              "eyebrow": "Resolved · specific policy preferred",
+              "title": "Bronze Key fee",
+              "description": "The dedicated current product-tier documentation price $9 is canonical; the Terms schedule “Free” remains an alternate.",
+              "facts": [
+                {
+                  "id": "size-bronze-key-fee-canonical",
+                  "label": "Canonical",
+                  "value": "Product docs list Alpha $1/$100 Life, Bronze $9/$1K, Silver $49/$5K, Gold $199/$25K, Diamond $799/$100K and Ruby $1,499/$200K.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/sizedotclub",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/help/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "size-bronze-key-fee-alternate",
+                  "label": "Alternate",
+                  "value": "Terms schedule lists Alpha $1/$100, Bronze Free/$1K, Silver $49/$5K, Gold $199/$25K, Diamond $799/$100K and Ruby $1,499/$200K.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/sizedotclub",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/help/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://www.size.club/legal/terms-of-service.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "size-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://www.size.club",
+              "description": "Official documentation links @sizedotclub.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/sizedotclub"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "size-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "A Key enters a 15-minute Trial on live markets; first place awards a simulated funded Life. The available Alpha Life is $100. Life limits are 5% daily/10% total drawdown for Alpha-Gold and 4%/8% for Diamond/Ruby.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "size-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "Official FAQ covers Trials, Lives, drawdowns, payouts, Wallet/Store, fees, XP, Preseason, payout token, identity verification and referrals.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.size.club/docs/help/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "size-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · archived observation",
+              "title": "Product docs list Alpha $1/$100 Life, Bronze $9/$1K, Silver $49/$5K, Gold $199/$25K, Diamond $799/$100K and Ruby $1,499/$200K.",
+              "description": "Terms list Bronze Key as Free.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "size-pricingCheckout-5",
+              "eyebrow": "pricingCheckout · archived observation",
+              "title": "Terms schedule lists Alpha $1/$100, Bronze Free/$1K, Silver $49/$5K, Gold $199/$25K, Diamond $799/$100K and Ruby $1,499/$200K.",
+              "description": "Product docs list Bronze at $9.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.size.club/legal/terms-of-service.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "size-terms-6",
+              "eyebrow": "terms · reported",
+              "title": "Terms operated by Trench Labs Group Ltd., effective June 30, 2026, define Size as a simulated skill-based entertainment service; it is non-custodial, supports USDC on HyperEVM and restricts listed jurisdictions.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.size.club/legal/terms-of-service.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "size-payoutPolicy-7",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "Payouts are on demand with no review-cycle window; $5 minimum, partial payouts, USDC smart-contract settlement to the Size wallet and no Size payout fee. External wallet withdrawal costs $1. Tier splits range 60-85%; Alpha is 80%.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.size.club/docs/after-you-win/profit-split-and-payouts"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "size-tokenRewards-8",
+              "eyebrow": "tokenRewards · reported",
+              "title": "XP is a permanent score earned through Trial wins, payouts, referrals, Key purchases, Practice and missions. Preseason uses XP standings for funded-Life prizes; no proprietary liquid token or airdrop is documented.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "competition"
+    ],
+    "capital": {
+      "status": "varies",
+      "min": 100,
+      "max": 200000,
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/sizedotclub",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/help/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "varies",
+      "min": 1,
+      "max": 1499,
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/sizedotclub",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/help/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 80,
+      "max": 80,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/sizedotclub",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/help/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "varies",
+      "min": 8,
+      "max": 10,
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/sizedotclub",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/help/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "on-demand"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/sizedotclub",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/help/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "varies",
+      "values": [
+        "simulated",
+        "on-chain settlement"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/sizedotclub",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/help/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [
+    {
+      "id": "size-bronze-key-fee",
+      "field": "pricingCheckout",
+      "label": "Bronze Key fee",
+      "kind": "official-source-mismatch",
+      "status": "resolved",
+      "resolutionBasis": "specific-policy-preferred",
+      "canonical": {
+        "value": "Product docs list Alpha $1/$100 Life, Bronze $9/$1K, Silver $49/$5K, Gold $199/$25K, Diamond $799/$100K and Ruby $1,499/$200K.",
+        "observationId": "size-pricingCheckout-4",
+        "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "Terms list Bronze Key as Free."
+      },
+      "alternates": [
+        {
+          "value": "Terms schedule lists Alpha $1/$100, Bronze Free/$1K, Silver $49/$5K, Gold $199/$25K, Diamond $799/$100K and Ruby $1,499/$200K.",
+          "observationId": "size-pricingCheckout-5",
+          "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Product docs list Bronze at $9."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "The dedicated current product-tier documentation price $9 is canonical; the Terms schedule “Free” remains an alternate."
+    }
+  ],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "size-operating-model",
+      "label": "Operating model",
+      "value": "competition",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/sizedotclub",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/help/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "size-model-summary",
+      "label": "How the model works",
+      "value": "Size is a simulated skill-based entertainment service operated by Trench Labs Group Ltd. From a regulatory and operational standpoint, the project is explicitly classified as an entertainment service to distinguish its activities from those of a regulated brokerage, investment firm, or financial intermediary.\n\nThe ecosystem utilizes a \"Key and Trial\" model to gate access to \"Lives\" (Virtual Funded Accounts). \n• The Key and Trial System: Participants pay a fixed entry fee (the Key) to compete in a high-stakes, 15-minute evaluation. This represents the participant's primary capital risk.\n• The Life System: A \"Life\" is a simulated funded account providing \"Virtual Credit\" or \"Simulated Capital.\" This stage carries performance-risk rather than capital-risk; the participant is not trading actual firm capital in live markets but is instead operating within a simulated environment.\n• Infrastruc",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/sizedotclub",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/help/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "size-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "The participant journey is a strictly linear progression designed to filter for high-performance traders:\n• Entry: Participants acquire \"Keys\" for specific tiers. This represents the only point of personal capital outlay.\n• Evaluation (The Trial): The participant enters a 15-minute competitive \"Trial\" conducted on live market data. To advance, the participant must secure first place in their specific session.\n• Funding (The Life): Upon winning a Trial, the participant is awarded a \"Life.\" This transition moves the trader from a \"competitor\" to a \"simulated funded trader.\"\n• Trading & Risk: Participants manage the simulated account. At this stage, the trader has no personal capital at risk—only the \"Life\" itself is at stake. The objective is to generate simulated profit while avoiding a \"Hard Breach\" of risk parameters.\n• Compensation: Performance-based rewards are requested as payouts. This is the conversion of simulated profit into liquid USDC.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/sizedotclub",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.size.club/docs/help/faq",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.size.club/legal/terms-of-service.pdf",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/sizedotclub",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Official documentation links @sizedotclub."
+    },
+    {
+      "category": "pricing-checkout",
+      "url": "https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Terms list Bronze Key as Free."
+    },
+    {
+      "category": "faq",
+      "url": "https://www.size.club/docs/help/faq",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "terms",
+      "url": "https://www.size.club/legal/terms-of-service.pdf",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://www.size.club/docs/after-you-win/profit-split-and-payouts",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://www.size.club/docs/progress-and-preseason/xp-leveling-and-achievements",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    }
+  ]
+}

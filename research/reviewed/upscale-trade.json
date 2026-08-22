@@ -1,0 +1,2680 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-upscale-trade",
+  "slug": "upscale-trade",
+  "name": "Upscale Trade",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "evaluation",
+    "instant-funding"
+  ],
+  "offerNames": [
+    "Basic",
+    "Accelerated",
+    "Turbo"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Identity and Operating Model",
+          "paragraphs": [
+            "Upscale Trade is an information technology platform dedicated to the evaluation of trading skills and competencies. Operating as a proprietary trading model, it is explicitly not a financial institution, bank, brokerage, or custodian. The platform does not hold client deposits, manage investment funds, or provide brokerage services. ",
+            "The core of the operation is a Simulated Environment. All trading activity occurs with \"notional capital\" within a simulation; no real market orders are executed. Consequently, payouts to users are legally categorized as compensation for independent contractor services provided to the platform. ",
+            "Jurisdictional Note: While marketing materials and the official FAQ state the platform operates from Dubai, the legal \"Terms of Use\" specify that the platform is governed by the laws of the Republic of Seychelles, with all arbitration proceedings seated in Victoria, Seychelles."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Evaluation · Instant funding",
+              "note": "3 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/UpscaleTrade",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$400K",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/UpscaleTrade",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "ND",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/UpscaleTrade",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/UpscaleTrade",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "6%–10%",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/UpscaleTrade",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "bi-weekly",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/UpscaleTrade",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "ND",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "TON, Base or BSC for USDT payout only",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                    "https://upscale.trade/faq",
+                    "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://upscale.trade/faq",
+                    "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "ND",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/UpscaleTrade",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "ND",
+              "description": "Software and professional-development service; not a financial institution",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://upscale.trade/faq",
+                    "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "payout",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://upscale.trade/faq",
+                    "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Offers & pricing",
+      "title": "Offers & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "basic",
+              "eyebrow": "Evaluation",
+              "title": "Basic",
+              "description": "Published fee range $59–$1,499; exact tiers are ND.",
+              "facts": [
+                {
+                  "id": "basic-stages",
+                  "label": "Stages",
+                  "value": "Phase 1 · 5% target → Phase 2 · 8% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "basic-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "basic-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "basic-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "10%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "basic-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "basic-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                    "https://upscale.trade/faq",
+                    "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "basic-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "basic-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://upscale.trade"
+                }
+              ]
+            },
+            {
+              "id": "accelerated",
+              "eyebrow": "Evaluation",
+              "title": "Accelerated",
+              "description": "Published fee range $69–$1,599; exact tiers are ND.",
+              "facts": [
+                {
+                  "id": "accelerated-stages",
+                  "label": "Stages",
+                  "value": "Evaluation · 10% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "accelerated-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "accelerated-daily-loss",
+                  "label": "Daily loss",
+                  "value": "3%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "accelerated-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "6%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "accelerated-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "static",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "accelerated-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                    "https://upscale.trade/faq",
+                    "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "accelerated-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "accelerated-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://upscale.trade"
+                }
+              ]
+            },
+            {
+              "id": "turbo",
+              "eyebrow": "Instant funding",
+              "title": "Turbo",
+              "description": "Published fee range $199–$1,099; exact tiers are ND.",
+              "facts": [
+                {
+                  "id": "turbo-stages",
+                  "label": "Stages",
+                  "value": "Funded",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "6%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "trailing high water mark",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                    "https://upscale.trade/faq",
+                    "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                    "https://upscale.trade/faq"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://upscale.trade"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trading",
+      "tabLabel": "Trading rules",
+      "title": "Trading rules",
+      "description": "Unknown values remain ND and are not interpreted as allowed or restricted.",
+      "blocks": [
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Non-Market Situation Policy:",
+          "paragraphs": [
+            "Upscale reserves the right to review results or decline payouts if profits stem from:\n• Price provider errors or incorrect quotes.\n• Exploitation of technical failures or platform bugs.\n• Arbitrage on price anomalies during the first seconds of market opening.\n• External broker cancellations due to abnormal market conditions or manipulation."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution, Infrastructure, and Custody",
+          "paragraphs": [
+            "The technical environment consists of a TradingView-based terminal integrated within a Telegram Mini-App (TMA) or web interface. Pricing data is sourced from Pyth Network decentralized oracles."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Asset Classes and Trading Permissions",
+          "paragraphs": [
+            "Traders choose from three market categories: Crypto (100+ pairs), RWA (Forex, Commodities, Indices), or ALL Markets.",
+            "Position Limits and Leverage",
+            "Prohibited Behaviors: Use of automated trading bots, API-based execution, and coordinated/mirrored trading between different users or accounts is strictly forbidden. ",
+            "Weekend Constraints: RWA markets (Forex, Commodities, Indices) pause during weekends (following New York time). Withdrawal requests are unavailable if a trader holds open RWA positions during this pause."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Mechanics of Critical Trading Rules",
+          "paragraphs": [
+            "The \"Profit Day\" Definition\nA day is recorded as a \"Profit Day\" when the account balance increases by at least 0.5% of the initial starting balance. This threshold remains fixed throughout the account lifecycle.",
+            "> Conflict Alert: There is a fundamental discrepancy in calculation logic. The Rulebook states that unrealized PnL (open positions) is included in the daily 0.5% balance change calculation. However, the FAQ claims that only realized profit from closed trades contributes to profit day requirements.",
+            "Daily Drawdown Reset and Calculation\nThe daily drawdown limit is calculated based on the balance at the start of the trading day (00:00 UTC).\n• Inclusion of Unrealized PnL: All drawdown limits include open positions. A losing open position reduces the balance in real-time and can breach the limit even before the trade is closed.\n• Independence: Each trading day is treated independently; a loss on a previous day does not affect the permitted loss for the subsequent day.",
+            "The 30% Consistency Rule (Turbo Only)\nWithdrawals from Turbo accounts are blocked if a single trading day accounts for 30% or more of the total profit earned within a payout cycle.\n• Example: If total profit is $2,500 and the best day was $1,500 (60%), the withdrawal is locked. The trader must continue trading to increase the total profit to $5,000. At $5,000, the $1,500 day represents exactly 30%, unlocking the request.",
+            "Hedging Restrictions\n• Intra-account (Permitted): Holding opposing long and short positions on the same instrument within a single challenge account is allowed.\n• Cross-account (Prohibited): Holding opposing positions on the same instrument across multiple trading accounts (regardless of size or track) is a terminal violation."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers",
+          "paragraphs": [
+            "Upscale Trade Funding Offers",
+            "Field Glossary\n• Drawdown Type: \n• Starting Balance (Static): Limit is measured from the initial account notional. \n• Highest Balance (Trailing): Applied only to Turbo. The limit is calculated from the \"High Water Mark\" (highest balance reached).\n• Profit Target: For all evaluation phases, targets are strictly calculated based on Realized PnL (closed trades only).\n• Max Drawdown (Basic $200k): Note that the limit tightens to 8% for Stage 2 and the Funded stage."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "trading-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "trading-weekend",
+              "label": "Weekend holding",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-news",
+              "label": "News trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-automation",
+              "label": "Automated trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-copy",
+              "label": "Copy trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-stop-loss",
+              "label": "Mandatory stop loss",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-platforms",
+              "label": "Platforms",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-markets",
+              "label": "Markets",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-leverage",
+              "label": "Leverage",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-consistency",
+              "label": "Consistency rule",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-profit-day",
+              "label": "Profit-day definition",
+              "value": "At least 0.5% balance change; unrealized PnL is included",
+              "status": "reported",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-fees",
+              "label": "Trading fees",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Payout and Compensation Mechanics",
+          "paragraphs": [
+            "Eligibility and Processing\n• 14-Day Cycle: Withdrawals are available every 14 calendar days from activation or the last payout.\n• Verification: While marketed as \"No KYC,\" the Terms of Use state that withdrawals remain in \"Pending KYC\" status until a passport and live-selfie are approved (review takes up to 48 business hours).\n• Settlement: Payouts are issued in USDT on TON, Base, or BSC networks. Processing takes up to 48 hours on-chain following approval.",
+            "Withdrawal Limits (Per 14-Day Period)",
+            "Account Restoration Rules\nIf an account is restored with a balance below its original notional, the trader must first recover the \"gap\" through trading. Only profit generated above the original starting balance is eligible for payout.",
+            "Trading Iteration Synthesis\nEvery payout initiates a new \"Trading Iteration.\" The account balance after the payout becomes the new \"Iteration Starting Balance.\"\n• Example ($100k Account): Account reaches $130k. Trader withdraws the $20k limit. The remaining $110k is the new iteration baseline.\n• Buffer: The $10k profit remaining on the account serves as a buffer for drawdown calculations but does not count toward the next payout until the balance exceeds $110k."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle: From Onboarding to Payout",
+          "paragraphs": [
+            "The progression of a trader on the Upscale platform follows a rigid operational workflow:\n• Entry: Users select a challenge track (Basic, Accelerated, or Turbo), specify an asset category (Crypto, RWA, or ALL Markets), and choose a notional account size.\n• Evaluation: Traders must meet specific profit targets while adhering to risk parameters.\n• Basic: Requires passage of Phase 1 (5% target) and Phase 2 (8% target).\n• Accelerated: Requires passage of a single phase (10% target).\n• Turbo: Bypasses evaluation, providing immediate access to simulated funding.\n• Funding Activation: Upon passing evaluation, the account is upgraded to \"Funded\" status. During this transition, the system executes an automatic closure of all open positions and cancels all pending limit orders to reset the account baseline.\n• Execution and Risk Maintenance: Traders manage the funded account within strict daily and maximum drawdown limits. Critically, drawdown is recorded in real-time based on the moment it occurs, including unrealized PnL. Consistency is monitored via \"Profit Days\" and specific payout dilution rules.\n• Compensation: After a 14-day \"Trading Iteration\" and the achievement of five profit days, the trader may request a withdrawal."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                "https://upscale.trade/faq",
+                "https://app.upscale.trade/terms-of-use-upscale.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "bi-weekly",
+              "status": "reported",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                "https://upscale.trade/faq",
+                "https://app.upscale.trade/terms-of-use-upscale.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "$1",
+              "status": "reported",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                "https://upscale.trade/faq",
+                "https://app.upscale.trade/terms-of-use-upscale.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USDT",
+              "status": "reported",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                "https://upscale.trade/faq",
+                "https://app.upscale.trade/terms-of-use-upscale.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                "https://upscale.trade/faq",
+                "https://app.upscale.trade/terms-of-use-upscale.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                "https://upscale.trade/faq",
+                "https://app.upscale.trade/terms-of-use-upscale.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                "https://upscale.trade/faq",
+                "https://app.upscale.trade/terms-of-use-upscale.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                "https://upscale.trade/faq",
+                "https://app.upscale.trade/terms-of-use-upscale.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Eligibility: 14 calendar days, five profit days, no breach and a size-dependent cap. Terms are canonical for KYC before withdrawal.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Compliance, Rewards, and Scaling",
+          "paragraphs": [
+            "• Maximum Allocation: Limited to a combined funded notional of $400,000. Success beyond this limit results in accounts being placed in a \"Reserve Queue.\"\n• Referral Program: Tiers include Silver (10%), Gold (12%), and Platinum (15%).\n• Demo Incentive: Passing a demo evaluation provides a 20% discount on a real challenge.\n• Inactivity Policy: 90 consecutive days of no trading will result in a \"Freeze,\" requiring support intervention to reactivate."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://upscale.trade/faq"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://upscale.trade/faq",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Tournament prizes, one-time 20% demo-payout discount and tiered referrals; proprietary token, points and airdrop are ND.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Sources, Conflicts, and Unresolved Questions",
+          "paragraphs": [
+            "Sources: Research Ledger (2026-08-16), Rulebook, Payout Policy, Terms of Use (May 2026), Official FAQ.",
+            "Table of Documented Contradictions",
+            "Unresolved Questions\n• Legal Identity: Specific registration numbers or entity names for the \"Dubai\" office are not documented.\n• AI Mentor: Marketed as a tool to analyze trades and suggest risk reductions, but the underlying algorithmic logic and mechanics remain an undocumented \"black box.\"\n• External Broker: The specific identity of the \"external broker\" utilized for price execution/cancellation is not disclosed."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences-notice",
+          "type": "notice",
+          "tone": "warning",
+          "text": "3 official-source differences are resolved and preserved with both URLs.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/UpscaleTrade",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://upscale.trade/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "upscale-trade-profit-day-definition",
+              "eyebrow": "Resolved · rulebook preferred",
+              "title": "Profitable-day definition",
+              "description": "Current participation rules including unrealized PnL are canonical; the FAQ realized-only definition remains an alternate.",
+              "facts": [
+                {
+                  "id": "upscale-trade-profit-day-definition-canonical",
+                  "label": "Canonical",
+                  "value": "Current rules define a profit day using at least 0.5% balance change and explicitly include unrealized PnL.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/UpscaleTrade",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "upscale-trade-profit-day-definition-alternate",
+                  "label": "Alternate",
+                  "value": "FAQ defines a profitable day as realized profit of at least 0.5% of initial balance and only closed trades count.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/UpscaleTrade",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://upscale.trade/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-restricted-jurisdictions",
+              "eyebrow": "Resolved · terms preferred",
+              "title": "Geographic eligibility",
+              "description": "Terms restrictions are canonical because no rulebook value was found; the worldwide FAQ claim remains an alternate.",
+              "facts": [
+                {
+                  "id": "upscale-trade-restricted-jurisdictions-canonical",
+                  "label": "Canonical",
+                  "value": "Terms last updated May 15, 2026 describe software and professional-development services, not a financial institution. Eligibility excludes US residents and sanctions-connected persons.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/UpscaleTrade",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "upscale-trade-restricted-jurisdictions-alternate",
+                  "label": "Alternate",
+                  "value": "FAQ claims no geographic restrictions and worldwide availability.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/UpscaleTrade",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://upscale.trade/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-withdrawal-kyc",
+              "eyebrow": "Resolved · terms preferred",
+              "title": "KYC before withdrawal",
+              "description": "Terms passport and live-selfie requirements are canonical; the no-KYC FAQ claim remains an alternate.",
+              "facts": [
+                {
+                  "id": "upscale-trade-withdrawal-kyc-canonical",
+                  "label": "Canonical",
+                  "value": "Terms require passport and live-selfie KYC; review may take up to 48 business hours and requests remain Pending KYC until approval.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/UpscaleTrade",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "upscale-trade-withdrawal-kyc-alternate",
+                  "label": "Alternate",
+                  "value": "Homepage and FAQ say registration and withdrawals require no KYC and pay directly to a non-custodial wallet.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/UpscaleTrade",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://upscale.trade/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://upscale.trade/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "upscale-trade-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://upscale.trade",
+              "description": "The official site and documentation reciprocally link @UpscaleTrade.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/UpscaleTrade"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "Basic is two stages with 5% then 8% targets, 5% daily and 10% max drawdown; Accelerated is one stage with 10% target and 3%/6%; Turbo is instant with no target or daily drawdown and 6% trailing max drawdown. Funded allocation cap is $400K.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-rulebook-3",
+              "eyebrow": "rulebook · archived observation",
+              "title": "Current rules define a profit day using at least 0.5% balance change and explicitly include unrealized PnL.",
+              "description": "FAQ says only realized profit and closed trades count.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-rulebook-4",
+              "eyebrow": "rulebook · archived observation",
+              "title": "FAQ defines a profitable day as realized profit of at least 0.5% of initial balance and only closed trades count.",
+              "description": "Current rules include unrealized PnL.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://upscale.trade/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-faq-5",
+              "eyebrow": "faq · reported",
+              "title": "Official FAQ covers onboarding, KYC claims, models, price tables, payments, risk, leverage, fees, funded accounts, withdrawals, referrals and tournaments.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://upscale.trade/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-pricingCheckout-6",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "Published fees: Basic $59-$1,499, Accelerated $69-$1,599 and Turbo $199-$1,099, varying by size and market selection. Payments include Telegram Stars, TON, USDT networks, USDC, ETH, BNB, TRX and SBP.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://upscale.trade/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-terms-7",
+              "eyebrow": "terms · archived observation",
+              "title": "FAQ claims no geographic restrictions and worldwide availability.",
+              "description": "Terms exclude US residents and sanctions-connected persons.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://upscale.trade/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-terms-8",
+              "eyebrow": "terms · archived observation",
+              "title": "Terms last updated May 15, 2026 describe software and professional-development services, not a financial institution. Eligibility excludes US residents and sanctions-connected persons.",
+              "description": "FAQ says there are no geographic restrictions.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-payoutPolicy-9",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "Withdrawals require 14 calendar days, five profit days, no breach and at least $1 available; USDT on TON/Base/BSC; standard split 80% or 90% upgrade; size-dependent per-cycle caps apply.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-payoutPolicy-10",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Homepage and FAQ say registration and withdrawals require no KYC and pay directly to a non-custodial wallet.",
+              "description": "Terms require passport and live-selfie KYC before withdrawal.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://upscale.trade/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-payoutPolicy-11",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Terms require passport and live-selfie KYC; review may take up to 48 business hours and requests remain Pending KYC until approval.",
+              "description": "Homepage and FAQ advertise withdrawals without KYC.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://app.upscale.trade/terms-of-use-upscale.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "upscale-trade-tokenRewards-12",
+              "eyebrow": "tokenRewards · reported",
+              "title": "FAQ documents free-challenge tournament prizes, a one-time 20% discount after a demo payout and a tiered referral programme. No proprietary token, transferable points or airdrop is documented.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://upscale.trade/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "evaluation",
+      "instant-funding"
+    ],
+    "capital": {
+      "status": "known",
+      "min": 400000,
+      "max": 400000,
+      "unit": "USD",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/UpscaleTrade",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "ND",
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/UpscaleTrade",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 80,
+      "max": 80,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/UpscaleTrade",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "varies",
+      "min": 6,
+      "max": 10,
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/UpscaleTrade",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "bi-weekly"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/UpscaleTrade",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "ND",
+      "values": [],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/UpscaleTrade",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [
+    {
+      "id": "upscale-trade-profit-day-definition",
+      "field": "rulebook",
+      "label": "Profitable-day definition",
+      "kind": "page-vs-rulebook",
+      "status": "resolved",
+      "resolutionBasis": "rulebook-preferred",
+      "canonical": {
+        "value": "Current rules define a profit day using at least 0.5% balance change and explicitly include unrealized PnL.",
+        "observationId": "upscale-trade-rulebook-3",
+        "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "FAQ says only realized profit and closed trades count."
+      },
+      "alternates": [
+        {
+          "value": "FAQ defines a profitable day as realized profit of at least 0.5% of initial balance and only closed trades count.",
+          "observationId": "upscale-trade-rulebook-4",
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Current rules include unrealized PnL."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "Current participation rules including unrealized PnL are canonical; the FAQ realized-only definition remains an alternate."
+    },
+    {
+      "id": "upscale-trade-restricted-jurisdictions",
+      "field": "terms",
+      "label": "Geographic eligibility",
+      "kind": "official-source-mismatch",
+      "status": "resolved",
+      "resolutionBasis": "terms-preferred",
+      "canonical": {
+        "value": "Terms last updated May 15, 2026 describe software and professional-development services, not a financial institution. Eligibility excludes US residents and sanctions-connected persons.",
+        "observationId": "upscale-trade-terms-8",
+        "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "FAQ says there are no geographic restrictions."
+      },
+      "alternates": [
+        {
+          "value": "FAQ claims no geographic restrictions and worldwide availability.",
+          "observationId": "upscale-trade-terms-7",
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Terms exclude US residents and sanctions-connected persons."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "Terms restrictions are canonical because no rulebook value was found; the worldwide FAQ claim remains an alternate."
+    },
+    {
+      "id": "upscale-trade-withdrawal-kyc",
+      "field": "payoutPolicy",
+      "label": "KYC before withdrawal",
+      "kind": "official-source-mismatch",
+      "status": "resolved",
+      "resolutionBasis": "terms-preferred",
+      "canonical": {
+        "value": "Terms require passport and live-selfie KYC; review may take up to 48 business hours and requests remain Pending KYC until approval.",
+        "observationId": "upscale-trade-payoutPolicy-11",
+        "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "Homepage and FAQ advertise withdrawals without KYC."
+      },
+      "alternates": [
+        {
+          "value": "Homepage and FAQ say registration and withdrawals require no KYC and pay directly to a non-custodial wallet.",
+          "observationId": "upscale-trade-payoutPolicy-10",
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Terms require passport and live-selfie KYC before withdrawal."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "Terms passport and live-selfie requirements are canonical; the no-KYC FAQ claim remains an alternate."
+    }
+  ],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "upscale-trade-operating-model",
+      "label": "Operating model",
+      "value": "evaluation · instant funding",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/UpscaleTrade",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "upscale-trade-model-summary",
+      "label": "How the model works",
+      "value": "Upscale Trade is an information technology platform dedicated to the evaluation of trading skills and competencies. Operating as a proprietary trading model, it is explicitly not a financial institution, bank, brokerage, or custodian. The platform does not hold client deposits, manage investment funds, or provide brokerage services. \n\nThe core of the operation is a Simulated Environment. All trading activity occurs with \"notional capital\" within a simulation; no real market orders are executed. Consequently, payouts to users are legally categorized as compensation for independent contractor services provided to the platform. \n\nJurisdictional Note: While marketing materials and the official FAQ state the platform operates from Dubai, the legal \"Terms of Use\" specify that the platform is governed by the laws of the Republic of Seychelles, with all arbitration proceedings seated in Victoria",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/UpscaleTrade",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://upscale.trade/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "upscale-trade-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "The progression of a trader on the Upscale platform follows a rigid operational workflow:\n• Entry: Users select a challenge track (Basic, Accelerated, or Turbo), specify an asset category (Crypto, RWA, or ALL Markets), and choose a notional account size.\n• Evaluation: Traders must meet specific profit targets while adhering to risk parameters.\n• Basic: Requires passage of Phase 1 (5% target) and Phase 2 (8% target).\n• Accelerated: Requires passage of a single phase (10% target).\n• Turbo: Bypasses evaluation, providing immediate access to simulated funding.\n• Funding Activation: Upon passing evaluation, the account is upgraded to \"Funded\" status. During this transition, the system executes an automatic closure of all open positions and cancels all pending limit orders to reset the account baseline.\n• Execution and Risk Maintenance: Traders manage the funded account within strict daily and maximum drawdown limits. Critically, drawdown is recorded in real-time based on the moment it occurs, including unrealized PnL. Consistency is monitored via \"Profit Days\" and specific payout dilution rules.\n• Compensation: After a 14-day \"Trading Iteration\" and the achievement of five profit days, ",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/UpscaleTrade",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://upscale.trade/faq",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/UpscaleTrade",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The official site and documentation reciprocally link @UpscaleTrade."
+    },
+    {
+      "category": "rulebook",
+      "url": "https://docs.upscale.trade/how-to-join-upscale/participation_requirements",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "FAQ says only realized profit and closed trades count."
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://upscale.trade/faq",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://app.upscale.trade/terms-of-use-upscale.pdf",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Homepage and FAQ advertise withdrawals without KYC."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://docs.upscale.trade/how-upscale-works/withdrawal_rules",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    }
+  ]
+}

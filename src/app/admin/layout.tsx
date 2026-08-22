@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { LayoutDashboard, Percent, Activity, LogOut, ShieldCheck, ExternalLink, Database } from 'lucide-react';
 import { auth, isFirebaseConfigured } from '@/lib/firebase/config';
+import { isAuthorizedAdmin } from '@/lib/firebase/adminAccess';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -20,11 +21,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
     if (isFirebaseConfigured) {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
-        if (user) {
+        if (isAuthorizedAdmin(user)) {
           setAuthenticated(true);
         } else {
+          if (user) void signOut(auth);
           setAuthenticated(false);
-          router.replace('/admin/login');
+          router.replace(user ? '/admin/login?reason=unauthorized' : '/admin/login');
         }
       });
       return () => unsubscribe();
@@ -84,7 +86,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               }`}
             >
               <LayoutDashboard className="h-4 w-4 text-emerald-400" />
-              <span>Prop Firm Cards</span>
+              <span>Research Registry</span>
             </Link>
 
             <Link
@@ -103,7 +105,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               }`}
             >
               <Database className="h-4 w-4 text-sky-400" />
-              <span>Research Database</span>
+              <span>Database Health</span>
             </Link>
 
             <Link

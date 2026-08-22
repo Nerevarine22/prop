@@ -6,7 +6,10 @@ import type {
   NormalizedEvidence,
   PrimaryResearchValueStatus,
 } from '@/types/database';
-import { HYPERPNL_MANUAL_PROFILE } from './hyperPnlManualProfile';
+import { CARROT_FUNDING_MANUAL_PROFILE } from './carrotFundingManualProfile';
+import hyperPnlReviewedProfile from '../../../research/reviewed/hyperpnl.json';
+
+const HYPERPNL_REVIEWED_PROFILE = hyperPnlReviewedProfile as FirmNormalizedProfileV2;
 
 const CHECKED_AT = '2026-08-17T00:00:00.000Z';
 
@@ -315,5 +318,6 @@ export const ALPHAGRID_MODEL_FIRST_PROFILE: FirmNormalizedProfileV2 = {
 
 export const MODEL_FIRST_FIRM_PROFILES_BY_SLUG: Partial<Record<string, FirmNormalizedProfileV2>> = {
   alphagrid: ALPHAGRID_MODEL_FIRST_PROFILE,
-  hyperpnl: HYPERPNL_MANUAL_PROFILE,
+  'carrot-funding': CARROT_FUNDING_MANUAL_PROFILE,
+  hyperpnl: HYPERPNL_REVIEWED_PROFILE,
 };

@@ -1,0 +1,2545 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-funded-hive",
+  "slug": "funded-hive",
+  "name": "Funded Hive",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "evaluation",
+    "other",
+    "instant-funding"
+  ],
+  "offerNames": [
+    "Pay After You Pass 1-Step",
+    "Classic 2-Step",
+    "Pay From Profits 2-Step",
+    "InstantGrowth"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-19",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Legal Entity and Geographic Governance",
+          "paragraphs": [
+            "• Jurisdiction: Dubai International Financial Center (DIFC).\n• Dispute Resolution: Escalation to the London Court of International Arbitration (LCIA) seated in the DIFC.\n• KYC Policy: Regular accounts require full identity data. Web3 Anonym accounts rely on \"technical access passes\" and wallet identifiers, bypassing traditional document collection.\n• Abuse Protections: Strict prohibition on \"wallet cycling\" and account multiplication (one account per user/IP/household).",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-17",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution, Settlement, and Wallet Logistics",
+          "paragraphs": [
+            "• Terminal: cTrader is the primary interface.\n• Brokerage: Live A-Book trades are executed by TradingHive Global Brokerage Ltd. via margin accounts with Tier-1 liquidity providers.\n• Audit Trail: The \"Truth Protocol\" utilizes smart contracts to record payouts and NFT certificates, ensuring immutable verification of performance.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-16",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Prohibited Strategies (Clause 9.2.1)",
+          "paragraphs": [
+            "• Arbitrage: Latency exploits, Hedge Arbitrage, and Reverse Arbitrage are strictly banned.\n• Systemic Risk: Martingale and grid systems are prohibited (Annex 2.1).\n• Copy Trading: Prohibited on funded accounts, including between accounts owned by the same user.\n• Weekend Holding: Forbidden on funded accounts; positions must close by Friday market close.\n• Consistency Score: The platform does not utilize a consistency score for payout eligibility.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-15",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Permitted Activities",
+          "paragraphs": [
+            "• News Trading: Fully permitted across all categories.\n• One-Sided Trading: Consistent directional bias (long-only or short-only) is allowed.\n• Holding Duration: No minimum holding time exists, provided activity does not reach high-frequency trading (HFT) thresholds."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-14",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Risk Categorization & Assigned Parameters",
+          "paragraphs": [
+            "Traders are categorized by AADS logic after evaluation. This determines the funded fee and leverage tier.",
+            "Accidental Trade Threshold: A 10-second grace period is provided for execution errors. Trades opened unintentionally and closed within 10 seconds without an SL will not trigger a risk group downgrade.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-13",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers Table",
+          "paragraphs": [
+            "*\\*Dynamic Leverage on FX majors: 1:100-1:200 for balances ≤ $100k, scaling down to 1:5-1:15 for balances up to $500k to ensure real-market margin stability.*",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-12",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Drawdown and Profit Realization",
+          "paragraphs": [
+            "• Drawdown: Static and balance-based. Capped at 10% for most models; 6% for InstantGrowth.\n• Automatic Profit Realization: The system reserves the right to auto-close positions to secure outstanding PFP fees or realize A-Book profit thresholds to preserve operational stability.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Profitable Day Requirements",
+          "paragraphs": [
+            "Challenges require \"3 Profitable Days.\" A day qualifies only if:\n• The trader realizes a profit ≥ 1% of the initial balance.\n• The account balance at day-end is ≥ initial balance."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Slippage Protection (Challenge Phase Only)",
+          "paragraphs": [
+            "The platform provides a credit system to mitigate abnormal execution during evaluations:\n• Standard Market Slippage: Slippage up to 10% of the realized loss is considered a market standard and is not adjusted.\n• Excess Slippage Credit: Negative slippage exceeding 10% is credited back to the trader’s balance, capped at 50% of the total position loss. This protection is disabled on funded accounts to reflect real A-Book execution dynamics."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Step 4: Funded Execution and Fee Settlement",
+          "paragraphs": [
+            "For PFP models, Low/Moderate risk traders pay 100% of the funded fee from future profits. Medium/High-risk traders are viewed as higher-risk capacity constraints and must pay 50% of the funded fee upfront before account issuance."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Step 3: AADS Risk Categorization (Performance-Based Capacity)",
+          "paragraphs": [
+            "Upon successful completion of evaluation, the AADS performs a forensic analysis of the trader’s risk management (Stop Loss hygiene, drawdown patterns, and trade frequency). This analysis is the *sole determinant* for assigning a Risk Group (Low, Moderate, Medium, or High), which subsequently dictates the funded account fee and leverage constraints."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Step 2: Evaluation Phases and Capital Commitment",
+          "paragraphs": [
+            "Traders undergo 1-Step or 2-Step challenges. The \"PayFromProfits\" (PFP) model minimizes initial capital commitment via an \"Access Fee,\" shifting the primary cost of capital to the post-evaluation phase. Fees for PFP Phase 2 must be paid within 14 days of passing Phase 1."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Step 1: Registration and Access Architectures",
+          "paragraphs": [
+            "The platform supports two distinct onboarding paths:\n• Web3 Anonym Accounts: Utilizes self-custodial MetaMask/Web3 wallets for decentralized access passes. No traditional KYC/ID documents are processed; the public wallet address serves as the unique cryptographic identifier.\n• Regular KYC Accounts: Mandatory for fiat-oriented transactions, requiring standard identity verification in accordance with DIFC regulatory frameworks."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Dynamic Switching and Recovery Protocols",
+          "paragraphs": [
+            "Live funded accounts utilize a \"Dynamic Switching Protocol\" based on a -1% threshold below the initial balance. \n• A-Book Initialization: Every funded account commences with live market execution using real capital.\n• Automated B-Book Transition: Should an account incur an A-Book loss of -1% below the starting balance, the AADS force-closes all open positions and re-routes future orders to the B-Book (internal simulation).\n• Recovery Offset Logic: While in B-Book, the system monitors floating equity. Per Annex 3, Section 3.5, if a trader opens positions in B-Book that reach a profit level sufficient to offset the outstanding A-Book loss, the AADS will automatically close those positions at that exact moment to secure the offset.\n• Manual Reactivation: Once the balance returns to the initial level, the trader must manually select \"Activate A-Book\" via the dashboard to resume live market routing.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Automated A-Book Dealing System (AADS)",
+          "paragraphs": [
+            "The core execution logic is governed by the proprietary Automated A-Book Dealing System (AADS). This infrastructure functions as a hybrid routing engine, managing order flow between internal simulation (B-Book) and live liquidity (A-Book). The system is designed to derive all payouts from \"Positive A-Book PnL\"—realized market profits—thereby mitigating traditional conflicts associated with internal dealing desks."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Institutional Framework",
+          "paragraphs": [
+            "Funded Hive operates as a Decentralized Autonomous Corporation (DAC), legally represented by TradingHive Technologies Ltd. (Company License No: CL9878), headquartered in the Dubai International Financial Center (DIFC). The project facilitates a simulated and live-market trading environment where users qualify for capital allocation based on risk-adjusted performance."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Evaluation · Other model · Instant funding",
+              "note": "4 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/FundedHive",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/funding-models",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$5K–$200K",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/FundedHive",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/funding-models",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "$19–$399",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/FundedHive",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/funding-models",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "ND",
+              "note": "Profit split varies by offer or tier.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/FundedHive",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/funding-models",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "ND",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/FundedHive",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/funding-models",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "conditional",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/FundedHive",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/faq",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/funding-models",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "hybrid",
+              "description": "Terms distinguish A-Book, B-Book and AADS routing; only A-Book positive PnL is withdrawable.",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "hybrid",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/FundedHive",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "ND",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Offers & pricing",
+      "title": "Offers & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Comprehensive Catalog of Programs and Tracks",
+          "paragraphs": [
+            "• Classic 2-Step Challenge: Traditional evaluation featuring NewBee (70% split), WorkerBee (80%), and QueenBee (90%) tiers. \n• PayFromProfits (PFP) 1-Step & 2-Step: A \"Pay After You Pass\" structure. Traders settle the \"Funded Fee\" post-evaluation, determined by AADS risk scores.\n• InstantGrowth (Golden Tower): A 10-level scaling structure. Capital doubles from Level 1 through Level 5. From Level 6 onward, growth is defined as \"proportional,\" though the exact mathematical formula for this proportion remains proprietary and undefined in current source documentation. A 2% upgrade fee (of the new balance) is required at each level.\n• Web3 Anonym Accounts: Anonymized access via NFT certificates. These accounts bypass standard data collection, relying on blockchain transaction history for performance auditing.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "pay-after-pass",
+              "eyebrow": "Evaluation",
+              "title": "Pay After You Pass 1-Step",
+              "description": "Post-pass funded fee is 1–3% of account size depending on risk category.",
+              "facts": [
+                {
+                  "id": "pay-after-pass-stages",
+                  "label": "Stages",
+                  "value": "Evaluation",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-after-pass-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $19 | $10K · $39 | $25K · $99 | $50K · $149 | $100K · $249 | $200K · $399",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://fundedhive.com/funding-models"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-after-pass-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-after-pass-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-after-pass-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-after-pass-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                    "https://fundedhive.com/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-after-pass-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/funding-models"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-after-pass-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://fundedhive.com"
+                }
+              ]
+            },
+            {
+              "id": "classic-two-step",
+              "eyebrow": "Other model",
+              "title": "Classic 2-Step",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "classic-two-step-stages",
+                  "label": "Stages",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-two-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/funding-models"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-two-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-two-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-two-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-two-step-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                    "https://fundedhive.com/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-two-step-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/funding-models"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "classic-two-step-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://fundedhive.com"
+                }
+              ]
+            },
+            {
+              "id": "pay-from-profits",
+              "eyebrow": "Other model",
+              "title": "Pay From Profits 2-Step",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "pay-from-profits-stages",
+                  "label": "Stages",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-from-profits-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/funding-models"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-from-profits-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-from-profits-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-from-profits-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-from-profits-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                    "https://fundedhive.com/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-from-profits-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/funding-models"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "pay-from-profits-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://fundedhive.com"
+                }
+              ]
+            },
+            {
+              "id": "instant-growth",
+              "eyebrow": "Instant funding",
+              "title": "InstantGrowth",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "instant-growth-stages",
+                  "label": "Stages",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-growth-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/funding-models"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-growth-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-growth-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-growth-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-growth-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                    "https://fundedhive.com/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-growth-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/funding-models"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-growth-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://fundedhive.com"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-18",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Payout Mechanics and Withdrawal Policy",
+          "paragraphs": [
+            "• Eligibility: Limited to \"Positive A-Book PnL\" (Verified market profit net of A-Book losses).\n• Logistics: $50 minimum; USDC (ERC-20); user covers ETH gas.\n• Security Limits: \n• Classic/PFP: $1,000 daily cap per wallet address.\n• InstantGrowth: $2,000 daily cap per wallet address.\n• Maximization Rule: To reach the full limit across multiple accounts, traders must connect different ERC-20 addresses from the same wallet. Shared addresses share a single limit.\n• Hive Coin Utility: \n• 200% Refund: Issued as Hive Coins *only after passing* the challenge.\n• Utility: Can cover up to 50% of the cost for new challenges.\n• B-Book Conversion: Eligible B-Book profits from breached accounts may be converted to Hive Coins.",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Step 5: Compensation and Smart Contract Settlement",
+          "paragraphs": [
+            "Withdrawals are restricted to \"Positive A-Book PnL,\" recorded on-chain via the \"Truth Protocol.\" Payouts are claimed via smart contracts and settled in USDC (ERC-20).",
+            "---"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                "https://fundedhive.com/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "conditional",
+              "status": "reported",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "$50",
+              "status": "reported",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USDC",
+              "status": "reported",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                "https://fundedhive.com/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                "https://fundedhive.com/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                "https://fundedhive.com/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://fundedhive.com/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Terms are canonical: only verified positive A-Book PnL is withdrawable; verification or third-party delays, withholding, correction and reversal may apply. Daily caps are $1,000 Classic/PFP and $2,000 Instant; user pays Ethereum gas.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Hive Coin utility can cover up to 50% of another challenge; a 200% fee refund may be issued in Hive Coins.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-22",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions",
+          "paragraphs": [
+            "• Counterparty Transparency: The specific \"Tier-1 Liquidity Providers\" are not identified by name in the legal annexes.\n• Scaling Logic: The mathematical formula for \"proportional growth\" in the Golden Tower beyond Level 5 remains undefined in the public rulebook."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-21",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Conflict Resolution",
+          "paragraphs": [
+            "• Payout Speed: Marketing materials claim automated payouts in \"under 60 seconds.\" However, Clause 9.1 of the General Terms grants the firm the right to reverse, suspend, or withhold payouts for manual verification, technical audits, or suspected rule violations."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-20",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Source Ledger",
+          "paragraphs": [
+            "• General Terms and Conditions (TradingHive Technologies Ltd, CL9878), Effective January 5, 2026.\n• Annex 1.1–1.4 (Product Parameters/Dynamic Leverage).\n• Annex 2 (PFP/Risk Categorization).\n• Annex 2.1 (InstantGrowth/Golden Tower).\n• Annex 3 (AADS Protocol/B-Book Offset Logic).\n• Annex 4 (Web3 Anonym Framework/Abuse Protection)."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences-notice",
+          "type": "notice",
+          "tone": "warning",
+          "text": "1 official-source difference is resolved and preserved with both URLs.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/FundedHive",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/faq",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/funding-models",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://fundedhive.com/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "funded-hive-payout-review",
+              "eyebrow": "Resolved · terms preferred",
+              "title": "Payout review, delay and reversal conditions",
+              "description": "Terms are canonical because no formal rulebook resolves the marketing claim.",
+              "facts": [
+                {
+                  "id": "funded-hive-payout-review-canonical",
+                  "label": "Canonical",
+                  "value": "Terms allow cancellation, correction, reversal or clawback and suspension/withholding in specified circumstances; verification or third-party delays may apply.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/FundedHive",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "funded-hive-payout-review-alternate",
+                  "label": "Alternate",
+                  "value": "Marketing states payouts are automatic, require no manual approval and are sent within 60 seconds.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/FundedHive",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/faq",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/funding-models",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://fundedhive.com/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://fundedhive.com/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "funded-hive-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://fundedhive.com",
+              "description": "The official X account identifies and links fundedhive.com.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/FundedHive"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "funded-hive-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "General Terms and annexes govern Classic 2-Step, Pay From Profits 1-Step/2-Step, InstantGrowth, AADS routing, drawdowns and payout eligibility; parameters vary by product and risk category.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "funded-hive-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "Official searchable FAQ covers products, rules, smart contracts, AADS and payouts.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://fundedhive.com/faq"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "funded-hive-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "Displayed Pay After You Pass 1-Step access fees are $19/$39/$99/$149/$249/$399 for $5K/$10K/$25K/$50K/$100K/$200K; later funded fee depends on risk category and can equal 1-3% of account size.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://fundedhive.com/funding-models"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "funded-hive-terms-5",
+              "eyebrow": "terms · reported",
+              "title": "Official General Terms and product annexes are published as a 41-page PDF effective January 2026.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "funded-hive-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "Only verified positive A-Book PnL is withdrawable. Terms specify $50 minimum, USDC ERC-20, user-paid ETH gas, closed positions, split/fee-debt deductions and daily caps of $1,000 for Classic/PFP or $2,000 for Instant.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "funded-hive-payoutPolicy-7",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Marketing states payouts are automatic, require no manual approval and are sent within 60 seconds.",
+              "description": "Terms permit reversals, suspensions, withholding and verification delays.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://fundedhive.com/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "funded-hive-payoutPolicy-8",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Terms allow cancellation, correction, reversal or clawback and suspension/withholding in specified circumstances; verification or third-party delays may apply.",
+              "description": "This qualifies the homepage no-approval/no-delay claim.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "funded-hive-tokenRewards-9",
+              "eyebrow": "tokenRewards · reported",
+              "title": "A 200% challenge-fee refund may be issued in Hive Coins; Hive Coins can cover up to 50% of another challenge. Eligible B-Book profits may convert to Hive Coin, described as a utility token. Approved payouts mint NFT certificates.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://fundedhive.com/downloads/terms-and-conditions.pdf"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "evaluation",
+      "other",
+      "instant-funding"
+    ],
+    "capital": {
+      "status": "varies",
+      "min": 5000,
+      "max": 200000,
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/FundedHive",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/funding-models",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "varies",
+      "min": 19,
+      "max": 399,
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/FundedHive",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/funding-models",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "ND",
+      "unit": "percent",
+      "notes": "Profit split varies by offer or tier.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/FundedHive",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/funding-models",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "ND",
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/FundedHive",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/funding-models",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "conditional"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/FundedHive",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/funding-models",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "known",
+      "values": [
+        "hybrid"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/FundedHive",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/funding-models",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [
+    {
+      "id": "funded-hive-payout-review",
+      "field": "payoutPolicy",
+      "label": "Payout review, delay and reversal conditions",
+      "kind": "official-source-mismatch",
+      "status": "resolved",
+      "resolutionBasis": "terms-preferred",
+      "canonical": {
+        "value": "Terms allow cancellation, correction, reversal or clawback and suspension/withholding in specified circumstances; verification or third-party delays may apply.",
+        "observationId": "funded-hive-payoutPolicy-8",
+        "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "This qualifies the homepage no-approval/no-delay claim."
+      },
+      "alternates": [
+        {
+          "value": "Marketing states payouts are automatic, require no manual approval and are sent within 60 seconds.",
+          "observationId": "funded-hive-payoutPolicy-7",
+          "sourceUrl": "https://fundedhive.com/",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Terms permit reversals, suspensions, withholding and verification delays."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "Terms are canonical because no formal rulebook resolves the marketing claim."
+    }
+  ],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "funded-hive-operating-model",
+      "label": "Operating model",
+      "value": "evaluation · other · instant funding",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/FundedHive",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/funding-models",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "funded-hive-model-summary",
+      "label": "How the model works",
+      "value": "Funded Hive operates as a Decentralized Autonomous Corporation (DAC), legally represented by TradingHive Technologies Ltd. (Company License No: CL9878), headquartered in the Dubai International Financial Center (DIFC). The project facilitates a simulated and live-market trading environment where users qualify for capital allocation based on risk-adjusted performance.",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/FundedHive",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/faq",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/funding-models",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://fundedhive.com/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "funded-hive-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "Funded Hive operates as a Decentralized Autonomous Corporation (DAC), legally represented by TradingHive Technologies Ltd. (Company License No: CL9878), headquartered in the Dubai International Financial Center (DIFC). The project facilitates a simulated and live-market trading environment where users qualify for capital allocation based on risk-adjusted performance.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/FundedHive",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://fundedhive.com/faq",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://fundedhive.com/funding-models",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://fundedhive.com/",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/FundedHive",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The official X account identifies and links fundedhive.com."
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://fundedhive.com/downloads/terms-and-conditions.pdf",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "faq",
+      "url": "https://fundedhive.com/faq",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "pricing-checkout",
+      "url": "https://fundedhive.com/funding-models",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://fundedhive.com/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Terms permit reversals, suspensions, withholding and verification delays."
+    }
+  ]
+}

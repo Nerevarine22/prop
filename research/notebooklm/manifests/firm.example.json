@@ -1,0 +1,19 @@
+{
+  "slug": "example-firm",
+  "name": "Example Firm",
+  "notebookTitle": "PropHub research — Example Firm",
+  "googleDocTitle": "Example Firm — operating model and funding rules research",
+  "promptPath": "research/notebooklm/prompts/firm-research.md",
+  "sources": [
+    {
+      "type": "url",
+      "label": "Official website",
+      "value": "https://example.com"
+    },
+    {
+      "type": "url",
+      "label": "Official rules",
+      "value": "https://example.com/rules"
+    }
+  ]
+}

@@ -11,6 +11,9 @@ type ServiceAccountFile = {
   private_key: string;
 };
 
+const CONTENT_STATUSES = new Set(['reported', 'verified', 'conflict', 'ND', 'N/A', 'pending']);
+const COMPARISON_STATUSES = new Set(['known', 'varies', 'ND', 'N/A']);
+
 function assertEvidence(label: string, evidence: NormalizedEvidence[] | undefined) {
   if (!evidence?.length) throw new Error(`${label}: evidence is missing.`);
   for (const item of evidence) {
@@ -24,11 +27,15 @@ function assertFact(fact: FirmContentFact, context: string) {
   if (!fact.id || !fact.label || !fact.value || !fact.status) {
     throw new Error(`${context}: fact id, label, value, or status is missing.`);
   }
+  if (!CONTENT_STATUSES.has(fact.status)) throw new Error(`${context}.${fact.id}: invalid status ${fact.status}.`);
   assertEvidence(`${context}.${fact.id}`, fact.evidence);
 }
 
 function validateProfile(profile: FirmNormalizedProfileV2) {
+  if (profile.version !== 2 || profile.methodology !== 'primary-sources-only') throw new Error('Invalid model-first profile version or methodology.');
   if (profile.researchStandard !== 'model-first-v1') throw new Error('The selected profile is not model-first-v1.');
+  if (profile.researchMode !== 'manual' && profile.researchMode !== 'agent-assisted') throw new Error('Invalid or missing researchMode.');
+  if (!profile.id || !profile.slug || !profile.name || !profile.checkedAt || !profile.modelTypes.length) throw new Error('Required profile identity fields are missing.');
   if (!profile.operatingModel || !profile.sourcesInspected?.length) throw new Error('Operating model or source inspection ledger is missing.');
 
   assertFact(profile.operatingModel.classification, 'operatingModel');
@@ -40,14 +47,22 @@ function validateProfile(profile: FirmNormalizedProfileV2) {
 
   for (const [key, value] of Object.entries(profile.comparison)) {
     if (key === 'modelTypes') continue;
+    if (!COMPARISON_STATUSES.has(value.status)) throw new Error(`comparison.${key}: invalid status ${value.status}.`);
     assertEvidence(`comparison.${key}`, value.evidence);
   }
 
+  const sectionIds = new Set<string>();
   for (const section of profile.sections) {
+    if (!section.id || !section.tabLabel || !section.title || sectionIds.has(section.id)) throw new Error(`Invalid or duplicate section ${section.id}.`);
+    sectionIds.add(section.id);
     if (!section.blocks.length) throw new Error(`Section ${section.id} has no blocks.`);
+    const blockIds = new Set<string>();
     for (const block of section.blocks) {
+      if (!block.id || blockIds.has(block.id)) throw new Error(`Invalid or duplicate block ${section.id}.${block.id}.`);
+      blockIds.add(block.id);
       if (block.type === 'text' || block.type === 'notice') {
         if (!block.status) throw new Error(`${section.id}.${block.id}: status is missing.`);
+        if (!CONTENT_STATUSES.has(block.status)) throw new Error(`${section.id}.${block.id}: invalid status ${block.status}.`);
         assertEvidence(`${section.id}.${block.id}`, block.evidence);
       } else if (block.type === 'fact-grid') {
         block.items.forEach((item) => assertFact(item, `${section.id}.${block.id}`));
@@ -80,15 +95,21 @@ function stableStringify(value: unknown): string {
 
 async function main() {
   const slugArgument = process.argv.find((value) => value.startsWith('--slug='));
-  const slug = slugArgument?.slice('--slug='.length) || 'alphagrid';
-  const profile = MODEL_FIRST_FIRM_PROFILES_BY_SLUG[slug];
+  const fileArgument = process.argv.find((value) => value.startsWith('--file='));
+  const filePath = fileArgument ? resolve(process.cwd(), fileArgument.slice('--file='.length)) : undefined;
+  const fileProfile = filePath
+    ? JSON.parse(await readFile(filePath, 'utf8')) as FirmNormalizedProfileV2
+    : undefined;
+  const slug = slugArgument?.slice('--slug='.length) || fileProfile?.slug || 'alphagrid';
+  const profile = fileProfile ?? MODEL_FIRST_FIRM_PROFILES_BY_SLUG[slug];
   if (!profile) throw new Error(`No reviewed model-first profile exists for ${slug}.`);
+  if (profile.slug !== slug) throw new Error(`Profile slug ${profile.slug} does not match requested slug ${slug}.`);
   validateProfile(profile);
   const firestoreProfile = JSON.parse(JSON.stringify(profile)) as FirmNormalizedProfileV2;
 
   const shouldWrite = process.argv.includes('--write');
   if (!shouldWrite) {
-    process.stdout.write(`Model-first dry run complete.\nFirm: ${slug}\nSections: ${profile.sections.length}\nSources inspected: ${profile.sourcesInspected?.length ?? 0}\nNo Firestore writes performed.\n`);
+    process.stdout.write(`Model-first dry run complete.\nFirm: ${slug}\nSource: ${filePath ?? 'checked-in TypeScript profile'}\nSections: ${profile.sections.length}\nSources inspected: ${profile.sourcesInspected?.length ?? 0}\nNo Firestore writes performed.\n`);
     return;
   }
 

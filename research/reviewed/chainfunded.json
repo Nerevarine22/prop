@@ -1,0 +1,1563 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-chainfunded",
+  "slug": "chainfunded",
+  "name": "ChainFunded",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "evaluation"
+  ],
+  "offerNames": [
+    "Two-Phase Evaluation"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Governance, Legal, and Incentives",
+          "paragraphs": [
+            "• Legal Structure: MZF Protocol Inc. (DBA ChainFunded Labs), organized under Panamanian jurisdiction. Current Terms of Service are dated April 6, 2026.\n• Dual-Token Ecosystem:\n• CFG Token: The primary governance token. Fixed supply of 100,000,000 with no future minting capabilities.\n• CFND Tokens: Represent staked liquidity within the LP pool.\n• Rewards Program: A seasonal budget incentivizes the ecosystem. Eligibility requires traders to register their challenge accounts for \"CFG Rewards,\" while CFND holders receive rewards for providing liquidity."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Structural Information Gaps (Transparency Risks):",
+          "paragraphs": [
+            "The protocol documentation is currently silent on the following execution parameters:\n• Prohibited Strategies: No explicit mention of News Trading, HFT, or Copy Trading restrictions.\n• Temporal Limits: No stated restrictions on weekend holding.\n• Automation: Availability of API access or bot compatibility is not disclosed.\n• Technical Overhead: Impact of Ethereum gas fees and slippage on net performance is not detailed."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trading Permissions and Execution",
+          "paragraphs": [
+            "Participants utilize a proprietary terminal that facilitates \"Ethereum smart-contract access.\" While the terminal provides the interface, the execution is functionally tied to the LP pool through smart contract transfers."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Tiers",
+          "paragraphs": [
+            "Challenge parameters are immutable once the smart contract is initialized upon registration. The following tiers are defined by the protocol, with higher-value allocations subject to the protocol's Total Value Locked (TVL) scaling.",
+            "*Note: Specific entry costs for tiers above $1,000 are not disclosed in available documentation but are governed by the protocol's scaling mechanics and TVL growth.*"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Evaluation Mechanics and Risk Enforcement",
+          "paragraphs": [
+            "The protocol enforces a standardized Two-Phase Evaluation to filter for consistent performance:\n• Phase 1 Target: 10% profit.\n• Phase 2 Target: 5% profit.\n• Daily Loss Limit: 5% (Hardcoded).\n• Maximum Drawdown: 10% (Hardcoded).\n• Minimum Trading Days: 4 days per phase.",
+            "Execution Risk Note: The source context is silent regarding the specific calculation basis (Relative vs. Absolute or Balance vs. Equity) for drawdown. Furthermore, the protocol does not disclose the specific time-zone boundary (e.g., UTC vs. Local) for the 5% Daily Loss reset. These represent critical execution risks for high-frequency or swing-trading strategies."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Protocol Interaction Loop",
+          "paragraphs": [
+            "The trader’s engagement with the protocol follows a trustless lifecycle governed by smart contract state changes:\n• Registration & Entry: Participants engage via wallet-based authentication. A one-time USDC evaluation fee is paid directly to the protocol, initiating the evaluation state.\n• Verification (Two-Phase Evaluation): The trader must meet specific performance benchmarks while adhering to hardcoded risk constraints.\n• Liquidity Allocation: Upon successful verification, the protocol grants \"funded\" status. This does not involve a manual account setup but rather provides the trader's authorized wallet with access to smart-contract-backed liquidity from the LP pool.\n• Execution & Risk Monitoring: Trading is conducted via a dedicated terminal. Risk enforcement (e.g., drawdown triggers) is handled on-chain, removing human bias from risk management.\n• Trustless Settlement: Post-performance, the trader submits a signed performance proof. The smart contract autonomously verifies compliance and triggers an immediate USDC transfer from the LP pool to the trader's wallet."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Type and Operating Model",
+          "paragraphs": [
+            "ChainFunded represents a paradigm shift in the proprietary trading space, transitioning from centralized \"Trust-Me\" models to a decentralized, \"Verify-Me\" protocol built on the Ethereum blockchain. It operates as a decentralized prop firm where the traditional corporate balance sheet is replaced by a decentralized Liquidity Provider (LP) pool.",
+            "This architecture offers significant Counterparty Risk Mitigation. Unlike legacy prop firms where trader capital and payouts are subject to the firm's solvency and discretionary approval, ChainFunded utilizes smart contracts to lock liquidity and automate settlement. The ecosystem consists of three primary actors:\n• MZF Protocol Inc. (DBA ChainFunded Labs): The Panama-based developmental and governing entity.\n• Performance-Based Participants (Traders): Capital allocators who undergo a trustless evaluation process.\n• Liquidity Providers: Participants who supply USDC to the LP pool to back successful traders in exchange for potential protocol yields.",
+            "All protocol parameters—including entry fees, risk thresholds, and profit-sharing—are hardcoded as \"smart-contract-fixed\" rules, ensuring immunity from mid-challenge adjustments."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Evaluation",
+              "note": "1 documented offer",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/chainfunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/FAQ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$1K–$200K",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/chainfunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/FAQ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "ND",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/chainfunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/FAQ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/chainfunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/FAQ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "10%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/chainfunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/FAQ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "conditional",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/chainfunded",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/FAQ",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "ND",
+              "description": "Challenge rules are fixed in a smart contract at registration.",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "Ethereum",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "on-chain settlement",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/chainfunded",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/FAQ",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "MZF Protocol Inc., trading as ChainFunded Labs",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "Panama",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/terms-and-conditions.md"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/terms-and-conditions.md"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/terms-and-conditions.md"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Evaluations & pricing",
+      "title": "Evaluations & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "two-phase",
+              "eyebrow": "Evaluation",
+              "title": "Two-Phase Evaluation",
+              "description": "Published account range is $1K–$200K; exact tier matrix is ND.",
+              "facts": [
+                {
+                  "id": "two-phase-stages",
+                  "label": "Stages",
+                  "value": "Phase 1 · 10% target → Phase 2 · 5% target",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-daily-loss",
+                  "label": "Daily loss",
+                  "value": "5%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "10%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-split",
+                  "label": "Funded split",
+                  "value": "80%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "two-phase-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://www.chainfunded.io/"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://www.chainfunded.io/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://www.chainfunded.io"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Payout and Trader Compensation",
+          "paragraphs": [
+            "The settlement layer is where ChainFunded deviates most significantly from traditional prop firms.\n• Profit Share: 80% allocated to the trader.\n• Settlement Path: Performance Proof -> Smart Contract Verification -> USDC Transfer.\n• Velocity: Settlement is documented as taking \"seconds,\" bypassing the \"discretionary approval queues\" common in centralized finance.\n• Currency: Settlements are issued exclusively in USDC on the Ethereum network."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "80%",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.chainfunded.io/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "conditional",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.chainfunded.io/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.chainfunded.io/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USDC",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.chainfunded.io/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.chainfunded.io/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.chainfunded.io/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.chainfunded.io/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.chainfunded.io/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Signed performance proof; Ethereum smart contract transfers USDC from the LP pool.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.chainfunded.io/cfg-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "CFG",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.chainfunded.io/cfg-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "100,000,000",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.chainfunded.io/cfg-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.chainfunded.io/cfg-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.chainfunded.io/cfg-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.chainfunded.io/cfg-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.chainfunded.io/cfg-rewards"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Fixed-supply governance token; seasonal rewards for registered challenge accounts and staked CFND liquidity tokens.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Due Diligence Gaps (Unresolved Questions):",
+          "paragraphs": [
+            "• Drawdown Calculation: Lack of clarity on whether drawdown is Relative or Absolute, and if it is calculated against Balance or Equity.\n• Venue & Liquidity: Information regarding the underlying broker, execution venue, or data providers remains undisclosed.\n• Execution Costs: Information regarding how Ethereum gas fees are handled during the trading process or upon settlement.\n• Leverage Ratios: Specific leverage limits per tier and asset class are not identified in the research ledger."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Conflicts:",
+          "paragraphs": [
+            "• No direct contradictions found. The 80% profit share and 10%/5% evaluation targets are consistent across all official protocol documentation."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Sources Consulted:",
+          "paragraphs": [
+            "• Official ChainFunded Website & Pricing Data\n• Protocol Rulebook (Version 1.0)\n• Official FAQ & Payout Policy\n• Terms and Conditions (Updated April 6, 2026)\n• CFG Token Rewards Documentation"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/chainfunded",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/FAQ",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "chainfunded-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://www.chainfunded.io",
+              "description": "The official site reciprocally identifies twitter.com/chainfunded in its structured data.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/chainfunded"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "chainfunded-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "Two-phase evaluation: Phase 1 target 10%, Phase 2 target 5%; both phases use a 5% daily-loss limit, 10% maximum drawdown and four minimum trading days. Challenge rules are fixed in the smart contract when registered.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.chainfunded.io/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "chainfunded-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "Official FAQ covers challenge rules, account sizes, payouts, wallets, assets, concurrent challenges, liquidity provision and smart-contract security.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.chainfunded.io/FAQ"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "chainfunded-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "One-time USDC evaluation fee with no subscription. Published tiers span $1,000-$200,000 and entry starts at 20 USDC; some tiers unlock as protocol TVL grows.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.chainfunded.io/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "chainfunded-terms-5",
+              "eyebrow": "terms · reported",
+              "title": "Official Terms and Conditions were last updated April 6, 2026. The provider is MZF Protocol Inc., trading as ChainFunded Labs, organised in Panama; the terms cover the evaluation programme, terminal, funded accounts and Ethereum smart-contract access.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.chainfunded.io/terms-and-conditions.md"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "chainfunded-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "Trader share is 80%. The trader submits signed performance proof, the smart contract verifies compliance and transfers USDC on Ethereum from the LP pool; the site states settlement takes seconds and is not subject to a discretionary approval queue.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.chainfunded.io/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "chainfunded-tokenRewards-7",
+              "eyebrow": "tokenRewards · reported",
+              "title": "CFG is the governance token with a fixed 100,000,000 supply and no further minting. Seasonal budgets reward registered challenge accounts and staked CFND liquidity tokens; challenge accounts must be registered for CFG Rewards.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.chainfunded.io/cfg-rewards"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "evaluation"
+    ],
+    "capital": {
+      "status": "varies",
+      "min": 1000,
+      "max": 200000,
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/chainfunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/FAQ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "ND",
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/chainfunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/FAQ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 80,
+      "max": 80,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/chainfunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/FAQ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "known",
+      "min": 10,
+      "max": 10,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/chainfunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/FAQ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "conditional"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/chainfunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/FAQ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "known",
+      "values": [
+        "on-chain settlement"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/chainfunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/FAQ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "chainfunded-operating-model",
+      "label": "Operating model",
+      "value": "evaluation",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/chainfunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/FAQ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "chainfunded-model-summary",
+      "label": "How the model works",
+      "value": "ChainFunded represents a paradigm shift in the proprietary trading space, transitioning from centralized \"Trust-Me\" models to a decentralized, \"Verify-Me\" protocol built on the Ethereum blockchain. It operates as a decentralized prop firm where the traditional corporate balance sheet is replaced by a decentralized Liquidity Provider (LP) pool.\n\nThis architecture offers significant Counterparty Risk Mitigation. Unlike legacy prop firms where trader capital and payouts are subject to the firm's solvency and discretionary approval, ChainFunded utilizes smart contracts to lock liquidity and automate settlement. The ecosystem consists of three primary actors:\n• MZF Protocol Inc. (DBA ChainFunded Labs): The Panama-based developmental and governing entity.\n• Performance-Based Participants (Traders): Capital allocators who undergo a trustless evaluation process.\n• Liquidity Providers: Participan",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/chainfunded",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/FAQ",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "chainfunded-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "ChainFunded represents a paradigm shift in the proprietary trading space, transitioning from centralized \"Trust-Me\" models to a decentralized, \"Verify-Me\" protocol built on the Ethereum blockchain. It operates as a decentralized prop firm where the traditional corporate balance sheet is replaced by a decentralized Liquidity Provider (LP) pool.\n\nThis architecture offers significant Counterparty Risk Mitigation. Unlike legacy prop firms where trader capital and payouts are subject to the firm's solvency and discretionary approval, ChainFunded utilizes smart contracts to lock liquidity and automate settlement. The ecosystem consists of three primary actors:\n• MZF Protocol Inc. (DBA ChainFunded Labs): The Panama-based developmental and governing entity.\n• Performance-Based Participants (Traders): Capital allocators who undergo a trustless evaluation process.\n• Liquidity Providers: Participants who supply USDC to the LP pool to back successful traders in exchange for potential protocol yields.\n\nAll protocol parameters—including entry fees, risk thresholds, and profit-sharing—are hardcoded as \"smart-contract-fixed\" rules, ensuring immunity from mid-challenge adjustments.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/chainfunded",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.chainfunded.io/",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.chainfunded.io/FAQ",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.chainfunded.io/terms-and-conditions.md",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.chainfunded.io/cfg-rewards",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/chainfunded",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "The official site reciprocally identifies twitter.com/chainfunded in its structured data."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://www.chainfunded.io/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "faq",
+      "url": "https://www.chainfunded.io/FAQ",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "terms",
+      "url": "https://www.chainfunded.io/terms-and-conditions.md",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://www.chainfunded.io/cfg-rewards",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    }
+  ]
+}

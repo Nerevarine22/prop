@@ -1,0 +1,2734 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-klein-funding",
+  "slug": "klein-funding",
+  "name": "Klein Funding",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "evaluation",
+    "instant-funding"
+  ],
+  "offerNames": [
+    "Bybit Standard One-Step",
+    "Bybit Standard Two-Step",
+    "Cleo Standard/Flex",
+    "Instant Pro"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-14",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Legal and Administrative Context",
+          "paragraphs": [
+            "• Corporate Entity: KUENTECH LLC.\n• Age Requirement: 18 years or older.\n• Refund Policy: All sales are final. The no-refund policy is strictly enforced once a simulation has commenced.\n• Loyalty Programs: There is currently no native token, airdrop, or points-based loyalty program. Rewards are strictly monetary performance distributions."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Terminology Key",
+          "paragraphs": [
+            "• Stability: A consistency metric defining the maximum portion of the total profit target that can be earned in a single day (30% or 45%).\n• Static Drawdown: A fixed loss limit based on the starting balance that does not trail or move with profit."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Instant Pro Specifics",
+          "paragraphs": [
+            "The Instant Pro track replaces traditional targets with activity-based hurdles:\n• Profitability Hurdle: Must achieve a minimum of three trading days where simulated profit is at least 0.5% of the account size.\n• Withdrawal Floor: No payouts can be requested until the account balance has reached a minimum 4% net profit."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Instant Pro",
+          "paragraphs": [
+            "Instant Pro is an accelerated track that bypasses the traditional multi-stage evaluation.\n• Payout Rules: Governed by strict profitable-day requirements and a 4% minimum profit threshold before any reward can be requested.\n• Payout Share: Higher base range, configurable between 70% and 90%."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Cleo Programs (Standard and Flex)",
+          "paragraphs": [
+            "The Cleo track is designed for more conservative traders or those who employ strategies that may not meet consistency checks.\n• Profit Targets: Higher thresholds ranging from 9% to 14%.\n• Leverage: Limited to 1:5.\n• Stability: Explicitly features no stability requirements, allowing for \"lumpy\" profit distributions.\n• Payout Share: Configurable between 60% and 90%."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Bybit Programs (1-Step and 2-Step)",
+          "paragraphs": [
+            "The Bybit track is the standard evaluation offering, catering to traders who require high leverage and traditional multi-phase structures.\n• Profit Targets: 6% to 10% depending on the specific step.\n• Leverage: Up to 1:100.\n• Payout Share: Configurable between 60% and 90%.\n• Risk Metrics: Governed by static drawdown and mandatory stability requirements."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Trader Lifecycle",
+          "paragraphs": [
+            "The journey of a trader within the Klein Funding ecosystem is a structured progression from selection to capital allocation.\n• Entry and Selection: The trader selects a program track and account size. An entry cost is paid, granting access to the simulated evaluation environment.\n• Evaluation Phase: Traders must reach a defined profit target (e.g., 6% to 14%) while remaining within drawdown limits. This phase serves as a filter to identify disciplined participants.\n• Simulated Capital Allocation: Upon hitting targets, the trader moves to a \"Funded\" status. It is critical to note that \"funding\" refers to the allocation of simulated capital; the platform remains a paper-trading environment.\n• Risk Enforcement & Monitoring: The firm employs automated monitoring for drawdown and \"Stability.\" If a trader breaches a static loss limit or fails to maintain consistent profit distribution (in Bybit tracks), the account is terminated.\n• Reward Distribution: Payouts are triggered either on-demand or after meeting specific activity hurdles (in Instant Pro). Rewards are processed via various financial gateways based on the pre-selected profit split."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Overview and Operating Model",
+          "paragraphs": [
+            "Klein Funding, a brand operated by KUENTECH LLC, is a proprietary trading service provider that specializes in performance-based simulated trading environments. Unlike traditional brokerage firms that provide direct market access, Klein Funding utilizes a \"simulated account\" model. In this framework, traders do not execute orders on live exchanges; instead, they operate within a synthetic environment where performance is measured against simulated market data.",
+            "The core operating model relies on the distribution of \"simulated profits.\" Traders who successfully navigate the evaluation phases and adhere to strict risk management protocols are eligible for monetary rewards. These rewards are legally structured as a performance fee based on a percentage of the simulated profit generated. The firm offers three primary program tracks: Bybit, Cleo, and Instant Pro, each designed to accommodate different risk appetites and trading styles."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Evaluation · Instant funding",
+              "note": "4 documented offers",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/KleinFunding",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/faqs",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "$5K",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/KleinFunding",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/faqs",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "$52.25",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/KleinFunding",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/faqs",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "60%–90%",
+              "note": "Profit split varies by offer or tier.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/KleinFunding",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/faqs",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "3%–10%",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/KleinFunding",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/faqs",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "on-demand",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/KleinFunding",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/faqs",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "simulated",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "simulated",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/KleinFunding",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/faqs",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/how-it-works",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "KUENTECH LLC",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "Simulated",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Offers & pricing",
+      "title": "Offers & pricing",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "bybit-one-step",
+              "eyebrow": "Evaluation",
+              "title": "Bybit Standard One-Step",
+              "description": "Target and drawdown are configurable in a 6–10% range; stability 30%.",
+              "facts": [
+                {
+                  "id": "bybit-one-step-stages",
+                  "label": "Stages",
+                  "value": "Evaluation",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-one-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-one-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-one-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-one-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-one-step-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing",
+                    "https://kleinfunding.com/how-it-works",
+                    "https://kleinfunding.com/rewards-and-testimonials"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/how-it-works",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-one-step-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-one-step-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://kleinfunding.com"
+                }
+              ]
+            },
+            {
+              "id": "bybit-two-step",
+              "eyebrow": "Evaluation",
+              "title": "Bybit Standard Two-Step",
+              "description": "Target and drawdown are configurable in a 6–10% range; stability 45%.",
+              "facts": [
+                {
+                  "id": "bybit-two-step-stages",
+                  "label": "Stages",
+                  "value": "Phase 1 → Phase 2",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-two-step-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-two-step-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-two-step-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-two-step-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-two-step-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing",
+                    "https://kleinfunding.com/how-it-works",
+                    "https://kleinfunding.com/rewards-and-testimonials"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/how-it-works",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-two-step-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "bybit-two-step-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://kleinfunding.com"
+                }
+              ]
+            },
+            {
+              "id": "cleo",
+              "eyebrow": "Evaluation",
+              "title": "Cleo Standard/Flex",
+              "description": "Target 9–14%; maximum drawdown 3–8%; daily drawdown 3–4%.",
+              "facts": [
+                {
+                  "id": "cleo-stages",
+                  "label": "Stages",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "cleo-pricing",
+                  "label": "Pricing tiers",
+                  "value": "$5K · $52.25",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "cleo-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "cleo-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "cleo-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "cleo-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing",
+                    "https://kleinfunding.com/how-it-works",
+                    "https://kleinfunding.com/rewards-and-testimonials"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/how-it-works",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "cleo-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "cleo-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://kleinfunding.com"
+                }
+              ]
+            },
+            {
+              "id": "instant-pro",
+              "eyebrow": "Instant funding",
+              "title": "Instant Pro",
+              "description": "Account range starts at $1,250; upper bound and risk parameters are ND.",
+              "facts": [
+                {
+                  "id": "instant-pro-stages",
+                  "label": "Stages",
+                  "value": "Funded",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-pro-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-pro-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-pro-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-pro-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-pro-split",
+                  "label": "Funded split",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing",
+                    "https://kleinfunding.com/how-it-works",
+                    "https://kleinfunding.com/rewards-and-testimonials"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/how-it-works",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-pro-refund",
+                  "label": "Fee refundable",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "instant-pro-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://kleinfunding.com/pricing"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://kleinfunding.com"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trading",
+      "tabLabel": "Trading rules",
+      "title": "Trading rules",
+      "description": "Unknown values remain ND and are not interpreted as allowed or restricted.",
+      "blocks": [
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trading Permissions and Restrictions",
+          "paragraphs": [
+            "• Strategy Constraints: Prohibited practices include certain forms of latency arbitrage, HFT exploitation, and account sharing, as detailed in the 'general-rules' documentation.\n• Leverage Limits: Range from 1:5 (Cleo) to 1:100 (Bybit). These are hard limits; exceeding them is technically restricted by the platform.\n• Configurability: News trading and weekend holding are not universally banned; permissions are specific to the program type (Bybit vs. Cleo) and are selectable during the checkout process.\n• KYC Requirements: All traders must pass a KYC/compliance review before receiving payouts."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers Table",
+          "paragraphs": [
+            "*\\*Specific pricing and parameters for tiers between $5,000 and $100,000 are dependent on the \"Live Configurator\" and are option-dependent.*"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Stability Rules: The Consistency Metric",
+          "paragraphs": [
+            "For Bybit programs, the firm enforces a \"Stability\" score (30% for 1-Step, 45% for 2-Step). This ensures that a trader’s success is a result of consistent performance rather than a single outlier event.\n• Hypothetical Example: In a Bybit 1-Step account with a $10,000 profit target and a 30% stability rule, a trader cannot earn more than $3,000 toward that target in a single trading day. If a trader earns $5,000 in one day, only $3,000 counts toward the evaluation target, requiring further trading to prove consistency."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Drawdown Mechanics: The \"Static\" Advantage",
+          "paragraphs": [
+            "Unlike trailing drawdowns that move upward with account growth, Klein Funding utilizes a Static Drawdown model. This means the maximum loss limit is a fixed floor relative to the account’s initial balance. \n• Daily Drawdown: This is mathematically enforced at exactly half of the maximum drawdown. For example, on a $100,000 account with a 10% ($10,000) static drawdown, the daily loss limit is fixed at 5% ($5,000) of the initial balance. This provides a predictable risk ceiling that does not fluctuate with intraday equity peaks."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "trading-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "trading-weekend",
+              "label": "Weekend holding",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-news",
+              "label": "News trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-automation",
+              "label": "Automated trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-copy",
+              "label": "Copy trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-stop-loss",
+              "label": "Mandatory stop loss",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-platforms",
+              "label": "Platforms",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-markets",
+              "label": "Markets",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-leverage",
+              "label": "Leverage",
+              "value": "Bybit up to 1:100 · Cleo up to 1:5",
+              "status": "reported",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-consistency",
+              "label": "Consistency rule",
+              "value": "applies",
+              "status": "reported",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-profit-day",
+              "label": "Profit-day definition",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-fees",
+              "label": "Trading fees",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-13",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Payout Process",
+          "paragraphs": [
+            "• Cadence: Bybit and Cleo rewards are available \"on-demand.\" Instant Pro requires the 3-day/4% threshold.\n• Processing Time: Average processing is 3 hours; the official window is 4–12 hours.\n• 48-Hour Guarantee: If a reward is not processed within 48 hours, the trader is granted a 100% split for that specific payout.\n• Methods: Bank Transfer, Wise, USDT, BTC, and ETH.\n• The Profit Split Contradiction: While marketing materials highlight \"up to 100%,\" this is a promotional/delay-based guarantee. The operational pricing matrix caps standard selectable profit splits at 90%."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-12",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution and Payout Mechanics",
+          "paragraphs": [
+            "The Klein Funding environment is 100% simulated. This model effectively shifts performance risk entirely to the trader’s ability to navigate the Stability and Drawdown rules, while eliminating market risk for the firm (as no real assets are being traded in live markets)."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing",
+                "https://kleinfunding.com/how-it-works",
+                "https://kleinfunding.com/rewards-and-testimonials"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "on-demand",
+              "status": "reported",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing",
+                "https://kleinfunding.com/how-it-works",
+                "https://kleinfunding.com/rewards-and-testimonials"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USD · USDT · BTC · ETH",
+              "status": "reported",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing",
+                "https://kleinfunding.com/how-it-works",
+                "https://kleinfunding.com/rewards-and-testimonials"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing",
+                "https://kleinfunding.com/how-it-works",
+                "https://kleinfunding.com/rewards-and-testimonials"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing",
+                "https://kleinfunding.com/how-it-works",
+                "https://kleinfunding.com/rewards-and-testimonials"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://kleinfunding.com/pricing",
+                "https://kleinfunding.com/how-it-works",
+                "https://kleinfunding.com/rewards-and-testimonials"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://kleinfunding.com/pricing",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/how-it-works",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Pricing is canonical for configurable splits: 60–90% Bybit/Cleo and 70–90% Instant Pro. No single numeric split or exact processing time applies, so those fields remain ND. Instant Pro requires three 0.5% profitable days and 4% minimum profit.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-16",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions",
+          "paragraphs": [
+            "• Prohibited Strategy Definitions: The documentation lacks precise mathematical definitions for \"High-Frequency Trading\" (HFT) and \"Arbitrage\" within the simulated environment.\n• Geographic Restrictions: While KYC is required, the firm does not publish a specific list of prohibited jurisdictions (e.g., restricted countries) in the public FAQ or Terms."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-15",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Sources",
+          "paragraphs": [
+            "• Official Website (kleinfunding.com)\n• Official Pricing Matrix & Configurator\n• Official FAQ & General Rules\n• Terms of Use\n• Verified X Account (@KleinFunding)"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences-notice",
+          "type": "notice",
+          "tone": "warning",
+          "text": "1 official-source difference is resolved and preserved with both URLs.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/KleinFunding",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/pricing",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/faqs",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/how-it-works",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-differences",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "klein-funding-profit-split-range",
+              "eyebrow": "Resolved · specific policy preferred",
+              "title": "Configured profit-split range",
+              "description": "The pricing matrix is canonical for purchasable configurations; the broader How It Works range remains an alternate.",
+              "facts": [
+                {
+                  "id": "klein-funding-profit-split-range-canonical",
+                  "label": "Canonical",
+                  "value": "Pricing reports 60-90% configured shares for Bybit/Cleo and 70-90% for Instant Pro. Bybit/Cleo rewards are on demand; Instant Pro requires three 0.5% profitable days and 4% minimum profit. Methods include bank, Wise, USDT, BTC and ETH.",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/KleinFunding",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/faqs",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/how-it-works",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "klein-funding-profit-split-range-alternate",
+                  "label": "Alternate",
+                  "value": "How It Works advertises on-demand payouts, a 40-100% split range, up to 100% of simulated profits and processing in 4-12 hours.",
+                  "status": "conflict",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/KleinFunding",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/pricing",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/faqs",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/how-it-works",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Canonical source",
+                  "url": "https://kleinfunding.com/pricing"
+                },
+                {
+                  "label": "Alternate source",
+                  "url": "https://kleinfunding.com/how-it-works"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "klein-funding-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://kleinfunding.com",
+              "description": "Official X and site footer reciprocally identify each other.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/KleinFunding"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "klein-funding-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "Rules are configurable. Bybit programs publish 6-10% targets, 6-10% static drawdown, daily drawdown at half max drawdown, 30% one-phase/45% two-phase stability and up to 1:100 leverage. Cleo publishes 9-14% targets, 3-8% drawdown, 3-4% daily drawdown, no stability and up to 1:5 leverage. Instant Pro has separate payout-day rules.",
+              "description": "Prohibited practices: https://kleinfunding.com/general-rules.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://kleinfunding.com/pricing"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "klein-funding-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "Official FAQ covers eligibility, evaluation, drawdowns, funded payouts, payout methods, stability, platform rules, prohibited strategies, Instant Pro and Cleo.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://kleinfunding.com/faqs"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "klein-funding-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "Live configurator offers Cleo Standard/Flex, Bybit Standard One/Two-Step and Instant Pro. Sizes range from $1,250 Instant Pro to $100,000 evaluations; selected Cleo One-Step $5,000 displays $66 list and $52.25 current. Cards and crypto are accepted.",
+              "description": "Prices are live and option-dependent.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://kleinfunding.com/pricing"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "klein-funding-terms-5",
+              "eyebrow": "terms · reported",
+              "title": "Terms identify KUENTECH LLC, require age 18+, incorporate FAQ/help/product rules by reference, describe accounts as simulated, permit KYC/compliance review and allow suspension, payout rejection or profit adjustment. A separate all-sales-final refund policy applies.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://kleinfunding.com/terms-of-use"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "klein-funding-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "Pricing reports 60-90% configured shares for Bybit/Cleo and 70-90% for Instant Pro. Bybit/Cleo rewards are on demand; Instant Pro requires three 0.5% profitable days and 4% minimum profit. Methods include bank, Wise, USDT, BTC and ETH.",
+              "description": "How It Works advertises 40-100% and up to 100%.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://kleinfunding.com/pricing"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "klein-funding-payoutPolicy-7",
+              "eyebrow": "payoutPolicy · archived observation",
+              "title": "How It Works advertises on-demand payouts, a 40-100% split range, up to 100% of simulated profits and processing in 4-12 hours.",
+              "description": "Pricing matrix caps displayed configured splits at 90%.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://kleinfunding.com/how-it-works"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "klein-funding-payoutPolicy-8",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "Rewards page advertises a 48-hour guarantee: if unpaid after 48 hours, trader receives a 100% split; displayed average payout time is three hours.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://kleinfunding.com/rewards-and-testimonials"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "klein-funding-tokenRewards-9",
+              "eyebrow": "tokenRewards · ND",
+              "title": "ND",
+              "description": "No token, points, airdrop or separate community-rewards programme was found; the site uses rewards for performance payouts and promotional accounts.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://kleinfunding.com/sitemap.xml"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "evaluation",
+      "instant-funding"
+    ],
+    "capital": {
+      "status": "known",
+      "min": 5000,
+      "max": 5000,
+      "unit": "USD",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/KleinFunding",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/faqs",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/how-it-works",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "known",
+      "min": 52.25,
+      "max": 52.25,
+      "unit": "USD",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/KleinFunding",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/faqs",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/how-it-works",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "varies",
+      "min": 60,
+      "max": 90,
+      "unit": "percent",
+      "notes": "Profit split varies by offer or tier.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/KleinFunding",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/faqs",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/how-it-works",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "varies",
+      "min": 3,
+      "max": 10,
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/KleinFunding",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/faqs",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/how-it-works",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "on-demand"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/KleinFunding",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/faqs",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/how-it-works",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "known",
+      "values": [
+        "simulated"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/KleinFunding",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/faqs",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/how-it-works",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [
+    {
+      "id": "klein-funding-profit-split-range",
+      "field": "payoutPolicy",
+      "label": "Configured profit-split range",
+      "kind": "official-source-mismatch",
+      "status": "resolved",
+      "resolutionBasis": "specific-policy-preferred",
+      "canonical": {
+        "value": "Pricing reports 60-90% configured shares for Bybit/Cleo and 70-90% for Instant Pro. Bybit/Cleo rewards are on demand; Instant Pro requires three 0.5% profitable days and 4% minimum profit. Methods include bank, Wise, USDT, BTC and ETH.",
+        "observationId": "klein-funding-payoutPolicy-6",
+        "sourceUrl": "https://kleinfunding.com/pricing",
+        "checkedAt": "2026-08-16T00:00:00.000Z",
+        "sourceRole": "canonical",
+        "notes": "How It Works advertises 40-100% and up to 100%."
+      },
+      "alternates": [
+        {
+          "value": "How It Works advertises on-demand payouts, a 40-100% split range, up to 100% of simulated profits and processing in 4-12 hours.",
+          "observationId": "klein-funding-payoutPolicy-7",
+          "sourceUrl": "https://kleinfunding.com/how-it-works",
+          "checkedAt": "2026-08-16T00:00:00.000Z",
+          "sourceRole": "alternate",
+          "notes": "Pricing matrix caps displayed configured splits at 90%."
+        }
+      ],
+      "checkedAt": "2026-08-16T00:00:00.000Z",
+      "notes": "The pricing matrix is canonical for purchasable configurations; the broader How It Works range remains an alternate."
+    }
+  ],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "klein-funding-operating-model",
+      "label": "Operating model",
+      "value": "evaluation · instant funding",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/KleinFunding",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/faqs",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/how-it-works",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "klein-funding-model-summary",
+      "label": "How the model works",
+      "value": "Klein Funding, a brand operated by KUENTECH LLC, is a proprietary trading service provider that specializes in performance-based simulated trading environments. Unlike traditional brokerage firms that provide direct market access, Klein Funding utilizes a \"simulated account\" model. In this framework, traders do not execute orders on live exchanges; instead, they operate within a synthetic environment where performance is measured against simulated market data.\n\nThe core operating model relies on the distribution of \"simulated profits.\" Traders who successfully navigate the evaluation phases and adhere to strict risk management protocols are eligible for monetary rewards. These rewards are legally structured as a performance fee based on a percentage of the simulated profit generated. The firm offers three primary program tracks: Bybit, Cleo, and Instant Pro, each designed to accommodate ",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/KleinFunding",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/pricing",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/faqs",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/how-it-works",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "klein-funding-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "The journey of a trader within the Klein Funding ecosystem is a structured progression from selection to capital allocation.\n• Entry and Selection: The trader selects a program track and account size. An entry cost is paid, granting access to the simulated evaluation environment.\n• Evaluation Phase: Traders must reach a defined profit target (e.g., 6% to 14%) while remaining within drawdown limits. This phase serves as a filter to identify disciplined participants.\n• Simulated Capital Allocation: Upon hitting targets, the trader moves to a \"Funded\" status. It is critical to note that \"funding\" refers to the allocation of simulated capital; the platform remains a paper-trading environment.\n• Risk Enforcement & Monitoring: The firm employs automated monitoring for drawdown and \"Stability.\" If a trader breaches a static loss limit or fails to maintain consistent profit distribution (in Bybit tracks), the account is terminated.\n• Reward Distribution: Payouts are triggered either on-demand or after meeting specific activity hurdles (in Instant Pro). Rewards are processed via various financial gateways based on the pre-selected profit split.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/KleinFunding",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://kleinfunding.com/pricing",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://kleinfunding.com/faqs",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://kleinfunding.com/terms-of-use",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://kleinfunding.com/how-it-works",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://kleinfunding.com/rewards-and-testimonials",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://kleinfunding.com/sitemap.xml",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/KleinFunding",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Official X and site footer reciprocally identify each other."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://kleinfunding.com/pricing",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "How It Works advertises 40-100% and up to 100%."
+    },
+    {
+      "category": "faq",
+      "url": "https://kleinfunding.com/faqs",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "terms",
+      "url": "https://kleinfunding.com/terms-of-use",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://kleinfunding.com/how-it-works",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Pricing matrix caps displayed configured splits at 90%."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://kleinfunding.com/rewards-and-testimonials",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://kleinfunding.com/sitemap.xml",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "No token, points, airdrop or separate community-rewards programme was found; the site uses rewards for performance payouts and promotional accounts."
+    }
+  ]
+}

@@ -1,0 +1,1812 @@
+{
+  "version": 2,
+  "methodology": "primary-sources-only",
+  "id": "firm-o2",
+  "slug": "o2",
+  "name": "O2",
+  "checkedAt": "2026-08-22",
+  "modelTypes": [
+    "collateralized"
+  ],
+  "offerNames": [
+    "Turbo"
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "tabLabel": "Overview",
+      "title": "Firm overview",
+      "description": "A shared comparison layer without flattening the firm-specific operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-15",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Corporate and Programmatic Context",
+          "paragraphs": [
+            "• Corporate Entity: o2 is operated by Breathe Speed Inc., a Panama-based entity.\n• Referral Program: A tiered system (Tier 3-4) provides referrers with a 20-25% cut of opening premiums. \n• Referred Users: Receive a 10% discount on premiums paid during their first 30 days. This discount does not apply to the margin deposit.\n• Gamification: The platform utilizes an \"o2 Legend Score\" and hosts periodic USDC trading competitions to drive engagement."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-12",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Prohibited Strategies",
+          "paragraphs": [
+            "• Not Disclosed: Official sources do not currently specify restrictions on High-Frequency Trading (HFT), news trading, or copy trading. Specific definitions for \"prohibited strategies\" remain undefined in the public documentation."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-8",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Illustrative Premium Benchmarks (1-Week Duration):",
+          "paragraphs": [
+            "• Starter ($2.5k): ~$60\n• Standard ($5k): ~$110\n• Pro ($10k): ~$200"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-6",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Timing and Structure",
+          "paragraphs": [
+            "• Duration: Fixed options of 6 hours, 1 day, 1 week, or 1 month.\n• No Funding Drift: Unlike perpetual futures, o2 Turbo does not charge borrow APR or variable funding rates. This provides a structural advantage for directional hedges held over longer durations (e.g., 1 month), where funding costs often erode the profitability of traditional perp positions.\n• Auto-extend: An opt-in mechanic allows the session to roll over into a new period at the same premium rate."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-5",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Liquidation and Slippage Mitigation",
+          "paragraphs": [
+            "Liquidation occurs automatically at the margin threshold. To protect the platform and the trader from cascading liquidations on thin DEX liquidity, o2 Turbo utilizes an \"unwound off-market\" mechanic. This design choice is critical for on-chain prop firms to ensure that liquidation events do not cause significant slippage that could exceed the deposited margin buffer."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-4",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Capital Efficiency and Leverage",
+          "paragraphs": [
+            "From a quantitative perspective, the o2 Turbo model provides significant Capital Efficiency. By requiring only a 2.5% margin for \"Focused\" accounts, the platform offers up to 40x leverage on the trader's deposited margin. For example, a $10,000 \"Pro\" account requires a $250 margin deposit, effectively amplifying the trader's risk-on capital by 40 times while capping the absolute loss at the margin amount."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-3",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Trader Lifecycle Analysis",
+          "paragraphs": [
+            "The o2 Turbo experience follows a streamlined, five-stage chronological path:\n• Entry: The trader connects a compatible wallet (Ethereum, Base, BNB Chain, or Fuel) and configures account parameters using the live configurator (Plan, Track, and Duration).\n• Activation: Upon payment of the non-refundable premium and the minimum required margin deposit, the account is funded instantly. \n• Trading & Execution: Traders engage with the markets using directional bets (Long/Short) or spot-backed assets. The environment is high-performance, leveraging the FuelVM for rapid execution with 0.00% maker and 0.01% taker fees.\n• Risk Enforcement: If net losses reach the maximum drawdown (equal to the deposited margin), automated liquidation mechanics trigger. Importantly, profits already withdrawn to the trader's main wallet are immune to liquidation; only the remaining margin and current unrealized PnL are at risk.\n• Settlement & Payout: At the conclusion of the term—or upon manual closure—the trader receives their margin (net of losses) plus 100% of realized profits."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-2",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "The Operating Model:",
+          "paragraphs": [
+            "• The Trader: Initiates the session by paying a fixed, non-refundable Premium (the cost of capital access) and depositing a refundable Margin (the loss buffer).\n• o2 Turbo: Grants the trader access to capital for a defined duration. \n• Core Differentiator: By moving the model on-chain and removing \"targets\" or \"minimum days,\" o2 Turbo shifts the risk profile from evaluation-based gating to a direct capital efficiency model."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-1",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Project Overview and Operating Model",
+          "paragraphs": [
+            "o2 Turbo is an instant, on-chain proprietary (prop) trading platform developed by Fuel Labs (Breathe Speed Inc.). In a departure from traditional \"Challenge\" firms that require traders to navigate multi-stage evaluation phases, o2 Turbo utilizes a \"Premium + Margin\" model to provide immediate access to up to $10,000 in simulated or on-chain capital."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "overview-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "business-model",
+              "label": "Business model",
+              "value": "Collateralized funding",
+              "note": "1 documented offer",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/o2dotapp",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "capital",
+              "label": "Capital",
+              "value": "ND",
+              "note": "Capital varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/o2dotapp",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "entry-cost",
+              "label": "Entry cost",
+              "value": "ND",
+              "note": "Entry cost varies by offer and account size.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/o2dotapp",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "profit-split",
+              "label": "Profit split",
+              "value": "100%",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/o2dotapp",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "max-drawdown",
+              "label": "Maximum drawdown",
+              "value": "ND",
+              "note": "Maximum drawdown varies by offer.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/o2dotapp",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Payout schedule",
+              "value": "on-demand",
+              "note": "See the payout policy for eligibility conditions.",
+              "status": "reported",
+              "evidence": [
+                {
+                  "sourceUrl": "https://x.com/o2dotapp",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://trade.o2.app/terms-of-use",
+                  "checkedAt": "2026-08-22"
+                },
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "company-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "execution",
+              "eyebrow": "Execution model",
+              "title": "ND",
+              "description": "Wallet-based on-chain trading.",
+              "facts": [
+                {
+                  "id": "execution-venue",
+                  "label": "Venue",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://trade.o2.app/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-onchain",
+                  "label": "On-chain settlement",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://trade.o2.app/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "execution-comparison",
+                  "label": "Comparison",
+                  "value": "on-chain settlement",
+                  "status": "reported",
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://x.com/o2dotapp",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://trade.o2.app/turbo",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://trade.o2.app/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    },
+                    {
+                      "sourceUrl": "https://www.o2.app/",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "legal",
+              "eyebrow": "Legal record",
+              "title": "Breathe Speed Inc.",
+              "description": "ND",
+              "facts": [
+                {
+                  "id": "legal-jurisdiction",
+                  "label": "Jurisdiction",
+                  "value": "Panama governing law; incorporation jurisdiction ND",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://trade.o2.app/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-kyc",
+                  "label": "KYC stage",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://trade.o2.app/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "legal-simulated",
+                  "label": "Account environment",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://trade.o2.app/terms-of-use"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/terms-of-use",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "tabLabel": "Collateral & funding",
+      "title": "Collateral & funding",
+      "description": "Each offer keeps the fields and language documented for its own operating model.",
+      "blocks": [
+        {
+          "id": "notebooklm-9",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Track Mechanics:",
+          "paragraphs": [
+            "• Focused: Optimized for \"Major\" assets (wBTC, ETH, XAUT) with a lower margin requirement (2.5%).\n• Broad: Provides access to the full 16-asset book but requires a higher margin (5%) to account for the increased volatility of altcoin assets."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "offer-records",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "turbo",
+              "eyebrow": "Collateralized funding",
+              "title": "Turbo",
+              "description": "No evaluation, profit target or minimum days. Premium is non-refundable; margin is refundable net of losses. Exact configurations and prices are variable and ND.",
+              "facts": [
+                {
+                  "id": "turbo-stages",
+                  "label": "Stages",
+                  "value": "Funded",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://trade.o2.app/turbo"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/turbo",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-pricing",
+                  "label": "Pricing tiers",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://trade.o2.app/turbo"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/turbo",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-daily-loss",
+                  "label": "Daily loss",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://trade.o2.app/turbo"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/turbo",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-drawdown",
+                  "label": "Maximum drawdown",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://trade.o2.app/turbo"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/turbo",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-drawdown-type",
+                  "label": "Drawdown type",
+                  "value": "dynamic",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://trade.o2.app/turbo"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/turbo",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-split",
+                  "label": "Funded split",
+                  "value": "100%",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://trade.o2.app/turbo"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/turbo",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-refund",
+                  "label": "Fee refundable",
+                  "value": "Yes",
+                  "status": "reported",
+                  "sourceUrls": [
+                    "https://trade.o2.app/turbo"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/turbo",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                },
+                {
+                  "id": "turbo-time-limit",
+                  "label": "No time limit",
+                  "value": "ND",
+                  "status": "ND",
+                  "sourceUrls": [
+                    "https://trade.o2.app/turbo"
+                  ],
+                  "evidence": [
+                    {
+                      "sourceUrl": "https://trade.o2.app/turbo",
+                      "checkedAt": "2026-08-22"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "label": "Official site",
+                  "url": "https://o2.app"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trading",
+      "tabLabel": "Trading rules",
+      "title": "Trading rules",
+      "description": "Unknown values remain ND and are not interpreted as allowed or restricted.",
+      "blocks": [
+        {
+          "id": "notebooklm-13",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution, Custody, and Technology",
+          "paragraphs": [
+            "• Technical Stack: Built on Fuel, the high-performance execution layer for Ethereum. The system utilizes the FuelVM for parallel transaction execution, providing a low-latency environment comparable to centralized exchanges.\n• Custody & Settlement: The platform is decentralized and wallet-based. Profits are realized and settled in USDC. Gains can be transferred to the trader's main wallet at any time without ending the Turbo session.\n• Multi-Chain Support: Traders can fund their accounts from Ethereum, Base, BNB Chain, and Fuel."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-11",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Execution Permissions",
+          "paragraphs": [
+            "• Cost Structure: 0.00% maker / 0.01% taker fees. Zero gas costs for trading on the o2 internal layer.\n• Hedging: Traders are permitted to run a Turbo account alongside their primary book to isolate directional bets or specific hedges.\n• Permissions Nuance: Evidence from the UI suggests that while Major assets support Long/Short capabilities, the \"Broad\" track alts (+13 spot assets) appear to be limited to \"Only Long\" execution."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-10",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Supported Markets",
+          "paragraphs": [
+            "Traders can access 16 assets categorized as follows:\n• Major Assets (Long & Short): Wrapped Bitcoin (wBTC), Ethereum (ETH), Tether Gold (XAUT).\n• Spot Assets (Likely Only Long): BNB, UNI, LINK, AAVE, ONDO, LIT, WLD, VVV, PYUSD, ENA, FUEL, USDT, USDC."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-7",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Funding Rules and Offers",
+          "paragraphs": [
+            "The following table outlines the configurations available via the o2 Turbo configurator. All \"Min. Margin\" values represent the minimum threshold to activate the account."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "trading-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "trading-weekend",
+              "label": "Weekend holding",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-news",
+              "label": "News trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-automation",
+              "label": "Automated trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-copy",
+              "label": "Copy trading",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-stop-loss",
+              "label": "Mandatory stop loss",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-platforms",
+              "label": "Platforms",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-markets",
+              "label": "Markets",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-leverage",
+              "label": "Leverage",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-consistency",
+              "label": "Consistency rule",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-profit-day",
+              "label": "Profit-day definition",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "trading-fees",
+              "label": "Trading fees",
+              "value": "Maker 0.00%; taker 0.01%.",
+              "status": "reported",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payouts",
+      "tabLabel": "Payouts",
+      "title": "Funding & payouts",
+      "description": "Payout policy is stored independently from the offer model.",
+      "blocks": [
+        {
+          "id": "notebooklm-14",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Payout and Compensation Mechanics",
+          "paragraphs": [
+            "• Profit Split: 100% to the trader. o2 Turbo does not charge performance fees or engage in revenue sharing.\n• Withdrawal Velocity: Payouts are handled programmatically with no minimum thresholds, no waiting periods, and no manual review cycles. \n• Costs: o2 does not charge platform-level withdrawal fees; however, standard network gas fees on the source chain (e.g., Ethereum) apply when moving funds back to a primary wallet."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "payout-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "payout-split",
+              "label": "Profit split",
+              "value": "100%",
+              "status": "reported",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-schedule",
+              "label": "Request timing",
+              "value": "on-demand",
+              "status": "reported",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-minimum",
+              "label": "Minimum payout",
+              "value": "$0",
+              "status": "reported",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-currencies",
+              "label": "Currencies",
+              "value": "USDC",
+              "status": "reported",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-processing",
+              "label": "Processing time",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-close-positions",
+              "label": "Positions must be closed",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-partial",
+              "label": "Partial withdrawals",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "payout-reset",
+              "label": "Withdrawal resets balance",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://trade.o2.app/turbo"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://trade.o2.app/turbo",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "payout-notes",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "No minimum, waiting period, withdrawal charge or manual review is reported.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "tabLabel": "Rewards",
+      "title": "Tokenomics & rewards",
+      "description": "Reward claims stay separate from the core trading offer.",
+      "blocks": [
+        {
+          "id": "reward-facts",
+          "type": "fact-grid",
+          "columns": 3,
+          "items": [
+            {
+              "id": "reward-token",
+              "label": "Token",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.o2.app/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-ticker",
+              "label": "Token ticker",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.o2.app/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-token-supply",
+              "label": "Token supply",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.o2.app/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points",
+              "label": "Points program",
+              "value": "Yes",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.o2.app/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-points-name",
+              "label": "Points name",
+              "value": "o2 Legend Score",
+              "status": "reported",
+              "sourceUrls": [
+                "https://www.o2.app/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop",
+              "label": "Airdrop",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.o2.app/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            },
+            {
+              "id": "reward-airdrop-status",
+              "label": "Airdrop status",
+              "value": "ND",
+              "status": "ND",
+              "sourceUrls": [
+                "https://www.o2.app/"
+              ],
+              "evidence": [
+                {
+                  "sourceUrl": "https://www.o2.app/",
+                  "checkedAt": "2026-08-22"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reward-description",
+          "type": "notice",
+          "tone": "neutral",
+          "text": "Lifetime score, USDC competitions and referral benefits; proprietary token and airdrop are ND.",
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "tabLabel": "Sources & differences",
+      "title": "Sources & resolved differences",
+      "description": "Canonical values and alternate official observations remain inspectable.",
+      "blocks": [
+        {
+          "id": "notebooklm-18",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Unresolved Questions",
+          "paragraphs": [
+            "• Position Limits: Maximum position sizes or lot-size constraints per trade are not disclosed.\n• Automation: There is no specific data regarding the availability of APIs or restrictions on trading bots.\n• Consistency Rules: The platform does not specify if traders must follow particular volume or consistency rules common in traditional prop firms."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-17",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Documented Conflicts",
+          "paragraphs": [
+            "• Liquidation Fee: The Research Ledger cites a 1% deduction from leftover margin upon liquidation, while the FAQ/Website text explicitly states a 2% fee. \n• Broad Track Permissions: The FAQ suggests general Long/Short capabilities for \"Major\" assets, but the UI configurator labels the Broad track spot assets as \"Only Long.\" It is unclear if shorting is restricted solely to the three \"Major\" assets regardless of the track chosen."
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "notebooklm-16",
+          "type": "text",
+          "eyebrow": "NotebookLM research brief",
+          "title": "Source List",
+          "paragraphs": [
+            "• o2 Official Website (o2.app)\n• o2 Turbo Application & FAQ (trade.o2.app/turbo)\n• o2 Terms of Use (Updated Dec 15, 2025)\n• Official Research Ledger (Data as of Aug 16, 2026)"
+          ],
+          "status": "reported",
+          "evidence": [
+            {
+              "sourceUrl": "https://x.com/o2dotapp",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/turbo",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://trade.o2.app/terms-of-use",
+              "checkedAt": "2026-08-22"
+            },
+            {
+              "sourceUrl": "https://www.o2.app/",
+              "checkedAt": "2026-08-22"
+            }
+          ]
+        },
+        {
+          "id": "source-claims",
+          "type": "record-list",
+          "items": [
+            {
+              "id": "o2-officialWebsite-1",
+              "eyebrow": "officialWebsite · verified",
+              "title": "https://www.o2.app",
+              "description": "Official X and trading application reciprocally identify each other.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://x.com/o2dotapp"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "o2-rulebook-2",
+              "eyebrow": "rulebook · reported",
+              "title": "Turbo is instant and on-chain with no evaluation, target or minimum days. A trader pays a non-refundable premium and refundable margin that caps loss. Focused and Broad profiles run for 6h, 1d, 1w or 1mo; liquidation occurs at the threshold and the current FAQ says 1% is deducted from leftover margin.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://trade.o2.app/turbo"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "o2-faq-3",
+              "eyebrow": "faq · reported",
+              "title": "Turbo page contains official questions on mechanics, plans, fees, markets, expiry/renewal, risk/liquidation, payouts and wallet funding.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://trade.o2.app/turbo"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "o2-pricingCheckout-4",
+              "eyebrow": "pricingCheckout · reported",
+              "title": "Live configurator offers Starter, Standard and Pro with Focused/Broad profiles and 6h/1d/1w/1mo terms. Cost is a fixed non-refundable premium plus refundable margin; exact values change by selection. Trading fees are 0.00% maker and 0.01% taker.",
+              "description": "No static universal price table is published.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://trade.o2.app/turbo"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "o2-terms-5",
+              "eyebrow": "terms · reported",
+              "title": "Terms last updated December 15, 2025 identify Breathe Speed Inc., cover wallet-based on-chain trading, restricted jurisdictions, liability and arbitration, and specify Panama law.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://trade.o2.app/terms-of-use"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "o2-payoutPolicy-6",
+              "eyebrow": "payoutPolicy · reported",
+              "title": "Turbo trader keeps 100% of realized profit with no split, minimum, waiting period, withdrawal charge or manual review. Gains can move to the main account anytime in USDC; ending the account returns margin net of losses and all realized profit.",
+              "description": "Official-source observation.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://trade.o2.app/turbo"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            },
+            {
+              "id": "o2-tokenRewards-7",
+              "eyebrow": "tokenRewards · reported",
+              "title": "Official exchange homepage documents USDC trading competitions and a lifetime o2 Legend Score. Turbo referrals offer tiered shares of referred opening premiums and temporary discounts; no token or airdrop page is published.",
+              "description": "Referral interface: https://trade.o2.app/turbo?tab=referrals.",
+              "links": [
+                {
+                  "label": "Open source",
+                  "url": "https://www.o2.app/"
+                }
+              ],
+              "meta": [
+                "2026-08-16T00:00:00.000Z"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "modelTypes": [
+      "collateralized"
+    ],
+    "capital": {
+      "status": "ND",
+      "unit": "USD",
+      "notes": "Capital varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/o2dotapp",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/turbo",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.o2.app/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "entryCost": {
+      "status": "ND",
+      "unit": "USD",
+      "notes": "Entry cost varies by offer and account size.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/o2dotapp",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/turbo",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.o2.app/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "profitSplit": {
+      "status": "known",
+      "min": 100,
+      "max": 100,
+      "unit": "percent",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/o2dotapp",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/turbo",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.o2.app/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "maxDrawdown": {
+      "status": "ND",
+      "unit": "percent",
+      "notes": "Maximum drawdown varies by offer.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/o2dotapp",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/turbo",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.o2.app/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "payoutSchedules": {
+      "status": "known",
+      "values": [
+        "on-demand"
+      ],
+      "notes": "See the payout policy for eligibility conditions.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/o2dotapp",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/turbo",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.o2.app/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "executionModels": {
+      "status": "known",
+      "values": [
+        "on-chain settlement"
+      ],
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/o2dotapp",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/turbo",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.o2.app/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": [],
+  "researchStandard": "model-first-v1",
+  "researchMode": "agent-assisted",
+  "operatingModel": {
+    "classification": {
+      "id": "o2-operating-model",
+      "label": "Operating model",
+      "value": "collateralized",
+      "status": "reported",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/o2dotapp",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/turbo",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.o2.app/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "summary": {
+      "id": "o2-model-summary",
+      "label": "How the model works",
+      "value": "o2 Turbo is an instant, on-chain proprietary (prop) trading platform developed by Fuel Labs (Breathe Speed Inc.). In a departure from traditional \"Challenge\" firms that require traders to navigate multi-stage evaluation phases, o2 Turbo utilizes a \"Premium + Margin\" model to provide immediate access to up to $10,000 in simulated or on-chain capital.",
+      "status": "reported",
+      "note": "Condensed from the NotebookLM research brief; editorial polishing is deferred.",
+      "evidence": [
+        {
+          "sourceUrl": "https://x.com/o2dotapp",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/turbo",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://trade.o2.app/terms-of-use",
+          "checkedAt": "2026-08-22"
+        },
+        {
+          "sourceUrl": "https://www.o2.app/",
+          "checkedAt": "2026-08-22"
+        }
+      ]
+    },
+    "lifecycle": [
+      {
+        "id": "o2-lifecycle",
+        "label": "Trader lifecycle",
+        "value": "The o2 Turbo experience follows a streamlined, five-stage chronological path:\n• Entry: The trader connects a compatible wallet (Ethereum, Base, BNB Chain, or Fuel) and configures account parameters using the live configurator (Plan, Track, and Duration).\n• Activation: Upon payment of the non-refundable premium and the minimum required margin deposit, the account is funded instantly. \n• Trading & Execution: Traders engage with the markets using directional bets (Long/Short) or spot-backed assets. The environment is high-performance, leveraging the FuelVM for rapid execution with 0.00% maker and 0.01% taker fees.\n• Risk Enforcement: If net losses reach the maximum drawdown (equal to the deposited margin), automated liquidation mechanics trigger. Importantly, profits already withdrawn to the trader's main wallet are immune to liquidation; only the remaining margin and current unrealized PnL are at risk.\n• Settlement & Payout: At the conclusion of the term—or upon manual closure—the trader receives their margin (net of losses) plus 100% of realized profits.",
+        "status": "reported",
+        "evidence": [
+          {
+            "sourceUrl": "https://x.com/o2dotapp",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://trade.o2.app/turbo",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://trade.o2.app/terms-of-use",
+            "checkedAt": "2026-08-22"
+          },
+          {
+            "sourceUrl": "https://www.o2.app/",
+            "checkedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  },
+  "sourcesInspected": [
+    {
+      "category": "website",
+      "url": "https://x.com/o2dotapp",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Official X and trading application reciprocally identify each other."
+    },
+    {
+      "category": "payout-policy",
+      "url": "https://trade.o2.app/turbo",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "terms",
+      "url": "https://trade.o2.app/terms-of-use",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed"
+    },
+    {
+      "category": "token-rewards",
+      "url": "https://www.o2.app/",
+      "checkedAt": "2026-08-22",
+      "outcome": "accessed",
+      "notes": "Referral interface: https://trade.o2.app/turbo?tab=referrals."
+    }
+  ]
+}
