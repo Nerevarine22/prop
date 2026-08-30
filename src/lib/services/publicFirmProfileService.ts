@@ -55,7 +55,7 @@ export const getPublicFirmProfiles = cache(async (): Promise<FirmNormalizedProfi
           record.brandAssets?.sourceUrl,
           record.brandAssets?.checkedAt,
         ),
-        record.normalizedProfileV2,
+        record.pageProfileV2 ?? record.normalizedProfileV2,
       ))
       .filter(isCurrentNormalizedProfile);
 

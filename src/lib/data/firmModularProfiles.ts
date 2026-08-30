@@ -13,6 +13,7 @@ import type {
   NormalizedFact,
 } from '@/types/database';
 import { MODEL_FIRST_FIRM_PROFILES_BY_SLUG } from './modelFirstFirmProfiles';
+import { getEditorialPageProfile } from './editorialPageProfiles';
 
 type FactFormatter<T> = (value: T) => string;
 
@@ -431,17 +432,18 @@ function isStoredProfileUsable(profile: FirmNormalizedProfileV2 | undefined): pr
 
 export function getFirmModularProfile(profile: FirmNormalizedProfile): FirmNormalizedProfileV2 {
   if (isStoredProfileUsable(profile.modularProfile) && profile.modularProfile.researchStandard === 'model-first-v1') {
-    return profile.modularProfile;
+    return getEditorialPageProfile(profile.modularProfile);
   }
-  return MODEL_FIRST_FIRM_PROFILES_BY_SLUG[profile.slug]
-    ?? (isStoredProfileUsable(profile.modularProfile) ? profile.modularProfile : buildProfile(profile));
+  return getEditorialPageProfile(MODEL_FIRST_FIRM_PROFILES_BY_SLUG[profile.slug]
+    ?? (isStoredProfileUsable(profile.modularProfile) ? profile.modularProfile : buildProfile(profile)));
 }
 
 export function attachFirmModularProfile(profile: FirmNormalizedProfile, storedProfile?: FirmNormalizedProfileV2): FirmNormalizedProfile {
-  const modularProfile = isStoredProfileUsable(storedProfile) && storedProfile.researchStandard === 'model-first-v1'
+  const sourceProfile = isStoredProfileUsable(storedProfile) && storedProfile.researchStandard === 'model-first-v1'
     ? storedProfile
     : MODEL_FIRST_FIRM_PROFILES_BY_SLUG[profile.slug]
       ?? (isStoredProfileUsable(storedProfile) ? storedProfile : buildProfile(profile));
+  const modularProfile = getEditorialPageProfile(sourceProfile);
   return { ...profile, modularProfile };
 }
 

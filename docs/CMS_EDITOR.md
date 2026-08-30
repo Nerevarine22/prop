@@ -13,8 +13,9 @@ The admin builder edits the same `FirmNormalizedProfileV2` content model that th
 ## Publishing workflow
 
 1. Changes remain local until **Save draft** is used.
-2. A draft is stored as `draftProfileV2` and does not replace the public profile.
-3. **Publish** copies the edited profile to `normalizedProfileV2`, updates publication timestamps, and makes it available to the public renderer.
+2. Raw imported research remains in `normalizedProfileV2`.
+3. A CMS draft is stored separately as `draftPageProfileV2` and does not replace either raw research or the public profile.
+4. **Publish** copies the edited page to `pageProfileV2`, updates publication timestamps, and makes it available to the public renderer.
 
 The public renderer and builder preview share the same hero and editorial content components. This keeps manual layouts aligned with the live page instead of maintaining a separate admin-only approximation.
 

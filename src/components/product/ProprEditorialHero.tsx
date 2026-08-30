@@ -46,9 +46,11 @@ export function FirmEditorialHero({ firm, profileOverride }: { firm: FirmNormali
   const overviewTexts = research.sections
     .find((section) => section.id === 'overview')
     ?.blocks.filter((block) => block.type === 'text') ?? [];
-  const identityText = overviewTexts.find((block) => /identity|operating model|project overview|about/i.test(block.title ?? ''));
-  const description = editorialSummary(research.operatingModel?.summary.value)
-    ?? editorialSummary(identityText?.paragraphs[0])
+  const identityText = research.contentStage === 'editorial'
+    ? overviewTexts[0]
+    : overviewTexts.find((block) => /identity|operating model|project overview|about/i.test(block.title ?? ''));
+  const description = editorialSummary(identityText?.paragraphs[0])
+    ?? editorialSummary(research.operatingModel?.summary.value)
     ?? 'An independent research profile structured around the project’s documented operating model.';
   const platforms = factValue(firm.tradingPolicy.platforms) ?? [];
   const execution = comparisonListText(research.comparison.executionModels);

@@ -349,6 +349,7 @@ export interface FirmComparisonProjection {
 
 export interface FirmNormalizedProfileV2 {
   version: 2;
+  contentStage?: 'research' | 'editorial';
   methodology: 'primary-sources-only';
   researchStandard?: 'model-first-v1';
   researchMode?: 'manual' | 'agent-assisted';
@@ -384,6 +385,8 @@ export interface FirmDatabaseRecord {
   normalizedProfile?: FirmNormalizedProfile;
   normalizedProfileV2?: FirmNormalizedProfileV2;
   draftProfileV2?: FirmNormalizedProfileV2;
+  pageProfileV2?: FirmNormalizedProfileV2;
+  draftPageProfileV2?: FirmNormalizedProfileV2;
   draftUpdatedAt?: string;
   publishedAt?: string;
   profile?: PropFirm;

@@ -89,7 +89,7 @@ export async function saveFirmRegistryDraft(
   if (!profile?.sections.length) throw new Error('A draft needs at least one section.');
   const timestamp = new Date().toISOString();
   await setDoc(doc(db, FIRM_REGISTRY_COLLECTION, id), removeUndefined({
-    draftProfileV2: profile,
+    draftPageProfileV2: profile,
     draftUpdatedAt: timestamp,
     updatedAt: timestamp,
   }), { merge: true });
@@ -104,8 +104,8 @@ export async function publishFirmRegistryProfile(
   if (!profile?.sections.length) throw new Error('A published profile needs at least one section.');
   const timestamp = new Date().toISOString();
   await setDoc(doc(db, FIRM_REGISTRY_COLLECTION, id), removeUndefined({
-    normalizedProfileV2: profile,
-    draftProfileV2: profile,
+    pageProfileV2: profile,
+    draftPageProfileV2: profile,
     draftUpdatedAt: timestamp,
     publishedAt: timestamp,
     publicationStatus: 'published',

@@ -222,7 +222,11 @@ export default function FirmPageBuilder() {
     getFirmRegistry().then((records) => {
       const current = records.find((item) => item.id === params.firmId);
       if (!current) throw new Error('Firm registry record not found.');
-      const source = current.draftProfileV2 ?? current.normalizedProfileV2 ?? (current.normalizedProfile ? getFirmModularProfile(current.normalizedProfile) : starterProfile(current));
+      const source = current.draftPageProfileV2
+        ?? current.pageProfileV2
+        ?? (current.normalizedProfile
+          ? getFirmModularProfile({ ...current.normalizedProfile, modularProfile: current.draftProfileV2 ?? current.normalizedProfileV2 })
+          : starterProfile(current));
       if (!cancelled) {
         const draft = clone(source);
         setRecord(current); setProfile(draft); setSavedSnapshot(JSON.stringify(draft));
