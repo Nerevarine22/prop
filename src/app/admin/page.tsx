@@ -175,6 +175,7 @@ function RegistryInspector({ record, onClose, onSaved }: {
             {message && <p className={`mt-4 rounded-lg border px-3 py-2 text-[10px] ${message.startsWith('Registry') ? 'border-emerald-500/20 bg-emerald-500/10 text-emerald-300' : 'border-red-500/20 bg-red-500/10 text-red-300'}`}>{message}</p>}
             <div className="mt-5 flex flex-wrap justify-between gap-3 border-t border-zinc-800 pt-5">
               <div className="flex gap-2">
+                <Link href={`/admin/builder/${record.id}`} className="inline-flex items-center gap-2 rounded-xl bg-sky-400 px-3 py-2 text-[10px] font-extrabold text-zinc-950">Open builder <ChevronRight className="h-3 w-3" /></Link>
                 <Link href={`/prop-firms/${record.slug}`} target="_blank" className="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900 px-3 py-2 text-[10px] font-bold text-zinc-300">Public profile <ExternalLink className="h-3 w-3" /></Link>
                 <button type="button" onClick={() => downloadRecord(record)} className="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900 px-3 py-2 text-[10px] font-bold text-zinc-300"><Download className="h-3 w-3" /> JSON</button>
               </div>

@@ -81,6 +81,39 @@ export async function updateFirmRegistryMetadata(
   }), { merge: true });
 }
 
+export async function saveFirmRegistryDraft(
+  id: string,
+  profile: FirmDatabaseRecord['normalizedProfileV2'],
+): Promise<string> {
+  if (!isFirebaseConfigured) throw new Error('Firebase is not configured.');
+  if (!profile?.sections.length) throw new Error('A draft needs at least one section.');
+  const timestamp = new Date().toISOString();
+  await setDoc(doc(db, FIRM_REGISTRY_COLLECTION, id), removeUndefined({
+    draftProfileV2: profile,
+    draftUpdatedAt: timestamp,
+    updatedAt: timestamp,
+  }), { merge: true });
+  return timestamp;
+}
+
+export async function publishFirmRegistryProfile(
+  id: string,
+  profile: FirmDatabaseRecord['normalizedProfileV2'],
+): Promise<string> {
+  if (!isFirebaseConfigured) throw new Error('Firebase is not configured.');
+  if (!profile?.sections.length) throw new Error('A published profile needs at least one section.');
+  const timestamp = new Date().toISOString();
+  await setDoc(doc(db, FIRM_REGISTRY_COLLECTION, id), removeUndefined({
+    normalizedProfileV2: profile,
+    draftProfileV2: profile,
+    draftUpdatedAt: timestamp,
+    publishedAt: timestamp,
+    publicationStatus: 'published',
+    updatedAt: timestamp,
+  }), { merge: true });
+  return timestamp;
+}
+
 /**
  * Idempotent seed: merge keeps future research fields while ensuring every
  * canonical identity exists. Call only from an authenticated admin session.

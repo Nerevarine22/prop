@@ -191,3 +191,7 @@
   .leverage { grid-column: auto; }
   .sources { grid-template-columns: 1fr; padding: 68px 4px 90px; gap: 34px; }
 }
+
+:global([data-cms-mobile='true']) .localNav { top: 0; gap: 20px; }
+:global([data-cms-mobile='true']) .localNav a { min-height: 38px; padding: 0 4px; font-size: 12px; }
+:global([data-cms-mobile='true']) .navPromo { margin-left: 6px; }

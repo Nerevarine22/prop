@@ -4,6 +4,7 @@ import type {
   FirmContentFact,
   FirmContentRecord,
   FirmNormalizedProfile,
+  FirmNormalizedProfileV2,
   FirmProfileSection,
 } from '@/types/database';
 import { getFirmModularProfile } from '@/lib/data/firmModularProfiles';
@@ -39,12 +40,12 @@ function splitCopy(paragraphs: string[]): { paragraphs: string[]; bullets: strin
   return { paragraphs: copy, bullets };
 }
 
-function NarrativeBlock({ block, featured }: { block: Extract<FirmContentBlock, { type: 'text' }>; featured: boolean }) {
+function NarrativeBlock({ block, featured, selected }: { block: Extract<FirmContentBlock, { type: 'text' }>; featured: boolean; selected: boolean }) {
   const content = splitCopy(block.paragraphs);
   if (!content.paragraphs.length && !content.bullets.length) return null;
 
   return (
-    <article className={styles.narrative} data-featured={featured}>
+    <article className={styles.narrative} data-featured={featured} data-cms-block-id={block.id} data-selected={selected}>
       <span>{block.eyebrow ?? (featured ? 'Research brief' : 'Documented detail')}</span>
       {block.title && <h3>{block.title}</h3>}
       {content.paragraphs.map((paragraph, index) => <p key={`${block.id}-p-${index}`}>{paragraph}</p>)}
@@ -54,11 +55,11 @@ function NarrativeBlock({ block, featured }: { block: Extract<FirmContentBlock, 
   );
 }
 
-function FactGrid({ block }: { block: Extract<FirmContentBlock, { type: 'fact-grid' }> }) {
+function FactGrid({ block, selected }: { block: Extract<FirmContentBlock, { type: 'fact-grid' }>; selected: boolean }) {
   const facts = cleanFacts(block.items);
   if (!facts.length) return null;
   return (
-    <dl className={styles.factGrid} data-columns={Math.min(block.columns ?? 3, facts.length)}>
+    <dl className={styles.factGrid} data-columns={Math.min(block.columns ?? 3, facts.length)} data-cms-block-id={block.id} data-selected={selected}>
       {facts.map((fact) => (
         <div key={fact.id}>
           <dt>{fact.label}</dt>
@@ -84,15 +85,15 @@ function RecordCard({ record }: { record: FirmContentRecord }) {
   );
 }
 
-function RecordList({ block }: { block: Extract<FirmContentBlock, { type: 'record-list' }> }) {
+function RecordList({ block, selected }: { block: Extract<FirmContentBlock, { type: 'record-list' }>; selected: boolean }) {
   if (!block.items.length) return null;
-  return <div className={styles.recordGrid}>{block.items.map((record) => <RecordCard key={record.id} record={record} />)}</div>;
+  return <div className={styles.recordGrid} data-cms-block-id={block.id} data-selected={selected}>{block.items.map((record) => <RecordCard key={record.id} record={record} />)}</div>;
 }
 
-function DataTable({ block }: { block: Extract<FirmContentBlock, { type: 'table' }> }) {
+function DataTable({ block, selected }: { block: Extract<FirmContentBlock, { type: 'table' }>; selected: boolean }) {
   if (!block.rows.length) return null;
   return (
-    <div className={styles.tableBlock}>
+    <div className={styles.tableBlock} data-cms-block-id={block.id} data-selected={selected}>
       {(block.title || block.description) && <div><h3>{block.title}</h3>{block.description && <p>{block.description}</p>}</div>}
       <div className={styles.tableScroller}>
         <table>
@@ -104,41 +105,51 @@ function DataTable({ block }: { block: Extract<FirmContentBlock, { type: 'table'
   );
 }
 
-function EditorialBlock({ block, featured }: { block: FirmContentBlock; featured: boolean }) {
-  if (block.type === 'text') return <NarrativeBlock block={block} featured={featured} />;
-  if (block.type === 'fact-grid') return <FactGrid block={block} />;
-  if (block.type === 'record-list') return <RecordList block={block} />;
-  if (block.type === 'table') return <DataTable block={block} />;
-  return <aside className={styles.notice} data-tone={block.tone}><CircleAlert /><p>{block.text}</p></aside>;
+function EditorialBlock({ block, featured, selected }: { block: FirmContentBlock; featured: boolean; selected: boolean }) {
+  if (block.type === 'text') return <NarrativeBlock block={block} featured={featured} selected={selected} />;
+  if (block.type === 'fact-grid') return <FactGrid block={block} selected={selected} />;
+  if (block.type === 'record-list') return <RecordList block={block} selected={selected} />;
+  if (block.type === 'table') return <DataTable block={block} selected={selected} />;
+  return <aside className={styles.notice} data-tone={block.tone} data-cms-block-id={block.id} data-selected={selected}><CircleAlert /><p>{block.text}</p></aside>;
 }
 
-function EditorialSection({ section, index }: { section: FirmProfileSection; index: number }) {
+function EditorialSection({ section, index, selectedBlockId }: { section: FirmProfileSection; index: number; selectedBlockId?: string | null }) {
   const firstTextId = section.blocks.find((block) => block.type === 'text')?.id;
   return (
-    <section className={styles.section} id={`research-${section.id}`}>
+    <section className={styles.section} id={`research-${section.id}`} data-cms-section-id={section.id}>
       <header className={styles.sectionHeading}>
         <span>{String(index + 1).padStart(2, '0')} · {section.tabLabel}</span>
         <h2>{section.title}</h2>
         {section.description && <p>{section.description}</p>}
       </header>
       <div className={styles.blocks}>
-        {section.blocks.map((block) => <EditorialBlock block={block} featured={block.id === firstTextId} key={block.id} />)}
+        {section.blocks.map((block) => <EditorialBlock block={block} featured={block.id === firstTextId} selected={block.id === selectedBlockId} key={block.id} />)}
       </div>
     </section>
   );
 }
 
-export function FirmEditorialContent({ firm }: { firm: FirmNormalizedProfile }) {
-  const profile = getFirmModularProfile(firm);
+export function FirmEditorialContent({
+  firm,
+  profileOverride,
+  editMode = false,
+  selectedBlockId,
+}: {
+  firm: FirmNormalizedProfile;
+  profileOverride?: FirmNormalizedProfileV2;
+  editMode?: boolean;
+  selectedBlockId?: string | null;
+}) {
+  const profile = profileOverride ?? getFirmModularProfile(firm);
   const navItems: EditorialNavItem[] = profile.sections.map((section) => ({
     id: `research-${section.id}`,
     label: section.tabLabel,
   }));
 
   return (
-    <div className={styles.editorial}>
+    <div className={styles.editorial} data-editing={editMode}>
       <ProprSectionNav items={navItems} firmName={firm.name} promoCode="" />
-      {profile.sections.map((section, index) => <EditorialSection section={section} index={index} key={section.id} />)}
+      {profile.sections.map((section, index) => <EditorialSection section={section} index={index} selectedBlockId={selectedBlockId} key={section.id} />)}
     </div>
   );
 }

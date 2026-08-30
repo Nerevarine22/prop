@@ -10,6 +10,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const isBuilder = pathname.startsWith('/admin/builder/');
   const router = useRouter();
   const [authenticated, setAuthenticated] = useState<boolean | null>(() => {
     if (pathname === '/admin/login') return true;
@@ -57,6 +58,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (!authenticated) {
     return null;
   }
+
+  if (isBuilder) return <>{children}</>;
 
   return (
     <div className="min-h-screen bg-[#090909] font-satoshi flex flex-col md:flex-row">

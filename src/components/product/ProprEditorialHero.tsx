@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { ArrowUpRight, ExternalLink, Star } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
-import type { ComparisonRangeProjection, FirmNormalizedProfile } from '@/types/database';
+import type { ComparisonRangeProjection, FirmNormalizedProfile, FirmNormalizedProfileV2 } from '@/types/database';
 import { comparisonListText, comparisonRangeText, firmModelTypeLabel, getFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import { factValue, formatCapital, profileLogo, profileWebsite, shortDate } from '@/lib/data/publicFirmProfiles';
 import styles from './ProprEditorialHero.module.css';
@@ -38,8 +38,8 @@ function editorialSummary(value: string | undefined): string | undefined {
   return sentenceEnd > 220 ? cleaned.slice(0, sentenceEnd + 1) : `${cleaned.slice(0, 427).trimEnd()}…`;
 }
 
-export function FirmEditorialHero({ firm }: { firm: FirmNormalizedProfile }) {
-  const research = getFirmModularProfile(firm);
+export function FirmEditorialHero({ firm, profileOverride }: { firm: FirmNormalizedProfile; profileOverride?: FirmNormalizedProfileV2 }) {
+  const research = profileOverride ?? getFirmModularProfile(firm);
   const website = profileWebsite(firm);
   const xHandle = factValue(firm.identity.xHandle);
   const xUrl = xHandle ? `https://x.com/${xHandle.replace(/^@/, '')}` : undefined;
@@ -78,7 +78,7 @@ export function FirmEditorialHero({ firm }: { firm: FirmNormalizedProfile }) {
   ].filter((item): item is { label: string; value: string; note: string; tone: string } => Boolean(item));
 
   return (
-    <section className={styles.hero} aria-labelledby="firm-profile-title">
+    <section className={styles.hero} aria-labelledby="firm-profile-title" data-cms-hero>
       <div className={styles.ambient} aria-hidden="true" />
 
       <header className={styles.metaBar}>
