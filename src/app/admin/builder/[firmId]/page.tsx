@@ -8,8 +8,7 @@ import {
   Eye, FileText, Grid2X2, List, Moon, Plus, Save, Smartphone, Sun,
   Table2, Trash2, TriangleAlert, UploadCloud, X,
 } from 'lucide-react';
-import { FirmEditorialContent } from '@/components/product/FirmEditorialContent';
-import { FirmEditorialHero } from '@/components/product/ProprEditorialHero';
+import { FirmProfileBody } from '@/components/product/FirmProfileExperience';
 import { getFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import {
   getFirmRegistry, publishFirmRegistryProfile, saveFirmRegistryDraft,
@@ -212,6 +211,7 @@ export default function FirmPageBuilder() {
   const [editingHero, setEditingHero] = useState(true);
   const [theme, setTheme] = useState<PreviewTheme>('dark');
   const [previewWidth, setPreviewWidth] = useState<PreviewWidth>('desktop');
+  const [desktopScale, setDesktopScale] = useState(0.5);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
@@ -239,6 +239,17 @@ export default function FirmPageBuilder() {
     if (!record?.normalizedProfile || !profile) return null;
     return { ...record.normalizedProfile, modularProfile: profile };
   }, [profile, record]);
+
+  useEffect(() => {
+    if (previewWidth !== 'desktop') return;
+    const preview = previewRef.current;
+    if (!preview) return;
+    const updateScale = () => setDesktopScale(Math.min(1, Math.max(0.2, preview.clientWidth / 1240)));
+    updateScale();
+    const observer = new ResizeObserver(updateScale);
+    observer.observe(preview);
+    return () => observer.disconnect();
+  }, [loading, previewWidth]);
 
   useEffect(() => {
     const warnBeforeUnload = (event: BeforeUnloadEvent) => {
@@ -347,10 +358,9 @@ export default function FirmPageBuilder() {
       <main className="min-w-0 overflow-auto bg-[#090a0b] p-5 sm:p-8">
         <div className={`mx-auto overflow-hidden rounded-xl border border-zinc-800 shadow-2xl transition-[max-width] ${previewWidth === 'mobile' ? 'max-w-[430px]' : 'max-w-[1180px]'}`}>
           <div ref={previewRef} onClickCapture={handlePreviewClick} className={`${productStyles.lab} ${theme === 'dark' ? productStyles.dark : ''} max-h-[calc(100vh-112px)] min-h-[760px] overflow-y-auto`}>
-            <div style={previewWidth === 'desktop' ? { width: 1240, zoom: 0.5 } : undefined} data-cms-mobile={previewWidth === 'mobile'}>
+            <div style={previewWidth === 'desktop' ? { width: 1240, zoom: desktopScale } : undefined} data-cms-mobile={previewWidth === 'mobile'}>
               {previewFirm ? <div className={`${productStyles.productPage} py-8`}>
-                <FirmEditorialHero firm={previewFirm} profileOverride={profile} />
-                <FirmEditorialContent firm={previewFirm} profileOverride={profile} editMode selectedBlockId={selectedBlockId} />
+                <FirmProfileBody firm={previewFirm} profileOverride={profile} editMode selectedBlockId={selectedBlockId} />
               </div> : <div className="flex min-h-[760px] items-center justify-center p-10 text-center text-xs text-zinc-500">A normalized firm identity is required for the visual preview.</div>}
             </div>
           </div>
