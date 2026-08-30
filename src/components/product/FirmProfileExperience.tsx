@@ -5,6 +5,8 @@ import type { ComparisonRangeProjection, FirmContentFact, FirmNormalizedProfile 
 import { comparisonListText, comparisonRangeText, firmModelTypeLabel, getFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import { factText, factValue, formatCapital, profileLogo, profileSourceCount, profileWebsite, shortDate } from '@/lib/data/publicFirmProfiles';
 import { FirmResearchTabs } from './FirmResearchTabs';
+import { ProprEditorialContent } from './ProprEditorialContent';
+import { ProprEditorialHero } from './ProprEditorialHero';
 import styles from '@/app/product-lab/page.module.css';
 
 function XMark() {
@@ -95,7 +97,7 @@ export function FirmProfileExperience({ firm }: { firm: FirmNormalizedProfile })
     <div className={styles.productPage}>
       <div className={styles.breadcrumbs}><Link href="/prop-firms">Firms</Link><span>/</span><span>{firm.name}</span></div>
 
-      <section className={styles.profileHero} aria-labelledby="firm-profile-title">
+      {firm.slug === 'propr' ? <ProprEditorialHero firm={firm} /> : <section className={styles.profileHero} aria-labelledby="firm-profile-title">
         <div className={styles.profileHeroTop}>
           <div className={styles.profileIdentity}>
             <FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.profileLogo} fallbackClassName={styles.profileFallback} />
@@ -133,20 +135,22 @@ export function FirmProfileExperience({ firm }: { firm: FirmNormalizedProfile })
             <span className={styles.profileRatingReviews}>0 reviews</span>
           </div>
         </div>
-      </section>
+      </section>}
 
-      <section className={styles.profileLayout}>
-        <main className={styles.profilePrimary}><FirmResearchTabs firm={firm} offerUrl={offerUrl} /></main>
-        <aside className={styles.profileAside}>
-          <section className={styles.evidenceCard}>
-            <div><FileCheck2 /><span>Evidence status</span></div>
-            <strong>{evidenceLabel}</strong>
-            <p>{evidenceDescription}</p>
-            <dl><div><dt>Last reviewed</dt><dd>{shortDate(checkedAt)}</dd></div><div><dt>Sources attached</dt><dd>{sourceCount}</dd></div><div><dt>Method</dt><dd>{isManualResearch ? 'Manual research · structured import' : isModelFirst ? 'Model first · primary only' : 'Primary sources only'}</dd></div><div><dt>Profile facts</dt><dd>{facts.size}</dd></div><div><dt>Not documented</dt><dd>{displayedNdCount}</dd></div></dl>
-            <Link href="/methodology">How verification works <ArrowRight /></Link>
-          </section>
-        </aside>
-      </section>
+      {firm.slug === 'propr' ? <ProprEditorialContent firm={firm} /> : (
+        <section className={styles.profileLayout}>
+          <main className={styles.profilePrimary}><FirmResearchTabs firm={firm} offerUrl={offerUrl} /></main>
+          <aside className={styles.profileAside}>
+            <section className={styles.evidenceCard}>
+              <div><FileCheck2 /><span>Evidence status</span></div>
+              <strong>{evidenceLabel}</strong>
+              <p>{evidenceDescription}</p>
+              <dl><div><dt>Last reviewed</dt><dd>{shortDate(checkedAt)}</dd></div><div><dt>Sources attached</dt><dd>{sourceCount}</dd></div><div><dt>Method</dt><dd>{isManualResearch ? 'Manual research · structured import' : isModelFirst ? 'Model first · primary only' : 'Primary sources only'}</dd></div><div><dt>Profile facts</dt><dd>{facts.size}</dd></div><div><dt>Not documented</dt><dd>{displayedNdCount}</dd></div></dl>
+              <Link href="/methodology">How verification works <ArrowRight /></Link>
+            </section>
+          </aside>
+        </section>
+      )}
     </div>
   );
 }

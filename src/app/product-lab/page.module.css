@@ -9,6 +9,11 @@
   --blue: #2657ee;
   --blue-dark: #193fc5;
   --lime: #d8f36a;
+  --accent-research: #2657ee;
+  --accent-value: #748d00;
+  --accent-condition: #a65f00;
+  --accent-settlement: #117a57;
+  --accent-reward: #6555c7;
   --ink-panel: #172019;
   min-height: 100vh;
   background: #f3f1eb;
@@ -28,6 +33,11 @@
   --blue: #7da2ff;
   --blue-dark: #9ab6ff;
   --lime: #d8f36a;
+  --accent-research: #7da2ff;
+  --accent-value: #d8f36a;
+  --accent-condition: #f2c96d;
+  --accent-settlement: #74e6b2;
+  --accent-reward: #b7a7ff;
   --ink-panel: #090f0c;
   background: #0c0f0d;
   color-scheme: dark;

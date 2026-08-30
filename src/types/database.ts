@@ -383,6 +383,9 @@ export interface FirmDatabaseRecord {
   primaryResearch?: FirmPrimaryResearch;
   normalizedProfile?: FirmNormalizedProfile;
   normalizedProfileV2?: FirmNormalizedProfileV2;
+  draftProfileV2?: FirmNormalizedProfileV2;
+  draftUpdatedAt?: string;
+  publishedAt?: string;
   profile?: PropFirm;
   createdAt: string;
   updatedAt: string;

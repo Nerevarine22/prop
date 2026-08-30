@@ -115,6 +115,20 @@ The foundation is neutral charcoal rather than tinted brand color. Hierarchy com
 
 Blue is the trust and interaction color. Violet is reserved for rewards and AI, never for general navigation. Glow is not a default interaction style; a soft static radial field is allowed only in major narrative areas such as the homepage hero.
 
+### Editorial data accents
+
+Firm research pages may use this supporting palette to distinguish decision-relevant facts. These colors are semantic accents, not firm branding, and should appear as thin rules, short labels, key values or small icons rather than large filled surfaces.
+
+| Token | Dark theme | Light theme | Role |
+| --- | --- | --- | --- |
+| `--accent-research` | `#7DA2FF` | `#2657EE` | Research context, navigation and neutral comparison data |
+| `--accent-value` | `#D8F36A` | `#748D00` | Favorable values such as profit split |
+| `--accent-condition` | `#F2C96D` | `#A65F00` | Price, conditions and details requiring attention |
+| `--accent-settlement` | `#74E6B2` | `#117A57` | Payouts, execution and settlement mechanics |
+| `--accent-reward` | `#B7A7FF` | `#6555C7` | Rewards, incentives and secondary programs |
+
+Use one accent per fact group and keep body copy neutral. Color must not imply verification status: research status continues to use the dedicated semantic status tokens below.
+
 ### Semantic colors
 
 | Token | Initial value | Meaning |

@@ -47,7 +47,7 @@ function withRegistryBrand(
 export const getPublicFirmProfiles = cache(async (): Promise<FirmNormalizedProfile[]> => {
   try {
     const records = await getFirmRegistry();
-    const profiles = records
+    const storedProfiles = records
       .map((record) => record.normalizedProfile && attachFirmModularProfile(
         withRegistryBrand(
           record.normalizedProfile,
@@ -59,7 +59,12 @@ export const getPublicFirmProfiles = cache(async (): Promise<FirmNormalizedProfi
       ))
       .filter(isCurrentNormalizedProfile);
 
-    if (profiles.length === PUBLIC_FIRM_PROFILES.length) return sortProfiles(profiles);
+    if (storedProfiles.length) {
+      const storedBySlug = new Map(storedProfiles.map((profile) => [profile.slug, profile]));
+      const mergedProfiles = PUBLIC_FIRM_PROFILES.map((profile) => storedBySlug.get(profile.slug) ?? profile);
+      const newStoredProfiles = storedProfiles.filter((profile) => !PUBLIC_FIRM_PROFILES.some((fallback) => fallback.slug === profile.slug));
+      return sortProfiles([...mergedProfiles, ...newStoredProfiles]);
+    }
   } catch {
     // Fail open to the validated snapshot so public pages remain available.
   }
