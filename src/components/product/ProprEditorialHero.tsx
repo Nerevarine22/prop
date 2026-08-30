@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
 import { ArrowUpRight, ExternalLink, Star } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
 import type { ComparisonRangeProjection, FirmNormalizedProfile } from '@/types/database';
-import { comparisonListText, comparisonRangeText, getFirmModularProfile } from '@/lib/data/firmModularProfiles';
+import { comparisonListText, comparisonRangeText, firmModelTypeLabel, getFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import { factValue, formatCapital, profileLogo, profileWebsite, shortDate } from '@/lib/data/publicFirmProfiles';
 import styles from './ProprEditorialHero.module.css';
 
@@ -18,7 +19,26 @@ function rangePoint(value: ComparisonRangeProjection, point: 'min' | 'max'): str
   return formatCapital(amount);
 }
 
-export function ProprEditorialHero({ firm }: { firm: FirmNormalizedProfile }) {
+function displayComparison(value: string): string {
+  return value === 'ND' || value === 'N/A' ? 'Not published' : value;
+}
+
+function compactValue(value: string | undefined, fallback = 'Not published'): string {
+  if (!value) return fallback;
+  const firstLine = value.split(/\n|\.|;/)[0]?.trim() ?? value;
+  return firstLine.length > 42 ? `${firstLine.slice(0, 39).trimEnd()}…` : firstLine;
+}
+
+function editorialSummary(value: string | undefined): string | undefined {
+  if (!value) return undefined;
+  const cleaned = value.replace(/^Mission\s*/i, '').replace(/\s+/g, ' ').trim();
+  if (!cleaned) return undefined;
+  if (cleaned.length <= 430) return cleaned;
+  const sentenceEnd = cleaned.lastIndexOf('. ', 430);
+  return sentenceEnd > 220 ? cleaned.slice(0, sentenceEnd + 1) : `${cleaned.slice(0, 427).trimEnd()}…`;
+}
+
+export function FirmEditorialHero({ firm }: { firm: FirmNormalizedProfile }) {
   const research = getFirmModularProfile(firm);
   const website = profileWebsite(firm);
   const xHandle = factValue(firm.identity.xHandle);
@@ -26,16 +46,36 @@ export function ProprEditorialHero({ firm }: { firm: FirmNormalizedProfile }) {
   const overviewTexts = research.sections
     .find((section) => section.id === 'overview')
     ?.blocks.filter((block) => block.type === 'text') ?? [];
-  const identityText = overviewTexts.find((block) => /identity|operating model/i.test(block.title ?? ''));
-  const description = identityText?.paragraphs[0]
-    ?.replace(/^Mission\s*/i, '')
-    ?? 'A crypto-native evaluation model built around Hyperliquid execution and on-chain settlement.';
+  const identityText = overviewTexts.find((block) => /identity|operating model|project overview|about/i.test(block.title ?? ''));
+  const description = editorialSummary(research.operatingModel?.summary.value)
+    ?? editorialSummary(identityText?.paragraphs[0])
+    ?? 'An independent research profile structured around the project’s documented operating model.';
   const platforms = factValue(firm.tradingPolicy.platforms) ?? [];
-  const venue = factValue(firm.executionPolicy.venue) ?? platforms[0] ?? 'Not stated';
-  const entry = rangePoint(research.comparison.entryCost, 'min') ?? 'Not stated';
-  const capital = rangePoint(research.comparison.capital, 'max') ?? 'Not stated';
-  const split = comparisonRangeText(research.comparison.profitSplit);
-  const payout = comparisonListText(research.comparison.payoutSchedules);
+  const execution = comparisonListText(research.comparison.executionModels);
+  const venue = compactValue(factValue(firm.executionPolicy.venue) ?? platforms[0] ?? (execution !== 'ND' ? execution : undefined));
+  const entry = rangePoint(research.comparison.entryCost, 'min');
+  const capital = rangePoint(research.comparison.capital, 'max');
+  const split = displayComparison(comparisonRangeText(research.comparison.profitSplit));
+  const payout = displayComparison(comparisonListText(research.comparison.payoutSchedules));
+  const modelLabel = research.modelTypes.map(firmModelTypeLabel).join(' · ') || 'Independent model';
+  const simulatedAccounts = factValue(firm.compliancePolicy.simulatedAccounts);
+  const accountEnvironment = research.operatingModel?.accountEnvironment?.value
+    ?? (simulatedAccounts === true ? 'Simulated account' : simulatedAccounts === false ? 'Live or on-chain environment' : undefined);
+  const entryLabel = research.modelTypes.includes('collateralized') ? 'Trader commitment' : 'Entry price';
+  const entryValue = entry ? `${research.modelTypes.includes('collateralized') ? '' : 'From '}${entry}` : 'Not published';
+  const capitalValue = capital ? `Up to ${capital}` : 'Not published';
+  const actionFacts = [
+    venue !== 'Not published' ? ['Trading venue', venue] : undefined,
+    accountEnvironment ? ['Account environment', compactValue(accountEnvironment)] : undefined,
+    ['Documented offers', String(research.offerNames.length)],
+  ].filter((item): item is [string, string] => Boolean(item));
+  const decisionFacts = [
+    split !== 'Not published' ? { label: 'Profit split', value: split, note: 'Trader share', tone: 'value' } : undefined,
+    entry ? { label: entryLabel, value: entryValue, note: research.comparison.entryCost.notes ?? 'Offer dependent', tone: 'condition' } : undefined,
+    capital ? { label: 'Maximum capital', value: capitalValue, note: research.comparison.capital.notes ?? 'Offer dependent', tone: 'research' } : undefined,
+    payout !== 'Not published' ? { label: 'Payout access', value: payout, note: research.comparison.payoutSchedules.notes ?? 'See payout terms', tone: 'settlement' } : undefined,
+    execution !== 'ND' && execution !== 'N/A' ? { label: 'Execution', value: platforms.slice(0, 2).join(' + ') || execution, note: modelLabel, tone: 'settlement' } : undefined,
+  ].filter((item): item is { label: string; value: string; note: string; tone: string } => Boolean(item));
 
   return (
     <section className={styles.hero} aria-labelledby="firm-profile-title">
@@ -51,9 +91,9 @@ export function ProprEditorialHero({ firm }: { firm: FirmNormalizedProfile }) {
           <FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.logo} fallbackClassName={styles.fallback} />
           <div className={styles.identityCopy}>
             <div className={styles.identityHeader}>
-              <span className={styles.modelLabel}>Evaluation infrastructure · Hyperliquid</span>
+              <span className={styles.modelLabel}>{modelLabel}</span>
               <div className={styles.nameRow}>
-                <h1 id="firm-profile-title">{firm.name}</h1>
+                <h1 id="firm-profile-title" data-long={firm.name.length > 13}>{firm.name}</h1>
                 {xUrl && <a className={styles.xLink} href={xUrl} target="_blank" rel="noreferrer" aria-label={`${firm.name} on X`}><XMark /></a>}
               </div>
             </div>
@@ -72,20 +112,16 @@ export function ProprEditorialHero({ firm }: { firm: FirmNormalizedProfile }) {
             <Link href={`/compare?ids=${firm.id}`}>Add to comparison <ArrowUpRight /></Link>
           </div>
           <dl className={styles.execution}>
-            <div><dt>Trading venue</dt><dd>{venue}</dd></div>
-            <div><dt>Account environment</dt><dd>{factValue(firm.compliancePolicy.simulatedAccounts) ? 'Simulated' : 'Not stated'}</dd></div>
-            <div><dt>Settlement</dt><dd>{factValue(firm.executionPolicy.onchainSettlement) ? 'On-chain' : 'Not stated'}</dd></div>
+            {actionFacts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
           </dl>
         </aside>
       </div>
 
-      <div className={styles.decisionStrip} aria-label="Key Propr decision facts">
-        <div><span>Profit split</span><strong>{split}</strong><small>Funded stage</small></div>
-        <div><span>Entry price</span><strong>From {entry}</strong><small>Turbo 1-Step</small></div>
-        <div><span>Maximum capital</span><strong>Up to {capital}</strong><small>Per account tier</small></div>
-        <div><span>Payout access</span><strong>{payout}</strong><small>Full-balance request</small></div>
-        <div><span>Execution</span><strong>{platforms.slice(0, 2).join(' + ') || venue}</strong><small>Crypto perpetuals</small></div>
+      <div className={styles.decisionStrip} style={{ '--decision-columns': decisionFacts.length } as CSSProperties} aria-label={`Key ${firm.name} decision facts`}>
+        {decisionFacts.map((fact) => <div data-tone={fact.tone} key={fact.label}><span>{fact.label}</span><strong>{fact.value}</strong><small>{fact.note}</small></div>)}
       </div>
     </section>
   );
 }
+
+export const ProprEditorialHero = FirmEditorialHero;

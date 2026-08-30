@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Check, Copy } from 'lucide-react';
 import styles from './ProprEditorialContent.module.css';
 
-const items = [
+const proprItems = [
   { id: 'decision', label: 'At a glance' },
   { id: 'programs', label: 'Programs' },
   { id: 'payouts', label: 'Payouts' },
@@ -13,7 +13,20 @@ const items = [
   { id: 'sources', label: 'Sources' },
 ];
 
-export function ProprSectionNav() {
+export interface EditorialNavItem {
+  id: string;
+  label: string;
+}
+
+export function ProprSectionNav({
+  items = proprItems,
+  firmName = 'Propr',
+  promoCode = 'PROP20',
+}: {
+  items?: EditorialNavItem[];
+  firmName?: string;
+  promoCode?: string;
+}) {
   const [activeId, setActiveId] = useState(items[0].id);
   const [copied, setCopied] = useState(false);
 
@@ -42,16 +55,16 @@ export function ProprSectionNav() {
       window.removeEventListener('scroll', updateActiveSection);
       window.removeEventListener('resize', updateActiveSection);
     };
-  }, []);
+  }, [items]);
 
   async function copyPromoCode() {
-    await navigator.clipboard.writeText('PROP20');
+    await navigator.clipboard.writeText(promoCode);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1800);
   }
 
   return (
-    <nav className={styles.localNav} aria-label="Propr profile sections">
+    <nav className={styles.localNav} aria-label={`${firmName} profile sections`}>
       {items.map((item) => (
         <a
           className={activeId === item.id ? styles.localNavActive : undefined}
@@ -62,11 +75,11 @@ export function ProprSectionNav() {
           {item.label}
         </a>
       ))}
-      <button className={styles.navPromo} type="button" onClick={() => void copyPromoCode()} aria-label="Copy promo code PROP20">
+      {promoCode && <button className={styles.navPromo} type="button" onClick={() => void copyPromoCode()} aria-label={`Copy promo code ${promoCode}`}>
         <span>Promo</span>
-        <strong>{copied ? 'Copied' : 'PROP20'}</strong>
+        <strong>{copied ? 'Copied' : promoCode}</strong>
         {copied ? <Check /> : <Copy />}
-      </button>
+      </button>}
     </nav>
   );
 }

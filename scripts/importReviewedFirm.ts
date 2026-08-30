@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { cert, getApps, initializeApp, type ServiceAccount } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
@@ -24,19 +24,15 @@ function stableStringify(value: unknown): string {
   return JSON.stringify(value);
 }
 
-async function main() {
-  const slug = argument('slug');
-  if (!slug) throw new Error('Use --slug=<firm-slug>.');
-
-  const sourcePath = resolve(process.cwd(), argument('file') ?? `research/reviewed/${slug}.json`);
+async function readReviewedProfile(sourcePath: string): Promise<{ profile: FirmNormalizedProfileV2; record: FirmDatabaseRecord }> {
   const profile = JSON.parse(await readFile(sourcePath, 'utf8')) as FirmNormalizedProfileV2;
-  const seed = FIRM_DATABASE_SEED.find((record) => record.slug === slug);
-  if (!seed) throw new Error(`No canonical identity seed exists for ${slug}.`);
+  const seed = FIRM_DATABASE_SEED.find((record) => record.slug === profile.slug);
+  if (!seed) throw new Error(`No canonical identity seed exists for ${profile.slug}.`);
   if (profile.id !== seed.id || profile.slug !== seed.slug || profile.name !== seed.name) {
-    throw new Error('Reviewed profile identity does not match the canonical firm identity.');
+    throw new Error(`Reviewed profile identity does not match the canonical firm identity: ${sourcePath}.`);
   }
   if (profile.version !== 2 || profile.researchStandard !== 'model-first-v1' || !profile.sections.length) {
-    throw new Error('Reviewed profile is not a publishable model-first V2 record.');
+    throw new Error(`Reviewed profile is not a publishable model-first V2 record: ${sourcePath}.`);
   }
 
   const record: FirmDatabaseRecord = {
@@ -47,9 +43,41 @@ async function main() {
     publishedAt: profile.checkedAt,
     updatedAt: profile.checkedAt,
   };
+  return { profile, record };
+}
+
+async function main() {
+  const importAll = process.argv.includes('--all');
+  const slug = argument('slug');
+  if (!importAll && !slug) throw new Error('Use --slug=<firm-slug> or --all.');
+
+  const reviewedDirectory = resolve(process.cwd(), 'research/reviewed');
+  const sourcePaths = importAll
+    ? (await readdir(reviewedDirectory))
+      .filter((fileName) => fileName.endsWith('.json'))
+      .sort()
+      .map((fileName) => resolve(reviewedDirectory, fileName))
+    : [resolve(process.cwd(), argument('file') ?? `research/reviewed/${slug}.json`)];
+  const imports = await Promise.all(sourcePaths.map(readReviewedProfile));
+  if (importAll) {
+    const importedSlugs = new Set(imports.map((item) => item.profile.slug));
+    for (const seed of FIRM_DATABASE_SEED) {
+      if (!seed.normalizedProfileV2 || importedSlugs.has(seed.slug)) continue;
+      imports.push({
+        profile: seed.normalizedProfileV2,
+        record: {
+          ...seed,
+          publicationStatus: 'published',
+          publishedAt: seed.normalizedProfileV2.checkedAt,
+          updatedAt: seed.normalizedProfileV2.checkedAt,
+        },
+      });
+    }
+    imports.sort((a, b) => a.profile.slug.localeCompare(b.profile.slug));
+  }
 
   if (!process.argv.includes('--write')) {
-    process.stdout.write(`Reviewed firm import dry run complete.\nFirm: ${slug}\nSections: ${profile.sections.length}\nNo Firestore writes performed.\n`);
+    process.stdout.write(`Reviewed firm import dry run complete.\nFirms: ${imports.length}\nSections: ${imports.reduce((total, item) => total + item.profile.sections.length, 0)}\nNo Firestore writes performed.\n`);
     return;
   }
 
@@ -61,14 +89,22 @@ async function main() {
   const database = getFirestore(app);
   database.settings({ ignoreUndefinedProperties: true });
 
-  const reference = database.collection('firmRegistry').doc(record.id);
-  await reference.set(JSON.parse(JSON.stringify(record)) as FirmDatabaseRecord);
-
-  const stored = (await reference.get()).data() as FirmDatabaseRecord | undefined;
-  if (!stored || stableStringify(stored.normalizedProfileV2) !== stableStringify(profile)) {
-    throw new Error('Stored reviewed profile does not match the source JSON.');
+  const batch = database.batch();
+  for (const item of imports) {
+    const reference = database.collection('firmRegistry').doc(item.record.id);
+    batch.set(reference, JSON.parse(JSON.stringify(item.record)) as FirmDatabaseRecord, { merge: true });
   }
-  process.stdout.write(`Reviewed firm imported and verified.\nProject: ${key.project_id}\nDocument: firmRegistry/${record.id}\nSections: ${profile.sections.length}\n`);
+  await batch.commit();
+
+  for (const item of imports) {
+    const reference = database.collection('firmRegistry').doc(item.record.id);
+    const stored = (await reference.get()).data() as FirmDatabaseRecord | undefined;
+    const normalizedSource = JSON.parse(JSON.stringify(item.profile)) as FirmNormalizedProfileV2;
+    if (!stored || stableStringify(stored.normalizedProfileV2) !== stableStringify(normalizedSource)) {
+      throw new Error(`Stored reviewed profile does not match the source JSON: ${item.profile.slug}.`);
+    }
+  }
+  process.stdout.write(`Reviewed firms imported and verified.\nProject: ${key.project_id}\nFirms: ${imports.length}\nSections: ${imports.reduce((total, item) => total + item.profile.sections.length, 0)}\n`);
 }
 
 main().catch((error: unknown) => {

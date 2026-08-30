@@ -386,6 +386,11 @@ Every component must document:
 - Surface material restrictions near the top.
 - Separate firm claims, PropHub analysis and independently checked evidence.
 - Place full rules, sources and history in deeper sections.
+- Use the shared editorial hero for identity, actions and five fast decision facts.
+- Build the local navigation from the profile's actual V2 sections; do not force every operating model into the same tab list.
+- Render documented block types through the shared editorial patterns: narrative, fact grid, record collection, table and notice.
+- Omit unknown facts from the primary reading flow. Keep meaningful research gaps in the relevant explanation or sources section instead of repeating `ND` cards.
+- Allow a firm-specific composition only when its research genuinely needs a distinct explanatory pattern; colors and primitives still come from shared tokens.
 
 ### Comparison
 
