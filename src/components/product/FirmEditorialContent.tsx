@@ -85,8 +85,59 @@ function RecordCard({ record }: { record: FirmContentRecord }) {
   );
 }
 
+function recordFact(record: FirmContentRecord, label: string): FirmContentFact | undefined {
+  return cleanFacts(record.facts).find((fact) => fact.label.toLowerCase() === label.toLowerCase());
+}
+
+function EvaluationOfferCard({ record }: { record: FirmContentRecord }) {
+  const stages = recordFact(record, 'Stages')?.value ?? '';
+  const targets = [...stages.matchAll(/(\d+(?:\.\d+)?)%\s*target/gi)].map((match) => `${match[1]}%`);
+  const phaseCount = targets.length > 1 || /phase\s*2/i.test(stages) ? 2 : 1;
+  const pricing = recordFact(record, 'Pricing tiers')?.value
+    .split('|')
+    .map((tier) => tier.trim())
+    .filter(Boolean) ?? [];
+  const dailyLoss = recordFact(record, 'Daily loss')?.value;
+  const maximumLoss = recordFact(record, 'Maximum drawdown')?.value;
+  const drawdown = recordFact(record, 'Drawdown type')?.value;
+  const noTimeLimit = recordFact(record, 'No time limit')?.value;
+  const timeLimit = noTimeLimit?.toLowerCase() === 'yes' ? 'None' : noTimeLimit;
+
+  return (
+    <article className={styles.offerCard}>
+      <div className={styles.offerTop}>
+        <div>
+          <span>{phaseCount}-phase evaluation</span>
+          <h3>{record.title}</h3>
+        </div>
+        <div className={styles.offerTarget}>
+          <span>{targets.length > 1 ? 'Profit targets' : 'Profit target'}</span>
+          <strong>{targets.join(' → ') || 'Not stated'}</strong>
+        </div>
+      </div>
+      <dl className={styles.offerRules}>
+        {dailyLoss && <div><dt>Daily loss</dt><dd>{dailyLoss}</dd></div>}
+        {maximumLoss && <div><dt>Maximum loss</dt><dd>{maximumLoss}</dd></div>}
+        {drawdown && <div><dt>Drawdown</dt><dd>{drawdown}</dd></div>}
+        {timeLimit && <div><dt>Time limit</dt><dd>{timeLimit}</dd></div>}
+      </dl>
+      {!!pricing.length && <div className={styles.offerTiers}>
+        <span>Account size and fee</span>
+        <div>{pricing.map((tier, index) => {
+          const [accountSize, fee] = tier.split(/\s*[·:]\s*/, 2);
+          return <p key={`${record.id}-tier-${index}`}><strong>{accountSize}</strong><span>{fee ?? ''}</span></p>;
+        })}</div>
+      </div>}
+    </article>
+  );
+}
+
 function RecordList({ block, selected }: { block: Extract<FirmContentBlock, { type: 'record-list' }>; selected: boolean }) {
   if (!block.items.length) return null;
+  const evaluationOffers = block.id === 'offer-records' && block.items.every((record) => Boolean(recordFact(record, 'Stages')));
+  if (evaluationOffers) {
+    return <div className={styles.offerGrid} data-cms-block-id={block.id} data-selected={selected}>{block.items.map((record) => <EvaluationOfferCard key={record.id} record={record} />)}</div>;
+  }
   return <div className={styles.recordGrid} data-cms-block-id={block.id} data-selected={selected}>{block.items.map((record) => <RecordCard key={record.id} record={record} />)}</div>;
 }
 
@@ -115,8 +166,9 @@ function EditorialBlock({ block, featured, selected }: { block: FirmContentBlock
 
 function EditorialSection({ section, index, selectedBlockId }: { section: FirmProfileSection; index: number; selectedBlockId?: string | null }) {
   const firstTextId = section.blocks.find((block) => block.type === 'text')?.id;
+  const hasEvaluationOffers = section.blocks.some((block) => block.type === 'record-list' && block.id === 'offer-records');
   return (
-    <section className={styles.section} id={`research-${section.id}`} data-cms-section-id={section.id}>
+    <section className={styles.section} id={`research-${section.id}`} data-cms-section-id={section.id} data-offers={hasEvaluationOffers ? 'true' : 'false'}>
       <header className={styles.sectionHeading}>
         <span>{String(index + 1).padStart(2, '0')} · {section.tabLabel}</span>
         <h2>{section.title}</h2>
