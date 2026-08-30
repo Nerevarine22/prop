@@ -143,3 +143,17 @@
 :global([data-cms-mobile='true']) .factGrid { grid-template-columns: 1fr 1fr; }
 :global([data-cms-mobile='true']) .factGrid > div { padding: 19px 15px; border-bottom: 1px solid var(--line); }
 :global([data-cms-mobile='true']) .recordCard { padding: 22px 18px; }
+
+.editorial[data-editing='true'] [data-cms-inline='true'] {
+  cursor: text;
+  border-radius: 4px;
+  transition: background-color 140ms ease, box-shadow 140ms ease;
+}
+.editorial[data-editing='true'] [data-cms-inline='true']:hover {
+  background: color-mix(in srgb, var(--accent-research) 9%, transparent);
+}
+.editorial[data-editing='true'] [data-cms-inline='true']:focus {
+  outline: none;
+  background: color-mix(in srgb, var(--accent-research) 12%, transparent);
+  box-shadow: 0 0 0 1px var(--accent-research), 0 0 0 5px color-mix(in srgb, var(--accent-research) 12%, transparent);
+}

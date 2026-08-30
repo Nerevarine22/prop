@@ -304,12 +304,19 @@ export default function FirmPageBuilder() {
     const hero = target.closest<HTMLElement>('[data-cms-hero]');
     const block = target.closest<HTMLElement>('[data-cms-block-id]');
     const section = target.closest<HTMLElement>('[data-cms-section-id]');
+    const inline = target.closest<HTMLElement>('[data-cms-inline]');
     if (!hero && !block && !section) {
       if (target.closest('a, button')) event.preventDefault();
       return;
     }
-    event.preventDefault();
     event.stopPropagation();
+    if (inline) {
+      if (section?.dataset.cmsSectionId) setActiveSectionId(section.dataset.cmsSectionId);
+      setSelectedBlockId(block?.dataset.cmsBlockId ?? null);
+      setEditingHero(false);
+      return;
+    }
+    event.preventDefault();
     if (hero) {
       selectHero();
       return;
@@ -364,7 +371,7 @@ export default function FirmPageBuilder() {
           <div ref={previewRef} onClickCapture={handlePreviewClick} className={`${productStyles.lab} ${theme === 'dark' ? productStyles.dark : ''} max-h-[calc(100vh-112px)] min-h-[760px] overflow-y-auto`}>
             <div style={previewWidth === 'desktop' ? { width: 1240, zoom: desktopScale } : undefined} data-cms-mobile={previewWidth === 'mobile'}>
               {previewFirm ? <div className={`${productStyles.productPage} py-8`}>
-                <FirmProfileBody firm={previewFirm} profileOverride={profile} editMode selectedBlockId={selectedBlockId} />
+                <FirmProfileBody firm={previewFirm} profileOverride={profile} editMode selectedBlockId={selectedBlockId} onProfileChange={setProfile} />
               </div> : <div className="flex min-h-[760px] items-center justify-center p-10 text-center text-xs text-zinc-500">A normalized firm identity is required for the visual preview.</div>}
             </div>
           </div>

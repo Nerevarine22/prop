@@ -1,3 +1,5 @@
+'use client';
+
 import { ArrowUpRight, CircleAlert } from 'lucide-react';
 import type {
   FirmContentBlock,
@@ -9,6 +11,7 @@ import type {
 } from '@/types/database';
 import { getFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import { ProprSectionNav, type EditorialNavItem } from './ProprSectionNav';
+import { InlineEditableText } from './InlineEditableText';
 import styles from './FirmEditorialContent.module.css';
 
 function visibleFact(fact: FirmContentFact): boolean {
@@ -40,17 +43,18 @@ function splitCopy(paragraphs: string[]): { paragraphs: string[]; bullets: strin
   return { paragraphs: copy, bullets };
 }
 
-function NarrativeBlock({ block, featured, selected }: { block: Extract<FirmContentBlock, { type: 'text' }>; featured: boolean; selected: boolean }) {
+function NarrativeBlock({ block, featured, selected, onChange }: { block: Extract<FirmContentBlock, { type: 'text' }>; featured: boolean; selected: boolean; onChange?: (block: Extract<FirmContentBlock, { type: 'text' }>) => void }) {
   const content = splitCopy(block.paragraphs);
   if (!content.paragraphs.length && !content.bullets.length) return null;
 
   return (
     <article className={styles.narrative} data-featured={featured} data-cms-block-id={block.id} data-selected={selected}>
-      <span>{block.eyebrow ?? (featured ? 'Research brief' : 'Documented detail')}</span>
-      {block.title && <h3>{block.title}</h3>}
-      {content.paragraphs.map((paragraph, index) => <p key={`${block.id}-p-${index}`}>{paragraph}</p>)}
+      <InlineEditableText as="span" value={block.eyebrow ?? (featured ? 'Research brief' : 'Documented detail')} enabled={Boolean(onChange)} onCommit={(value) => onChange?.({ ...block, eyebrow: value })} />
+      {block.title && <InlineEditableText as="h3" value={block.title} enabled={Boolean(onChange)} onCommit={(value) => onChange?.({ ...block, title: value })} />}
+      {!content.bullets.length && block.paragraphs.map((paragraph, index) => <InlineEditableText as="p" value={paragraph} multiline enabled={Boolean(onChange)} onCommit={(value) => onChange?.({ ...block, paragraphs: block.paragraphs.map((item, itemIndex) => itemIndex === index ? value : item) })} key={`${block.id}-p-${index}`} />)}
+      {!!content.bullets.length && content.paragraphs.map((paragraph, index) => <p key={`${block.id}-p-${index}`}>{paragraph}</p>)}
       {!!content.bullets.length && <ul>{content.bullets.map((item, index) => <li key={`${block.id}-b-${index}`}>{item}</li>)}</ul>}
-      {block.meta && <small>{block.meta}</small>}
+      {block.meta && <InlineEditableText as="small" value={block.meta} enabled={Boolean(onChange)} onCommit={(value) => onChange?.({ ...block, meta: value })} />}
     </article>
   );
 }
@@ -156,26 +160,26 @@ function DataTable({ block, selected }: { block: Extract<FirmContentBlock, { typ
   );
 }
 
-function EditorialBlock({ block, featured, selected }: { block: FirmContentBlock; featured: boolean; selected: boolean }) {
-  if (block.type === 'text') return <NarrativeBlock block={block} featured={featured} selected={selected} />;
+function EditorialBlock({ block, featured, selected, onChange }: { block: FirmContentBlock; featured: boolean; selected: boolean; onChange?: (block: FirmContentBlock) => void }) {
+  if (block.type === 'text') return <NarrativeBlock block={block} featured={featured} selected={selected} onChange={onChange} />;
   if (block.type === 'fact-grid') return <FactGrid block={block} selected={selected} />;
   if (block.type === 'record-list') return <RecordList block={block} selected={selected} />;
   if (block.type === 'table') return <DataTable block={block} selected={selected} />;
   return <aside className={styles.notice} data-tone={block.tone} data-cms-block-id={block.id} data-selected={selected}><CircleAlert /><p>{block.text}</p></aside>;
 }
 
-function EditorialSection({ section, index, selectedBlockId }: { section: FirmProfileSection; index: number; selectedBlockId?: string | null }) {
+function EditorialSection({ section, index, selectedBlockId, editMode, onChange }: { section: FirmProfileSection; index: number; selectedBlockId?: string | null; editMode?: boolean; onChange?: (section: FirmProfileSection) => void }) {
   const firstTextId = section.blocks.find((block) => block.type === 'text')?.id;
   const hasEvaluationOffers = section.blocks.some((block) => block.type === 'record-list' && block.id === 'offer-records');
   return (
     <section className={styles.section} id={`research-${section.id}`} data-cms-section-id={section.id} data-offers={hasEvaluationOffers ? 'true' : 'false'}>
       <header className={styles.sectionHeading}>
         <span>{String(index + 1).padStart(2, '0')} · {section.tabLabel}</span>
-        <h2>{section.title}</h2>
-        {section.description && <p>{section.description}</p>}
+        <InlineEditableText as="h2" value={section.title} enabled={editMode} onCommit={(value) => onChange?.({ ...section, title: value })} />
+        {section.description && <InlineEditableText as="p" value={section.description} multiline enabled={editMode} onCommit={(value) => onChange?.({ ...section, description: value })} />}
       </header>
       <div className={styles.blocks}>
-        {section.blocks.map((block) => <EditorialBlock block={block} featured={block.id === firstTextId} selected={block.id === selectedBlockId} key={block.id} />)}
+        {section.blocks.map((block) => <EditorialBlock block={block} featured={block.id === firstTextId} selected={block.id === selectedBlockId} onChange={editMode ? (nextBlock) => onChange?.({ ...section, blocks: section.blocks.map((item) => item.id === block.id ? nextBlock : item) }) : undefined} key={block.id} />)}
       </div>
     </section>
   );
@@ -186,11 +190,13 @@ export function FirmEditorialContent({
   profileOverride,
   editMode = false,
   selectedBlockId,
+  onProfileChange,
 }: {
   firm: FirmNormalizedProfile;
   profileOverride?: FirmNormalizedProfileV2;
   editMode?: boolean;
   selectedBlockId?: string | null;
+  onProfileChange?: (profile: FirmNormalizedProfileV2) => void;
 }) {
   const profile = profileOverride ?? getFirmModularProfile(firm);
   const navItems: EditorialNavItem[] = profile.sections.map((section) => ({
@@ -201,7 +207,7 @@ export function FirmEditorialContent({
   return (
     <div className={styles.editorial} data-editing={editMode}>
       <ProprSectionNav items={navItems} firmName={firm.name} promoCode="" />
-      {profile.sections.map((section, index) => <EditorialSection section={section} index={index} selectedBlockId={selectedBlockId} key={section.id} />)}
+      {profile.sections.map((section, index) => <EditorialSection section={section} index={index} selectedBlockId={selectedBlockId} editMode={editMode} onChange={(nextSection) => onProfileChange?.({ ...profile, sections: profile.sections.map((item) => item.id === section.id ? nextSection : item) })} key={section.id} />)}
     </div>
   );
 }

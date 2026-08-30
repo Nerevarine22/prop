@@ -10,15 +10,16 @@ type FirmProfileBodyProps = {
   profileOverride?: FirmNormalizedProfileV2;
   editMode?: boolean;
   selectedBlockId?: string | null;
+  onProfileChange?: (profile: FirmNormalizedProfileV2) => void;
 };
 
-export function FirmProfileBody({ firm, profileOverride, editMode, selectedBlockId }: FirmProfileBodyProps) {
+export function FirmProfileBody({ firm, profileOverride, editMode, selectedBlockId, onProfileChange }: FirmProfileBodyProps) {
   return (
     <>
       <FirmEditorialHero firm={firm} profileOverride={profileOverride} />
       {firm.slug === 'propr'
-        ? <ProprEditorialContent firm={firm} profileOverride={profileOverride} editMode={editMode} selectedBlockId={selectedBlockId} />
-        : <FirmEditorialContent firm={firm} profileOverride={profileOverride} editMode={editMode} selectedBlockId={selectedBlockId} />}
+        ? <ProprEditorialContent firm={firm} profileOverride={profileOverride} editMode={editMode} selectedBlockId={selectedBlockId} onProfileChange={onProfileChange} />
+        : <FirmEditorialContent firm={firm} profileOverride={profileOverride} editMode={editMode} selectedBlockId={selectedBlockId} onProfileChange={onProfileChange} />}
     </>
   );
 }

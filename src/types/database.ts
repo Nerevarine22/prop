@@ -350,6 +350,7 @@ export interface FirmComparisonProjection {
 export interface FirmNormalizedProfileV2 {
   version: 2;
   contentStage?: 'research' | 'editorial';
+  editorialCopy?: Record<string, string>;
   methodology: 'primary-sources-only';
   researchStandard?: 'model-first-v1';
   researchMode?: 'manual' | 'agent-assisted';

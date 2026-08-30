@@ -1,8 +1,11 @@
+'use client';
+
 import { ArrowUpRight, Check, CircleAlert, Clock3, Coins, ShieldCheck, WalletCards } from 'lucide-react';
 import type { FirmNormalizedProfile, FirmNormalizedProfileV2, NormalizedChallengeProgram, NormalizedFact } from '@/types/database';
 import { getFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import { factValue, formatCapital, shortDate } from '@/lib/data/publicFirmProfiles';
 import { ProprSectionNav } from './ProprSectionNav';
+import { InlineEditableText } from './InlineEditableText';
 import styles from './ProprEditorialContent.module.css';
 
 function known<T>(fact: NormalizedFact<T>): T | undefined {
@@ -74,11 +77,13 @@ export function ProprEditorialContent({
   profileOverride,
   editMode = false,
   selectedBlockId,
+  onProfileChange,
 }: {
   firm: FirmNormalizedProfile;
   profileOverride?: FirmNormalizedProfileV2;
   editMode?: boolean;
   selectedBlockId?: string | null;
+  onProfileChange?: (profile: FirmNormalizedProfileV2) => void;
 }) {
   const researchProfile = getFirmModularProfile(firm);
   const programs = factValue(firm.challengePrograms) ?? [];
@@ -89,6 +94,11 @@ export function ProprEditorialContent({
   const sourceUrls = researchProfile.sourcesInspected?.map((source) => source.url)
     ?? [...new Set(firm.claims.map((claim) => claim.sourceUrl))];
   const officialWebsite = factValue(firm.identity.officialWebsite);
+  const copy = (key: string, fallback: string) => profileOverride?.editorialCopy?.[key] ?? fallback;
+  const changeCopy = (key: string, value: string) => {
+    if (!profileOverride || !onProfileChange) return;
+    onProfileChange({ ...profileOverride, editorialCopy: { ...profileOverride.editorialCopy, [key]: value } });
+  };
   const permissions = [
     ['News trading', sentenceCase(factValue(firm.tradingPolicy.newsTrading))],
     ['Weekend holding', sentenceCase(factValue(firm.tradingPolicy.weekendHolding))],
@@ -115,37 +125,34 @@ export function ProprEditorialContent({
       <section className={styles.decision} id="decision" {...cmsSection('overview')}>
         <div className={styles.decisionCopy} {...cmsBlock('overview', 'notebooklm-1')}>
           <span className={styles.eyebrow}>Decision brief</span>
-          <h2>A conventional evaluation with crypto-native execution.</h2>
-          <p>
-            Propr offers one- and two-phase evaluations across three rule sets. Evaluation accounts are simulated,
-            while qualifying flow can be routed through Hyperliquid and settled on-chain.
-          </p>
+          <InlineEditableText as="h2" value={copy('decision.title', 'A conventional evaluation with crypto-native execution.')} enabled={editMode} multiline onCommit={(value) => changeCopy('decision.title', value)} />
+          <InlineEditableText as="p" value={copy('decision.description', 'Propr offers one- and two-phase evaluations across three rule sets. Evaluation accounts are simulated, while qualifying flow can be routed through Hyperliquid and settled on-chain.')} enabled={editMode} multiline onCommit={(value) => changeCopy('decision.description', value)} />
         </div>
         <aside className={styles.fitNote} {...cmsBlock('overview', 'overview-facts')}>
           <ShieldCheck />
-          <div><span>What stands out</span><p>Three ways to balance entry price, profit target and drawdown allowance.</p></div>
+          <div><span>What stands out</span><InlineEditableText as="p" value={copy('decision.highlight', 'Three ways to balance entry price, profit target and drawdown allowance.')} enabled={editMode} multiline onCommit={(value) => changeCopy('decision.highlight', value)} /></div>
         </aside>
       </section>
 
       <section className={styles.section} {...cmsSection('overview')}>
         <div className={styles.sectionHeading} {...cmsBlock('overview', 'notebooklm-2')}>
           <span className={styles.eyebrow}>How it works</span>
-          <h2>From purchase to payout</h2>
-          <p>The essential path, separated from the detailed rulebook.</p>
+          <InlineEditableText as="h2" value={copy('process.title', 'From purchase to payout')} enabled={editMode} onCommit={(value) => changeCopy('process.title', value)} />
+          <InlineEditableText as="p" value={copy('process.description', 'The essential path, separated from the detailed rulebook.')} enabled={editMode} multiline onCommit={(value) => changeCopy('process.description', value)} />
         </div>
         <ol className={styles.process} {...cmsBlock('overview', 'notebooklm-2')}>
-          <li><span>01</span><div><strong>Choose a rule set</strong><p>Classic 1-Step, Turbo 1-Step or Classic 2-Step.</p></div></li>
-          <li><span>02</span><div><strong>Meet the objective</strong><p>Reach the program target without breaching its loss limits.</p></div></li>
-          <li><span>03</span><div><strong>Activate the funded stage</strong><p>KYC is required at funded activation; accounts remain simulated.</p></div></li>
-          <li><span>04</span><div><strong>Request a payout</strong><p>Eligible profit is paid in USDC under the documented payout conditions.</p></div></li>
+          <li><span>01</span><div><InlineEditableText as="strong" value={copy('process.1.title', 'Choose a rule set')} enabled={editMode} onCommit={(value) => changeCopy('process.1.title', value)} /><InlineEditableText as="p" value={copy('process.1.description', 'Classic 1-Step, Turbo 1-Step or Classic 2-Step.')} enabled={editMode} multiline onCommit={(value) => changeCopy('process.1.description', value)} /></div></li>
+          <li><span>02</span><div><InlineEditableText as="strong" value={copy('process.2.title', 'Meet the objective')} enabled={editMode} onCommit={(value) => changeCopy('process.2.title', value)} /><InlineEditableText as="p" value={copy('process.2.description', 'Reach the program target without breaching its loss limits.')} enabled={editMode} multiline onCommit={(value) => changeCopy('process.2.description', value)} /></div></li>
+          <li><span>03</span><div><InlineEditableText as="strong" value={copy('process.3.title', 'Activate the funded stage')} enabled={editMode} onCommit={(value) => changeCopy('process.3.title', value)} /><InlineEditableText as="p" value={copy('process.3.description', 'KYC is required at funded activation; accounts remain simulated.')} enabled={editMode} multiline onCommit={(value) => changeCopy('process.3.description', value)} /></div></li>
+          <li><span>04</span><div><InlineEditableText as="strong" value={copy('process.4.title', 'Request a payout')} enabled={editMode} onCommit={(value) => changeCopy('process.4.title', value)} /><InlineEditableText as="p" value={copy('process.4.description', 'Eligible profit is paid in USDC under the documented payout conditions.')} enabled={editMode} multiline onCommit={(value) => changeCopy('process.4.description', value)} /></div></li>
         </ol>
       </section>
 
       <section className={styles.section} id="programs" {...cmsSection('offers')}>
         <div className={styles.sectionHeading} {...cmsBlock('offers', 'notebooklm-3')}>
           <span className={styles.eyebrow}>Programs and pricing</span>
-          <h2>Pick the constraint set, not just the cheapest fee.</h2>
-          <p>Each program changes the profit target and loss allowance. Account sizes stay comparable across offers.</p>
+          <InlineEditableText as="h2" value={copy('programs.title', 'Pick the constraint set, not just the cheapest fee.')} enabled={editMode} multiline onCommit={(value) => changeCopy('programs.title', value)} />
+          <InlineEditableText as="p" value={copy('programs.description', 'Each program changes the profit target and loss allowance. Account sizes stay comparable across offers.')} enabled={editMode} multiline onCommit={(value) => changeCopy('programs.description', value)} />
         </div>
         <div className={styles.programGrid} {...cmsBlock('offers', 'offer-records')}>
           {programs.map((program) => <ProgramCard key={program.id} program={program} />)}
@@ -157,8 +164,8 @@ export function ProprEditorialContent({
         <div className={styles.payoutLead} {...cmsBlock('payouts', 'notebooklm-8')}>
           <span className={styles.eyebrow}>How payouts work</span>
           <strong>{percentage(factValue(firm.payoutPolicy.profitSplitPercent))}</strong>
-          <h2>of eligible profit goes to the trader.</h2>
-          <p>{factValue(firm.payoutPolicy.notes) ?? 'Payout conditions are not stated.'}</p>
+          <InlineEditableText as="h2" value={copy('payouts.title', 'of eligible profit goes to the trader.')} enabled={editMode} multiline onCommit={(value) => changeCopy('payouts.title', value)} />
+          <InlineEditableText as="p" value={copy('payouts.description', factValue(firm.payoutPolicy.notes) ?? 'Payout conditions are not stated.')} enabled={editMode} multiline onCommit={(value) => changeCopy('payouts.description', value)} />
         </div>
         <div className={styles.payoutDetails} {...cmsBlock('payouts', 'payout-facts')}>
           <div><WalletCards /><span>Minimum request</span><strong>${factValue(firm.payoutPolicy.minimumAmount) ?? '—'}</strong></div>
@@ -175,8 +182,8 @@ export function ProprEditorialContent({
       <section className={styles.section} id="trading" {...cmsSection('trading')}>
         <div className={styles.sectionHeading} {...cmsBlock('trading', 'notebooklm-4')}>
           <span className={styles.eyebrow}>Trading environment</span>
-          <h2>Execution is concentrated around Hyperliquid.</h2>
-          <p>{factValue(firm.executionPolicy.notes) ?? 'Execution details are not stated.'}</p>
+          <InlineEditableText as="h2" value={copy('trading.title', 'Execution is concentrated around Hyperliquid.')} enabled={editMode} multiline onCommit={(value) => changeCopy('trading.title', value)} />
+          <InlineEditableText as="p" value={copy('trading.description', factValue(firm.executionPolicy.notes) ?? 'Execution details are not stated.')} enabled={editMode} multiline onCommit={(value) => changeCopy('trading.description', value)} />
         </div>
         <div className={styles.tradingLayout} {...cmsBlock('trading', 'trading-facts')}>
           <div className={styles.tradingIntro}>
@@ -200,7 +207,7 @@ export function ProprEditorialContent({
       <section className={styles.section} id="consider" {...cmsSection('trading')}>
         <div className={styles.sectionHeading}>
           <span className={styles.eyebrow}>Before you choose</span>
-          <h2>The details most likely to change the decision.</h2>
+          <InlineEditableText as="h2" value={copy('consider.title', 'The details most likely to change the decision.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.title', value)} />
         </div>
         <div className={styles.considerList}>
           <article {...cmsBlock('trading', 'notebooklm-7')}><span>01</span><div><h3>Program rules differ materially</h3><p>Maximum drawdown ranges from 3% to 8%. The cheapest program is also the tightest.</p></div></article>
