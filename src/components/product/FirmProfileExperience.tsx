@@ -17,7 +17,7 @@ export function FirmProfileBody({ firm, profileOverride, editMode, selectedBlock
     <>
       <FirmEditorialHero firm={firm} profileOverride={profileOverride} />
       {firm.slug === 'propr'
-        ? <ProprEditorialContent firm={firm} />
+        ? <ProprEditorialContent firm={firm} profileOverride={profileOverride} editMode={editMode} selectedBlockId={selectedBlockId} />
         : <FirmEditorialContent firm={firm} profileOverride={profileOverride} editMode={editMode} selectedBlockId={selectedBlockId} />}
     </>
   );

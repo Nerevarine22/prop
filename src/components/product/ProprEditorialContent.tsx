@@ -1,5 +1,5 @@
 import { ArrowUpRight, Check, CircleAlert, Clock3, Coins, ShieldCheck, WalletCards } from 'lucide-react';
-import type { FirmNormalizedProfile, NormalizedChallengeProgram, NormalizedFact } from '@/types/database';
+import type { FirmNormalizedProfile, FirmNormalizedProfileV2, NormalizedChallengeProgram, NormalizedFact } from '@/types/database';
 import { getFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import { factValue, formatCapital, shortDate } from '@/lib/data/publicFirmProfiles';
 import { ProprSectionNav } from './ProprSectionNav';
@@ -66,7 +66,17 @@ function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
   );
 }
 
-export function ProprEditorialContent({ firm }: { firm: FirmNormalizedProfile }) {
+export function ProprEditorialContent({
+  firm,
+  profileOverride,
+  editMode = false,
+  selectedBlockId,
+}: {
+  firm: FirmNormalizedProfile;
+  profileOverride?: FirmNormalizedProfileV2;
+  editMode?: boolean;
+  selectedBlockId?: string | null;
+}) {
   const researchProfile = getFirmModularProfile(firm);
   const programs = factValue(firm.challengePrograms) ?? [];
   const platforms = factValue(firm.tradingPolicy.platforms) ?? [];
@@ -82,13 +92,25 @@ export function ProprEditorialContent({ firm }: { firm: FirmNormalizedProfile })
     ['Automated trading', sentenceCase(factValue(firm.tradingPolicy.automatedTrading))],
     ['Copy trading', sentenceCase(factValue(firm.tradingPolicy.copyTrading))],
   ];
+  const cmsSection = (sectionId: string) => ({
+    'data-cms-section-id': profileOverride?.sections.find((section) => section.id === sectionId)?.id,
+  });
+  const cmsBlock = (sectionId: string, blockId: string) => {
+    const section = profileOverride?.sections.find((item) => item.id === sectionId);
+    const block = section?.blocks.find((item) => item.id === blockId);
+    return {
+      'data-cms-section-id': section?.id,
+      'data-cms-block-id': block?.id,
+      'data-selected': block?.id === selectedBlockId ? 'true' : 'false',
+    };
+  };
 
   return (
-    <div className={styles.editorial}>
+    <div className={styles.editorial} data-editing={editMode ? 'true' : 'false'}>
       <ProprSectionNav />
 
-      <section className={styles.decision} id="decision">
-        <div className={styles.decisionCopy}>
+      <section className={styles.decision} id="decision" {...cmsSection('overview')}>
+        <div className={styles.decisionCopy} {...cmsBlock('overview', 'notebooklm-1')}>
           <span className={styles.eyebrow}>Decision brief</span>
           <h2>A conventional evaluation with crypto-native execution.</h2>
           <p>
@@ -96,19 +118,19 @@ export function ProprEditorialContent({ firm }: { firm: FirmNormalizedProfile })
             while qualifying flow can be routed through Hyperliquid and settled on-chain.
           </p>
         </div>
-        <aside className={styles.fitNote}>
+        <aside className={styles.fitNote} {...cmsBlock('overview', 'overview-facts')}>
           <ShieldCheck />
           <div><span>What stands out</span><p>Three ways to balance entry price, profit target and drawdown allowance.</p></div>
         </aside>
       </section>
 
-      <section className={styles.section}>
-        <div className={styles.sectionHeading}>
+      <section className={styles.section} {...cmsSection('overview')}>
+        <div className={styles.sectionHeading} {...cmsBlock('overview', 'notebooklm-2')}>
           <span className={styles.eyebrow}>How it works</span>
           <h2>From purchase to payout</h2>
           <p>The essential path, separated from the detailed rulebook.</p>
         </div>
-        <ol className={styles.process}>
+        <ol className={styles.process} {...cmsBlock('overview', 'notebooklm-2')}>
           <li><span>01</span><div><strong>Choose a rule set</strong><p>Classic 1-Step, Turbo 1-Step or Classic 2-Step.</p></div></li>
           <li><span>02</span><div><strong>Meet the objective</strong><p>Reach the program target without breaching its loss limits.</p></div></li>
           <li><span>03</span><div><strong>Activate the funded stage</strong><p>KYC is required at funded activation; accounts remain simulated.</p></div></li>
@@ -116,26 +138,26 @@ export function ProprEditorialContent({ firm }: { firm: FirmNormalizedProfile })
         </ol>
       </section>
 
-      <section className={styles.section} id="programs">
-        <div className={styles.sectionHeading}>
+      <section className={styles.section} id="programs" {...cmsSection('offers')}>
+        <div className={styles.sectionHeading} {...cmsBlock('offers', 'notebooklm-3')}>
           <span className={styles.eyebrow}>Programs and pricing</span>
           <h2>Pick the constraint set, not just the cheapest fee.</h2>
           <p>Each program changes the profit target and loss allowance. Account sizes stay comparable across offers.</p>
         </div>
-        <div className={styles.programGrid}>
+        <div className={styles.programGrid} {...cmsBlock('offers', 'offer-records')}>
           {programs.map((program) => <ProgramCard key={program.id} program={program} />)}
         </div>
         <p className={styles.sectionNote}><CircleAlert /> Challenge fees are documented as non-refundable.</p>
       </section>
 
-      <section className={`${styles.section} ${styles.payoutSection}`} id="payouts">
-        <div className={styles.payoutLead}>
+      <section className={`${styles.section} ${styles.payoutSection}`} id="payouts" {...cmsSection('payouts')}>
+        <div className={styles.payoutLead} {...cmsBlock('payouts', 'notebooklm-8')}>
           <span className={styles.eyebrow}>How payouts work</span>
           <strong>{percentage(factValue(firm.payoutPolicy.profitSplitPercent))}</strong>
           <h2>of eligible profit goes to the trader.</h2>
           <p>{factValue(firm.payoutPolicy.notes) ?? 'Payout conditions are not stated.'}</p>
         </div>
-        <div className={styles.payoutDetails}>
+        <div className={styles.payoutDetails} {...cmsBlock('payouts', 'payout-facts')}>
           <div><WalletCards /><span>Minimum request</span><strong>${factValue(firm.payoutPolicy.minimumAmount) ?? '—'}</strong></div>
           <div><Clock3 /><span>Stated processing</span><strong>Within {factValue(firm.payoutPolicy.processingTimeHours) ?? '—'} hours</strong></div>
           <div><Coins /><span>Settlement currency</span><strong>{payoutCurrency}</strong></div>
@@ -147,13 +169,13 @@ export function ProprEditorialContent({ firm }: { firm: FirmNormalizedProfile })
         </div>
       </section>
 
-      <section className={styles.section} id="trading">
-        <div className={styles.sectionHeading}>
+      <section className={styles.section} id="trading" {...cmsSection('trading')}>
+        <div className={styles.sectionHeading} {...cmsBlock('trading', 'notebooklm-4')}>
           <span className={styles.eyebrow}>Trading environment</span>
           <h2>Execution is concentrated around Hyperliquid.</h2>
           <p>{factValue(firm.executionPolicy.notes) ?? 'Execution details are not stated.'}</p>
         </div>
-        <div className={styles.tradingLayout}>
+        <div className={styles.tradingLayout} {...cmsBlock('trading', 'trading-facts')}>
           <div className={styles.tradingIntro}>
             <span>Where you trade</span>
             <h3>{platforms.join(' + ') || 'Not stated'}</h3>
@@ -172,26 +194,26 @@ export function ProprEditorialContent({ firm }: { firm: FirmNormalizedProfile })
         </div>
       </section>
 
-      <section className={styles.section} id="consider">
+      <section className={styles.section} id="consider" {...cmsSection('trading')}>
         <div className={styles.sectionHeading}>
           <span className={styles.eyebrow}>Before you choose</span>
           <h2>The details most likely to change the decision.</h2>
         </div>
         <div className={styles.considerList}>
-          <article><span>01</span><div><h3>Program rules differ materially</h3><p>Maximum drawdown ranges from 3% to 8%. The cheapest program is also the tightest.</p></div></article>
-          <article><span>02</span><div><h3>A payout closes the cycle</h3><p>Partial withdrawals are not documented as available, and a payout resets the account balance.</p></div></article>
-          <article><span>03</span><div><h3>The environment is simulated</h3><p>Propr is not a regulated broker or investment service. Qualifying flow may be routed on-chain.</p></div></article>
-          <article><span>04</span><div><h3>Eligibility still matters</h3><p>KYC applies at funded activation, and the rulebook lists restricted jurisdictions.</p></div></article>
+          <article {...cmsBlock('trading', 'notebooklm-7')}><span>01</span><div><h3>Program rules differ materially</h3><p>Maximum drawdown ranges from 3% to 8%. The cheapest program is also the tightest.</p></div></article>
+          <article {...cmsBlock('trading', 'notebooklm-6')}><span>02</span><div><h3>A payout closes the cycle</h3><p>Partial withdrawals are not documented as available, and a payout resets the account balance.</p></div></article>
+          <article {...cmsBlock('trading', 'notebooklm-5')}><span>03</span><div><h3>The environment is simulated</h3><p>Propr is not a regulated broker or investment service. Qualifying flow may be routed on-chain.</p></div></article>
+          <article {...cmsBlock('trading', 'notebooklm-4')}><span>04</span><div><h3>Eligibility still matters</h3><p>KYC applies at funded activation, and the rulebook lists restricted jurisdictions.</p></div></article>
         </div>
       </section>
 
-      <section className={styles.sources} id="sources">
-        <div>
+      <section className={styles.sources} id="sources" {...cmsSection('sources')}>
+        <div {...cmsBlock('sources', 'notebooklm-10')}>
           <span className={styles.eyebrow}>Research record</span>
           <h2>{sourceUrls.length} official sources inspected</h2>
           <p>Last reviewed {shortDate(researchProfile.checkedAt)}. Unknown values are grouped here instead of interrupting the main explanation.</p>
         </div>
-        <div className={styles.sourceLinks}>
+        <div className={styles.sourceLinks} {...cmsBlock('sources', 'source-claims')}>
           {officialWebsite && <a href={officialWebsite} target="_blank" rel="noreferrer">Official website <ArrowUpRight /></a>}
           {sourceUrls.map((url) => <a href={url} target="_blank" rel="noreferrer" key={url}>{new URL(url).hostname.replace('www.', '')} <ArrowUpRight /></a>)}
         </div>

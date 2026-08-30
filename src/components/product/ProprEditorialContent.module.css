@@ -1,6 +1,19 @@
 .editorial {
   margin-top: 30px;
 }
+.editorial[data-editing='true'] [data-cms-block-id] {
+  cursor: pointer;
+  outline: 1px dashed transparent;
+  outline-offset: 5px;
+  transition: outline-color 140ms ease, background-color 140ms ease;
+}
+.editorial[data-editing='true'] [data-cms-block-id]:hover {
+  outline-color: color-mix(in srgb, var(--blue) 58%, transparent);
+}
+.editorial[data-editing='true'] [data-cms-block-id][data-selected='true'] {
+  outline: 2px solid var(--blue);
+  background-color: color-mix(in srgb, var(--blue) 7%, transparent);
+}
 .localNav {
   position: sticky;
   z-index: 15;
