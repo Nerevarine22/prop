@@ -48,6 +48,7 @@ export const getPublicFirmProfiles = cache(async (): Promise<FirmNormalizedProfi
   try {
     const records = await getFirmRegistry();
     const storedProfiles = records
+      .filter((record) => record.publicationStatus === 'published')
       .map((record) => record.normalizedProfile && attachFirmModularProfile(
         withRegistryBrand(
           record.normalizedProfile,

@@ -2,13 +2,14 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import {
   Archive, CheckCircle2, ChevronRight, Database, Download, ExternalLink,
-  FileJson, FileSearch, Filter, Globe2, Layers3, RefreshCw, Save, Search,
+  FileJson, FileSearch, Filter, Globe2, Layers3, Plus, RefreshCw, Save, Search,
   ShieldCheck, X,
 } from 'lucide-react';
 import {
-  getFirmRegistry, updateFirmRegistryMetadata, type FirmRegistryMetadataInput,
+  createFirmRegistry, getFirmRegistry, updateFirmRegistryMetadata, type FirmRegistryMetadataInput,
 } from '@/lib/services/firmRegistryService';
 import type {
   FirmContentBlock, FirmDatabaseRecord, FirmPublicationStatus, FirmResearchStatus,
@@ -90,6 +91,50 @@ function downloadRecord(record: FirmDatabaseRecord) {
   anchor.download = `${record.slug}-firm-registry.json`;
   anchor.click();
   URL.revokeObjectURL(url);
+}
+
+function slugify(value: string): string {
+  return value.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+function CreateFirmDialog({ onClose, onCreated }: { onClose: () => void; onCreated: (record: FirmDatabaseRecord) => void }) {
+  const [name, setName] = useState('');
+  const [slug, setSlug] = useState('');
+  const [slugTouched, setSlugTouched] = useState(false);
+  const [website, setWebsite] = useState('');
+  const [xHandle, setXHandle] = useState('');
+  const [logoPath, setLogoPath] = useState('');
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState('');
+
+  async function createFirm() {
+    setSaving(true); setError('');
+    try {
+      const record = await createFirmRegistry({ name, slug, officialWebsite: website, xHandle, logoPath });
+      onCreated(record);
+    } catch (createError) {
+      setError(createError instanceof Error ? createError.message : 'Could not create the firm.');
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Add new prop firm">
+      <div className="w-full max-w-xl rounded-2xl border border-zinc-800 bg-[#111214] shadow-2xl">
+        <header className="flex items-start justify-between border-b border-zinc-800 p-5"><div><div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.16em] text-emerald-300"><Plus className="h-3.5 w-3.5" /> New firm</div><h2 className="mt-2 text-xl font-extrabold text-white">Create a prop firm workspace</h2><p className="mt-1 text-[10px] leading-4 text-zinc-500">Starts as an unpublished draft with Brief, Challenges, Payouts and Trading sections.</p></div><button type="button" onClick={onClose} className="rounded-lg border border-zinc-800 p-2 text-zinc-500 hover:text-white" aria-label="Close"><X className="h-4 w-4" /></button></header>
+        <div className="grid gap-4 p-5 sm:grid-cols-2">
+          <label className="space-y-1.5 text-[10px] font-bold uppercase tracking-wider text-zinc-500">Firm name<input autoFocus className={inputClass} placeholder="Example Funding" value={name} onChange={(event) => { const value = event.target.value; setName(value); if (!slugTouched) setSlug(slugify(value)); }} /></label>
+          <label className="space-y-1.5 text-[10px] font-bold uppercase tracking-wider text-zinc-500">Slug<input className={`${inputClass} font-mono`} placeholder="example-funding" value={slug} onChange={(event) => { setSlugTouched(true); setSlug(slugify(event.target.value)); }} /></label>
+          <label className="space-y-1.5 text-[10px] font-bold uppercase tracking-wider text-zinc-500 sm:col-span-2">Official website <span className="font-normal normal-case">optional</span><input className={inputClass} placeholder="https://example.com" value={website} onChange={(event) => setWebsite(event.target.value)} /></label>
+          <label className="space-y-1.5 text-[10px] font-bold uppercase tracking-wider text-zinc-500">X handle <span className="font-normal normal-case">optional</span><input className={inputClass} placeholder="@example" value={xHandle} onChange={(event) => setXHandle(event.target.value)} /></label>
+          <label className="space-y-1.5 text-[10px] font-bold uppercase tracking-wider text-zinc-500">Logo path <span className="font-normal normal-case">optional</span><input className={`${inputClass} font-mono`} placeholder="/firm-logos/example/logo.png" value={logoPath} onChange={(event) => setLogoPath(event.target.value)} /></label>
+          {error && <p className="rounded-lg border border-red-500/20 bg-red-500/10 px-3 py-2 text-[10px] text-red-300 sm:col-span-2">{error}</p>}
+        </div>
+        <footer className="flex justify-end gap-2 border-t border-zinc-800 p-5"><button type="button" onClick={onClose} className="rounded-xl border border-zinc-800 px-4 py-2.5 text-xs font-bold text-zinc-400">Cancel</button><button type="button" disabled={saving || !name.trim() || !slug} onClick={() => void createFirm()} className="inline-flex items-center gap-2 rounded-xl bg-emerald-300 px-4 py-2.5 text-xs font-extrabold text-zinc-950 disabled:opacity-40"><Plus className="h-4 w-4" />{saving ? 'Creating…' : 'Create and open builder'}</button></footer>
+      </div>
+    </div>
+  );
 }
 
 function RegistryInspector({ record, onClose, onSaved }: {
@@ -199,6 +244,7 @@ function RegistryInspector({ record, onClose, onSaved }: {
 }
 
 export default function AdminDashboardPage() {
+  const router = useRouter();
   const [records, setRecords] = useState<FirmDatabaseRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -206,6 +252,7 @@ export default function AdminDashboardPage() {
   const [researchFilter, setResearchFilter] = useState<'all' | FirmResearchStatus>('all');
   const [publicationFilter, setPublicationFilter] = useState<'all' | FirmPublicationStatus>('all');
   const [selected, setSelected] = useState<FirmDatabaseRecord | null>(null);
+  const [creatingFirm, setCreatingFirm] = useState(false);
 
   async function loadRecords() {
     setLoading(true);
@@ -232,7 +279,7 @@ export default function AdminDashboardPage() {
     <div className="space-y-7 font-satoshi">
       <header className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div><div className="mb-3 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-400"><Database className="h-4 w-4" /> Canonical research registry</div><h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Firm research workspace</h1><p className="mt-2 max-w-2xl text-xs leading-5 text-zinc-400">Review identity, publication state and model-specific research without flattening firms into one legacy template.</p></div>
-        <div className="flex gap-2"><Link href="/admin/database" className="inline-flex h-10 items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900 px-3 text-xs font-bold text-zinc-300"><ShieldCheck className="h-4 w-4 text-sky-300" /> Database health</Link><button type="button" onClick={() => void loadRecords()} className="inline-flex h-10 items-center gap-2 rounded-xl bg-white px-4 text-xs font-extrabold text-zinc-950"><RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} /> Refresh</button></div>
+        <div className="flex flex-wrap gap-2"><button type="button" onClick={() => setCreatingFirm(true)} className="inline-flex h-10 items-center gap-2 rounded-xl bg-emerald-300 px-4 text-xs font-extrabold text-zinc-950"><Plus className="h-4 w-4" /> Add firm</button><Link href="/admin/database" className="inline-flex h-10 items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900 px-3 text-xs font-bold text-zinc-300"><ShieldCheck className="h-4 w-4 text-sky-300" /> Database health</Link><button type="button" onClick={() => void loadRecords()} className="inline-flex h-10 items-center gap-2 rounded-xl bg-white px-4 text-xs font-extrabold text-zinc-950"><RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} /> Refresh</button></div>
       </header>
 
       {error && <div className="rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-xs text-red-300">{error}</div>}
@@ -256,6 +303,7 @@ export default function AdminDashboardPage() {
         </div>
       </section>
       {selected && <RegistryInspector key={selected.id} record={selected} onClose={() => setSelected(null)} onSaved={(updated) => { setRecords((items) => items.map((item) => item.id === updated.id ? updated : item)); setSelected(updated); }} />}
+      {creatingFirm && <CreateFirmDialog onClose={() => setCreatingFirm(false)} onCreated={(record) => { setRecords((items) => [...items, record].sort((a, b) => a.name.localeCompare(b.name))); setCreatingFirm(false); router.push(`/admin/builder/${record.id}`); }} />}
     </div>
   );
 }
