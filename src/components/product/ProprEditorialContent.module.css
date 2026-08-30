@@ -102,10 +102,13 @@
 .programTop { display: flex; min-height: 116px; padding: 22px; align-items: flex-start; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); }
 .programTop span { color: var(--blue); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 750; text-transform: uppercase; }
 .programTop h3 { margin: 10px 0 0; font-size: 20px; letter-spacing: -.045em; }
-.programTop > strong { color: var(--muted); font-size: 12px; white-space: nowrap; }
-.programCard:nth-child(1) .programTop > strong { color: var(--blue); }
-.programCard:nth-child(2) .programTop > strong { color: var(--accent-condition); }
-.programCard:nth-child(3) .programTop > strong { color: var(--accent-value); }
+.programTarget { min-width: 108px; padding: 10px 12px; border: 1px solid color-mix(in srgb, var(--blue) 34%, var(--line)); border-radius: 10px; background: color-mix(in srgb, var(--blue) 8%, transparent); text-align: right; }
+.programTarget span { display: block; color: var(--muted); font-size: 7px; letter-spacing: .08em; }
+.programTarget strong { display: block; margin-top: 5px; color: var(--blue); font-size: 18px; line-height: 1; white-space: nowrap; }
+.programCard:nth-child(2) .programTarget { border-color: color-mix(in srgb, var(--accent-condition) 34%, var(--line)); background: color-mix(in srgb, var(--accent-condition) 8%, transparent); }
+.programCard:nth-child(2) .programTarget strong { color: var(--accent-condition); }
+.programCard:nth-child(3) .programTarget { border-color: color-mix(in srgb, var(--accent-value) 34%, var(--line)); background: color-mix(in srgb, var(--accent-value) 8%, transparent); }
+.programCard:nth-child(3) .programTarget strong { color: var(--accent-value); }
 .programRules { display: grid; grid-template-columns: 1fr 1fr; margin: 0; }
 .programRules div { padding: 16px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .programRules div:nth-child(even) { border-right: 0; }

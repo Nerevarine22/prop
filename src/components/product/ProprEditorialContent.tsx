@@ -37,7 +37,10 @@ function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
           <span>{stages.length > 1 ? `${stages.length}-phase evaluation` : '1-phase evaluation'}</span>
           <h3>{program.name}</h3>
         </div>
-        <strong>{targets.map((target) => `${target}%`).join(' → ') || 'Target not stated'}</strong>
+        <div className={styles.programTarget}>
+          <span>{targets.length > 1 ? 'Profit targets' : 'Profit target'}</span>
+          <strong>{targets.map((target) => `${target}%`).join(' → ') || 'Not stated'}</strong>
+        </div>
       </div>
 
       <dl className={styles.programRules}>
