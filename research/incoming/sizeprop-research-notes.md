@@ -462,3 +462,50 @@ Ukraine as a whole is not listed as restricted in that May 2026 publication, whi
 - Store KYC timing as `after pass / first payout` and distinguish it from purchase eligibility.
 - Preserve document precedence: Terms and Conditions and FAQ override the simplified `Our Rules` summary.
 - Treat the homepage disclosures, `Our Rules` and `help.sizeprop.com` as the current working legal source set until the complete Terms text is captured reliably.
+
+## Rewards and incentives
+
+### Points program
+
+- SizeProp operates a live points-farming program.
+- Points have been awarded for purchasing a challenge, passing an evaluation, receiving a payout and making referrals.
+- The program has previously offered a **5x points boost**.
+- Its progression tiers run from **Bronze** through **Obsidian**.
+- The points program is confirmed by SizeProp's website and the official `@SizeProp` X account.
+
+### $SIZE token status
+
+- Media coverage and posts on X have described `$SIZE` as “hotly anticipated”.
+- No live official token, contract address, token supply or utility paper was confirmed during this research.
+- `$SIZE` should therefore be classified as a teaser or anticipated future product, not as a launched token.
+- No token utility has been officially established in the evidence collected here.
+
+### Airdrop status
+
+- A token airdrop has not been announced as a guaranteed reward.
+- Messaging such as “something is coming for point holders” is a teaser and does not establish eligibility, allocation, timing or delivery.
+- Points ownership must not be presented as a guaranteed claim on a future token or airdrop.
+
+### Referral and affiliate program
+
+- SizeProp provides a referral portal at `sizeprop.com/referral`.
+- A complete public commission schedule has not been identified.
+- The existence of the portal confirms a referral mechanism, but not a specific commission rate or payout structure.
+
+### Leaderboards, competitions and promotions
+
+- SizeProp has used points-based activity and account giveaways on X.
+- No separate permanent cashback program was identified.
+- Promotional codes are available, but temporary discounts should remain separate from rewards and cashback in the data model.
+
+## Database normalization notes for rewards
+
+- Set `points program status = live` and store earning actions individually: purchase, evaluation pass, payout and referral.
+- Store the 5x multiplier as a historical or time-limited promotion, not as the permanent base earning rate.
+- Store Bronze through Obsidian as points-tier progression only after the complete tier list and thresholds are captured.
+- Set `$SIZE token status = teased / not launched`; leave contract address, supply and utility unknown.
+- Set `airdrop status = unconfirmed`; do not derive guaranteed eligibility from points ownership or teaser copy.
+- Store the referral portal as live while leaving commission rates undocumented.
+- Keep account giveaways and competitions as time-limited promotions.
+- Set permanent cashback program to `not identified`; keep promo codes in the offers model rather than treating them as cashback.
+- Preserve evidence provenance: the points program is first-party confirmed, while token expectations may include media or social interpretation.
