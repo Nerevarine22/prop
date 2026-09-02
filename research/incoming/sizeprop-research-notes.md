@@ -545,3 +545,43 @@ The following figures are public company claims, mostly published around May 202
 - Treat a payout screenshot or individual transaction as evidence for that payment only, not for aggregate payout or denial statistics.
 - Set on-chain payout verification to `announced / not live` based on the September 2026 observation.
 - Set proof of reserves, independent audit and public payout-ledger availability to `not identified`, not to a definitive claim that none can exist.
+
+## Red flags and material cautions
+
+1. **Marketing versus legal model.** Marketing invites users to trade with up to $100,000 in prop capital, while the legal disclosures describe a simulated service with discretionary rewards. This difference must be made prominent rather than hidden in legal footnotes.
+2. **Material rule changes.** February 2026 material described trailing/HWM drawdown with 7% or 8% limits; the May 2026 rules use static drawdown of 3%, 5% or 6% depending on the program. Parts of the landing experience may still use trailing terminology.
+3. **Balance versus equity conflict.** Older blog content said drawdown applied only to closed trades, while the current rulebook enforces risk limits against equity and therefore includes open-position PnL.
+4. **Daily reset-time conflict.** A blog cited 04:00 UTC, whereas the current `Our Rules` document sets the daily-loss snapshot at 20:00 UTC.
+5. **Document hierarchy and payout discretion.** The Terms override the simplified rulebook and characterize payouts as discretionary, leaving the operator contractual latitude to reject a request even when the user-facing checklist appears satisfied.
+6. **Short operating history.** The product has an operating record of approximately 11 months as of this research snapshot.
+7. **Jurisdiction and educational wrapper.** A Cayman Islands entity operating through an educational simulation and reward framework carries the familiar regulatory and enforcement uncertainty of retail evaluation-prop platforms.
+8. **Unaudited performance claims.** Statements such as more than $50 million in funded allocation and zero denied payouts have not been independently verified.
+9. **Token teaser without token documentation.** `$SIZE` is discussed without a confirmed contract address, supply or utility paper.
+10. **Anecdotal product complaints.** Users report terminal lag and being unable to trade while a payout is pending. These reports require first-party confirmation and should be labeled anecdotal.
+11. **No independent on-chain dashboard.** A complete independently verifiable payout dashboard was not live at the time of review.
+12. **Stale third-party directories.** External catalogs repeat figures such as 7%–8% drawdown, 20x leverage or $200,000 capital that conflict with current first-party material. Although not controlled by SizeProp, this information noise makes the product harder to evaluate accurately.
+
+## Green flags and positive operating signals
+
+1. **Named founder.** Windra Thio is publicly identified and has a visible professional background.
+2. **Reported institutional backing.** The project has publicly reported pre-seed coverage in The Block and backing associated with Igloo.
+3. **Dedicated rules page.** SizeProp publishes a separate `Our Rules` page with calculation examples, improving accessibility compared with terms-only disclosure.
+4. **Fewer procedural payout barriers.** No consistency rule, minimum trading days or evaluation time limit is documented, reducing common technical denial vectors.
+5. **KYC timing.** Identity verification is deferred until the first payout rather than required before challenge purchase.
+6. **Observed USDT payouts.** Trustpilot reviewers report receiving real USDT payments. These reports support individual payout occurrence but do not independently prove the aggregate payout statistics or future approval.
+7. **Public review responses.** The firm responds to negative reviews, providing at least a visible channel for dispute handling.
+8. **Simulation disclosures.** The simulated nature of the service and warnings that most traders fail are published rather than wholly concealed, even though the marketing presentation is more optimistic.
+9. **Limited pre-trade refund window.** A full refund is available within 24 hours when no trade has been placed.
+10. **No identified recurring platform fee.** Public materials do not disclose a hidden monthly platform charge after the one-time challenge purchase.
+
+## Database normalization notes for risk signals
+
+- Store red and green flags as review findings with an evidence type, source date and confidence level rather than permanent booleans.
+- Give current first-party rule conflicts higher evidentiary weight than third-party reviews or user anecdotes.
+- Link the February-to-May drawdown change and the 04:00-to-20:00 UTC reset conflict to the specific affected comparison fields.
+- Separate legal discretion from confirmed payout denial; contractual latitude is not evidence that a particular claim was improperly rejected.
+- Treat jurisdiction and operating age as context, not proof of misconduct.
+- Store terminal-lag and pending-payout trading restrictions as user-reported until reproduced or documented by the firm.
+- Do not use Trustpilot payout reports as proof of aggregate solvency, a zero-denial rate or guaranteed future payments.
+- Treat named leadership, published rules, public responses and refund terms as positive transparency signals while preserving their limitations.
+- Never let green-flag presentation cancel or hide a directly conflicting red-flag disclosure; both should be visible where relevant.
