@@ -288,3 +288,88 @@ There is no separate consistency requirement or profit-day requirement for payou
 - Model balance reduction and drawdown-threshold behavior as separate fields.
 - Attach the May 2026 and February rule statements to a versioned source discrepancy instead of merging them.
 - Store pending-payout trading restrictions and post-breach claims with lower evidence strength until confirmed by current rules or Terms.
+
+## Trading environment and rules
+
+### Terminal and access
+
+- Trading takes place in SizeProp's proprietary web terminal.
+- There is no dedicated mobile application; the terminal can be accessed through a mobile browser.
+- The user does not receive a personal brokerage or exchange account.
+
+### Infrastructure and execution model
+
+- The trading environment references infrastructure and market data associated with Hyperliquid, Trade.xyz and Bybit order books.
+- Execution is simulated, using a hybrid or live-derived price feed.
+- Prices may originate from real market order books, but user orders are not routed to or executed on the live market on the user's behalf.
+
+### Tradable assets
+
+- Crypto perpetual futures are supported; a company blog claims more than 100 pairs.
+- Stocks, forex and metals are also presented through the Trade.xyz integration.
+- The exact current instrument list should be taken from the terminal or a current official instrument table rather than inferred from the broad marketing categories.
+
+### Leverage
+
+- A May 2026 company blog states leverage of **5x for BTC** and **2x for altcoins**.
+- Independent reviews sometimes cite leverage between 10x and 20x. These values appear outdated or incorrect and should not override the newer first-party statement.
+- Until leverage is confirmed in the current rulebook or terminal, retain the blog date and evidence level alongside the values.
+
+### Trading costs
+
+- SizeProp describes a swap fee rather than a conventional exchange funding-rate mechanism.
+- The swap fee applies to both long and short positions.
+- The public rulebook does not provide a complete current fee table, so exact rates remain undocumented.
+
+### Permitted activity
+
+- News trading is allowed, with no documented blackout window.
+- Weekend and overnight position holding are allowed.
+- Frontend bots that automate browser interaction are allowed.
+- Cross-asset pair trades are described by the firm as acceptable.
+- A mandatory stop loss is not required.
+
+### Prohibited activity
+
+- Copy trading is prohibited.
+- High-frequency trading, latency arbitrage and cross-exchange arbitrage are prohibited.
+- Hedging opposing positions on the same pair is prohibited.
+- There is no public trading API, and reverse-engineering the platform API is prohibited.
+
+### Unclear or undocumented strategy limits
+
+- The current `Our Rules` page does not explicitly prohibit grid or martingale strategies.
+- Tight loss limits may make martingale strategies impractical, but this operational consequence should not be presented as a formal ban.
+- Third-party reviews mention “non-replicable strategies”; this wording requires confirmation in current primary documentation.
+- No separate public maximum-position-size or concurrent-position limit was found beyond leverage and drawdown controls.
+
+### Account, location and access controls
+
+- At least one trade must be placed every 90 days to avoid inactivity.
+- The model is one account per trader.
+- A complete public policy for IP addresses, VPN use and device changes has not been identified.
+- Restricted jurisdictions result in access being blocked.
+
+### Current drawdown calculation
+
+According to the rulebook dated **12 May 2026**:
+
+1. The daily-loss amount is calculated as a percentage of the current balance at 20:00 UTC and remains fixed for the following trading day.
+2. Maximum drawdown is calculated as a percentage of the starting balance and remains static.
+3. Both limits are monitored continuously against account equity.
+4. Open-position profit and loss is always included when testing risk-limit compliance.
+5. Breaching either limit automatically closes the account.
+
+## Database normalization notes for trading
+
+- Store `terminal`, `market-data infrastructure` and `execution model` as separate fields.
+- Set execution to `simulated` and explain that live-derived prices do not imply live routing of user orders.
+- Store crypto perpetuals, stocks, forex and metals as asset classes; keep the blog's `100+ pairs` claim dated and source-qualified.
+- Treat `BTC 5x / altcoins 2x` as a dated first-party blog claim until confirmed by a canonical leverage table.
+- Do not store older third-party 10x–20x figures as current limits.
+- Store trading costs as `swap fee`; leave exact fee rates unknown.
+- Represent strategy permissions individually: news trading, weekend holding, overnight holding and frontend automation allowed; copy trading, HFT, latency arbitrage, cross-exchange arbitrage and same-pair hedging prohibited.
+- Distinguish allowed browser automation from an unavailable public API and prohibited API reverse engineering.
+- Leave grid, martingale, position-size and concurrent-position limits as undocumented rather than inferring formal restrictions.
+- Store the daily-loss reference time as `20:00 UTC`, its basis as `current balance`, and enforcement basis as `realtime equity`.
+- Store maximum drawdown basis as `starting balance`, type as `static`, and breach consequence as `automatic account closure`.
