@@ -18,13 +18,14 @@ export type CreateFirmRegistryInput = {
   officialWebsite?: string;
   xHandle?: string;
   logoPath?: string;
+  sourceUrls?: string[];
 };
 
 function nd<T>(notes = 'Not researched yet.'): NormalizedFact<T> {
   return { status: 'ND', value: 'ND', evidence: [], notes };
 }
 
-function starterPageProfile(id: string, slug: string, name: string, checkedAt: string): FirmNormalizedProfileV2 {
+function starterPageProfile(id: string, slug: string, name: string, checkedAt: string, sourceUrls: string[] = []): FirmNormalizedProfileV2 {
   return {
     version: 2,
     contentStage: 'editorial',
@@ -49,6 +50,7 @@ function starterPageProfile(id: string, slug: string, name: string, checkedAt: s
       { id: 'payouts', tabLabel: 'Payouts', title: 'How payouts work', description: 'Document payout access, timing and conditions.', blocks: [{ id: 'payout-summary', type: 'text', eyebrow: 'Payout policy', title: 'Trader compensation', paragraphs: ['Add the profit split, payout schedule and the mechanics that affect the account.'], status: 'pending' }, { id: 'payout-facts', type: 'fact-grid', columns: 3, presentation: 'metrics', items: [{ id: 'payout-split', label: 'Profit split', value: 'Add value', status: 'pending' }, { id: 'payout-timing', label: 'Processing', value: 'Add timing', status: 'pending' }, { id: 'payout-currency', label: 'Currency', value: 'Add currency', status: 'pending' }] }] },
       { id: 'trading', tabLabel: 'Trading', title: 'Trading environment', description: 'Document where and under which rules trading happens.', blocks: [{ id: 'trading-summary', type: 'text', eyebrow: 'Execution', title: 'Where traders execute', paragraphs: ['Add the chain, terminal, platform, assets and execution model.'], status: 'pending' }, { id: 'trading-facts', type: 'fact-grid', columns: 3, presentation: 'details', items: [{ id: 'trading-platform', label: 'Platform', value: 'Add platform', status: 'pending' }, { id: 'trading-assets', label: 'Assets', value: 'Add markets', status: 'pending' }, { id: 'trading-rules', label: 'Rules', value: 'Add permissions and limits', status: 'pending' }] }] },
     ],
+    sourcesInspected: sourceUrls.map((url, index) => ({ category: index === 0 ? 'website' : 'rulebook', url, checkedAt, outcome: 'accessed', notes: index === 0 ? 'Official website supplied for the starter profile.' : 'Official rules supplied for the starter profile.' })),
     sourceDiscrepancies: [],
   };
 }
@@ -75,6 +77,36 @@ function starterNormalizedProfile(id: string, slug: string, name: string, checke
     tokenRewards: { hasToken: nd(), tokenTicker: nd(), tokenSupply: nd(), hasPoints: nd(), pointsProgramName: nd(), hasAirdrop: nd(), airdropStatus: nd(), description: nd() },
     company: { yearEstablished: nd(), headquarters: nd() },
     sourceDiscrepancies: [], claims: [], ndFields: [], modularProfile,
+  };
+}
+
+export function buildStarterFirmRecord(input: CreateFirmRegistryInput, timestamp = new Date().toISOString()): FirmDatabaseRecord {
+  const name = input.name.trim();
+  const slug = input.slug.trim().toLowerCase();
+  const id = `firm-${slug}`;
+  const sourceUrls = [...new Set([input.officialWebsite, ...(input.sourceUrls ?? [])].map((url) => url?.trim()).filter((url): url is string => Boolean(url)))];
+  const pageProfile = starterPageProfile(id, slug, name, timestamp, sourceUrls);
+  const normalizedProfile = starterNormalizedProfile(id, slug, name, timestamp, input, pageProfile);
+  const xHandle = input.xHandle?.trim().replace(/^@/, '');
+  const officialWebsite = input.officialWebsite?.trim();
+  const logoPath = input.logoPath?.trim();
+  const sourceUrl = officialWebsite ?? (xHandle ? `https://x.com/${xHandle}` : undefined);
+  return {
+    schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
+    id, slug, name,
+    links: {
+      ...(officialWebsite ? { officialWebsite } : {}),
+      ...(xHandle ? { x: { handle: `@${xHandle}`, url: `https://x.com/${xHandle}` } } : {}),
+    },
+    ...(logoPath && sourceUrl ? { brandAssets: { logoPath, sourceUrl, status: 'reported' as const, checkedAt: timestamp } } : {}),
+    researchStatus: 'stub',
+    publicationStatus: 'draft',
+    normalizedProfile,
+    normalizedProfileV2: pageProfile,
+    draftPageProfileV2: pageProfile,
+    draftUpdatedAt: timestamp,
+    createdAt: timestamp,
+    updatedAt: timestamp,
   };
 }
 
@@ -134,33 +166,9 @@ export async function createFirmRegistry(input: CreateFirmRegistryInput): Promis
     throw new Error('A firm with this slug already exists.');
   }
 
-  const timestamp = new Date().toISOString();
-  const id = `firm-${slug}`;
-  const pageProfile = starterPageProfile(id, slug, name, timestamp);
-  const normalizedProfile = starterNormalizedProfile(id, slug, name, timestamp, input, pageProfile);
-  const xHandle = input.xHandle?.trim().replace(/^@/, '');
-  const officialWebsite = input.officialWebsite?.trim();
-  const logoPath = input.logoPath?.trim();
-  const sourceUrl = officialWebsite ?? (xHandle ? `https://x.com/${xHandle}` : undefined);
-  const record: FirmDatabaseRecord = {
-    schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
-    id, slug, name,
-    links: {
-      ...(officialWebsite ? { officialWebsite } : {}),
-      ...(xHandle ? { x: { handle: `@${xHandle}`, url: `https://x.com/${xHandle}` } } : {}),
-    },
-    ...(logoPath && sourceUrl ? { brandAssets: { logoPath, sourceUrl, status: 'reported' as const, checkedAt: timestamp } } : {}),
-    researchStatus: 'stub',
-    publicationStatus: 'draft',
-    normalizedProfile,
-    normalizedProfileV2: pageProfile,
-    draftPageProfileV2: pageProfile,
-    draftUpdatedAt: timestamp,
-    createdAt: timestamp,
-    updatedAt: timestamp,
-  };
+  const record = buildStarterFirmRecord({ ...input, name, slug });
 
-  await setDoc(doc(db, FIRM_REGISTRY_COLLECTION, id), removeUndefined(record));
+  await setDoc(doc(db, FIRM_REGISTRY_COLLECTION, record.id), removeUndefined(record));
   return record;
 }
 
