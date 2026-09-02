@@ -113,3 +113,26 @@ Example for the $5K account:
 - Mark the $100K 2-Step tier as `not offered`, not as unknown.
 - Keep the base challenge fee separate from the optional profit-split checkout add-on.
 - Model the 80%, 90% and 95% profit splits as selectable variants shared by all three programs.
+
+## Checkout and payment methods
+
+- **Promo code:** `IGLOO` commonly provides a 10% discount when active.
+- Treat the promo code as a time-sensitive offer rather than a permanent reduction to the documented base prices.
+- **Price currency:** Program prices are displayed in USD.
+- **Fiat and wallet payment methods:** Card, Apple Pay and Google Pay.
+- **Cryptocurrency payment methods:** USDT, USDC, BTC, ETH and SOL.
+
+## Project-specific context
+
+- SizeProp currently presents three products: **Degen**, **1-Step** and **2-Step**.
+- The current rules use static maximum drawdown. Earlier versions used a trailing / high-water-mark model, so older third-party descriptions may no longer match the active rulebook.
+- The project has a points program and teases a future **$SIZE** token.
+- Igloo and Pudgy Penguins backing is used as a prominent marketing and credibility anchor.
+- The website describes on-chain payout verification as **“launching soon”**; it should not yet be presented as an available verification feature.
+
+## Normalization notes for project-specific claims
+
+- Store `IGLOO` as a promotional offer with an activity/status field and review date, not as part of the challenge-fee matrix.
+- Preserve the distinction between current static drawdown rules and the historical trailing/HWM model.
+- Keep the points program and the $SIZE token teaser as separate reward facts; a token teaser does not establish a confirmed token launch or airdrop.
+- Record on-chain payout verification as announced or upcoming until the live verification interface can be inspected.
