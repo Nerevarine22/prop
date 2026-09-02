@@ -1,6 +1,6 @@
 # SizeProp — Working Research Notes
 
-Status: incremental manual research; not yet normalized for Firestore  
+Status: incremental manual research; not yet normalized for Firestore
 Last updated: 2026-09-02
 
 ## Sources supplied
@@ -40,4 +40,3 @@ Last updated: 2026-09-02
 - Store the daily reset time explicitly as `20:00 UTC`, not merely as “daily”.
 - Apply these rules at firm level unless later program-specific research documents an exception.
 - Preserve the May 2026 qualifier for the payout interaction until the current rulebook version is mapped to an exact review date.
-
