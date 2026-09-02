@@ -1,5 +1,6 @@
 import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
 import { attachFirmModularProfile } from './firmModularProfiles';
+import { SIZEPROP_NORMALIZED_PROFILE } from './sizePropProfile';
 import type {
   FirmNormalizedProfile,
   NormalizedChallengeProgram,
@@ -7,7 +8,7 @@ import type {
   PrimaryResearchValueStatus,
 } from '@/types/database';
 
-export const PUBLIC_FIRM_PROFILES = Object.values(FIRM_NORMALIZED_PROFILES_BY_SLUG).map((profile) => (
+export const PUBLIC_FIRM_PROFILES = [...Object.values(FIRM_NORMALIZED_PROFILES_BY_SLUG), SIZEPROP_NORMALIZED_PROFILE].map((profile) => (
   attachFirmModularProfile(profile)
 )).sort((a, b) => {
   if (a.slug === 'propr') return -1;

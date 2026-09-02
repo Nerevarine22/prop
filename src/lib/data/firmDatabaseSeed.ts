@@ -2,6 +2,7 @@ import { MOCK_PROP_FIRMS } from './firms';
 import { PRIMARY_RESEARCH_BY_SLUG } from './firmPrimaryResearch';
 import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
 import { getFirmModularProfile } from './firmModularProfiles';
+import { SIZEPROP_NORMALIZED_PROFILE, SIZEPROP_PAGE_PROFILE } from './sizePropProfile';
 import { FIRM_DATABASE_SCHEMA_VERSION, type FirmBrandAssets, type FirmDatabaseRecord, type FirmLinks } from '@/types/database';
 
 const SEED_CREATED_AT = '2026-08-15T00:00:00.000Z';
@@ -73,6 +74,29 @@ export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
     profile: proprProfile,
     createdAt: SEED_CREATED_AT,
     updatedAt: proprProfile.lastReviewedAt,
+  },
+  {
+    schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
+    id: SIZEPROP_NORMALIZED_PROFILE.id,
+    slug: SIZEPROP_NORMALIZED_PROFILE.slug,
+    name: SIZEPROP_NORMALIZED_PROFILE.name,
+    links: links('https://www.sizeprop.com/', 'SizeProp'),
+    brandAssets: {
+      logoPath: '/firm-logos/sizeprop/logo.png',
+      sourceUrl: 'https://www.sizeprop.com/',
+      status: 'reported',
+      checkedAt: SIZEPROP_NORMALIZED_PROFILE.checkedAt,
+    },
+    researchStatus: 'researched',
+    publicationStatus: 'published',
+    normalizedProfile: SIZEPROP_NORMALIZED_PROFILE,
+    normalizedProfileV2: SIZEPROP_PAGE_PROFILE,
+    pageProfileV2: SIZEPROP_PAGE_PROFILE,
+    draftPageProfileV2: SIZEPROP_PAGE_PROFILE,
+    draftUpdatedAt: SIZEPROP_NORMALIZED_PROFILE.checkedAt,
+    publishedAt: SIZEPROP_NORMALIZED_PROFILE.checkedAt,
+    createdAt: SIZEPROP_NORMALIZED_PROFILE.checkedAt,
+    updatedAt: SIZEPROP_NORMALIZED_PROFILE.checkedAt,
   },
   ...STUB_FIRMS.map((firm): FirmDatabaseRecord => {
     const normalizedProfile = FIRM_NORMALIZED_PROFILES_BY_SLUG[firm.slug];

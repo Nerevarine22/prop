@@ -26,6 +26,13 @@ function sentenceCase(value: string | undefined): string {
   return value.replaceAll('-', ' ').replace(/^./, (letter) => letter.toUpperCase());
 }
 
+function sourceLabel(url: string): string {
+  const source = new URL(url);
+  const host = source.hostname.replace('www.', '');
+  const path = source.pathname.replace(/\/$/, '');
+  return path ? `${host}${path}` : host;
+}
+
 function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
   const stages = known(program.stages) ?? [];
   const tiers = (known(program.tiers) ?? []).filter((tier) => known(tier.available) !== false);
@@ -94,7 +101,10 @@ export function ProprEditorialContent({
   const sourceUrls = researchProfile.sourcesInspected?.map((source) => source.url)
     ?? [...new Set(firm.claims.map((claim) => claim.sourceUrl))];
   const officialWebsite = factValue(firm.identity.officialWebsite);
-  const copy = (key: string, fallback: string) => profileOverride?.editorialCopy?.[key] ?? fallback;
+  const supportingSourceUrls = sourceUrls.filter((url) => url !== officialWebsite);
+  const pageProfile = profileOverride ?? researchProfile;
+  const copy = (key: string, fallback: string) => pageProfile.editorialCopy?.[key] ?? fallback;
+  const isSizeProp = firm.slug === 'sizeprop';
   const changeCopy = (key: string, value: string) => {
     if (!profileOverride || !onProfileChange) return;
     onProfileChange({ ...profileOverride, editorialCopy: { ...profileOverride.editorialCopy, [key]: value } });
@@ -117,10 +127,19 @@ export function ProprEditorialContent({
       'data-selected': block?.id === selectedBlockId ? 'true' : 'false',
     };
   };
+  const navItems = isSizeProp ? [
+    { id: 'decision', label: 'Brief' },
+    { id: 'programs', label: 'Challenges' },
+    { id: 'payouts', label: 'Payouts' },
+    { id: 'trading', label: 'Trading' },
+    { id: 'rewards', label: 'Rewards' },
+    { id: 'trust', label: 'Trust & risks' },
+    { id: 'sources', label: 'Sources' },
+  ] : undefined;
 
   return (
     <div className={styles.editorial} data-editing={editMode ? 'true' : 'false'}>
-      <ProprSectionNav />
+      <ProprSectionNav items={navItems} firmName={firm.name} promoCode={copy('promo.code', isSizeProp ? '' : 'PROP20')} />
 
       <section className={styles.decision} id="decision" {...cmsSection('overview')}>
         <div className={styles.decisionCopy} {...cmsBlock('overview', 'notebooklm-1')}>
@@ -157,7 +176,7 @@ export function ProprEditorialContent({
         <div className={styles.programGrid} {...cmsBlock('offers', 'offer-records')}>
           {programs.map((program) => <ProgramCard key={program.id} program={program} />)}
         </div>
-        <p className={styles.sectionNote}><CircleAlert /> Challenge fees are documented as non-refundable.</p>
+        <p className={styles.sectionNote}><CircleAlert /> {copy('programs.note', 'Challenge fees are documented as non-refundable.')}</p>
       </section>
 
       <section className={`${styles.section} ${styles.payoutSection}`} id="payouts" {...cmsSection('payouts')}>
@@ -168,13 +187,13 @@ export function ProprEditorialContent({
           <InlineEditableText as="p" value={copy('payouts.description', factValue(firm.payoutPolicy.notes) ?? 'Payout conditions are not stated.')} enabled={editMode} multiline onCommit={(value) => changeCopy('payouts.description', value)} />
         </div>
         <div className={styles.payoutDetails} {...cmsBlock('payouts', 'payout-facts')}>
-          <div><WalletCards /><span>Minimum request</span><strong>${factValue(firm.payoutPolicy.minimumAmount) ?? '—'}</strong></div>
-          <div><Clock3 /><span>Stated processing</span><strong>Within {factValue(firm.payoutPolicy.processingTimeHours) ?? '—'} hours</strong></div>
+          <div><WalletCards /><span>Minimum request</span><strong>{copy('payouts.minimum', factValue(firm.payoutPolicy.minimumAmount) === undefined ? 'Not stated' : `$${factValue(firm.payoutPolicy.minimumAmount)}`)}</strong></div>
+          <div><Clock3 /><span>Stated processing</span><strong>{copy('payouts.processing', factValue(firm.payoutPolicy.processingTimeHours) === undefined ? 'Not stated' : `Within ${factValue(firm.payoutPolicy.processingTimeHours)} hours`)}</strong></div>
           <div><Coins /><span>Settlement currency</span><strong>{payoutCurrency}</strong></div>
           <ul>
-            <li><Check /> Positions must be closed before payout.</li>
-            <li><Check /> The request withdraws the full available balance.</li>
-            <li><CircleAlert /> Payout resets the funded account balance.</li>
+            <li><Check /> {copy('payouts.rule.1', 'Positions must be closed before payout.')}</li>
+            <li><Check /> {copy('payouts.rule.2', 'The request withdraws the full available balance.')}</li>
+            <li><CircleAlert /> {copy('payouts.rule.3', 'Payout resets the funded account balance.')}</li>
           </ul>
         </div>
       </section>
@@ -206,16 +225,44 @@ export function ProprEditorialContent({
 
       <section className={styles.section} id="consider" {...cmsSection('trading')}>
         <div className={styles.sectionHeading}>
-          <span className={styles.eyebrow}>Before you choose</span>
+          <span className={styles.eyebrow}>{copy('consider.eyebrow', 'Before you choose')}</span>
           <InlineEditableText as="h2" value={copy('consider.title', 'The details most likely to change the decision.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.title', value)} />
         </div>
         <div className={styles.considerList}>
-          <article {...cmsBlock('trading', 'notebooklm-7')}><span>01</span><div><h3>Program rules differ materially</h3><p>Maximum drawdown ranges from 3% to 8%. The cheapest program is also the tightest.</p></div></article>
-          <article {...cmsBlock('trading', 'notebooklm-6')}><span>02</span><div><h3>A payout closes the cycle</h3><p>Partial withdrawals are not documented as available, and a payout resets the account balance.</p></div></article>
-          <article {...cmsBlock('trading', 'notebooklm-5')}><span>03</span><div><h3>The environment is simulated</h3><p>Propr is not a regulated broker or investment service. Qualifying flow may be routed on-chain.</p></div></article>
-          <article {...cmsBlock('trading', 'notebooklm-4')}><span>04</span><div><h3>Eligibility still matters</h3><p>KYC applies at funded activation, and the rulebook lists restricted jurisdictions.</p></div></article>
+          <article {...cmsBlock('trading', 'notebooklm-7')}><span>01</span><div><InlineEditableText as="h3" value={copy('consider.1.title', 'Program rules differ materially')} enabled={editMode} onCommit={(value) => changeCopy('consider.1.title', value)} /><InlineEditableText as="p" value={copy('consider.1.description', 'Maximum drawdown ranges from 3% to 8%. The cheapest program is also the tightest.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.1.description', value)} /></div></article>
+          <article {...cmsBlock('trading', 'notebooklm-6')}><span>02</span><div><InlineEditableText as="h3" value={copy('consider.2.title', 'A payout closes the cycle')} enabled={editMode} onCommit={(value) => changeCopy('consider.2.title', value)} /><InlineEditableText as="p" value={copy('consider.2.description', 'Partial withdrawals are not documented as available, and a payout resets the account balance.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.2.description', value)} /></div></article>
+          <article {...cmsBlock('trading', 'notebooklm-5')}><span>03</span><div><InlineEditableText as="h3" value={copy('consider.3.title', 'The environment is simulated')} enabled={editMode} onCommit={(value) => changeCopy('consider.3.title', value)} /><InlineEditableText as="p" value={copy('consider.3.description', 'Propr is not a regulated broker or investment service. Qualifying flow may be routed on-chain.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.3.description', value)} /></div></article>
+          <article {...cmsBlock('trading', 'notebooklm-4')}><span>04</span><div><InlineEditableText as="h3" value={copy('consider.4.title', 'Eligibility still matters')} enabled={editMode} onCommit={(value) => changeCopy('consider.4.title', value)} /><InlineEditableText as="p" value={copy('consider.4.description', 'KYC applies at funded activation, and the rulebook lists restricted jurisdictions.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.4.description', value)} /></div></article>
         </div>
       </section>
+
+      {isSizeProp && <section className={styles.section} id="rewards" {...cmsSection('rewards')}>
+        <div className={styles.sectionHeading} {...cmsBlock('rewards', 'reward-facts')}>
+          <span className={styles.eyebrow}>Rewards status</span>
+          <InlineEditableText as="h2" value={copy('rewards.title', 'Points are live; token expectations are not.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.title', value)} />
+          <InlineEditableText as="p" value={copy('rewards.description', factValue(firm.tokenRewards.description) ?? 'Reward details are not documented.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.description', value)} />
+        </div>
+        <div className={styles.considerList} {...cmsBlock('rewards', 'reward-facts')}>
+          <article><span>01</span><div><h3>Points program</h3><p>Live · earned through purchases, passes, payouts and referrals.</p></div></article>
+          <article><span>02</span><div><h3>Progression</h3><p>Bronze-to-Obsidian tiers, with time-limited boosts and account giveaways.</p></div></article>
+          <article><span>03</span><div><h3>$SIZE token</h3><p>Teased, but no confirmed live contract, supply or utility paper.</p></div></article>
+          <article><span>04</span><div><h3>Airdrop</h3><p>Unconfirmed. Holding points is not a guaranteed token allocation.</p></div></article>
+        </div>
+      </section>}
+
+      {isSizeProp && <section className={styles.section} id="trust" {...cmsSection('trust')}>
+        <div className={styles.sectionHeading} {...cmsBlock('trust', 'trust-facts')}>
+          <span className={styles.eyebrow}>Trust and evidence</span>
+          <InlineEditableText as="h2" value={copy('trust.title', 'Signals that help — and limits that remain.')} enabled={editMode} multiline onCommit={(value) => changeCopy('trust.title', value)} />
+          <InlineEditableText as="p" value={copy('trust.description', 'Positive and negative evidence should be read together.')} enabled={editMode} multiline onCommit={(value) => changeCopy('trust.description', value)} />
+        </div>
+        <div className={styles.considerList} {...cmsBlock('trust', 'trust-facts')}>
+          <article><span>+</span><div><h3>Positive signals</h3><p>Named founder, reported Igloo backing, readable rules, no consistency requirement and user-reported USDT payouts.</p></div></article>
+          <article><span>!</span><div><h3>Material cautions</h3><p>Short history, discretionary reward language, changing rule versions and no independent payout ledger.</p></div></article>
+          <article><span>4.3</span><div><h3>Small review sample</h3><p>Trustpilot was approximately 4.3–4.4 from roughly 43–45 reviews on 1–2 September 2026.</p></div></article>
+          <article><span>C</span><div><h3>Recurring complaints</h3><p>Technical reliability and payout-processing delays appear more often than systematic denial claims.</p></div></article>
+        </div>
+      </section>}
 
       <section className={styles.sources} id="sources" {...cmsSection('sources')}>
         <div {...cmsBlock('sources', 'notebooklm-10')}>
@@ -225,9 +272,9 @@ export function ProprEditorialContent({
         </div>
         <div className={styles.sourceLinks} {...cmsBlock('sources', 'source-claims')}>
           {officialWebsite && <a href={officialWebsite} target="_blank" rel="noreferrer">Official website <ArrowUpRight /></a>}
-          {sourceUrls.map((url) => <a href={url} target="_blank" rel="noreferrer" key={url}>{new URL(url).hostname.replace('www.', '')} <ArrowUpRight /></a>)}
+          {supportingSourceUrls.map((url) => <a href={url} target="_blank" rel="noreferrer" key={url}>{sourceLabel(url)} <ArrowUpRight /></a>)}
         </div>
-        <p className={styles.unknowns}><strong>Not documented in the current review:</strong> company founding date, headquarters, profit-day definition and points-program details.</p>
+        <p className={styles.unknowns}><strong>Not documented in the current review:</strong> {copy('sources.unknowns', 'company founding date, headquarters, profit-day definition and points-program details.')}</p>
       </section>
     </div>
   );
