@@ -199,3 +199,92 @@ The legal language on the same website defines a materially narrower model:
 - Store payouts as discretionary performance rewards in the legal/model explanation while retaining the user-facing term `payout` for navigation and comparison.
 - Do not classify Degen as instant funding; classify it as a low-cost one-step evaluation.
 - Separate `maximum capital per account = $100,000` from scaling. The available maximum tier does not establish a scaling plan.
+
+## Payout policy
+
+### Trader share
+
+- The trader receives 80%, 90% or 95% depending on the profit-split option purchased at checkout.
+- The base program includes an 80% share; the higher shares are paid checkout upgrades.
+
+### First payout eligibility
+
+- A payout becomes available after reaching the funded stage and generating closed, realized profit above the starting balance.
+- Marketing language says a trader may request a payout immediately after the first profitable funded trade.
+- There are no minimum trading-day or profit-day requirements before a payout request.
+
+### Frequency and minimum
+
+- Payouts are on demand and do not follow a fixed calendar.
+- The firm says traders may request multiple payouts per day.
+- No official minimum payout amount is stated in the current policy.
+- A company blog gives $10 as an example, but this should not be treated as a canonical minimum without confirmation in the rules or Terms.
+
+### Processing time and observed experience
+
+- The firm says payouts are **usually processed within 24 hours after approval**.
+- This wording measures processing after approval and does not necessarily define the time required to reach approval.
+- User reviews report examples ranging from approximately 7 to 30 hours. These are anecdotal observations, not guaranteed service levels.
+- Some users report that trading is blocked while a payout request is pending. This behavior requires confirmation from primary documentation before being presented as a formal rule.
+
+### Currency, network and fees
+
+- Payouts are made in USDT on ERC-20.
+- Support for additional networks is described as roadmap functionality.
+- The firm states that the withdrawal cost is approximately $1 in gas fees.
+
+### KYC and position requirements
+
+- KYC is performed once, at the first payout.
+- KYC requires an identity document and live selfie.
+- KYC is not required when purchasing the challenge.
+- All positions must be closed before submitting a payout request.
+
+### Partial withdrawals and account balance
+
+- Partial withdrawals are allowed.
+- A payout removes the requested realized profit from the account balance; any balance not withdrawn remains in the account.
+- This is a balance reduction caused by the withdrawal, not necessarily a reset to the original starting balance.
+
+### Drawdown interaction and version conflict
+
+- The May 2026 `Our Rules` version says static maximum drawdown is not affected by payouts.
+- Older February rules and parts of the FAQ described a trailing/HWM model in which the HWM or daily threshold was reduced by the payout amount.
+- This is a critical version conflict. The May 2026 static-drawdown rule should be treated as current, while the older behavior must remain visible as historical documentation.
+
+### Additional eligibility conditions
+
+A payout request depends on all of the following:
+
+- Funded status.
+- Closed and realized profit above the starting balance.
+- All positions being closed.
+- Completion of first-payout KYC.
+- No account-rule breach.
+- Discretionary approval under the Terms.
+
+There is no separate consistency requirement or profit-day requirement for payout eligibility.
+
+### Account breach and unpaid profit
+
+- Previous completed payouts are not clawed back after a later account breach.
+- A company blog says that unrealized or unpaid eligible profit remaining after a breach may be claimed through the normal payout flow.
+- Because this statement comes from a blog rather than the complete Terms, it should be presented as a company claim rather than a guaranteed contractual entitlement.
+
+### Legal interpretation
+
+- Legally, a payout is a discretionary reward for simulated performance, not the trader’s ownership share of live-market PnL.
+- Marketing language presents the mechanism more simply as the trader retaining a percentage of profit.
+- Both descriptions should remain visible so the user can distinguish the commercial explanation from the legal framework.
+
+## Database normalization notes for payouts
+
+- Store the purchased profit-split option separately from payout eligibility and processing.
+- Represent frequency as `on-demand`; store the claim of multiple requests per day as an explanatory note.
+- Keep the official minimum payout as unknown unless a current primary policy defines it; preserve the blog’s $10 example separately.
+- Store `processing within 24 hours after approval` exactly; do not normalize it to an unconditional 24-hour total turnaround.
+- Set payout currency/network to `USDT · ERC-20`; label other networks as roadmap.
+- Set `positions must be closed = yes`, `partial withdrawals = yes`, and `KYC stage = first payout`.
+- Model balance reduction and drawdown-threshold behavior as separate fields.
+- Attach the May 2026 and February rule statements to a versioned source discrepancy instead of merging them.
+- Store pending-payout trading restrictions and post-breach claims with lower evidence strength until confirmed by current rules or Terms.
