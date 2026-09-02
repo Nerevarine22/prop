@@ -312,6 +312,16 @@ There is no separate consistency requirement or profit-day requirement for payou
 ### Leverage
 
 - A May 2026 company blog states leverage of **5x for BTC** and **2x for altcoins**.
+- The published leverage matrix is:
+
+| Asset class | Instrument or venue | Maximum SizeProp leverage |
+| --- | --- | --- |
+| Crypto | BTC | 5x |
+| Crypto | ETH and all altcoins | 2x |
+| Stocks | Through Trade.xyz | Not published |
+| Forex | Through Trade.xyz | Not published |
+| Metals | Through Trade.xyz | Not published |
+
 - Independent reviews sometimes cite leverage between 10x and 20x. These values appear outdated or incorrect and should not override the newer first-party statement.
 - Until leverage is confirmed in the current rulebook or terminal, retain the blog date and evidence level alongside the values.
 
@@ -366,6 +376,7 @@ According to the rulebook dated **12 May 2026**:
 - Set execution to `simulated` and explain that live-derived prices do not imply live routing of user orders.
 - Store crypto perpetuals, stocks, forex and metals as asset classes; keep the blog's `100+ pairs` claim dated and source-qualified.
 - Treat `BTC 5x / altcoins 2x` as a dated first-party blog claim until confirmed by a canonical leverage table.
+- Store ETH explicitly within the 2x altcoin band; do not infer leverage for stocks, forex or metals from the underlying Trade.xyz venue.
 - Do not store older third-party 10x–20x figures as current limits.
 - Store trading costs as `swap fee`; leave exact fee rates unknown.
 - Represent strategy permissions individually: news trading, weekend holding, overnight holding and frontend automation allowed; copy trading, HFT, latency arbitrage, cross-exchange arbitrage and same-pair hedging prohibited.
