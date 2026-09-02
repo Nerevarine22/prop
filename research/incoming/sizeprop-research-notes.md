@@ -585,3 +585,52 @@ The following figures are public company claims, mostly published around May 202
 - Do not use Trustpilot payout reports as proof of aggregate solvency, a zero-denial rate or guaranteed future payments.
 - Treat named leadership, published rules, public responses and refund terms as positive transparency signals while preserving their limitations.
 - Never let green-flag presentation cancel or hide a directly conflicting red-flag disclosure; both should be visible where relevant.
+
+## Reviews and reputation
+
+### Platform snapshots
+
+- **Trustpilot, 1–2 September 2026:** approximately 4.3–4.4 out of 5 from roughly 43–45 reviews.
+- The Trustpilot sample is small, so the rating is sensitive to a limited number of new reviews and should not be treated as a stable long-term reputation score.
+- **PropFirmMap, 2 September 2026:** Grade C, 4.3 stars, with a reported safety downgrade from B to C.
+- PropFirmMap's assessment emphasizes the firm's short operating history and limited review volume.
+
+### Recurring positive review themes
+
+User reviews commonly report:
+
+- Successful receipt of payouts.
+- Rules that are comparatively easy to understand.
+- No hidden consistency requirement.
+- Faster withdrawal experiences than at conventional forex evaluation firms.
+
+These are user-experience reports and do not constitute an independent audit of payout policy, aggregate performance or platform solvency.
+
+### Recurring negative review themes
+
+User complaints include:
+
+- Terminal lag or glitches during an evaluation.
+- Payout requests remaining pending.
+- Inability to trade while a payout request is pending.
+- Suspected unfair account failure caused by technical problems.
+- Isolated accusations that the platform is a white-label product, which the firm disputes.
+
+### Reputation interpretation
+
+- Systematic payout denial does not appear to be the dominant Trustpilot complaint theme in this small sample.
+- The more consistent concerns relate to platform reliability and payout-processing speed.
+- This does not prove that payout denials do not occur; it only describes the visible distribution of complaints in the dated sample.
+- SizeProp responds to negative reviews rather than leaving them unanswered.
+- Some responses allege that competitors posted fake one-star reviews. The response style is defensive, but the company is visibly engaging with criticism.
+
+## Database normalization notes for reviews
+
+- Store rating, review count, grade and safety score as dated platform snapshots rather than live constants.
+- Preserve the approximate ranges for Trustpilot until an exact same-time capture is available.
+- Keep Trustpilot and PropFirmMap scores separate; their scales, samples and methodologies are not interchangeable.
+- Store positive and negative observations as review themes with counts only when a reproducible review sample is captured.
+- Label payout receipt, platform lag, pending-request restrictions and technical-failure claims as user-reported.
+- Do not infer a zero-denial rate from the absence of a dominant denial theme.
+- Store the white-label allegation and the firm's denial together; do not present either side as independently established.
+- Record company response rate and tone separately from resolution quality.
