@@ -509,3 +509,39 @@ Ukraine as a whole is not listed as restricted in that May 2026 publication, whi
 - Keep account giveaways and competitions as time-limited promotions.
 - Set permanent cashback program to `not identified`; keep promo codes in the offers model rather than treating them as cashback.
 - Preserve evidence provenance: the points program is first-party confirmed, while token expectations may include media or social interpretation.
+
+## Transparency and reported statistics
+
+The following figures are public company claims, mostly published around May 2026 and subsequently repeated in marketing. They should not be treated as independently audited operating metrics.
+
+| Metric | Company claim | External verifiability |
+| --- | --- | --- |
+| Funded capital granted | More than $50 million | Not independently verified. This refers to simulated account allocation, not on-chain TVL or deployed trader capital. |
+| Funded traders | More than 200 in a company blog; more than 3,500 in a press release | The two public figures materially differ and require source dates and definitions before comparison. |
+| Total users / traders signed | More than 2,500; “thousands”; and more than 1,000 within 24 hours are used across landing-page claims | Not audited; the terms `user`, `trader`, `signed up` and `funded trader` may describe different cohorts. |
+| Payouts processed | More than 100 | Partially illustrated through Discord screenshots or individual transactions, but not supported by a complete public ledger. |
+| Denied payouts | 0 | Company claim; not independently demonstrated. |
+| Largest payout | More than $8,500; a landing-page figure shows $8,520 | Supported only by a screenshot or site widget, not a complete payout registry. |
+| Average payout | $300–$500 | Self-reported figure. |
+| Trading volume | $3 billion | Public-relations claim; not audited. |
+| On-chain verification page | Described as “launching soon”; still not live as a complete registry in September 2026 | The announced feature should not be presented as currently available. |
+| Smart contracts, proof of reserves or audit | None identified | No public PoR, independent audit or open payout contract was identified in this research. |
+
+### Transparency assessment
+
+- The available operating statistics are primarily marketing claims rather than audited disclosures.
+- No complete public proof-of-reserves report, payout ledger, independent operating audit or open payout smart contract was identified.
+- Individual payout screenshots and transactions may demonstrate that particular payments occurred, but they cannot establish aggregate payout volume, denial rate or solvency.
+- Simulated account allocations must never be presented as assets under management, treasury reserves, on-chain TVL or capital actually deployed to live markets.
+- Conflicting trader-count claims may reflect different dates or cohort definitions, but the available material does not establish a reliable reconciliation.
+
+## Database normalization notes for transparency metrics
+
+- Store every reported statistic as a dated claim with its exact source, publication type and wording.
+- Add a verification state such as `self-reported`, `partially evidenced`, `independently verified` or `not verified`.
+- Keep simulated funded allocation separate from treasury assets, live capital, TVL and assets under management.
+- Do not merge users, sign-ups, challenge customers and funded traders into one metric.
+- Preserve the `200+` and `3,500+` funded-trader figures as separate source claims until their definitions and dates can be reconciled.
+- Treat a payout screenshot or individual transaction as evidence for that payment only, not for aggregate payout or denial statistics.
+- Set on-chain payout verification to `announced / not live` based on the September 2026 observation.
+- Set proof of reserves, independent audit and public payout-ledger availability to `not identified`, not to a definitive claim that none can exist.
