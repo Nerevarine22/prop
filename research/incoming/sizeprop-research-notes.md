@@ -373,3 +373,92 @@ According to the rulebook dated **12 May 2026**:
 - Leave grid, martingale, position-size and concurrent-position limits as undocumented rather than inferring formal restrictions.
 - Store the daily-loss reference time as `20:00 UTC`, its basis as `current balance`, and enforcement basis as `realtime equity`.
 - Store maximum drawdown basis as `starting balance`, type as `static`, and breach consequence as `automatic account closure`.
+
+## Legal entity and availability
+
+### Company identity
+
+- **Legal entity:** SIZ EDU Limited.
+- **Registered address:** Cannon Place, North Sound Road, George Town, Grand Cayman KY1-9006.
+- **Jurisdiction:** Cayman Islands.
+- A third-party review by TheTrustedProp lists company registration number **428744**.
+- The registration number has not been verified against an official Cayman Islands registry during this research and must remain marked as third-party reported.
+
+### Product history and team
+
+- The SizeProp product is described as having launched in October 2025.
+- Windra Thio is publicly identified as the founder.
+- The project refers to a remote-first team.
+- PropFirmMap sometimes labels the founder as unknown; this appears to lag behind newer founder coverage in the company blog and The Block.
+- The founder attribution should use the newer public evidence while preserving any source-date difference when discussing conflicting directory records.
+
+### Regulatory positioning
+
+- SizeProp is not presented as a licensed broker or investment firm.
+- Its disclosures deny that the service provides brokerage, custody, investment advice or issuance of financial products.
+- Trustpilot categorizes the business as an `Educational Institution`; this is a platform category, not a regulatory authorization.
+- The legal model remains a simulated educational and skill-evaluation service with discretionary rewards.
+
+### Restricted jurisdictions
+
+According to a SizeProp blog post current as of **May 2026**, access is restricted from:
+
+- United Arab Emirates.
+- Afghanistan.
+- Belarus.
+- Myanmar.
+- Cambodia.
+- Central African Republic.
+- China.
+- Cuba.
+- Democratic Republic of the Congo.
+- Ethiopia.
+- Eritrea.
+- Haiti.
+- Iran.
+- Iraq.
+- Lebanon.
+- Libya.
+- Nicaragua.
+- North Korea.
+- Russia.
+- Somalia.
+- South Sudan.
+- Sudan.
+- Syria.
+- Venezuela.
+- Vietnam.
+- Yemen.
+- Zimbabwe.
+- Crimea, Donetsk and Luhansk regions.
+
+Ukraine as a whole is not listed as restricted in that May 2026 publication, while the specifically named occupied regions are restricted.
+
+### Age, KYC and access conditions
+
+- A precise minimum-age clause was not independently extracted from the raw Terms during this research.
+- The working assumption is 18+, based on the Terms framework, but this should remain unconfirmed until the exact clause is captured.
+- KYC occurs after passing the evaluation and at the first payout, rather than at challenge purchase.
+- The service is not offered where its use would be unlawful.
+
+### Terms hierarchy and changeability
+
+- `Our Rules` explicitly describes itself as a simplified summary.
+- The Terms and Conditions and FAQ take precedence over the summary when wording differs.
+- The Terms may be changed by the operator.
+- Payouts remain subject to discretionary approval.
+- Because the full raw Terms page is poorly parsed in the public index, the working legal sources are the homepage disclosures, `Our Rules` and the SizeProp help center.
+
+## Database normalization notes for legal and availability data
+
+- Store `SIZ EDU Limited`, its Cayman Islands address and jurisdiction as legal-entity fields.
+- Store registration number `428744` with source type `third-party` and verification status `unverified`; do not present it as registry-confirmed.
+- Keep product launch date separate from legal-entity incorporation date, which has not been established here.
+- Store Windra Thio as the publicly identified founder and retain the dated directory discrepancy as a source note.
+- Do not infer licensing from the Trustpilot business category.
+- Store restricted jurisdictions as a dated policy snapshot with a review date, not as a permanent firm attribute.
+- Represent Ukraine and the named occupied regions separately so Ukraine is not incorrectly classified as wholly restricted.
+- Keep minimum age as unknown until the exact Terms clause is captured; `18+` may be shown only as an unconfirmed working assumption.
+- Store KYC timing as `after pass / first payout` and distinguish it from purchase eligibility.
+- Preserve document precedence: Terms and Conditions and FAQ override the simplified `Our Rules` summary.
+- Treat the homepage disclosures, `Our Rules` and `help.sizeprop.com` as the current working legal source set until the complete Terms text is captured reliably.
