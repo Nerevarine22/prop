@@ -34,6 +34,7 @@ function sourceLabel(url: string): string {
 }
 
 function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
+  const kind = known(program.kind);
   const stages = known(program.stages) ?? [];
   const tiers = (known(program.tiers) ?? []).filter((tier) => known(tier.available) !== false);
   const targets = stages
@@ -44,7 +45,7 @@ function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
     <article className={styles.programCard}>
       <div className={styles.programTop}>
         <div>
-          <span>{stages.length > 1 ? `${stages.length}-phase evaluation` : '1-phase evaluation'}</span>
+          <span>{kind === 'instant-funding' ? 'Instant Fund' : stages.length > 1 ? `${stages.length}-phase evaluation` : '1-phase evaluation'}</span>
           <h3>{program.name}</h3>
         </div>
         <div className={styles.programTarget}>
@@ -106,6 +107,7 @@ export function ProprEditorialContent({
   const copy = (key: string, fallback: string) => pageProfile.editorialCopy?.[key] ?? fallback;
   const isSizeProp = firm.slug === 'sizeprop';
   const isFundex = firm.slug === 'fundex';
+  const isAceTrader = firm.slug === 'acetrader';
   const changeCopy = (key: string, value: string) => {
     if (!profileOverride || !onProfileChange) return;
     onProfileChange({ ...profileOverride, editorialCopy: { ...profileOverride.editorialCopy, [key]: value } });
@@ -142,6 +144,13 @@ export function ProprEditorialContent({
     { id: 'payouts', label: 'Payouts' },
     { id: 'trading', label: 'Trading' },
     { id: 'consider', label: 'Risk model' },
+    { id: 'sources', label: 'Sources' },
+  ] : isAceTrader ? [
+    { id: 'decision', label: 'Brief' },
+    { id: 'programs', label: 'Plans' },
+    { id: 'payouts', label: 'Payouts' },
+    { id: 'trading', label: 'Trading' },
+    { id: 'consider', label: 'Risk & proof' },
     { id: 'sources', label: 'Sources' },
   ] : undefined;
 

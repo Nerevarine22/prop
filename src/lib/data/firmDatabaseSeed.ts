@@ -4,6 +4,7 @@ import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
 import { getFirmModularProfile } from './firmModularProfiles';
 import { SIZEPROP_NORMALIZED_PROFILE, SIZEPROP_PAGE_PROFILE } from './sizePropProfile';
 import { FUNDEX_NORMALIZED_PROFILE, FUNDEX_PAGE_PROFILE } from './fundexProfile';
+import { ACETRADER_NORMALIZED_PROFILE, ACETRADER_PAGE_PROFILE } from './aceTraderProfile';
 import { FIRM_DATABASE_SCHEMA_VERSION, type FirmBrandAssets, type FirmDatabaseRecord, type FirmLinks } from '@/types/database';
 
 const SEED_CREATED_AT = '2026-08-15T00:00:00.000Z';
@@ -121,6 +122,29 @@ export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
     publishedAt: FUNDEX_NORMALIZED_PROFILE.checkedAt,
     createdAt: FUNDEX_NORMALIZED_PROFILE.checkedAt,
     updatedAt: FUNDEX_NORMALIZED_PROFILE.checkedAt,
+  },
+  {
+    schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
+    id: ACETRADER_NORMALIZED_PROFILE.id,
+    slug: ACETRADER_NORMALIZED_PROFILE.slug,
+    name: ACETRADER_NORMALIZED_PROFILE.name,
+    links: links('https://acetrader.com/', 'AceTrader'),
+    brandAssets: {
+      logoPath: '/firm-logos/acetrader/logo.png',
+      sourceUrl: 'https://acetrader.com/',
+      status: 'reported',
+      checkedAt: ACETRADER_NORMALIZED_PROFILE.checkedAt,
+    },
+    researchStatus: 'researched',
+    publicationStatus: 'published',
+    normalizedProfile: ACETRADER_NORMALIZED_PROFILE,
+    normalizedProfileV2: ACETRADER_PAGE_PROFILE,
+    pageProfileV2: ACETRADER_PAGE_PROFILE,
+    draftPageProfileV2: ACETRADER_PAGE_PROFILE,
+    draftUpdatedAt: ACETRADER_NORMALIZED_PROFILE.checkedAt,
+    publishedAt: ACETRADER_NORMALIZED_PROFILE.checkedAt,
+    createdAt: ACETRADER_NORMALIZED_PROFILE.checkedAt,
+    updatedAt: ACETRADER_NORMALIZED_PROFILE.checkedAt,
   },
   ...STUB_FIRMS.map((firm): FirmDatabaseRecord => {
     const normalizedProfile = FIRM_NORMALIZED_PROFILES_BY_SLUG[firm.slug];
