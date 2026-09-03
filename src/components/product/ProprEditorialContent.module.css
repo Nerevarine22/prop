@@ -159,6 +159,63 @@
 .considerList h3 { margin: 0; font-size: 17px; letter-spacing: -.025em; }
 .considerList p { max-width: 720px; margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
 
+.transparencySection { position: relative; overflow: hidden; border-radius: 20px; background: color-mix(in srgb, var(--blue) 4%, var(--paper)); }
+.transparencySection::after { position: absolute; z-index: 0; top: -170px; right: -120px; width: 430px; height: 430px; border-radius: 50%; background: color-mix(in srgb, var(--blue) 8%, transparent); filter: blur(12px); content: ''; pointer-events: none; }
+.transparencySection > * { position: relative; z-index: 1; }
+.transparencySection .sectionHeading { max-width: 820px; }
+.transparencyMetrics { display: grid; grid-template-columns: 1.2fr repeat(3, 1fr); margin-top: 52px; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); }
+.transparencyMetrics article { position: relative; min-height: 210px; padding: 28px 24px 24px; border-right: 1px solid var(--line); }
+.transparencyMetrics article:last-child { border-right: 0; }
+.transparencyMetrics article::before { position: absolute; top: 0; right: 0; left: 0; height: 2px; background: var(--blue); content: ''; }
+.transparencyMetrics article[data-tone='value']::before { background: var(--accent-value); }
+.transparencyMetrics article[data-tone='settlement']::before { background: var(--accent-settlement); }
+.transparencyMetrics article[data-tone='condition']::before { background: var(--accent-condition); }
+.transparencyMetrics span, .transparencyMetrics small, .transparencyFoot span { color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
+.transparencyMetrics strong { display: block; margin-top: 34px; font-size: clamp(2rem, 3vw, 3.2rem); font-weight: 590; letter-spacing: -.065em; line-height: .9; }
+.transparencyMetrics article[data-tone='value'] strong { color: var(--accent-value); }
+.transparencyMetrics article[data-tone='research'] strong { color: var(--blue); }
+.transparencyMetrics article[data-tone='settlement'] strong { color: var(--accent-settlement); }
+.transparencyMetrics article[data-tone='condition'] strong { color: var(--accent-condition); }
+.transparencyMetrics p { margin: 18px 0 0; font-size: 12px; font-weight: 650; line-height: 1.45; }
+.transparencyMetrics small { display: block; margin-top: 9px; font-size: 7px; line-height: 1.5; text-transform: none; }
+.transparencyFoot { display: grid; grid-template-columns: 150px minmax(0, 680px); margin-top: 20px; padding: 18px 20px; gap: 28px; border-left: 2px solid var(--blue); background: color-mix(in srgb, var(--blue) 5%, transparent); }
+.transparencyFoot p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+
+.riskSection .sectionHeading { max-width: 680px; }
+.riskGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 48px; gap: 12px; }
+.riskGrid article { position: relative; min-height: 190px; padding: 28px 28px 26px 74px; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
+.riskGrid article::before { position: absolute; top: 0; right: 0; left: 0; height: 2px; background: var(--blue); content: ''; }
+.riskGrid article:nth-child(2)::before { background: var(--accent-condition); }
+.riskGrid article:nth-child(3)::before { background: var(--accent-settlement); }
+.riskGrid article:nth-child(4)::before { background: var(--accent-reward); }
+.riskGrid article > span { position: absolute; top: 30px; left: 26px; color: var(--blue); font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 750; }
+.riskGrid article:nth-child(2) > span { color: var(--accent-condition); }
+.riskGrid article:nth-child(3) > span { color: var(--accent-settlement); }
+.riskGrid article:nth-child(4) > span { color: var(--accent-reward); }
+.riskGrid h3 { margin: 0; font-size: 20px; letter-spacing: -.04em; }
+.riskGrid p { max-width: 470px; margin: 13px 0 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
+
+.rewardSection { position: relative; overflow: hidden; margin-top: 12px; padding-inline: 42px; border: 1px solid color-mix(in srgb, var(--accent-reward) 20%, var(--line)); border-radius: 20px; background: linear-gradient(135deg, color-mix(in srgb, var(--accent-reward) 7%, var(--paper)), var(--paper) 46%, color-mix(in srgb, var(--accent-condition) 5%, var(--paper))); }
+.rewardSection .eyebrow { color: var(--accent-reward); }
+.rewardSplit { display: grid; grid-template-columns: 1fr 1fr; margin-top: 50px; gap: 14px; }
+.rewardSplit article { position: relative; min-height: 310px; padding: 34px; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: color-mix(in srgb, var(--paper) 90%, transparent); }
+.rewardSplit article::after { position: absolute; right: -70px; bottom: -100px; width: 230px; height: 230px; border: 1px solid color-mix(in srgb, var(--accent-reward) 35%, transparent); border-radius: 50%; content: ''; }
+.rewardPoints::after { border-color: color-mix(in srgb, var(--blue) 35%, transparent) !important; }
+.rewardSplit article > span { color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.rewardSplit article > strong { display: block; margin-top: 40px; color: var(--accent-reward); font-size: clamp(2.8rem, 5vw, 5.2rem); font-weight: 570; letter-spacing: -.075em; line-height: .9; }
+.rewardPoints > strong { color: var(--blue) !important; }
+.rewardSplit h3 { margin: 22px 0 0; font-size: 23px; letter-spacing: -.045em; }
+.rewardSplit p { position: relative; z-index: 1; max-width: 500px; margin: 13px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.rewardSplit small { position: absolute; z-index: 1; bottom: 28px; left: 34px; color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 8px; text-transform: uppercase; }
+.rewardStatus { display: grid; grid-template-columns: repeat(4, 1fr); margin: 14px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.rewardStatus div { padding: 18px 20px; border-right: 1px solid var(--line); }
+.rewardStatus div:last-child { border-right: 0; }
+.rewardStatus dt { color: var(--muted); font-size: 8px; text-transform: uppercase; }
+.rewardStatus dd { margin: 8px 0 0; font-size: 11px; font-weight: 750; }
+.rewardStatus div:nth-child(1) dd { color: var(--accent-reward); }
+.rewardStatus div:nth-child(2) dd { color: var(--accent-settlement); }
+.rewardStatus div:nth-child(3) dd { color: var(--accent-condition); }
+
 .sources { display: grid; grid-template-columns: minmax(0, 1fr) 340px; padding: 84px 22px 100px; gap: 80px; scroll-margin-top: 130px; }
 .sources .eyebrow { color: var(--accent-reward); }
 .sources > div:first-child > p { max-width: 600px; margin: 16px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
@@ -180,6 +237,9 @@
   .payoutDetails { padding: 0 46px; }
   .tradingLayout { grid-template-columns: 1fr 1.2fr; }
   .leverage { grid-column: 1 / -1; border-top: 1px solid var(--line); }
+  .transparencyMetrics { grid-template-columns: repeat(2, 1fr); }
+  .transparencyMetrics article:nth-child(2) { border-right: 0; }
+  .transparencyMetrics article:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
 }
 
 @media (max-width: 720px) {
@@ -205,6 +265,17 @@
   .tradingLayout { grid-template-columns: 1fr; }
   .permissions { border: 0; border-top: 1px solid var(--line); }
   .leverage { grid-column: auto; }
+  .transparencySection { margin-inline: -8px; border-radius: 14px; }
+  .transparencyMetrics, .riskGrid, .rewardSplit, .rewardStatus { grid-template-columns: 1fr; }
+  .transparencyMetrics article, .transparencyMetrics article:nth-child(2) { min-height: 168px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .transparencyMetrics article:last-child { border-bottom: 0; }
+  .transparencyFoot { grid-template-columns: 1fr; gap: 8px; }
+  .riskGrid article { min-height: 0; padding: 24px 22px 24px 62px; }
+  .rewardSection { margin-inline: -8px; padding-inline: 18px; border-radius: 14px; }
+  .rewardSplit article { min-height: 290px; padding: 26px; }
+  .rewardSplit small { left: 26px; }
+  .rewardStatus div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .rewardStatus div:last-child { border-bottom: 0; }
   .sources { grid-template-columns: 1fr; padding: 68px 4px 90px; gap: 34px; }
 }
 

@@ -242,27 +242,27 @@ export function ProprEditorialContent({
         </div>
       </section>
 
-      {isAceTrader && <section className={styles.section} id="transparency" {...cmsSection('transparency')}>
+      {isAceTrader && <section className={`${styles.section} ${styles.transparencySection}`} id="transparency" {...cmsSection('transparency')}>
         <div className={styles.sectionHeading} {...cmsBlock('transparency', 'transparency-facts')}>
           <span className={styles.eyebrow}>Published transparency</span>
           <InlineEditableText as="h2" value={copy('transparency.title', 'Payout transactions are visible; aggregate claims remain company-published.')} enabled={editMode} multiline onCommit={(value) => changeCopy('transparency.title', value)} />
           <InlineEditableText as="p" value={copy('transparency.description', 'Transaction-level links improve traceability without replacing an independent reserve or solvency audit.')} enabled={editMode} multiline onCommit={(value) => changeCopy('transparency.description', value)} />
         </div>
-        <div className={styles.considerList} {...cmsBlock('transparency', 'transparency-facts')}>
-          <article><span>$94K</span><div><h3>$94,524.50 processed</h3><p>Company total across 73 published payouts; the largest listed payout is $10,260.</p></div></article>
-          <article><span>11.8%</span><div><h3>Evaluation funnel</h3><p>1,397 subscribed, 165 funded and 21 paid according to the September 2 snapshot.</p></div></article>
-          <article><span>52</span><div><h3>Instant Fund payouts</h3><p>52 of 367 Instant Fund accounts are shown as having earned a payout.</p></div></article>
-          <article><span>2.3d</span><div><h3>Average processing time</h3><p>Transaction rows include dates, amounts, wallet fragments and on-chain transaction links.</p></div></article>
+        <div className={styles.transparencyMetrics} {...cmsBlock('transparency', 'transparency-facts')}>
+          <article data-tone="value"><span>Total processed</span><strong>$94,524.50</strong><p>73 published payouts</p><small>Largest: $10,260</small></article>
+          <article data-tone="research"><span>Evaluation funnel</span><strong>11.8%</strong><p>165 funded from 1,397 subscriptions</p><small>21 reached a payout</small></article>
+          <article data-tone="settlement"><span>Instant Fund</span><strong>52</strong><p>paid from 367 accounts</p><small>14.1% shown as earned</small></article>
+          <article data-tone="condition"><span>Processing</span><strong>2.3d</strong><p>company-reported average</p><small>Txn links published per row</small></article>
         </div>
-        <p className={styles.sectionNote}><CircleAlert /> These are company-published operating statistics, not proof of reserves or an independent financial audit.</p>
+        <div className={styles.transparencyFoot}><span>Evidence boundary</span><p>Transaction hashes improve payout traceability. The aggregate funnel and capital figures remain company-published and are not proof of reserves or an independent financial audit.</p></div>
       </section>}
 
-      <section className={styles.section} id="consider" {...cmsSection('trading')}>
+      <section className={`${styles.section} ${isAceTrader ? styles.riskSection : ''}`} id="consider" {...cmsSection('trading')}>
         <div className={styles.sectionHeading}>
           <span className={styles.eyebrow}>{copy('consider.eyebrow', 'Before you choose')}</span>
           <InlineEditableText as="h2" value={copy('consider.title', 'The details most likely to change the decision.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.title', value)} />
         </div>
-        <div className={styles.considerList}>
+        <div className={isAceTrader ? styles.riskGrid : styles.considerList}>
           <article {...cmsBlock('trading', 'notebooklm-7')}><span>01</span><div><InlineEditableText as="h3" value={copy('consider.1.title', 'Program rules differ materially')} enabled={editMode} onCommit={(value) => changeCopy('consider.1.title', value)} /><InlineEditableText as="p" value={copy('consider.1.description', 'Maximum drawdown ranges from 3% to 8%. The cheapest program is also the tightest.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.1.description', value)} /></div></article>
           <article {...cmsBlock('trading', 'notebooklm-6')}><span>02</span><div><InlineEditableText as="h3" value={copy('consider.2.title', 'A payout closes the cycle')} enabled={editMode} onCommit={(value) => changeCopy('consider.2.title', value)} /><InlineEditableText as="p" value={copy('consider.2.description', 'Partial withdrawals are not documented as available, and a payout resets the account balance.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.2.description', value)} /></div></article>
           <article {...cmsBlock('trading', 'notebooklm-5')}><span>03</span><div><InlineEditableText as="h3" value={copy('consider.3.title', 'The environment is simulated')} enabled={editMode} onCommit={(value) => changeCopy('consider.3.title', value)} /><InlineEditableText as="p" value={copy('consider.3.description', 'Propr is not a regulated broker or investment service. Qualifying flow may be routed on-chain.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.3.description', value)} /></div></article>
@@ -284,18 +284,34 @@ export function ProprEditorialContent({
         </div>
       </section>}
 
-      {isAceTrader && <section className={styles.section} id="rewards" {...cmsSection('rewards')}>
+      {isAceTrader && <section className={`${styles.section} ${styles.rewardSection}`} id="rewards" {...cmsSection('rewards')}>
         <div className={styles.sectionHeading} {...cmsBlock('rewards', 'reward-facts')}>
           <span className={styles.eyebrow}>Rewards and points</span>
           <InlineEditableText as="h2" value={copy('rewards.title', 'Every purchase and leaderboard point creates optional upside.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.title', value)} />
           <InlineEditableText as="p" value={copy('rewards.description', 'The documented monthly draw and the open-ended points teaser are separate reward signals.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.description', value)} />
         </div>
-        <div className={styles.considerList} {...cmsBlock('rewards', 'reward-facts')}>
-          <article><span>01</span><div><h3>$1 spent = 1 ticket</h3><p>Paid Evaluation subscriptions and Instant Fund purchases create entries for the monthly draw.</p></div></article>
-          <article><span>02</span><div><h3>Points leaderboard is live</h3><p>The interface invites users to earn points while teasing future rewards, but publishes no conversion, snapshot or redemption terms.</p></div></article>
-          <article><span>03</span><div><h3>No token or airdrop is confirmed</h3><p>The teaser signals potential future utility only. The documented draw pays nominal Trade Fund access, not cash.</p></div></article>
-          <article><span>04</span><div><h3>Separate from referral rebates</h3><p>The Community Reward draw and monthly Arbitrum-USDC referral commissions are distinct programs.</p></div></article>
+        <div className={styles.rewardSplit} {...cmsBlock('rewards', 'reward-facts')}>
+          <article className={styles.rewardDraw}>
+            <span>Documented program</span>
+            <strong>$1 = 1 ticket</strong>
+            <h3>Monthly Community Reward</h3>
+            <p>The pool scales with purchases, up to an advertised $330K in combined Starter, Standard and Pro Instant Fund access.</p>
+            <small>Nominal Trade Fund allocation · not a cash prize</small>
+          </article>
+          <article className={styles.rewardPoints}>
+            <span>Live signal · future terms unknown</span>
+            <strong>Points</strong>
+            <h3>Leaderboard is already active</h3>
+            <p>Users can accumulate points while AceTrader asks “who knows what the rewards will be?”. No conversion, snapshot or redemption rules are published.</p>
+            <small>No confirmed token or airdrop</small>
+          </article>
         </div>
+        <dl className={styles.rewardStatus}>
+          <div><dt>Community draw</dt><dd>Live · monthly</dd></div>
+          <div><dt>Points leaderboard</dt><dd>Live</dd></div>
+          <div><dt>Future utility</dt><dd>Teased</dd></div>
+          <div><dt>Referral rebates</dt><dd>Separate program</dd></div>
+        </dl>
       </section>}
 
       {isSizeProp && <section className={styles.section} id="trust" {...cmsSection('trust')}>
