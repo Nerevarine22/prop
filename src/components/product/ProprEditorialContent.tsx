@@ -217,7 +217,7 @@ export function ProprEditorialContent({
         </div>
       </section>
 
-      <section className={styles.section} id="trading" {...cmsSection('trading')}>
+      <section className={`${styles.section} ${isAceTrader ? styles.beforeTransparency : ''}`} id="trading" {...cmsSection('trading')}>
         <div className={styles.sectionHeading} {...cmsBlock('trading', 'notebooklm-4')}>
           <span className={styles.eyebrow}>Trading environment</span>
           <InlineEditableText as="h2" value={copy('trading.title', 'Execution is concentrated around Hyperliquid.')} enabled={editMode} multiline onCommit={(value) => changeCopy('trading.title', value)} />
