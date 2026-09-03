@@ -183,7 +183,7 @@
 .riskSection .sectionHeading { max-width: 680px; }
 .riskGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 48px; gap: 12px; }
 .riskGrid article { position: relative; min-height: 190px; padding: 28px 28px 26px 74px; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
-.riskGrid article::before { position: absolute; top: 0; right: 0; left: 0; height: 2px; background: var(--blue); content: ''; }
+.riskGrid article::before { position: absolute; top: 0; bottom: 0; left: 0; width: 2px; background: var(--blue); content: ''; }
 .riskGrid article:nth-child(2)::before { background: var(--accent-condition); }
 .riskGrid article:nth-child(3)::before { background: var(--accent-settlement); }
 .riskGrid article:nth-child(4)::before { background: var(--accent-reward); }
