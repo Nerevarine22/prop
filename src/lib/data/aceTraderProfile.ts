@@ -181,8 +181,10 @@ export const ACETRADER_PAGE_PROFILE: FirmNormalizedProfileV2 = {
     'consider.2.description': 'Pricing shows 0 winning days and $0 safety net, while the older payout FAQ still documents 3–5 days and plan-based reserves.',
     'consider.3.title': 'The allowlist is a hard rule',
     'consider.3.description': 'Trading an unlisted coin is a breach that closes access and can suspend outstanding payouts.',
-    'consider.4.title': 'Transparency is useful but company-published',
-    'consider.4.description': 'The page exposes payout transactions and reports $94,524.50 across 73 payouts, but it is not a proof-of-reserves or solvency audit.',
+    'consider.4.title': 'Evaluation targets are not fully published',
+    'consider.4.description': 'The official docs explain consistency and MLL mechanics, but do not provide a reliable current target and minimum-day matrix for every Evaluation tier.',
+    'transparency.title': 'Payout transactions are visible; aggregate claims remain company-published.',
+    'transparency.description': 'AceTrader separates Evaluation and Instant Fund performance, publishes payout totals and exposes transaction rows with hashes. This improves traceability, but does not independently verify reserves, liabilities or every funded account.',
     'rewards.title': 'Every purchase and leaderboard point creates optional upside.',
     'rewards.description': 'AceTrader runs a documented monthly Community Reward draw and also displays a live points leaderboard with an open-ended reward teaser. The points destination is not yet disclosed, so it should not be treated as a confirmed token or airdrop.',
     'sources.unknowns': 'legal entity and incorporation jurisdiction, current plan-specific evaluation targets and minimum days, leverage bands, public trading-fee table, news/weekend/copy-trading permissions, automation policy and independently audited capital reserves.',
@@ -222,6 +224,12 @@ export const ACETRADER_PAGE_PROFILE: FirmNormalizedProfileV2 = {
     ] }] },
     { id: 'risk-model', tabLabel: 'Risk & proof', title: 'MLL, source conflicts and transparency', description: 'Decision-critical details beyond headline pricing.', blocks: [{ id: 'risk-facts', type: 'fact-grid', columns: 4, items: [
       contentFact('acetrader-risk-1', 'MLL', 'Trailing EOD high-water mark'), contentFact('acetrader-risk-2', 'Consistency', 'Best day ≤ 50% of realized profit'), contentFact('acetrader-risk-3', 'Company-reported payouts', '$94,524.50 · 73 payouts'), contentFact('acetrader-risk-4', 'Community reward', 'Monthly nominal Trade Fund draw'),
+    ] }] },
+    { id: 'transparency', tabLabel: 'Transparency', title: 'Published operating statistics', description: 'Company-reported funnel and payout data with transaction-level links.', blocks: [{ id: 'transparency-facts', type: 'fact-grid', columns: 4, items: [
+      contentFact('acetrader-transparency-total', 'Total payouts', '$94,524.50 · 73 payouts'),
+      contentFact('acetrader-transparency-evaluation', 'Evaluation funnel', '1,397 subscribed · 165 funded · 21 paid'),
+      contentFact('acetrader-transparency-instant', 'Instant Fund', '367 accounts · 52 paid'),
+      contentFact('acetrader-transparency-time', 'Average processing', '2.3 days'),
     ] }] },
     { id: 'rewards', tabLabel: 'Rewards', title: 'Rewards and points', description: 'Documented monthly draw plus an unconfirmed future-reward teaser.', blocks: [{ id: 'reward-facts', type: 'fact-grid', columns: 4, items: [
       contentFact('acetrader-reward-entry', 'Community draw', '$1 spent = 1 ticket'),

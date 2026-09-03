@@ -150,6 +150,7 @@ export function ProprEditorialContent({
     { id: 'programs', label: 'Plans' },
     { id: 'payouts', label: 'Payouts' },
     { id: 'trading', label: 'Trading' },
+    { id: 'transparency', label: 'Transparency' },
     { id: 'consider', label: 'Risk & proof' },
     { id: 'rewards', label: 'Rewards' },
     { id: 'sources', label: 'Sources' },
@@ -240,6 +241,21 @@ export function ProprEditorialContent({
           </div>
         </div>
       </section>
+
+      {isAceTrader && <section className={styles.section} id="transparency" {...cmsSection('transparency')}>
+        <div className={styles.sectionHeading} {...cmsBlock('transparency', 'transparency-facts')}>
+          <span className={styles.eyebrow}>Published transparency</span>
+          <InlineEditableText as="h2" value={copy('transparency.title', 'Payout transactions are visible; aggregate claims remain company-published.')} enabled={editMode} multiline onCommit={(value) => changeCopy('transparency.title', value)} />
+          <InlineEditableText as="p" value={copy('transparency.description', 'Transaction-level links improve traceability without replacing an independent reserve or solvency audit.')} enabled={editMode} multiline onCommit={(value) => changeCopy('transparency.description', value)} />
+        </div>
+        <div className={styles.considerList} {...cmsBlock('transparency', 'transparency-facts')}>
+          <article><span>$94K</span><div><h3>$94,524.50 processed</h3><p>Company total across 73 published payouts; the largest listed payout is $10,260.</p></div></article>
+          <article><span>11.8%</span><div><h3>Evaluation funnel</h3><p>1,397 subscribed, 165 funded and 21 paid according to the September 2 snapshot.</p></div></article>
+          <article><span>52</span><div><h3>Instant Fund payouts</h3><p>52 of 367 Instant Fund accounts are shown as having earned a payout.</p></div></article>
+          <article><span>2.3d</span><div><h3>Average processing time</h3><p>Transaction rows include dates, amounts, wallet fragments and on-chain transaction links.</p></div></article>
+        </div>
+        <p className={styles.sectionNote}><CircleAlert /> These are company-published operating statistics, not proof of reserves or an independent financial audit.</p>
+      </section>}
 
       <section className={styles.section} id="consider" {...cmsSection('trading')}>
         <div className={styles.sectionHeading}>
