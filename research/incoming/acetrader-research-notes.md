@@ -41,3 +41,5 @@ Terms were updated 13 July 2026. Users must be at least 18 or the local age of m
 AceTrader's transparency page, updated 2 September 2026, reports $94,524.50 across 73 payouts, a $10,260 largest payout and 2.3-day average processing. It includes transaction rows and hashes; the aggregates remain company-published and are not a proof-of-reserves audit.
 
 Community Reward gives one monthly draw ticket per dollar spent and advertises up to $330K in nominal Instant Fund allocations, not cash. Referral rebates are documented at $4/$40/$68 for Evaluation and $20/$200/$400 for Instant Fund, paid monthly in Arbitrum USDC once the balance reaches $50.
+
+The AceTrader interface also exposes a live points leaderboard with the message “Earn points now — who knows what the rewards will be?”. This is evidence of active points collection and a future-reward teaser, but not confirmation of an airdrop, token, conversion rate, eligibility snapshot or redemption terms. The observation comes from a user-supplied screenshot of the official product interface and remains `reported`, not independently verified.

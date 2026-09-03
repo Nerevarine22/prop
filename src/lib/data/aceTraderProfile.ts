@@ -18,6 +18,7 @@ const DOCS_EXPORT = 'https://docs.acetrader.com/llms-full.txt';
 const TRANSPARENCY = 'https://acetrader.com/transparency';
 const REWARDS = 'https://acetrader.com/community-reward';
 const TERMS = 'https://acetrader.com/terms';
+const APP = 'https://app.acetrader.com/';
 const X = 'https://x.com/AceTrader';
 
 function evidence(sourceUrl = DOCS, notes?: string): NormalizedEvidence[] {
@@ -182,8 +183,8 @@ export const ACETRADER_PAGE_PROFILE: FirmNormalizedProfileV2 = {
     'consider.3.description': 'Trading an unlisted coin is a breach that closes access and can suspend outstanding payouts.',
     'consider.4.title': 'Transparency is useful but company-published',
     'consider.4.description': 'The page exposes payout transactions and reports $94,524.50 across 73 payouts, but it is not a proof-of-reserves or solvency audit.',
-    'rewards.title': 'Every purchase becomes a monthly draw entry.',
-    'rewards.description': 'AceTrader converts spend into tickets for a monthly Community Reward draw. The advertised pool is access to nominal Instant Fund capital, not a cash prize or token allocation.',
+    'rewards.title': 'Every purchase and leaderboard point creates optional upside.',
+    'rewards.description': 'AceTrader runs a documented monthly Community Reward draw and also displays a live points leaderboard with an open-ended reward teaser. The points destination is not yet disclosed, so it should not be treated as a confirmed token or airdrop.',
     'sources.unknowns': 'legal entity and incorporation jurisdiction, current plan-specific evaluation targets and minimum days, leverage bands, public trading-fee table, news/weekend/copy-trading permissions, automation policy and independently audited capital reserves.',
   },
   operatingModel: {
@@ -222,11 +223,11 @@ export const ACETRADER_PAGE_PROFILE: FirmNormalizedProfileV2 = {
     { id: 'risk-model', tabLabel: 'Risk & proof', title: 'MLL, source conflicts and transparency', description: 'Decision-critical details beyond headline pricing.', blocks: [{ id: 'risk-facts', type: 'fact-grid', columns: 4, items: [
       contentFact('acetrader-risk-1', 'MLL', 'Trailing EOD high-water mark'), contentFact('acetrader-risk-2', 'Consistency', 'Best day ≤ 50% of realized profit'), contentFact('acetrader-risk-3', 'Company-reported payouts', '$94,524.50 · 73 payouts'), contentFact('acetrader-risk-4', 'Community reward', 'Monthly nominal Trade Fund draw'),
     ] }] },
-    { id: 'rewards', tabLabel: 'Rewards', title: 'Community Reward', description: 'Monthly draw mechanics and advertised nominal pool.', blocks: [{ id: 'reward-facts', type: 'fact-grid', columns: 4, items: [
-      contentFact('acetrader-reward-entry', 'Entry', '$1 spent = 1 ticket'),
-      contentFact('acetrader-reward-cycle', 'Draw', 'Monthly'),
-      contentFact('acetrader-reward-pool', 'Advertised maximum', '$330K in Instant Funds'),
-      contentFact('acetrader-reward-form', 'Reward form', 'Trade Fund allocation · not cash'),
+    { id: 'rewards', tabLabel: 'Rewards', title: 'Rewards and points', description: 'Documented monthly draw plus an unconfirmed future-reward teaser.', blocks: [{ id: 'reward-facts', type: 'fact-grid', columns: 4, items: [
+      contentFact('acetrader-reward-entry', 'Community draw', '$1 spent = 1 ticket'),
+      contentFact('acetrader-reward-points', 'Points', 'Live leaderboard'),
+      contentFact('acetrader-reward-status', 'Future reward', 'Teased · terms not disclosed'),
+      contentFact('acetrader-reward-pool', 'Draw maximum', '$330K in Instant Funds · not cash'),
     ] }] },
     { id: 'sources', tabLabel: 'Sources', title: 'Sources and unresolved questions', description: 'Official source trail and remaining unknowns.', blocks: [{ id: 'source-claims', type: 'record-list', presentation: 'sources', items: [
       { id: 'acetrader-site', title: 'Official website', links: [{ label: 'Open source', url: WEBSITE }] },
@@ -321,11 +322,11 @@ export const ACETRADER_NORMALIZED_PROFILE: FirmNormalizedProfile = {
     hasToken: reported(false, WEBSITE),
     tokenTicker: nd('No AceTrader token is documented.', WEBSITE),
     tokenSupply: nd('No token supply is documented.', WEBSITE),
-    hasPoints: reported(false, WEBSITE),
-    pointsProgramName: nd('No points program is documented.', WEBSITE),
+    hasPoints: reported(true, APP, 'A user-supplied screenshot of the official interface shows a live points leaderboard.'),
+    pointsProgramName: reported('AceTrader Leaderboard', APP),
     hasAirdrop: reported(false, WEBSITE),
     airdropStatus: reported('unconfirmed', WEBSITE),
-    description: reported('Community Reward is a monthly draw for nominal Instant Fund allocations; the referral program pays monthly USDC rebates.', REWARDS),
+    description: reported('Community Reward is a monthly draw for nominal Instant Fund allocations. A separate live points leaderboard teases future rewards without disclosing a token, airdrop, conversion rate or eligibility terms.', REWARDS),
   },
   company: {
     yearEstablished: nd('Founding year was not established by the captured official sources.', WEBSITE),
