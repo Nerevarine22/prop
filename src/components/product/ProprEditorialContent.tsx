@@ -105,6 +105,7 @@ export function ProprEditorialContent({
   const pageProfile = profileOverride ?? researchProfile;
   const copy = (key: string, fallback: string) => pageProfile.editorialCopy?.[key] ?? fallback;
   const isSizeProp = firm.slug === 'sizeprop';
+  const isFundex = firm.slug === 'fundex';
   const changeCopy = (key: string, value: string) => {
     if (!profileOverride || !onProfileChange) return;
     onProfileChange({ ...profileOverride, editorialCopy: { ...profileOverride.editorialCopy, [key]: value } });
@@ -134,6 +135,13 @@ export function ProprEditorialContent({
     { id: 'trading', label: 'Trading' },
     { id: 'rewards', label: 'Rewards' },
     { id: 'trust', label: 'Trust & risks' },
+    { id: 'sources', label: 'Sources' },
+  ] : isFundex ? [
+    { id: 'decision', label: 'Brief' },
+    { id: 'programs', label: 'Challenges' },
+    { id: 'payouts', label: 'Payouts' },
+    { id: 'trading', label: 'Trading' },
+    { id: 'consider', label: 'Risk model' },
     { id: 'sources', label: 'Sources' },
   ] : undefined;
 

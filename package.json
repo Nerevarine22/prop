@@ -14,6 +14,8 @@
     "db:sync-model-first:write": "tsx scripts/syncModelFirstFirm.ts --write",
     "db:sync-sizeprop": "tsx scripts/syncSizePropProfile.ts",
     "db:sync-sizeprop:write": "tsx scripts/syncSizePropProfile.ts --write",
+    "db:sync-fundex": "tsx scripts/syncFundexProfile.ts",
+    "db:sync-fundex:write": "tsx scripts/syncFundexProfile.ts --write",
     "db:import-reviewed": "tsx scripts/importReviewedFirm.ts",
     "db:import-reviewed:all": "tsx scripts/importReviewedFirm.ts --all",
     "db:import-reviewed:all:write": "tsx scripts/importReviewedFirm.ts --all --write"

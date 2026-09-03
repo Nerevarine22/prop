@@ -3,6 +3,7 @@ import { PRIMARY_RESEARCH_BY_SLUG } from './firmPrimaryResearch';
 import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
 import { getFirmModularProfile } from './firmModularProfiles';
 import { SIZEPROP_NORMALIZED_PROFILE, SIZEPROP_PAGE_PROFILE } from './sizePropProfile';
+import { FUNDEX_NORMALIZED_PROFILE, FUNDEX_PAGE_PROFILE } from './fundexProfile';
 import { FIRM_DATABASE_SCHEMA_VERSION, type FirmBrandAssets, type FirmDatabaseRecord, type FirmLinks } from '@/types/database';
 
 const SEED_CREATED_AT = '2026-08-15T00:00:00.000Z';
@@ -97,6 +98,29 @@ export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
     publishedAt: SIZEPROP_NORMALIZED_PROFILE.checkedAt,
     createdAt: SIZEPROP_NORMALIZED_PROFILE.checkedAt,
     updatedAt: SIZEPROP_NORMALIZED_PROFILE.checkedAt,
+  },
+  {
+    schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
+    id: FUNDEX_NORMALIZED_PROFILE.id,
+    slug: FUNDEX_NORMALIZED_PROFILE.slug,
+    name: FUNDEX_NORMALIZED_PROFILE.name,
+    links: links('https://fundex.gg/', 'Fundex'),
+    brandAssets: {
+      logoPath: '/firm-logos/fundex/logo.png',
+      sourceUrl: 'https://fundex.gg/',
+      status: 'reported',
+      checkedAt: FUNDEX_NORMALIZED_PROFILE.checkedAt,
+    },
+    researchStatus: 'researched',
+    publicationStatus: 'published',
+    normalizedProfile: FUNDEX_NORMALIZED_PROFILE,
+    normalizedProfileV2: FUNDEX_PAGE_PROFILE,
+    pageProfileV2: FUNDEX_PAGE_PROFILE,
+    draftPageProfileV2: FUNDEX_PAGE_PROFILE,
+    draftUpdatedAt: FUNDEX_NORMALIZED_PROFILE.checkedAt,
+    publishedAt: FUNDEX_NORMALIZED_PROFILE.checkedAt,
+    createdAt: FUNDEX_NORMALIZED_PROFILE.checkedAt,
+    updatedAt: FUNDEX_NORMALIZED_PROFILE.checkedAt,
   },
   ...STUB_FIRMS.map((firm): FirmDatabaseRecord => {
     const normalizedProfile = FIRM_NORMALIZED_PROFILES_BY_SLUG[firm.slug];
