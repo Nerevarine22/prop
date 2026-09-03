@@ -151,6 +151,7 @@ export function ProprEditorialContent({
     { id: 'payouts', label: 'Payouts' },
     { id: 'trading', label: 'Trading' },
     { id: 'consider', label: 'Risk & proof' },
+    { id: 'rewards', label: 'Rewards' },
     { id: 'sources', label: 'Sources' },
   ] : undefined;
 
@@ -264,6 +265,20 @@ export function ProprEditorialContent({
           <article><span>02</span><div><h3>Progression</h3><p>Bronze-to-Obsidian tiers, with time-limited boosts and account giveaways.</p></div></article>
           <article><span>03</span><div><h3>$SIZE token</h3><p>Teased, but no confirmed live contract, supply or utility paper.</p></div></article>
           <article><span>04</span><div><h3>Airdrop</h3><p>Unconfirmed. Holding points is not a guaranteed token allocation.</p></div></article>
+        </div>
+      </section>}
+
+      {isAceTrader && <section className={styles.section} id="rewards" {...cmsSection('rewards')}>
+        <div className={styles.sectionHeading} {...cmsBlock('rewards', 'reward-facts')}>
+          <span className={styles.eyebrow}>Community Reward</span>
+          <InlineEditableText as="h2" value={copy('rewards.title', 'Every purchase becomes a monthly draw entry.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.title', value)} />
+          <InlineEditableText as="p" value={copy('rewards.description', 'The program distributes nominal Instant Fund allocations rather than cash prizes.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.description', value)} />
+        </div>
+        <div className={styles.considerList} {...cmsBlock('rewards', 'reward-facts')}>
+          <article><span>01</span><div><h3>$1 spent = 1 ticket</h3><p>Paid Evaluation subscriptions and Instant Fund purchases create entries for the monthly draw.</p></div></article>
+          <article><span>02</span><div><h3>The pool scales with purchases</h3><p>Five published tiers grow from $30K to a maximum advertised $330K in combined Instant Fund allocations.</p></div></article>
+          <article><span>03</span><div><h3>The reward is not cash</h3><p>Winners receive access to Starter, Standard or Pro Trade Fund accounts under the usual trading and payout rules.</p></div></article>
+          <article><span>04</span><div><h3>Separate from referral rebates</h3><p>The Community Reward draw and monthly Arbitrum-USDC referral commissions are distinct programs.</p></div></article>
         </div>
       </section>}
 

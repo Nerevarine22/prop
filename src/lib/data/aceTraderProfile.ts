@@ -182,6 +182,8 @@ export const ACETRADER_PAGE_PROFILE: FirmNormalizedProfileV2 = {
     'consider.3.description': 'Trading an unlisted coin is a breach that closes access and can suspend outstanding payouts.',
     'consider.4.title': 'Transparency is useful but company-published',
     'consider.4.description': 'The page exposes payout transactions and reports $94,524.50 across 73 payouts, but it is not a proof-of-reserves or solvency audit.',
+    'rewards.title': 'Every purchase becomes a monthly draw entry.',
+    'rewards.description': 'AceTrader converts spend into tickets for a monthly Community Reward draw. The advertised pool is access to nominal Instant Fund capital, not a cash prize or token allocation.',
     'sources.unknowns': 'legal entity and incorporation jurisdiction, current plan-specific evaluation targets and minimum days, leverage bands, public trading-fee table, news/weekend/copy-trading permissions, automation policy and independently audited capital reserves.',
   },
   operatingModel: {
@@ -219,6 +221,12 @@ export const ACETRADER_PAGE_PROFILE: FirmNormalizedProfileV2 = {
     ] }] },
     { id: 'risk-model', tabLabel: 'Risk & proof', title: 'MLL, source conflicts and transparency', description: 'Decision-critical details beyond headline pricing.', blocks: [{ id: 'risk-facts', type: 'fact-grid', columns: 4, items: [
       contentFact('acetrader-risk-1', 'MLL', 'Trailing EOD high-water mark'), contentFact('acetrader-risk-2', 'Consistency', 'Best day ≤ 50% of realized profit'), contentFact('acetrader-risk-3', 'Company-reported payouts', '$94,524.50 · 73 payouts'), contentFact('acetrader-risk-4', 'Community reward', 'Monthly nominal Trade Fund draw'),
+    ] }] },
+    { id: 'rewards', tabLabel: 'Rewards', title: 'Community Reward', description: 'Monthly draw mechanics and advertised nominal pool.', blocks: [{ id: 'reward-facts', type: 'fact-grid', columns: 4, items: [
+      contentFact('acetrader-reward-entry', 'Entry', '$1 spent = 1 ticket'),
+      contentFact('acetrader-reward-cycle', 'Draw', 'Monthly'),
+      contentFact('acetrader-reward-pool', 'Advertised maximum', '$330K in Instant Funds'),
+      contentFact('acetrader-reward-form', 'Reward form', 'Trade Fund allocation · not cash'),
     ] }] },
     { id: 'sources', tabLabel: 'Sources', title: 'Sources and unresolved questions', description: 'Official source trail and remaining unknowns.', blocks: [{ id: 'source-claims', type: 'record-list', presentation: 'sources', items: [
       { id: 'acetrader-site', title: 'Official website', links: [{ label: 'Open source', url: WEBSITE }] },
