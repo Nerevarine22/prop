@@ -1,5 +1,6 @@
 import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
 import { attachFirmModularProfile } from './firmModularProfiles';
+import { trustpilotRatingsForSlug } from './trustpilotRatings';
 import { SIZEPROP_NORMALIZED_PROFILE } from './sizePropProfile';
 import { FUNDEX_NORMALIZED_PROFILE } from './fundexProfile';
 import { ACETRADER_NORMALIZED_PROFILE } from './aceTraderProfile';
@@ -26,6 +27,7 @@ import {
 } from './standardizedFirmProfiles';
 import type {
   FirmNormalizedProfile,
+  FirmExternalRating,
   NormalizedChallengeProgram,
   NormalizedFact,
   PrimaryResearchValueStatus,
@@ -59,7 +61,10 @@ export const PUBLIC_FIRM_PROFILES = [
   DOJI_FUNDED_NORMALIZED_PROFILE,
   HYPER_STACK_NORMALIZED_PROFILE,
 ].map((profile) => (
-  attachFirmModularProfile(profile)
+  attachFirmModularProfile({
+    ...profile,
+    externalRatings: trustpilotRatingsForSlug(profile.slug),
+  })
 )).sort((a, b) => {
   if (a.slug === 'propr') return -1;
   if (b.slug === 'propr') return 1;
@@ -144,6 +149,10 @@ export function profileRewardLabels(profile: FirmNormalizedProfile): string[] {
 
 export function profileSourceCount(profile: FirmNormalizedProfile): number {
   return new Set(profile.claims.map((claim) => claim.sourceUrl)).size;
+}
+
+export function profileTrustpilotRating(profile: FirmNormalizedProfile): FirmExternalRating | undefined {
+  return profile.externalRatings?.find((rating) => rating.source === 'trustpilot');
 }
 
 export function shortDate(value: string): string {

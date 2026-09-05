@@ -105,7 +105,7 @@ export function HomePrototype({ featuredFirms }: { featuredFirms: PropFirm[] }) 
               <Link href="/methodology">Read the methodology <ArrowRight aria-hidden="true" /></Link>
             </div>
             <div className={styles.methodSteps}>
-              <article><span>01</span><BookOpen aria-hidden="true" /><h3>Rules normalized</h3><p>Different language is translated into comparable evaluation, drawdown and payout fields.</p></article>
+              <article><span>01</span><BookOpen aria-hidden="true" /><h3>Rules made comparable</h3><p>Different language is translated into comparable evaluation, drawdown and payout fields.</p></article>
               <article><span>02</span><ShieldCheck aria-hidden="true" /><h3>Sources attached</h3><p>Material claims have a source, review status and date instead of an unexplained trust score.</p></article>
               <article><span>03</span><Layers3 aria-hidden="true" /><h3>Rewards separated</h3><p>Points, token utility and potential airdrops stay distinct from the core challenge economics.</p></article>
             </div>

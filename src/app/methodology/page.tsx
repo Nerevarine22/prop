@@ -57,7 +57,7 @@ export default function MethodologyPage() {
           <ol className={pageStyles.grid2}>
           {[
             ['Collect', 'Capture the firm rulebook, pricing, payout policy, platform support and reward terms.'],
-            ['Normalize', 'Convert claims into comparable fields without hiding important exceptions.'],
+            ['Structure', 'Map documented claims into comparable fields without hiding important exceptions.'],
             ['Verify', 'Check primary sources and record the method, reviewer, confidence and date.'],
             ['Monitor', 'Keep a change history and lower the status when a source becomes stale or unavailable.'],
           ].map(([title, description], index) => (

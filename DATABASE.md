@@ -15,6 +15,10 @@ Every document follows `FirmDatabaseRecord` from `src/types/database.ts`:
 - `normalizedProfile`: primary-source-only normalized evidence profile. Every
   canonical leaf is a fact with `reported`, `verified`, or `ND` status plus
   its URL and check date;
+- `externalRatings`: a separate third-party reputation layer. Trustpilot
+  snapshots store the displayed score, review count, source URL, capture date,
+  and optional approximate bar distribution without being treated as primary
+  research or as proof of rules, reserves, execution, or payout eligibility;
 - `normalizedProfileV2`: canonical data-driven public profile for new research.
   It stores the project operating model, an ordered `sections[]` collection
   built from safe typed blocks (`text`,

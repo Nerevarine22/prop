@@ -3,7 +3,7 @@ import { ExternalLink, Star } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
 import type { ComparisonRangeProjection, FirmNormalizedProfile, FirmNormalizedProfileV2 } from '@/types/database';
 import { comparisonListText, comparisonRangeText, firmModelTypeLabel, getFirmModularProfile } from '@/lib/data/firmModularProfiles';
-import { factValue, formatCapital, profileLogo, profileWebsite, shortDate } from '@/lib/data/publicFirmProfiles';
+import { factValue, formatCapital, profileLogo, profileTrustpilotRating, profileWebsite, shortDate } from '@/lib/data/publicFirmProfiles';
 import { ProfileCompareButton, ProfileComparisonTray } from './ProfileCompareControl';
 import styles from './ProprEditorialHero.module.css';
 
@@ -43,6 +43,7 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
   const website = profileWebsite(firm);
   const xHandle = factValue(firm.identity.xHandle);
   const xUrl = xHandle ? `https://x.com/${xHandle.replace(/^@/, '')}` : undefined;
+  const trustpilotRating = profileTrustpilotRating(firm);
   const overviewTexts = research.sections
     .find((section) => section.id === 'overview')
     ?.blocks.filter((block) => block.type === 'text') ?? [];
@@ -105,10 +106,12 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
         </div>
 
         <aside className={styles.actionPanel}>
-          <div className={styles.rating} aria-label="0 out of 5 stars from 0 reviews">
-            <div><strong>0.0</strong><span>Trader rating</span></div>
-            <div className={styles.stars} aria-hidden="true">{Array.from({ length: 5 }, (_, index) => <Star key={index} />)}</div>
-            <small>0 verified reviews</small>
+          <div className={styles.rating} aria-label={trustpilotRating ? `${trustpilotRating.score} out of 5 on Trustpilot from ${trustpilotRating.reviewCountLabel} reviews` : 'No external trader rating added'}>
+            <div><strong>{trustpilotRating ? trustpilotRating.score.toFixed(1) : '—'}</strong><span>{trustpilotRating ? 'Trustpilot' : 'External rating'}</span></div>
+            <div className={styles.stars} aria-hidden="true">{Array.from({ length: 5 }, (_, index) => <Star data-filled={Boolean(trustpilotRating && index < Math.floor(trustpilotRating.score))} key={index} />)}</div>
+            {trustpilotRating
+              ? <small><a href={trustpilotRating.url} target="_blank" rel="noreferrer">{trustpilotRating.reviewCountApproximate ? '≈' : ''}{trustpilotRating.reviewCountLabel} reviews · external source</a></small>
+              : <small>No rating added</small>}
           </div>
           <div className={styles.actions}>
             {website && <a href={website} target="_blank" rel="noreferrer">Visit {firm.name} <ExternalLink /></a>}

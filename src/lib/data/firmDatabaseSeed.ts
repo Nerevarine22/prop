@@ -2,6 +2,7 @@ import { MOCK_PROP_FIRMS } from './firms';
 import { PRIMARY_RESEARCH_BY_SLUG } from './firmPrimaryResearch';
 import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
 import { getFirmModularProfile } from './firmModularProfiles';
+import { trustpilotRatingsForSlug } from './trustpilotRatings';
 import { SIZEPROP_NORMALIZED_PROFILE, SIZEPROP_PAGE_PROFILE } from './sizePropProfile';
 import { FUNDEX_NORMALIZED_PROFILE, FUNDEX_PAGE_PROFILE } from './fundexProfile';
 import { ACETRADER_NORMALIZED_PROFILE, ACETRADER_PAGE_PROFILE } from './aceTraderProfile';
@@ -105,7 +106,7 @@ function brandAssets(slug: string, xHandle: string): FirmBrandAssets {
   };
 }
 
-export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
+const FIRM_DATABASE_SEED_BASE: FirmDatabaseRecord[] = [
   {
     schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
     id: proprProfile.id,
@@ -255,3 +256,8 @@ export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
     };
   }),
 ];
+
+export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = FIRM_DATABASE_SEED_BASE.map((record) => ({
+  ...record,
+  ...(trustpilotRatingsForSlug(record.slug) ? { externalRatings: trustpilotRatingsForSlug(record.slug) } : {}),
+}));

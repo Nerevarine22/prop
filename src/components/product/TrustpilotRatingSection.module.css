@@ -1,0 +1,43 @@
+.section { padding: 90px 22px; border-bottom: 1px solid var(--line); scroll-margin-top: 130px; }
+.heading { max-width: 780px; }
+.heading > span { color: var(--accent-value); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.heading h2 { margin: 14px 0 0; font-size: clamp(2rem, 4vw, 3.7rem); font-weight: 580; letter-spacing: -.06em; line-height: 1; }
+.heading p { max-width: 650px; margin: 18px 0 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
+.ratingPanel { display: grid; grid-template-columns: minmax(250px, .72fr) minmax(380px, 1.28fr); margin-top: 48px; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); }
+.scoreCard { padding: 34px; border-right: 1px solid var(--line); background: color-mix(in srgb, var(--accent-value) 4%, var(--paper)); }
+.scoreLine { display: flex; align-items: baseline; gap: 8px; }
+.scoreLine strong { font-size: clamp(4rem, 7vw, 6.5rem); font-weight: 590; letter-spacing: -.085em; line-height: .85; }
+.scoreLine span { color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 12px; }
+.scoreCard > p { margin: 20px 0 0; font-size: 20px; font-weight: 650; letter-spacing: -.035em; }
+.stars { display: flex; margin-top: 14px; gap: 3px; }
+.stars span { display: grid; width: 24px; height: 24px; place-items: center; background: linear-gradient(90deg, var(--accent-value) var(--star-fill), color-mix(in srgb, var(--muted) 18%, transparent) var(--star-fill)); color: #07110c; }
+.stars svg { width: 14px; height: 14px; fill: currentColor; stroke-width: 1.5; }
+.sample { display: flex; margin-top: 34px; padding-top: 20px; align-items: baseline; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); }
+.sample strong { font-size: 13px; }
+.sample span { color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.distribution { padding: 34px; }
+.barRow { display: grid; grid-template-columns: 52px minmax(0, 1fr); margin-bottom: 16px; align-items: center; gap: 18px; }
+.barRow > span { color: var(--muted); font-size: 11px; }
+.track { height: 8px; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, var(--muted) 20%, transparent); }
+.track i { display: block; width: var(--rating-share); height: 100%; border-radius: inherit; background: var(--accent-value); }
+.track i[data-stars='4'] { background: color-mix(in srgb, var(--accent-value) 68%, var(--accent-condition)); }
+.track i[data-stars='3'] { background: var(--accent-condition); }
+.track i[data-stars='2'] { background: color-mix(in srgb, var(--accent-condition) 64%, var(--accent-reward)); }
+.track i[data-stars='1'] { background: var(--accent-reward); }
+.sourceRow { display: flex; margin-top: 28px; padding-top: 22px; align-items: flex-end; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); }
+.sourceRow div { display: grid; gap: 5px; }
+.sourceRow div span { color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.sourceRow div strong { font-size: 12px; }
+.sourceRow a { display: inline-flex; min-height: 38px; padding: 0 12px; align-items: center; gap: 7px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); font-size: 10px; font-weight: 700; text-decoration: none; }
+.sourceRow a:hover { border-color: var(--accent-value); color: var(--accent-value); }
+.sourceRow svg { width: 12px; }
+.methodNote { margin: 14px 0 0; padding: 14px 16px; border-left: 2px solid var(--accent-value); background: color-mix(in srgb, var(--accent-value) 4%, transparent); color: var(--muted); font-size: 10px; line-height: 1.6; }
+
+@media (max-width: 720px) {
+  .section { padding: 68px 4px; }
+  .ratingPanel { grid-template-columns: 1fr; }
+  .scoreCard { border-right: 0; border-bottom: 1px solid var(--line); }
+  .scoreCard, .distribution { padding: 26px; }
+  .sourceRow { align-items: stretch; flex-direction: column; }
+  .sourceRow a { justify-content: center; }
+}

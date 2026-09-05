@@ -140,7 +140,7 @@ export default function DesignDirectionsPage() {
                 <span className={styles.evidenceIcon}><BookOpen size={20} /></span>
                 <small>Research snapshot</small>
                 <strong>10 firms reviewed</strong>
-                <ul><li><Check size={13} /> Rules normalized</li><li><Check size={13} /> Sources linked</li><li><Check size={13} /> Rewards separated</li></ul>
+                <ul><li><Check size={13} /> Rules made comparable</li><li><Check size={13} /> Sources linked</li><li><Check size={13} /> Rewards separated</li></ul>
               </aside>
             </div>
             <div className={styles.contrastResearch}>

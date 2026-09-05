@@ -122,6 +122,28 @@ export interface NormalizedChallengeProgram {
   notes: NormalizedFact<string>;
 }
 
+export interface FirmExternalRatingDistributionBucket {
+  stars: 1 | 2 | 3 | 4 | 5;
+  sharePercent: number;
+  approximate?: boolean;
+}
+
+export interface FirmExternalRating {
+  source: 'trustpilot';
+  sourceName: 'Trustpilot';
+  url: string;
+  score: number;
+  scale: 5;
+  label: 'Excellent' | 'Great' | 'Average' | 'Poor' | 'Bad';
+  reviewCount: number;
+  reviewCountLabel: string;
+  reviewCountApproximate?: boolean;
+  checkedAt: string;
+  captureMethod: 'user-supplied-snapshot';
+  distribution?: FirmExternalRatingDistributionBucket[];
+  distributionBasis?: 'visual-estimate';
+}
+
 export interface FirmNormalizedProfile {
   version: 1;
   methodology: 'primary-sources-only';
@@ -203,6 +225,8 @@ export interface FirmNormalizedProfile {
   sourceDiscrepancies: FirmSourceDiscrepancy[];
   claims: PrimaryResearchObservation[];
   ndFields: string[];
+  /** Third-party display data attached by the public read layer; excluded from primary-source methodology. */
+  externalRatings?: FirmExternalRating[];
   modularProfile?: FirmNormalizedProfileV2;
 }
 
@@ -383,6 +407,7 @@ export interface FirmDatabaseRecord {
   researchStatus: FirmResearchStatus;
   publicationStatus: FirmPublicationStatus;
   primaryResearch?: FirmPrimaryResearch;
+  externalRatings?: FirmExternalRating[];
   normalizedProfile?: FirmNormalizedProfile;
   normalizedProfileV2?: FirmNormalizedProfileV2;
   draftProfileV2?: FirmNormalizedProfileV2;

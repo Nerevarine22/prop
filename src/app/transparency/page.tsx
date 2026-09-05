@@ -38,7 +38,7 @@ export default function TransparencyPage() {
         </section>
 
         <section className={pageStyles.section} aria-labelledby="payout-records-heading">
-          <div className={pageStyles.sectionHeader}><h2 id="payout-records-heading">Sample payout records</h2><p>Future records will link a normalized claim to an inspectable transaction and review status.</p></div>
+          <div className={pageStyles.sectionHeader}><h2 id="payout-records-heading">Sample payout records</h2><p>Future records will connect a documented payout claim to an inspectable transaction and review status.</p></div>
           <div className={`${pageStyles.panel} ${pageStyles.tableWrap}`}>
             <table className={pageStyles.table}>
               <thead><tr><th>Prop firm</th><th>Trader wallet</th><th>Payout amount</th><th>Transaction</th><th>Status</th></tr></thead>

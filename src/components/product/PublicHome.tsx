@@ -43,7 +43,7 @@ export function PublicHome({ firms }: { firms: FirmNormalizedProfile[] }) {
 
       <section className={styles.trustStrip} aria-label="Research model">
         <p>Research model</p>
-        <div><Database /><span>Rules normalized</span></div>
+        <div><Database /><span>Rules made comparable</span></div>
         <div><FileCheck2 /><span>Sources attached</span></div>
         <div><Clock3 /><span>Changes dated</span></div>
         <div><ShieldCheck /><span>Uncertainty visible</span></div>

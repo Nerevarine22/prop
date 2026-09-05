@@ -1,6 +1,7 @@
 import { cache } from 'react';
 import { PUBLIC_FIRM_PROFILES } from '@/lib/data/publicFirmProfiles';
 import { attachFirmModularProfile } from '@/lib/data/firmModularProfiles';
+import { trustpilotRatingsForSlug } from '@/lib/data/trustpilotRatings';
 import { getFirmRegistry } from '@/lib/services/firmRegistryService';
 import type { FirmNormalizedProfile } from '@/types/database';
 
@@ -51,7 +52,10 @@ export const getPublicFirmProfiles = cache(async (): Promise<FirmNormalizedProfi
       .filter((record) => record.publicationStatus === 'published')
       .map((record) => record.normalizedProfile && attachFirmModularProfile(
         withRegistryBrand(
-          record.normalizedProfile,
+          {
+            ...record.normalizedProfile,
+            externalRatings: record.externalRatings ?? trustpilotRatingsForSlug(record.slug),
+          },
           record.brandAssets?.logoPath,
           record.brandAssets?.sourceUrl,
           record.brandAssets?.checkedAt,

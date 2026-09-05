@@ -3,9 +3,10 @@
 import { ArrowUpRight, Check, CircleAlert, Clock3, Coins, ShieldCheck, WalletCards } from 'lucide-react';
 import type { FirmNormalizedProfile, FirmNormalizedProfileV2, NormalizedChallengeProgram, NormalizedFact } from '@/types/database';
 import { getFirmModularProfile } from '@/lib/data/firmModularProfiles';
-import { factValue, formatCapital, shortDate } from '@/lib/data/publicFirmProfiles';
+import { factValue, formatCapital, profileTrustpilotRating, shortDate } from '@/lib/data/publicFirmProfiles';
 import { ProprSectionNav } from './ProprSectionNav';
 import { InlineEditableText } from './InlineEditableText';
+import { TrustpilotRatingSection } from './TrustpilotRatingSection';
 import styles from './ProprEditorialContent.module.css';
 
 function known<T>(fact: NormalizedFact<T>): T | undefined {
@@ -31,6 +32,23 @@ function sourceLabel(url: string): string {
   const host = source.hostname.replace('www.', '');
   const path = source.pathname.replace(/\/$/, '');
   return path ? `${host}${path}` : host;
+}
+
+const PUBLIC_COPY_REPLACEMENTS: Array<[string, string]> = [
+  ['The formal 10% target is canonical; the homepage Kickstarter card still shows 8%.', 'The formal rules set a 10% target; the homepage Kickstarter card still shows 8%.'],
+  ['Current promotional prices differ from older normalized tier values and should be stored as dated snapshots.', 'Current promotional prices differ from older recorded prices and may change over time.'],
+  ['Pricing is canonical over broader “up to 100%” marketing.', 'The pricing page takes precedence over broader “up to 100%” marketing.'],
+  ['The canonical ledger retains the documented two-phase structure.', 'Official documentation shows a two-phase structure.'],
+  ['Formal rulebook values are canonical over the inconsistent homepage walkthrough.', 'Formal rulebook values take precedence over the inconsistent homepage walkthrough.'],
+];
+
+function publicResearchCopy(value: string): string {
+  const rewritten = PUBLIC_COPY_REPLACEMENTS.reduce((copy, [technical, plain]) => copy.replaceAll(technical, plain), value);
+  return rewritten
+    .replace(/\bcanonical ledger\b/gi, 'official record')
+    .replace(/\bcanonical\b/gi, 'authoritative')
+    .replace(/\bnormalization\b/gi, 'documentation')
+    .replace(/\bnormalized\b/gi, 'documented');
 }
 
 function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
@@ -103,8 +121,9 @@ export function ProprEditorialContent({
     ?? [...new Set(firm.claims.map((claim) => claim.sourceUrl))];
   const officialWebsite = factValue(firm.identity.officialWebsite);
   const supportingSourceUrls = sourceUrls.filter((url) => url !== officialWebsite);
+  const trustpilotRating = profileTrustpilotRating(firm);
   const pageProfile = profileOverride ?? researchProfile;
-  const copy = (key: string, fallback: string) => pageProfile.editorialCopy?.[key] ?? fallback;
+  const copy = (key: string, fallback: string) => publicResearchCopy(pageProfile.editorialCopy?.[key] ?? fallback);
   const isSizeProp = firm.slug === 'sizeprop';
   const isFundex = firm.slug === 'fundex';
   const isAceTrader = firm.slug === 'acetrader';
@@ -139,7 +158,7 @@ export function ProprEditorialContent({
       'data-selected': block?.id === selectedBlockId ? 'true' : 'false',
     };
   };
-  const navItems = isSizeProp ? [
+  const baseNavItems = isSizeProp ? [
     { id: 'decision', label: 'Brief' },
     { id: 'programs', label: 'Challenges' },
     { id: 'payouts', label: 'Payouts' },
@@ -186,7 +205,17 @@ export function ProprEditorialContent({
     { id: 'consider', label: 'Risk & proof' },
     ...(hasStandardRewards ? [{ id: 'rewards', label: 'Rewards' }] : []),
     { id: 'sources', label: 'Sources' },
-  ] : undefined;
+  ] : [
+    { id: 'decision', label: 'At a glance' },
+    { id: 'programs', label: 'Programs' },
+    { id: 'payouts', label: 'Payouts' },
+    { id: 'trading', label: 'Trading' },
+    { id: 'consider', label: 'Before you choose' },
+    { id: 'sources', label: 'Sources' },
+  ];
+  const navItems = trustpilotRating
+    ? [...baseNavItems.slice(0, -1), { id: 'reviews', label: 'Reviews' }, baseNavItems[baseNavItems.length - 1]]
+    : baseNavItems;
 
   return (
     <div className={styles.editorial} data-editing={editMode ? 'true' : 'false'}>
@@ -400,6 +429,8 @@ export function ProprEditorialContent({
           <article><span>C</span><div><h3>Recurring complaints</h3><p>Technical reliability and payout-processing delays appear more often than systematic denial claims.</p></div></article>
         </div>
       </section>}
+
+      {trustpilotRating && <TrustpilotRatingSection rating={trustpilotRating} firmName={firm.name} />}
 
       <section className={styles.sources} id="sources" {...cmsSection('sources')}>
         <div {...cmsBlock('sources', 'notebooklm-10')}>

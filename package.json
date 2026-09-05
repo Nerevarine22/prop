@@ -20,6 +20,8 @@
     "db:sync-acetrader:write": "tsx scripts/syncAceTraderProfile.ts --write",
     "db:sync-upgraded": "tsx scripts/syncUpgradedFirmProfiles.ts",
     "db:sync-upgraded:write": "tsx scripts/syncUpgradedFirmProfiles.ts --write",
+    "db:sync-trustpilot": "tsx scripts/syncTrustpilotRatings.ts",
+    "db:sync-trustpilot:write": "tsx scripts/syncTrustpilotRatings.ts --write",
     "db:import-reviewed": "tsx scripts/importReviewedFirm.ts",
     "db:import-reviewed:all": "tsx scripts/importReviewedFirm.ts --all",
     "db:import-reviewed:all:write": "tsx scripts/importReviewedFirm.ts --all --write"

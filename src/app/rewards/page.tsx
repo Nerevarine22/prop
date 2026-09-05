@@ -26,7 +26,7 @@ export default async function RewardsPage() {
           </div>
           <div>
             <p className={pageStyles.lead}>A dedicated research layer for rewards that can change the effective value of a prop challenge without being confused with verified cash value.</p>
-            <div className={pageStyles.notice}><Database /><span>Reward entries come from normalized official-source research; undocumented values remain ND.</span></div>
+            <div className={pageStyles.notice}><Database /><span>Reward entries come from official company sources; anything not documented remains clearly unavailable.</span></div>
           </div>
         </header>
 

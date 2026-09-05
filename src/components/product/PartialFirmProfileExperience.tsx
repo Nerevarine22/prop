@@ -76,7 +76,7 @@ export function PartialFirmProfileExperience({ record }: { record: PartialRecord
           <section className={styles.evidenceCard}>
             <div><FileCheck2 /><span>Research coverage</span></div>
             <strong>{documentedCount}/{observations.length} documented</strong>
-            <p>This is a source-backed research record, not yet a normalized comparison profile. Missing values stay visibly unavailable.</p>
+            <p>This is a source-backed research record that is not yet ready for full comparison. Missing values stay visibly unavailable.</p>
             <dl>
               <div><dt>Checked</dt><dd>{shortDate(record.primaryResearch.checkedAt)}</dd></div>
               <div><dt>Sources</dt><dd>{sourceCount}</dd></div>
