@@ -18,6 +18,8 @@
     "db:sync-fundex:write": "tsx scripts/syncFundexProfile.ts --write",
     "db:sync-acetrader": "tsx scripts/syncAceTraderProfile.ts",
     "db:sync-acetrader:write": "tsx scripts/syncAceTraderProfile.ts --write",
+    "db:sync-upgraded": "tsx scripts/syncUpgradedFirmProfiles.ts",
+    "db:sync-upgraded:write": "tsx scripts/syncUpgradedFirmProfiles.ts --write",
     "db:import-reviewed": "tsx scripts/importReviewedFirm.ts",
     "db:import-reviewed:all": "tsx scripts/importReviewedFirm.ts --all",
     "db:import-reviewed:all:write": "tsx scripts/importReviewedFirm.ts --all --write"

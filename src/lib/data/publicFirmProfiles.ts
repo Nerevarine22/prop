@@ -3,6 +3,7 @@ import { attachFirmModularProfile } from './firmModularProfiles';
 import { SIZEPROP_NORMALIZED_PROFILE } from './sizePropProfile';
 import { FUNDEX_NORMALIZED_PROFILE } from './fundexProfile';
 import { ACETRADER_NORMALIZED_PROFILE } from './aceTraderProfile';
+import { BREAKOUT_NORMALIZED_PROFILE, CHAINFUNDED_NORMALIZED_PROFILE } from './upgradedFirmProfiles';
 import type {
   FirmNormalizedProfile,
   NormalizedChallengeProgram,
@@ -10,7 +11,16 @@ import type {
   PrimaryResearchValueStatus,
 } from '@/types/database';
 
-export const PUBLIC_FIRM_PROFILES = [...Object.values(FIRM_NORMALIZED_PROFILES_BY_SLUG), SIZEPROP_NORMALIZED_PROFILE, FUNDEX_NORMALIZED_PROFILE, ACETRADER_NORMALIZED_PROFILE].map((profile) => (
+const UPGRADED_SLUGS = new Set(['breakout', 'chainfunded']);
+
+export const PUBLIC_FIRM_PROFILES = [
+  ...Object.values(FIRM_NORMALIZED_PROFILES_BY_SLUG).filter((profile) => !UPGRADED_SLUGS.has(profile.slug)),
+  SIZEPROP_NORMALIZED_PROFILE,
+  FUNDEX_NORMALIZED_PROFILE,
+  ACETRADER_NORMALIZED_PROFILE,
+  BREAKOUT_NORMALIZED_PROFILE,
+  CHAINFUNDED_NORMALIZED_PROFILE,
+].map((profile) => (
   attachFirmModularProfile(profile)
 )).sort((a, b) => {
   if (a.slug === 'propr') return -1;

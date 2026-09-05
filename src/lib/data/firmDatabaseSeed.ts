@@ -5,6 +5,12 @@ import { getFirmModularProfile } from './firmModularProfiles';
 import { SIZEPROP_NORMALIZED_PROFILE, SIZEPROP_PAGE_PROFILE } from './sizePropProfile';
 import { FUNDEX_NORMALIZED_PROFILE, FUNDEX_PAGE_PROFILE } from './fundexProfile';
 import { ACETRADER_NORMALIZED_PROFILE, ACETRADER_PAGE_PROFILE } from './aceTraderProfile';
+import {
+  BREAKOUT_NORMALIZED_PROFILE,
+  BREAKOUT_PAGE_PROFILE,
+  CHAINFUNDED_NORMALIZED_PROFILE,
+  CHAINFUNDED_PAGE_PROFILE,
+} from './upgradedFirmProfiles';
 import { FIRM_DATABASE_SCHEMA_VERSION, type FirmBrandAssets, type FirmDatabaseRecord, type FirmLinks } from '@/types/database';
 
 const SEED_CREATED_AT = '2026-08-15T00:00:00.000Z';
@@ -146,7 +152,34 @@ export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
     createdAt: ACETRADER_NORMALIZED_PROFILE.checkedAt,
     updatedAt: ACETRADER_NORMALIZED_PROFILE.checkedAt,
   },
-  ...STUB_FIRMS.map((firm): FirmDatabaseRecord => {
+  ...[
+    { profile: BREAKOUT_NORMALIZED_PROFILE, page: BREAKOUT_PAGE_PROFILE, website: 'https://www.breakoutprop.com/', xHandle: 'breakoutprop' },
+    { profile: CHAINFUNDED_NORMALIZED_PROFILE, page: CHAINFUNDED_PAGE_PROFILE, website: 'https://www.chainfunded.io/', xHandle: 'chainfunded' },
+  ].map(({ profile, page, website, xHandle }): FirmDatabaseRecord => ({
+    schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
+    id: profile.id,
+    slug: profile.slug,
+    name: profile.name,
+    links: links(website, xHandle),
+    brandAssets: {
+      logoPath: `/firm-logos/${profile.slug}/logo.png`,
+      sourceUrl: website,
+      status: 'reported',
+      checkedAt: profile.checkedAt,
+    },
+    researchStatus: 'researched',
+    publicationStatus: 'published',
+    primaryResearch: PRIMARY_RESEARCH_BY_SLUG[profile.slug],
+    normalizedProfile: profile,
+    normalizedProfileV2: page,
+    pageProfileV2: page,
+    draftPageProfileV2: page,
+    draftUpdatedAt: profile.checkedAt,
+    publishedAt: profile.checkedAt,
+    createdAt: profile.checkedAt,
+    updatedAt: profile.checkedAt,
+  })),
+  ...STUB_FIRMS.filter((firm) => firm.slug !== 'breakout' && firm.slug !== 'chainfunded').map((firm): FirmDatabaseRecord => {
     const normalizedProfile = FIRM_NORMALIZED_PROFILES_BY_SLUG[firm.slug];
     const normalizedProfileV2 = getFirmModularProfile(normalizedProfile);
     return {

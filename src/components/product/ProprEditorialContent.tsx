@@ -108,6 +108,8 @@ export function ProprEditorialContent({
   const isSizeProp = firm.slug === 'sizeprop';
   const isFundex = firm.slug === 'fundex';
   const isAceTrader = firm.slug === 'acetrader';
+  const isBreakout = firm.slug === 'breakout';
+  const isChainFunded = firm.slug === 'chainfunded';
   const changeCopy = (key: string, value: string) => {
     if (!profileOverride || !onProfileChange) return;
     onProfileChange({ ...profileOverride, editorialCopy: { ...profileOverride.editorialCopy, [key]: value } });
@@ -154,11 +156,26 @@ export function ProprEditorialContent({
     { id: 'consider', label: 'Risk & proof' },
     { id: 'rewards', label: 'Rewards' },
     { id: 'sources', label: 'Sources' },
+  ] : isBreakout ? [
+    { id: 'decision', label: 'Brief' },
+    { id: 'programs', label: 'Challenges' },
+    { id: 'payouts', label: 'Payouts' },
+    { id: 'trading', label: 'Trading' },
+    { id: 'consider', label: 'Risk & proof' },
+    { id: 'sources', label: 'Sources' },
+  ] : isChainFunded ? [
+    { id: 'decision', label: 'Brief' },
+    { id: 'programs', label: 'Challenge' },
+    { id: 'payouts', label: 'Payouts' },
+    { id: 'trading', label: 'Trading' },
+    { id: 'consider', label: 'Risk & proof' },
+    { id: 'rewards', label: 'Rewards' },
+    { id: 'sources', label: 'Sources' },
   ] : undefined;
 
   return (
     <div className={styles.editorial} data-editing={editMode ? 'true' : 'false'}>
-      <ProprSectionNav items={navItems} firmName={firm.name} promoCode={copy('promo.code', isSizeProp ? '' : 'PROP20')} />
+      <ProprSectionNav items={navItems} firmName={firm.name} promoCode={copy('promo.code', firm.slug === 'propr' ? 'PROP20' : '')} />
 
       <section className={styles.decision} id="decision" {...cmsSection('overview')}>
         <div className={styles.decisionCopy} {...cmsBlock('overview', 'notebooklm-1')}>
@@ -311,6 +328,36 @@ export function ProprEditorialContent({
           <div><dt>Points leaderboard</dt><dd>Live</dd></div>
           <div><dt>Future utility</dt><dd>Teased</dd></div>
           <div><dt>Referral rebates</dt><dd>Separate program</dd></div>
+        </dl>
+      </section>}
+
+      {isChainFunded && <section className={`${styles.section} ${styles.rewardSection}`} id="rewards" {...cmsSection('rewards')}>
+        <div className={styles.sectionHeading} {...cmsBlock('rewards', 'reward-facts')}>
+          <span className={styles.eyebrow}>Protocol rewards</span>
+          <InlineEditableText as="h2" value={copy('rewards.title', 'CFG governance and CFND liquidity rewards form a separate protocol layer.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.title', value)} />
+          <InlineEditableText as="p" value={copy('rewards.description', factValue(firm.tokenRewards.description) ?? 'Reward details are not documented.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.description', value)} />
+        </div>
+        <div className={styles.rewardSplit} {...cmsBlock('rewards', 'reward-facts')}>
+          <article className={styles.rewardDraw}>
+            <span>Governance layer</span>
+            <strong>100M CFG</strong>
+            <h3>Fixed-supply governance token</h3>
+            <p>The captured protocol material states that CFG has a fixed 100,000,000 supply with no future minting.</p>
+            <small>Current utility should be rechecked after maintenance</small>
+          </article>
+          <article className={styles.rewardPoints}>
+            <span>Liquidity and trader incentives</span>
+            <strong>CFND</strong>
+            <h3>Seasonal reward budgets</h3>
+            <p>Registered challenge accounts and CFND liquidity providers are the documented participant groups.</p>
+            <small>Campaign terms are time-sensitive</small>
+          </article>
+        </div>
+        <dl className={styles.rewardStatus}>
+          <div><dt>CFG supply</dt><dd>100,000,000 fixed</dd></div>
+          <div><dt>CFND</dt><dd>Staked liquidity representation</dd></div>
+          <div><dt>Trader eligibility</dt><dd>Challenge registration required</dd></div>
+          <div><dt>Current status</dt><dd>Recheck after maintenance</dd></div>
         </dl>
       </section>}
 
