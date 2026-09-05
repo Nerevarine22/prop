@@ -8,6 +8,14 @@ import {
   CHAINFUNDED_NORMALIZED_PROFILE,
   CHAINFUNDED_PAGE_PROFILE,
 } from '../src/lib/data/upgradedFirmProfiles';
+import {
+  FOXIFY_NORMALIZED_PROFILE,
+  FOXIFY_PAGE_PROFILE,
+  HYPERNOVA_NORMALIZED_PROFILE,
+  HYPERNOVA_PAGE_PROFILE,
+  O2_NORMALIZED_PROFILE,
+  O2_PAGE_PROFILE,
+} from '../src/lib/data/standardizedFirmProfiles';
 import { PRIMARY_RESEARCH_BY_SLUG } from '../src/lib/data/firmPrimaryResearch';
 import type { FirmDatabaseRecord, FirmNormalizedProfile, FirmNormalizedProfileV2 } from '../src/types/database';
 
@@ -16,6 +24,9 @@ type ServiceAccountFile = { project_id: string; client_email: string; private_ke
 const profiles: Array<{ normalized: FirmNormalizedProfile; page: FirmNormalizedProfileV2; website: string; xHandle: string }> = [
   { normalized: BREAKOUT_NORMALIZED_PROFILE, page: BREAKOUT_PAGE_PROFILE, website: 'https://www.breakoutprop.com/', xHandle: 'breakoutprop' },
   { normalized: CHAINFUNDED_NORMALIZED_PROFILE, page: CHAINFUNDED_PAGE_PROFILE, website: 'https://www.chainfunded.io/', xHandle: 'chainfunded' },
+  { normalized: FOXIFY_NORMALIZED_PROFILE, page: FOXIFY_PAGE_PROFILE, website: 'https://www.foxify.trade/', xHandle: 'foxifytrade' },
+  { normalized: HYPERNOVA_NORMALIZED_PROFILE, page: HYPERNOVA_PAGE_PROFILE, website: 'https://hypernova.xyz/', xHandle: 'HypernovaX' },
+  { normalized: O2_NORMALIZED_PROFILE, page: O2_PAGE_PROFILE, website: 'https://www.o2.app/', xHandle: 'o2dotapp' },
 ];
 
 async function main() {

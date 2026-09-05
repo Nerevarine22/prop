@@ -17,7 +17,7 @@ export function FirmProfileBody({ firm, profileOverride, editMode, selectedBlock
   return (
     <>
       <FirmEditorialHero firm={firm} profileOverride={profileOverride} />
-      {firm.slug === 'propr' || firm.slug === 'sizeprop' || firm.slug === 'fundex' || firm.slug === 'acetrader' || firm.slug === 'breakout' || firm.slug === 'chainfunded'
+      {['propr', 'sizeprop', 'fundex', 'acetrader', 'breakout', 'chainfunded', 'foxify', 'hypernova', 'o2'].includes(firm.slug)
         ? <ProprEditorialContent firm={firm} profileOverride={profileOverride} editMode={editMode} selectedBlockId={selectedBlockId} onProfileChange={onProfileChange} />
         : <FirmEditorialContent firm={firm} profileOverride={profileOverride} editMode={editMode} selectedBlockId={selectedBlockId} onProfileChange={onProfileChange} />}
     </>

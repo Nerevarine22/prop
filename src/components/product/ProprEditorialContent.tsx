@@ -45,7 +45,7 @@ function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
     <article className={styles.programCard}>
       <div className={styles.programTop}>
         <div>
-          <span>{kind === 'instant-funding' ? 'Instant Fund' : stages.length > 1 ? `${stages.length}-phase evaluation` : '1-phase evaluation'}</span>
+          <span>{kind === 'instant-funding' ? 'Instant Fund' : kind === 'collateralized' ? 'Collateralized funding' : kind === 'progression' ? 'Progression' : stages.length > 1 ? `${stages.length}-phase evaluation` : '1-phase evaluation'}</span>
           <h3>{program.name}</h3>
         </div>
         <div className={styles.programTarget}>
@@ -110,6 +110,10 @@ export function ProprEditorialContent({
   const isAceTrader = firm.slug === 'acetrader';
   const isBreakout = firm.slug === 'breakout';
   const isChainFunded = firm.slug === 'chainfunded';
+  const isFoxify = firm.slug === 'foxify';
+  const isHypernova = firm.slug === 'hypernova';
+  const isO2 = firm.slug === 'o2';
+  const hasStandardRewards = isFoxify || isO2;
   const changeCopy = (key: string, value: string) => {
     if (!profileOverride || !onProfileChange) return;
     onProfileChange({ ...profileOverride, editorialCopy: { ...profileOverride.editorialCopy, [key]: value } });
@@ -170,6 +174,14 @@ export function ProprEditorialContent({
     { id: 'trading', label: 'Trading' },
     { id: 'consider', label: 'Risk & proof' },
     { id: 'rewards', label: 'Rewards' },
+    { id: 'sources', label: 'Sources' },
+  ] : isFoxify || isHypernova || isO2 ? [
+    { id: 'decision', label: 'Brief' },
+    { id: 'programs', label: isO2 ? 'Accounts' : 'Programs' },
+    { id: 'payouts', label: 'Payouts' },
+    { id: 'trading', label: 'Trading' },
+    { id: 'consider', label: 'Risk & proof' },
+    ...(hasStandardRewards ? [{ id: 'rewards', label: 'Rewards' }] : []),
     { id: 'sources', label: 'Sources' },
   ] : undefined;
 
@@ -359,6 +371,27 @@ export function ProprEditorialContent({
           <div><dt>Trader eligibility</dt><dd>Challenge registration required</dd></div>
           <div><dt>Current status</dt><dd>Recheck after maintenance</dd></div>
         </dl>
+      </section>}
+
+      {hasStandardRewards && <section className={`${styles.section} ${styles.rewardSection}`} id="rewards" {...cmsSection('rewards')}>
+        <div className={styles.sectionHeading} {...cmsBlock('rewards', 'reward-facts')}>
+          <span className={styles.eyebrow}>Rewards layer</span>
+          <InlineEditableText as="h2" value={copy('rewards.title', 'Additional rewards sit outside the core account economics.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.title', value)} />
+          <InlineEditableText as="p" value={copy('rewards.description', factValue(firm.tokenRewards.description) ?? 'Reward details are not documented.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.description', value)} />
+        </div>
+        <div className={styles.considerList} {...cmsBlock('rewards', 'reward-facts')}>
+          {(isFoxify ? [
+            ['FOX', 'Fee buybacks and staking rewards are documented; dynamic APY is intentionally not treated as a stable fact.'],
+            ['NFT', 'Silver and Gold NFTs add 10% and 25% funding when staked before activation.'],
+            ['30%', 'Thirty percent of net trading fees is described as buying FOX for stakers.'],
+            ['Live', 'Token contract and current platform integrations are linked in official documentation.'],
+          ] : [
+            ['Score', 'Legend Score is a lifetime reputation metric on the O2 platform.'],
+            ['USDC', 'Trading competitions distribute USDC rather than an O2 token.'],
+            ['Referral', 'Turbo referral tiers share a portion of referred opening premiums.'],
+            ['ND', 'No proprietary token or confirmed airdrop is documented.'],
+          ]).map(([label, description], index) => <article key={label}><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{label}</h3><p>{description}</p></div></article>)}
+        </div>
       </section>}
 
       {isSizeProp && <section className={styles.section} id="trust" {...cmsSection('trust')}>
