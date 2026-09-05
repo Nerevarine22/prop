@@ -39,6 +39,12 @@ import {
   HYROTRADER_PAGE_PROFILE,
   CARROT_FUNDING_NORMALIZED_PROFILE,
   CARROT_FUNDING_PAGE_PROFILE,
+  DIZSO_NORMALIZED_PROFILE,
+  DIZSO_PAGE_PROFILE,
+  DOJI_FUNDED_NORMALIZED_PROFILE,
+  DOJI_FUNDED_PAGE_PROFILE,
+  HYPER_STACK_NORMALIZED_PROFILE,
+  HYPER_STACK_PAGE_PROFILE,
 } from '../src/lib/data/standardizedFirmProfiles';
 import { PRIMARY_RESEARCH_BY_SLUG } from '../src/lib/data/firmPrimaryResearch';
 import type { FirmDatabaseRecord, FirmNormalizedProfile, FirmNormalizedProfileV2 } from '../src/types/database';
@@ -63,6 +69,9 @@ const profiles: Array<{ normalized: FirmNormalizedProfile; page: FirmNormalizedP
   { normalized: HYPERPNL_NORMALIZED_PROFILE, page: HYPERPNL_PAGE_PROFILE, website: 'https://hyperpnl.com/', xHandle: 'HyperPNL' },
   { normalized: HYROTRADER_NORMALIZED_PROFILE, page: HYROTRADER_PAGE_PROFILE, website: 'https://www.hyrotrader.com/', xHandle: 'hyrotrader_com' },
   { normalized: CARROT_FUNDING_NORMALIZED_PROFILE, page: CARROT_FUNDING_PAGE_PROFILE, website: 'https://carrotfunding.io/', xHandle: 'carrotfunding' },
+  { normalized: DIZSO_NORMALIZED_PROFILE, page: DIZSO_PAGE_PROFILE, website: 'https://dizso.com/', xHandle: 'dizsofunded' },
+  { normalized: DOJI_FUNDED_NORMALIZED_PROFILE, page: DOJI_FUNDED_PAGE_PROFILE, website: 'https://app.dojifunded.com/', xHandle: 'Dojifunded' },
+  { normalized: HYPER_STACK_NORMALIZED_PROFILE, page: HYPER_STACK_PAGE_PROFILE, website: 'https://www.hyperstack.trade/', xHandle: 'hyper_stack' },
 ];
 
 async function main() {

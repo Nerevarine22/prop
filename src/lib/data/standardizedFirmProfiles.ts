@@ -4,7 +4,7 @@ import type { FirmNormalizedProfile, FirmNormalizedProfileV2, FirmResearchSource
 const CHECKED_AT = '2026-09-05T00:00:00.000Z';
 
 type PageConfig = {
-  slug: 'foxify' | 'hypernova' | 'o2' | 'solana-funded' | 'vanta-trading' | 'klein-funding' | 'upscale-trade' | 'size' | 'polyquid' | 'funded-hive' | 'cf-trader' | 'alphagrid' | 'hyperpnl' | 'hyrotrader' | 'carrot-funding';
+  slug: 'foxify' | 'hypernova' | 'o2' | 'solana-funded' | 'vanta-trading' | 'klein-funding' | 'upscale-trade' | 'size' | 'polyquid' | 'funded-hive' | 'cf-trader' | 'alphagrid' | 'hyperpnl' | 'hyrotrader' | 'carrot-funding' | 'dizso' | 'doji-funded' | 'hyper-stack';
   name: string;
   offers: string[];
   sources: Array<{ category: FirmResearchSourceInspection['category']; url: string; label: string }>;
@@ -605,6 +605,114 @@ export const CARROT_FUNDING_PAGE_PROFILE = page({
   reward: { label: 'Carrot Points, CRT and Weekly Harvest', metrics: [['CRT community share', '50% stated'], ['Purchase points', '10 / USDC'], ['Payout-profit points', '5 / USDC'], ['Weekly Harvest', '10% revenue to top 10']] },
 });
 
+export const DIZSO_PAGE_PROFILE = page({
+  slug: 'dizso', name: 'Dizso Funded', modelTypes: ['evaluation'], offers: [],
+  sources: [
+    { category: 'website', url: 'https://dizso.com/en', label: 'Official early-access website' },
+    { category: 'terms', url: 'https://dizso.com/en', label: 'Homepage legal disclosure' },
+    { category: 'x-account', url: 'https://x.com/dizsofunded', label: 'Official X profile' },
+  ],
+  copy: {
+    'promo.code': '', 'decision.title': 'A pre-launch on-chain proposition, not yet a comparable funded programme.',
+    'decision.description': 'Dizso markets a future multi-market funded-trading experience built around Hyperliquid and a single dashboard. The public site still offers early access only: account sizes, evaluation rules, pricing and payout mechanics are not published.',
+    'decision.highlight': 'The only quantified commercial claim is “up to 80%”; there is not enough product data for a fair programme comparison.',
+    'process.title': 'Join early access, then wait for the actual rulebook', 'process.description': 'The current public journey stops before account selection or checkout.',
+    'process.1.title': 'Submit an email', 'process.1.description': 'The official site exposes an early-access form rather than a live purchase flow.',
+    'process.2.title': 'Wait for launch details', 'process.2.description': 'The page still says the product is in development after its stated August 2026 launch window.',
+    'process.3.title': 'Verify the evaluation', 'process.3.description': 'Targets, drawdown, time limits and trading restrictions remain undocumented.',
+    'process.4.title': 'Verify the payout contract', 'process.4.description': '80% is marketing only; cadence, minimum, rail and eligibility are unknown.',
+    'programs.title': 'No public programme or price matrix yet.', 'programs.description': 'Dizso names no live challenge, instant-funding product, account size or fee on its official site.',
+    'programs.note': 'Keep the profile in pre-launch status until a rulebook and checkout can be inspected.',
+    'payouts.title': 'is the maximum share marketed today.', 'payouts.description': 'No public policy establishes when that share applies or whether rewards are paid on demand, periodically or at the operator’s discretion.',
+    'payouts.minimum': 'ND', 'payouts.processing': 'ND', 'payouts.rail': 'ND',
+    'payouts.rule.1': 'No payout policy or FAQ is published.', 'payouts.rule.2': 'No minimum, KYC stage or closed-position rule is stated.', 'payouts.rule.3': 'The legal disclosure defines payments as rewards for simulated performance.',
+    'trading.title': 'Broad market coverage is promised; execution detail is not.', 'trading.description': 'The landing page names crypto, forex, commodities, equities and prediction markets and displays Hyperliquid branding, but publishes no venue map, leverage bands, fees or permissions.',
+    'trading.markets': 'Crypto · forex · commodities · equities · prediction markets', 'trading.leverage': 'Not published',
+    'consider.eyebrow': 'Launch and evidence', 'consider.title': 'Almost every decision-critical field remains unresolved.',
+    'consider.1.title': 'Pre-launch product', 'consider.1.description': 'The site accepts early-access emails but exposes no purchase or trading workflow.',
+    'consider.2.title': 'Placeholder legal identity', 'consider.2.description': 'Dizso Technology SL is named, while the public CIF and registered-office fields remain placeholders.',
+    'consider.3.title': 'Every account is simulated', 'consider.3.description': 'The disclosure says even “funded” accounts do not place the user’s orders on live markets.',
+    'consider.4.title': 'No rules to compare', 'consider.4.description': 'Pricing, drawdown, targets, payout eligibility and restricted jurisdictions are absent.',
+    'sources.unknowns': 'launch state, complete legal registration, programs, prices, targets, drawdown, payout policy, KYC, execution routing, leverage, fees, restricted countries and rewards.',
+    'model.classification': 'Pre-launch simulated evaluation concept', 'model.lifecycle': 'Early access → unpublished evaluation → simulated funded account → discretionary reward', 'model.environment': 'Hyperliquid-branded concept · execution unpublished', 'model.compensation': 'Up to 80% marketing only',
+  },
+  comparison: { modelTypes: ['evaluation'], capital: { status: 'ND', unit: 'USD' }, entryCost: { status: 'ND', unit: 'USD' }, profitSplit: { status: 'known', min: 80, max: 80, unit: 'percent', notes: 'Maximum marketing claim; applicable conditions are not published.' }, maxDrawdown: { status: 'ND', unit: 'percent' }, payoutSchedules: { status: 'ND', values: [] }, executionModels: { status: 'known', values: ['simulated'] } },
+});
+
+export const DOJI_FUNDED_PAGE_PROFILE = page({
+  slug: 'doji-funded', name: 'Doji Funded', modelTypes: ['evaluation', 'instant-funding'], offers: ['Instant Funding', '1-Step', '2-Step Classic', '2-Step Elite'],
+  sources: [
+    { category: 'website', url: 'https://app.dojifunded.com', label: 'Official application' },
+    { category: 'rulebook', url: 'https://docs.dojifunded.com/resources/rules-risk-parameters', label: 'Rules and risk parameters' },
+    { category: 'pricing-checkout', url: 'https://docs.dojifunded.com/account-pricing', label: 'Account pricing' },
+    { category: 'faq', url: 'https://docs.dojifunded.com/platform/payouts', label: 'Payout documentation' },
+    { category: 'terms', url: 'https://docs.dojifunded.com/legal/terms-of-use', label: 'Terms of Use' },
+  ],
+  copy: {
+    'promo.code': '', 'decision.title': 'Four account shapes with on-chain settlement and unusually explicit risk mechanics.',
+    'decision.description': 'Doji Funded combines a forthcoming instant account, one-step evaluation and two two-step variants from $1K to $100K. Static maximum loss is fixed from starting balance, while daily loss follows the day’s balance-or-equity high-water mark.',
+    'decision.highlight': 'Rules are detailed, but the same live rulebook reverses the two-step target order between its main table and “At a glance” summary.',
+    'process.title': 'Choose the risk envelope, trade the target, pass compliance, withdraw on-chain', 'process.description': 'No time limit or minimum days apply, but every trade must remain open for at least 60 seconds.',
+    'process.1.title': 'Choose an account type', 'process.1.description': '1-Step, Classic and Elite are live; Instant Funding is still marked coming soon.',
+    'process.2.title': 'Respect both HWM controls', 'process.2.description': 'Static maximum loss never moves; the daily floor resets at 00:00 UTC and can rise intraday.',
+    'process.3.title': 'Reach the balance target', 'process.3.description': 'Open profit does not count toward passing; two-step target order needs checkout confirmation.',
+    'process.4.title': 'Request USDC', 'process.4.description': 'Funded accounts request on-chain settlement after reaching the product-specific profit threshold.',
+    'programs.title': 'One-step simplicity, two two-step risk envelopes and instant funding later.', 'programs.description': 'The live evaluation range spans $1K–$100K; Elite trades a wider 8% maximum loss for a higher fee.',
+    'programs.note': 'The rulebook body says 10% → 5% for two-step, while its “At a glance” table says 5% → 10%. Confirm the binding order before purchase.',
+    'payouts.title': 'is the base documented trader share.', 'payouts.description': 'A 20% add-on raises the split to 90%. Live evaluation products require at least 1% account profit before a request; Instant Funding would require 5%.',
+    'payouts.minimum': '1% account profit', 'payouts.processing': 'Compliance review · time ND', 'payouts.rail': 'USDC · on-chain wallet',
+    'payouts.rule.1': 'KYC is mandatory before funded-account payouts.', 'payouts.rule.2': 'The selected wallet and account configuration determine settlement.', 'payouts.rule.3': 'Absolute minimum varies with account size rather than one fixed dollar amount.',
+    'trading.title': 'Multi-asset access with aggregated on-chain routing.', 'trading.description': 'Doji records activity in its internal ledger and risk engine, then aggregates net exposure to venues such as GMX and Ostium rather than mirroring every user order one-for-one.',
+    'trading.markets': 'Crypto · stocks · ETFs · forex · indices · commodities', 'trading.leverage': 'Crypto 5x · other markets 10x–15x',
+    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'Strong documentation still contains one material target conflict.',
+    'consider.1.title': 'Two-step order conflicts', 'consider.1.description': 'The rulebook body and its own summary table reverse 10%/5% versus 5%/10%.',
+    'consider.2.title': 'Daily HWM can ratchet', 'consider.2.description': 'The daily loss amount stays fixed, but its floor rises with balance or equity highs during the day.',
+    'consider.3.title': '60-second rule is strict', 'consider.3.description': 'Even TP/SL closures below 60 seconds count toward warnings; a third occurrence breaches the account.',
+    'consider.4.title': 'Instant is not live', 'consider.4.description': 'Its prices and rules are documented, but the product remains marked coming soon.',
+    'sources.unknowns': 'binding two-step target order, payout processing time, full jurisdiction list in comparison-ready form, independent payout ledger and Instant Funding launch date.',
+    'model.classification': 'On-chain evaluation + forthcoming instant funding', 'model.lifecycle': 'USDC fee → evaluation → funded account → KYC → on-chain payout', 'model.environment': 'Doji terminal · GMX and Ostium exposure routing', 'model.compensation': '80% · 90% with add-on',
+  },
+  comparison: { modelTypes: ['evaluation', 'instant-funding'], capital: { status: 'varies', min: 1_000, max: 100_000, unit: 'USD' }, entryCost: { status: 'varies', min: 17, max: 1_540, unit: 'USD', notes: 'Instant Funding is marked coming soon.' }, profitSplit: { status: 'varies', min: 80, max: 90, unit: 'percent' }, maxDrawdown: { status: 'varies', min: 5, max: 8, unit: 'percent' }, payoutSchedules: { status: 'known', values: ['conditional'] }, executionModels: { status: 'known', values: ['internal ledger', 'aggregated on-chain routing'] } },
+});
+
+export const HYPER_STACK_PAGE_PROFILE = page({
+  slug: 'hyper-stack', name: 'Hyper Stack', modelTypes: ['evaluation', 'progression'], offers: ['Vanta-powered 1-Step'],
+  sources: [
+    { category: 'website', url: 'https://www.hyperstack.trade/', label: 'Official website' },
+    { category: 'pricing-checkout', url: 'https://www.hyperstack.trade/pricing', label: 'Pricing and offer disclosures' },
+    { category: 'rulebook', url: 'https://www.hyperstack.trade/rules', label: 'Challenge rules' },
+    { category: 'faq', url: 'https://www.hyperstack.trade/how-it-works', label: 'How it works and payouts' },
+    { category: 'terms', url: 'https://www.hyperstack.trade/terms', label: 'Terms of Service' },
+  ],
+  copy: {
+    'promo.code': '', 'decision.title': 'A Hyperliquid-native simulated challenge operated by Vanta.',
+    'decision.description': 'Hyper Stack sells a one-step evaluation from a free $1K trial to $100K, with a 10% target and two 5% challenge loss controls. Trading stays on Hyperliquid through wallet-linked public data; qualifying invited participants can receive monthly USDC rewards and scale to $400K.',
+    'decision.highlight': 'Hyper Stack is the marketing layer; Vanta operates the challenge, collects fees and decides eligibility, invitation and compensation.',
+    'process.title': 'Connect Hyperliquid, pass once, qualify for monthly rewards', 'process.description': 'The workflow preserves the trader’s own Hyperliquid interface while the programme mirrors performance into a simulated account.',
+    'process.1.title': 'Choose $1K–$100K', 'process.1.description': 'The $1K tier is free; paid entry starts at 74 USDC and reaches 999 USDC.',
+    'process.2.title': 'Trade on Hyperliquid', 'process.2.description': 'Public fills are read without custody or API keys; the extension previews and enforces programme limits.',
+    'process.3.title': 'Hit 10% under drawdown', 'process.3.description': 'Challenge limits are 5% intraday daily loss and 5% end-of-day trailing loss.',
+    'process.4.title': 'Qualify for the Scaled programme', 'process.4.description': 'Passing is necessary but does not legally guarantee invitation or compensation.',
+    'programs.title': 'One challenge shape across six entry sizes.', 'programs.description': 'All tiers use a 10% target, 5% daily limit, 5% EOD trailing loss and no fixed time limit.',
+    'programs.note': 'Thirty inactive days can still end access. Paid tiers may scale from the selected size up to $400K.',
+    'payouts.title': 'is the advertised eligible reward share.', 'payouts.description': 'Invited Scaled Trader participants are described as receiving monthly performance rewards in USDC as independent-contractor compensation—not a share of live trading profit.',
+    'payouts.minimum': 'Not stated', 'payouts.processing': 'Every 30 days', 'payouts.rail': 'USDC · connected wallet',
+    'payouts.rule.1': 'First payout requires a brief KYC check.', 'payouts.rule.2': 'Passing does not guarantee a Scaled Trader invitation.', 'payouts.rule.3': 'Terms preserve Vanta’s discretion despite “automatic” marketing language.',
+    'trading.title': 'Hyperliquid workflow with a simulated mirrored account.', 'trading.description': 'The trader uses Hyperliquid and retains wallet custody. Hyper Stack reads public fills, while Vanta applies scaled simulation, limits and reward calculations.',
+    'trading.markets': '60+ Hyperliquid perpetual pairs stated', 'trading.leverage': 'Rule and pair caps · exact matrix not normalized',
+    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'The product is transparent about simulation, but entitlement language remains conditional.',
+    'consider.1.title': 'Marketing vs Terms', 'consider.1.description': '“Activate immediately” and automatic payouts coexist with no guaranteed invitation or compensation.',
+    'consider.2.title': 'Vanta is the operator', 'consider.2.description': 'Vanta receives fees, runs the challenge and makes refund, payout and eligibility decisions.',
+    'consider.3.title': 'Trailing loss matters', 'consider.3.description': 'Challenge maximum loss follows end-of-day highs rather than staying at the initial balance floor.',
+    'consider.4.title': 'Illustrative statistics', 'consider.4.description': 'Dashboard balances and returns shown on marketing pages are explicitly illustrative, not actual results.',
+    'rewards.title': 'Quarterly performance can unlock scaling and a separate bonus.', 'rewards.description': 'A 5% quarterly return plus all-time Sharpe above 1 qualifies for scaling; 2% plus Sharpe above 1 is documented for a 25% realized-PnL bonus.',
+    'sources.unknowns': 'minimum monthly reward, complete pair/leverage matrix, historical payout reconciliation, invitation acceptance rate, governing operator jurisdiction and exact refund conditions.',
+    'model.classification': 'Vanta-powered simulated evaluation + progression', 'model.lifecycle': 'USDC fee → Hyperliquid-linked challenge → discretionary invitation → monthly reward → quarterly scaling', 'model.environment': 'Hyperliquid interface · Vanta simulated account', 'model.compensation': '90% if invited and eligible',
+  },
+  comparison: { modelTypes: ['evaluation', 'progression'], capital: { status: 'varies', min: 1_000, max: 400_000, unit: 'USD', notes: 'Purchasable starting sizes stop at $100K; $400K is the scaling ceiling.' }, entryCost: { status: 'varies', min: 0, max: 999, unit: 'USDC' }, profitSplit: { status: 'known', min: 90, max: 90, unit: 'percent', notes: 'Only for invited, eligible Scaled Trader participants.' }, maxDrawdown: { status: 'known', min: 5, max: 5, unit: 'percent', notes: 'Challenge EOD trailing loss; scaled accounts use different limits.' }, payoutSchedules: { status: 'known', values: ['monthly', 'conditional'] }, executionModels: { status: 'known', values: ['simulated', 'Hyperliquid public-data mirror'] } },
+  reward: { label: 'Scaling and quarterly performance incentives', metrics: [['Scaling trigger', '5% quarterly return'], ['Sharpe threshold', '> 1 all-time'], ['Bonus trigger', '2% quarterly return'], ['Bonus', '25% realized PnL stated']] },
+});
+
 const foxifyBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.foxify;
 const o2Base = FIRM_NORMALIZED_PROFILES_BY_SLUG.o2;
 const solanaBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['solana-funded'];
@@ -619,6 +727,25 @@ const alphaGridBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.alphagrid;
 const hyperPnlBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.hyperpnl;
 const hyroTraderBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.hyrotrader;
 const carrotFundingBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['carrot-funding'];
+const dizsoBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.dizso;
+const dojiFundedBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['doji-funded'];
+const hyperStackBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['hyper-stack'];
+const dojiRulesUrl = 'https://docs.dojifunded.com/resources/rules-risk-parameters';
+const dojiPrograms = (dojiFundedBase.challengePrograms.status === 'ND' ? [] : dojiFundedBase.challengePrograms.value).map((program) => {
+  const targets = program.id === 'one-step' ? [10] : program.id.startsWith('two-step') ? [10, 5] : [];
+  const stages = program.stages.status === 'ND' ? [] : program.stages.value;
+  return {
+    ...program,
+    stages: observed(stages.map((stage, index) => ({
+      ...stage,
+      ...(targets[index] === undefined ? {} : {
+        profitTargetPercent: observed(targets[index], dojiRulesUrl, 'The rulebook body is used for display; its At-a-glance table reverses the two-step order.'),
+      }),
+      minimumTradingDays: observed(0, dojiRulesUrl),
+    })), dojiRulesUrl),
+    noTimeLimit: observed(true, dojiRulesUrl),
+  };
+});
 const vantaPricingUrl = 'https://www.vantatrading.io/pricing';
 const vantaTier = (accountSize: number, fee: number, originalFee = fee) => ({
   accountSize: observed(accountSize, vantaPricingUrl),
@@ -777,4 +904,55 @@ export const CARROT_FUNDING_NORMALIZED_PROFILE: FirmNormalizedProfile = {
   tradingPolicy: { ...carrotFundingBase.tradingPolicy, platforms: observed(['Carrot terminal'], 'https://carrotfunding.io/'), markets: observed(['Crypto', 'Commodities', 'Stocks', 'Indices'], 'https://carrotfunding.io/') },
   executionPolicy: { ...carrotFundingBase.executionPolicy, venue: observed('Carrot terminal · Arbitrum payout', 'https://carrotfunding.io/') },
   modularProfile: CARROT_FUNDING_PAGE_PROFILE,
+};
+export const DIZSO_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+  ...dizsoBase,
+  checkedAt: CHECKED_AT,
+  tradingPolicy: {
+    ...dizsoBase.tradingPolicy,
+    platforms: observed(['Pre-launch dashboard', 'Hyperliquid-branded concept'], 'https://dizso.com/en'),
+    markets: observed(['Crypto', 'Forex', 'Commodities', 'Equities', 'Prediction markets'], 'https://dizso.com/en'),
+  },
+  executionPolicy: { ...dizsoBase.executionPolicy, venue: observed('Pre-launch · execution routing not published', 'https://dizso.com/en') },
+  modularProfile: DIZSO_PAGE_PROFILE,
+};
+export const DOJI_FUNDED_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+  ...dojiFundedBase,
+  checkedAt: CHECKED_AT,
+  challengePrograms: observed(dojiPrograms, dojiRulesUrl),
+  tradingPolicy: {
+    ...dojiFundedBase.tradingPolicy,
+    platforms: observed(['Doji terminal'], 'https://docs.dojifunded.com/platform/terminal'),
+    markets: observed(['Crypto', 'Stocks', 'ETFs', 'Forex', 'Indices', 'Commodities'], 'https://docs.dojifunded.com/resources/available-markets'),
+    leverage: observed(['Crypto 5x', 'Indices, stocks and commodities 10x', 'Forex 15x'], 'https://docs.dojifunded.com/resources/rules-risk-parameters'),
+    consistencyRule: observed('none', 'https://docs.dojifunded.com/resources/rules-risk-parameters'),
+    automatedTrading: observed('allowed', 'https://docs.dojifunded.com/resources/rules-risk-parameters'),
+    copyTrading: observed('restricted', 'https://docs.dojifunded.com/resources/rules-risk-parameters'),
+  },
+  executionPolicy: {
+    ...dojiFundedBase.executionPolicy,
+    venue: observed('Internal ledger and risk engine · aggregated exposure routed to GMX and Ostium', 'https://docs.dojifunded.com/resources/rules-risk-parameters'),
+    model: observed('hybrid', 'https://docs.dojifunded.com/resources/rules-risk-parameters'),
+    onchainSettlement: observed(true, 'https://docs.dojifunded.com/platform/payouts'),
+  },
+  modularProfile: DOJI_FUNDED_PAGE_PROFILE,
+};
+export const HYPER_STACK_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+  ...hyperStackBase,
+  checkedAt: CHECKED_AT,
+  tradingPolicy: {
+    ...hyperStackBase.tradingPolicy,
+    platforms: observed(['Hyperliquid', 'Hyper Stack dashboard', 'Hyper Stack Chrome extension'], 'https://www.hyperstack.trade/how-it-works'),
+    markets: observed(['60+ Hyperliquid perpetual pairs'], 'https://www.hyperstack.trade/'),
+    newsTrading: observed('allowed', 'https://www.hyperstack.trade/rules'),
+    weekendHolding: observed('allowed', 'https://www.hyperstack.trade/rules'),
+    automatedTrading: observed('allowed', 'https://www.hyperstack.trade/rules'),
+  },
+  executionPolicy: {
+    ...hyperStackBase.executionPolicy,
+    venue: observed('Hyperliquid public trade data · Vanta simulated mirrored account', 'https://www.hyperstack.trade/how-it-works'),
+    model: observed('simulated', 'https://www.hyperstack.trade/terms'),
+    onchainSettlement: observed(true, 'https://www.hyperstack.trade/how-it-works'),
+  },
+  modularProfile: HYPER_STACK_PAGE_PROFILE,
 };

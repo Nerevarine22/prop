@@ -16,6 +16,10 @@ import {
   ALPHAGRID_PAGE_PROFILE,
   CARROT_FUNDING_NORMALIZED_PROFILE,
   CARROT_FUNDING_PAGE_PROFILE,
+  DIZSO_NORMALIZED_PROFILE,
+  DIZSO_PAGE_PROFILE,
+  DOJI_FUNDED_NORMALIZED_PROFILE,
+  DOJI_FUNDED_PAGE_PROFILE,
   FOXIFY_NORMALIZED_PROFILE,
   FOXIFY_PAGE_PROFILE,
   FUNDED_HIVE_NORMALIZED_PROFILE,
@@ -24,6 +28,8 @@ import {
   HYPERNOVA_PAGE_PROFILE,
   HYPERPNL_NORMALIZED_PROFILE,
   HYPERPNL_PAGE_PROFILE,
+  HYPER_STACK_NORMALIZED_PROFILE,
+  HYPER_STACK_PAGE_PROFILE,
   HYROTRADER_NORMALIZED_PROFILE,
   HYROTRADER_PAGE_PROFILE,
   KLEIN_FUNDING_NORMALIZED_PROFILE,
@@ -202,6 +208,9 @@ export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
     { profile: HYPERPNL_NORMALIZED_PROFILE, page: HYPERPNL_PAGE_PROFILE, website: 'https://hyperpnl.com/', xHandle: 'HyperPNL' },
     { profile: HYROTRADER_NORMALIZED_PROFILE, page: HYROTRADER_PAGE_PROFILE, website: 'https://www.hyrotrader.com/', xHandle: 'hyrotrader_com' },
     { profile: CARROT_FUNDING_NORMALIZED_PROFILE, page: CARROT_FUNDING_PAGE_PROFILE, website: 'https://carrotfunding.io/', xHandle: 'carrotfunding' },
+    { profile: DIZSO_NORMALIZED_PROFILE, page: DIZSO_PAGE_PROFILE, website: 'https://dizso.com/', xHandle: 'dizsofunded' },
+    { profile: DOJI_FUNDED_NORMALIZED_PROFILE, page: DOJI_FUNDED_PAGE_PROFILE, website: 'https://app.dojifunded.com/', xHandle: 'Dojifunded' },
+    { profile: HYPER_STACK_NORMALIZED_PROFILE, page: HYPER_STACK_PAGE_PROFILE, website: 'https://www.hyperstack.trade/', xHandle: 'hyper_stack' },
   ].map(({ profile, page, website, xHandle }): FirmDatabaseRecord => ({
     schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
     id: profile.id,
@@ -226,7 +235,7 @@ export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
     createdAt: profile.checkedAt,
     updatedAt: profile.checkedAt,
   })),
-  ...STUB_FIRMS.filter((firm) => !['breakout', 'chainfunded', 'foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade', 'size', 'polyquid', 'funded-hive', 'cf-trader', 'alphagrid', 'hyperpnl', 'hyrotrader', 'carrot-funding'].includes(firm.slug)).map((firm): FirmDatabaseRecord => {
+  ...STUB_FIRMS.filter((firm) => !['breakout', 'chainfunded', 'foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade', 'size', 'polyquid', 'funded-hive', 'cf-trader', 'alphagrid', 'hyperpnl', 'hyrotrader', 'carrot-funding', 'dizso', 'doji-funded', 'hyper-stack'].includes(firm.slug)).map((firm): FirmDatabaseRecord => {
     const normalizedProfile = FIRM_NORMALIZED_PROFILES_BY_SLUG[firm.slug];
     const normalizedProfileV2 = getFirmModularProfile(normalizedProfile);
     return {

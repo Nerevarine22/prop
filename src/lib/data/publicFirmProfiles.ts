@@ -9,9 +9,12 @@ import {
   FUNDED_HIVE_NORMALIZED_PROFILE,
   ALPHAGRID_NORMALIZED_PROFILE,
   CARROT_FUNDING_NORMALIZED_PROFILE,
+  DIZSO_NORMALIZED_PROFILE,
+  DOJI_FUNDED_NORMALIZED_PROFILE,
   HYPERNOVA_NORMALIZED_PROFILE,
   HYPERPNL_NORMALIZED_PROFILE,
   HYROTRADER_NORMALIZED_PROFILE,
+  HYPER_STACK_NORMALIZED_PROFILE,
   KLEIN_FUNDING_NORMALIZED_PROFILE,
   O2_NORMALIZED_PROFILE,
   POLYQUID_NORMALIZED_PROFILE,
@@ -28,7 +31,7 @@ import type {
   PrimaryResearchValueStatus,
 } from '@/types/database';
 
-const UPGRADED_SLUGS = new Set(['breakout', 'chainfunded', 'foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade', 'size', 'polyquid', 'funded-hive', 'cf-trader', 'alphagrid', 'hyperpnl', 'hyrotrader', 'carrot-funding']);
+const UPGRADED_SLUGS = new Set(['breakout', 'chainfunded', 'foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade', 'size', 'polyquid', 'funded-hive', 'cf-trader', 'alphagrid', 'hyperpnl', 'hyrotrader', 'carrot-funding', 'dizso', 'doji-funded', 'hyper-stack']);
 
 export const PUBLIC_FIRM_PROFILES = [
   ...Object.values(FIRM_NORMALIZED_PROFILES_BY_SLUG).filter((profile) => !UPGRADED_SLUGS.has(profile.slug)),
@@ -52,6 +55,9 @@ export const PUBLIC_FIRM_PROFILES = [
   HYPERPNL_NORMALIZED_PROFILE,
   HYROTRADER_NORMALIZED_PROFILE,
   CARROT_FUNDING_NORMALIZED_PROFILE,
+  DIZSO_NORMALIZED_PROFILE,
+  DOJI_FUNDED_NORMALIZED_PROFILE,
+  HYPER_STACK_NORMALIZED_PROFILE,
 ].map((profile) => (
   attachFirmModularProfile(profile)
 )).sort((a, b) => {
