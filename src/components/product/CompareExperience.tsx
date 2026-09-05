@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { ArrowRight, Check, Columns3, Database, X } from 'lucide-react';
@@ -15,16 +15,25 @@ import {
   profileLogo,
 } from '@/lib/data/publicFirmProfiles';
 import type { FirmContentFact, FirmNormalizedProfile } from '@/types/database';
+import { useComparisonSelection } from '@/hooks/useComparisonSelection';
 import styles from '@/app/product-lab/page.module.css';
 
 export function CompareExperience({ firms }: { firms: FirmNormalizedProfile[] }) {
   const searchParams = useSearchParams();
-  const [selected, setSelected] = useState<string[]>(() => {
-    const requested = searchParams.get('ids')?.split(',').filter((id) => firms.some((firm) => firm.id === id)) ?? [];
-    const unique = [...new Set(requested)].slice(0, 3);
-    if (unique.length >= 2) return unique;
-    return [...unique, ...firms.map((firm) => firm.id).filter((id) => !unique.includes(id))].slice(0, 2);
-  });
+  const { hydrated, selectedIds: selected, toggle: toggleSelection, replace } = useComparisonSelection();
+  const appliedUrlSelection = useRef(false);
+
+  useEffect(() => {
+    if (!hydrated || appliedUrlSelection.current) return;
+    appliedUrlSelection.current = true;
+    const requested = [...new Set(searchParams.get('ids')?.split(',') ?? [])]
+      .map((id) => firms.find((firm) => firm.id === id))
+      .filter((firm): firm is FirmNormalizedProfile => Boolean(firm))
+      .slice(0, 3);
+    if (requested.length) {
+      replace(requested.map((firm) => ({ id: firm.id, name: firm.name, slug: firm.slug, logo: profileLogo(firm) })));
+    }
+  }, [firms, hydrated, replace, searchParams]);
 
   const selectedFirms = selected.map((id) => firms.find((firm) => firm.id === id)).filter(Boolean) as FirmNormalizedProfile[];
   const modelLabel = (firm: FirmNormalizedProfile) => {
@@ -58,7 +67,9 @@ export function CompareExperience({ firms }: { firms: FirmNormalizedProfile[] })
   ];
 
   function toggle(id: string) {
-    setSelected((current) => current.includes(id) ? current.filter((item) => item !== id) : current.length >= 3 ? [...current.slice(1), id] : [...current, id]);
+    const firm = firms.find((item) => item.id === id);
+    if (!firm) return;
+    toggleSelection({ id: firm.id, name: firm.name, slug: firm.slug, logo: profileLogo(firm) });
   }
 
   return (

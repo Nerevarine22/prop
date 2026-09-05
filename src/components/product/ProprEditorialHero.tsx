@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import type { CSSProperties } from 'react';
-import { ArrowUpRight, ExternalLink, Star } from 'lucide-react';
+import { ExternalLink, Star } from 'lucide-react';
 import { FirmLogo } from '@/components/firms/FirmLogo';
 import type { ComparisonRangeProjection, FirmNormalizedProfile, FirmNormalizedProfileV2 } from '@/types/database';
 import { comparisonListText, comparisonRangeText, firmModelTypeLabel, getFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import { factValue, formatCapital, profileLogo, profileWebsite, shortDate } from '@/lib/data/publicFirmProfiles';
+import { ProfileCompareButton, ProfileComparisonTray } from './ProfileCompareControl';
 import styles from './ProprEditorialHero.module.css';
 
 function XMark() {
@@ -38,7 +38,7 @@ function editorialSummary(value: string | undefined): string | undefined {
   return sentenceEnd > 220 ? cleaned.slice(0, sentenceEnd + 1) : `${cleaned.slice(0, 427).trimEnd()}…`;
 }
 
-export function FirmEditorialHero({ firm, profileOverride }: { firm: FirmNormalizedProfile; profileOverride?: FirmNormalizedProfileV2 }) {
+export function FirmEditorialHero({ firm, profileOverride, showCompareControls = true }: { firm: FirmNormalizedProfile; profileOverride?: FirmNormalizedProfileV2; showCompareControls?: boolean }) {
   const research = profileOverride ?? getFirmModularProfile(firm);
   const website = profileWebsite(firm);
   const xHandle = factValue(firm.identity.xHandle);
@@ -80,6 +80,7 @@ export function FirmEditorialHero({ firm, profileOverride }: { firm: FirmNormali
   ].filter((item): item is { label: string; value: string; note: string; tone: string } => Boolean(item));
 
   return (
+    <>
     <section className={styles.hero} aria-labelledby="firm-profile-title" data-cms-hero>
       <div className={styles.ambient} aria-hidden="true" />
 
@@ -111,7 +112,7 @@ export function FirmEditorialHero({ firm, profileOverride }: { firm: FirmNormali
           </div>
           <div className={styles.actions}>
             {website && <a href={website} target="_blank" rel="noreferrer">Visit {firm.name} <ExternalLink /></a>}
-            <Link href={`/compare?ids=${firm.id}`}>Add to comparison <ArrowUpRight /></Link>
+            {showCompareControls && <ProfileCompareButton firm={{ id: firm.id, name: firm.name, slug: firm.slug, logo: profileLogo(firm) }} />}
           </div>
           <dl className={styles.execution}>
             {actionFacts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
@@ -123,6 +124,8 @@ export function FirmEditorialHero({ firm, profileOverride }: { firm: FirmNormali
         {decisionFacts.map((fact) => <div data-tone={fact.tone} key={fact.label}><span>{fact.label}</span><strong>{fact.value}</strong><small>{fact.note}</small></div>)}
       </div>
     </section>
+    {showCompareControls && <ProfileComparisonTray />}
+    </>
   );
 }
 

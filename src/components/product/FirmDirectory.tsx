@@ -18,6 +18,8 @@ import {
   profileRewardLabels,
 } from '@/lib/data/publicFirmProfiles';
 import type { FirmModelType, FirmNormalizedProfile } from '@/types/database';
+import { useComparisonSelection } from '@/hooks/useComparisonSelection';
+import { ComparisonTray } from './ComparisonTray';
 import styles from '@/app/product-lab/page.module.css';
 
 type FirmDirectoryProps = {
@@ -80,8 +82,8 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
   const [step, setStep] = useState(normalizedStep);
   const [weekendOnly, setWeekendOnly] = useState(false);
   const [rewardsOnly, setRewardsOnly] = useState(false);
-  const [selected, setSelected] = useState<string[]>([]);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const { items: selectedFirms, selectedIds: selected, toggle } = useComparisonSelection();
 
   const filtered = useMemo(() => {
     return firms.filter((firm) => {
@@ -96,15 +98,10 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
   }, [firms, query, rewardsOnly, step, weekendOnly]);
 
   const visible = mode === 'preview' ? filtered.slice(0, 3) : filtered;
-  const selectedFirms = selected.map((id) => firms.find((firm) => firm.id === id)).filter(Boolean) as FirmNormalizedProfile[];
-  const compareHref = selected.length > 1 ? `/compare?ids=${selected.join(',')}` : '/compare';
-
   function toggleCompare(id: string) {
-    setSelected((current) => {
-      if (current.includes(id)) return current.filter((item) => item !== id);
-      if (current.length >= 3) return [...current.slice(1), id];
-      return [...current, id];
-    });
+    const firm = firms.find((item) => item.id === id);
+    if (!firm) return;
+    toggle({ id: firm.id, name: firm.name, slug: firm.slug, logo: profileLogo(firm) });
   }
 
   function reset() {
@@ -158,15 +155,7 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
             {!visible.length && <div className={styles.emptyResults}><strong>No matching firms</strong><button type="button" onClick={reset}>Reset filters</button></div>}
           </div>
 
-          {selected.length > 0 && (
-            <div className={styles.compareTray}>
-              <div className={styles.trayFirms}>
-                {selectedFirms.map((firm) => <span key={firm.id}><FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.trayLogo} fallbackClassName={styles.trayFallback} /> {firm.name}</span>)}
-              </div>
-              <p>{selected.length}/3 selected</p>
-              <Link href={compareHref}>Compare firms <ArrowRight /></Link>
-            </div>
-          )}
+          <ComparisonTray items={selectedFirms} />
         </div>
       </div>
     </section>
