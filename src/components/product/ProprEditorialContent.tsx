@@ -111,8 +111,8 @@ export function ProprEditorialContent({
   const isBreakout = firm.slug === 'breakout';
   const isChainFunded = firm.slug === 'chainfunded';
   const isO2 = firm.slug === 'o2';
-  const isStandardized = ['foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade', 'size', 'polyquid', 'funded-hive', 'cf-trader'].includes(firm.slug);
-  const hasStandardRewards = ['foxify', 'o2', 'solana-funded', 'vanta-trading', 'upscale-trade', 'size', 'funded-hive', 'cf-trader'].includes(firm.slug);
+  const isStandardized = ['foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade', 'size', 'polyquid', 'funded-hive', 'cf-trader', 'alphagrid', 'hyperpnl', 'hyrotrader', 'carrot-funding'].includes(firm.slug);
+  const hasStandardRewards = ['foxify', 'o2', 'solana-funded', 'vanta-trading', 'upscale-trade', 'size', 'funded-hive', 'cf-trader', 'hyrotrader', 'carrot-funding'].includes(firm.slug);
   const rewardFactsBlock = pageProfile.sections.find((section) => section.id === 'rewards')?.blocks.find((block) => block.id === 'reward-facts');
   const standardRewardItems = rewardFactsBlock?.type === 'fact-grid'
     ? rewardFactsBlock.items.map((item) => [item.label, item.value] as const)

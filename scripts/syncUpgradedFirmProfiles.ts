@@ -31,6 +31,14 @@ import {
   FUNDED_HIVE_PAGE_PROFILE,
   CF_TRADER_NORMALIZED_PROFILE,
   CF_TRADER_PAGE_PROFILE,
+  ALPHAGRID_NORMALIZED_PROFILE,
+  ALPHAGRID_PAGE_PROFILE,
+  HYPERPNL_NORMALIZED_PROFILE,
+  HYPERPNL_PAGE_PROFILE,
+  HYROTRADER_NORMALIZED_PROFILE,
+  HYROTRADER_PAGE_PROFILE,
+  CARROT_FUNDING_NORMALIZED_PROFILE,
+  CARROT_FUNDING_PAGE_PROFILE,
 } from '../src/lib/data/standardizedFirmProfiles';
 import { PRIMARY_RESEARCH_BY_SLUG } from '../src/lib/data/firmPrimaryResearch';
 import type { FirmDatabaseRecord, FirmNormalizedProfile, FirmNormalizedProfileV2 } from '../src/types/database';
@@ -51,6 +59,10 @@ const profiles: Array<{ normalized: FirmNormalizedProfile; page: FirmNormalizedP
   { normalized: POLYQUID_NORMALIZED_PROFILE, page: POLYQUID_PAGE_PROFILE, website: 'https://www.polyquid.xyz/', xHandle: 'polyquid' },
   { normalized: FUNDED_HIVE_NORMALIZED_PROFILE, page: FUNDED_HIVE_PAGE_PROFILE, website: 'https://fundedhive.com/', xHandle: 'FundedHive' },
   { normalized: CF_TRADER_NORMALIZED_PROFILE, page: CF_TRADER_PAGE_PROFILE, website: 'https://cryptofundtrader.com/', xHandle: 'CFTradercom' },
+  { normalized: ALPHAGRID_NORMALIZED_PROFILE, page: ALPHAGRID_PAGE_PROFILE, website: 'https://alphagrid.capital/', xHandle: 'AlphaGridProp' },
+  { normalized: HYPERPNL_NORMALIZED_PROFILE, page: HYPERPNL_PAGE_PROFILE, website: 'https://hyperpnl.com/', xHandle: 'HyperPNL' },
+  { normalized: HYROTRADER_NORMALIZED_PROFILE, page: HYROTRADER_PAGE_PROFILE, website: 'https://www.hyrotrader.com/', xHandle: 'hyrotrader_com' },
+  { normalized: CARROT_FUNDING_NORMALIZED_PROFILE, page: CARROT_FUNDING_PAGE_PROFILE, website: 'https://carrotfunding.io/', xHandle: 'carrotfunding' },
 ];
 
 async function main() {

@@ -4,7 +4,7 @@ import type { FirmNormalizedProfile, FirmNormalizedProfileV2, FirmResearchSource
 const CHECKED_AT = '2026-09-05T00:00:00.000Z';
 
 type PageConfig = {
-  slug: 'foxify' | 'hypernova' | 'o2' | 'solana-funded' | 'vanta-trading' | 'klein-funding' | 'upscale-trade' | 'size' | 'polyquid' | 'funded-hive' | 'cf-trader';
+  slug: 'foxify' | 'hypernova' | 'o2' | 'solana-funded' | 'vanta-trading' | 'klein-funding' | 'upscale-trade' | 'size' | 'polyquid' | 'funded-hive' | 'cf-trader' | 'alphagrid' | 'hyperpnl' | 'hyrotrader' | 'carrot-funding';
   name: string;
   offers: string[];
   sources: Array<{ category: FirmResearchSourceInspection['category']; url: string; label: string }>;
@@ -461,6 +461,150 @@ export const CF_TRADER_PAGE_PROFILE = page({
   reward: { label: 'Seasonal ELO and competition prizes', metrics: [['Ranking', 'ELO'], ['Earned from', 'Trading milestones'], ['Prizes', 'Cash + evaluations'], ['Token / airdrop', 'Not documented']] },
 });
 
+export const ALPHAGRID_PAGE_PROFILE = page({
+  slug: 'alphagrid', name: 'AlphaGrid', modelTypes: ['progression', 'evaluation'], offers: ['Challenge → Funded → Prime'],
+  sources: [
+    { category: 'website', url: 'https://alphagrid.capital/', label: 'Official website' },
+    { category: 'rulebook', url: 'https://docs.alphagrid.capital/agents/progression', label: 'Agent progression' },
+    { category: 'faq', url: 'https://docs.alphagrid.capital/resources/faq', label: 'Official FAQ' },
+    { category: 'pricing-checkout', url: 'https://docs.alphagrid.capital/overview/pricing', label: 'Protocol pricing' },
+  ],
+  copy: {
+    'promo.code': '', 'decision.title': 'A scored agent progression from simulation to real vault capital.',
+    'decision.description': 'AlphaGrid is built for trading agents rather than a conventional retail challenge. An agent begins with a simulated $10K Challenge, advances by trade count, score and time to a real $50K Funded stage, and can later reach a real $100K Prime allocation.',
+    'decision.highlight': 'Progress is measured by score and activity—not a published one-time profit target.',
+    'process.title': 'Register, build a score, graduate to vault capital', 'process.description': 'Capital and risk limits improve as the agent proves repeatable behaviour.',
+    'process.1.title': 'Register through x402', 'process.1.description': 'The documented one-time registration price is 0.1 USDC.',
+    'process.2.title': 'Trade the $10K Challenge', 'process.2.description': 'Complete five trades, reach score 70 and remain active for 14 days.',
+    'process.3.title': 'Advance to $50K Funded', 'process.3.description': 'This stage is described as real capital with tighter 12%/4% risk limits.',
+    'process.4.title': 'Reach $100K Prime', 'process.4.description': 'Ten trades, score 75 and 30 days support the next promotion.',
+    'programs.title': 'One continuous progression instead of separate challenge products.', 'programs.description': 'Challenge, Funded and Prime change capital, risk and execution environment as one lifecycle.',
+    'programs.note': 'The protocol publishes no fixed profit target or conventional account-fee matrix.',
+    'payouts.title': 'depends on the vault policy.', 'payouts.description': 'Marketing states a 70–80% agent share, but technical docs say the exact split is configured by each vault and is not hardcoded.',
+    'payouts.minimum': 'ND', 'payouts.processing': 'ND', 'payouts.rail': 'Vault-policy dependent',
+    'payouts.rule.1': 'Exact split depends on the active vault.', 'payouts.rule.2': 'Minimum, cadence and claim procedure are not published.', 'payouts.rule.3': 'Capital providers—not agents—own LP principal.',
+    'trading.title': 'Simulation first; real capital after promotion.', 'trading.description': 'The Challenge is simulated, while Funded and Prime are described as real-capital stages with protocol-sponsored API gas.',
+    'trading.markets': 'Agent-selected supported markets', 'trading.leverage': 'Not publicly normalized',
+    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'The model is novel, but payout and legal documentation remain incomplete.',
+    'consider.1.title': 'No standalone Terms', 'consider.1.description': 'The indexed official documentation does not expose a dedicated Terms page.',
+    'consider.2.title': 'Vault policies can differ', 'consider.2.description': 'Profit share and capital-provider economics are not universal protocol constants.',
+    'consider.3.title': 'Score logic matters', 'consider.3.description': 'Promotion depends on a proprietary score whose practical weighting deserves monitoring.',
+    'consider.4.title': 'Real-capital claims need proof', 'consider.4.description': 'Vault addresses, allocations and realized payouts should be reconciled independently.',
+    'sources.unknowns': 'payout cadence and minimum, exact vault splits, market/leverage matrix, legal operator, restricted jurisdictions and independent capital-allocation audit.',
+    'model.classification': 'Agent progression · simulated to real capital', 'model.lifecycle': '0.1 USDC registration → Challenge score → $50K Funded → $100K Prime', 'model.environment': 'API agent trading · vault-dependent execution', 'model.compensation': '70–80% marketing · vault policy controls',
+  },
+  comparison: { modelTypes: ['progression', 'evaluation'], capital: { status: 'varies', min: 10_000, max: 100_000, unit: 'USDC' }, entryCost: { status: 'known', min: 0.1, max: 0.1, unit: 'USDC' }, profitSplit: { status: 'varies', min: 70, max: 80, unit: 'percent' }, maxDrawdown: { status: 'varies', min: 10, max: 15, unit: 'percent' }, payoutSchedules: { status: 'ND', values: [] }, executionModels: { status: 'known', values: ['simulated', 'real capital'] } },
+});
+
+export const HYPERPNL_PAGE_PROFILE = page({
+  slug: 'hyperpnl', name: 'HyperPNL', modelTypes: ['evaluation'], offers: ['Two-Phase Evaluation'],
+  sources: [
+    { category: 'website', url: 'https://hyperpnl.com/', label: 'Official website and pricing' },
+    { category: 'rulebook', url: 'https://hyperpnl.gitbook.io/docs/challenges-101/evaluation-rules', label: 'Evaluation rules' },
+    { category: 'faq', url: 'https://hyperpnl.gitbook.io/docs/faq/payouts', label: 'Payout FAQ' },
+    { category: 'terms', url: 'https://app.hyperpnl.com/terms', label: 'Terms of Use' },
+  ],
+  copy: {
+    'promo.code': '', 'decision.title': 'An active one-step storefront backed by an older two-phase rulebook.',
+    'decision.description': 'HyperPNL currently sells 1-Step Flex at $5K, $10K and $25K, but its official GitBook still describes every challenge as a two-phase 10%/5% evaluation. Until the documentation is reconciled, program structure is the central risk—not a footnote.',
+    'decision.highlight': 'The storefront and rulebook describe materially different products, loss limits and trading restrictions.',
+    'process.title': 'Buy the live offer, verify its attached rules, then trade', 'process.description': 'The exact purchased configuration must override generic documentation assumptions.',
+    'process.1.title': 'Choose a live Flex tier', 'process.1.description': '$5K, $10K and $25K are published; larger tiers are coming soon.',
+    'process.2.title': 'Capture the purchase rules', 'process.2.description': 'Homepage Flex and GitBook two-phase parameters conflict.',
+    'process.3.title': 'Complete the applicable evaluation', 'process.3.description': 'Targets and drawdown depend on which rule set legally attaches.',
+    'process.4.title': 'Request the daily payout', 'process.4.description': 'Eligible requests require closed positions and at least 1% of account size.',
+    'programs.title': 'The canonical ledger retains the documented two-phase structure.', 'programs.description': 'GitBook specifies 10% then 5%, 5% daily and 9% static maximum drawdown.',
+    'programs.note': 'The live homepage instead markets 1-Step Flex with 10% target, 3% daily and 5% static drawdown.',
+    'payouts.title': 'is the documented trader share.', 'payouts.description': 'One request per day is allowed with no waiting cycle; the minimum equals 1% of funded account size.',
+    'payouts.minimum': '1% of account size', 'payouts.processing': 'Under 3 seconds stated', 'payouts.rail': 'On-chain · currency ND',
+    'payouts.rule.1': 'All positions must be closed.', 'payouts.rule.2': 'Only one request is allowed per day.', 'payouts.rule.3': 'There is no published calendar waiting window.',
+    'trading.title': 'Crypto-focused simulation with contradictory restriction language.', 'trading.description': 'Homepage says no trading restrictions; evaluation rules prohibit multiple accounts and copy trading. The exact platform, fees and leverage still need stronger normalization.',
+    'trading.markets': 'Crypto markets', 'trading.leverage': 'Not reliably documented',
+    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'Documentation drift is the primary decision risk.',
+    'consider.1.title': 'One-step vs two-phase', 'consider.1.description': 'The active purchase page and GitBook do not describe the same lifecycle.',
+    'consider.2.title': '3%/5% vs 5%/9%', 'consider.2.description': 'Daily and maximum drawdown values differ materially between sources.',
+    'consider.3.title': 'Restrictions conflict', 'consider.3.description': '“No restrictions” marketing clashes with explicit copy-trading rules.',
+    'consider.4.title': 'Terms were unreadable', 'consider.4.description': 'The official Terms route did not expose usable legal text to the research client.',
+    'sources.unknowns': 'which rules bind current Flex purchases, legal operator, payout currency/network, platform, leverage, full fees and restricted jurisdictions.',
+    'model.classification': 'Simulated evaluation · documentation conflict', 'model.lifecycle': 'One-time fee → disputed evaluation structure → funded account → daily payout', 'model.environment': 'Crypto trading platform · details incomplete', 'model.compensation': '80%',
+  },
+  comparison: { modelTypes: ['evaluation'], capital: { status: 'varies', min: 5_000, max: 25_000, unit: 'USD' }, entryCost: { status: 'varies', min: 42, max: 215, unit: 'USD' }, profitSplit: { status: 'known', min: 80, max: 80, unit: 'percent' }, maxDrawdown: { status: 'varies', min: 5, max: 9, unit: 'percent', notes: 'Official storefront and GitBook describe different evaluation structures.' }, payoutSchedules: { status: 'known', values: ['daily', 'on-demand'] }, executionModels: { status: 'known', values: ['simulated'] } },
+});
+
+export const HYROTRADER_PAGE_PROFILE = page({
+  slug: 'hyrotrader', name: 'HyroTrader', modelTypes: ['evaluation'], offers: ['One-Step', 'Two-Step'],
+  sources: [
+    { category: 'website', url: 'https://www.hyrotrader.com/', label: 'Official website and pricing' },
+    { category: 'rulebook', url: 'https://www.hyrotrader.com/trading-rules/', label: 'Trading rules' },
+    { category: 'faq', url: 'https://www.hyrotrader.com/faq/hyrotrader-account/how-can-i-withdraw-my-profits/', label: 'Payout FAQ' },
+    { category: 'terms', url: 'https://www.hyrotrader.com/terms-and-conditions/', label: 'Terms and Conditions' },
+  ],
+  copy: {
+    'promo.code': '', 'decision.title': 'Simulated evaluation leading to real-exchange funded execution.',
+    'decision.description': 'HyroTrader offers one- and two-step crypto evaluations up to $200K. Challenge and verification stages are simulated; funded traders can connect a Bybit account or use Tealstreet/CLEO, then request USDT or USDC from the first funded trading day.',
+    'decision.highlight': 'The transition from simulated challenge to real exchange infrastructure is the defining feature.',
+    'process.title': 'Pass the evaluation, connect the platform, withdraw stablecoins', 'process.description': 'No time limit removes deadline pressure, but consistency and per-trade loss rules remain.',
+    'process.1.title': 'Choose one or two steps', 'process.1.description': 'One-Step uses 10%; Two-Step uses 10% then 5%.',
+    'process.2.title': 'Trade at least five days', 'process.2.description': 'The evaluation applies drawdown, best-day and realized-loss controls.',
+    'process.3.title': 'Connect Bybit, Tealstreet or CLEO', 'process.3.description': 'Funded infrastructure uses real orderbook and exchange connectivity.',
+    'process.4.title': 'Request USDT or USDC', 'process.4.description': 'Payout is available from the first funded trading day and stated at 12–24 hours.',
+    'programs.title': 'Two evaluation paths across $5K–$200K.', 'programs.description': 'One-Step uses 4% daily/6% max loss; Two-Step uses 5% daily while its maximum loss needs clearer current documentation.',
+    'programs.note': 'The displayed Two-Step schedule runs from $59 to $969; selected upgrades add cost.',
+    'payouts.title': 'starts at the standard trader share.', 'payouts.description': 'The canonical FAQ states 80%, rising five points every four months to 90%, with no withdrawal commission.',
+    'payouts.minimum': '$100 after split', 'payouts.processing': '12–24 hours', 'payouts.rail': 'USDT or USDC',
+    'payouts.rule.1': 'Requests open from the first funded trading day.', 'payouts.rule.2': 'The challenge fee is refunded with the first eligible payout.', 'payouts.rule.3': 'Public payout cards include independently checkable transaction IDs.',
+    'trading.title': 'Real exchange connectivity after a simulated selection phase.', 'trading.description': 'Bybit API, Tealstreet and CLEO are supported. The rules cap best-day contribution, realized loss per trade and low-liquidity exposure.',
+    'trading.markets': '700+ USDT perpetual pairs stated', 'trading.leverage': 'Platform and asset dependent',
+    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'Strong infrastructure claims coexist with several policy conflicts.',
+    'consider.1.title': '70% vs 80% starting split', 'consider.1.description': 'The payout FAQ says 80%; a product-category page still markets 70–90%.',
+    'consider.2.title': 'Complimentary-account conflict', 'consider.2.description': 'FAQ says 80% while Terms say 70% for the same account category.',
+    'consider.3.title': 'Best-day rule applies', 'consider.3.description': 'A 40% contribution cap affects passing and consistency despite unlimited time.',
+    'consider.4.title': 'Token status is stale', 'consider.4.description': 'The whitepaper defines $HYRO, but current launch, contract and eligibility are not established.',
+    'rewards.title': '$HYRO exists in the whitepaper, not as a verified live reward layer.', 'rewards.description': 'A 50M supply and community/staking allocations are documented historically; current product pages do not confirm launch or trader eligibility.',
+    'sources.unknowns': 'current $HYRO contract and launch state, two-step max loss, exact leverage by market, restricted-country matrix and independent reconciliation of all payout statistics.',
+    'model.classification': 'Simulated evaluation → real exchange funded account', 'model.lifecycle': 'Refundable fee → evaluation → exchange-connected funded account → stablecoin payout', 'model.environment': 'Bybit API · Tealstreet · CLEO', 'model.compensation': '80% start → 90% over time',
+  },
+  comparison: { modelTypes: ['evaluation'], capital: { status: 'varies', min: 5_000, max: 200_000, unit: 'USD', notes: 'Account values are marketed in USDT-equivalent amounts.' }, entryCost: { status: 'varies', min: 59, max: 969, unit: 'USD' }, profitSplit: { status: 'varies', min: 80, max: 90, unit: 'percent' }, maxDrawdown: { status: 'varies', min: 6, unit: 'percent', notes: 'One-Step documented; current Two-Step maximum needs confirmation.' }, payoutSchedules: { status: 'known', values: ['on-demand'] }, executionModels: { status: 'known', values: ['simulated evaluation', 'real exchange funded'] } },
+  reward: { label: '$HYRO whitepaper commitments', metrics: [['Supply', '50,000,000'], ['Community / airdrops', '10% stated'], ['Staking / cashback', '10% stated'], ['Current launch', 'Not verified']] },
+});
+
+export const CARROT_FUNDING_PAGE_PROFILE = page({
+  slug: 'carrot-funding', name: 'Carrot Funding', modelTypes: ['evaluation'], offers: ['1-Phase', '2-Phase'],
+  sources: [
+    { category: 'website', url: 'https://carrotfunding.io/', label: 'Official website and pricing' },
+    { category: 'rulebook', url: 'https://www.carrotfunding.io/rulebook/', label: 'Formal rulebook' },
+    { category: 'terms', url: 'https://carrotfunding.gitbook.io/carrotfunding.io-docs/challenge-faq-and-support/terms-and-conditions', label: 'Terms and Conditions' },
+    { category: 'token-rewards', url: 'https://www.carrotfunding.io/docs/community/points-program-season-1/', label: 'Points Program Season 1' },
+  ],
+  copy: {
+    'promo.code': '', 'decision.title': 'Standard evaluations with an on-chain vault and payout record.',
+    'decision.description': 'Carrot Funding offers one-phase and two-phase simulated evaluations from $5K to $100K. A stated portion of fees backs an on-chain vault, funded traders keep 80%, and public payout rows expose USDC transactions on Arbitrum.',
+    'decision.highlight': 'The economic model is unusually visible, but payout cadence and one two-phase loss figure conflict across official pages.',
+    'process.title': 'Choose one or two phases, pass, request full-balance USDC', 'process.description': 'Both programmes use fixed risk limits and no evaluation deadline.',
+    'process.1.title': 'Choose 1-Phase or 2-Phase', 'process.1.description': 'One-phase targets 8%; two-phase targets 5% then 8%.',
+    'process.2.title': 'Respect fixed loss limits', 'process.2.description': 'Daily loss is 4% or 5%; maximum loss is 8% or 10%.',
+    'process.3.title': 'Enter the funded stage', 'process.3.description': 'The service remains legally simulated while profitable flow may connect to the vault.',
+    'process.4.title': 'Request USDC', 'process.4.description': 'Rulebook advertises on-demand full payout within 24 hours on Arbitrum.',
+    'programs.title': 'Two clear evaluation shapes across five account sizes.', 'programs.description': 'The 1-Phase path costs more and uses a 50% Best Day Rule; 2-Phase provides the wider 10% loss allowance.',
+    'programs.note': 'Formal rulebook values are canonical over the inconsistent homepage walkthrough.',
+    'payouts.title': 'of eligible profit goes to the trader.', 'payouts.description': 'Rulebook and FAQ say on-demand, $100 minimum, full-balance only and processing within 24 hours; Terms say no more frequently than weekly.',
+    'payouts.minimum': '100 USDC', 'payouts.processing': 'Within 24h stated', 'payouts.rail': 'USDC · Arbitrum',
+    'payouts.rule.1': 'All positions and orders must be closed.', 'payouts.rule.2': 'Partial withdrawals are not allowed.', 'payouts.rule.3': 'On-demand marketing conflicts with the weekly Terms clause.',
+    'trading.title': 'A multi-asset terminal with up to 5x leverage.', 'trading.description': 'Carrot markets 175+ crypto, commodity, stock and index assets with on-chain-sourced pricing and a dedicated terminal.',
+    'trading.markets': '175+ crypto · commodities · stocks · indices', 'trading.leverage': 'Up to 5x',
+    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'Good transparency primitives still require source hierarchy.',
+    'consider.1.title': '2-Phase loss conflict', 'consider.1.description': 'The formal rulebook says 10%; a homepage walkthrough says below 8%.',
+    'consider.2.title': 'Payout cadence conflict', 'consider.2.description': 'Rulebook says on-demand while Terms cap processing frequency at weekly.',
+    'consider.3.title': 'Full-balance payout only', 'consider.3.description': 'The trader cannot leave part of eligible profit behind through a partial request.',
+    'consider.4.title': 'Points formulas conflict', 'consider.4.description': 'Season 1 documentation and FAQ describe different referral allocation formulas.',
+    'rewards.title': 'Carrot Points feed potential CRT allocation and weekly USDC rewards.', 'rewards.description': 'Season 1 reserves 50% of CRT supply for community distribution; top-ten Weekly Harvest participants share 10% of platform revenue.',
+    'sources.unknowns': 'CRT contract and launch terms, final points conversion, independent vault liabilities, restricted jurisdictions and resolution of payout cadence.',
+    'model.classification': 'Simulated evaluation · on-chain vault layer', 'model.lifecycle': 'Fee → 1/2-phase challenge → funded account → full-balance USDC payout', 'model.environment': 'Carrot terminal · Arbitrum payout', 'model.compensation': '80%',
+  },
+  comparison: { modelTypes: ['evaluation'], capital: { status: 'varies', min: 5_000, max: 100_000, unit: 'USD' }, entryCost: { status: 'varies', min: 65, max: 799, unit: 'USD' }, profitSplit: { status: 'known', min: 80, max: 80, unit: 'percent' }, maxDrawdown: { status: 'varies', min: 8, max: 10, unit: 'percent' }, payoutSchedules: { status: 'varies', values: ['on-demand', 'weekly'], notes: 'Homepage and Terms describe different payout timing.' }, executionModels: { status: 'known', values: ['simulated', 'vault-connected funded flow'] } },
+  reward: { label: 'Carrot Points, CRT and Weekly Harvest', metrics: [['CRT community share', '50% stated'], ['Purchase points', '10 / USDC'], ['Payout-profit points', '5 / USDC'], ['Weekly Harvest', '10% revenue to top 10']] },
+});
+
 const foxifyBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.foxify;
 const o2Base = FIRM_NORMALIZED_PROFILES_BY_SLUG.o2;
 const solanaBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['solana-funded'];
@@ -471,6 +615,10 @@ const sizeBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.size;
 const polyquidBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.polyquid;
 const fundedHiveBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['funded-hive'];
 const cfTraderBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['cf-trader'];
+const alphaGridBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.alphagrid;
+const hyperPnlBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.hyperpnl;
+const hyroTraderBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.hyrotrader;
+const carrotFundingBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['carrot-funding'];
 const vantaPricingUrl = 'https://www.vantatrading.io/pricing';
 const vantaTier = (accountSize: number, fee: number, originalFee = fee) => ({
   accountSize: observed(accountSize, vantaPricingUrl),
@@ -597,4 +745,36 @@ export const CF_TRADER_NORMALIZED_PROFILE: FirmNormalizedProfile = {
   tradingPolicy: { ...cfTraderBase.tradingPolicy, platforms: observed(['Crypto Fund Trader platforms'], 'https://cryptofundtrader.com/faq/'), markets: observed(['Crypto', 'Forex', 'Indices', 'Commodities'], 'https://cryptofundtrader.com/faq/') },
   executionPolicy: { ...cfTraderBase.executionPolicy, venue: observed('Simulated multi-asset trading platforms', 'https://cryptofundtrader.com/terms-and-conditions/') },
   modularProfile: CF_TRADER_PAGE_PROFILE,
+};
+export const ALPHAGRID_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+  ...alphaGridBase,
+  checkedAt: CHECKED_AT,
+  tradingPolicy: { ...alphaGridBase.tradingPolicy, platforms: observed(['AlphaGrid agent API'], 'https://docs.alphagrid.capital/agents/progression') },
+  executionPolicy: { ...alphaGridBase.executionPolicy, venue: observed('Agent API · vault-dependent execution', 'https://docs.alphagrid.capital/agents/progression') },
+  modularProfile: ALPHAGRID_PAGE_PROFILE,
+};
+export const HYPERPNL_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+  ...hyperPnlBase,
+  checkedAt: CHECKED_AT,
+  tradingPolicy: { ...hyperPnlBase.tradingPolicy, markets: observed(['Crypto markets'], 'https://hyperpnl.com/') },
+  executionPolicy: { ...hyperPnlBase.executionPolicy, venue: observed('HyperPNL simulated trading platform', 'https://hyperpnl.com/') },
+  modularProfile: HYPERPNL_PAGE_PROFILE,
+};
+export const HYROTRADER_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+  ...hyroTraderBase,
+  checkedAt: CHECKED_AT,
+  tradingPolicy: {
+    ...hyroTraderBase.tradingPolicy,
+    platforms: observed(['Bybit API', 'Tealstreet', 'CLEO'], 'https://www.hyrotrader.com/faq/hyrotrader-account/when-will-i-get-the-account/'),
+    markets: observed(['USDT perpetual futures'], 'https://www.hyrotrader.com/'),
+  },
+  executionPolicy: { ...hyroTraderBase.executionPolicy, venue: observed('Simulated evaluation · real exchange funded execution', 'https://www.hyrotrader.com/fastest-payout-prop-firm/') },
+  modularProfile: HYROTRADER_PAGE_PROFILE,
+};
+export const CARROT_FUNDING_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+  ...carrotFundingBase,
+  checkedAt: CHECKED_AT,
+  tradingPolicy: { ...carrotFundingBase.tradingPolicy, platforms: observed(['Carrot terminal'], 'https://carrotfunding.io/'), markets: observed(['Crypto', 'Commodities', 'Stocks', 'Indices'], 'https://carrotfunding.io/') },
+  executionPolicy: { ...carrotFundingBase.executionPolicy, venue: observed('Carrot terminal · Arbitrum payout', 'https://carrotfunding.io/') },
+  modularProfile: CARROT_FUNDING_PAGE_PROFILE,
 };
