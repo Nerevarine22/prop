@@ -110,10 +110,13 @@ export function ProprEditorialContent({
   const isAceTrader = firm.slug === 'acetrader';
   const isBreakout = firm.slug === 'breakout';
   const isChainFunded = firm.slug === 'chainfunded';
-  const isFoxify = firm.slug === 'foxify';
-  const isHypernova = firm.slug === 'hypernova';
   const isO2 = firm.slug === 'o2';
-  const hasStandardRewards = isFoxify || isO2;
+  const isStandardized = ['foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade'].includes(firm.slug);
+  const hasStandardRewards = ['foxify', 'o2', 'solana-funded', 'vanta-trading', 'upscale-trade'].includes(firm.slug);
+  const rewardFactsBlock = pageProfile.sections.find((section) => section.id === 'rewards')?.blocks.find((block) => block.id === 'reward-facts');
+  const standardRewardItems = rewardFactsBlock?.type === 'fact-grid'
+    ? rewardFactsBlock.items.map((item) => [item.label, item.value] as const)
+    : [];
   const changeCopy = (key: string, value: string) => {
     if (!profileOverride || !onProfileChange) return;
     onProfileChange({ ...profileOverride, editorialCopy: { ...profileOverride.editorialCopy, [key]: value } });
@@ -175,7 +178,7 @@ export function ProprEditorialContent({
     { id: 'consider', label: 'Risk & proof' },
     { id: 'rewards', label: 'Rewards' },
     { id: 'sources', label: 'Sources' },
-  ] : isFoxify || isHypernova || isO2 ? [
+  ] : isStandardized ? [
     { id: 'decision', label: 'Brief' },
     { id: 'programs', label: isO2 ? 'Accounts' : 'Programs' },
     { id: 'payouts', label: 'Payouts' },
@@ -380,17 +383,7 @@ export function ProprEditorialContent({
           <InlineEditableText as="p" value={copy('rewards.description', factValue(firm.tokenRewards.description) ?? 'Reward details are not documented.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.description', value)} />
         </div>
         <div className={styles.considerList} {...cmsBlock('rewards', 'reward-facts')}>
-          {(isFoxify ? [
-            ['FOX', 'Fee buybacks and staking rewards are documented; dynamic APY is intentionally not treated as a stable fact.'],
-            ['NFT', 'Silver and Gold NFTs add 10% and 25% funding when staked before activation.'],
-            ['30%', 'Thirty percent of net trading fees is described as buying FOX for stakers.'],
-            ['Live', 'Token contract and current platform integrations are linked in official documentation.'],
-          ] : [
-            ['Score', 'Legend Score is a lifetime reputation metric on the O2 platform.'],
-            ['USDC', 'Trading competitions distribute USDC rather than an O2 token.'],
-            ['Referral', 'Turbo referral tiers share a portion of referred opening premiums.'],
-            ['ND', 'No proprietary token or confirmed airdrop is documented.'],
-          ]).map(([label, description], index) => <article key={label}><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{label}</h3><p>{description}</p></div></article>)}
+          {standardRewardItems.map(([label, description], index) => <article key={`${label}-${index}`}><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{label}</h3><p>{description}</p></div></article>)}
         </div>
       </section>}
 

@@ -16,8 +16,16 @@ import {
   FOXIFY_PAGE_PROFILE,
   HYPERNOVA_NORMALIZED_PROFILE,
   HYPERNOVA_PAGE_PROFILE,
+  KLEIN_FUNDING_NORMALIZED_PROFILE,
+  KLEIN_FUNDING_PAGE_PROFILE,
   O2_NORMALIZED_PROFILE,
   O2_PAGE_PROFILE,
+  SOLANA_FUNDED_NORMALIZED_PROFILE,
+  SOLANA_FUNDED_PAGE_PROFILE,
+  UPSCALE_TRADE_NORMALIZED_PROFILE,
+  UPSCALE_TRADE_PAGE_PROFILE,
+  VANTA_TRADING_NORMALIZED_PROFILE,
+  VANTA_TRADING_PAGE_PROFILE,
 } from './standardizedFirmProfiles';
 import { FIRM_DATABASE_SCHEMA_VERSION, type FirmBrandAssets, type FirmDatabaseRecord, type FirmLinks } from '@/types/database';
 
@@ -166,6 +174,10 @@ export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
     { profile: FOXIFY_NORMALIZED_PROFILE, page: FOXIFY_PAGE_PROFILE, website: 'https://www.foxify.trade/', xHandle: 'foxifytrade' },
     { profile: HYPERNOVA_NORMALIZED_PROFILE, page: HYPERNOVA_PAGE_PROFILE, website: 'https://hypernova.xyz/', xHandle: 'HypernovaX' },
     { profile: O2_NORMALIZED_PROFILE, page: O2_PAGE_PROFILE, website: 'https://www.o2.app/', xHandle: 'o2dotapp' },
+    { profile: SOLANA_FUNDED_NORMALIZED_PROFILE, page: SOLANA_FUNDED_PAGE_PROFILE, website: 'https://solanafunded.com/', xHandle: 'solanafunded' },
+    { profile: VANTA_TRADING_NORMALIZED_PROFILE, page: VANTA_TRADING_PAGE_PROFILE, website: 'https://www.vantatrading.io/', xHandle: 'VantaTrading' },
+    { profile: KLEIN_FUNDING_NORMALIZED_PROFILE, page: KLEIN_FUNDING_PAGE_PROFILE, website: 'https://kleinfunding.com/', xHandle: 'KleinFunding' },
+    { profile: UPSCALE_TRADE_NORMALIZED_PROFILE, page: UPSCALE_TRADE_PAGE_PROFILE, website: 'https://upscale.trade/', xHandle: 'UpscaleTrade' },
   ].map(({ profile, page, website, xHandle }): FirmDatabaseRecord => ({
     schemaVersion: FIRM_DATABASE_SCHEMA_VERSION,
     id: profile.id,
@@ -190,7 +202,7 @@ export const FIRM_DATABASE_SEED: FirmDatabaseRecord[] = [
     createdAt: profile.checkedAt,
     updatedAt: profile.checkedAt,
   })),
-  ...STUB_FIRMS.filter((firm) => !['breakout', 'chainfunded', 'foxify', 'hypernova', 'o2'].includes(firm.slug)).map((firm): FirmDatabaseRecord => {
+  ...STUB_FIRMS.filter((firm) => !['breakout', 'chainfunded', 'foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade'].includes(firm.slug)).map((firm): FirmDatabaseRecord => {
     const normalizedProfile = FIRM_NORMALIZED_PROFILES_BY_SLUG[firm.slug];
     const normalizedProfileV2 = getFirmModularProfile(normalizedProfile);
     return {

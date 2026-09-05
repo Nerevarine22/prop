@@ -15,6 +15,14 @@ import {
   HYPERNOVA_PAGE_PROFILE,
   O2_NORMALIZED_PROFILE,
   O2_PAGE_PROFILE,
+  SOLANA_FUNDED_NORMALIZED_PROFILE,
+  SOLANA_FUNDED_PAGE_PROFILE,
+  VANTA_TRADING_NORMALIZED_PROFILE,
+  VANTA_TRADING_PAGE_PROFILE,
+  KLEIN_FUNDING_NORMALIZED_PROFILE,
+  KLEIN_FUNDING_PAGE_PROFILE,
+  UPSCALE_TRADE_NORMALIZED_PROFILE,
+  UPSCALE_TRADE_PAGE_PROFILE,
 } from '../src/lib/data/standardizedFirmProfiles';
 import { PRIMARY_RESEARCH_BY_SLUG } from '../src/lib/data/firmPrimaryResearch';
 import type { FirmDatabaseRecord, FirmNormalizedProfile, FirmNormalizedProfileV2 } from '../src/types/database';
@@ -27,6 +35,10 @@ const profiles: Array<{ normalized: FirmNormalizedProfile; page: FirmNormalizedP
   { normalized: FOXIFY_NORMALIZED_PROFILE, page: FOXIFY_PAGE_PROFILE, website: 'https://www.foxify.trade/', xHandle: 'foxifytrade' },
   { normalized: HYPERNOVA_NORMALIZED_PROFILE, page: HYPERNOVA_PAGE_PROFILE, website: 'https://hypernova.xyz/', xHandle: 'HypernovaX' },
   { normalized: O2_NORMALIZED_PROFILE, page: O2_PAGE_PROFILE, website: 'https://www.o2.app/', xHandle: 'o2dotapp' },
+  { normalized: SOLANA_FUNDED_NORMALIZED_PROFILE, page: SOLANA_FUNDED_PAGE_PROFILE, website: 'https://solanafunded.com/', xHandle: 'solanafunded' },
+  { normalized: VANTA_TRADING_NORMALIZED_PROFILE, page: VANTA_TRADING_PAGE_PROFILE, website: 'https://www.vantatrading.io/', xHandle: 'VantaTrading' },
+  { normalized: KLEIN_FUNDING_NORMALIZED_PROFILE, page: KLEIN_FUNDING_PAGE_PROFILE, website: 'https://kleinfunding.com/', xHandle: 'KleinFunding' },
+  { normalized: UPSCALE_TRADE_NORMALIZED_PROFILE, page: UPSCALE_TRADE_PAGE_PROFILE, website: 'https://upscale.trade/', xHandle: 'UpscaleTrade' },
 ];
 
 async function main() {
