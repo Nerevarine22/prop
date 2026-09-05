@@ -65,7 +65,7 @@
 .navPromo:hover { border-color: var(--accent-condition); }
 
 .eyebrow { color: var(--blue); font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
-.decision { display: grid; grid-template-columns: minmax(0, 1fr) 320px; padding: 76px 22px 56px; align-items: end; gap: 90px; }
+.decision { display: grid; grid-template-columns: minmax(0, 1fr) 320px; padding: 76px 22px 56px; align-items: end; gap: 90px; scroll-margin-top: 130px; }
 .decisionCopy { max-width: 760px; }
 .decision h2 { margin: 16px 0 0; font-size: clamp(2.7rem, 5vw, 5rem); font-weight: 570; letter-spacing: -.07em; line-height: .96; }
 .decisionCopy > p { max-width: 690px; margin: 26px 0 0; color: var(--muted); font-size: 17px; line-height: 1.68; }

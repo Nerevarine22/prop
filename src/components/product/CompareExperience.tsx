@@ -87,7 +87,7 @@ export function CompareExperience({ firms }: { firms: FirmNormalizedProfile[] })
           </div>
           <div className={styles.compareVerdictRow}>
             <div className={styles.compareLabelCell}><span>Evidence lens</span><strong>Quick read</strong></div>
-            {selectedFirms.map((firm) => <div key={firm.id}><p>{evidenceSummary(firm)}</p><Link href={`/prop-firms/${firm.slug}`}>Open brief <ArrowRight /></Link></div>)}
+            {selectedFirms.map((firm) => <div key={firm.id}><p>{evidenceSummary(firm)}</p><Link href={`/prop-firms/${firm.slug}`} scroll={false} onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })}>Open brief <ArrowRight /></Link></div>)}
           </div>
           <div className={styles.compareRows}>{rows.map(([label, value], index) => <div className={styles.compareDataRow} key={label}><div className={styles.compareLabelCell}><span>{label}</span></div>{selectedFirms.map((firm) => <div className={index === 0 || index === 3 || index === 5 ? styles.comparisonEmphasis : ''} key={firm.id}>{value(firm)}</div>)}</div>)}</div>
           <div className={styles.compareFootnote}><Database /><p><strong>Evidence note:</strong> every displayed value comes from the firm’s normalized primary-source profile. Non-applicable fields are not converted into ND.</p></div>

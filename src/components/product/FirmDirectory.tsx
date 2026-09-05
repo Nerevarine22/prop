@@ -70,7 +70,7 @@ function FirmRow({ firm, selected, onToggle }: { firm: FirmNormalizedProfile; se
         <button className={selected ? styles.compareAdded : ''} type="button" onClick={onToggle}>
           {selected ? <Check /> : <span>+</span>} {selected ? 'Added' : 'Compare'}
         </button>
-        <Link className={styles.profileLink} href={`/prop-firms/${firm.slug}`}>View brief <ArrowRight /></Link>
+        <Link className={styles.profileLink} href={`/prop-firms/${firm.slug}`} scroll={false} onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })}>View brief <ArrowRight /></Link>
       </div>
     </article>
   );

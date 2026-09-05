@@ -30,7 +30,7 @@ export function PublicHome({ firms }: { firms: FirmNormalizedProfile[] }) {
           <div className={styles.previewFirm}>
             <FirmLogo src={profileLogo(featured)} name={featured.name} imageClassName={styles.previewLogo} fallbackClassName={styles.previewFallback} />
             <div><strong>{featured.name}</strong><small>{programs[0]?.name ?? 'ND'} · from {fee === undefined ? 'ND' : `$${fee}`}</small></div>
-            <Link href={`/prop-firms/${featured.slug}`}>View <ArrowUpRight /></Link>
+            <Link href={`/prop-firms/${featured.slug}`} scroll={false}>View <ArrowUpRight /></Link>
           </div>
           <div className={styles.previewVerdict}><span>Research status</span><p>Primary-source facts use explicit ND and preserve resolved differences between official pages.</p></div>
           <div className={styles.previewSignals}>
