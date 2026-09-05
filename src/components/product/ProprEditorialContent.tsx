@@ -45,7 +45,7 @@ function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
     <article className={styles.programCard}>
       <div className={styles.programTop}>
         <div>
-          <span>{kind === 'instant-funding' ? 'Instant Fund' : kind === 'collateralized' ? 'Collateralized funding' : kind === 'progression' ? 'Progression' : stages.length > 1 ? `${stages.length}-phase evaluation` : '1-phase evaluation'}</span>
+          <span>{kind === 'instant-funding' ? 'Instant Fund' : kind === 'collateralized' ? 'Collateralized funding' : kind === 'progression' ? 'Progression' : kind === 'competition' ? 'Competition' : stages.length > 1 ? `${stages.length}-phase evaluation` : '1-phase evaluation'}</span>
           <h3>{program.name}</h3>
         </div>
         <div className={styles.programTarget}>
@@ -111,8 +111,8 @@ export function ProprEditorialContent({
   const isBreakout = firm.slug === 'breakout';
   const isChainFunded = firm.slug === 'chainfunded';
   const isO2 = firm.slug === 'o2';
-  const isStandardized = ['foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade'].includes(firm.slug);
-  const hasStandardRewards = ['foxify', 'o2', 'solana-funded', 'vanta-trading', 'upscale-trade'].includes(firm.slug);
+  const isStandardized = ['foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade', 'size', 'polyquid', 'funded-hive', 'cf-trader'].includes(firm.slug);
+  const hasStandardRewards = ['foxify', 'o2', 'solana-funded', 'vanta-trading', 'upscale-trade', 'size', 'funded-hive', 'cf-trader'].includes(firm.slug);
   const rewardFactsBlock = pageProfile.sections.find((section) => section.id === 'rewards')?.blocks.find((block) => block.id === 'reward-facts');
   const standardRewardItems = rewardFactsBlock?.type === 'fact-grid'
     ? rewardFactsBlock.items.map((item) => [item.label, item.value] as const)

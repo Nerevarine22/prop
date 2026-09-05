@@ -23,6 +23,14 @@ import {
   KLEIN_FUNDING_PAGE_PROFILE,
   UPSCALE_TRADE_NORMALIZED_PROFILE,
   UPSCALE_TRADE_PAGE_PROFILE,
+  SIZE_NORMALIZED_PROFILE,
+  SIZE_PAGE_PROFILE,
+  POLYQUID_NORMALIZED_PROFILE,
+  POLYQUID_PAGE_PROFILE,
+  FUNDED_HIVE_NORMALIZED_PROFILE,
+  FUNDED_HIVE_PAGE_PROFILE,
+  CF_TRADER_NORMALIZED_PROFILE,
+  CF_TRADER_PAGE_PROFILE,
 } from '../src/lib/data/standardizedFirmProfiles';
 import { PRIMARY_RESEARCH_BY_SLUG } from '../src/lib/data/firmPrimaryResearch';
 import type { FirmDatabaseRecord, FirmNormalizedProfile, FirmNormalizedProfileV2 } from '../src/types/database';
@@ -39,6 +47,10 @@ const profiles: Array<{ normalized: FirmNormalizedProfile; page: FirmNormalizedP
   { normalized: VANTA_TRADING_NORMALIZED_PROFILE, page: VANTA_TRADING_PAGE_PROFILE, website: 'https://www.vantatrading.io/', xHandle: 'VantaTrading' },
   { normalized: KLEIN_FUNDING_NORMALIZED_PROFILE, page: KLEIN_FUNDING_PAGE_PROFILE, website: 'https://kleinfunding.com/', xHandle: 'KleinFunding' },
   { normalized: UPSCALE_TRADE_NORMALIZED_PROFILE, page: UPSCALE_TRADE_PAGE_PROFILE, website: 'https://upscale.trade/', xHandle: 'UpscaleTrade' },
+  { normalized: SIZE_NORMALIZED_PROFILE, page: SIZE_PAGE_PROFILE, website: 'https://www.size.club/', xHandle: 'sizedotclub' },
+  { normalized: POLYQUID_NORMALIZED_PROFILE, page: POLYQUID_PAGE_PROFILE, website: 'https://www.polyquid.xyz/', xHandle: 'polyquid' },
+  { normalized: FUNDED_HIVE_NORMALIZED_PROFILE, page: FUNDED_HIVE_PAGE_PROFILE, website: 'https://fundedhive.com/', xHandle: 'FundedHive' },
+  { normalized: CF_TRADER_NORMALIZED_PROFILE, page: CF_TRADER_PAGE_PROFILE, website: 'https://cryptofundtrader.com/', xHandle: 'CFTradercom' },
 ];
 
 async function main() {

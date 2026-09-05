@@ -6,12 +6,16 @@ import { ACETRADER_NORMALIZED_PROFILE } from './aceTraderProfile';
 import { BREAKOUT_NORMALIZED_PROFILE, CHAINFUNDED_NORMALIZED_PROFILE } from './upgradedFirmProfiles';
 import {
   FOXIFY_NORMALIZED_PROFILE,
+  FUNDED_HIVE_NORMALIZED_PROFILE,
   HYPERNOVA_NORMALIZED_PROFILE,
   KLEIN_FUNDING_NORMALIZED_PROFILE,
   O2_NORMALIZED_PROFILE,
+  POLYQUID_NORMALIZED_PROFILE,
+  SIZE_NORMALIZED_PROFILE,
   SOLANA_FUNDED_NORMALIZED_PROFILE,
   UPSCALE_TRADE_NORMALIZED_PROFILE,
   VANTA_TRADING_NORMALIZED_PROFILE,
+  CF_TRADER_NORMALIZED_PROFILE,
 } from './standardizedFirmProfiles';
 import type {
   FirmNormalizedProfile,
@@ -20,7 +24,7 @@ import type {
   PrimaryResearchValueStatus,
 } from '@/types/database';
 
-const UPGRADED_SLUGS = new Set(['breakout', 'chainfunded', 'foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade']);
+const UPGRADED_SLUGS = new Set(['breakout', 'chainfunded', 'foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade', 'size', 'polyquid', 'funded-hive', 'cf-trader']);
 
 export const PUBLIC_FIRM_PROFILES = [
   ...Object.values(FIRM_NORMALIZED_PROFILES_BY_SLUG).filter((profile) => !UPGRADED_SLUGS.has(profile.slug)),
@@ -36,6 +40,10 @@ export const PUBLIC_FIRM_PROFILES = [
   VANTA_TRADING_NORMALIZED_PROFILE,
   KLEIN_FUNDING_NORMALIZED_PROFILE,
   UPSCALE_TRADE_NORMALIZED_PROFILE,
+  SIZE_NORMALIZED_PROFILE,
+  POLYQUID_NORMALIZED_PROFILE,
+  FUNDED_HIVE_NORMALIZED_PROFILE,
+  CF_TRADER_NORMALIZED_PROFILE,
 ].map((profile) => (
   attachFirmModularProfile(profile)
 )).sort((a, b) => {

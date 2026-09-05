@@ -4,7 +4,7 @@ import type { FirmNormalizedProfile, FirmNormalizedProfileV2, FirmResearchSource
 const CHECKED_AT = '2026-09-05T00:00:00.000Z';
 
 type PageConfig = {
-  slug: 'foxify' | 'hypernova' | 'o2' | 'solana-funded' | 'vanta-trading' | 'klein-funding' | 'upscale-trade';
+  slug: 'foxify' | 'hypernova' | 'o2' | 'solana-funded' | 'vanta-trading' | 'klein-funding' | 'upscale-trade' | 'size' | 'polyquid' | 'funded-hive' | 'cf-trader';
   name: string;
   offers: string[];
   sources: Array<{ category: FirmResearchSourceInspection['category']; url: string; label: string }>;
@@ -320,12 +320,157 @@ export const UPSCALE_TRADE_PAGE_PROFILE = page({
   reward: { label: 'Tournaments, demo discount and referrals', metrics: [['Demo', 'Free'], ['Demo reward', '20% discount'], ['Tournaments', 'Prize accounts'], ['Token / airdrop', 'Not documented']] },
 });
 
+export const SIZE_PAGE_PROFILE = page({
+  slug: 'size', name: 'Size', modelTypes: ['competition'], offers: ['Alpha', 'Bronze', 'Silver', 'Gold', 'Diamond', 'Ruby'],
+  sources: [
+    { category: 'website', url: 'https://www.size.club/', label: 'Official website' },
+    { category: 'rulebook', url: 'https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives', label: 'Keys, Trials and Lives' },
+    { category: 'payout-policy', url: 'https://www.size.club/docs/after-you-win/profit-split-and-payouts', label: 'Payout rules' },
+    { category: 'terms', url: 'https://www.size.club/legal/terms-of-service.pdf', label: 'Terms of Service' },
+  ],
+  copy: {
+    'promo.code': '', 'decision.title': 'A 15-minute competition, not a conventional evaluation.',
+    'decision.description': 'Size sells Keys that enter short live-market Trials. Winning a Trial awards a simulated funded Life whose capital, drawdown and trader share depend on the tier—from the $1 Alpha entry to the $1,499 Ruby competition.',
+    'decision.highlight': 'The trader competes for first place before receiving a funded Life; paying a Key does not itself start a normal multi-day challenge.',
+    'process.title': 'Buy a Key, win a Trial, manage a Life', 'process.description': 'The competitive selection step is the defining mechanic.',
+    'process.1.title': 'Choose a tier', 'process.1.description': 'Tier sets Key price, Life size, risk limits and profit share.',
+    'process.2.title': 'Enter a 15-minute Trial', 'process.2.description': 'Trading uses live markets and leaderboard placement.',
+    'process.3.title': 'Finish first', 'process.3.description': 'The winner receives the simulated funded Life for that tier.',
+    'process.4.title': 'Withdraw USDC', 'process.4.description': 'Eligible profit settles on demand through the Size wallet.',
+    'programs.title': 'Six competition tiers from $100 to $200K Lives.', 'programs.description': 'Key prices scale sharply with notional Life size; higher tiers tighten daily and total drawdown.',
+    'programs.note': 'Product docs list Bronze at $9 while the Terms schedule has listed it as free.',
+    'payouts.title': 'depends on the winning tier.', 'payouts.description': 'Payouts are on demand, partial withdrawals are allowed and settlement uses USDC through the Size wallet.',
+    'payouts.minimum': '$5', 'payouts.processing': 'On demand', 'payouts.rail': 'USDC · HyperEVM wallet',
+    'payouts.rule.1': 'Trader shares range from 60% to 85%; Alpha is 80%.', 'payouts.rule.2': 'Size states no internal payout fee; external withdrawal costs $1.', 'payouts.rule.3': 'The account remains a simulated funded Life.',
+    'trading.title': 'Short live-market competitions lead to simulated funded accounts.', 'trading.description': 'Trials use live-market conditions, while the Terms classify the service as simulated skill-based entertainment and non-custodial.',
+    'trading.markets': 'Crypto markets', 'trading.leverage': 'Tier dependent',
+    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'Competition odds matter as much as the published risk limits.',
+    'consider.1.title': 'Winner-takes-selection', 'consider.1.description': 'A trader can perform positively and still fail to win the Trial leaderboard.',
+    'consider.2.title': 'Bronze price conflict', 'consider.2.description': 'Product documentation says $9 while the Terms schedule has said free.',
+    'consider.3.title': 'Simulation is explicit', 'consider.3.description': 'A Life is not custody of a real funded brokerage balance.',
+    'consider.4.title': 'Tier economics vary', 'consider.4.description': 'Key price, drawdown and trader share must be compared together.',
+    'rewards.title': 'XP tracks long-term activity across the Size ecosystem.', 'rewards.description': 'Permanent XP comes from wins, payouts, referrals, purchases, practice and missions; Preseason standings award funded-Life prizes.',
+    'sources.unknowns': 'win probability by Trial tier, current participant counts, leverage table, complete asset list, independent payout audit and current Bronze price reconciliation.',
+    'model.classification': 'Live-market competition → simulated funded Life', 'model.lifecycle': 'Key → 15-minute Trial → first place → funded Life → USDC payout', 'model.environment': 'Size competition terminal · HyperEVM wallet', 'model.compensation': '60–85% by tier · Alpha 80%',
+  },
+  comparison: { modelTypes: ['competition'], capital: { status: 'varies', min: 100, max: 200_000, unit: 'USD' }, entryCost: { status: 'varies', min: 1, max: 1_499, unit: 'USD' }, profitSplit: { status: 'varies', min: 60, max: 85, unit: 'percent' }, maxDrawdown: { status: 'varies', min: 8, max: 10, unit: 'percent' }, payoutSchedules: { status: 'known', values: ['on-demand'] }, executionModels: { status: 'known', values: ['competition', 'simulated funded'] } },
+  reward: { label: 'XP progression and Preseason prizes', metrics: [['XP', 'Permanent score'], ['Earned from', 'Wins + activity'], ['Preseason', 'Funded-Life prizes'], ['Liquid token', 'Not documented']] },
+});
+
+export const POLYQUID_PAGE_PROFILE = page({
+  slug: 'polyquid', name: 'Polyquid', modelTypes: ['evaluation'], offers: ['Waitlist'],
+  sources: [{ category: 'website', url: 'https://www.polyquid.xyz/', label: 'Official waitlist' }],
+  copy: {
+    'promo.code': '', 'decision.title': 'A concept-stage cross-market prop product with no public rulebook.',
+    'decision.description': 'Polyquid currently presents a waitlist around one challenge spanning Hyperliquid and Polymarket. Pricing, targets, risk limits, payouts, legal terms and operational mechanics are not publicly documented in the inspected first-party material.',
+    'decision.highlight': 'This is a watchlist profile, not a product review: there is not enough official data for an informed purchase decision.',
+    'process.title': 'What is public—and what is not', 'process.description': 'Only the product direction is visible today.',
+    'process.1.title': 'Join the waitlist', 'process.1.description': 'The live site provides waitlist, Discord and X actions.',
+    'process.2.title': 'One challenge is promised', 'process.2.description': 'No target, fee or drawdown framework is published.',
+    'process.3.title': 'Two market venues are named', 'process.3.description': 'Hyperliquid and Polymarket appear in positioning copy.',
+    'process.4.title': 'Recheck at launch', 'process.4.description': 'Rules, Terms and payout mechanics need a fresh review before comparison.',
+    'programs.title': 'No purchasable programme is documented.', 'programs.description': 'The waitlist statement is not enough to construct a pricing or risk card.',
+    'programs.note': 'All values remain ND rather than inferred from competing firms.',
+    'payouts.title': 'is not documented.', 'payouts.description': 'No split, minimum, cadence, eligibility condition, currency or processing time is published.',
+    'payouts.minimum': 'ND', 'payouts.processing': 'ND', 'payouts.rail': 'ND',
+    'payouts.rule.1': 'No payout policy is linked.', 'payouts.rule.2': 'No legal entitlement language is published.', 'payouts.rule.3': 'No settlement proof is available.',
+    'trading.title': 'Hyperliquid and Polymarket are positioning, not yet a rulebook.', 'trading.description': 'The site names both venues but does not explain execution, simulation, market coverage, leverage or prohibited strategies.',
+    'trading.markets': 'Hyperliquid + Polymarket · marketing only', 'trading.leverage': 'ND',
+    'consider.eyebrow': 'Launch readiness', 'consider.title': 'Nearly every decision-grade field is unresolved.',
+    'consider.1.title': 'No rules', 'consider.1.description': 'Targets, phases, drawdown and time limits are absent.',
+    'consider.2.title': 'No pricing', 'consider.2.description': 'There is no checkout or public fee schedule.',
+    'consider.3.title': 'No Terms', 'consider.3.description': 'Operator, jurisdiction and account legal model are not disclosed.',
+    'consider.4.title': 'No payout policy', 'consider.4.description': 'Split, cadence and settlement rails cannot be verified.',
+    'sources.unknowns': 'pricing, rules, account model, execution, payouts, legal entity, restricted jurisdictions, rewards and launch timing.',
+    'model.classification': 'Pre-launch / waitlist concept', 'model.lifecycle': 'Waitlist → undocumented future challenge', 'model.environment': 'Hyperliquid + Polymarket positioning', 'model.compensation': 'Not documented',
+  },
+  comparison: { modelTypes: ['evaluation'], capital: { status: 'ND', unit: 'USD' }, entryCost: { status: 'ND', unit: 'USD' }, profitSplit: { status: 'ND', unit: 'percent' }, maxDrawdown: { status: 'ND', unit: 'percent' }, payoutSchedules: { status: 'ND', values: [] }, executionModels: { status: 'ND', values: [] } },
+});
+
+export const FUNDED_HIVE_PAGE_PROFILE = page({
+  slug: 'funded-hive', name: 'Funded Hive', modelTypes: ['evaluation', 'instant-funding'], offers: ['Pay After You Pass 1-Step', 'Classic 2-Step', 'Pay From Profits', 'InstantGrowth'],
+  sources: [
+    { category: 'website', url: 'https://fundedhive.com/funding-models', label: 'Funding models' },
+    { category: 'faq', url: 'https://fundedhive.com/faq', label: 'Official FAQ' },
+    { category: 'terms', url: 'https://fundedhive.com/downloads/terms-and-conditions.pdf', label: 'Terms and product annexes' },
+    { category: 'payout-policy', url: 'https://fundedhive.com/transparency', label: 'On-chain transparency page' },
+  ],
+  copy: {
+    'promo.code': '', 'decision.title': 'Multiple fee models feeding an automated A-Book payout system.',
+    'decision.description': 'Funded Hive combines classic, pay-after-pass, pay-from-profits and instant products. Evaluations are simulated; funded accounts begin in A-Book routing, and only verified positive A-Book PnL is eligible for automated USDC payouts.',
+    'decision.highlight': 'The payout system is genuinely more inspectable, but eligibility depends on routing and product-specific annexes—not only headline profit.',
+    'process.title': 'Choose the fee model, pass, qualify A-Book profit', 'process.description': 'The product family changes when and how the funded fee is paid.',
+    'process.1.title': 'Choose a funding model', 'process.1.description': 'Classic, pay-after-pass, pay-from-profits and instant paths differ materially.',
+    'process.2.title': 'Complete simulated rules', 'process.2.description': 'Targets and risk limits depend on the product and risk category.',
+    'process.3.title': 'Enter funded routing', 'process.3.description': 'AADS begins with A-Book execution and can change routing by predefined thresholds.',
+    'process.4.title': 'Claim USDC on-chain', 'process.4.description': 'The contract pays eligible verified A-Book profit subject to daily caps.',
+    'programs.title': 'Four product families and a progression of risk categories.', 'programs.description': 'Entry timing, funded fee, split and leverage can change across NewBee, WorkerBee and QueenBee conditions.',
+    'programs.note': 'The full Terms and the exact product annex—not a marketing card—must control each configuration.',
+    'payouts.title': 'is automated only after A-Book eligibility.', 'payouts.description': 'The contract pays USDC without a manual finance queue, but verification, routing, gas and daily security caps still apply.',
+    'payouts.minimum': '$50', 'payouts.processing': '≈60 seconds stated', 'payouts.rail': 'USDC · ERC-20 contract',
+    'payouts.rule.1': 'All positions must be closed.', 'payouts.rule.2': 'Classic/PFP daily cap is $1,000 per connected address.', 'payouts.rule.3': 'Only verified positive A-Book PnL is withdrawable.',
+    'trading.title': 'cTrader in evaluation; hybrid AADS routing after funding.', 'trading.description': 'The model distinguishes simulated evaluation, A-Book market routing and B-Book states. News trading and limited automation are allowed; copy trading, hedging and exploitative HFT are prohibited.',
+    'trading.markets': 'FX and supported cTrader instruments', 'trading.leverage': '1:50–1:200 by risk tier',
+    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'On-chain proof improves traceability but does not erase eligibility complexity.',
+    'consider.1.title': 'A-Book profit gate', 'consider.1.description': 'A displayed funded profit is not automatically withdrawable unless verified as positive A-Book PnL.',
+    'consider.2.title': 'Product annexes matter', 'consider.2.description': 'Daily caps, funded fees, routing and risk categories vary across products.',
+    'consider.3.title': 'Marketing is absolute', 'consider.3.description': '“No room for disputes” copy is broader than the suspension, verification and reversal rights in Terms.',
+    'consider.4.title': 'Public hashes are useful', 'consider.4.description': 'Transaction rows and certificates offer better payout traceability than screenshots alone.',
+    'rewards.title': 'Hive Coin is embedded in refunds and repeat purchases.', 'rewards.description': 'Some products can issue a 200% fee refund in Hive Coin, which can fund part of another challenge; payout certificates may also be minted.',
+    'sources.unknowns': 'independent smart-contract audit, complete live price matrix, current routing thresholds, reserve liabilities and jurisdiction-by-jurisdiction availability.',
+    'model.classification': 'Simulated evaluation → hybrid AADS funded routing', 'model.lifecycle': 'Access fee → challenge → funded fee/risk class → A-Book PnL → USDC contract payout', 'model.environment': 'cTrader · AADS · ERC-20 smart contract', 'model.compensation': 'Product/risk-tier dependent',
+  },
+  comparison: { modelTypes: ['evaluation', 'instant-funding'], capital: { status: 'varies', min: 5_000, max: 200_000, unit: 'USD' }, entryCost: { status: 'varies', min: 9, max: 399, unit: 'USD', notes: 'Access and funded fees vary by product.' }, profitSplit: { status: 'varies', min: 60, max: 99, unit: 'percent' }, maxDrawdown: { status: 'varies', min: 10, max: 10, unit: 'percent' }, payoutSchedules: { status: 'known', values: ['conditional', 'on-chain'] }, executionModels: { status: 'known', values: ['simulated', 'A-book', 'B-book'] } },
+  reward: { label: 'Hive Coin refunds and payout certificates', metrics: [['Hive Coin', 'Utility credit'], ['Fee refund', 'Up to 200% stated'], ['Repeat purchase', 'Up to 50% covered'], ['Payout proof', 'Hash / NFT certificate']] },
+});
+
+export const CF_TRADER_PAGE_PROFILE = page({
+  slug: 'cf-trader', name: 'Crypto Fund Trader', modelTypes: ['evaluation', 'instant-funding'], offers: ['2-Phase', '1-Phase', 'Instant'],
+  sources: [
+    { category: 'website', url: 'https://cryptofundtrader.com/', label: 'Official website' },
+    { category: 'faq', url: 'https://cryptofundtrader.com/faq/', label: 'Rules and payout FAQ' },
+    { category: 'terms', url: 'https://cryptofundtrader.com/terms-and-conditions/', label: 'Terms and fee schedules' },
+    { category: 'token-rewards', url: 'https://cryptofundtrader.com/competitive-ranking/', label: 'Competitive Ranking' },
+  ],
+  copy: {
+    'promo.code': '', 'decision.title': 'Conventional simulated challenges with crypto-focused instruments.',
+    'decision.description': 'Crypto Fund Trader offers two-phase, one-phase and instant simulated accounts from $2.5K to $200K. The main trade-off is between fixed two-phase risk, trailing one-phase drawdown and the higher entry cost of Instant.',
+    'decision.highlight': 'Payout eligibility is measured in traded days, not simply calendar time, and the one-phase drawdown trails balance highs.',
+    'process.title': 'Choose the drawdown model, trade enough days, complete KYC', 'process.description': 'Account type changes evaluation stages and loss mechanics.',
+    'process.1.title': 'Choose 2-Phase, 1-Phase or Instant', 'process.1.description': 'Each path uses different targets, drawdown and account-size ranges.',
+    'process.2.title': 'Respect strategy restrictions', 'process.2.description': 'HFT, tick scalping, latency arbitrage and gambling-style trading are prohibited.',
+    'process.3.title': 'Complete traded-day eligibility', 'process.3.description': 'Standard payouts use 15 traded days or a monthly window; weekly is an add-on.',
+    'process.4.title': 'Verify and withdraw', 'process.4.description': 'KYC, contract acceptance and closed trades are required before payment.',
+    'programs.title': 'Fixed, trailing and instant paths in one catalogue.', 'programs.description': 'Two-phase uses 8% then 5% with 10% fixed loss; one-phase uses a 10% target and 6% trailing loss.',
+    'programs.note': 'Instant is limited to smaller documented sizes than the evaluation products.',
+    'payouts.title': 'follows traded-day eligibility.', 'payouts.description': 'Standard access comes after 15 traded days or every 30 calendar days; a paid weekly option uses seven traded days.',
+    'payouts.minimum': 'Not normalized', 'payouts.processing': '≈8h avg · up to 48 business hours', 'payouts.rail': 'Bank · USDT · BTC · ETH',
+    'payouts.rule.1': 'All trades must be closed.', 'payouts.rule.2': 'KYC and a signed contract are required.', 'payouts.rule.3': 'The Terms frame payment as a performance-based scholarship reward.',
+    'trading.title': 'Simulated multi-asset trading with anti-exploit restrictions.', 'trading.description': 'The firm states it does not add artificial spread or slippage; automated and high-frequency techniques remain restricted by the FAQ.',
+    'trading.markets': 'Crypto plus supported multi-asset instruments', 'trading.leverage': 'Account and asset dependent',
+    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'The evaluation rules are clear; payout economics need finer normalization.',
+    'consider.1.title': 'Trailing one-phase risk', 'consider.1.description': 'The 6% one-phase drawdown follows balance highs and is not equivalent to 10% fixed loss.',
+    'consider.2.title': 'Traded days delay access', 'consider.2.description': 'A calendar month alone does not replace the documented minimum traded-day route.',
+    'consider.3.title': 'Broad prohibited-strategy language', 'consider.3.description': 'Gambling-style trading and exploit categories can require contextual enforcement.',
+    'consider.4.title': 'No single split stored', 'consider.4.description': 'Current research should capture profit share by product before direct comparison.',
+    'rewards.title': 'Competitive Ranking turns activity into seasonal ELO.', 'rewards.description': 'Successful trades, passed phases and reward requests contribute to rankings with cash, evaluation and subscription prizes.',
+    'sources.unknowns': 'current profit split by product, complete live price grid, leverage table, payout minimum, restricted countries and independent payout ledger.',
+    'model.classification': 'Simulated evaluation + instant funding', 'model.lifecycle': 'Fee → simulated account → funded stage → KYC/contract → scholarship reward', 'model.environment': 'Crypto Fund Trader simulated platforms', 'model.compensation': 'Product dependent · not fully normalized',
+  },
+  comparison: { modelTypes: ['evaluation', 'instant-funding'], capital: { status: 'varies', min: 2_500, max: 200_000, unit: 'USD' }, entryCost: { status: 'varies', min: 40, max: 1_250, unit: 'USD' }, profitSplit: { status: 'ND', unit: 'percent' }, maxDrawdown: { status: 'varies', min: 6, max: 10, unit: 'percent' }, payoutSchedules: { status: 'known', values: ['monthly', 'weekly add-on'] }, executionModels: { status: 'known', values: ['simulated'] } },
+  reward: { label: 'Seasonal ELO and competition prizes', metrics: [['Ranking', 'ELO'], ['Earned from', 'Trading milestones'], ['Prizes', 'Cash + evaluations'], ['Token / airdrop', 'Not documented']] },
+});
+
 const foxifyBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.foxify;
 const o2Base = FIRM_NORMALIZED_PROFILES_BY_SLUG.o2;
 const solanaBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['solana-funded'];
 const vantaBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['vanta-trading'];
 const kleinBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['klein-funding'];
 const upscaleBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['upscale-trade'];
+const sizeBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.size;
+const polyquidBase = FIRM_NORMALIZED_PROFILES_BY_SLUG.polyquid;
+const fundedHiveBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['funded-hive'];
+const cfTraderBase = FIRM_NORMALIZED_PROFILES_BY_SLUG['cf-trader'];
 const vantaPricingUrl = 'https://www.vantatrading.io/pricing';
 const vantaTier = (accountSize: number, fee: number, originalFee = fee) => ({
   accountSize: observed(accountSize, vantaPricingUrl),
@@ -422,4 +567,34 @@ export const UPSCALE_TRADE_NORMALIZED_PROFILE: FirmNormalizedProfile = {
   },
   executionPolicy: { ...upscaleBase.executionPolicy, venue: observed('Upscale web terminal · Telegram mini app', 'https://docs.upscale.trade/introduction/goals_and_benefits') },
   modularProfile: UPSCALE_TRADE_PAGE_PROFILE,
+};
+export const SIZE_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+  ...sizeBase,
+  checkedAt: CHECKED_AT,
+  tradingPolicy: { ...sizeBase.tradingPolicy, platforms: observed(['Size competition terminal'], 'https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives'), markets: observed(['Crypto markets'], 'https://www.size.club/docs/how-size-works/product-tiers-keys-and-lives') },
+  executionPolicy: { ...sizeBase.executionPolicy, venue: observed('Size terminal · HyperEVM payout wallet', 'https://www.size.club/docs/after-you-win/profit-split-and-payouts') },
+  modularProfile: SIZE_PAGE_PROFILE,
+};
+export const POLYQUID_NORMALIZED_PROFILE: FirmNormalizedProfile = { ...polyquidBase, checkedAt: CHECKED_AT, modularProfile: POLYQUID_PAGE_PROFILE };
+export const FUNDED_HIVE_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+  ...fundedHiveBase,
+  checkedAt: CHECKED_AT,
+  tradingPolicy: {
+    ...fundedHiveBase.tradingPolicy,
+    platforms: observed(['cTrader'], 'https://fundedhive.com/funding-models'),
+    markets: observed(['Forex', 'Supported cTrader instruments'], 'https://fundedhive.com/funding-models'),
+    leverage: observed(['FX 1:50–1:200 by risk tier'], 'https://fundedhive.com/funding-models'),
+    newsTrading: observed('allowed', 'https://fundedhive.com/funding-models'),
+    automatedTrading: observed('restricted', 'https://fundedhive.com/faq'),
+    copyTrading: observed('restricted', 'https://fundedhive.com/funding-models', 'Official rules prohibit copy trading.'),
+  },
+  executionPolicy: { ...fundedHiveBase.executionPolicy, venue: observed('cTrader · Automated A-Book Dealing System', 'https://fundedhive.com/faq'), onchainSettlement: observed(true, 'https://fundedhive.com/faq') },
+  modularProfile: FUNDED_HIVE_PAGE_PROFILE,
+};
+export const CF_TRADER_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+  ...cfTraderBase,
+  checkedAt: CHECKED_AT,
+  tradingPolicy: { ...cfTraderBase.tradingPolicy, platforms: observed(['Crypto Fund Trader platforms'], 'https://cryptofundtrader.com/faq/'), markets: observed(['Crypto', 'Forex', 'Indices', 'Commodities'], 'https://cryptofundtrader.com/faq/') },
+  executionPolicy: { ...cfTraderBase.executionPolicy, venue: observed('Simulated multi-asset trading platforms', 'https://cryptofundtrader.com/terms-and-conditions/') },
+  modularProfile: CF_TRADER_PAGE_PROFILE,
 };
