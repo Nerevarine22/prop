@@ -37,10 +37,10 @@
 .rating small a { color: inherit; text-decoration: none; }
 .rating small a:hover { color: var(--accent-value); }
 .actions { display: grid; margin-top: 20px; gap: 8px; }
-.actions a { display: inline-flex; min-height: 43px; padding: 0 13px; align-items: center; justify-content: center; gap: 7px; border-radius: 8px; font-size: 11px; font-weight: 750; text-decoration: none; }
-.actions a:first-child { background: var(--blue); color: #fff; }
-.actions a:last-child { border: 1px solid var(--line); color: var(--ink); }
-.actions svg { width: 12px; }
+.actions > a { display: inline-flex; min-height: 46px; padding: 0 15px; align-items: center; justify-content: center; gap: 8px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
+.actions > a:first-child { background: var(--blue); color: #0b120e; }
+.actions > a:last-child { border: 1px solid var(--line); color: var(--ink); }
+.actions > a > svg { width: 16px; height: 16px; }
 .execution { margin: auto 0 0; padding-top: 22px; }
 .execution div { display: flex; padding: 8px 0; align-items: center; justify-content: space-between; gap: 16px; font-size: 11px; }
 .execution dt { color: var(--muted); }
