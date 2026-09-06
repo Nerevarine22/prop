@@ -1,7 +1,10 @@
-.row { display: flex; min-height: 28px; margin-top: 14px; align-items: center; justify-content: space-between; gap: 14px; color: var(--muted); font-family: var(--font-geist-mono), monospace; }
-.label { display: inline-flex; min-width: 0; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; letter-spacing: .035em; text-transform: uppercase; }
+.row { display: flex; min-height: 30px; margin-top: 14px; align-items: center; justify-content: space-between; gap: 14px; color: var(--muted); font-family: var(--font-geist-mono), monospace; }
+.label { display: inline-flex; min-width: 0; align-items: center; gap: 7px; font-size: 11px; font-weight: 700; letter-spacing: .025em; text-transform: uppercase; }
 .label a { color: var(--ink); text-decoration: none; }
 .label a:hover { color: var(--blue); }
+.xMark { display: inline-grid; width: 15px; height: 15px; flex: 0 0 15px; place-items: center; color: var(--muted); }
+.xMark svg { width: 12px; height: 12px; }
+.tier { color: var(--muted); white-space: nowrap; }
 .info { display: inline-grid; width: 14px; height: 14px; flex: 0 0 14px; cursor: help; place-items: center; color: var(--muted); }
 .info svg { width: 11px; height: 11px; }
 .row > strong { color: var(--ink); font-size: 18px; font-weight: 620; letter-spacing: -.04em; line-height: 1; }
