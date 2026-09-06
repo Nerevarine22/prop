@@ -2,6 +2,8 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { factValue, PUBLIC_FIRM_PROFILES } from '@/lib/data/publicFirmProfiles';
 
 const SORSA_SCORE_URL = 'https://api.sorsa.io/v3/score';
+const SORSA_CACHE_SECONDS = 60 * 60 * 24;
+const SORSA_STALE_SECONDS = 60 * 60 * 24 * 7;
 const X_USERNAME = /^[A-Za-z0-9_]{1,15}$/;
 const TRACKED_USERNAMES = new Set(
   PUBLIC_FIRM_PROFILES
@@ -30,7 +32,7 @@ export async function GET(request: NextRequest) {
   try {
     const response = await fetch(`${SORSA_SCORE_URL}?username=${encodeURIComponent(username)}`, {
       headers: { ApiKey: apiKey },
-      next: { revalidate: 3600 },
+      next: { revalidate: SORSA_CACHE_SECONDS },
       signal: AbortSignal.timeout(8_000),
     });
 
@@ -48,7 +50,11 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(
       { score: data.score, source: 'Sorsa', checkedAt: new Date().toISOString() },
-      { headers: { 'Cache-Control': 'private, max-age=300' } },
+      {
+        headers: {
+          'Cache-Control': `public, max-age=300, s-maxage=${SORSA_CACHE_SECONDS}, stale-while-revalidate=${SORSA_STALE_SECONDS}`,
+        },
+      },
     );
   } catch {
     return NextResponse.json({ message: 'Sorsa score request failed.' }, { status: 502 });
