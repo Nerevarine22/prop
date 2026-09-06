@@ -5,6 +5,7 @@ import type { ComparisonRangeProjection, FirmNormalizedProfile, FirmNormalizedPr
 import { comparisonListText, comparisonRangeText, firmModelTypeLabel, getFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import { factValue, formatCapital, profileLogo, profileTrustpilotRating, profileWebsite, shortDate } from '@/lib/data/publicFirmProfiles';
 import { ProfileCompareButton, ProfileComparisonTray } from './ProfileCompareControl';
+import { SorsaScoreBadge } from './SorsaScoreBadge';
 import styles from './ProprEditorialHero.module.css';
 
 function XMark() {
@@ -92,13 +93,15 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
 
       <div className={styles.heroBody}>
         <div className={styles.identity}>
-          <FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.logo} fallbackClassName={styles.fallback} />
+          <div className={styles.brandMark}>
+            <FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.logo} fallbackClassName={styles.fallback} />
+            {xUrl && <a className={styles.xLink} href={xUrl} target="_blank" rel="noreferrer" aria-label={`${firm.name} on X`}><XMark /><span>Profile</span></a>}
+          </div>
           <div className={styles.identityCopy}>
             <div className={styles.identityHeader}>
               <span className={styles.modelLabel}>{modelLabel}</span>
               <div className={styles.nameRow}>
                 <h1 id="firm-profile-title" data-long={firm.name.length > 13}>{firm.name}</h1>
-                {xUrl && <a className={styles.xLink} href={xUrl} target="_blank" rel="noreferrer" aria-label={`${firm.name} on X`}><XMark /></a>}
               </div>
             </div>
             <p>{description}</p>
@@ -106,12 +109,15 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
         </div>
 
         <aside className={styles.actionPanel}>
-          <div className={styles.rating} aria-label={trustpilotRating ? `${trustpilotRating.score} out of 5 on Trustpilot from ${trustpilotRating.reviewCountLabel} reviews` : 'No external trader rating added'}>
-            <div><strong>{trustpilotRating ? trustpilotRating.score.toFixed(1) : '—'}</strong><span>{trustpilotRating ? 'Trustpilot' : 'External rating'}</span></div>
-            <div className={styles.stars} aria-hidden="true">{Array.from({ length: 5 }, (_, index) => <Star data-filled={Boolean(trustpilotRating && index < Math.floor(trustpilotRating.score))} key={index} />)}</div>
-            {trustpilotRating
-              ? <small><a href={trustpilotRating.url} target="_blank" rel="noreferrer">{trustpilotRating.reviewCountApproximate ? '≈' : ''}{trustpilotRating.reviewCountLabel} reviews · external source</a></small>
-              : <small>No rating added</small>}
+          <div className={styles.externalSignals}>
+            <div className={styles.rating} aria-label={trustpilotRating ? `${trustpilotRating.score} out of 5 on Trustpilot from ${trustpilotRating.reviewCountLabel} reviews` : 'No external trader rating added'}>
+              <div><strong>{trustpilotRating ? trustpilotRating.score.toFixed(1) : '—'}</strong><span>{trustpilotRating ? 'Trustpilot' : 'External rating'}</span></div>
+              <div className={styles.stars} aria-hidden="true">{Array.from({ length: 5 }, (_, index) => <Star data-filled={Boolean(trustpilotRating && index < Math.floor(trustpilotRating.score))} key={index} />)}</div>
+              {trustpilotRating
+                ? <small><a href={trustpilotRating.url} target="_blank" rel="noreferrer">{trustpilotRating.reviewCountApproximate ? '≈' : ''}{trustpilotRating.reviewCountLabel} reviews · external source</a></small>
+                : <small>No rating added</small>}
+            </div>
+            {xUrl && <SorsaScoreBadge username={xHandle ?? ''} />}
           </div>
           <div className={styles.actions}>
             {website && <a href={website} target="_blank" rel="noreferrer">Visit {firm.name} <ExternalLink /></a>}

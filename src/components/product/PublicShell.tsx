@@ -18,7 +18,7 @@ const navigation = [
 export function PublicShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileNav, setMobileNav] = useState(false);
-  const [theme, setTheme] = useState<SiteTheme>('light');
+  const [theme, setTheme] = useState<SiteTheme>('dark');
   const themeReady = useRef(false);
 
   const isInternalRoute = pathname.startsWith('/admin') || pathname.startsWith('/design-system') || pathname.startsWith('/product-lab');
@@ -28,7 +28,7 @@ export function PublicShell({ children }: { children: React.ReactNode }) {
       const savedTheme = window.localStorage.getItem('prophub-theme');
       const resolvedTheme = savedTheme === 'light' || savedTheme === 'dark'
         ? savedTheme
-        : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        : 'dark';
       themeReady.current = true;
       setTheme(resolvedTheme);
     });

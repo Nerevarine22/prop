@@ -194,6 +194,7 @@
 .riskGrid h3 { margin: 0; font-size: 20px; letter-spacing: -.04em; }
 .riskGrid p { max-width: 470px; margin: 13px 0 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
 
+.section:has(+ .rewardSection) { border-bottom: 0; }
 .rewardSection { position: relative; overflow: hidden; margin-top: 12px; padding-inline: 42px; border: 1px solid color-mix(in srgb, var(--accent-reward) 20%, var(--line)); border-radius: 20px; background: linear-gradient(135deg, color-mix(in srgb, var(--accent-reward) 7%, var(--paper)), var(--paper) 46%, color-mix(in srgb, var(--accent-condition) 5%, var(--paper))); }
 .rewardSection .eyebrow { color: var(--accent-reward); }
 .rewardSplit { display: grid; grid-template-columns: 1fr 1fr; margin-top: 50px; gap: 14px; }
