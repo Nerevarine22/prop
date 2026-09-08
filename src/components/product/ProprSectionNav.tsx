@@ -36,6 +36,14 @@ export function ProprSectionNav({
     function updateActiveSection() {
       window.cancelAnimationFrame(frame);
       frame = window.requestAnimationFrame(() => {
+        const lastItem = items.at(-1);
+        const reachedPageEnd = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+
+        if (lastItem && reachedPageEnd) {
+          setActiveId(lastItem.id);
+          return;
+        }
+
         const marker = 170;
         const reached = items
           .map((item) => document.getElementById(item.id))

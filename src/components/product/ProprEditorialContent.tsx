@@ -1,6 +1,7 @@
 'use client';
 
-import { ArrowUpRight, Check, CircleAlert, Clock3, Coins, ShieldCheck, WalletCards } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowUpRight, Check, ChevronDown, CircleAlert, Clock3, Coins, Copy, ShieldCheck, WalletCards } from 'lucide-react';
 import type { FirmNormalizedProfile, FirmNormalizedProfileV2, NormalizedChallengeProgram, NormalizedFact } from '@/types/database';
 import { getFirmModularProfile } from '@/lib/data/firmModularProfiles';
 import { factValue, formatCapital, profileTrustpilotRating, shortDate } from '@/lib/data/publicFirmProfiles';
@@ -98,6 +99,38 @@ function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
   );
 }
 
+function FirmExitCta({ firmName, href, promoCode, promoDiscount }: { firmName: string; href: string; promoCode: string; promoDiscount: string }) {
+  const [copied, setCopied] = useState(false);
+
+  async function copyPromoCode() {
+    try {
+      await navigator.clipboard.writeText(promoCode);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+    }
+  }
+
+  return (
+    <section className={styles.exitCta} aria-labelledby="firm-exit-title">
+      <div className={styles.exitCopy}>
+        <span className={styles.eyebrow}>PropHub offer</span>
+        <h2 id="firm-exit-title">Ready to try {firmName}?</h2>
+        <p>Copy the promo code, open the offer and apply it at checkout.</p>
+      </div>
+      <div className={styles.exitActions}>
+        <button type="button" className={styles.exitPromo} onClick={() => void copyPromoCode()} aria-label={`Copy promo code ${promoCode}`}>
+          <span><small>Your code</small><strong>{copied ? 'Copied' : promoCode}</strong></span>
+          <b>{promoDiscount}</b>
+          {copied ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
+        </button>
+        <a href={href} target="_blank" rel="noreferrer">Get the offer<ArrowUpRight aria-hidden="true" /></a>
+      </div>
+    </section>
+  );
+}
+
 export function ProprEditorialContent({
   firm,
   profileOverride,
@@ -124,6 +157,11 @@ export function ProprEditorialContent({
   const trustpilotRating = profileTrustpilotRating(firm);
   const pageProfile = profileOverride ?? researchProfile;
   const copy = (key: string, fallback: string) => publicResearchCopy(pageProfile.editorialCopy?.[key] ?? fallback);
+  const configuredPromoCode = copy('promo.code', firm.slug === 'propr' ? 'PROP20' : '');
+  const promoCode = configuredPromoCode || 'PROMO';
+  const configuredPromoDiscount = copy('promo.discount', '');
+  const promoDiscount = configuredPromoDiscount || (promoCode === 'PROMO' ? '0% off' : 'Promo offer');
+  const offerUrl = copy('promo.url', officialWebsite ?? '');
   const isSizeProp = firm.slug === 'sizeprop';
   const isFundex = firm.slug === 'fundex';
   const isAceTrader = firm.slug === 'acetrader';
@@ -219,7 +257,7 @@ export function ProprEditorialContent({
 
   return (
     <div className={styles.editorial} data-editing={editMode ? 'true' : 'false'}>
-      <ProprSectionNav items={navItems} firmName={firm.name} promoCode={copy('promo.code', firm.slug === 'propr' ? 'PROP20' : '')} />
+      <ProprSectionNav items={navItems} firmName={firm.name} promoCode={promoCode} />
 
       <section className={styles.decision} id="decision" {...cmsSection('overview')}>
         <div className={styles.decisionCopy} {...cmsBlock('overview', 'notebooklm-1')}>
@@ -432,16 +470,25 @@ export function ProprEditorialContent({
 
       {trustpilotRating && <TrustpilotRatingSection rating={trustpilotRating} firmName={firm.name} />}
 
+      {offerUrl && <FirmExitCta firmName={firm.name} href={offerUrl} promoCode={promoCode} promoDiscount={promoDiscount} />}
+
       <section className={styles.sources} id="sources" {...cmsSection('sources')}>
         <div {...cmsBlock('sources', 'notebooklm-10')}>
           <span className={styles.eyebrow}>Research record</span>
           <h2>{sourceUrls.length} official sources inspected</h2>
           <p>Last reviewed {shortDate(researchProfile.checkedAt)}. Unknown values are grouped here instead of interrupting the main explanation.</p>
         </div>
-        <div className={styles.sourceLinks} {...cmsBlock('sources', 'source-claims')}>
-          {officialWebsite && <a href={officialWebsite} target="_blank" rel="noreferrer">Official website <ArrowUpRight /></a>}
-          {supportingSourceUrls.map((url) => <a href={url} target="_blank" rel="noreferrer" key={url}>{sourceLabel(url)} <ArrowUpRight /></a>)}
-        </div>
+        <details className={styles.sourceDisclosure}>
+          <summary>
+            <span>View sources</span>
+            <strong>{sourceUrls.length} links</strong>
+            <ChevronDown aria-hidden="true" />
+          </summary>
+          <div className={styles.sourceLinks} {...cmsBlock('sources', 'source-claims')}>
+            {officialWebsite && <a href={officialWebsite} target="_blank" rel="noreferrer">Official website <ArrowUpRight /></a>}
+            {supportingSourceUrls.map((url) => <a href={url} target="_blank" rel="noreferrer" key={url}>{sourceLabel(url)} <ArrowUpRight /></a>)}
+          </div>
+        </details>
         <p className={styles.unknowns}><strong>Not documented in the current review:</strong> {copy('sources.unknowns', 'company founding date, headquarters, profit-day definition and points-program details.')}</p>
       </section>
     </div>
