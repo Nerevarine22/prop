@@ -168,6 +168,7 @@ export function ProprEditorialContent({
   const isBreakout = firm.slug === 'breakout';
   const isChainFunded = firm.slug === 'chainfunded';
   const isO2 = firm.slug === 'o2';
+  const isHypernova = firm.slug === 'hypernova';
   const isStandardized = ['foxify', 'hypernova', 'o2', 'solana-funded', 'vanta-trading', 'klein-funding', 'upscale-trade', 'size', 'polyquid', 'funded-hive', 'cf-trader', 'alphagrid', 'hyperpnl', 'hyrotrader', 'carrot-funding', 'dizso', 'doji-funded', 'hyper-stack'].includes(firm.slug);
   const hasStandardRewards = ['foxify', 'o2', 'solana-funded', 'vanta-trading', 'upscale-trade', 'size', 'funded-hive', 'cf-trader', 'hyrotrader', 'carrot-funding', 'hyper-stack'].includes(firm.slug);
   const rewardFactsBlock = pageProfile.sections.find((section) => section.id === 'rewards')?.blocks.find((block) => block.id === 'reward-facts');
@@ -196,7 +197,15 @@ export function ProprEditorialContent({
       'data-selected': block?.id === selectedBlockId ? 'true' : 'false',
     };
   };
-  const baseNavItems = isSizeProp ? [
+  const baseNavItems = isHypernova ? [
+    { id: 'stats', label: 'Stats' },
+    { id: 'decision', label: 'Brief' },
+    { id: 'programs', label: 'Programs' },
+    { id: 'payouts', label: 'Payouts' },
+    { id: 'trading', label: 'Trading' },
+    { id: 'consider', label: 'Risk & proof' },
+    { id: 'sources', label: 'Sources' },
+  ] : isSizeProp ? [
     { id: 'decision', label: 'Brief' },
     { id: 'programs', label: 'Challenges' },
     { id: 'payouts', label: 'Payouts' },
@@ -257,7 +266,57 @@ export function ProprEditorialContent({
 
   return (
     <div className={styles.editorial} data-editing={editMode ? 'true' : 'false'}>
-      <ProprSectionNav items={navItems} firmName={firm.name} promoCode={promoCode} />
+      <ProprSectionNav items={navItems} firmName={firm.name} />
+
+      {isHypernova ? (
+        <section className={styles.protocolSnapshot} id="stats" aria-labelledby="hypernova-stats-title">
+          <div className={styles.snapshotHeading}>
+            <div className={styles.snapshotTitleLine}>
+              <h2 id="hypernova-stats-title">Payouts &amp; reserves</h2>
+              <span>Updated {copy('stats.checkedAt', 'Sep 9, 2026')}</span>
+            </div>
+            <a href={copy('stats.source', 'https://hypernova.xyz/stats')} target="_blank" rel="noreferrer">
+              View dashboard <ArrowUpRight aria-hidden="true" />
+            </a>
+          </div>
+
+          <div className={styles.snapshotGrid}>
+            <article className={styles.snapshotPrimary}>
+              <span>Lifetime payouts</span>
+              <strong>{copy('stats.lifetimePayouts', '$754.6K')}</strong>
+              <p>134 payout recipients</p>
+            </article>
+            <article>
+              <span>Payout reserve</span>
+              <strong>{copy('stats.payoutReserve', '$621.7K')}</strong>
+              <p>Published USDC addresses</p>
+            </article>
+            <article>
+              <span>Funded trader AUM</span>
+              <strong>{copy('stats.fundedAum', '$3.31M')}</strong>
+              <p>{copy('stats.fundedTraders', '62')} funded traders</p>
+            </article>
+            <article>
+              <span>Average payout</span>
+              <strong>{copy('stats.averagePayout', '$1,013')}</strong>
+              <p>Largest reported: $8,000</p>
+            </article>
+            <article>
+              <span>Average settlement</span>
+              <strong>{copy('stats.averageSettlement', '5.9s')}</strong>
+              <p>Measured across 745 payouts</p>
+            </article>
+          </div>
+
+          <div className={styles.snapshotNote}>
+            <p>Company-reported snapshot from Hypernova. Figures may change after the update date.</p>
+            <details className={styles.snapshotMethod}>
+              <summary>Methodology <ChevronDown aria-hidden="true" /></summary>
+              <p>Transaction links and reserve addresses are public. Funded AUM uses Hypernova’s platform definition, and the displayed reserve is not an independent audit or solvency opinion.</p>
+            </details>
+          </div>
+        </section>
+      ) : null}
 
       <section className={styles.decision} id="decision" {...cmsSection('overview')}>
         <div className={styles.decisionCopy} {...cmsBlock('overview', 'notebooklm-1')}>

@@ -74,10 +74,20 @@ const profiles: Array<{ normalized: FirmNormalizedProfile; page: FirmNormalizedP
   { normalized: HYPER_STACK_NORMALIZED_PROFILE, page: HYPER_STACK_PAGE_PROFILE, website: 'https://www.hyperstack.trade/', xHandle: 'hyper_stack' },
 ];
 
+function argument(name: string): string | undefined {
+  return process.argv.find((value) => value.startsWith(`--${name}=`))?.slice(name.length + 3);
+}
+
 async function main() {
   const write = process.argv.includes('--write');
+  const requestedSlug = argument('slug');
+  const selectedProfiles = requestedSlug
+    ? profiles.filter(({ normalized }) => normalized.slug === requestedSlug)
+    : profiles;
+  if (!selectedProfiles.length) throw new Error(`Unknown upgraded profile slug: ${requestedSlug}.`);
+
   if (!write) {
-    process.stdout.write(`Upgraded profile sync dry run complete.\nFirms: ${profiles.map(({ normalized }) => normalized.name).join(', ')}\nAdd --write to update Firestore.\n`);
+    process.stdout.write(`Upgraded profile sync dry run complete.\nFirms: ${selectedProfiles.map(({ normalized }) => normalized.name).join(', ')}\nAdd --write to update Firestore.\n`);
     return;
   }
 
@@ -88,7 +98,7 @@ async function main() {
   const database = getFirestore(app);
   database.settings({ ignoreUndefinedProperties: true });
 
-  for (const { normalized, page, website, xHandle } of profiles) {
+  for (const { normalized, page, website, xHandle } of selectedProfiles) {
     const reference = database.collection('firmRegistry').doc(normalized.id);
     const existing = await reference.get();
     const timestamp = new Date().toISOString();

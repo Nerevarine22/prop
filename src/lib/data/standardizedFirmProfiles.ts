@@ -2,6 +2,7 @@ import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
 import type { FirmNormalizedProfile, FirmNormalizedProfileV2, FirmResearchSourceInspection, FirmContentFact, NormalizedFact } from '@/types/database';
 
 const CHECKED_AT = '2026-09-05T00:00:00.000Z';
+const HYPERNOVA_CHECKED_AT = '2026-09-09T00:00:00.000Z';
 
 type PageConfig = {
   slug: 'foxify' | 'hypernova' | 'o2' | 'solana-funded' | 'vanta-trading' | 'klein-funding' | 'upscale-trade' | 'size' | 'polyquid' | 'funded-hive' | 'cf-trader' | 'alphagrid' | 'hyperpnl' | 'hyrotrader' | 'carrot-funding' | 'dizso' | 'doji-funded' | 'hyper-stack';
@@ -12,6 +13,7 @@ type PageConfig = {
   modelTypes: FirmNormalizedProfileV2['modelTypes'];
   comparison: FirmNormalizedProfileV2['comparison'];
   reward?: { label: string; metrics: Array<[string, string]> };
+  checkedAt?: string;
 };
 
 const contentFact = (id: string, label: string, value: string): FirmContentFact => ({ id, label, value, status: 'reported' });
@@ -21,6 +23,7 @@ const observed = <T,>(value: T, sourceUrl: string, notes?: string): NormalizedFa
 
 function page(config: PageConfig): FirmNormalizedProfileV2 {
   const base = FIRM_NORMALIZED_PROFILES_BY_SLUG[config.slug];
+  const checkedAt = config.checkedAt ?? CHECKED_AT;
   const rewardSection = config.reward ? [{
     id: 'rewards',
     tabLabel: 'Rewards',
@@ -42,7 +45,7 @@ function page(config: PageConfig): FirmNormalizedProfileV2 {
     id: base.id,
     slug: config.slug,
     name: config.name,
-    checkedAt: CHECKED_AT,
+    checkedAt,
     modelTypes: config.modelTypes,
     offerNames: config.offers,
     editorialCopy: config.copy,
@@ -63,7 +66,7 @@ function page(config: PageConfig): FirmNormalizedProfileV2 {
       ...rewardSection,
       { id: 'sources', tabLabel: 'Sources', title: 'Sources and unresolved questions', blocks: [{ id: 'source-claims', type: 'record-list', presentation: 'sources', items: config.sources.map((source, index) => ({ id: `${config.slug}-source-${index}`, title: source.label, links: [{ label: 'Open source', url: source.url }] })) }] },
     ],
-    sourcesInspected: config.sources.map((source) => ({ category: source.category, url: source.url, checkedAt: CHECKED_AT, outcome: 'accessed' })),
+    sourcesInspected: config.sources.map((source) => ({ category: source.category, url: source.url, checkedAt, outcome: 'accessed' })),
     sourceDiscrepancies: base.sourceDiscrepancies,
   };
 }
@@ -109,15 +112,21 @@ export const FOXIFY_PAGE_PROFILE = page({
 
 export const HYPERNOVA_PAGE_PROFILE = page({
   slug: 'hypernova', name: 'Hypernova', modelTypes: ['evaluation'], offers: ['Tight Risk', 'Low Risk', 'Medium Risk', 'High Risk'],
+  checkedAt: HYPERNOVA_CHECKED_AT,
   sources: [
     { category: 'website', url: 'https://hypernova.xyz/', label: 'Official website' },
     { category: 'rulebook', url: 'https://hypernova.xyz/rulebook', label: 'Rulebook v1.1' },
     { category: 'terms', url: 'https://hypernova.xyz/docs/terms-of-use', label: 'Terms of Use' },
+    { category: 'payout-policy', url: 'https://hypernova.xyz/stats', label: 'Live stats and payout ledger' },
+    { category: 'other', url: 'https://hypernova.xyz/docs/smart-contract#active-addresses', label: 'Published Arbitrum addresses' },
   ],
   copy: {
     'promo.code': '', 'decision.title': 'One-step evaluations priced by risk allowance.',
-    'decision.description': 'Hypernova offers simulated one-step assessments across Tight, Low, Medium and restricted High Risk tiers. Each tier changes the daily loss and static drawdown envelope while keeping an 80% funded profit share.',
-    'decision.highlight': 'The cheapest tier is also the least forgiving: Tight pairs a 9% target with only 3% static drawdown.',
+    'stats.source': 'https://hypernova.xyz/stats', 'stats.checkedAt': 'Sep 9, 2026',
+    'stats.lifetimePayouts': '$754.6K', 'stats.payoutReserve': '$621.7K', 'stats.fundedAum': '$3.31M',
+    'stats.fundedTraders': '62', 'stats.averagePayout': '$1,013', 'stats.averageSettlement': '5.9s',
+    'decision.description': 'Hypernova offers simulated one-step assessments across Tight, Low, Medium and restricted High Risk tiers. Each tier changes the daily loss and static drawdown envelope while keeping an 80% funded profit share. Its live stats page adds transaction-level Arbitrum payout evidence and published reserve addresses.',
+    'decision.highlight': 'The risk tiers are strict, but Hypernova publishes substantially more payout and reserve evidence than a typical simulated prop firm.',
     'process.title': 'Choose risk, pass once, request on-chain', 'process.description': 'The offer is structurally simple; the risk envelope is the real product.',
     'process.1.title': 'Choose a risk tier', 'process.1.description': 'Tight, Low, Medium and restricted High trade price against drawdown room.',
     'process.2.title': 'Reach 9% or 10%', 'process.2.description': 'Complete the one-step simulated assessment without crossing equity limits.',
@@ -125,17 +134,17 @@ export const HYPERNOVA_PAGE_PROFILE = page({
     'process.4.title': 'Request USDC', 'process.4.description': 'Eligible profit is marketed as available on-demand with on-chain settlement.',
     'programs.title': 'Four risk envelopes instead of multiple evaluation phases.', 'programs.description': 'Daily loss ranges from 3% to 5%; static maximum drawdown ranges from 3% to 8%.',
     'programs.note': 'High Risk is restricted. The homepage and rulebook disagree on the $25K Low Risk fee ($275 vs $280).',
-    'payouts.title': 'of net funded profit goes to the trader.', 'payouts.description': 'The rulebook reports on-demand USDC settlement with no waiting period or stated minimum.',
-    'payouts.minimum': 'None stated', 'payouts.processing': 'Conflicting: 6.2s / <0.02s', 'payouts.rail': 'USDC · on-chain',
+    'payouts.title': 'of net funded profit goes to the trader.', 'payouts.description': 'The rulebook reports on-demand USDC settlement with no waiting period or stated minimum. On September 9, the live dashboard showed $754,589 paid across 134 recipients and linked recent Arbitrum transactions.',
+    'payouts.minimum': 'None stated', 'payouts.processing': '5.9s stats · <0.02s rulebook', 'payouts.rail': 'USDC · Arbitrum',
     'payouts.rule.1': 'The account must be in profit.', 'payouts.rule.2': 'No payout calendar or waiting period is stated.', 'payouts.rule.3': 'Official sources publish conflicting average processing times.',
     'trading.title': 'A simulated assessment with on-chain payout rails.', 'trading.description': 'The public materials are much clearer on assessment risk than on order routing, execution venue and trading permissions.',
     'trading.markets': 'Crypto markets · full list not published', 'trading.leverage': 'Not reliably established',
-    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'Fast settlement claims are not the same as complete transparency.',
-    'consider.1.title': 'Price source conflict', 'consider.1.description': 'The homepage shows $275 for $25K Low Risk while rulebook v1.1 shows $280.',
-    'consider.2.title': 'Payout-speed conflict', 'consider.2.description': 'The homepage reports 6.2 seconds; the rulebook reports an average below 0.02 seconds.',
-    'consider.3.title': 'Simulation is explicit', 'consider.3.description': 'Terms define a performance payout programme rather than a brokerage, custody or investment account.',
-    'consider.4.title': 'Execution detail remains thin', 'consider.4.description': 'Venue, leverage, fees and several strategy permissions need stronger official documentation.',
-    'sources.unknowns': 'underlying venue and liquidity providers, leverage bands, full fee schedule, news/weekend/copy/automation rules, independent reserve audit and reconciliation of payout-speed statistics.',
+    'consider.eyebrow': 'Risk and evidence', 'consider.title': 'On-chain evidence is strong; interpretation still needs care.',
+    'consider.1.title': 'Payouts are transaction-level', 'consider.1.description': 'The stats page links recent Arbitrum payout transactions and reports $754,589 paid to 134 recipients in the September 9 snapshot.',
+    'consider.2.title': 'Reserve is visible, not audited', 'consider.2.description': 'Published cold-reserve and operational-vault addresses showed $621,665 USDC, but this is not an independent solvency opinion.',
+    'consider.3.title': 'The funnel is company-published', 'consider.3.description': 'Hypernova reports 628 paid traders, 211 funded accounts and 134 payout recipients; the figures are dynamic platform metrics.',
+    'consider.4.title': 'Settlement timing conflicts', 'consider.4.description': 'The live dashboard reports 5.9 seconds across 745 payouts, while the rulebook claims an average below 0.02 seconds.',
+    'sources.unknowns': 'independent reserve reconciliation or audit, leverage bands, full fee schedule, news/weekend/copy/automation rules and reconciliation of the payout-speed claims.',
     'model.classification': 'One-step simulated evaluation', 'model.lifecycle': 'Fee → one-step assessment → funded programme → on-demand USDC payout', 'model.environment': 'Simulated trading · venue not documented', 'model.compensation': '80%',
   },
   comparison: { modelTypes: ['evaluation'], capital: { status: 'varies', min: 5_000, max: 200_000, unit: 'USD' }, entryCost: { status: 'varies', min: 25, max: 1_850, unit: 'USD' }, profitSplit: { status: 'known', min: 80, max: 80, unit: 'percent' }, maxDrawdown: { status: 'varies', min: 3, max: 8, unit: 'percent' }, payoutSchedules: { status: 'known', values: ['on-demand'] }, executionModels: { status: 'known', values: ['simulated'] } },
@@ -773,7 +782,7 @@ export const FOXIFY_NORMALIZED_PROFILE: FirmNormalizedProfile = {
   },
   modularProfile: FOXIFY_PAGE_PROFILE,
 };
-export const HYPERNOVA_NORMALIZED_PROFILE: FirmNormalizedProfile = { ...FIRM_NORMALIZED_PROFILES_BY_SLUG.hypernova, checkedAt: CHECKED_AT, modularProfile: HYPERNOVA_PAGE_PROFILE };
+export const HYPERNOVA_NORMALIZED_PROFILE: FirmNormalizedProfile = { ...FIRM_NORMALIZED_PROFILES_BY_SLUG.hypernova, checkedAt: HYPERNOVA_CHECKED_AT, modularProfile: HYPERNOVA_PAGE_PROFILE };
 export const O2_NORMALIZED_PROFILE: FirmNormalizedProfile = {
   ...o2Base,
   checkedAt: CHECKED_AT,

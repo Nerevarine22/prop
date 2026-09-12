@@ -206,7 +206,7 @@ export function FirmEditorialContent({
 
   return (
     <div className={styles.editorial} data-editing={editMode}>
-      <ProprSectionNav items={navItems} firmName={firm.name} promoCode="" />
+      <ProprSectionNav items={navItems} firmName={firm.name} />
       {profile.sections.map((section, index) => <EditorialSection section={section} index={index} selectedBlockId={selectedBlockId} editMode={editMode} onChange={(nextSection) => onProfileChange?.({ ...profile, sections: profile.sections.map((item) => item.id === section.id ? nextSection : item) })} key={section.id} />)}
     </div>
   );
