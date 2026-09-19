@@ -43,6 +43,27 @@
   color-scheme: dark;
 }
 
+.gray {
+  --ink: #f0f0f0;
+  --muted: #a0a0a0;
+  --line: #333333;
+  --soft-line: #2b2b2b;
+  --paper: #222222;
+  --paper-strong: #252525;
+  --wash: #2b2b2b;
+  --blue: #7da2ff;
+  --blue-dark: #9ab6ff;
+  --lime: #d8f36a;
+  --accent-research: #7da2ff;
+  --accent-value: #d8f36a;
+  --accent-condition: #f2c96d;
+  --accent-settlement: #74e6b2;
+  --accent-reward: #b7a7ff;
+  --ink-panel: #151515;
+  background: #1D1D1D;
+  color-scheme: dark;
+}
+
 .lab button, .lab a, .lab input { font: inherit; }
 .lab button { color: inherit; cursor: pointer; }
 .publicMain { flex: 1; }
@@ -710,6 +731,138 @@
 .dark .compareIntro > button,
 .dark .compareIntro > a { color: var(--ink); }
 .dark .profileActions .primaryProfileAction { color: #fff; }
+
+.gray .header { background: rgb(29 29 29 / 90%); }
+.gray .brandMark { border: 1px solid #333333; background: #e0e0e0; color: #111111; }
+.gray .brand i,
+.gray .nav button,
+.gray .themeToggle,
+.gray .headerSearch,
+.gray .kicker,
+.gray .introCopy > p,
+.gray .previewTop,
+.gray .previewFirm small,
+.gray .previewSignals > div,
+.gray .trustStrip p,
+.gray .trustStrip div,
+.gray .sectionHeading > p,
+.gray .filterTitle button,
+.gray .filters legend,
+.gray .filters label,
+.gray .resultToolbar,
+.gray .resultToolbar > div button,
+.gray .statusLine,
+.gray .directoryRating,
+.gray .directoryRating small,
+.gray .directoryRatingEmpty,
+.gray .firmIdentity p,
+.gray .rowMetrics span,
+.gray .rowMetrics small,
+.gray .breadcrumbs,
+.gray .profileIdentity p,
+.gray .profileAbout p,
+.gray .decisionGood p,
+.gray .decisionRisk p,
+.gray .profileSectionTitle p,
+.gray .metricBand span,
+.gray .metricBand small,
+.gray .planHead,
+.gray .rulesList p,
+.gray .evidenceCard > div:first-child,
+.gray .rewardCard > div:first-child,
+.gray .sourceCard > div:first-child,
+.gray .evidenceCard > p,
+.gray .rewardCard p,
+.gray .evidenceCard dt,
+.gray .compareIntro p,
+.gray .emptyCompare p,
+.gray .compareLabelCell,
+.gray .compareFirmCell span,
+.gray .labFooter p {
+  color: #9aa69d;
+}
+
+.gray .nav button:hover,
+.gray .nav a:hover,
+.gray .nav .navActive { color: var(--ink); }
+.gray .nav button span,
+.gray .nav a span,
+.gray .resultToolbar > div,
+.gray .tags span,
+.gray .compareFirmCell > button { background: #252525; color: #b0b0b0; }
+.gray .themeToggle:hover,
+.gray .headerSearch:hover,
+.gray .introActions .secondaryIntroAction:hover,
+.gray .mobileFilterToggle:hover,
+.gray .sortButton:hover,
+.gray .profileActions a:hover,
+.gray .compareIntro > button:hover,
+.gray .compareIntro > a:hover { border-color: #404040; background: #222222; }
+
+.gray .briefPreview { border-color: #333333; box-shadow: 0 30px 90px rgb(0 0 0 / 28%); }
+.gray .demoPill { background: #403918; color: #ead57d; }
+.gray .previewLogo,
+.gray .previewFallback,
+.gray .firmLogo,
+.gray .firmFallback,
+.gray .profileLogo,
+.gray .profileFallback,
+.gray .trayLogo,
+.gray .trayFallback,
+.gray .compareLogo,
+.gray .compareFallback { border-color: #333333; background: #e0e0e0; }
+.gray .previewSignals strong { color: var(--ink); }
+
+.gray .filters { background: rgb(34 34 34 / 76%); }
+.gray .directorySort select { background: #151515; }
+.gray .searchField { background: #151515; }
+.gray .searchField svg { color: #808080; }
+.gray .searchField input::placeholder { color: #757575; }
+.gray .filterNote { background: #17233c; color: #aebfe9; }
+.gray .resultToolbar > div .viewSelected { background: #333333; color: var(--ink); box-shadow: none; }
+.gray .firmRow:hover { background: rgb(43 43 43 / 66%); }
+.gray .rowActions button:first-child:hover,
+.gray .rowActions .compareAdded { border-color: #70833c; background: #29351a; color: #d7e8a2; }
+
+.gray .compareTray { border-color: #333333; box-shadow: 0 20px 60px rgb(0 0 0 / 38%); }
+.gray .decisionGood > svg { color: #b7d65e; }
+.gray .decisionRisk > svg { color: #e2ad59; }
+.gray .rulePositive { background: #2c391b; color: #cfe68e; }
+.gray .ruleNeutral { background: #393321; color: #dfc88c; }
+.gray .policyNote,
+.gray .sourceConflict { border-color: #574d2b; background: #332e1c; color: #dbc989; }
+.gray .dynamicNoticeNeutral { border-color: var(--line); background: var(--wash); color: var(--muted); }
+.gray .dynamicNoticePositive { border-color: #3f5634; background: #1d2c1a; color: #bdd6a6; }
+.gray .dynamicNoticeWarning { border-color: #574d2b; background: #332e1c; color: #dbc989; }
+.gray .factStatus[data-status='verified'] { background: #1f2c1c; color: #a8c994; }
+.gray .factStatus[data-status='conflict'], .gray .factStatus[data-status='ND'] { background: #332e1c; color: #dbc989; }
+.gray .compactPromo { border-color: #554d2c; background: #302b1a; color: #dbc989; }
+.gray .compactPromo button { background: #40391f !important; color: #efe1a4 !important; }
+.gray .researchTabs .researchTabActive span { background: #17233c; color: #9db8ff; }
+.gray .rewardResearch > div { background: #15213a; }
+.gray .rewardResearch p { color: #a9b9de; }
+.gray .rewardCard { border-color: #2d426d !important; background: #15213a !important; }
+.gray .rewardCard > span { border-color: #2d426d; color: #a9b9de; }
+.gray .sourceCard em { color: #d7b55f; }
+
+.gray .compareVerdictRow { background: #222222; }
+.gray .compareDataRow > div:not(.compareLabelCell) { color: #c2c2c2; }
+.gray .compareFootnote { background: #332e1c; color: #dbc989; }
+.gray .pickerGrid > button:hover { border-color: #505050; }
+.gray .pickerGrid > button small { color: #a0a0a0; }
+.gray .pickerGrid .pickerActive { border-color: #5879d4; background: #17233c; }
+
+.gray .mobileMenu,
+.gray .themeToggle,
+.gray .headerSearch,
+.gray .introActions button,
+.gray .mobileFilterToggle,
+.gray .sortButton,
+.gray .profileActions a,
+.gray .compareIntro > button,
+.gray .compareIntro > a { color: var(--ink); }
+.gray .profileActions .primaryProfileAction { color: #fff; }
+
 
 @media (max-width: 1100px) {
   .intro { grid-template-columns: 1fr 420px; gap: 44px; }

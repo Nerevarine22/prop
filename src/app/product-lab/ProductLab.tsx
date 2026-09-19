@@ -29,7 +29,7 @@ import type { PropFirm } from '@/types/firm';
 import styles from './page.module.css';
 
 type LabView = 'directory' | 'profile' | 'compare';
-type LabTheme = 'light' | 'dark';
+type LabTheme = 'light' | 'dark' | 'gray';
 
 const featuredFirms = MOCK_PROP_FIRMS.slice(0, 6);
 
@@ -75,7 +75,7 @@ export function ProductLab() {
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
       const savedTheme = window.localStorage.getItem('prophub-theme');
-      const resolvedTheme = savedTheme === 'light' || savedTheme === 'dark'
+      const resolvedTheme = savedTheme === 'light' || savedTheme === 'dark' || savedTheme === 'gray'
         ? savedTheme
         : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       themeReady.current = true;
@@ -114,7 +114,7 @@ export function ProductLab() {
   }
 
   return (
-    <div className={`${styles.lab} ${theme === 'dark' ? styles.dark : ''}`} id="product-lab" data-theme={theme} suppressHydrationWarning>
+    <div className={`${styles.lab} ${theme === 'dark' ? styles.dark : ''} ${theme === 'gray' ? styles.gray : ''}`} id="product-lab" data-theme={theme} suppressHydrationWarning>
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <button className={styles.brand} type="button" onClick={() => setView('directory')} aria-label="Open PropHub directory">
@@ -135,16 +135,32 @@ export function ProductLab() {
           </nav>
 
           <div className={styles.headerActions}>
-            <button
-              className={styles.themeToggle}
-              type="button"
-              onClick={() => setTheme((current) => current === 'light' ? 'dark' : 'light')}
-              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
-              aria-pressed={theme === 'dark'}
-            >
-              {theme === 'light' ? <Moon /> : <Sun />}
-              <span>{theme === 'light' ? 'Dark' : 'Light'}</span>
-            </button>
+            <div style={{ display: 'flex', gap: '4px' }}>
+              <button
+                className={styles.themeToggle}
+                type="button"
+                onClick={() => setTheme('light')}
+                style={{ opacity: theme === 'light' ? 1 : 0.5, borderColor: theme === 'light' ? 'var(--color-accent)' : 'var(--line)' }}
+              >
+                <Sun /> <span className="hide-mobile">Light</span>
+              </button>
+              <button
+                className={styles.themeToggle}
+                type="button"
+                onClick={() => setTheme('dark')}
+                style={{ opacity: theme === 'dark' ? 1 : 0.5, borderColor: theme === 'dark' ? 'var(--color-accent)' : 'var(--line)' }}
+              >
+                <Moon /> <span className="hide-mobile">Green</span>
+              </button>
+              <button
+                className={styles.themeToggle}
+                type="button"
+                onClick={() => setTheme('gray')}
+                style={{ opacity: theme === 'gray' ? 1 : 0.5, borderColor: theme === 'gray' ? 'var(--color-accent)' : 'var(--line)' }}
+              >
+                <Moon /> <span className="hide-mobile">Gray</span>
+              </button>
+            </div>
             <button className={styles.headerSearch} type="button"><Search /> Search</button>
             <button className={styles.mobileMenu} type="button" onClick={() => setMobileNav((open) => !open)} aria-label="Toggle menu">
               {mobileNav ? <X /> : <Menu />}

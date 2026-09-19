@@ -243,3 +243,7 @@ body:has(#product-lab) {
 body:has(#product-lab[data-theme='dark']) {
   background: #0b100d;
 }
+
+body:has(#product-lab[data-theme='gray']) {
+  background: #1D1D1D;
+}

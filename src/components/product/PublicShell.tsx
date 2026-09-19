@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { ArrowUpRight, Menu, Moon, Search, Sun, X } from 'lucide-react';
 import styles from '@/app/product-lab/page.module.css';
 
-type SiteTheme = 'light' | 'dark';
+type SiteTheme = 'light' | 'dark' | 'gray';
 
 const navigation = [
   { href: '/prop-firms', label: 'Firms' },
@@ -26,9 +26,9 @@ export function PublicShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
       const savedTheme = window.localStorage.getItem('prophub-theme');
-      const resolvedTheme = savedTheme === 'light' || savedTheme === 'dark'
+      const resolvedTheme = savedTheme === 'light' || savedTheme === 'dark' || savedTheme === 'gray'
         ? savedTheme
-        : 'dark';
+        : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       themeReady.current = true;
       setTheme(resolvedTheme);
     });
@@ -44,7 +44,7 @@ export function PublicShell({ children }: { children: React.ReactNode }) {
   if (isInternalRoute) return <main id="main-content">{children}</main>;
 
   return (
-    <div className={`${styles.lab} ${theme === 'dark' ? styles.dark : ''}`} data-theme={theme} suppressHydrationWarning>
+    <div className={`${styles.lab} ${theme === 'dark' ? styles.dark : ''} ${theme === 'gray' ? styles.gray : ''}`} data-theme={theme} suppressHydrationWarning>
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <Link className={styles.brand} href="/" aria-label="PropHub home">
@@ -65,16 +65,32 @@ export function PublicShell({ children }: { children: React.ReactNode }) {
           </nav>
 
           <div className={styles.headerActions}>
-            <button
-              className={styles.themeToggle}
-              type="button"
-              onClick={() => setTheme((current) => current === 'light' ? 'dark' : 'light')}
-              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
-              aria-pressed={theme === 'dark'}
-            >
-              {theme === 'light' ? <Moon /> : <Sun />}
-              <span>{theme === 'light' ? 'Dark' : 'Light'}</span>
-            </button>
+            <div style={{ display: 'flex', gap: '4px' }}>
+              <button
+                className={styles.themeToggle}
+                type="button"
+                onClick={() => setTheme('light')}
+                style={{ opacity: theme === 'light' ? 1 : 0.5, borderColor: theme === 'light' ? 'var(--color-accent)' : 'var(--line)' }}
+              >
+                <Sun /> <span className="hide-mobile">Light</span>
+              </button>
+              <button
+                className={styles.themeToggle}
+                type="button"
+                onClick={() => setTheme('dark')}
+                style={{ opacity: theme === 'dark' ? 1 : 0.5, borderColor: theme === 'dark' ? 'var(--color-accent)' : 'var(--line)' }}
+              >
+                <Moon /> <span className="hide-mobile">Green</span>
+              </button>
+              <button
+                className={styles.themeToggle}
+                type="button"
+                onClick={() => setTheme('gray')}
+                style={{ opacity: theme === 'gray' ? 1 : 0.5, borderColor: theme === 'gray' ? 'var(--color-accent)' : 'var(--line)' }}
+              >
+                <Moon /> <span className="hide-mobile">Gray</span>
+              </button>
+            </div>
             <Link className={styles.headerSearch} href="/prop-firms"><Search /> Search</Link>
             <button className={styles.mobileMenu} type="button" onClick={() => setMobileNav((open) => !open)} aria-label="Toggle menu" aria-expanded={mobileNav}>
               {mobileNav ? <X /> : <Menu />}
