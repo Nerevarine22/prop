@@ -84,8 +84,6 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
   return (
     <>
     <section className={styles.hero} aria-labelledby="firm-profile-title" data-cms-hero>
-      <div className={styles.ambient} aria-hidden="true" />
-
       <header className={styles.metaBar}>
         <span><i /> Independent research profile</span>
         <span>Reviewed {shortDate(research.checkedAt)}</span>

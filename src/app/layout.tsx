@@ -5,6 +5,7 @@ import { PublicShell } from '@/components/product/PublicShell';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { siteConfig } from '@/lib/site';
 import { ProfileRouteScrollManager } from '@/components/product/ProfileRouteScrollManager';
+import { SmoothScroll } from '@/components/core/SmoothScroll';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -57,6 +58,7 @@ export default function RootLayout({
             ],
           }}
         />
+        <SmoothScroll />
         <a href="#main-content" className="skip-link">Skip to content</a>
         <ProfileRouteScrollManager />
         <PublicShell>{children}</PublicShell>

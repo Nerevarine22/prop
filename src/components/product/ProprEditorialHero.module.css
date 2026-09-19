@@ -6,7 +6,6 @@
   border-radius: 18px;
   background: var(--paper);
 }
-.ambient { position: absolute; top: -190px; left: 18%; width: 520px; height: 360px; border-radius: 50%; background: var(--blue); filter: blur(160px); opacity: .09; pointer-events: none; }
 .metaBar { position: relative; display: flex; min-height: 50px; padding: 0 28px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 700; letter-spacing: .065em; text-transform: uppercase; }
 .metaBar span:first-child { display: inline-flex; align-items: center; gap: 8px; }
 .metaBar i { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 5px color-mix(in srgb, var(--blue) 12%, transparent); }

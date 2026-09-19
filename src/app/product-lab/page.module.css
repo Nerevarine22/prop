@@ -1,4 +1,4 @@
-.lab {
+﻿.lab {
   --ink: #172019;
   --muted: #667067;
   --line: #d9dcd3;
@@ -540,13 +540,14 @@
 .compareHeaderRow, .compareVerdictRow, .compareDataRow { display: grid; grid-template-columns: 190px repeat(3, minmax(0, 1fr)); }
 .compareTwo .compareHeaderRow, .compareTwo .compareVerdictRow, .compareTwo .compareDataRow { grid-template-columns: 190px repeat(2, minmax(0, 1fr)); }
 .compareThree .compareHeaderRow, .compareThree .compareVerdictRow, .compareThree .compareDataRow { grid-template-columns: 190px repeat(3, minmax(0, 1fr)); }
+.compareTwoWithAdd .compareHeaderRow, .compareTwoWithAdd .compareVerdictRow, .compareTwoWithAdd .compareDataRow { grid-template-columns: 190px repeat(2, minmax(0, 1fr)) 140px; }
 .compareHeaderRow > *, .compareVerdictRow > *, .compareDataRow > * { border-right: 1px solid var(--line); }
 .compareHeaderRow > *:last-child, .compareVerdictRow > *:last-child, .compareDataRow > *:last-child { border-right: 0; }
-.compareHeaderRow { min-height: 116px; border-bottom: 1px solid var(--line); }
-.compareLabelCell { display: flex; padding: 20px; justify-content: center; flex-direction: column; gap: 6px; color: #7b837b; }
+.compareHeaderRow { position: sticky; top: 69px; z-index: 20; min-height: 70px; border-bottom: 1px solid var(--line); background: var(--paper); }
+.compareLabelCell { position: sticky; left: 0; z-index: 10; display: flex; padding: 12px 20px; justify-content: center; flex-direction: column; gap: 6px; background: var(--paper); color: #7b837b; }
 .compareLabelCell span { font-family: var(--font-geist-mono), monospace; font-size: 10px; text-transform: uppercase; }
 .compareLabelCell strong { color: var(--ink); font-size: 14px; }
-.compareFirmCell { position: relative; display: flex; padding: 20px; align-items: center; gap: 13px; }
+.compareFirmCell { position: relative; display: flex; padding: 12px 20px; justify-content: center; flex-direction: column; gap: 8px; }
 .compareFirmCell > button { position: absolute; top: 10px; right: 10px; display: flex; width: 24px; height: 24px; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: #eceee8; }
 .compareFirmCell > button svg { width: 11px; }
 .compareLogo, .compareFallback { display: flex; width: 48px; height: 48px; padding: 4px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 12px; background: #fff; object-fit: contain; color: var(--blue); font-size: 10px; font-weight: 800; }
@@ -843,3 +844,153 @@
   .labFooter { padding: 24px 16px; align-items: flex-start; flex-direction: column; }
   .labFooter p { margin: 0; }
 }
+
+/* ── Challenge Compare ─────────────────────────────────────────────────────── */
+.challengeCompareSection { margin-top: 56px; }
+.challengeCompareHeader { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.challengeCompareHeader > div > h2 { max-width: 700px; margin: 14px 0 0; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 570; line-height: .95; letter-spacing: -.065em; }
+.challengeCompareHeader > div > p { max-width: 620px; margin: 14px 0 0; color: #697269; font-size: 13px; line-height: 1.6; }
+.challengeCompareIcon { width: 36px; height: 36px; flex: 0 0 auto; margin-top: 4px; color: var(--blue); opacity: .5; }
+.challengeCompareTable { margin-top: 12px; overflow: visible; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
+.challengeCompareTwo .challengeCompareRow { grid-template-columns: 190px repeat(2, minmax(0, 1fr)); }
+.challengeCompareThree .challengeCompareRow { grid-template-columns: 190px repeat(3, minmax(0, 1fr)); }
+.challengeCompareTwoWithAdd .challengeCompareRow { grid-template-columns: 190px repeat(2, minmax(0, 1fr)) 140px; }
+.challengeCompareRow { display: grid; border-bottom: 1px solid var(--soft-line); }
+.challengeCompareRow:last-child { border-bottom: 0; }
+.challengeCompareRow > * { border-right: 1px solid var(--line); }
+.challengeCompareRow > *:last-child { border-right: 0; }
+.challengeCompareLabelCell { position: sticky; left: 0; z-index: 10; display: flex; padding: 16px 20px; justify-content: center; flex-direction: column; gap: 5px; background: var(--paper); color: #7b837b; }
+.challengeCompareLabelCell span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.challengeCompareLabelCell strong { color: var(--ink); font-size: 13px; }
+.challengeCompareDataCell { display: flex; padding: 18px 20px; align-items: center; font-size: 12px; color: var(--muted); line-height: 1.4; }
+.challengeCompareEmphasis { color: var(--ink) !important; font-size: 16px !important; font-weight: 750; letter-spacing: -.025em; }
+.challengeCompareNd { color: var(--muted) !important; font-style: italic; font-size: 11px !important; font-weight: 450 !important; letter-spacing: 0 !important; opacity: .7; }
+.challengeCompareSummaryRow { background: var(--wash); }
+.challengeCompareSummaryCell { display: flex; padding: 18px 20px; flex-direction: column; justify-content: center; gap: 5px; }
+.challengeCompareSummaryCell > strong { font-size: 14px; letter-spacing: -.02em; }
+.challengeCompareSummaryCell > span { color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 700; text-transform: uppercase; }
+.challengeCompareTiersCell { padding: 14px 18px; }
+.challengeTierList { display: flex; flex-direction: column; gap: 6px; }
+.challengeTierRow { display: flex; align-items: baseline; justify-content: flex-start; gap: 14px; }
+.challengeTierRow strong { color: var(--ink); font-size: 12px; font-family: var(--font-geist-mono), monospace; min-width: 44px; }
+.challengeTierRow span { display: flex; align-items: baseline; gap: 6px; }
+.challengeTierRow b { color: var(--muted); font-size: 12px; font-weight: 500; }
+.challengeTierRow s { color: var(--muted); font-size: 10px; text-decoration: line-through; }
+.challengeTierUnavailable { opacity: .45; }
+.challengeCompareRiskNote { display: grid; grid-template-columns: 20px minmax(0, 1fr); margin: 20px; padding: 16px 20px; align-items: start; gap: 12px; border: 1px solid #ded3ad; border-radius: 9px; background: #f5eed5; color: #6d6035; }
+.challengeCompareTiersRow > div:not(.compareLabelCell) { align-items: flex-start; padding-top: 24px; padding-bottom: 24px; }
+.challengeCompareRiskNote > svg { width: 17px; margin-top: 2px; color: #ae7925; }
+.challengeCompareRiskNote strong { font-size: 11px; }
+.challengeCompareRiskNote p { margin: 4px 0 0; font-size: 10px; line-height: 1.5; }
+
+/* ── Challenge Firm Picker ──────────────────────────────────────────────────── */
+.challengePickerGrid { display: grid; gap: 12px; margin-top: 24px; }
+.challengeCompareTwo.challengePickerGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.challengeCompareThree.challengePickerGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.challengeCompareTwoWithAdd.challengePickerGrid { grid-template-columns: repeat(2, minmax(0, 1fr)) 140px; }
+.challengeFirmPicker { overflow: visible; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
+.challengeFirmPickerHead { position: sticky; top: 69px; z-index: 20; display: flex; min-height: 60px; padding: 14px 18px; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); background: var(--wash); }
+.challengePickerLogo, .challengePickerFallback { display: flex; width: 36px; height: 36px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 9px; background: #fff; object-fit: contain; color: var(--blue); font-size: 9px; font-weight: 800; }
+.challengeFirmPickerHead > strong { font-size: 14px; letter-spacing: -.02em; }
+.challengePickerEmpty { padding: 16px 18px; color: var(--muted); font-size: 11px; font-style: italic; }
+.challengePickerPrograms { display: flex; flex-direction: column; }
+.challengePickerBtn { width: 100%; padding: 13px 18px; border: 0; border-bottom: 1px solid var(--soft-line); background: var(--paper); color: var(--ink); text-align: left; cursor: pointer; transition: background-color 100ms ease; }
+.challengePickerBtn:last-child { border-bottom: 0; }
+.challengePickerBtn:hover { background: var(--wash); }
+.challengePickerBtnActive { background: var(--paper) !important; box-shadow: inset 3px 0 0 0 var(--blue) !important; }
+.challengePickerKind { display: block; color: var(--blue); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.challengePickerName { display: block; margin-top: 3px; font-size: 13px; font-weight: 680; letter-spacing: -.02em; }
+.challengePickerBtnActive .challengePickerName { color: var(--blue); }
+.challengePickerMeta { display: flex; margin-top: 6px; }
+.challengePickerMeta span { padding: 3px 7px; border: 1px solid var(--soft-line); border-right: 0; background: var(--paper-strong); color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 700; letter-spacing: .04em; white-space: nowrap; }
+.challengePickerMeta span:first-child { border-radius: 5px 0 0 5px; }
+.challengePickerMeta span:last-child { border-right: 1px solid var(--soft-line); border-radius: 0 5px 5px 0; }
+.challengePickerBtnActive .challengePickerMeta span { border-color: var(--line); background: var(--wash); color: var(--blue); }
+
+
+
+
+/* ── Empty Slot Placeholder ─────────────────────────────────────────────────── */
+.emptySlotButton { border-radius: 999px !important; 
+  display: flex;
+  margin: auto; width: fit-content; min-height: 36px; padding: 0 16px; align-items: center; border-radius: 999px;
+  justify-content: center;
+  border: 1px dashed var(--soft-line);
+  border-radius: 12px;
+  background: var(--wash);
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.emptySlotButton:hover {
+  border-color: var(--blue);
+  background: #edf1ff;
+}
+
+
+
+
+
+
+/* ── Compare Toolbar & Toggles ─────────────────────────────────────────────── */
+.compareToolbar {
+  display: flex;
+  margin: 24px 0 16px;
+  align-items: center;
+  gap: 20px;
+}
+.compareToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  user-select: none;
+}
+.compareToggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+.compareRowDimmed {
+  opacity: 0.5;
+}
+.compareCellHighlight {
+  background: var(--wash) !important;
+  position: relative;
+}
+.compareCellHighlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--blue);
+  pointer-events: none;
+}
+
+/* ── Unified Compare Compact Header ────────────────────────────────────────── */
+.firmCellTop { display: flex; align-items: center; gap: 10px; align-self: flex-start; }
+.compareLogoCompact, .compareFallbackCompact { display: flex; width: 28px; height: 28px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--blue); font-size: 8px; font-weight: 800; object-fit: contain; }
+.firmCellTop strong { font-size: 14px; letter-spacing: -.02em; }
+.removeFirmBtn { position: absolute; top: 10px; right: 10px; display: flex; width: 20px; height: 20px; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: #eceee8; }
+.removeFirmBtn svg { width: 10px; }
+.firmCellDropdown { width: 100%; }
+.challengeSelect { width: 100%; height: 28px; padding: 0 24px 0 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--wash) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%237b837b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>') no-repeat right 8px center; color: var(--ink); font-size: 11px; font-weight: 600; cursor: pointer; appearance: none; outline: none; transition: border-color 0.15s ease; }
+.challengeSelect:focus { border-color: var(--blue); }
+.dark .challengeSelect { color-scheme: dark; }
+.addFirmHeaderLink { display: inline-flex; margin-top: 4px; color: var(--ink); font-size: 12px; font-weight: 600; text-decoration: underline; align-self: flex-start; }
+.compareSectionHeader { display: flex; padding: 16px 20px; align-items: center; border-bottom: 1px solid var(--line); background: var(--wash); }
+.challengeDropdownRow { background: var(--wash); border-bottom: 1px solid var(--line); }
+.challengeDropdownRow .compareLabelCell { background: var(--wash); }
+.compareSectionHeader strong { font-size: 14px; color: var(--ink); }
+
+
+
+
+
+
+
