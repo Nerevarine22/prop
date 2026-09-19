@@ -191,6 +191,37 @@ export function CompareExperience({ firms }: { firms: FirmNormalizedProfile[] })
   const [showOnlyDiffs, setShowOnlyDiffs] = useState(false);
   const [highlightDiffs, setHighlightDiffs] = useState(false);
 
+  const renderFirmRow = (row: FirmRowDef, index: number, applyEmphasis: boolean = false) => {
+    const rawValues = row.getRawValue ? selectedFirms.map(firm => row.getRawValue!(firm)) : [];
+    const bestIndices = highlightDiffs ? getBestIndices(rawValues, row.compareDirection, row.customCompare) : [];
+
+    return (
+      <div className={styles.compareDataRow} key={row.label}>
+        <div className={styles.compareLabelCell}>{row.sub && <span>{row.sub}</span>}<strong>{row.label}</strong></div>
+        {selectedFirms.map((firm, fIdx) => {
+          const value = row.getValue(firm);
+          const isNd = value === 'ND';
+          const isBest = bestIndices.includes(fIdx);
+          const emphasisClass = applyEmphasis && index === 0 ? styles.comparisonEmphasis : '';
+
+          return (
+            <div
+              key={firm.id}
+              className={[
+                emphasisClass,
+                isNd ? styles.challengeCompareNd : '',
+                isBest ? styles.isBestValue : ''
+              ].filter(Boolean).join(' ')}
+            >
+              {value}
+              {isBest && <Check className={styles.bestIcon} size={16} strokeWidth={3} />}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   useEffect(() => {
     if (!hydrated || appliedUrlSelection.current) return;
     appliedUrlSelection.current = true;
@@ -386,21 +417,19 @@ const formatPermission = (val: string | undefined) => {
           </div>
           
           
-          <div className={styles.compareSectionTitle}>Overview & Trust</div>
+          <div className={`${styles.compareDataRow} ${styles.challengeDropdownRow}`}>
+            <div className={styles.compareLabelCell}>
+              <strong>Overview & Trust</strong>
+            </div>
+            {selectedFirms.map((firm) => <div key={firm.id} className={styles.compareFirmCell}></div>)}
+          </div>
           
           <div className={styles.compareVerdictRow}>
             <div className={styles.compareLabelCell}><span>Evidence lens</span><strong>Quick read</strong></div>
             {selectedFirms.map((firm) => <div key={firm.id}><p>{evidenceSummary(firm)}</p><Link href={`/prop-firms/${firm.slug}`} scroll={false} onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })}>Open brief <ArrowRight /></Link></div>)}
           </div>
           
-          {overviewRows.map((row, index) => (
-            <div className={styles.compareDataRow} key={row.label}>
-              <div className={styles.compareLabelCell}><span>{row.sub}</span><strong>{row.label}</strong></div>
-              {selectedFirms.map((firm) => (
-                <div className={index === 0 ? styles.comparisonEmphasis : ''} key={firm.id}>{row.getValue(firm)}</div>
-              ))}
-            </div>
-          ))}
+          {overviewRows.map((row, index) => renderFirmRow(row, index, true))}
 
 
           <div className={`${styles.compareDataRow} ${styles.challengeDropdownRow}`}>
@@ -517,35 +546,29 @@ const formatPermission = (val: string | undefined) => {
             })}
           </div>
 
-          <div className={styles.compareSectionTitle}>Execution & Trading Environment</div>
-          {executionRows.map((row) => (
-            <div className={styles.compareDataRow} key={row.label}>
-              <div className={styles.compareLabelCell}><span>{row.sub}</span><strong>{row.label}</strong></div>
-              {selectedFirms.map((firm) => (
-                <div key={firm.id}>{row.getValue(firm)}</div>
-              ))}
+          <div className={`${styles.compareDataRow} ${styles.challengeDropdownRow}`}>
+            <div className={styles.compareLabelCell}>
+              <strong>Execution & Trading Environment</strong>
             </div>
-          ))}
+            {selectedFirms.map((firm) => <div key={firm.id} className={styles.compareFirmCell}></div>)}
+          </div>
+          {executionRows.map((row, index) => renderFirmRow(row, index))}
 
-          <div className={styles.compareSectionTitle}>Trading Permissions</div>
-          {permissionRows.map((row) => (
-            <div className={styles.compareDataRow} key={row.label}>
-              <div className={styles.compareLabelCell}><span>{row.sub}</span><strong>{row.label}</strong></div>
-              {selectedFirms.map((firm) => (
-                <div key={firm.id}>{row.getValue(firm)}</div>
-              ))}
+          <div className={`${styles.compareDataRow} ${styles.challengeDropdownRow}`}>
+            <div className={styles.compareLabelCell}>
+              <strong>Trading Permissions</strong>
             </div>
-          ))}
+            {selectedFirms.map((firm) => <div key={firm.id} className={styles.compareFirmCell}></div>)}
+          </div>
+          {permissionRows.map((row, index) => renderFirmRow(row, index))}
 
-          <div className={styles.compareSectionTitle}>Payouts & Settlement</div>
-          {payoutRows.map((row) => (
-            <div className={styles.compareDataRow} key={row.label}>
-              <div className={styles.compareLabelCell}><span>{row.sub}</span><strong>{row.label}</strong></div>
-              {selectedFirms.map((firm) => (
-                <div key={firm.id}>{row.getValue(firm)}</div>
-              ))}
+          <div className={`${styles.compareDataRow} ${styles.challengeDropdownRow}`}>
+            <div className={styles.compareLabelCell}>
+              <strong>Payouts & Settlement</strong>
             </div>
-          ))}
+            {selectedFirms.map((firm) => <div key={firm.id} className={styles.compareFirmCell}></div>)}
+          </div>
+          {payoutRows.map((row, index) => renderFirmRow(row, index))}
           
 
           <div className={styles.challengeCompareRiskNote}>
