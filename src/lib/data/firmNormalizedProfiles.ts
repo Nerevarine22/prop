@@ -46,6 +46,11 @@ const FIRM_META: FirmMeta[] = [
   { id: 'firm-klein-funding', slug: 'klein-funding', name: 'Klein Funding', website: 'https://kleinfunding.com', xHandle: 'KleinFunding' },
   { id: 'firm-cf-trader', slug: 'cf-trader', name: 'Crypto Fund Trader', website: 'https://cryptofundtrader.com', xHandle: 'CFTradercom' },
   { id: 'firm-upscale-trade', slug: 'upscale-trade', name: 'Upscale Trade', website: 'https://upscale.trade', xHandle: 'UpscaleTrade' },
+  { id: 'firm-northbook', slug: 'northbook', name: 'Northbook', website: 'https://northbook.xyz', xHandle: 'northbookprop' },
+  { id: 'firm-xato', slug: 'xato', name: 'Xato', website: 'https://xato.com', xHandle: 'xatodotcom' },
+  { id: 'firm-vest', slug: 'vest', name: 'Vest', website: 'https://trade.vestmarkets.com', xHandle: 'VestExchange' },
+  { id: 'firm-ferm', slug: 'ferm', name: 'Ferm', website: 'https://tryferm.com', xHandle: 'tryferm' },
+  { id: 'firm-levli', slug: 'levli', name: 'Levli', website: 'https://levli.io', xHandle: 'Levli_trade' },
 ];
 
 function observations(slug: string, field: PrimaryResearchField) {
@@ -585,8 +590,8 @@ export const FIRM_NORMALIZED_PROFILES_BY_SLUG: Record<string, FirmNormalizedProf
 
 function assertNormalizedProfiles(): void {
   const profiles = Object.values(FIRM_NORMALIZED_PROFILES_BY_SLUG);
-  if (profiles.length !== FIRM_META.length || profiles.length !== 21) {
-    throw new Error(`Expected 21 normalized profiles, received ${profiles.length}.`);
+  if (profiles.length !== FIRM_META.length || profiles.length !== 26) {
+    throw new Error(`Expected 26 normalized profiles, received ${profiles.length}.`);
   }
 
   const inspect = (value: unknown, path: string): void => {
