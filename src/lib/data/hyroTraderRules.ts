@@ -32,7 +32,7 @@ export function withHyroTraderRules(profile: FirmNormalizedProfileV2): FirmNorma
     editorialCopy: { ...profile.editorialCopy,
       'hero.attribution': 'How HyroTrader describes itself',
       'decision.title': 'Crypto evaluations with distinct daily and overall loss limits.',
-      'decision.description': 'One-Step uses 4% daily / 6% maximum loss; Two-Step uses 5% daily / 10% maximum loss. Standard follows intraday peak equity; optional Swing uses start-of-day equity. Rules checked 20 Sep 2026.',
+      'decision.description': 'One-Step uses 4% daily / 6% maximum loss; Two-Step uses 5% daily / 10% maximum loss. Standard follows intraday peak equity; optional Swing uses start-of-day equity.',
       'decision.highlight': 'Exchange connectivity is marketed by the firm. Terms §3.2 describe all phases as simulated; funded rewards depend on a separate agreement.',
       'process.2.title': 'Complete qualifying trading days', 'process.2.description': 'At least 5 days for One-Step; 5 + 5 for Two-Step. The 40% best-day rule applies during evaluation only.',
       'process.3.title': 'Enter the funded phase', 'process.3.description': 'Subject to approval and a separate funded agreement. Terms describe simulated trading and performance-based rewards.',
@@ -47,7 +47,7 @@ export function withHyroTraderRules(profile: FirmNormalizedProfileV2): FirmNorma
       'sources.unknowns': 'Overall maximum-loss reference mechanics, exact leverage by market, current $HYRO launch and contract, restricted-country matrix and independently reconciled payout statistics.',
       'model.classification': 'Simulated evaluation and funded phase (Terms)', 'model.lifecycle': 'Challenge → evaluation → separate funded agreement → eligible stablecoin rewards',
     },
-    comparison: { ...profile.comparison, maxDrawdown: { status: 'varies', min: 6, max: 10, unit: 'percent', notes: 'One-Step 6%; Two-Step 10%. Company-reported rules checked 20 Sep 2026.', evidence: [{ sourceUrl: rules, checkedAt }] }, executionModels: { status: 'known', values: ['simulated'], notes: 'Terms §3.2 includes the funded phase.' } },
+    comparison: { ...profile.comparison, maxDrawdown: { status: 'varies', min: 6, max: 10, unit: 'percent', notes: 'One-Step 6%; Two-Step 10%.', evidence: [{ sourceUrl: rules, checkedAt }] }, executionModels: { status: 'known', values: ['simulated'], notes: 'Terms §3.2 includes the funded phase.' } },
     sections: profile.sections.map((section) => {
       const retained = section.blocks.filter((block) => !block.id.startsWith('hyrotrader-rule-'));
       if (section.id === 'offers') return { ...section, blocks: [...retained, ...challengeBlocks] };
