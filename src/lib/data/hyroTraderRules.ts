@@ -30,7 +30,7 @@ export function withHyroTraderRules(profile: FirmNormalizedProfileV2): FirmNorma
   const urls = [...new Set([...entries.map((entry) => entry[3]), ...extraSources])];
   const updated: FirmNormalizedProfileV2 = { ...profile,
     editorialCopy: { ...profile.editorialCopy,
-      'hero.attribution': 'How HyroTrader describes itself · Company-reported, checked 20 Sep 2026. Its Terms describe all program phases, including funded trading, as simulated.',
+      'hero.attribution': 'How HyroTrader describes itself',
       'decision.title': 'Crypto evaluations with distinct daily and overall loss limits.',
       'decision.description': 'One-Step uses 4% daily / 6% maximum loss; Two-Step uses 5% daily / 10% maximum loss. Standard follows intraday peak equity; optional Swing uses start-of-day equity. Rules checked 20 Sep 2026.',
       'decision.highlight': 'Exchange connectivity is marketed by the firm. Terms §3.2 describe all phases as simulated; funded rewards depend on a separate agreement.',

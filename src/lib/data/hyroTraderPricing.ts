@@ -48,7 +48,7 @@ export function withHyroTraderPricing(profile: FirmNormalizedProfileV2): FirmNor
       ...profile.editorialCopy,
       'hero.title': 'Crypto Prop Firm That Pays Up to 90%',
       'hero.description': 'Get funded with up to $200,000 to trade USDT perpetuals on your own Bybit account or terminal. Withdraw your profits in USDT or USDC.',
-      'hero.attribution': 'How HyroTrader describes itself · Company-reported, checked 20 Sep 2026. Funding and payouts are subject to the firm’s rules.',
+      'hero.attribution': 'How HyroTrader describes itself',
       'trial.title': 'Free Trial Account',
       'trial.description': 'Run the funded account challenge free in demo mode: practice on up to $200K of simulated capital with real market data before paying for the real evaluation. No credit card required.',
       'trial.note': 'Company-reported offer, checked 20 Sep 2026. Demo only: no payouts or automatic qualification for funding. One active free trial per trader.',

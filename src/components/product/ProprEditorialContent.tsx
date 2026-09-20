@@ -57,6 +57,7 @@ function publicResearchCopy(value: string): string {
 function ProgramCard({ program, showSwing = false }: { program: NormalizedChallengeProgram; showSwing?: boolean }) {
   const [swingEnabled, setSwingEnabled] = useState(false);
   const [swingHintOpen, setSwingHintOpen] = useState(false);
+  const [timeLimitHintOpen, setTimeLimitHintOpen] = useState(false);
   const kind = known(program.kind);
   const stages = known(program.stages) ?? [];
   const tiers = (known(program.tiers) ?? []).filter((tier) => known(tier.available) !== false);
@@ -80,11 +81,17 @@ function ProgramCard({ program, showSwing = false }: { program: NormalizedChalle
       <dl className={styles.programRules}>
         <div><dt>Daily loss</dt><dd>{percentage(known(program.dailyLossPercent))}</dd></div>
         <div><dt>Maximum loss</dt><dd>{percentage(known(program.maxDrawdownPercent))}</dd></div>
-        <div><dt>{showSwing ? 'Daily drawdown' : 'Drawdown'}</dt><dd>{showSwing ? <span className={styles.swingHint} onMouseEnter={() => setSwingHintOpen(true)} onMouseLeave={() => setSwingHintOpen(false)} onFocus={() => setSwingHintOpen(true)} onBlur={() => setSwingHintOpen(false)} onKeyDown={(event) => { if (event.key === 'Escape') setSwingHintOpen(false); }}>
-          <label className={styles.swingToggle}><input type="checkbox" checked={swingEnabled} onChange={(event) => setSwingEnabled(event.target.checked)} aria-label={`${program.name} Swing drawdown upgrade`} aria-describedby={swingHintOpen ? `${program.id}-swing-hint` : undefined} />{swingEnabled ? 'Swing (fixed)' : 'Swing upgrade'}</label>
-          {swingHintOpen && <span role="tooltip" id={`${program.id}-swing-hint`} className={styles.swingTooltip}>Uses start-of-day equity instead of the intraday peak for daily drawdown. The loss allowance stays the same; the upgrade costs extra.</span>}
+        <div><dt>{showSwing ? 'Drawdown type' : 'Drawdown'}</dt><dd>{showSwing ? <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '6px' }}>
+            <span>{swingEnabled ? 'Swing (fixed)' : 'Standard'}</span>
+            <span className={styles.swingHint} onMouseEnter={() => setSwingHintOpen(true)} onMouseLeave={() => setSwingHintOpen(false)} onFocus={() => setSwingHintOpen(true)} onBlur={() => setSwingHintOpen(false)} onKeyDown={(event) => { if (event.key === 'Escape') setSwingHintOpen(false); }}>
+              <label className={styles.swingToggle} style={{ fontWeight: 500, color: 'var(--muted)' }}><input type="checkbox" checked={swingEnabled} onChange={(event) => setSwingEnabled(event.target.checked)} aria-label={`${program.name} Swing drawdown upgrade`} aria-describedby={swingHintOpen ? `${program.id}-swing-hint` : undefined} />{swingEnabled ? 'Remove upgrade' : '+ Swing upgrade'}</label>
+              {swingHintOpen && <span role="tooltip" id={`${program.id}-swing-hint`} className={styles.swingTooltip}>Uses start-of-day equity instead of the intraday peak for daily drawdown. The loss allowance stays the same; the upgrade costs extra.</span>}
+            </span>
         </span> : sentenceCase(known(program.maxDrawdownType))}</dd></div>
-        <div><dt>Time limit</dt><dd>{known(program.noTimeLimit) ? 'None' : 'Not stated'}</dd></div>
+        <div><dt>Time limit</dt><dd>{known(program.noTimeLimit) ? (showSwing ? <span className={styles.swingHint} onMouseEnter={() => setTimeLimitHintOpen(true)} onMouseLeave={() => setTimeLimitHintOpen(false)} onFocus={() => setTimeLimitHintOpen(true)} onBlur={() => setTimeLimitHintOpen(false)} onKeyDown={(event) => { if (event.key === 'Escape') setTimeLimitHintOpen(false); }}>
+          <span style={{ cursor: 'help', borderBottom: '1px dotted currentColor' }} aria-describedby={timeLimitHintOpen ? `${program.id}-time-hint` : undefined}>Min 5d</span>
+          {timeLimitHintOpen && <span role="tooltip" id={`${program.id}-time-hint`} className={styles.swingTooltip}>You need at least 5 valid trading days to pass (no time limit). A day counts when you close a trade &ge;5% of starting balance with PnL &ge;&plusmn;1% of trade size. Reaching the target early does not waive this rule.</span>}
+        </span> : 'None') : 'Not stated'}</dd></div>
       </dl>
 
       <div className={styles.tiers}>
