@@ -1,3 +1,5 @@
+import { updateHyroTraderRuleFacts } from './hyroTraderRules';
+import { withHyroTraderPricing, updateHyroTraderPrograms, hyroPricingFact } from './hyroTraderPricing';
 import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
 import type { FirmNormalizedProfile, FirmNormalizedProfileV2, FirmResearchSourceInspection, FirmContentFact, NormalizedFact } from '@/types/database';
 
@@ -540,7 +542,7 @@ export const HYPERPNL_PAGE_PROFILE = page({
   comparison: { modelTypes: ['evaluation'], capital: { status: 'varies', min: 5_000, max: 25_000, unit: 'USD' }, entryCost: { status: 'varies', min: 42, max: 215, unit: 'USD' }, profitSplit: { status: 'known', min: 80, max: 80, unit: 'percent' }, maxDrawdown: { status: 'varies', min: 5, max: 9, unit: 'percent', notes: 'Official storefront and GitBook describe different evaluation structures.' }, payoutSchedules: { status: 'known', values: ['daily', 'on-demand'] }, executionModels: { status: 'known', values: ['simulated'] } },
 });
 
-export const HYROTRADER_PAGE_PROFILE = page({
+export const HYROTRADER_PAGE_PROFILE = withHyroTraderPricing(page({
   slug: 'hyrotrader', name: 'HyroTrader', modelTypes: ['evaluation'], offers: ['One-Step', 'Two-Step'],
   sources: [
     { category: 'website', url: 'https://www.hyrotrader.com/', label: 'Official website and pricing' },
@@ -558,7 +560,7 @@ export const HYROTRADER_PAGE_PROFILE = page({
     'process.3.title': 'Connect Bybit, Tealstreet or CLEO', 'process.3.description': 'Funded infrastructure uses real orderbook and exchange connectivity.',
     'process.4.title': 'Request USDT or USDC', 'process.4.description': 'Payout is available from the first funded trading day and stated at 12–24 hours.',
     'programs.title': 'Two evaluation paths across $5K–$200K.', 'programs.description': 'One-Step uses 4% daily/6% max loss; Two-Step uses 5% daily while its maximum loss needs clearer current documentation.',
-    'programs.note': 'The displayed Two-Step schedule runs from $59 to $969; selected upgrades add cost.',
+    'programs.note': 'Base fees and optional Swing upgrades are listed separately.',
     'payouts.title': 'starts at the standard trader share.', 'payouts.description': 'The dedicated payout FAQ states 80%, rising five points every four months to 90%, with no withdrawal commission.',
     'payouts.minimum': '$100 after split', 'payouts.processing': '12–24 hours', 'payouts.rail': 'USDT or USDC',
     'payouts.rule.1': 'Requests open from the first funded trading day.', 'payouts.rule.2': 'The challenge fee is refunded with the first eligible payout.', 'payouts.rule.3': 'Public payout cards include independently checkable transaction IDs.',
@@ -575,7 +577,7 @@ export const HYROTRADER_PAGE_PROFILE = page({
   },
   comparison: { modelTypes: ['evaluation'], capital: { status: 'varies', min: 5_000, max: 200_000, unit: 'USD', notes: 'Account values are marketed in USDT-equivalent amounts.' }, entryCost: { status: 'varies', min: 59, max: 969, unit: 'USD' }, profitSplit: { status: 'varies', min: 80, max: 90, unit: 'percent' }, maxDrawdown: { status: 'varies', min: 6, unit: 'percent', notes: 'One-Step documented; current Two-Step maximum needs confirmation.' }, payoutSchedules: { status: 'known', values: ['on-demand'] }, executionModels: { status: 'known', values: ['simulated evaluation', 'real exchange funded'] } },
   reward: { label: '$HYRO whitepaper commitments', metrics: [['Supply', '50,000,000'], ['Community / airdrops', '10% stated'], ['Staking / cashback', '10% stated'], ['Current launch', 'Not verified']] },
-});
+}));
 
 export const CARROT_FUNDING_PAGE_PROFILE = page({
   slug: 'carrot-funding', name: 'Carrot Funding', modelTypes: ['evaluation'], offers: ['1-Phase', '2-Phase'],
@@ -896,9 +898,10 @@ export const HYPERPNL_NORMALIZED_PROFILE: FirmNormalizedProfile = {
   executionPolicy: { ...hyperPnlBase.executionPolicy, venue: observed('HyperPNL simulated trading platform', 'https://hyperpnl.com/') },
   modularProfile: HYPERPNL_PAGE_PROFILE,
 };
-export const HYROTRADER_NORMALIZED_PROFILE: FirmNormalizedProfile = {
+export const HYROTRADER_NORMALIZED_PROFILE: FirmNormalizedProfile = updateHyroTraderRuleFacts({
   ...hyroTraderBase,
   checkedAt: CHECKED_AT,
+  challengePrograms: hyroPricingFact(updateHyroTraderPrograms(hyroTraderBase.challengePrograms.status === 'ND' ? [] : hyroTraderBase.challengePrograms.value)),
   tradingPolicy: {
     ...hyroTraderBase.tradingPolicy,
     platforms: observed(['Bybit API', 'Tealstreet', 'CLEO'], 'https://www.hyrotrader.com/faq/hyrotrader-account/when-will-i-get-the-account/'),
@@ -906,7 +909,7 @@ export const HYROTRADER_NORMALIZED_PROFILE: FirmNormalizedProfile = {
   },
   executionPolicy: { ...hyroTraderBase.executionPolicy, venue: observed('Simulated evaluation · real exchange funded execution', 'https://www.hyrotrader.com/fastest-payout-prop-firm/') },
   modularProfile: HYROTRADER_PAGE_PROFILE,
-};
+});
 export const CARROT_FUNDING_NORMALIZED_PROFILE: FirmNormalizedProfile = {
   ...carrotFundingBase,
   checkedAt: CHECKED_AT,

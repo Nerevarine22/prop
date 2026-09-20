@@ -100,6 +100,7 @@ export interface NormalizedChallengeStage {
 }
 
 export interface NormalizedChallengeTier {
+  swingUpgradeFee?: NormalizedFact<number>;
   accountSize: NormalizedFact<number>;
   fee: NormalizedFact<number>;
   originalFee: NormalizedFact<number>;

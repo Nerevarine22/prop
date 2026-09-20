@@ -352,3 +352,17 @@
   background: color-mix(in srgb, var(--blue) 12%, transparent);
   box-shadow: 0 0 0 1px var(--blue), 0 0 0 5px color-mix(in srgb, var(--blue) 12%, transparent);
 }
+
+.programGrid[data-hyro] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.programGrid[data-hyro] .programCard { display: block; }
+.programGrid[data-hyro] .programTop { min-height: 116px; border-right: 0; border-bottom: 1px solid var(--line); }
+@media (max-width: 720px) { .programGrid[data-hyro] { grid-template-columns: 1fr; } }
+
+.swingToggle { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; font-size: 12px; }
+.swingToggle input { margin: 0; width: 14px; height: 14px; accent-color: var(--blue); }
+.swingToggle input:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.swingHint { position: relative; display: inline-block; }
+.swingTooltip { position: absolute; top: 100%; left: 0; z-index: 5; width: 240px; max-width: calc(100vw - 84px); padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); box-shadow: 0 6px 20px rgb(0 0 0 / 20%); font-size: 12px; font-weight: 400; line-height: 1.6; }
+.trialCopy { padding: 20px; }
+.trialCopy p { margin: 0 0 16px; font-size: 13px; line-height: 1.75; color: var(--muted); }
+@media (max-width: 1000px) { .programGrid[data-hyro] { grid-template-columns: 1fr; } }

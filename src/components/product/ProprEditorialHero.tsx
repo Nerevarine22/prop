@@ -102,7 +102,9 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
                 <h1 id="firm-profile-title" data-long={firm.name.length > 13}>{firm.name}</h1>
               </div>
             </div>
-            <p>{description}</p>
+            {research.editorialCopy?.['hero.title'] && <h2 className={styles.companyHeadline}>{research.editorialCopy['hero.title']}</h2>}
+            <p>{research.editorialCopy?.['hero.description'] ?? description}</p>
+            {research.editorialCopy?.['hero.attribution'] && <small className={styles.companyAttribution}>{research.editorialCopy['hero.attribution']}</small>}
           </div>
         </div>
 

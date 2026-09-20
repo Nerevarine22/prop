@@ -8,6 +8,8 @@ import { factValue, formatCapital, profileTrustpilotRating, shortDate } from '@/
 import { ProprSectionNav } from './ProprSectionNav';
 import { InlineEditableText } from './InlineEditableText';
 import { TrustpilotRatingSection } from './TrustpilotRatingSection';
+import { HyroTraderPricing } from './HyroTraderPricing';
+import { HyroTraderTrading } from './HyroTraderTrading';
 import styles from './ProprEditorialContent.module.css';
 
 function known<T>(fact: NormalizedFact<T>): T | undefined {
@@ -52,7 +54,9 @@ function publicResearchCopy(value: string): string {
     .replace(/\bnormalized\b/gi, 'documented');
 }
 
-function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
+function ProgramCard({ program, showSwing = false }: { program: NormalizedChallengeProgram; showSwing?: boolean }) {
+  const [swingEnabled, setSwingEnabled] = useState(false);
+  const [swingHintOpen, setSwingHintOpen] = useState(false);
   const kind = known(program.kind);
   const stages = known(program.stages) ?? [];
   const tiers = (known(program.tiers) ?? []).filter((tier) => known(tier.available) !== false);
@@ -76,20 +80,25 @@ function ProgramCard({ program }: { program: NormalizedChallengeProgram }) {
       <dl className={styles.programRules}>
         <div><dt>Daily loss</dt><dd>{percentage(known(program.dailyLossPercent))}</dd></div>
         <div><dt>Maximum loss</dt><dd>{percentage(known(program.maxDrawdownPercent))}</dd></div>
-        <div><dt>Drawdown</dt><dd>{sentenceCase(known(program.maxDrawdownType))}</dd></div>
+        <div><dt>{showSwing ? 'Daily drawdown' : 'Drawdown'}</dt><dd>{showSwing ? <span className={styles.swingHint} onMouseEnter={() => setSwingHintOpen(true)} onMouseLeave={() => setSwingHintOpen(false)} onFocus={() => setSwingHintOpen(true)} onBlur={() => setSwingHintOpen(false)} onKeyDown={(event) => { if (event.key === 'Escape') setSwingHintOpen(false); }}>
+          <label className={styles.swingToggle}><input type="checkbox" checked={swingEnabled} onChange={(event) => setSwingEnabled(event.target.checked)} aria-label={`${program.name} Swing drawdown upgrade`} aria-describedby={swingHintOpen ? `${program.id}-swing-hint` : undefined} />{swingEnabled ? 'Swing (fixed)' : 'Swing upgrade'}</label>
+          {swingHintOpen && <span role="tooltip" id={`${program.id}-swing-hint`} className={styles.swingTooltip}>Uses start-of-day equity instead of the intraday peak for daily drawdown. The loss allowance stays the same; the upgrade costs extra.</span>}
+        </span> : sentenceCase(known(program.maxDrawdownType))}</dd></div>
         <div><dt>Time limit</dt><dd>{known(program.noTimeLimit) ? 'None' : 'Not stated'}</dd></div>
       </dl>
 
       <div className={styles.tiers}>
-        <span>Account size and fee</span>
+        <span>{showSwing ? `Account size (USDT) · ${swingEnabled ? 'Swing fee' : 'Base fee'} (USD)` : 'Account size and fee'}</span>
         <div>
           {tiers.map((tier, index) => {
             const capital = known(tier.accountSize);
             const fee = known(tier.fee);
+            const swing = tier.swingUpgradeFee ? known(tier.swingUpgradeFee) : undefined;
             return (
               <p key={`${capital}-${fee}-${index}`}>
                 <strong>{capital === undefined ? '—' : formatCapital(capital)}</strong>
-                <span>{fee === undefined ? '—' : `$${fee}`}</span>
+                <span>{fee === undefined ? '—' : `$${(fee + (showSwing && swingEnabled ? swing ?? 0 : 0)).toLocaleString('en-US')}`}
+                </span>
               </p>
             );
           })}
@@ -348,12 +357,18 @@ export function ProprEditorialContent({
         <div className={styles.sectionHeading} {...cmsBlock('offers', 'notebooklm-3')}>
           <span className={styles.eyebrow}>Programs and pricing</span>
           <InlineEditableText as="h2" value={copy('programs.title', 'Pick the constraint set, not just the cheapest fee.')} enabled={editMode} multiline onCommit={(value) => changeCopy('programs.title', value)} />
-          <InlineEditableText as="p" value={copy('programs.description', 'Each program changes the profit target and loss allowance. Account sizes stay comparable across offers.')} enabled={editMode} multiline onCommit={(value) => changeCopy('programs.description', value)} />
+          {firm.slug !== 'hyrotrader' && <InlineEditableText as="p" value={copy('programs.description', 'Each program changes the profit target and loss allowance. Account sizes stay comparable across offers.')} enabled={editMode} multiline onCommit={(value) => changeCopy('programs.description', value)} />}
         </div>
-        <div className={styles.programGrid} {...cmsBlock('offers', 'offer-records')}>
-          {programs.map((program) => <ProgramCard key={program.id} program={program} />)}
+        <div className={styles.programGrid} data-hyro={firm.slug === 'hyrotrader' || undefined} {...cmsBlock('offers', 'offer-records')}>
+          {programs.map((program) => <ProgramCard key={program.id} program={program} showSwing={firm.slug === 'hyrotrader'} />)}
+          {firm.slug === 'hyrotrader' && <article className={styles.programCard}>
+            <div className={styles.programTop}><div><span>Demo practice</span><h3>{copy('trial.title', 'Free Trial Account')}</h3></div><div className={styles.programTarget}><span>Entry fee</span><strong>$0</strong></div></div>
+            <dl className={styles.programRules}><div><dt>Simulated capital</dt><dd>Up to $200K</dd></div><div><dt>Market data</dt><dd>Real-time</dd></div><div><dt>Credit card</dt><dd>Not required</dd></div><div><dt>Payouts</dt><dd>Demo only</dd></div></dl>
+            <div className={styles.trialCopy}><p>{copy('trial.description', '')}</p><p>One active free trial per trader. No automatic qualification for funding.</p></div>
+          </article>}
         </div>
-        <p className={styles.sectionNote}><CircleAlert /> {copy('programs.note', 'Challenge fees are documented as non-refundable.')}</p>
+        {firm.slug === 'hyrotrader' && <HyroTraderPricing profile={pageProfile} />}
+        {firm.slug !== 'hyrotrader' && <p className={styles.sectionNote}><CircleAlert /> {copy('programs.note', 'Challenge fees are documented as non-refundable.')}</p>}
       </section>
 
       <section className={`${styles.section} ${styles.payoutSection}`} id="payouts" {...cmsSection('payouts')}>
@@ -381,7 +396,7 @@ export function ProprEditorialContent({
           <InlineEditableText as="h2" value={copy('trading.title', 'Execution is concentrated around Hyperliquid.')} enabled={editMode} multiline onCommit={(value) => changeCopy('trading.title', value)} />
           <InlineEditableText as="p" value={copy('trading.description', factValue(firm.executionPolicy.notes) ?? 'Execution details are not stated.')} enabled={editMode} multiline onCommit={(value) => changeCopy('trading.description', value)} />
         </div>
-        <div className={styles.tradingLayout} {...cmsBlock('trading', 'trading-facts')}>
+        {firm.slug === 'hyrotrader' ? <HyroTraderTrading profile={pageProfile} /> : <div className={styles.tradingLayout} {...cmsBlock('trading', 'trading-facts')}>
           <div className={styles.tradingIntro}>
             <span>Where you trade</span>
             <h3>{platforms.join(' + ') || 'Not stated'}</h3>
@@ -397,7 +412,7 @@ export function ProprEditorialContent({
             <span>Leverage bands</span>
             {leverage.map((item) => <p key={item}>{item}</p>)}
           </div>
-        </div>
+        </div>}
       </section>
 
       {isAceTrader && <section className={`${styles.section} ${styles.transparencySection}`} id="transparency" {...cmsSection('transparency')}>
