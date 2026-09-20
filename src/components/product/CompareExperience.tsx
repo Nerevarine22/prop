@@ -159,6 +159,8 @@ const ROWS: RowDef[] = [
   {
     label: 'Profit split',
     sub: 'funded stage',
+    getRawValue: (p) => knownValue(p.fundedProfitSplitPercent),
+    compareDirection: 'higher',
     getValue: (p) => {
       const v = knownValue(p.fundedProfitSplitPercent);
       return v !== undefined ? `${v}%` : 'ND';
@@ -189,11 +191,10 @@ export function CompareExperience({ firms }: { firms: FirmNormalizedProfile[] })
   const { hydrated, selectedIds: selected, toggle: toggleSelection, replace } = useComparisonSelection();
   const appliedUrlSelection = useRef(false);
   const [showOnlyDiffs, setShowOnlyDiffs] = useState(false);
-  const [highlightDiffs, setHighlightDiffs] = useState(false);
 
   const renderFirmRow = (row: FirmRowDef, index: number, applyEmphasis: boolean = false) => {
     const rawValues = row.getRawValue ? selectedFirms.map(firm => row.getRawValue!(firm)) : [];
-    const bestIndices = highlightDiffs ? getBestIndices(rawValues, row.compareDirection, row.customCompare) : [];
+    const bestIndices = getBestIndices(rawValues, row.compareDirection, row.customCompare);
 
     return (
       <div className={styles.compareDataRow} key={row.label}>
@@ -385,15 +386,6 @@ const formatPermission = (val: string | undefined) => {
       </section>
 
       
-      {selectedFirms.length >= 2 && (
-        <div className={styles.compareToolbar}>
-          <label className={styles.highlightToggle}>
-            <input type="checkbox" checked={highlightDiffs} onChange={(e) => setHighlightDiffs(e.target.checked)} />
-            <span className={styles.highlightToggleSlider}></span>
-            <strong>Highlight better options</strong>
-          </label>
-        </div>
-      )}
       
       {selectedFirms.length < 2 ? <section className={styles.emptyCompare}><Columns3 /><h2>Select at least two firms</h2><p>Comparison begins after two profiles are added below.</p><a href="#compare-picker">Browse firms</a></section> : (
         <section className={`${styles.compareWorkspace} ${selectedFirms.length === 2 ? styles.compareTwo : styles.compareThree}`} aria-label="Prop firm comparison">
@@ -465,7 +457,7 @@ const formatPermission = (val: string | undefined) => {
               const p = getPrograms(firm).find(x => x.id === pId);
               return p ? row.getRawValue!(p) : undefined;
             }) : [];
-            const bestIndices = highlightDiffs ? getBestIndices(rawValues, row.compareDirection, row.customCompare) : [];
+            const bestIndices = getBestIndices(rawValues, row.compareDirection, row.customCompare);
             
             return (
               <div className={styles.compareDataRow} key={row.label}>
