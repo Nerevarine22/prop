@@ -8,10 +8,6 @@ import { ProfileCompareButton, ProfileComparisonTray } from './ProfileCompareCon
 import { SorsaScoreBadge } from './SorsaScoreBadge';
 import styles from './ProprEditorialHero.module.css';
 
-function XMark() {
-  return <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>;
-}
-
 function rangePoint(value: ComparisonRangeProjection, point: 'min' | 'max'): string | undefined {
   const amount = value[point] ?? value.min;
   if (amount === undefined) return undefined;
@@ -45,6 +41,7 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
   const xHandle = factValue(firm.identity.xHandle);
   const xUrl = xHandle ? `https://x.com/${xHandle.replace(/^@/, '')}` : undefined;
   const isHyroTrader = firm.slug === 'hyrotrader';
+  const editorialTitle = research.editorialCopy?.['hero.title'];
   const trustpilotRating = profileTrustpilotRating(firm);
   const overviewTexts = research.sections
     .find((section) => section.id === 'overview')
@@ -75,18 +72,18 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
     ['Documented offers', String(research.offerNames.length)],
   ].filter((item): item is [string, string] => Boolean(item));
   const decisionFacts = [
-    split !== 'Not published' ? { label: 'Profit split', value: split, note: 'Trader share', tone: isHyroTrader ? 'neutral' : 'value' } : undefined,
+    split !== 'Not published' ? { label: 'Profit split', value: split, note: 'Trader share', tone: 'neutral' } : undefined,
     entry ? { label: entryLabel, value: entryValue, note: isHyroTrader ? 'Base eval fee; Swing extra.' : research.comparison.entryCost.notes ?? 'Offer dependent', tone: 'condition' } : undefined,
-    capital ? { label: 'Maximum capital', value: capitalValue, note: isHyroTrader ? 'USDT-equivalent account value.' : research.comparison.capital.notes ?? 'Offer dependent', tone: isHyroTrader ? 'neutral' : 'research' } : undefined,
+    capital ? { label: 'Maximum capital', value: capitalValue, note: isHyroTrader ? 'USDT-equivalent account value.' : research.comparison.capital.notes ?? 'Offer dependent', tone: 'neutral' } : undefined,
     payout !== 'Not published' ? { label: 'Payout access', value: payout, note: research.comparison.payoutSchedules.notes ?? 'See payout terms', tone: 'settlement' } : undefined,
-    execution !== 'ND' && execution !== 'N/A' ? { label: 'Execution', value: platforms.slice(0, 2).join(' + ') || execution, note: isHyroTrader ? 'Evaluation route' : modelLabel, tone: isHyroTrader ? 'neutral' : 'settlement' } : undefined,
+    execution !== 'ND' && execution !== 'N/A' ? { label: 'Execution', value: platforms.slice(0, 2).join(' + ') || execution, note: isHyroTrader ? 'Evaluation route' : modelLabel, tone: 'neutral' } : undefined,
   ].filter((item): item is { label: string; value: string; note: string; tone: string } => Boolean(item));
 
   const displayedDescription = research.editorialCopy?.['hero.description'] ?? description;
 
   return (
     <>
-    <section className={styles.hero} aria-labelledby="firm-profile-title" data-cms-hero data-hyrotrader={isHyroTrader || undefined}>
+    <section className={styles.hero} aria-labelledby="firm-profile-title" data-cms-hero>
       <header className={styles.metaBar}>
         <span><i /> Independent research profile</span>
         <span>Reviewed {shortDate(research.checkedAt)}</span>
@@ -96,7 +93,6 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
         <div className={styles.identity}>
           <div className={styles.brandMark}>
             <FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.logo} fallbackClassName={styles.fallback} />
-            {!isHyroTrader && xUrl && <a className={styles.xLink} href={xUrl} target="_blank" rel="noreferrer" aria-label={`${firm.name} on X`}><XMark /><span>Profile</span></a>}
           </div>
           <div className={styles.identityCopy}>
             <div className={styles.identityHeader}>
@@ -105,34 +101,26 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
                 <h1 id="firm-profile-title" data-long={firm.name.length > 13}>{firm.name}</h1>
               </div>
             </div>
-            {isHyroTrader ? (
-              <div className={styles.hyroDescription}>
-                <p><strong>Crypto prop firm with up to $200K simulated capital and on-demand payouts.</strong></p>
-                <p>{displayedDescription}</p>
-                {research.editorialCopy?.['hero.attribution'] && <small className={styles.companyAttribution}>{research.editorialCopy['hero.attribution']}</small>}
-                {xUrl && <a className={styles.xLink} href={xUrl} target="_blank" rel="noreferrer" aria-label={`${firm.name} on X`}><ExternalLink /><span>X profile</span></a>}
-              </div>
-            ) : (
-              <p>
-                {research.editorialCopy?.['hero.title'] && <>{research.editorialCopy['hero.title']}<br /></>}
-                {displayedDescription}
-              </p>
-            )}
-            {!isHyroTrader && research.editorialCopy?.['hero.attribution'] && <small className={styles.companyAttribution}>{research.editorialCopy['hero.attribution']}</small>}
+            <div className={styles.profileDescription}>
+              {(isHyroTrader || editorialTitle) && <p className={styles.profileDescriptor}>{isHyroTrader ? 'Crypto prop firm with up to $200K simulated capital and on-demand payouts.' : editorialTitle}</p>}
+              <p className={styles.profileBody}>{displayedDescription}</p>
+              {research.editorialCopy?.['hero.attribution'] && <small className={styles.companyAttribution}>{research.editorialCopy['hero.attribution']}</small>}
+              {xUrl && <a className={styles.xLink} href={xUrl} target="_blank" rel="noreferrer" aria-label={`${firm.name} on X`}><ExternalLink /><span>X profile</span></a>}
+            </div>
           </div>
         </div>
 
         <aside className={styles.actionPanel}>
           <div className={styles.externalSignals}>
             <div className={styles.rating} aria-label={trustpilotRating ? `${trustpilotRating.score} out of 5 on Trustpilot from ${trustpilotRating.reviewCountLabel} reviews` : 'No external trader rating added'}>
-              <div className={isHyroTrader ? styles.hyroRatingLine : undefined}>
+              <div className={styles.ratingLine}>
                 <strong>{trustpilotRating ? trustpilotRating.score.toFixed(1) : '—'}</strong>
-                {isHyroTrader && trustpilotRating && <span className={styles.ratingOutOf}>/ 5</span>}
+                {trustpilotRating && <span className={styles.ratingOutOf}>/ 5</span>}
                 <span>{trustpilotRating ? 'Trustpilot' : 'External rating'}</span>
               </div>
               <div className={styles.stars} aria-hidden="true">{Array.from({ length: 5 }, (_, index) => <Star data-filled={Boolean(trustpilotRating && index < Math.floor(trustpilotRating.score))} key={index} />)}</div>
               {trustpilotRating
-                ? <small><a href={trustpilotRating.url} target="_blank" rel="noreferrer">{isHyroTrader ? 'Trustpilot · ' : ''}{trustpilotRating.reviewCountApproximate ? '≈' : ''}{trustpilotRating.reviewCountLabel} reviews{isHyroTrader ? '' : ' · external source'}</a></small>
+                ? <small><a href={trustpilotRating.url} target="_blank" rel="noreferrer">Trustpilot · {trustpilotRating.reviewCountApproximate ? '≈' : ''}{trustpilotRating.reviewCountLabel} reviews</a></small>
                 : <small>No rating added</small>}
             </div>
             {xUrl && <SorsaScoreBadge username={xHandle ?? ''} />}
