@@ -44,6 +44,7 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
   const website = profileWebsite(firm);
   const xHandle = factValue(firm.identity.xHandle);
   const xUrl = xHandle ? `https://x.com/${xHandle.replace(/^@/, '')}` : undefined;
+  const isHyroTrader = firm.slug === 'hyrotrader';
   const trustpilotRating = profileTrustpilotRating(firm);
   const overviewTexts = research.sections
     .find((section) => section.id === 'overview')
@@ -74,16 +75,18 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
     ['Documented offers', String(research.offerNames.length)],
   ].filter((item): item is [string, string] => Boolean(item));
   const decisionFacts = [
-    split !== 'Not published' ? { label: 'Profit split', value: split, note: 'Trader share', tone: 'value' } : undefined,
-    entry ? { label: entryLabel, value: entryValue, note: research.comparison.entryCost.notes ?? 'Offer dependent', tone: 'condition' } : undefined,
-    capital ? { label: 'Maximum capital', value: capitalValue, note: research.comparison.capital.notes ?? 'Offer dependent', tone: 'research' } : undefined,
+    split !== 'Not published' ? { label: 'Profit split', value: split, note: 'Trader share', tone: isHyroTrader ? 'neutral' : 'value' } : undefined,
+    entry ? { label: entryLabel, value: entryValue, note: isHyroTrader ? 'Base eval fee; Swing extra.' : research.comparison.entryCost.notes ?? 'Offer dependent', tone: 'condition' } : undefined,
+    capital ? { label: 'Maximum capital', value: capitalValue, note: isHyroTrader ? 'USDT-equivalent account value.' : research.comparison.capital.notes ?? 'Offer dependent', tone: isHyroTrader ? 'neutral' : 'research' } : undefined,
     payout !== 'Not published' ? { label: 'Payout access', value: payout, note: research.comparison.payoutSchedules.notes ?? 'See payout terms', tone: 'settlement' } : undefined,
-    execution !== 'ND' && execution !== 'N/A' ? { label: 'Execution', value: platforms.slice(0, 2).join(' + ') || execution, note: modelLabel, tone: 'settlement' } : undefined,
+    execution !== 'ND' && execution !== 'N/A' ? { label: 'Execution', value: platforms.slice(0, 2).join(' + ') || execution, note: isHyroTrader ? 'Evaluation route' : modelLabel, tone: isHyroTrader ? 'neutral' : 'settlement' } : undefined,
   ].filter((item): item is { label: string; value: string; note: string; tone: string } => Boolean(item));
+
+  const displayedDescription = research.editorialCopy?.['hero.description'] ?? description;
 
   return (
     <>
-    <section className={styles.hero} aria-labelledby="firm-profile-title" data-cms-hero>
+    <section className={styles.hero} aria-labelledby="firm-profile-title" data-cms-hero data-hyrotrader={isHyroTrader || undefined}>
       <header className={styles.metaBar}>
         <span><i /> Independent research profile</span>
         <span>Reviewed {shortDate(research.checkedAt)}</span>
@@ -93,7 +96,7 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
         <div className={styles.identity}>
           <div className={styles.brandMark}>
             <FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.logo} fallbackClassName={styles.fallback} />
-            {xUrl && <a className={styles.xLink} href={xUrl} target="_blank" rel="noreferrer" aria-label={`${firm.name} on X`}><XMark /><span>Profile</span></a>}
+            {!isHyroTrader && xUrl && <a className={styles.xLink} href={xUrl} target="_blank" rel="noreferrer" aria-label={`${firm.name} on X`}><XMark /><span>Profile</span></a>}
           </div>
           <div className={styles.identityCopy}>
             <div className={styles.identityHeader}>
@@ -102,21 +105,34 @@ export function FirmEditorialHero({ firm, profileOverride, showCompareControls =
                 <h1 id="firm-profile-title" data-long={firm.name.length > 13}>{firm.name}</h1>
               </div>
             </div>
-            <p>
-              {research.editorialCopy?.['hero.title'] && <>{research.editorialCopy['hero.title']}<br /></>}
-              {research.editorialCopy?.['hero.description'] ?? description}
-            </p>
-            {research.editorialCopy?.['hero.attribution'] && <small className={styles.companyAttribution}>{research.editorialCopy['hero.attribution']}</small>}
+            {isHyroTrader ? (
+              <div className={styles.hyroDescription}>
+                <p><strong>Crypto prop firm with up to $200K simulated capital and on-demand payouts.</strong></p>
+                <p>{displayedDescription}</p>
+                {research.editorialCopy?.['hero.attribution'] && <small className={styles.companyAttribution}>{research.editorialCopy['hero.attribution']}</small>}
+                {xUrl && <a className={styles.xLink} href={xUrl} target="_blank" rel="noreferrer" aria-label={`${firm.name} on X`}><ExternalLink /><span>X profile</span></a>}
+              </div>
+            ) : (
+              <p>
+                {research.editorialCopy?.['hero.title'] && <>{research.editorialCopy['hero.title']}<br /></>}
+                {displayedDescription}
+              </p>
+            )}
+            {!isHyroTrader && research.editorialCopy?.['hero.attribution'] && <small className={styles.companyAttribution}>{research.editorialCopy['hero.attribution']}</small>}
           </div>
         </div>
 
         <aside className={styles.actionPanel}>
           <div className={styles.externalSignals}>
             <div className={styles.rating} aria-label={trustpilotRating ? `${trustpilotRating.score} out of 5 on Trustpilot from ${trustpilotRating.reviewCountLabel} reviews` : 'No external trader rating added'}>
-              <div><strong>{trustpilotRating ? trustpilotRating.score.toFixed(1) : '—'}</strong><span>{trustpilotRating ? 'Trustpilot' : 'External rating'}</span></div>
+              <div className={isHyroTrader ? styles.hyroRatingLine : undefined}>
+                <strong>{trustpilotRating ? trustpilotRating.score.toFixed(1) : '—'}</strong>
+                {isHyroTrader && trustpilotRating && <span className={styles.ratingOutOf}>/ 5</span>}
+                <span>{trustpilotRating ? 'Trustpilot' : 'External rating'}</span>
+              </div>
               <div className={styles.stars} aria-hidden="true">{Array.from({ length: 5 }, (_, index) => <Star data-filled={Boolean(trustpilotRating && index < Math.floor(trustpilotRating.score))} key={index} />)}</div>
               {trustpilotRating
-                ? <small><a href={trustpilotRating.url} target="_blank" rel="noreferrer">{trustpilotRating.reviewCountApproximate ? '≈' : ''}{trustpilotRating.reviewCountLabel} reviews · external source</a></small>
+                ? <small><a href={trustpilotRating.url} target="_blank" rel="noreferrer">{isHyroTrader ? 'Trustpilot · ' : ''}{trustpilotRating.reviewCountApproximate ? '≈' : ''}{trustpilotRating.reviewCountLabel} reviews{isHyroTrader ? '' : ' · external source'}</a></small>
                 : <small>No rating added</small>}
             </div>
             {xUrl && <SorsaScoreBadge username={xHandle ?? ''} />}

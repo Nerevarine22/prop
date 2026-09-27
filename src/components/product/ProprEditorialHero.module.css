@@ -62,12 +62,47 @@
 .decisionStrip > div[data-tone='settlement'] { box-shadow: inset 0 2px 0 var(--accent-settlement); }
 .decisionStrip > div[data-tone='settlement'] strong { color: var(--accent-settlement); }
 
+/* HyroTrader hero polish: keep the shared research structure, with fewer competing divisions. */
+.hero[data-hyrotrader='true'] .metaBar { min-height: 44px; border-bottom-color: color-mix(in srgb, var(--line) 72%, transparent); }
+.hero[data-hyrotrader='true'] .actionPanel { background: transparent; }
+.hero[data-hyrotrader='true'] .externalSignals { padding-bottom: 0; border-bottom: 0; }
+.hero[data-hyrotrader='true'] .rating > div:first-child { justify-content: flex-start; gap: 9px; }
+.hero[data-hyrotrader='true'] .rating strong { font-size: 32px; font-variant-numeric: tabular-nums; }
+.hero[data-hyrotrader='true'] .rating .hyroRatingLine > span { font-size: 11px; letter-spacing: 0; text-transform: none; }
+.hero[data-hyrotrader='true'] .rating .hyroRatingLine .ratingOutOf { margin-left: -6px; color: var(--muted); }
+.hero[data-hyrotrader='true'] .stars { margin-top: 2px; }
+.hero[data-hyrotrader='true'] .stars svg { width: 10px; height: 10px; }
+.hero[data-hyrotrader='true'] .rating small { margin-top: 4px; }
+.hero[data-hyrotrader='true'] .actions { margin-top: 22px; }
+.hero[data-hyrotrader='true'] .execution { padding-top: 18px; }
+.hero[data-hyrotrader='true'] .execution div { align-items: flex-start; }
+.hero[data-hyrotrader='true'] .execution dd { max-width: 66%; font-variant-numeric: tabular-nums; }
+.hero[data-hyrotrader='true'] .decisionStrip { background: transparent; }
+.hero[data-hyrotrader='true'] .decisionStrip > div { padding-top: 25px; padding-bottom: 25px; }
+.hero[data-hyrotrader='true'] .decisionStrip > div { border-right: 0; }
+.hero[data-hyrotrader='true'] .decisionStrip > div[data-tone] { box-shadow: none; }
+.hero[data-hyrotrader='true'] .decisionStrip > div[data-tone='neutral'] strong { color: var(--ink); }
+.hero[data-hyrotrader='true'] .decisionStrip > div[data-tone='condition'] strong { color: var(--accent-condition); }
+.hero[data-hyrotrader='true'] .decisionStrip > div[data-tone='settlement'] strong { color: var(--accent-settlement); }
+.hyroDescription { max-width: 660px; margin-top: 25px; }
+.hyroDescription p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.hyroDescription p:first-child { color: var(--ink); font-size: 17px; font-weight: 550; line-height: 1.45; }
+.hyroDescription p:first-child strong { font-weight: inherit; }
+.hyroDescription p + p { margin-top: 9px; }
+.hyroDescription .xLink { min-height: 28px; margin-top: 9px; text-transform: none; }
+.hero[data-hyrotrader='true'] .companyAttribution { margin-top: 5px; font-size: 10px; }
+.hero[data-hyrotrader='true'] .execution dd { overflow-wrap: anywhere; }
+
 @media (max-width: 980px) {
   .heroBody { grid-template-columns: 1fr; }
   .actionPanel { display: grid; grid-template-columns: 180px 1fr; padding: 24px 30px; gap: 24px; border-top: 1px solid var(--line); border-left: 0; }
   .rating { border-right: 1px solid var(--line); border-bottom: 0; }
   .actions { margin-top: 0; }
   .execution { display: none; }
+  .hero[data-hyrotrader='true'] .rating { border-right: 0; }
+  .hero[data-hyrotrader='true'] .execution { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; padding-top: 16px; border-top: 1px solid var(--line); column-gap: 28px; }
+  .hero[data-hyrotrader='true'] .execution div { display: block; min-width: 0; padding: 7px 0; }
+  .hero[data-hyrotrader='true'] .execution dd { max-width: none; margin-top: 3px; text-align: left; }
   .decisionStrip { grid-template-columns: repeat(3, 1fr); }
   .decisionStrip > div { border-bottom: 1px solid var(--line); }
 }
@@ -88,11 +123,22 @@
   .identity { align-items: start; }
   .identityCopy { display: contents; }
   .identityCopy > .identityHeader { grid-column: 2; }
+  .hyroDescription { grid-column: 1 / -1; margin-top: 21px; }
+  .hyroDescription p { font-size: 13px; }
+  .hyroDescription p:first-child { font-size: 15px; }
+  .hyroDescription .xLink { width: auto; min-height: 32px; justify-content: flex-start; }
+  .hyroDescription .xLink span { display: inline; }
+  .hero[data-hyrotrader='true'] .nameRow h1 { font-size: clamp(2.35rem, 10vw, 3.15rem); line-height: .92; }
+  .hero[data-hyrotrader='true'] .identityCopy > .companyAttribution { grid-column: 1 / -1; }
+  .hero[data-hyrotrader='true'] .metaBar span:last-child { display: inline; font-size: 8px; letter-spacing: .015em; white-space: nowrap; }
   .actionPanel { grid-template-columns: 1fr; padding: 22px 20px; }
   .rating { display: grid; grid-template-columns: auto 1fr; padding: 0; border-right: 0; }
   .rating > div:first-child { justify-content: flex-start; gap: 14px; }
   .stars { justify-content: flex-end; }
   .rating small { grid-column: 1 / -1; }
+  .hero[data-hyrotrader='true'] .execution { grid-template-columns: 1fr; row-gap: 0; }
+  .hero[data-hyrotrader='true'] .rating .hyroRatingLine { gap: 7px; }
+  .hero[data-hyrotrader='true'] .rating .hyroRatingLine .ratingOutOf { margin-left: -5px; }
   .decisionStrip { grid-template-columns: 1fr 1fr; }
   .decisionStrip > div { padding: 18px 16px; }
 }
