@@ -1,5 +1,6 @@
 import { updateHyroTraderRuleFacts } from './hyroTraderRules';
 import { withHyroTraderPricing, updateHyroTraderPrograms, hyroPricingFact } from './hyroTraderPricing';
+import { HYROTRADER_PAYOUT_COPY } from './hyroTraderPayouts';
 import { FIRM_NORMALIZED_PROFILES_BY_SLUG } from './firmNormalizedProfiles';
 import type { FirmNormalizedProfile, FirmNormalizedProfileV2, FirmResearchSourceInspection, FirmContentFact, NormalizedFact } from '@/types/database';
 
@@ -561,9 +562,7 @@ export const HYROTRADER_PAGE_PROFILE = withHyroTraderPricing(page({
     'process.4.title': 'Request USDT or USDC', 'process.4.description': 'Payout is available from the first funded trading day and stated at 12–24 hours.',
     'programs.title': 'Two evaluation paths across $5K–$200K.', 'programs.description': 'One-Step uses 4% daily/6% max loss; Two-Step uses 5% daily while its maximum loss needs clearer current documentation.',
     'programs.note': 'Base fees and optional Swing upgrades are listed separately.',
-    'payouts.title': 'starts at the standard trader share.', 'payouts.description': 'The dedicated payout FAQ states 80%, rising five points every four months to 90%, with no withdrawal commission.',
-    'payouts.minimum': '$100 after split', 'payouts.processing': '12–24 hours', 'payouts.rail': 'USDT or USDC',
-    'payouts.rule.1': 'Requests open from the first funded trading day.', 'payouts.rule.2': 'The challenge fee is refunded with the first eligible payout.', 'payouts.rule.3': 'Public payout cards include independently checkable transaction IDs.',
+    ...HYROTRADER_PAYOUT_COPY,
     'trading.title': 'Real exchange connectivity after a simulated selection phase.', 'trading.description': 'Bybit API, Tealstreet and CLEO are supported. The rules cap best-day contribution, realized loss per trade and low-liquidity exposure.',
     'trading.markets': '700+ USDT perpetual pairs stated', 'trading.leverage': 'Platform and asset dependent',
     'consider.eyebrow': 'Risk and evidence', 'consider.title': 'Strong infrastructure claims coexist with several policy conflicts.',

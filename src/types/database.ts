@@ -324,6 +324,7 @@ export type FirmContentBlock =
       type: 'table';
       title?: string;
       description?: string;
+      facts?: FirmContentFact[];
       columns: FirmContentTableColumn[];
       rows: FirmContentTableRow[];
     }
@@ -376,6 +377,8 @@ export interface FirmNormalizedProfileV2 {
   version: 2;
   contentStage?: 'research' | 'editorial';
   editorialCopy?: Record<string, string>;
+  /** Public transparency data rendered on the HyroTrader editorial profile. */
+  publicTransparency?: FirmTransparencyProfile;
   methodology: 'primary-sources-only';
   researchStandard?: 'model-first-v1';
   researchMode?: 'manual' | 'agent-assisted';
@@ -390,6 +393,29 @@ export interface FirmNormalizedProfileV2 {
   sourcesInspected?: FirmResearchSourceInspection[];
   comparison: FirmComparisonProjection;
   sourceDiscrepancies: FirmSourceDiscrepancy[];
+}
+
+export interface FirmTransparencyProfile {
+  checkedAt: string;
+  dashboardUrl: string;
+  passRateArticleUrl: string;
+  metrics: Array<{ value: string; label: string; context: string; tone?: string }>;
+  challengeOutcomes: Array<{ value: string; label: string }>;
+  verification: { amount: string; wallet: string; walletAddress: string; walletUrl: string };
+  supportingFacts: Array<{ label: string; value: string }>;
+  companyAndTeam: {
+    founded: string;
+    ceo: string;
+    teamSize: string;
+    headquarters: string;
+    locationsNote: string;
+    entities: Array<{ label: string; name: string; jurisdiction: string; details: string }>;
+    slovakRegistryNote: string;
+    regulatoryNote: string;
+    termsUrl: string;
+    aboutUrl: string;
+    registryUrl: string;
+  };
 }
 
 /**

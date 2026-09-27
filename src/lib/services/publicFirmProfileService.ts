@@ -41,6 +41,20 @@ function withRegistryBrand(
   };
 }
 
+function externalRatingsForRecord(
+  slug: string,
+  stored: FirmNormalizedProfile['externalRatings'] | null | undefined,
+) {
+  const snapshot = trustpilotRatingsForSlug(slug);
+  if (!snapshot) return stored ?? undefined;
+  if (slug !== 'hyrotrader') return stored ?? snapshot;
+
+  return [
+    ...(stored ?? []).filter((rating) => rating.source !== 'trustpilot'),
+    ...snapshot,
+  ];
+}
+
 /**
  * Public read path: Firestore is canonical. The checked-in research snapshot is
  * used only when Firebase is unavailable during local development or a build.
@@ -54,7 +68,7 @@ export const getPublicFirmProfiles = cache(async (): Promise<FirmNormalizedProfi
         withRegistryBrand(
           {
             ...record.normalizedProfile,
-            externalRatings: record.externalRatings ?? trustpilotRatingsForSlug(record.slug),
+            externalRatings: externalRatingsForRecord(record.slug, record.externalRatings),
           },
           record.brandAssets?.logoPath,
           record.brandAssets?.sourceUrl,

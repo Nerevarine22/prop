@@ -10,6 +10,7 @@ import { InlineEditableText } from './InlineEditableText';
 import { TrustpilotRatingSection } from './TrustpilotRatingSection';
 import { HyroTraderPricing } from './HyroTraderPricing';
 import { HyroTraderTrading } from './HyroTraderTrading';
+import { HyroTraderTransparency } from './HyroTraderTransparency';
 import styles from './ProprEditorialContent.module.css';
 
 function known<T>(fact: NormalizedFact<T>): T | undefined {
@@ -173,6 +174,10 @@ export function ProprEditorialContent({
   const trustpilotRating = profileTrustpilotRating(firm);
   const pageProfile = profileOverride ?? researchProfile;
   const copy = (key: string, fallback: string) => publicResearchCopy(pageProfile.editorialCopy?.[key] ?? fallback);
+  const tradingTitle = copy('trading.title', 'Execution is concentrated around Hyperliquid.');
+  const displayTradingTitle = firm.slug === 'hyrotrader'
+    ? tradingTitle.replace(/\s+at a glance\.?$/i, '').replace(/[.!?]+$/, '')
+    : tradingTitle;
   const configuredPromoCode = copy('promo.code', firm.slug === 'propr' ? 'PROP20' : '');
   const promoCode = configuredPromoCode || 'PROMO';
   const configuredPromoDiscount = copy('promo.discount', '');
@@ -276,9 +281,16 @@ export function ProprEditorialContent({
     { id: 'consider', label: 'Before you choose' },
     { id: 'sources', label: 'Sources' },
   ];
-  const navItems = trustpilotRating
-    ? [...baseNavItems.slice(0, -1), { id: 'reviews', label: 'Reviews' }, baseNavItems[baseNavItems.length - 1]]
+  const visibleNavItems = firm.slug === 'hyrotrader'
+    ? [
+      ...baseNavItems.filter(({ id }) => id !== 'consider' && id !== 'rewards' && id !== 'transparency').slice(0, -1),
+      { id: 'transparency', label: 'Transparency' },
+      baseNavItems[baseNavItems.length - 1],
+    ]
     : baseNavItems;
+  const navItems = trustpilotRating
+    ? [...visibleNavItems.slice(0, -1), { id: 'reviews', label: 'Reviews' }, visibleNavItems[visibleNavItems.length - 1]]
+    : visibleNavItems;
 
   return (
     <div className={styles.editorial} data-editing={editMode ? 'true' : 'false'}>
@@ -360,7 +372,7 @@ export function ProprEditorialContent({
         </ol>
       </section>
 
-      <section className={styles.section} id="programs" {...cmsSection('offers')}>
+      <section className={`${styles.section} ${firm.slug === 'hyrotrader' ? styles.programsBeforePayout : ''}`} id="programs" {...cmsSection('offers')}>
         <div className={styles.sectionHeading} {...cmsBlock('offers', 'notebooklm-3')}>
           <span className={styles.eyebrow}>Programs and pricing</span>
           <InlineEditableText as="h2" value={copy('programs.title', 'Pick the constraint set, not just the cheapest fee.')} enabled={editMode} multiline onCommit={(value) => changeCopy('programs.title', value)} />
@@ -391,16 +403,36 @@ export function ProprEditorialContent({
           <div><Coins /><span>Settlement currency</span><strong>{payoutCurrency}</strong></div>
           <ul>
             <li><Check /> {copy('payouts.rule.1', 'Positions must be closed before payout.')}</li>
-            <li><Check /> {copy('payouts.rule.2', 'The request withdraws the full available balance.')}</li>
-            <li><CircleAlert /> {copy('payouts.rule.3', 'Payout resets the funded account balance.')}</li>
+            {firm.slug === 'hyrotrader' ? <li className={styles.payoutRefund}>
+              <details className={styles.payoutCapHint}>
+                <summary aria-describedby="hyrotrader-challenge-fee-help"><Check aria-hidden="true" /><span>{copy('payouts.rule.2', 'The challenge fee is refunded with your first payout.')}</span></summary>
+                <div className={styles.payoutCapPopover} id="hyrotrader-challenge-fee-help" role="tooltip">
+                  <strong>{copy('payouts.refund.title', 'Challenge fee refund')}</strong>
+                  <p>{copy('payouts.refund.description', 'The challenge fee is refunded with your first payout.')}</p>
+                </div>
+              </details>
+            </li> : <li><Check /> {copy('payouts.rule.2', 'The request withdraws the full available balance.')}</li>}
+            <li><Check /> {copy('payouts.rule.3', 'Payout resets the funded account balance.')}</li>
+            {firm.slug === 'hyrotrader' && <>
+              <li className={styles.payoutCap}>
+                <details className={styles.payoutCapHint}>
+                  <summary aria-describedby="hyrotrader-payout-cap-help"><CircleAlert aria-hidden="true" /><span>{copy('payouts.cap', 'Max per payout: 5% of account balance. Profit above 5% may not be paid.')}</span></summary>
+                  <div className={styles.payoutCapPopover} id="hyrotrader-payout-cap-help" role="tooltip">
+                    <strong>{copy('payouts.cap.title', '5% payout cap')}</strong>
+                    <p>{copy('payouts.cap.description', 'Each withdrawal is limited to 5% of the starting account balance.')}</p>
+                  </div>
+                </details>
+              </li>
+              <li><Check /> {copy('payouts.rule.4', 'There is no withdrawal commission.')}</li>
+            </>}
           </ul>
         </div>
       </section>
 
-      <section className={`${styles.section} ${isAceTrader ? styles.beforeTransparency : ''}`} id="trading" {...cmsSection('trading')}>
+      <section className={`${styles.section} ${isAceTrader ? styles.beforeTransparency : ''} ${firm.slug === 'hyrotrader' ? styles.hyroTraderSection : ''}`} id="trading" {...cmsSection('trading')}>
         <div className={styles.sectionHeading} {...cmsBlock('trading', 'notebooklm-4')}>
           <span className={styles.eyebrow}>Trading environment</span>
-          <InlineEditableText as="h2" value={copy('trading.title', 'Execution is concentrated around Hyperliquid.')} enabled={editMode} multiline onCommit={(value) => changeCopy('trading.title', value)} />
+          <InlineEditableText as="h2" value={displayTradingTitle} enabled={editMode} multiline onCommit={(value) => changeCopy('trading.title', value)} />
           <InlineEditableText as="p" value={copy('trading.description', factValue(firm.executionPolicy.notes) ?? 'Execution details are not stated.')} enabled={editMode} multiline onCommit={(value) => changeCopy('trading.description', value)} />
         </div>
         {firm.slug === 'hyrotrader' ? <HyroTraderTrading profile={pageProfile} /> : <div className={styles.tradingLayout} {...cmsBlock('trading', 'trading-facts')}>
@@ -437,7 +469,7 @@ export function ProprEditorialContent({
         <div className={styles.transparencyFoot}><span>Evidence boundary</span><p>Transaction hashes improve payout traceability. The aggregate funnel and capital figures remain company-published and are not proof of reserves or an independent financial audit.</p></div>
       </section>}
 
-      <section className={`${styles.section} ${isAceTrader ? styles.riskSection : ''}`} id="consider" {...cmsSection('trading')}>
+      {firm.slug !== 'hyrotrader' && <section className={`${styles.section} ${isAceTrader ? styles.riskSection : ''}`} id="consider" {...cmsSection('trading')}>
         <div className={styles.sectionHeading}>
           <span className={styles.eyebrow}>{copy('consider.eyebrow', 'Before you choose')}</span>
           <InlineEditableText as="h2" value={copy('consider.title', 'The details most likely to change the decision.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.title', value)} />
@@ -448,7 +480,7 @@ export function ProprEditorialContent({
           <article {...cmsBlock('trading', 'notebooklm-5')}><span>03</span><div><InlineEditableText as="h3" value={copy('consider.3.title', 'The environment is simulated')} enabled={editMode} onCommit={(value) => changeCopy('consider.3.title', value)} /><InlineEditableText as="p" value={copy('consider.3.description', 'Propr is not a regulated broker or investment service. Qualifying flow may be routed on-chain.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.3.description', value)} /></div></article>
           <article {...cmsBlock('trading', 'notebooklm-4')}><span>04</span><div><InlineEditableText as="h3" value={copy('consider.4.title', 'Eligibility still matters')} enabled={editMode} onCommit={(value) => changeCopy('consider.4.title', value)} /><InlineEditableText as="p" value={copy('consider.4.description', 'KYC applies at funded activation, and the rulebook lists restricted jurisdictions.')} enabled={editMode} multiline onCommit={(value) => changeCopy('consider.4.description', value)} /></div></article>
         </div>
-      </section>
+      </section>}
 
       {isSizeProp && <section className={styles.section} id="rewards" {...cmsSection('rewards')}>
         <div className={styles.sectionHeading} {...cmsBlock('rewards', 'reward-facts')}>
@@ -524,7 +556,7 @@ export function ProprEditorialContent({
         </dl>
       </section>}
 
-      {hasStandardRewards && <section className={`${styles.section} ${styles.rewardSection}`} id="rewards" {...cmsSection('rewards')}>
+      {hasStandardRewards && firm.slug !== 'hyrotrader' && <section className={`${styles.section} ${styles.rewardSection}`} id="rewards" {...cmsSection('rewards')}>
         <div className={styles.sectionHeading} {...cmsBlock('rewards', 'reward-facts')}>
           <span className={styles.eyebrow}>Rewards layer</span>
           <InlineEditableText as="h2" value={copy('rewards.title', 'Additional rewards sit outside the core account economics.')} enabled={editMode} multiline onCommit={(value) => changeCopy('rewards.title', value)} />
@@ -549,6 +581,8 @@ export function ProprEditorialContent({
         </div>
       </section>}
 
+      {firm.slug === 'hyrotrader' && pageProfile.publicTransparency && <HyroTraderTransparency data={pageProfile.publicTransparency} />}
+
       {trustpilotRating && <TrustpilotRatingSection rating={trustpilotRating} firmName={firm.name} />}
 
       {offerUrl && <FirmExitCta firmName={firm.name} href={offerUrl} promoCode={promoCode} promoDiscount={promoDiscount} />}
@@ -570,7 +604,7 @@ export function ProprEditorialContent({
             {supportingSourceUrls.map((url) => <a href={url} target="_blank" rel="noreferrer" key={url}>{sourceLabel(url)} <ArrowUpRight /></a>)}
           </div>
         </details>
-        <p className={styles.unknowns}><strong>Not documented in the current review:</strong> {copy('sources.unknowns', 'company founding date, headquarters, profit-day definition and points-program details.')}</p>
+        {firm.slug !== 'hyrotrader' && <p className={styles.unknowns}><strong>Not documented in the current review:</strong> {copy('sources.unknowns', 'company founding date, headquarters, profit-day definition and points-program details.')}</p>}
       </section>
     </div>
   );

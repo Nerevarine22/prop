@@ -14,6 +14,7 @@ import type {
 } from '@/types/database';
 import { MODEL_FIRST_FIRM_PROFILES_BY_SLUG } from './modelFirstFirmProfiles';
 import { getEditorialPageProfile } from './editorialPageProfiles';
+import { withHyroTraderRules } from './hyroTraderRules';
 
 type FactFormatter<T> = (value: T) => string;
 
@@ -431,11 +432,14 @@ function isStoredProfileUsable(profile: FirmNormalizedProfileV2 | undefined): pr
 }
 
 export function getFirmModularProfile(profile: FirmNormalizedProfile): FirmNormalizedProfileV2 {
+  let resolved: FirmNormalizedProfileV2;
   if (isStoredProfileUsable(profile.modularProfile) && profile.modularProfile.researchStandard === 'model-first-v1') {
-    return getEditorialPageProfile(profile.modularProfile);
+    resolved = getEditorialPageProfile(profile.modularProfile);
+  } else {
+    resolved = getEditorialPageProfile(MODEL_FIRST_FIRM_PROFILES_BY_SLUG[profile.slug]
+      ?? (isStoredProfileUsable(profile.modularProfile) ? profile.modularProfile : buildProfile(profile)));
   }
-  return getEditorialPageProfile(MODEL_FIRST_FIRM_PROFILES_BY_SLUG[profile.slug]
-    ?? (isStoredProfileUsable(profile.modularProfile) ? profile.modularProfile : buildProfile(profile)));
+  return profile.slug === 'hyrotrader' ? withHyroTraderRules(resolved) : resolved;
 }
 
 export function attachFirmModularProfile(profile: FirmNormalizedProfile, storedProfile?: FirmNormalizedProfileV2): FirmNormalizedProfile {
@@ -443,7 +447,8 @@ export function attachFirmModularProfile(profile: FirmNormalizedProfile, storedP
     ? storedProfile
     : MODEL_FIRST_FIRM_PROFILES_BY_SLUG[profile.slug]
       ?? (isStoredProfileUsable(storedProfile) ? storedProfile : buildProfile(profile));
-  const modularProfile = getEditorialPageProfile(sourceProfile);
+  const editorialProfile = getEditorialPageProfile(sourceProfile);
+  const modularProfile = profile.slug === 'hyrotrader' ? withHyroTraderRules(editorialProfile) : editorialProfile;
   return { ...profile, modularProfile };
 }
 

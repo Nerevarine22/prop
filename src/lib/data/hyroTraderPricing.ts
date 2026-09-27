@@ -1,4 +1,6 @@
 import { withHyroTraderRules } from './hyroTraderRules';
+import { withHyroTraderPayoutCopy } from './hyroTraderPayouts';
+import { withHyroTraderTransparency } from './hyroTraderTransparency';
 import type { FirmContentBlock, FirmNormalizedProfileV2, NormalizedChallengeProgram, NormalizedFact } from '@/types/database';
 
 export const HYROTRADER_PRICING_CHECKED_AT = '2026-09-20T00:00:00.000Z';
@@ -42,7 +44,7 @@ export function withHyroTraderPricing(profile: FirmNormalizedProfileV2): FirmNor
       cells: { capital: size.toLocaleString('en-US'), base: money(price.fees[index]), upgrade: `+${money(price.swing[index])}`, total: money(price.fees[index] + price.swing[index]), increase: `+${(price.swing[index] / price.fees[index] * 100).toFixed(1)}%` },
     })),
   }));
-  return withHyroTraderRules({
+  const enriched = withHyroTraderRules({
     ...profile,
     editorialCopy: {
       ...profile.editorialCopy,
@@ -65,4 +67,5 @@ export function withHyroTraderPricing(profile: FirmNormalizedProfileV2): FirmNor
       { category: 'rulebook', url: HYROTRADER_SWING_SOURCE, checkedAt: HYROTRADER_PRICING_CHECKED_AT, outcome: 'accessed' },
       { category: 'faq', url: HYROTRADER_TRIAL_SOURCE, checkedAt: HYROTRADER_PRICING_CHECKED_AT, outcome: 'accessed' }],
   });
+  return withHyroTraderTransparency(withHyroTraderPayoutCopy(enriched));
 }

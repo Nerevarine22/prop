@@ -40,11 +40,10 @@ export function ProprSectionNav({
           return;
         }
 
-        const marker = 170;
         const reached = items
           .map((item) => document.getElementById(item.id))
           .filter((section): section is HTMLElement => Boolean(section))
-          .filter((section) => section.getBoundingClientRect().top <= marker);
+          .filter((section) => section.getBoundingClientRect().top <= (section.id === 'payouts' ? 250 : 170));
 
         setActiveId(reached.at(-1)?.id ?? items[0].id);
       });

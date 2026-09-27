@@ -1,42 +1,96 @@
-import type { FirmContentBlock, FirmNormalizedProfileV2 } from '@/types/database';
+import type { FirmContentBlock, FirmContentFact, FirmNormalizedProfileV2 } from '@/types/database';
 import styles from './HyroTraderTrading.module.css';
 
+type FactGridBlock = Extract<FirmContentBlock, { type: 'fact-grid' }>;
+type TableBlock = Extract<FirmContentBlock, { type: 'table' }>;
+
+const splitFeeValue = (value: string) => {
+  const [percentage, basisPoints] = value.split('|');
+  return { percentage, basisPoints };
+};
+
 export function HyroTraderTrading({ profile }: { profile: FirmNormalizedProfileV2 }) {
-  const rules = profile.sections.find((section) => section.id === 'trading')?.blocks.filter(
+  const tradingBlocks = profile.sections.find((section) => section.id === 'trading')?.blocks ?? [];
+  const findFactGrid = (id: string) => tradingBlocks.find(
+    (block): block is FactGridBlock => block.type === 'fact-grid' && block.id === id,
+  );
+  const riskMetrics = findFactGrid('hyrotrader-risk-metrics')?.items ?? [];
+  const operatingRules = findFactGrid('hyrotrader-operating-rules')?.items ?? [];
+  const platformRequirements = findFactGrid('hyrotrader-platform-requirements')?.items ?? [];
+  const fees = tradingBlocks.find(
+    (block): block is TableBlock => block.type === 'table' && block.id === 'hyrotrader-fees',
+  );
+  const feeNote = fees?.facts?.find((fact: FirmContentFact) => fact.id === 'fee-note')?.value;
+  const details = tradingBlocks.filter(
     (block): block is Extract<FirmContentBlock, { type: 'text' }> => block.type === 'text' && block.id.startsWith('hyrotrader-rule-'),
-  ) ?? [];
+  );
 
   return (
     <div className={styles.wrap}>
-      <div className={styles.primary} aria-label="Key funded account rules">
-        <article data-tone="blue">
-          <span>Open margin</span>
-          <strong>25%</strong>
-          <p>Maximum share of initial balance used as margin across all open positions.</p>
-        </article>
-        <article data-tone="amber">
-          <span>Total exposure</span>
-          <strong>2×</strong>
-          <p>Maximum combined notional value of open positions relative to initial balance.</p>
-        </article>
-        <article data-tone="lime">
-          <span>Single-trade loss</span>
-          <strong>3%</strong>
-          <p>A realized loss above this share of initial balance is reviewed as a rule violation.</p>
-        </article>
-      </div>
+      <section className={styles.primary} aria-label="Primary risk limits">
+        {riskMetrics.map((metric) => (
+          <article key={metric.id}>
+            <span>{metric.label}</span>
+            <strong>{metric.value}</strong>
+            {metric.note && <p>{metric.note}</p>}
+          </article>
+        ))}
+      </section>
 
-      <div className={styles.quickRules}>
-        <p><span>Stop loss</span><strong>Not mandatory</strong></p>
-        <p><span>Overnight & weekends</span><strong>Allowed</strong></p>
-        <p><span>News trading</span><strong>Conditional</strong></p>
-        <p><span>Copy trading</span><strong>Prohibited</strong></p>
+      <section className={styles.operatingRules} aria-labelledby="hyrotrader-operating-rules-heading">
+        <h3 className={styles.subsectionHeading} id="hyrotrader-operating-rules-heading">Operating rules</h3>
+        <dl>
+          {operatingRules.map((rule) => (
+            <div key={rule.id}>
+              <dt>{rule.label}</dt>
+              <dd>{rule.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <div className={styles.feesAndAccess}>
+        {fees && <section className={styles.fees} aria-labelledby="hyrotrader-fees-heading">
+          <span className={styles.eyebrow}>{fees.description}</span>
+          <h3 className={styles.subsectionHeading} id="hyrotrader-fees-heading">{fees.title}</h3>
+          <table className={styles.feeTable}>
+            <thead>
+              <tr>{fees.columns.map((column) => <th key={column.key} scope="col">{column.label}</th>)}</tr>
+            </thead>
+            <tbody>
+              {fees.rows.map((row) => (
+                <tr key={row.id}>
+                  {fees.columns.map((column, index) => {
+                    const value = row.cells[column.key] ?? '';
+                    if (index === 0) return <th key={column.key} scope="row">{value}</th>;
+                    const { percentage, basisPoints } = splitFeeValue(value);
+                    return <td key={column.key}><strong>{percentage}</strong><span>{basisPoints}</span></td>;
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {feeNote && <p className={styles.feeNote}>{feeNote}</p>}
+        </section>}
+
+        <section className={styles.accountRequirement} aria-labelledby="hyrotrader-account-heading">
+          <span className={styles.eyebrow}>Platform requirement</span>
+          <h3 className={styles.subsectionHeading} id="hyrotrader-account-heading">Choose your platform</h3>
+          <dl>
+            {platformRequirements.map((platform) => (
+              <div key={platform.id}>
+                <dt>{platform.label}</dt>
+                <dd>{platform.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       </div>
 
       <details className={styles.details}>
-        <summary>Funded account trading details</summary>
+        <summary>Funded account and phase-specific details</summary>
         <div className={styles.detailGrid}>
-          {rules.map((rule) => <article key={rule.id}>
+          {details.map((rule) => <article key={rule.id}>
             <h3>{rule.title}</h3>
             {rule.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </article>)}

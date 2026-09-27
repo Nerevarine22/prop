@@ -3,16 +3,17 @@ import type { FirmExternalRating } from '@/types/database';
 const CHECKED_AT = '2026-09-05T00:00:00.000Z';
 
 type RatingInput = Omit<FirmExternalRating, 'source' | 'sourceName' | 'scale' | 'checkedAt' | 'captureMethod' | 'distributionBasis' | 'distribution'> & {
+  checkedAt?: string;
   distribution?: [number, number, number, number, number];
 };
 
 function rating(input: RatingInput): FirmExternalRating {
-  const { distribution, ...details } = input;
+  const { distribution, checkedAt = CHECKED_AT, ...details } = input;
   return {
     source: 'trustpilot',
     sourceName: 'Trustpilot',
     scale: 5,
-    checkedAt: CHECKED_AT,
+    checkedAt,
     captureMethod: 'user-supplied-snapshot',
     ...details,
     ...(distribution ? {
@@ -35,7 +36,7 @@ export const TRUSTPILOT_RATINGS_BY_SLUG: Record<string, FirmExternalRating> = {
   fundex: rating({ url: 'https://www.trustpilot.com/review/fundex.gg', score: 3.2, label: 'Average', reviewCount: 45, reviewCountLabel: '45', distribution: [53, 9, 4, 2, 31] }),
   'hyper-stack': rating({ url: 'https://www.trustpilot.com/review/hyperstack.trade', score: 3.8, label: 'Great', reviewCount: 2, reviewCountLabel: '2', distribution: [100, 0, 0, 0, 0] }),
   hyperpnl: rating({ url: 'https://www.trustpilot.com/review/hyperpnl.com', score: 4.3, label: 'Excellent', reviewCount: 23, reviewCountLabel: '23', distribution: [82, 9, 0, 0, 9] }),
-  hyrotrader: rating({ url: 'https://www.trustpilot.com/review/hyrotrader.com', score: 4.2, label: 'Great', reviewCount: 239, reviewCountLabel: '239', distribution: [75, 6, 3, 2, 12] }),
+  hyrotrader: rating({ url: 'https://www.trustpilot.com/review/hyrotrader.com', score: 4.0, label: 'Great', reviewCount: 226, reviewCountLabel: '226', checkedAt: '2026-09-27T00:00:00.000Z', distribution: [75, 6, 3, 2, 12] }),
   sizeprop: rating({ url: 'https://www.trustpilot.com/review/sizeprop.com', score: 4.4, label: 'Excellent', reviewCount: 43, reviewCountLabel: '43', distribution: [85, 5, 0, 0, 9] }),
   'solana-funded': rating({ url: 'https://www.trustpilot.com/review/solanafunded.com', score: 2.6, label: 'Poor', reviewCount: 25, reviewCountLabel: '25', distribution: [28, 8, 0, 4, 60] }),
   'vanta-trading': rating({ url: 'https://www.trustpilot.com/review/vantatrading.io', score: 4.6, label: 'Excellent', reviewCount: 25, reviewCountLabel: '25', distribution: [95, 0, 0, 4, 0] }),
