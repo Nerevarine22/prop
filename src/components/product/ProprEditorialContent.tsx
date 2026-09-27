@@ -352,9 +352,17 @@ export function ProprEditorialContent({
           <InlineEditableText as="h2" value={copy('decision.title', 'A conventional evaluation with crypto-native execution.')} enabled={editMode} multiline onCommit={(value) => changeCopy('decision.title', value)} />
           <InlineEditableText as="p" value={copy('decision.description', 'Propr offers one- and two-phase evaluations across three rule sets. Evaluation accounts are simulated, while qualifying flow can be routed through Hyperliquid and settled on-chain.')} enabled={editMode} multiline onCommit={(value) => changeCopy('decision.description', value)} />
         </div>
-        <aside className={styles.fitNote} {...cmsBlock('overview', 'overview-facts')}>
+        <aside className={styles.fitNote} data-hyro={firm.slug === 'hyrotrader' || undefined} {...cmsBlock('overview', 'overview-facts')}>
           <ShieldCheck />
-          <div><span>What stands out</span><InlineEditableText as="p" value={copy('decision.highlight', 'Three ways to balance entry price, profit target and drawdown allowance.')} enabled={editMode} multiline onCommit={(value) => changeCopy('decision.highlight', value)} /></div>
+          <div>
+            <span>What stands out</span>
+            {firm.slug === 'hyrotrader' ? <ul className={styles.decisionStandouts}>
+              {[1, 2].map((index) => <li key={index}>
+                <InlineEditableText as="strong" value={copy(`decision.standout.${index}.title`, '')} enabled={editMode} onCommit={(value) => changeCopy(`decision.standout.${index}.title`, value)} />
+                <InlineEditableText as="p" value={copy(`decision.standout.${index}.description`, '')} enabled={editMode} multiline onCommit={(value) => changeCopy(`decision.standout.${index}.description`, value)} />
+              </li>)}
+            </ul> : <InlineEditableText as="p" value={copy('decision.highlight', 'Three ways to balance entry price, profit target and drawdown allowance.')} enabled={editMode} multiline onCommit={(value) => changeCopy('decision.highlight', value)} />}
+          </div>
         </aside>
       </section>
 

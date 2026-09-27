@@ -74,7 +74,7 @@
 .snapshotMethod summary svg { width: 14px; transition: transform 160ms ease; }
 .snapshotMethod[open] summary svg { transform: rotate(180deg); }
 .snapshotMethod > p { max-width: 580px; margin: 10px 0 0; font-size: 12px; line-height: 1.55; }
-.decision { display: grid; grid-template-columns: minmax(0, 1fr) 320px; padding: 76px 22px 56px; align-items: end; gap: 90px; scroll-margin-top: 130px; }
+.decision { display: grid; grid-template-columns: minmax(0, 1fr) 320px; padding: 124px 22px 56px; align-items: end; gap: 90px; scroll-margin-top: 130px; }
 .decisionCopy { max-width: 760px; }
 .decision h2 { margin: 16px 0 0; font-size: clamp(2rem, 4vw, 3.7rem); font-weight: 570; letter-spacing: -.07em; line-height: .96; }
 .decisionCopy > p { max-width: 690px; margin: 26px 0 0; color: var(--muted); font-size: 17px; line-height: 1.68; }
@@ -82,6 +82,10 @@
 .fitNote svg { width: 18px; flex: 0 0 auto; color: var(--blue); }
 .fitNote span { color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 700; text-transform: uppercase; }
 .fitNote p { margin: 8px 0 0; font-size: 13px; line-height: 1.55; }
+.decisionStandouts { display: grid; gap: 14px; margin: 12px 0 0; padding: 0; list-style: none; }
+.decisionStandouts li { padding-top: 12px; border-top: 1px solid var(--line); }
+.decisionStandouts strong { font-size: 13px; font-weight: 600; }
+.decisionStandouts p { margin: 5px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
 
 .programRules dt, .tiers > span, .tradingIntro > span, .leverage > span { color: var(--muted); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 
