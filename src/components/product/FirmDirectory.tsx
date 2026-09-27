@@ -13,12 +13,13 @@ import {
   factArrayText,
   factText,
   factValue,
+  formatCapital,
   profileHasRewards,
   profileLogo,
   profileRewardLabels,
   profileTrustpilotRating,
 } from '@/lib/data/publicFirmProfiles';
-import type { FirmModelType, FirmNormalizedProfile } from '@/types/database';
+import type { FirmModelType, FirmNormalizedProfile, FirmNormalizedProfileV2 } from '@/types/database';
 import { useComparisonSelection } from '@/hooks/useComparisonSelection';
 import { ComparisonTray } from './ComparisonTray';
 import styles from '@/app/product-lab/page.module.css';
@@ -43,35 +44,87 @@ const modelOptions: Array<{ value: 'All' | FirmModelType; label: string }> = [
 type RatingFilter = 'all' | 'rated' | '4.0' | '4.5';
 type DirectorySort = 'rating' | 'reviews' | 'name';
 
-function FirmRow({ firm, selected, onToggle }: { firm: FirmNormalizedProfile; selected: boolean; onToggle: () => void }) {
+type DirectoryRange = FirmNormalizedProfileV2['comparison']['entryCost'];
+
+function directoryRangeText(value: DirectoryRange, display: 'entry' | 'capital' | 'range'): string {
+  if (value.status === 'ND') return 'Not published';
+  if (value.status === 'N/A') return 'Not applicable';
+  const format = (amount: number) => value.unit === 'percent'
+    ? `${amount}%`
+    : value.unit === 'USDC'
+      ? `${amount.toLocaleString('en-US')} USDC`
+      : formatCapital(amount);
+
+  if (display === 'entry' && value.status === 'varies' && value.min !== undefined) return `From ${format(value.min)}`;
+  if (display === 'capital' && value.status === 'varies' && value.max !== undefined) return `Up to ${format(value.max)}`;
+  if (value.displayValue) return value.displayValue;
+  return comparisonRangeText(value);
+}
+
+function directoryPayoutText(value: FirmNormalizedProfileV2['comparison']['payoutSchedules']): string {
+  if (value.status === 'ND') return 'Not published';
+  if (value.status === 'N/A') return 'Not applicable';
+  if (value.displayValue) return value.displayValue;
+  if (!value.values.length) return 'Not published';
+  const labels: Record<string, string> = {
+    'on-demand': 'On-demand',
+    'bi-weekly': 'Bi-weekly',
+    'weekly add-on': 'Weekly add-on',
+    'on-chain': 'On-chain',
+  };
+  return value.values.map((item) => labels[item] ?? item.replaceAll('-', ' ')).join(' · ');
+}
+
+function directoryModelSummary(firm: FirmNormalizedProfile, modular: FirmNormalizedProfileV2): string {
+  const classification = modular.operatingModel?.classification.value;
+  const concepts = classification?.split(/\s*[·→|]\s*/).map((part) => part.trim()).filter(Boolean) ?? [];
+  if (concepts.length > 1) return concepts.slice(0, 2).join(' · ');
+
+  const primary = modular.modelTypes[0] ? firmModelTypeLabel(modular.modelTypes[0]) : 'Model not published';
+  const platforms = factValue(firm.tradingPolicy.platforms) ?? [];
+  const executionModels = modular.comparison.executionModels.values;
+  const secondary = platforms[0]
+    ?? (executionModels.some((model) => /on-chain/i.test(model)) ? 'On-chain execution' : undefined)
+    ?? (executionModels.some((model) => /simulated/i.test(model)) ? 'Simulated' : undefined)
+    ?? (modular.modelTypes[1] ? firmModelTypeLabel(modular.modelTypes[1]) : undefined);
+  return [primary, secondary].filter(Boolean).join(' · ');
+}
+
+function FirmRow({ firm, selected, onToggle, fullDirectory }: { firm: FirmNormalizedProfile; selected: boolean; onToggle: () => void; fullDirectory: boolean }) {
   const modular = getFirmModularProfile(firm);
   const rewards = profileRewardLabels(firm);
   const modelLabel = modular.modelTypes.map(firmModelTypeLabel).join(' · ');
   const isModelFirst = modular.researchStandard === 'model-first-v1';
   const isProgressionModel = modular.modelTypes.includes('progression');
-  const description = modular.operatingModel?.classification.value ?? factText(firm.identity.tagline);
+  const description = fullDirectory ? directoryModelSummary(firm, modular) : modular.operatingModel?.classification.value ?? factText(firm.identity.tagline);
   const rating = profileTrustpilotRating(firm);
+  const entry = directoryRangeText(modular.comparison.entryCost, 'entry');
+  const drawdown = directoryRangeText(modular.comparison.maxDrawdown, 'range');
+  const split = directoryRangeText(modular.comparison.profitSplit, 'range');
+  const capital = directoryRangeText(modular.comparison.capital, 'capital');
+  const payout = directoryPayoutText(modular.comparison.payoutSchedules);
 
   return (
     <article className={styles.firmRow}>
       <div className={styles.firmIdentity}>
         <FirmLogo src={profileLogo(firm)} name={firm.name} imageClassName={styles.firmLogo} fallbackClassName={styles.firmFallback} />
         <div>
-          <span className={styles.statusLine}><i /> Research profile</span>
+          {!fullDirectory && <span className={styles.statusLine}><i /> Research profile</span>}
           <h3>{firm.name}</h3>
           {rating
             ? <a className={styles.directoryRating} href={rating.url} target="_blank" rel="noreferrer" aria-label={`${firm.name}: ${rating.score} out of 5 on Trustpilot from ${rating.reviewCountLabel} reviews`}><Star /> <strong>{rating.score.toFixed(1)}</strong><span>Trustpilot</span><i>·</i><small>{rating.reviewCountApproximate ? '≈' : ''}{rating.reviewCountLabel} reviews</small></a>
-            : <span className={styles.directoryRatingEmpty}>No Trustpilot rating</span>}
+            : !fullDirectory && <span className={styles.directoryRatingEmpty}>No Trustpilot rating</span>}
           <p>{description}</p>
-          <div className={styles.tags}>{rewards.map((tag) => <span key={tag}>{tag}</span>)}</div>
+          {fullDirectory && capital !== 'Not published' && capital !== 'Not applicable' && <span className={styles.directoryCapital}>Capital {capital}</span>}
+          {rewards.length > 0 && <div className={styles.tags}>{rewards.map((tag) => <span key={tag}>{tag}</span>)}</div>}
         </div>
       </div>
 
       <div className={styles.rowMetrics}>
-        <div><span>{isProgressionModel ? 'Access' : 'Entry'}</span><strong>{comparisonRangeText(modular.comparison.entryCost)}</strong><small>{isProgressionModel ? 'Registration' : modelLabel}</small></div>
-        <div><span>Drawdown</span><strong>{comparisonRangeText(modular.comparison.maxDrawdown)}</strong><small>{isProgressionModel ? 'Across tracks' : isModelFirst ? 'Core challenge rule' : 'Across offers'}</small></div>
-        <div><span>Split</span><strong>{comparisonRangeText(modular.comparison.profitSplit)}</strong><small>{isProgressionModel ? 'By vault policy' : isModelFirst ? 'Funded stage' : 'Across offers'}</small></div>
-        <div><span>Capital</span><strong>{comparisonRangeText(modular.comparison.capital)}</strong><small>{isProgressionModel ? 'Track allocations' : isModelFirst ? 'Recorded account range' : 'Available range'}</small></div>
+        <div><span>{isProgressionModel ? 'Access' : 'Entry'}</span><strong>{fullDirectory ? entry : comparisonRangeText(modular.comparison.entryCost)}</strong>{!fullDirectory && <small>{isProgressionModel ? 'Registration' : modelLabel}</small>}</div>
+        <div><span>Drawdown</span><strong>{fullDirectory ? drawdown : comparisonRangeText(modular.comparison.maxDrawdown)}</strong>{!fullDirectory && <small>{isProgressionModel ? 'Across tracks' : isModelFirst ? 'Core challenge rule' : 'Across offers'}</small>}</div>
+        <div><span>Split</span><strong>{fullDirectory ? split : comparisonRangeText(modular.comparison.profitSplit)}</strong>{!fullDirectory && <small>{isProgressionModel ? 'By vault policy' : isModelFirst ? 'Funded stage' : 'Across offers'}</small>}</div>
+        <div><span>{fullDirectory ? 'Payout' : 'Capital'}</span><strong>{fullDirectory ? payout : comparisonRangeText(modular.comparison.capital)}</strong>{!fullDirectory && <small>{isProgressionModel ? 'Track allocations' : isModelFirst ? 'Recorded account range' : 'Available range'}</small>}</div>
       </div>
 
       <div className={styles.rowActions}>
@@ -136,7 +189,7 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
   }
 
   return (
-    <section className={styles.directory} id="firm-directory" aria-labelledby={mode === 'preview' ? 'starting-points-heading' : 'directory-heading'}>
+    <section className={`${styles.directory} ${mode === 'full' ? styles.directoryFull : ''}`} id="firm-directory" aria-labelledby={mode === 'preview' ? 'starting-points-heading' : 'directory-heading'}>
       <div className={styles.sectionHeading}>
         <div>
           <span>{mode === 'preview' ? 'Research starting points' : 'Firm directory'}</span>
@@ -183,7 +236,7 @@ export function FirmDirectory({ firms, mode = 'full', initialSearch = '', initia
           </div>
 
           <div className={styles.firmList}>
-            {visible.map((firm) => <FirmRow key={firm.id} firm={firm} selected={selected.includes(firm.id)} onToggle={() => toggleCompare(firm.id)} />)}
+            {visible.map((firm) => <FirmRow key={firm.id} firm={firm} selected={selected.includes(firm.id)} onToggle={() => toggleCompare(firm.id)} fullDirectory={mode === 'full'} />)}
             {!visible.length && <div className={styles.emptyResults}><strong>No matching firms</strong><button type="button" onClick={reset}>Reset filters</button></div>}
           </div>
 

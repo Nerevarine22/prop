@@ -226,6 +226,18 @@
 .rowActions button svg { width: 12px; }
 .rowActions .profileLink { border: 0; background: transparent; color: var(--color-accent); }
 
+.directoryFull .firmRow { grid-template-columns: minmax(220px, .9fr) minmax(360px, 1.35fr) 126px; min-height: 0; padding: 20px 4px; gap: 20px; }
+.directoryFull .firmIdentity { grid-template-columns: 54px minmax(0, 1fr); gap: 12px; }
+.directoryFull .firmIdentity h3 { margin-top: 0; }
+.directoryFull .firmIdentity p { margin-top: 7px; }
+.directoryFull .directoryCapital { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.directoryFull .rowMetrics > div { padding-inline: 10px; }
+.directoryFull .rowMetrics strong { overflow: visible; font-variant-numeric: tabular-nums; line-height: 1.3; white-space: normal; }
+.directoryFull .rowMetrics small { display: none; }
+.directoryFull .rowActions { align-items: stretch; flex-direction: column; gap: 7px; }
+.directoryFull .rowActions button { width: 100%; flex: 0 0 auto; min-width: 0; padding-inline: 9px; }
+.directoryFull .rowActions .profileLink { align-self: flex-start; flex: 0 0 auto; gap: 4px; padding-inline: 0; white-space: nowrap; }
+
 .compareTray { position: sticky; z-index: 20; bottom: 18px; display: flex; min-height: 62px; margin-top: 20px; padding: 9px 10px 9px 16px; align-items: center; gap: 18px; border: 1px solid #2c342d; border-radius: 12px; background: var(--ink-panel); color: #fff; box-shadow: 0 18px 50px rgb(23 32 25 / 25%); }
 .trayFirms { display: flex; margin-right: auto; gap: 7px; }
 .trayFirms > span { display: flex; height: 36px; padding: 0 10px 0 5px; align-items: center; gap: 7px; border: 1px solid rgb(255 255 255 / 11%); border-radius: 8px; color: #e8ece8; font-size: 11px; }
@@ -872,6 +884,9 @@
   .rowActions { grid-column: 1 / -1; flex-direction: row; justify-content: flex-end; }
   .rowActions button { min-width: 120px; }
   .profileLayout { grid-template-columns: minmax(0, 1fr) 280px; gap: 30px; }
+  .directoryFull .firmRow { grid-template-columns: minmax(0, .9fr) minmax(310px, 1.1fr); }
+  .directoryFull .rowActions { grid-column: 1 / -1; justify-content: flex-start; }
+  .directoryFull .rowActions button { width: 126px; flex: 0 0 auto; }
 }
 
 @media (max-width: 860px) {
@@ -920,6 +935,11 @@
   .compareHeaderRow, .compareVerdictRow, .compareDataRow { min-width: 900px; }
   .compareTwo .compareHeaderRow, .compareTwo .compareVerdictRow, .compareTwo .compareDataRow { min-width: 700px; }
   .pickerGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .directoryFull .firmRow { grid-template-columns: 1fr; }
+  .directoryFull .rowMetrics { padding: 4px 0 0; }
+  .directoryFull .rowActions { display: flex; grid-column: auto; justify-content: flex-start; }
+  .directoryFull .rowActions button { width: 126px; flex: 0 0 auto; }
+  .directoryFull .rowActions .profileLink { min-height: 0; padding-inline: 0; }
 }
 
 @media (max-width: 560px) {
@@ -938,6 +958,11 @@
   .firmLogo, .firmFallback { width: 48px; height: 48px; }
   .rowMetrics { grid-template-columns: repeat(2, 1fr); padding-left: 0; row-gap: 20px; }
   .rowMetrics > div:nth-child(3) { border-left: 0; }
+  .directoryFull .rowMetrics { row-gap: 16px; }
+  .directoryFull .rowMetrics > div { padding-inline: 10px; }
+  .directoryFull .rowMetrics > div:nth-child(odd) { border-left: 0; }
+  .directoryFull .rowMetrics > div:nth-child(even) { border-left: 1px solid var(--line); }
+  .directoryFull .rowMetrics strong { white-space: normal; }
   .rowActions { justify-content: stretch; }
   .rowActions button { width: 50%; min-width: 0; }
   .trayFirms { overflow-x: auto; }
